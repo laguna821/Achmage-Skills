@@ -7,6 +7,47 @@
 
 ---
 
+## 🚀 설치 (Installation)
+
+> 설치 후엔 보통 명령어를 칠 필요 없이 **“HTML 덱 / 카드뉴스 / 발표자료 만들어줘”** 처럼 요청하면 `SKILL.md`의 description으로 **자동 로드**된다. 명시 호출도 가능.
+
+### 방법 A — npx (가장 간단 · 권장)
+
+```bash
+npx skills add laguna821/Achmage-Skills
+```
+
+이 repo를 스캔해 `raw5-deck` 스킬을 찾아 Claude Code에 설치한다. **별도 등록/발행 절차가 필요 없다** — repo가 공개돼 있으면 끝. 설치 후 `/raw5-deck` 로 호출.
+
+```bash
+npx skills add laguna821/Achmage-Skills --skill raw5-deck -a claude-code   # 특정 스킬만 + Claude Code 타깃
+npx skills add laguna821/Achmage-Skills --list                            # 설치 없이 목록만
+```
+
+(오픈 도구 [vercel-labs/skills](https://github.com/vercel-labs/skills))
+
+### 방법 B — Claude Code 플러그인 마켓플레이스 (공식 배포 경로)
+
+```text
+/plugin marketplace add laguna821/Achmage-Skills
+/plugin install raw-5-html@achmage-skills
+```
+
+자동 업데이트 · 버전 관리가 된다. (repo 루트 `.claude-plugin/marketplace.json` + `raw-5-html/.claude-plugin/plugin.json` — `claude plugin validate` 통과.)
+
+### 방법 C — 수동 복사 (네트워크 없이)
+
+```bash
+git clone https://github.com/laguna821/Achmage-Skills
+# 개인 스킬(모든 프로젝트에서 사용):
+cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
+# 프로젝트 전용이면 ~/.claude 대신 프로젝트의 .claude/skills/ 에 복사
+```
+
+호출: `/raw5-deck` (명령어 이름 = 스킬 폴더 이름). Windows는 `~/.claude/skills/` = `%USERPROFILE%\.claude\skills\`.
+
+---
+
 ## 📁 `raw-5-html/` — Claude 스킬
 
 GPTs용 **"Raw5 v4" 프롬프트 팩**을 Claude(Claude Code / claude.ai) **스킬**로 포팅한 것. Python 오케스트레이션 없이 문서만 읽고 LLM이 판단한다.
@@ -26,9 +67,8 @@ GPTs용 **"Raw5 v4" 프롬프트 팩**을 Claude(Claude Code / claude.ai) **스�
 ### 디자인 4모드
 **V7** 밝은 리포트 · **V8** 다크 브루탈리스트 · **University AX** 정보 그리드 · **Street** 에디토리얼.
 
-### 설치 / 사용
-- Claude Code: `raw-5-html/`를 스킬 디렉토리에 두면 `SKILL.md`의 description으로 트리거된다.
-- 또는 `SKILL.md`를 직접 읽혀 위 3단계를 따르게 한다.
+### 사용
+설치는 위 **🚀 설치** 섹션 참고. 설치 후 “HTML 덱 / 카드뉴스 / 발표자료 만들어줘”라고 요청하면 description으로 자동 로드되고 위 3단계가 진행된다. 명시 호출은 `/raw5-deck`.
 
 ---
 

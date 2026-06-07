@@ -1,0 +1,11 @@
+{
+  "name": "raw-5-html",
+  "description": "Image-embedded HTML presentation deck architect (raw5 method). Build 1920x1080 HTML PPT / 카드뉴스 / keynote decks from a topic using exactly 5 AI-generated background images bound to CSS variables, while text/numbers/charts stay crisp HTML/SVG. 3-stage workflow: deck plan -> 5 image prompts (HARD STOP) -> HTML build. Four modes: V7 bright, V8 dark, University AX, Street editorial.",
+  "version": "1.0.0",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Image-HTML/raw-5-html",
+  "license": "Apache-2.0",
+  "keywords": ["skill", "html-presentation", "raw5", "deck", "카드뉴스", "claude-code"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "achmage-skills",
+  "owner": {
+    "name": "laguna821",
+    "email": "laguna821@gmail.com"
+  },
+  "metadata": {
+    "description": "안창현 (Achmage) 의 Claude 스킬 모음 — image-embedded HTML 덱 등.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "raw-5-html",
+      "source": "./Image-HTML/raw-5-html",
+      "description": "Image-embedded HTML presentation deck architect (raw5 method): 1920x1080 HTML PPT / 카드뉴스 / keynote from a topic, 5 reused background images, text/charts stay HTML/SVG.",
+      "version": "1.0.0",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Image-HTML/raw-5-html",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "tags": ["skill", "html-presentation", "raw5", "deck", "slides"]
+    }
+  ]
+}
