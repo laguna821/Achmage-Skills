@@ -44,7 +44,7 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 # 프로젝트 전용이면 ~/.claude 대신 프로젝트의 .claude/skills/ 에 복사
 ```
 
-호출: `/raw5-deck` (명령어 이름 = 스킬 폴더 이름). Windows는 `~/.claude/skills/` = `%USERPROFILE%\.claude\skills\`.
+호출: `/` 를 치면 설치된 스킬이 자동완성으로 뜬다 — 보통 `/raw5-deck` (명령어 = 스킬 폴더 이름). 폴더 안 `.claude-plugin/` 까지 복사하면 플러그인으로 인식돼 `/raw-5-html:raw5-deck` 처럼 namespaced 될 수 있다. Windows는 `~/.claude/skills/` = `%USERPROFILE%\.claude\skills\`.
 
 ---
 
