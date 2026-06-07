@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>비합리적인 당신을 위한 행동경제학 — V8 Dark</title>
+<style>
+/* Font: system Korean stack (Pretendard if locally installed; no @import → offline/headless safe). */
+
+/* ============== RESET / TOKENS (V8 Dark Brutalist) ============== */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  /* raw5 binding (relative — assets/imgN.png) */
+  --img1:url("assets/img1.png");
+  --img2:url("assets/img2.png");
+  --img3:url("assets/img3.png");
+  --img4:url("assets/img4.png");
+  --img5:url("assets/img5.png");
+  /* V8 dark palette */
+  --bg:#080a0e;
+  --ink:#eef3f8;
+  --ink-soft:#9fa9b8;
+  --ink-dim:#6e7888;
+  --panel:rgba(17,21,29,.80);
+  --panel-solid:#11151d;
+  --panel-2:rgba(22,27,37,.86);
+  --line:rgba(255,255,255,.12);
+  --line-2:rgba(255,255,255,.07);
+  /* single accent — neon green echoing img3 */
+  --accent:#8dff5a;
+  --accent-deep:#5fd62f;
+  --accent-soft:rgba(141,255,90,.14);
+  --accent-line:rgba(141,255,90,.42);
+  --danger:#ff6b5e;
+  --deck-scale:1;
+  --font:'Pretendard','Pretendard Variable','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+}
+.img1{background-image:var(--img1)}
+.img2{background-image:var(--img2)}
+.img3{background-image:var(--img3)}
+.img4{background-image:var(--img4)}
+.img5{background-image:var(--img5)}
+
+html,body{height:100%;background:#000;font-family:var(--font);-webkit-font-smoothing:antialiased;}
+
+/* ============== RUNTIME / SCALE (reused verbatim from canonical scaffold) ============== */
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000;overflow:hidden;}
+.slide{
+  position:absolute;top:50%;left:50%;
+  width:1920px;height:1080px;
+  transform:translate(-50%,-50%) scale(var(--deck-scale));
+  transform-origin:center center;
+  display:none;overflow:hidden;
+}
+.slide.active{display:block;}
+.slide-shell{position:relative;width:100%;height:100%;background:var(--bg);overflow:hidden;
+  display:flex;flex-direction:column;padding:58px 92px 44px;}
+
+/* ============== STAGE (full-bleed dark image on every slide) ==============
+   Images are already dark → overlays kept LIGHT (user note). img2 is darkest → .lift. */
+.bg-stage{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;}
+.bg-stage.lift{filter:brightness(1.22) contrast(1.05) saturate(1.04);}   /* for darkest texture img2 */
+.bg-stage.lift-soft{filter:brightness(1.10) contrast(1.02);}
+.bg-stage.pos-low{background-position:center 78%;}
+.bg-stage.pos-high{background-position:center 22%;}
+/* veils — moderate, never crushing */
+.veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,9,13,.62),rgba(7,9,13,.74));}
+.veil.soft{background:rgba(7,9,13,.40);}                                  /* prominent image (cover/divider) */
+.veil.left{background:linear-gradient(90deg,rgba(7,9,13,.88) 0%,rgba(7,9,13,.68) 48%,rgba(7,9,13,.30) 100%);}
+.veil.right{background:linear-gradient(270deg,rgba(7,9,13,.88) 0%,rgba(7,9,13,.66) 48%,rgba(7,9,13,.28) 100%);}
+.veil.bottom{background:linear-gradient(180deg,rgba(7,9,13,.30) 36%,rgba(7,9,13,.86) 100%);}
+.veil.center{background:radial-gradient(ellipse 70% 62% at 50% 50%,rgba(7,9,13,.34),rgba(7,9,13,.80) 92%);}
+
+/* ============== RHYTHM: topbar / content / footer ============== */
+.topbar{position:relative;z-index:6;display:flex;align-items:center;gap:18px;height:42px;flex:0 0 auto;}
+.kicker{font-size:21px;font-weight:800;letter-spacing:.14em;color:var(--accent);display:flex;align-items:center;gap:13px;text-transform:uppercase;}
+.kicker::before{content:"";width:30px;height:4px;border-radius:3px;background:var(--accent);box-shadow:0 0 14px rgba(141,255,90,.6);}
+.kicker .sec{color:var(--ink-soft);letter-spacing:.04em;font-weight:700;text-transform:none;}
+.content{position:relative;z-index:5;flex:1 1 auto;display:flex;flex-direction:column;min-height:0;padding-top:22px;}
+.footerbar{position:relative;z-index:6;display:flex;align-items:center;justify-content:space-between;height:28px;flex:0 0 auto;
+  font-size:18px;color:var(--ink-dim);font-weight:600;letter-spacing:.02em;}
+.footerbar .pg{font-weight:800;color:var(--accent);letter-spacing:.08em;}
+
+/* ============== TYPE ============== */
+.headline{font-size:50px;line-height:1.14;font-weight:800;color:var(--ink);letter-spacing:-.02em;}
+.headline.sm{font-size:42px;}
+.headline.lg{font-size:60px;}
+.headline em{font-style:normal;color:var(--accent);}
+.subline{margin-top:16px;font-size:25px;line-height:1.52;color:var(--ink-soft);font-weight:500;max-width:1500px;}
+.subline em{font-style:normal;color:var(--ink);font-weight:700;}
+.lead-body{margin-top:18px;font-size:23px;line-height:1.62;color:var(--ink-soft);font-weight:450;max-width:1640px;}
+.lead-body em{font-style:normal;color:var(--accent);font-weight:700;}
+.lead-body strong{color:var(--ink);font-weight:800;}
+
+/* two/three dense prose columns */
+.cols{margin-top:26px;flex:1 1 auto;display:grid;gap:34px;min-height:0;align-content:start;}
+.cols.c2{grid-template-columns:1fr 1fr;}
+.cols.c3{grid-template-columns:repeat(3,1fr);}
+.cols p{font-size:22px;line-height:1.6;color:var(--ink-soft);font-weight:450;}
+.cols p+p{margin-top:14px;}
+.cols .ch{font-size:24px;font-weight:800;color:var(--ink);margin-bottom:10px;display:flex;align-items:center;gap:11px;}
+.cols .ch::before{content:"";width:11px;height:11px;border-radius:3px;background:var(--accent);box-shadow:0 0 10px rgba(141,255,90,.6);flex:0 0 auto;}
+
+/* ============== COVER / STATEMENT ============== */
+.cover .content{justify-content:center;align-items:flex-start;}
+.cover-eyebrow{font-size:24px;font-weight:800;letter-spacing:.16em;color:var(--accent);margin-bottom:26px;text-transform:uppercase;}
+.cover-title{font-size:118px;line-height:1.02;font-weight:800;color:#fff;letter-spacing:-.035em;text-shadow:0 6px 40px rgba(0,0,0,.6);}
+.cover-title em{font-style:normal;color:var(--accent);text-shadow:0 0 38px rgba(141,255,90,.45);}
+.cover-sub{margin-top:34px;font-size:34px;font-weight:500;color:rgba(255,255,255,.86);letter-spacing:.01em;max-width:1400px;line-height:1.4;}
+.cover-meta{margin-top:48px;display:flex;gap:14px;flex-wrap:wrap;}
+.cover-meta span{font-size:20px;font-weight:700;color:var(--ink);background:rgba(255,255,255,.08);border:1px solid var(--line);padding:11px 20px;border-radius:999px;}
+
+.statement .content{justify-content:center;}
+.stmt-wrap{max-width:1640px;}
+.stmt-quote{font-size:120px;line-height:.5;color:var(--accent);font-weight:800;opacity:.85;}
+.stmt{font-size:66px;line-height:1.28;font-weight:800;color:#fff;letter-spacing:-.02em;margin-top:18px;text-shadow:0 4px 30px rgba(0,0,0,.5);}
+.stmt em{font-style:normal;color:var(--accent);}
+.stmt-note{margin-top:34px;font-size:27px;color:rgba(255,255,255,.78);font-weight:600;line-height:1.5;max-width:1400px;}
+
+/* ============== DIVIDER ============== */
+.divider .content{justify-content:center;}
+.div-num{font-size:30px;font-weight:800;letter-spacing:.34em;color:var(--accent);margin-bottom:20px;}
+.div-title{font-size:92px;line-height:1.06;font-weight:800;color:#fff;letter-spacing:-.025em;text-shadow:0 6px 34px rgba(0,0,0,.55);}
+.div-sub{margin-top:26px;font-size:29px;color:rgba(255,255,255,.82);font-weight:500;max-width:1300px;line-height:1.5;}
+
+/* ============== PANELS / CARD GRIDS (fill canvas; flex:1) ============== */
+.grid{margin-top:26px;flex:1 1 auto;display:grid;gap:24px;min-height:0;}
+.grid.g2{grid-template-columns:1fr 1fr;}
+.grid.g3{grid-template-columns:repeat(3,1fr);}
+.grid.g4{grid-template-columns:repeat(4,1fr);}
+.grid.g2x2{grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;}
+.grid.g6{grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;}
+.grid.gside{grid-template-columns:1.25fr .75fr;}
+
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px 30px;
+  display:flex;flex-direction:column;justify-content:flex-start;gap:13px;position:relative;overflow:hidden;}
+.card.vc{justify-content:center;}
+.card .cn{font-size:22px;font-weight:800;color:var(--accent);letter-spacing:.04em;
+  padding-bottom:13px;border-bottom:1px solid var(--line-2);margin-bottom:3px;}
+.card .cn::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;background:var(--accent);
+  margin-right:9px;vertical-align:middle;box-shadow:0 0 9px rgba(141,255,90,.6);}
+.card h3{font-size:31px;font-weight:800;color:var(--ink);line-height:1.2;}
+.card h4{font-size:26px;font-weight:800;color:var(--ink);line-height:1.22;}
+.card p{font-size:21px;line-height:1.54;color:var(--ink-soft);font-weight:450;}
+.card p em{font-style:normal;color:var(--accent);font-weight:700;}
+.card .tag{align-self:flex-start;font-size:18px;font-weight:800;color:var(--accent);background:var(--accent-soft);
+  border:1px solid var(--accent-line);padding:8px 14px;border-radius:10px;line-height:1.2;}
+.card.lead{background:linear-gradient(150deg,rgba(141,255,90,.16),rgba(141,255,90,.04));border-color:var(--accent-line);}
+.card.lead h3,.card.lead h4{color:#fff;}
+.card .ic{width:64px;height:64px;border-radius:16px;background:var(--accent-soft);border:1px solid var(--accent-line);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;}
+.card .ic svg{width:34px;height:34px;stroke:var(--accent);fill:none;stroke-width:2.3;}
+.card .rtop{display:flex;align-items:center;justify-content:space-between;}
+.card .idx{font-size:30px;font-weight:800;color:var(--line);}
+
+/* compact list inside a panel */
+.plist{display:flex;flex-direction:column;gap:14px;}
+.plist .li{display:flex;gap:15px;align-items:flex-start;}
+.plist .li .b{flex:0 0 auto;width:34px;height:34px;border-radius:9px;background:var(--accent-soft);border:1px solid var(--accent-line);
+  color:var(--accent);font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.plist .li p{font-size:21px;line-height:1.5;color:var(--ink-soft);font-weight:450;}
+.plist .li p b{color:var(--ink);font-weight:800;}
+
+/* ============== COMPARE PAIR (≠) ============== */
+.compare{flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;gap:30px;min-height:0;position:relative;}
+.compare .col{border-radius:22px;padding:42px 40px;display:flex;flex-direction:column;position:relative;overflow:hidden;border:1px solid var(--line);}
+.compare .col.a{background:var(--panel-2);}
+.compare .col.b{background:linear-gradient(150deg,rgba(141,255,90,.14),rgba(141,255,90,.03));border-color:var(--accent-line);}
+.compare .col .tag{font-size:21px;font-weight:800;letter-spacing:.07em;margin-bottom:18px;}
+.compare .col.a .tag{color:var(--ink-soft);}
+.compare .col.b .tag{color:var(--accent);}
+.compare .col h3{font-size:38px;font-weight:800;line-height:1.18;letter-spacing:-.02em;margin-bottom:18px;color:var(--ink);}
+.compare .col p{font-size:22px;line-height:1.56;font-weight:450;color:var(--ink-soft);}
+.compare .col p+p{margin-top:12px;}
+.compare .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;
+  width:76px;height:76px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);color:var(--accent);
+  font-size:34px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(141,255,90,.4);}
+
+/* ============== BIG NUMBER ============== */
+.statband{flex:1 1 auto;display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:center;min-height:0;}
+.statbig{font-size:188px;line-height:.92;font-weight:800;color:var(--accent);letter-spacing:-.04em;text-shadow:0 0 50px rgba(141,255,90,.3);}
+.statbig small{font-size:64px;font-weight:800;color:var(--ink);}
+.stat-cap{margin-top:16px;font-size:27px;color:var(--ink-soft);font-weight:600;line-height:1.45;}
+
+/* ============== SVG CARD (dark theme) ============== */
+.svgcard{flex:1 1 auto;margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:22px;
+  padding:30px 38px;display:flex;align-items:center;justify-content:center;min-height:0;}
+.svgcard svg{width:100%;height:100%;max-height:560px;}
+.svg-ink{font-family:var(--font);font-weight:800;fill:var(--ink);}
+.svg-soft{font-family:var(--font);font-weight:600;fill:var(--ink-soft);}
+.svg-acc{font-family:var(--font);font-weight:800;fill:var(--accent);}
+.svg-line{stroke:var(--line);stroke-width:2.5;fill:none;}
+.svg-grid{stroke:rgba(255,255,255,.10);stroke-width:1.5;fill:none;}
+.svg-accent-stroke{stroke:var(--accent);stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.svg-soft-stroke{stroke:var(--ink-soft);stroke-width:3;fill:none;stroke-linecap:round;stroke-dasharray:4 11;}
+
+/* ============== ROADMAP ============== */
+.roadmap{flex:1 1 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:0;align-items:stretch;min-height:0;margin-top:24px;}
+.rstep{position:relative;padding:34px 26px;display:flex;flex-direction:column;justify-content:center;gap:12px;border-top:3px solid var(--line);}
+.rstep.on{border-top-color:var(--accent);}
+.rstep .rn{width:52px;height:52px;border-radius:13px;background:var(--accent-soft);border:1px solid var(--accent-line);
+  color:var(--accent);font-size:24px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.rstep h4{font-size:27px;font-weight:800;color:var(--ink);}
+.rstep p{font-size:20px;line-height:1.5;color:var(--ink-soft);font-weight:450;}
+.rstep::after{content:"›";position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:var(--accent);font-size:34px;font-weight:800;z-index:3;}
+.rstep:last-child::after{display:none;}
+
+/* ============== MATERIAL-IMAGE CARD (dark-image safe: brightness up, light scrim) ============== */
+.mcard{position:relative;isolation:isolate;overflow:hidden;color:#fff;justify-content:flex-end!important;
+  border:1px solid rgba(255,255,255,.20);background-color:rgba(8,12,20,.2);}
+.mcard::before{content:"";position:absolute;inset:-6px;z-index:-2;background-image:var(--card-img,var(--img1));
+  background-size:cover;background-position:center;filter:brightness(.92) contrast(1.05) saturate(1.02);transform:scale(1.04);}
+.mcard::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(6,9,14,.10) 0%,rgba(6,9,14,.34) 48%,rgba(6,9,14,.80) 100%);}
+.mcard>*{position:relative;z-index:2;}
+.mcard h3,.mcard h4{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6);}
+.mcard p{color:rgba(255,255,255,.92);text-shadow:0 2px 12px rgba(0,0,0,.55);}
+.mcard .cn{color:var(--accent)!important;text-shadow:0 0 14px rgba(0,0,0,.6);}
+
+/* callout / warning */
+.callout{margin-top:22px;border-radius:18px;padding:30px 34px;border:1px solid;display:flex;gap:22px;align-items:flex-start;}
+.callout.warn{background:rgba(255,107,94,.10);border-color:rgba(255,107,94,.4);}
+.callout.good{background:var(--accent-soft);border-color:var(--accent-line);}
+.callout .ci{flex:0 0 auto;width:58px;height:58px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;}
+.callout.warn .ci{background:rgba(255,107,94,.18);color:var(--danger);}
+.callout.good .ci{background:rgba(141,255,90,.18);color:var(--accent);}
+.callout h4{font-size:28px;font-weight:800;color:var(--ink);margin-bottom:8px;}
+.callout p{font-size:22px;line-height:1.55;color:var(--ink-soft);font-weight:450;}
+.callout p em{font-style:normal;color:var(--ink);font-weight:700;}
+
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:19px;font-weight:800;letter-spacing:.04em;color:var(--accent);
+  background:var(--accent-soft);border:1px solid var(--accent-line);padding:9px 17px;border-radius:999px;}
+.attrs{margin-top:22px;display:flex;flex-wrap:wrap;gap:11px;}
+.attrs span{font-size:20px;font-weight:700;color:var(--ink);background:rgba(255,255,255,.07);border:1px solid var(--line);padding:10px 17px;border-radius:11px;}
+.source{margin-top:18px;font-size:18px;color:var(--ink-dim);font-weight:500;line-height:1.5;}
+
+/* ============== NAV CONTROLLER (reused) ============== */
+#toc,.toc,.slide-index,.thumb-strip,.slide-dots,.page-list{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+#controller{position:fixed;right:24px;bottom:22px;z-index:9999;display:flex;align-items:center;gap:14px;
+  background-color:rgba(10,14,20,.94);border:1px solid rgba(255,255,255,.16);
+  padding:12px 18px;border-radius:999px;opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;}
+#controller.is-visible,#controller:hover{opacity:1;transform:translateY(0);pointer-events:auto;}
+#controller button{width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.14);
+  color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+#controller button:hover{background:var(--accent);color:#06210a;}
+#controller .pgnum{color:#fff;font-size:20px;font-weight:700;min-width:74px;text-align:center;letter-spacing:.05em;}
+.touch-zone{position:fixed;top:0;bottom:0;width:11vw;z-index:9990;cursor:pointer;}
+.touch-zone.left{left:0;}.touch-zone.right{right:0;}
+@media (hover:hover){.touch-zone{display:none;}}
+</style>
+</head>
+<body>
+<div id="viewport">
+
+<!-- ============ SLIDE 01 — COVER ============ -->
+<section class="slide active" data-slide="1">
+  <div class="slide-shell cover">
+    <div class="bg-stage img1 pos-low"></div>
+    <div class="veil left"></div>
+    <div class="topbar"><span class="kicker">행동경제학 입문 <span class="sec">· for practitioners</span></span></div>
+    <main class="content">
+      <p class="cover-eyebrow">우리가 매일 하는 가장 큰 착각</p>
+      <h1 class="cover-title">비합리적인 당신을 위한<br><em>행동경제학</em></h1>
+      <p class="cover-sub">편향은 제거할 ‘버그’가 아니라, 이해하고 <strong style="color:#fff">설계</strong>해야 할 ‘사양’입니다.<br>오늘, 당신의 결정을 다시 봅니다.</p>
+      <div class="cover-meta"><span>실무자·직장인용</span><span>30 slides · 다크 키노트</span><span>안창현</span></div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">01 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 02 — 35,000 DECISIONS (big number) ============ -->
+<section class="slide" data-slide="2">
+  <div class="slide-shell">
+    <div class="bg-stage img1"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">들어가며 <span class="sec">· 결정의 양</span></span></div>
+    <main class="content">
+      <h2 class="headline">우리는 하루 약 <em>35,000번</em> 결정합니다 — 그 대부분은 ‘자동조종’입니다.</h2>
+      <div class="statband">
+        <div>
+          <div class="statbig">35,000<small>번/일</small></div>
+          <p class="stat-cap">성인이 하루에 내리는 크고 작은 의사결정의 추정치. 점심 메뉴부터 연봉 협상, 투자, 채용까지.</p>
+        </div>
+        <div class="card">
+          <div class="plist">
+            <div class="li"><div class="b">1</div><p><b>대부분은 무의식</b>입니다. 매번 숙고했다면 뇌는 과부하로 멈춥니다.</p></div>
+            <div class="li"><div class="b">2</div><p>그래서 뇌는 <b>지름길(휴리스틱)</b>로 대부분을 처리합니다 — 빠르지만 체계적으로 치우칩니다.</p></div>
+            <div class="li"><div class="b">3</div><p>문제는, <b>중요한 결정마저</b> 이 자동 모드가 가로챈다는 것. 그 결과가 곧 ‘편향’입니다.</p></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">02 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 03 — THESIS: design, not remove ============ -->
+<section class="slide" data-slide="3">
+  <div class="slide-shell">
+    <div class="bg-stage img5 pos-high"></div>
+    <div class="veil right"></div>
+    <div class="topbar"><span class="kicker">오늘의 약속 <span class="sec">· 관점의 전환</span></span></div>
+    <main class="content">
+      <h2 class="headline">목표는 편향을 <em>제거</em>하는 것이 아니라, <em>설계</em>하는 것입니다.</h2>
+      <p class="subline">“의지로 편향을 이겨라”는 조언은 거의 실패합니다. 행동경제학은 다른 길을 택합니다 — 환경을 바꿉니다.</p>
+      <div class="grid g2">
+        <div class="card">
+          <span class="tag">왜 ‘제거’는 불가능한가</span>
+          <h3>편향은 뇌의 기본 설계다</h3>
+          <p>인지 편향은 결함이 아니라, 제한된 시간·정보·에너지 속에서 생존하려는 뇌의 <em>최적화</em>의 부산물입니다. 안다고 사라지지 않습니다 — 착시를 알아도 여전히 휘어 보이듯.</p>
+          <p>의지력은 한정 자원이라, 매 결정마다 “이성으로 누르기”는 지속 불가능합니다.</p>
+        </div>
+        <div class="card lead">
+          <span class="tag">그래서 무엇을 하는가</span>
+          <h3>결정의 ‘환경’을 바꾼다</h3>
+          <p>편향과 싸우는 대신, 편향이 좋은 결과로 이어지도록 <em>선택 환경</em>을 설계합니다. 기본값·순서·표현·타이밍을 바꾸는 것만으로 결과가 달라집니다.</p>
+          <p>이것이 ‘넛지(nudge)’이며, 오늘 발표의 실무 핵심입니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">03 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 04 — WHAT IS BEHAVIORAL ECONOMICS ============ -->
+<section class="slide" data-slide="4">
+  <div class="slide-shell">
+    <div class="bg-stage img2 lift"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">정의 <span class="sec">· 행동경제학이란</span></span></div>
+    <main class="content">
+      <h2 class="headline">행동경제학 = <em>심리학</em> × <em>경제학</em></h2>
+      <p class="subline">인간을 ‘완벽하게 합리적인 계산기’가 아니라, <em>있는 그대로의 사람</em>으로 모델링하는 경제학입니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="cn">01 · 핵심 가정</div>
+          <h4>제한된 합리성</h4>
+          <p>인간은 합리적이려 하지만, 인지 능력·정보·시간의 한계 안에서만 그렇습니다. ‘최선’이 아니라 ‘그만하면 됨(satisficing)’을 택합니다. — 허버트 사이먼</p>
+        </div>
+        <div class="card">
+          <div class="cn">02 · 작동 방식</div>
+          <h4>휴리스틱과 편향</h4>
+          <p>빠른 판단을 위한 어림짐작(휴리스틱)이 대부분의 결정을 처리하고, 그 부작용으로 체계적 오류(편향)가 발생합니다. — 카너먼 &amp; 트버스키</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">03 · 응용</div>
+          <h4>넛지와 선택설계</h4>
+          <p>편향을 이용해 더 나은 선택을 ‘유도’합니다. 강요 없이, 선택지를 막지 않고, 환경을 바꿔 행동을 바꿉니다. — 세일러 &amp; 선스타인</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">04 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 05 — HOMO ECONOMICUS ============ -->
+<section class="slide" data-slide="5">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">1부 · 합리성의 붕괴 <span class="sec">· 표준 모델</span></span></div>
+    <main class="content">
+      <h2 class="headline">표준경제학의 인간은 ‘<em>호모 이코노미쿠스</em>’입니다.</h2>
+      <p class="subline">200년 넘게 경제학은 이 세 가지를 ‘당연히’ 가정해 왔습니다. 그런데 — 현실의 누구도 이렇지 않습니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="rtop"><span class="tag">가정 ①</span><span class="idx">01</span></div>
+          <h4>완전한 정보</h4>
+          <p>모든 선택지와 결과, 확률을 알고 있다고 가정합니다. 현실: 우리는 늘 정보 부족과 불확실성 속에서 결정합니다.</p>
+        </div>
+        <div class="card">
+          <div class="rtop"><span class="tag">가정 ②</span><span class="idx">02</span></div>
+          <h4>일관된 선호</h4>
+          <p>선호가 안정적이고 모순이 없다고 봅니다. 현실: 같은 사람이 표현 방식·순서·기분에 따라 정반대로 선택합니다.</p>
+        </div>
+        <div class="card">
+          <div class="rtop"><span class="tag">가정 ③</span><span class="idx">03</span></div>
+          <h4>효용 극대화</h4>
+          <p>언제나 자기 이익을 최대화하는 계산을 한다고 봅니다. 현실: 공정성·감정·습관·체면이 ‘이익’을 자주 이깁니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">05 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 06 — ECON vs HUMAN (compare) ============ -->
+<section class="slide" data-slide="6">
+  <div class="slide-shell">
+    <div class="bg-stage img4 pos-high"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">1부 · 합리성의 붕괴 <span class="sec">· 두 인간상</span></span></div>
+    <main class="content">
+      <h2 class="headline sm">현실의 우리는 ‘Econ’이 아니라 ‘<em>Human</em>’입니다. <span style="color:var(--ink-soft);font-size:28px;font-weight:600;">— 리처드 세일러</span></h2>
+      <div class="compare" style="margin-top:22px;">
+        <div class="col a">
+          <span class="tag">ECON · 경제학 교과서 속 인간</span>
+          <h3>완벽한 계산기</h3>
+          <p>모든 정보를 알고, 감정에 흔들리지 않으며, 언제나 장기 이익을 위해 최적의 선택을 합니다.</p>
+          <p>저축은 계획대로, 다이어트는 결심대로, 협상은 숫자대로. 표현이 ‘90% 생존’이든 ‘10% 사망’이든 동일하게 판단합니다.</p>
+        </div>
+        <div class="col b">
+          <span class="tag">HUMAN · 실제의 우리</span>
+          <h3>맥락에 휘둘리는 사람</h3>
+          <p>같은 사실도 ‘어떻게 보여주느냐’에 따라 정반대로 결정합니다. 손실을 두려워하고, 눈앞의 보상에 약하며, 남을 따라 합니다.</p>
+          <p>행동경제학은 바로 이 ‘Human’을 연구합니다 — 그리고 실무는 항상 Human을 상대합니다.</p>
+        </div>
+        <div class="vs">≠</div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">06 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 07 — TWO SYSTEMS ============ -->
+<section class="slide" data-slide="7">
+  <div class="slide-shell">
+    <div class="bg-stage img2 lift"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">1부 · 합리성의 붕괴 <span class="sec">· 사고의 이중 체계</span></span></div>
+    <main class="content">
+      <h2 class="headline">머릿속엔 두 명이 삽니다 — 빠른 <em>직관</em>과 느린 <em>사고</em>. <span style="color:var(--ink-soft);font-size:26px;font-weight:600;">— 대니얼 카너먼</span></h2>
+      <div class="grid g2">
+        <div class="card">
+          <div class="rtop"><span class="tag">SYSTEM 1</span><span class="idx">자동</span></div>
+          <h3>빠른 직관</h3>
+          <p>즉각적·자동적·무의식적. 노력이 들지 않고 항상 켜져 있습니다. 표정 읽기, 2+2, “위험해!” 같은 판단을 1초도 안 걸려 내립니다.</p>
+          <p><em>대부분의 일상 결정</em>을 담당하며, 편향은 바로 여기서 발생합니다. 끄거나 무시할 수 없습니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="rtop"><span class="tag">SYSTEM 2</span><span class="idx">노력</span></div>
+          <h3>느린 사고</h3>
+          <p>의식적·분석적·논리적. 17×24 계산, 복잡한 비교, 자기 통제를 맡습니다. 정확하지만 <em>느리고 게으르며</em> 쉽게 지칩니다.</p>
+          <p>그래서 어려운 결정조차 System 1의 직관에 ‘서명’만 하고 넘어가는 일이 흔합니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">07 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 08 — COGNITIVE LOAD → HEURISTICS ============ -->
+<section class="slide" data-slide="8">
+  <div class="slide-shell">
+    <div class="bg-stage img2 lift"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">1부 · 합리성의 붕괴 <span class="sec">· 편향은 왜 생기나</span></span></div>
+    <main class="content">
+      <h2 class="headline">뇌는 에너지를 아끼려 ‘<em>지름길</em>’을 씁니다 — 편향은 그 부작용입니다.</h2>
+      <div class="cols c2">
+        <div>
+          <p class="ch">뇌의 에너지 예산</p>
+          <p>뇌는 체중의 2%지만 에너지의 약 20%를 씁니다. 모든 판단을 System 2로 정밀 계산하면 즉시 과부하가 걸립니다. 그래서 진화는 ‘충분히 좋은 빠른 답’을 기본값으로 택했습니다.</p>
+          <p>인지 부하가 높을 때(피곤·바쁨·정보 과잉) 우리는 더 직관에 의존하고, 더 많이 치우칩니다. — 마트 계산대 옆 충동구매가 그 증거입니다.</p>
+        </div>
+        <div>
+          <p class="ch">휴리스틱이라는 어림짐작</p>
+          <p>휴리스틱은 복잡한 질문을 쉬운 질문으로 ‘바꿔치기’합니다. “이 투자 좋은가?” → “최근에 좋은 소식 들었나?”로. 대개는 잘 맞지만, 틀릴 때 <em>체계적으로·예측 가능하게</em> 틀립니다.</p>
+          <p>핵심 통찰: 편향은 무작위 실수가 아니라 <em>규칙적인 패턴</em>입니다. 패턴이라서 — 예측할 수 있고, 설계로 대응할 수 있습니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">08 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 09 — BIAS MAP (4 clusters) ============ -->
+<section class="slide" data-slide="9">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 4개 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline">핵심 편향은 <em>네 군집</em>으로 나뉩니다.</h2>
+      <p class="subline">수백 개의 편향이 보고되었지만, 실무에서 만나는 것들은 이 네 갈래로 묶입니다.</p>
+      <div class="grid g2x2">
+        <div class="card">
+          <div class="cn">군집 ① · 인지 / 정보처리</div>
+          <h4>무엇을 믿는가</h4>
+          <p>앵커링, 가용성 휴리스틱, 확증 편향, 프레이밍. 정보를 받아들이고 해석하는 단계에서 생기는 왜곡입니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">군집 ② · 위험 / 가치평가</div>
+          <h4>무엇을 두려워하는가</h4>
+          <p>손실회피, 보유 효과, 매몰비용 오류. 이득과 손실, 위험을 비대칭적으로 평가하면서 발생합니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">군집 ③ · 시간 / 자기통제</div>
+          <h4>언제를 택하는가</h4>
+          <p>현재 편향, 쌍곡선 할인, 미루기. 미래의 더 큰 보상보다 지금의 작은 보상을 과대평가합니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">군집 ④ · 사회 / 관계</div>
+          <h4>누구를 따르는가</h4>
+          <p>사회적 증거, 권위 편향, 동조, 호혜성. 타인의 행동과 기대가 내 선택을 강하게 끌어당깁니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">09 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 10 — LOSS AVERSION (big number + SVG) ============ -->
+<section class="slide" data-slide="10">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 위험 군집의 왕</span></span></div>
+    <main class="content">
+      <h2 class="headline">잃는 고통은 얻는 기쁨의 약 <em>2배</em> — 손실회피.</h2>
+      <div class="statband">
+        <div>
+          <div class="statbig">×2<small>배</small></div>
+          <p class="stat-cap">같은 1만 원이라도 ‘잃는 고통’이 ‘얻는 기쁨’보다 약 2~2.5배 큽니다 (Kahneman &amp; Tversky, 1979).</p>
+          <div class="plist" style="margin-top:20px;">
+            <div class="li"><div class="b">실무</div><p><b>무료 체험·환불 보장</b>이 강력한 이유 — 일단 가지면 잃기 싫습니다(보유 효과).</p></div>
+            <div class="li"><div class="b">함정</div><p><b>매몰비용</b>: 이미 잃은 것이 아까워 더 나쁜 결정을 이어갑니다.</p></div>
+          </div>
+        </div>
+        <div class="svgcard">
+          <svg viewBox="0 0 760 470" preserveAspectRatio="xMidYMid meet">
+            <line x1="40" y1="235" x2="720" y2="235" class="svg-line"/>
+            <line x1="380" y1="30" x2="380" y2="438" class="svg-line"/>
+            <line x1="120" y1="378" x2="640" y2="92" class="svg-soft-stroke"/>
+            <path class="svg-accent-stroke" d="M120,420 C300,372 338,300 380,235 C422,170 520,140 660,124"/>
+            <circle cx="380" cy="235" r="6" fill="#8dff5a"/>
+            <text x="648" y="226" text-anchor="end" font-size="22" class="svg-soft">이익 →</text>
+            <text x="60" y="258" font-size="22" class="svg-soft">← 손실</text>
+            <text x="392" y="52" font-size="21" class="svg-ink">심리적 가치 (+)</text>
+            <text x="392" y="424" font-size="21" class="svg-ink">심리적 가치 (−)</text>
+            <text x="486" y="156" font-size="22" class="svg-acc">이익: 완만</text>
+            <text x="150" y="352" font-size="22" class="svg-acc">손실: 가파름</text>
+            <text x="402" y="318" font-size="18" class="svg-soft">점선 = 대칭 가정</text>
+          </svg>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">10 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 11 — FRAMING (compare) ============ -->
+<section class="slide" data-slide="11">
+  <div class="slide-shell">
+    <div class="bg-stage img4"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 인지 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline sm">‘90% 생존’과 ‘10% 사망’은 <em>같은 사실</em>인데, 다른 선택을 부릅니다 — 프레이밍.</h2>
+      <div class="compare" style="margin-top:22px;">
+        <div class="col a">
+          <span class="tag">긍정 프레임</span>
+          <h3>“이 수술은 90% 생존합니다”</h3>
+          <p>의사가 이렇게 말하면 환자 대다수가 수술을 <em>선택</em>합니다. 똑같은 통계를 ‘얻는 것’으로 표현했기 때문입니다.</p>
+          <p>마케팅: ‘95% 무지방’이 ‘5% 지방’보다 잘 팔립니다.</p>
+        </div>
+        <div class="col b">
+          <span class="tag">부정 프레임</span>
+          <h3>“이 수술은 10% 사망합니다”</h3>
+          <p>같은 수치인데, 이렇게 말하면 다수가 수술을 <em>거부</em>합니다. ‘잃는 것’으로 표현되면 손실회피가 작동합니다.</p>
+          <p>실무 교훈: 보고서·제안서의 ‘표현 방식’이 의사결정을 바꿉니다. 숫자보다 프레임이 먼저 도착합니다.</p>
+        </div>
+        <div class="vs">=</div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">11 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 12 — ANCHORING ============ -->
+<section class="slide" data-slide="12">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 인지 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline">처음 본 숫자가 ‘<em>닻</em>’이 됩니다 — 앵커링.</h2>
+      <p class="subline">먼저 제시된 숫자가 이후의 모든 판단을 끌어당깁니다. 그 숫자가 명백히 무관해도 그렇습니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="cn">실험</div>
+          <h4>돌림판의 마법</h4>
+          <p>0~100 돌림판을 돌린 뒤 “아프리카 UN 가입국 비율은?”을 물으면, 큰 숫자가 나온 사람이 더 큰 답을 냅니다. 무관한 숫자가 닻이 된 것입니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">협상</div>
+          <h4>먼저 던지는 숫자</h4>
+          <p>연봉·가격 협상에서 <em>첫 제안</em>이 범위를 정합니다. 높게 시작하면 합의점도 높아집니다. ‘먼저 부르지 마라’는 통념은 자주 틀립니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">가격</div>
+          <h4>정가와 할인가</h4>
+          <p>‘정가 200,000 → 99,000’의 정가는 닻입니다. 메뉴 맨 위 고가 상품은 나머지를 ‘합리적’으로 보이게 만듭니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">12 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 13 — AVAILABILITY HEURISTIC ============ -->
+<section class="slide" data-slide="13">
+  <div class="slide-shell">
+    <div class="bg-stage img4"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 인지 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline">떠올리기 쉬운 일을 ‘<em>더 흔하다</em>’고 착각합니다 — 가용성 휴리스틱.</h2>
+      <div class="cols c2">
+        <div>
+          <p class="ch">생생함이 확률을 이긴다</p>
+          <p>비행기 사고는 뉴스에 크게 나와 머릿속에 생생합니다. 그래서 사람들은 비행기를 자동차보다 위험하다고 느끼지만, 통계는 정반대입니다. <em>기억의 접근성</em>이 실제 빈도를 대신합니다.</p>
+          <p>상어·테러·복권 1등처럼 ‘드물지만 강렬한 사건’을 과대평가하고, 흔하지만 밋밋한 위험(심장병·낙상)을 과소평가합니다.</p>
+        </div>
+        <div>
+          <p class="ch">실무에서 새는 곳</p>
+          <p>가장 최근의·가장 시끄러웠던 사건이 회의 전체의 의사결정을 장악합니다. 한 건의 클레임이 “고객 전부가 싫어한다”로 부풀려집니다.</p>
+          <p>대응: <em>일화 대신 데이터</em>를 의식적으로 끌어옵니다. “이게 정말 흔한가, 아니면 기억에 강렬할 뿐인가?”를 회의의 표준 질문으로 둡니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">13 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 14 — CONFIRMATION BIAS ============ -->
+<section class="slide" data-slide="14">
+  <div class="slide-shell">
+    <div class="bg-stage img2 lift"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 인지 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline">우리는 ‘<em>믿고 싶은 증거</em>’만 모읍니다 — 확증 편향.</h2>
+      <p class="subline">가설을 세운 뒤에는, 그것을 지지하는 정보만 눈에 들어오고 반증은 자동으로 걸러집니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="cn">탐색</div>
+          <h4>선택적 검색</h4>
+          <p>이미 내린 결론을 뒷받침할 검색어만 칩니다. ‘이 주식 사야 하나’가 아니라 ‘이 주식 오를 이유’를 검색합니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">해석</div>
+          <h4>편향된 해석</h4>
+          <p>같은 모호한 데이터도 내 입장에 유리하게 읽습니다. 반대 증거는 ‘예외’로, 유리한 증거는 ‘결정적’으로 취급합니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">대응</div>
+          <h4>반증을 의무화</h4>
+          <p>“내가 틀렸다면 그 증거는 무엇일까?”를 먼저 묻습니다. 회의에 <em>‘악마의 변호인’</em> 역할을 제도화하면 집단 확증을 깹니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">14 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 15 — STATUS QUO / DEFAULT (case + SVG bar) ============ -->
+<section class="slide" data-slide="15">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 현상유지 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline">기본값이 곧 선택입니다 — 현상유지 편향.</h2>
+      <div class="statband">
+        <div>
+          <p class="lead-body" style="margin-top:0;">사람들은 ‘아무것도 안 하기’를 강하게 선호합니다. 그래서 <em>미리 정해진 기본값(default)</em>이 사실상 결정을 내립니다. 가장 극적인 증거는 장기기증 동의율입니다.</p>
+          <div class="plist" style="margin-top:22px;">
+            <div class="li"><div class="b">A</div><p><b>옵트인</b>(독일 등): 동의하려면 직접 신청 → 동의율 ≈ 15%</p></div>
+            <div class="li"><div class="b">B</div><p><b>옵트아웃</b>(오스트리아 등): 기본이 동의, 거부만 신청 → 동의율 ≈ 90%+</p></div>
+          </div>
+          <p class="source">문화·신념 차이가 아니라, ‘서식의 기본값’ 하나가 만든 차이 (Johnson &amp; Goldstein, 2003).</p>
+        </div>
+        <div class="svgcard">
+          <svg viewBox="0 0 760 410" preserveAspectRatio="xMidYMid meet">
+            <text x="30" y="108" font-size="25" class="svg-ink">옵트인</text>
+            <text x="30" y="138" font-size="18" class="svg-soft">직접 신청해야 동의</text>
+            <rect x="250" y="86" width="470" height="58" rx="11" fill="rgba(255,255,255,.08)"/>
+            <rect x="250" y="86" width="71" height="58" rx="11" fill="#8dff5a" opacity=".45"/>
+            <text x="338" y="125" font-size="30" class="svg-acc">≈15%</text>
+            <text x="30" y="300" font-size="25" class="svg-ink">옵트아웃</text>
+            <text x="30" y="330" font-size="18" class="svg-soft">기본 동의, 거부만 신청</text>
+            <rect x="250" y="278" width="470" height="58" rx="11" fill="rgba(255,255,255,.08)"/>
+            <rect x="250" y="278" width="428" height="58" rx="11" fill="#8dff5a"/>
+            <text x="600" y="317" font-size="30" fill="#06210a" font-weight="800">≈90%+</text>
+            <line x1="250" y1="186" x2="720" y2="186" class="svg-grid"/>
+            <text x="250" y="392" font-size="19" class="svg-soft">같은 인간, 다른 기본값 — 결과는 6배 차이</text>
+          </svg>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">15 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 16 — HYPERBOLIC DISCOUNTING (SVG) ============ -->
+<section class="slide" data-slide="16">
+  <div class="slide-shell">
+    <div class="bg-stage img2 lift"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">2부 · 편향 지도 <span class="sec">· 시간 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline">현재의 나는 미래의 나를 자주 배신합니다 — 쌍곡선 할인.</h2>
+      <div class="statband">
+        <div>
+          <p class="lead-body" style="margin-top:0;">미래의 보상은 ‘할인’되어 작게 느껴집니다. 문제는 그 할인이 <em>지수가 아니라 쌍곡선</em>이라는 것 — 눈앞에 가까워질수록 가치가 폭등합니다.</p>
+          <div class="plist" style="margin-top:20px;">
+            <div class="li"><div class="b">①</div><p>“1년 뒤 100 vs 1년+1일 뒤 110” → 대부분 <b>110을 기다림</b></p></div>
+            <div class="li"><div class="b">②</div><p>“오늘 100 vs 내일 110” → 같은 구조인데 다수가 <b>오늘 100</b>을 택함</p></div>
+            <div class="li"><div class="b">→</div><p>이 <b>선호 역전</b>이 미루기·과소비·다이어트 실패의 정체입니다.</p></div>
+          </div>
+        </div>
+        <div class="svgcard">
+          <svg viewBox="0 0 760 420" preserveAspectRatio="xMidYMid meet">
+            <line x1="74" y1="350" x2="720" y2="350" class="svg-line"/>
+            <line x1="74" y1="54" x2="74" y2="350" class="svg-line"/>
+            <text x="400" y="395" text-anchor="middle" font-size="20" class="svg-soft">기다려야 하는 시간 →</text>
+            <path class="svg-accent-stroke" d="M74,78 C150,250 260,322 720,340"/>
+            <path class="svg-soft-stroke" d="M74,78 C250,168 470,242 720,300"/>
+            <circle cx="74" cy="78" r="6" fill="#8dff5a"/>
+            <text x="150" y="120" font-size="21" class="svg-acc">실제(쌍곡선): 눈앞이면 폭등</text>
+            <text x="392" y="244" font-size="19" class="svg-soft">합리적(지수): 완만</text>
+            <text x="300" y="338" font-size="18" class="svg-soft">→ 미래의 나를 배신</text>
+          </svg>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">16 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 17 — WHAT IS A NUDGE ============ -->
+<section class="slide" data-slide="17">
+  <div class="slide-shell">
+    <div class="bg-stage img5"></div>
+    <div class="veil right"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 정의</span></span></div>
+    <main class="content">
+      <h2 class="headline">넛지 = 강요 없이, 더 나은 쪽으로 ‘<em>슬쩍</em>’ 미는 설계.</h2>
+      <p class="subline">“선택지를 막지도, 경제적 유인을 크게 바꾸지도 않으면서 예측 가능한 방향으로 행동을 바꾸는 선택설계의 모든 요소.” — 세일러 &amp; 선스타인</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="cn">조건 ①</div>
+          <h4>자유 보장</h4>
+          <p>거부가 쉬워야 넛지입니다. 한 번의 클릭으로 빠져나올 수 있어야 합니다. 막으면 그건 규제이지 넛지가 아닙니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">조건 ②</div>
+          <h4>선택지 유지</h4>
+          <p>옵션을 없애지 않습니다. 과일을 눈높이에 두되 디저트도 그대로 둡니다 — 금지가 아니라 배치입니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">조건 ③</div>
+          <h4>더 나은 결과로</h4>
+          <p>당사자 본인의 이익에 부합해야 합니다(투명·복지 우선). 이 기준을 어기면 ‘다크 넛지’가 됩니다(24장).</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">17 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 18 — CHOICE ARCHITECT ============ -->
+<section class="slide" data-slide="18">
+  <div class="slide-shell">
+    <div class="bg-stage img4 pos-high"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 관점</span></span></div>
+    <main class="content">
+      <h2 class="headline">당신은 이미 ‘<em>선택 설계자</em>’입니다.</h2>
+      <p class="subline">‘중립적인 설계’란 없습니다. 메뉴 순서, 기본 옵션, 이메일 서식 — 무엇을 하든 누군가의 선택에 영향을 줍니다.</p>
+      <div class="cols c2">
+        <div>
+          <p class="ch">설계는 피할 수 없다</p>
+          <p>식당 메뉴의 첫 줄, 보고서의 디폴트 안, 가입 화면의 미리 체크된 박스 — 전부 선택을 특정 방향으로 기울입니다. “아무 설계도 안 함”조차 ‘현 상태 유지’라는 강력한 설계입니다.</p>
+          <p>그러니 질문은 ‘설계할까 말까’가 아니라 <em>‘어느 방향으로, 누구를 위해 설계할까’</em>입니다.</p>
+        </div>
+        <div>
+          <p class="ch">실무자의 책임</p>
+          <p>기획자·관리자·마케터는 매일 수천 명의 선택 환경을 만듭니다. 그 영향력을 모르면 무심코 나쁜 방향으로 기울입니다.</p>
+          <p>좋은 선택 설계자는 ① 사람들의 진짜 이익을 묻고 ② 기본값을 그쪽으로 두며 ③ 빠져나갈 자유를 보장하고 ④ 결과를 실험으로 검증합니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">18 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 19 — EAST FRAMEWORK ============ -->
+<section class="slide" data-slide="19">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 실무 프레임워크</span></span></div>
+    <main class="content">
+      <h2 class="headline">좋은 넛지는 ‘<em>EAST</em>’를 따릅니다.</h2>
+      <p class="subline">영국 행동통찰팀(BIT)의 현장 프레임워크 — 행동을 바꾸려면 네 가지를 점검합니다.</p>
+      <div class="grid g4">
+        <div class="card">
+          <div class="cn">E</div>
+          <h4>Easy · 쉽게</h4>
+          <p>마찰을 없애고 기본값을 활용하라. 단계가 하나 늘 때마다 사람은 떨어져 나갑니다.</p>
+          <p style="margin-top:4px;color:var(--ink-dim);">예: 저축 자동이체, 미리 채워진 서식, 원클릭 결제. 가장 게으른 사람도 통과하도록 경로를 짧게.</p>
+        </div>
+        <div class="card">
+          <div class="cn">A</div>
+          <h4>Attractive · 눈에 띄게</h4>
+          <p>주의를 끌고 보상을 분명히 하라. 개인화·이미지·색으로 ‘보이게’ 만듭니다.</p>
+          <p style="margin-top:4px;color:var(--ink-dim);">예: 이름을 부르는 맞춤 안내, 큼직한 핵심 버튼 하나. 지루하면 아무도 읽지 않습니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">S</div>
+          <h4>Social · 사회적으로</h4>
+          <p>“다수가 이미 한다”를 보여주라. 규범은 가장 강력한 행동 동인입니다.</p>
+          <p style="margin-top:4px;color:var(--ink-dim);">예: ‘이웃 80%가 이미 절약 중’. 단, 진짜 다수일 때만 — 거짓 규범은 역효과를 냅니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">T</div>
+          <h4>Timely · 때맞춰</h4>
+          <p>마음이 열린 순간에 개입하라. 이사·이직·연초처럼 습관이 리셋되는 타이밍.</p>
+          <p style="margin-top:4px;color:var(--ink-dim);">예: 카드 발급 직후 적금 권유, 새해 첫 출근일의 건강검진 안내. 시점이 절반입니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">19 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 20 — DEFAULT AS NUDGE (pension, SVG bars) ============ -->
+<section class="slide" data-slide="20">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 가장 강력한 도구</span></span></div>
+    <main class="content">
+      <h2 class="headline">기본값을 바꾸면 행동이 바뀝니다 — 자동가입(opt-out).</h2>
+      <div class="statband">
+        <div>
+          <p class="lead-body" style="margin-top:0;">연금·저축처럼 ‘좋지만 미루게 되는’ 행동은, 가입을 <em>기본값</em>으로 두는 것만으로 참여율이 급등합니다. 강요가 아니라 ‘안 하려면 빠지면 되는’ 설계입니다.</p>
+          <div class="plist" style="margin-top:20px;">
+            <div class="li"><div class="b">①</div><p><b>신청제</b>: 직접 가입 신청 → 참여율이 낮고 가입까지 오래 걸림</p></div>
+            <div class="li"><div class="b">②</div><p><b>자동가입</b>: 입사 시 자동 가입, 원하면 탈퇴 → 참여율 급등(Madrian &amp; Shea)</p></div>
+            <div class="li"><div class="b">윤리</div><p>탈퇴가 <b>한 번의 클릭</b>으로 쉬워야 정당한 넛지입니다.</p></div>
+          </div>
+        </div>
+        <div class="svgcard">
+          <svg viewBox="0 0 720 410" preserveAspectRatio="xMidYMid meet">
+            <line x1="80" y1="350" x2="660" y2="350" class="svg-line"/>
+            <rect x="160" y="239" width="140" height="111" rx="8" fill="rgba(255,255,255,.10)"/>
+            <text x="230" y="226" text-anchor="middle" font-size="32" class="svg-ink">≈37%</text>
+            <text x="230" y="384" text-anchor="middle" font-size="21" class="svg-soft">신청제</text>
+            <rect x="430" y="92" width="140" height="258" rx="8" fill="#8dff5a"/>
+            <text x="500" y="80" text-anchor="middle" font-size="32" class="svg-acc">≈86%</text>
+            <text x="500" y="384" text-anchor="middle" font-size="21" class="svg-soft">자동가입</text>
+            <path class="svg-soft-stroke" d="M300,150 C360,118 400,118 432,150"/>
+            <text x="365" y="112" text-anchor="middle" font-size="21" class="svg-acc">기본값만 변경</text>
+          </svg>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">20 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 21 — SOCIAL PROOF ============ -->
+<section class="slide" data-slide="21">
+  <div class="slide-shell">
+    <div class="bg-stage img4"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 사회 군집</span></span></div>
+    <main class="content">
+      <h2 class="headline sm">“당신의 이웃 <em>80%</em>가 이미 하고 있습니다.” — 사회적 증거.</h2>
+      <div class="cols c2">
+        <div>
+          <p class="ch">규범이 행동을 끈다</p>
+          <p>한 전력회사가 고지서에 ‘이웃 평균 사용량’을 함께 표시하자, 평균보다 많이 쓰던 가구의 전기 사용이 줄었습니다. “절약하세요”라는 호소보다, <em>또래와의 비교</em>가 더 강했습니다.</p>
+          <p>호텔의 ‘이 객실 투숙객 다수가 수건을 재사용합니다’ 안내가, 환경 메시지보다 재사용률을 더 높입니다.</p>
+        </div>
+        <div>
+          <p class="ch">쓸 때의 원칙</p>
+          <p>① <em>진짜 다수</em>일 때만 쓰십시오 — 거짓 규범은 들통나고 역효과를 냅니다. ② ‘소수만 한다’고 말하면 오히려 나쁜 행동을 정상화합니다(부메랑).</p>
+          <p>③ 비교 대상은 <em>가까울수록</em> 강합니다 — ‘전 국민’보다 ‘우리 팀’, ‘당신과 같은 동네’가 움직입니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">21 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 22 — FRICTION DESIGN ============ -->
+<section class="slide" data-slide="22">
+  <div class="slide-shell">
+    <div class="bg-stage img5"></div>
+    <div class="veil right"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 마찰 설계</span></span></div>
+    <main class="content">
+      <h2 class="headline">좋은 행동은 <em>쉽게</em>, 나쁜 행동은 <em>어렵게</em> — 마찰의 설계.</h2>
+      <p class="subline">행동을 바꾸는 가장 저렴한 레버는 ‘몇 초의 수고’를 더하거나 빼는 것입니다.</p>
+      <div class="grid g2">
+        <div class="card">
+          <span class="tag">마찰을 빼라 — 좋은 행동</span>
+          <h3>한 단계만 줄여도 전환은 뛴다</h3>
+          <p>저축 자동이체, 원클릭 결제, 미리 채워진 서식. 의지가 약해지기 전에 ‘이미 되어 있게’ 만듭니다. 건강한 간식을 눈높이·계산대 옆에 둡니다.</p>
+          <p>핵심: 사람을 바꾸려 하지 말고, <em>경로를 짧게</em> 만드십시오.</p>
+        </div>
+        <div class="card lead">
+          <span class="tag">마찰을 더하라 — 나쁜 행동</span>
+          <h3>작은 장애물이 충동을 끊는다</h3>
+          <p>충동구매 사이 ‘쿨다운 24시간’, 디저트는 주방 안쪽에, 가입은 쉽게·해지는 정직하게. SNS 앱을 첫 화면에서 치우는 것만으로 사용이 줄어듭니다.</p>
+          <p>단, 마찰을 ‘함정’으로 악용하면 다크 넛지가 됩니다(다음 장).</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">22 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 23 — DECOY EFFECT (3 options) ============ -->
+<section class="slide" data-slide="23">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">3부 · 넛지 적용 <span class="sec">· 가격 심리</span></span></div>
+    <main class="content">
+      <h2 class="headline">미끼(decoy) 하나가 중간 옵션을 ‘<em>베스트셀러</em>’로 만듭니다.</h2>
+      <p class="subline">한 잡지의 실제 구독 실험 — ‘쓸모없어 보이는’ 세 번째 옵션이 선택을 통째로 바꿨습니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="cn">옵션 A</div>
+          <h4>웹 전용</h4>
+          <p style="font-size:34px;color:var(--ink);font-weight:800;">$59</p>
+          <p>저렴하지만 약소함. 단독으로 보면 합리적 선택지.</p>
+        </div>
+        <div class="card">
+          <div class="cn">옵션 B · 미끼</div>
+          <h4>인쇄 전용</h4>
+          <p style="font-size:34px;color:var(--ink-soft);font-weight:800;">$125</p>
+          <p>아무도 안 고름. 하지만 C를 ‘거저’처럼 보이게 만드는 <em>기준점</em>입니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">옵션 C · 표적</div>
+          <h4>웹 + 인쇄</h4>
+          <p style="font-size:34px;color:var(--accent);font-weight:800;">$125</p>
+          <p>B와 같은 값에 웹까지! B가 있으면 다수가 C를 택합니다(32% → 84%).</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">23 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 24 — DARK NUDGE WARNING ============ -->
+<section class="slide" data-slide="24">
+  <div class="slide-shell">
+    <div class="bg-stage img4"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">4부 · 함정과 윤리 <span class="sec">· 경고</span></span></div>
+    <main class="content">
+      <h2 class="headline">같은 기법이 ‘<em>조작</em>’이 될 수 있습니다 — 다크 넛지.</h2>
+      <p class="subline">넛지가 ‘당사자’가 아니라 ‘설계자’의 이익만을 위할 때, 그것은 설계가 아니라 함정입니다.</p>
+      <div class="cols c2" style="margin-top:18px;">
+        <div>
+          <p class="ch">현장의 다크 패턴</p>
+          <p>가입은 3초, 해지는 7단계 미로. 미리 체크된 ‘추가 보험’, 무료체험 뒤 슬그머니 시작되는 결제, “지금 안 사면 사라짐”의 가짜 희소성, 떠나려는 손을 붙잡는 죄책감 버튼(“정말 절약을 포기할까요?”).</p>
+        </div>
+        <div>
+          <p class="ch">왜 위험한가</p>
+          <p>단기 전환은 오르지만 <em>신뢰가 무너집니다</em>. 규제(다크패턴 금지법)와 평판 리스크가 따라옵니다. 무엇보다, 사람의 약점을 이용해 손해를 입히는 일은 — 직업윤리의 문제입니다.</p>
+        </div>
+      </div>
+      <div class="callout warn">
+        <div class="ci">!</div>
+        <div><h4>판별 기준 한 줄</h4><p>“이 설계를 <em>상대에게 그대로 설명</em>해도 그가 동의할까?” — 아니라면, 그건 넛지가 아니라 조작입니다.</p></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">24 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 25 — ETHICS (3 principles) ============ -->
+<section class="slide" data-slide="25">
+  <div class="slide-shell">
+    <div class="bg-stage img5"></div>
+    <div class="veil right"></div>
+    <div class="topbar"><span class="kicker">4부 · 함정과 윤리 <span class="sec">· 정당한 넛지의 조건</span></span></div>
+    <main class="content">
+      <h2 class="headline">윤리적 넛지의 <em>3원칙</em>.</h2>
+      <p class="subline">‘좋은 의도’만으로는 부족합니다. 정당성은 다음 세 가지로 검증됩니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M2 12h20"/><path d="M12 3a15 15 0 0 1 0 18"/></svg></div>
+          <h4>① 투명성</h4>
+          <p>공개해도 떳떳해야 합니다. 설계 의도를 당사자에게 그대로 설명할 수 있다면 통과입니다. 숨겨야 작동하는 설계는 조작입니다.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9.2C1.2 8.5 3 5 6.2 5c2 0 3.2 1.2 3.8 2.3C10.6 6.2 11.8 5 13.8 5 17 5 18.8 8.5 17.3 11.8 15 16.6 12 21 12 21z"/></svg></div>
+          <h4>② 복지 우선</h4>
+          <p>당사자 본인의 이익을 향해야 합니다(설계자 이익 X). “그를 위한 것인가, 나를 위한 것인가”가 넛지와 다크 넛지를 가릅니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 1 1-6.2-8.6"/></svg></div>
+          <h4>③ 옵트아웃 보장</h4>
+          <p>거부가 <em>쉬워야</em> 합니다. 한 번의 클릭으로 빠져나올 자유 — 이것이 ‘넛지’와 ‘강제’의 경계선입니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">25 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 26 — EXPERIMENT, NOT INTUITION ============ -->
+<section class="slide" data-slide="26">
+  <div class="slide-shell">
+    <div class="bg-stage img3"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">4부 · 함정과 윤리 <span class="sec">· 검증</span></span></div>
+    <main class="content">
+      <h2 class="headline">직관 말고 <em>실험</em>으로 검증하십시오.</h2>
+      <p class="subline">행동경제학의 힘은 ‘이론’이 아니라 ‘측정’에 있습니다. 무엇이 통할지는 아무도 미리 모릅니다.</p>
+      <div class="grid g3">
+        <div class="card">
+          <div class="cn">도구 ①</div>
+          <h4>A/B 테스트</h4>
+          <p>두 버전을 무작위로 나눠 결과를 비교합니다. ‘느낌상 더 좋은’ 카피·버튼·기본값이 실제로는 더 나쁜 경우가 흔합니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">도구 ②</div>
+          <h4>RCT(무작위 대조)</h4>
+          <p>개입군과 대조군을 무작위 배정해 ‘진짜 인과’를 봅니다. 상관관계를 인과로 착각하는 실수를 막아줍니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">태도</div>
+          <h4>반증 가능성</h4>
+          <p>“이 넛지가 효과 없다면 어떤 수치로 알 수 있나?”를 미리 정합니다. 깨질 수 있게 설계해야 진짜 지식입니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">26 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 27 — ANTI-PATTERNS ============ -->
+<section class="slide" data-slide="27">
+  <div class="slide-shell">
+    <div class="bg-stage img2 lift"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">4부 · 함정과 윤리 <span class="sec">· 흔한 실패</span></span></div>
+    <main class="content">
+      <h2 class="headline">가장 흔한 <em>네 가지 실패</em>.</h2>
+      <div class="grid g2x2">
+        <div class="card">
+          <div class="cn">실패 ①</div>
+          <h4>한 번의 성공을 일반화</h4>
+          <p>한 맥락에서 통한 넛지가 어디서나 통할 거라 믿습니다. 효과 크기는 작고, 맥락에 민감합니다 — 재현 실험 없이 확산하면 무너집니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">실패 ②</div>
+          <h4>맥락 무시(이식 오류)</h4>
+          <p>서구 연구 결과를 문화·제도가 다른 곳에 그대로 붙입니다. 같은 기본값도 신뢰·규범이 다르면 정반대로 작동합니다.</p>
+        </div>
+        <div class="card">
+          <div class="cn">실패 ③</div>
+          <h4>측정 없이 직관</h4>
+          <p>“당연히 될 것” 하고 전면 적용한 뒤 결과를 안 봅니다. 행동 개입은 반드시 사전·사후 지표로 확인해야 합니다.</p>
+        </div>
+        <div class="card lead">
+          <div class="cn">실패 ④</div>
+          <h4>윤리를 나중 문제로</h4>
+          <p>전환율만 좇다 다크 넛지로 미끄러집니다. 윤리는 출시 후 점검이 아니라 <em>설계 단계의 제약조건</em>입니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">27 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 28 — PRACTITIONER CHECKLIST (7) ============ -->
+<section class="slide" data-slide="28">
+  <div class="slide-shell">
+    <div class="bg-stage img5"></div>
+    <div class="veil right"></div>
+    <div class="topbar"><span class="kicker">5부 · 정리 <span class="sec">· 내일 쓰는 7가지</span></span></div>
+    <main class="content">
+      <h2 class="headline">내일 당장 적용할 <em>7가지</em> 체크.</h2>
+      <div class="grid g2">
+        <div class="card">
+          <div class="plist">
+            <div class="li"><div class="b">1</div><p><b>기본값을 선의로</b> — 사람들이 결국 원하는 쪽을 기본 옵션으로 두기.</p></div>
+            <div class="li"><div class="b">2</div><p><b>경로를 짧게</b> — 좋은 행동의 단계·클릭·서식 마찰을 제거.</p></div>
+            <div class="li"><div class="b">3</div><p><b>프레임을 점검</b> — 같은 사실을 이득 프레임으로, 손실 프레임은 신중히.</p></div>
+            <div class="li"><div class="b">4</div><p><b>첫 숫자를 의식</b> — 협상·제안의 앵커를 내가 먼저, 전략적으로.</p></div>
+          </div>
+        </div>
+        <div class="card lead">
+          <div class="plist">
+            <div class="li"><div class="b">5</div><p><b>진짜 규범만</b> — 사회적 증거는 사실일 때만, 가까운 집단으로.</p></div>
+            <div class="li"><div class="b">6</div><p><b>충동엔 쿨다운</b> — 나쁜 결정엔 작은 마찰(대기·확인)을 추가.</p></div>
+            <div class="li"><div class="b">7</div><p><b>실험으로 검증</b> — 전면 적용 전 A/B, 옵트아웃은 늘 쉽게.</p></div>
+            <div class="li"><div class="b">✓</div><p><b>윤리 한 줄</b> — “그대로 설명해도 동의할까?”를 통과시키기.</p></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">28 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 29 — 90-DAY ROADMAP ============ -->
+<section class="slide" data-slide="29">
+  <div class="slide-shell">
+    <div class="bg-stage img5"></div>
+    <div class="veil"></div>
+    <div class="topbar"><span class="kicker">5부 · 정리 <span class="sec">· 90일 로드맵</span></span></div>
+    <main class="content">
+      <h2 class="headline">조직에 들이는 길 — <em>관찰 → 확산</em>, 90일.</h2>
+      <p class="subline">한 번에 바꾸지 말고, 작게 실험해 증거로 확산합니다.</p>
+      <div class="roadmap">
+        <div class="rstep on"><div class="rn">1</div><h4>관찰</h4><p>~1주차. 사람들이 실제로 어디서 멈추고 새는지, 행동 데이터로 ‘마찰 지점’을 찾는다.</p></div>
+        <div class="rstep on"><div class="rn">2</div><h4>가설</h4><p>~2주차. “어떤 편향이 작동 중인가? 어떤 넛지가 바꿀까?”를 한 문장 가설로.</p></div>
+        <div class="rstep on"><div class="rn">3</div><h4>설계</h4><p>~4주차. EAST로 개입을 설계하고, 윤리 3원칙·옵트아웃을 사전 점검.</p></div>
+        <div class="rstep on"><div class="rn">4</div><h4>실험</h4><p>~9주차. A/B로 소규모 검증. 효과 크기와 부작용을 사전 지표로 측정.</p></div>
+        <div class="rstep on"><div class="rn">5</div><h4>확산</h4><p>~12주차. 검증된 것만 확대하고, 모니터링을 유지한다. 안 되면 되돌린다.</p></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">29 / 30</span></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 30 — CLOSE ============ -->
+<section class="slide" data-slide="30">
+  <div class="slide-shell cover">
+    <div class="bg-stage img1 pos-low"></div>
+    <div class="veil center"></div>
+    <div class="topbar"><span class="kicker">맺으며 <span class="sec">· 한 문장</span></span></div>
+    <main class="content" style="justify-content:center;">
+      <p class="cover-eyebrow">오늘의 결론</p>
+      <h1 class="cover-title" style="font-size:84px;line-height:1.14;">편향은 <em>버그</em>가 아니라 <em>사양</em>입니다.<br>탓하지 말고, 설계하십시오.</h1>
+      <p class="cover-sub">합리성을 기대하지 말고, 비합리성을 전제로 더 나은 선택의 환경을 만드는 것 — 그것이 실무자의 행동경제학입니다.</p>
+      <p class="source" style="margin-top:34px;">참고 — Kahneman 『Thinking, Fast and Slow』 · Thaler &amp; Sunstein 『Nudge』 · Thaler 『Misbehaving』 · Ariely 『Predictably Irrational』 · BIT 『EAST』 · Johnson &amp; Goldstein (2003)</p>
+      <p style="margin-top:18px;color:#fff;font-weight:800;font-size:26px;text-shadow:0 4px 24px rgba(0,0,0,.6);">감사합니다 · 안창현</p>
+    </main>
+    <div class="footerbar"><span>행동경제학 입문 · 안창현</span><span class="pg">30 / 30</span></div>
+  </div>
+</section>
+
+</div><!-- /viewport -->
+
+<div id="controller" class="auto-hide">
+  <button onclick="go(current-1)" aria-label="이전">‹</button>
+  <span class="pgnum" id="pgnum">01 / 30</span>
+  <button onclick="go(current+1)" aria-label="다음">›</button>
+</div>
+<div class="touch-zone left"></div>
+<div class="touch-zone right"></div>
+
+<script>
+const TOTAL=30;let current=1;
+function fit(){const s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
+  document.documentElement.style.setProperty('--deck-scale',s);}
+window.addEventListener('resize',fit);fit();
+
+let navTimer;
+function showController(){const c=document.getElementById('controller');if(!c)return;
+  c.classList.add('is-visible');clearTimeout(navTimer);
+  navTimer=setTimeout(()=>c.classList.remove('is-visible'),1000);}
+
+function go(n){n=Math.max(1,Math.min(TOTAL,n));
+  const cur=document.querySelector('.slide.active');
+  const next=document.querySelector('.slide[data-slide="'+n+'"]');
+  if(!next)return;
+  if(cur)cur.classList.remove('active');
+  next.classList.add('active');current=n;
+  const p=String(n).padStart(2,'0')+' / '+TOTAL;
+  const pe=document.getElementById('pgnum');if(pe)pe.textContent=p;
+  showController();}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')go(current+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp')go(current-1);});
+
+let startX=0;
+document.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;
+  if(Math.abs(dx)>50){dx<0?go(current+1):go(current-1);}},{passive:true});
+document.querySelector('.touch-zone.left').addEventListener('click',()=>go(current-1));
+document.querySelector('.touch-zone.right').addEventListener('click',()=>go(current+1));
+
+showController();
+</script>
+</body>
+</html>

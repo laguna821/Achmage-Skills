@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>민주주의는 다수결이 아니다 — 교양 강연</title>
+<style>
+/* Font: system Korean stack (Pretendard used if locally installed; no network dependency for reliable offline render). */
+
+/* ============== RESET / TOKENS ============== */
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  /* raw5 binding */
+  --img1:url("assets/img1.png");
+  --img2:url("assets/img2.png");
+  --img3:url("assets/img3.png");
+  --img4:url("assets/img4.png");
+  --img5:url("assets/img5.png");
+  /* V7 bright palette */
+  --bg:#e9edf3;
+  --paper:#ffffff;
+  --ink:#142943;
+  --navy:#0e2a55;
+  --navy-2:#143f7d;
+  --blue:#2f6ab3;
+  --muted:#5d6b80;
+  --line:rgba(14,42,85,.14);
+  --accent:#d8542a;        /* single accent — warm terracotta echoing the images */
+  --accent-soft:rgba(216,84,42,.12);
+  --softShadow:0 22px 60px rgba(14,42,85,.13);
+  --cardShadow:0 14px 40px rgba(14,42,85,.10);
+  --deck-scale:1;
+  --font:'Pretendard','Malgun Gothic','Apple SD Gothic Neo',system-ui,sans-serif;
+}
+.img1{background-image:var(--img1)}
+.img2{background-image:var(--img2)}
+.img3{background-image:var(--img3)}
+.img4{background-image:var(--img4)}
+.img5{background-image:var(--img5)}
+
+html,body{height:100%;background:#000;font-family:var(--font);-webkit-font-smoothing:antialiased;}
+
+/* ============== RUNTIME / SCALE ============== */
+#viewport{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#0a0d12;overflow:hidden;}
+.slide{
+  position:absolute;top:50%;left:50%;
+  width:1920px;height:1080px;
+  transform:translate(-50%,-50%) scale(var(--deck-scale));
+  transform-origin:center center;
+  display:none;overflow:hidden;
+}
+.slide.active{display:block;}
+.slide-shell{position:relative;width:100%;height:100%;background:var(--bg);overflow:hidden;
+  display:flex;flex-direction:column;padding:72px 104px 56px;}
+
+/* topbar / footer rhythm */
+.topbar{display:flex;align-items:center;gap:18px;height:46px;flex:0 0 auto;z-index:6;}
+.kicker{font-size:23px;font-weight:800;letter-spacing:.12em;color:var(--navy);display:flex;align-items:center;gap:14px;}
+.kicker::before{content:"";width:34px;height:4px;border-radius:3px;background:var(--accent);}
+.kicker.light{color:#fff;}
+.kicker.light::before{background:var(--accent);}
+.content{flex:1 1 auto;position:relative;display:flex;flex-direction:column;min-height:0;padding-top:26px;}
+.footerbar{display:flex;align-items:center;justify-content:space-between;height:34px;flex:0 0 auto;
+  font-size:20px;color:var(--muted);font-weight:600;letter-spacing:.02em;z-index:6;}
+.footerbar .pg{font-weight:800;color:var(--navy);letter-spacing:.08em;}
+.footerbar.on{color:rgba(255,255,255,.82);}
+.footerbar.on .pg{color:#fff;}
+.on-photo .kicker{color:#fff;}
+
+/* photo helpers */
+.bg-photo{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.shell-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;}
+.scrim-cover{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(8,18,34,.46),rgba(8,18,34,.34)),radial-gradient(ellipse 74% 64% at 50% 50%,rgba(8,18,34,.52),rgba(8,18,34,0) 76%);}
+.scrim-bottom{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(8,18,34,.05) 30%,rgba(8,18,34,.72) 100%);}
+.photo-text-light{color:#fff;text-shadow:0 4px 26px rgba(0,0,0,.55);}
+
+/* ============== COVER ============== */
+.cover .content{justify-content:center;align-items:center;text-align:center;z-index:3;}
+.cover-eyebrow{font-size:26px;font-weight:700;letter-spacing:.04em;color:#ffd9c7;margin-bottom:24px;}
+.cover-title{font-size:144px;line-height:1.0;font-weight:800;color:#fff;letter-spacing:-.03em;
+  text-shadow:0 6px 40px rgba(0,0,0,.42);}
+.cover-title .strike{position:relative;color:#ffb59a;}
+.cover-title .strike::after{content:"";position:absolute;left:-6px;right:-6px;top:54%;height:9px;
+  background:var(--accent);border-radius:6px;transform:rotate(-2deg);box-shadow:0 3px 14px rgba(216,84,42,.5);}
+.cover-sub{margin-top:34px;font-size:38px;font-weight:500;color:rgba(255,255,255,.9);letter-spacing:.01em;}
+
+/* ============== BIG STATEMENT ============== */
+.statement .content{justify-content:center;}
+.stmt-wrap{max-width:1500px;}
+.stmt-quotemark{font-size:140px;line-height:.6;color:var(--accent);font-weight:800;opacity:.9;}
+.stmt{font-size:82px;line-height:1.28;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-top:10px;}
+.stmt em{font-style:normal;color:var(--accent);}
+.stmt-note{margin-top:40px;font-size:30px;color:var(--muted);font-weight:600;}
+
+/* ============== WASH SCENE ============== */
+.wash-scene{position:absolute;inset:0;overflow:hidden;}
+.wash-scene .wash-img{position:absolute;inset:-40px;background-size:cover;background-position:center;
+  filter:blur(16px) saturate(.8);opacity:.30;transform:scale(1.06);}
+.wash-layer{position:absolute;inset:0;background-color:rgba(233,237,243,.74);}
+
+/* ============== BLEND SCENE (split) ============== */
+.blend-scene{flex:1 1 auto;display:grid;grid-template-columns:1.02fr .98fr;gap:0;
+  border-radius:32px;overflow:hidden;box-shadow:var(--softShadow);background-color:var(--paper);min-height:0;}
+.blend-image{position:relative;background-size:cover;background-position:center;}
+.blend-image::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.55) 78%,var(--paper) 100%);}
+.blend-content{padding:74px 70px;display:flex;flex-direction:column;justify-content:center;}
+
+/* ============== TONE DIVIDER ============== */
+.divider .slide-shell{padding:0;}
+.tone-img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+.tone-over{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(120deg,rgba(10,24,46,.90) 0%,rgba(10,24,46,.66) 52%,rgba(216,84,42,.34) 100%);}
+.divider .content{position:relative;z-index:3;justify-content:center;padding:0 110px;}
+.div-num{font-size:34px;font-weight:800;letter-spacing:.32em;color:#ffd9c7;margin-bottom:22px;}
+.div-title{font-size:104px;line-height:1.06;font-weight:800;color:#fff;letter-spacing:-.02em;
+  text-shadow:0 6px 34px rgba(0,0,0,.4);}
+.div-sub{margin-top:30px;font-size:32px;color:rgba(255,255,255,.84);font-weight:500;max-width:1200px;}
+.divider .topbar,.divider .footerbar{position:absolute;left:104px;right:104px;z-index:4;}
+.divider .topbar{top:72px;}
+.divider .footerbar{bottom:56px;}
+
+/* ============== SECTION HEAD (in-content) ============== */
+.headline{font-size:68px;line-height:1.12;font-weight:800;color:var(--navy);letter-spacing:-.02em;}
+.headline em{font-style:normal;color:var(--accent);}
+.subline{margin-top:18px;font-size:31px;line-height:1.5;color:var(--muted);font-weight:500;max-width:1280px;}
+
+/* ============== REASON / CARD GRID (fills vertical space — no dead band) ============== */
+.card-row{margin-top:40px;flex:1 1 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:30px;min-height:0;}
+.rcard{background-color:var(--paper);border:1px solid var(--line);border-radius:26px;padding:46px 42px;
+  box-shadow:var(--cardShadow);display:flex;flex-direction:column;justify-content:center;gap:18px;position:relative;overflow:hidden;}
+.rcard .rtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.rcard .ic{width:80px;height:80px;border-radius:22px;background-color:var(--accent-soft);
+  display:flex;align-items:center;justify-content:center;}
+.rcard .ic svg{width:42px;height:42px;stroke:var(--accent);fill:none;stroke-width:2.4;}
+.rcard h3{font-size:40px;font-weight:800;color:var(--navy);}
+.rcard p{font-size:27px;line-height:1.55;color:var(--muted);font-weight:500;}
+.rcard .idx{font-size:36px;font-weight:800;color:var(--line);}
+.rcard .eg{margin-top:16px;align-self:flex-start;font-size:21px;font-weight:700;color:var(--accent);
+  background:var(--accent-soft);padding:11px 17px;border-radius:13px;line-height:1.3;}
+
+/* generic chips for 4-up */
+.chip-row{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px;}
+.chip{background-color:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px 28px;box-shadow:var(--cardShadow);}
+.chip b{display:block;font-size:30px;color:var(--navy);font-weight:800;margin-bottom:10px;}
+.chip span{font-size:23px;color:var(--muted);line-height:1.45;font-weight:500;}
+
+/* ============== OVERLAP SCENE ============== */
+.overlap{flex:1 1 auto;position:relative;min-height:0;}
+.overlap .layer-card{position:absolute;inset:0 360px 0 0;background-size:cover;background-position:center;
+  border-radius:30px;box-shadow:var(--softShadow);}
+.overlap .layer-card::after{content:"";position:absolute;inset:0;border-radius:30px;
+  background:linear-gradient(90deg,rgba(8,18,34,.34),rgba(8,18,34,0) 55%);}
+.overlap .float-card{position:absolute;right:0;top:50%;transform:translateY(-50%);width:560px;
+  background-color:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:28px;padding:54px 50px;
+  box-shadow:0 30px 70px rgba(14,42,85,.22);}
+.overlap .float-card .q{font-size:52px;line-height:1.22;font-weight:800;color:var(--navy);letter-spacing:-.02em;}
+.overlap .float-card .a{margin-top:24px;font-size:27px;line-height:1.55;color:var(--muted);font-weight:500;}
+.tagline{display:inline-block;font-size:22px;font-weight:800;letter-spacing:.1em;color:var(--accent);
+  background:var(--accent-soft);padding:9px 18px;border-radius:999px;margin-bottom:22px;}
+
+/* ============== COMPARE 2-COL ============== */
+.compare{flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;gap:34px;min-height:0;}
+.compare .col{border-radius:28px;padding:54px 50px;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.compare .col.a{background-color:#f3f6fb;border:1px solid var(--line);}
+.compare .col.b{background-color:var(--navy);color:#fff;}
+.compare .col .tag{font-size:24px;font-weight:800;letter-spacing:.08em;margin-bottom:20px;}
+.compare .col.a .tag{color:var(--blue);}
+.compare .col.b .tag{color:#ffd9c7;}
+.compare .col h3{font-size:46px;font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:22px;}
+.compare .col.a h3{color:var(--navy);}
+.compare .col p{font-size:27px;line-height:1.55;font-weight:500;}
+.compare .col.a p{color:var(--muted);}
+.compare .col.b p{color:rgba(255,255,255,.88);}
+.compare .vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;
+  width:84px;height:84px;border-radius:50%;background:var(--accent);color:#fff;font-size:30px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(216,84,42,.4);}
+
+/* ============== TONE CARD (concept on photo) ============== */
+.tone-scene{flex:1 1 auto;position:relative;border-radius:30px;overflow:hidden;min-height:0;
+  background-size:cover;background-position:center;display:flex;}
+.tone-scene::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(10,24,46,.88),rgba(10,24,46,.5) 60%,rgba(216,84,42,.4));}
+.tone-content{position:relative;z-index:2;color:#fff;padding:74px 80px;display:flex;flex-direction:column;justify-content:center;max-width:1180px;}
+.tone-content .quote{font-size:30px;line-height:1.5;font-weight:500;color:rgba(255,255,255,.9);margin-top:26px;
+  border-left:4px solid var(--accent);padding-left:26px;}
+.tone-content .cite{margin-top:22px;font-size:24px;color:#ffd9c7;font-weight:700;}
+
+/* masked word */
+.masked-word{font-size:150px;line-height:.9;font-weight:800;letter-spacing:-.05em;color:transparent;
+  -webkit-background-clip:text;background-clip:text;background-size:cover;background-position:center 30%;filter:contrast(1.1);}
+
+/* SVG diagram shells */
+.diagram-wrap{flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;min-height:0;}
+.diagram-card{background-color:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:var(--cardShadow);
+  padding:40px;display:flex;align-items:center;justify-content:center;height:100%;}
+.diagram-card svg{width:100%;height:auto;max-height:560px;}
+
+/* checklist */
+.check-row{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px;flex:1 1 auto;min-height:0;}
+.check{background-color:var(--paper);border:1px solid var(--line);border-radius:24px;padding:44px 40px;box-shadow:var(--cardShadow);display:flex;flex-direction:column;justify-content:center;}
+.check .n{width:58px;height:58px;border-radius:16px;background:var(--navy);color:#fff;font-size:28px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;margin-bottom:24px;}
+.check h4{font-size:31px;font-weight:800;color:var(--navy);margin-bottom:14px;line-height:1.25;}
+.check p{font-size:24px;line-height:1.5;color:var(--muted);font-weight:500;}
+
+/* ===== supplementary techniques (batches 2–5) ===== */
+.bigq{position:absolute;inset:0;}
+.bigq .scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,18,34,.58),rgba(8,18,34,.42)),radial-gradient(ellipse 72% 62% at 50% 46%,rgba(8,18,34,.46),transparent 74%);}
+.bigq .qwrap{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 150px;}
+.bigq .q{font-size:74px;line-height:1.34;font-weight:800;color:#fff;letter-spacing:-.02em;text-shadow:0 4px 28px rgba(0,0,0,.5);}
+.bigq .q em{font-style:normal;color:#ffb59a;}
+.ratio-bar{margin-top:56px;width:1000px;height:88px;border-radius:18px;overflow:hidden;display:flex;box-shadow:0 18px 50px rgba(0,0,0,.4);}
+.ratio-bar .seg{display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:800;}
+.ratio-bar .maj{flex:51;background-color:var(--accent);color:#fff;}
+.ratio-bar .min{flex:49;background-color:rgba(255,255,255,.92);color:var(--navy);}
+
+.diagram-solo{flex:1 1 auto;margin-top:32px;background-color:var(--paper);border:1px solid var(--line);border-radius:28px;
+  box-shadow:var(--cardShadow);padding:42px 54px;display:flex;align-items:center;justify-content:center;min-height:0;}
+.diagram-solo svg{width:100%;height:100%;max-height:600px;}
+.svg-label{font-family:var(--font);font-weight:800;fill:var(--navy);}
+.svg-muted{font-family:var(--font);font-weight:600;fill:var(--muted);}
+.svg-white{font-family:var(--font);font-weight:800;fill:#fff;}
+.svg-line{stroke:var(--line);stroke-width:2.5;fill:none;}
+.svg-accent-stroke{stroke:var(--accent);stroke-width:5;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+
+.grid6{margin-top:34px;flex:1 1 auto;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:22px;min-height:0;}
+.gcard{background-color:var(--paper);border:1px solid var(--line);border-radius:22px;box-shadow:var(--cardShadow);
+  padding:34px 32px;display:flex;flex-direction:column;justify-content:center;gap:11px;position:relative;}
+.gcard .gn{font-size:23px;font-weight:800;color:var(--accent);letter-spacing:.04em;}
+.gcard h4{font-size:33px;font-weight:800;color:var(--navy);}
+.gcard p{font-size:23px;line-height:1.45;color:var(--muted);font-weight:500;}
+.gcard.lead{background-color:var(--navy);}
+.gcard.lead .gn{color:#ffd9c7;}
+.gcard.lead h4{color:#fff;}
+.gcard.lead p{color:rgba(255,255,255,.86);}
+
+.defrow{flex:1 1 auto;display:grid;grid-template-columns:.92fr 1.08fr;gap:0;border-radius:32px;overflow:hidden;
+  box-shadow:var(--softShadow);background-color:var(--paper);min-height:0;margin-top:30px;}
+.def-img{position:relative;background-size:cover;background-position:center;}
+.def-img.right::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(255,255,255,0) 42%,rgba(255,255,255,.5) 80%,var(--paper) 100%);}
+.def-img.left::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 42%,rgba(255,255,255,.5) 80%,var(--paper) 100%);}
+.def-body{padding:70px 64px;display:flex;flex-direction:column;justify-content:center;}
+.def-term{font-size:26px;font-weight:800;letter-spacing:.06em;color:var(--accent);margin-bottom:18px;}
+.def-body h3{font-size:56px;font-weight:800;color:var(--navy);line-height:1.12;letter-spacing:-.02em;margin-bottom:22px;}
+.def-body p{font-size:29px;line-height:1.55;color:var(--muted);font-weight:500;}
+.attr-row{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;}
+.attr-row span{font-size:22px;font-weight:700;color:var(--navy);background:rgba(14,42,85,.07);padding:11px 18px;border-radius:12px;}
+
+.source-list{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px 24px;max-width:1100px;}
+.source-list span{font-size:20px;color:rgba(255,255,255,.72);font-weight:500;}
+
+/* material-image-card — raw image visible inside small grid cards (sprinkled in parts 4–5) */
+.mcard{position:relative;isolation:isolate;overflow:hidden;color:#fff;justify-content:flex-end!important;
+  background-color:rgba(8,12,20,.16);border:1px solid rgba(255,255,255,.20);
+  box-shadow:0 20px 54px rgba(0,0,0,.38),inset 0 1px 0 rgba(255,255,255,.16);}
+.mcard::before{content:"";position:absolute;inset:-8px;z-index:-2;background-image:var(--card-img,var(--img1));
+  background-size:cover;background-position:center;filter:brightness(.74) saturate(.96) contrast(1.08);transform:scale(1.04);}
+.mcard::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(6,9,14,.06) 0%,rgba(6,9,14,.40) 46%,rgba(6,9,14,.85) 100%);}
+.mcard>*{position:relative;z-index:2;}
+.mcard h3,.mcard h4{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.55);}
+.mcard p{color:rgba(255,255,255,.93);text-shadow:0 2px 12px rgba(0,0,0,.5);}
+.mcard .idx{color:rgba(255,255,255,.7)!important;}
+.mcard .gn{color:#ffd9c7!important;margin-bottom:12px;}
+.mcard .ic{background-color:rgba(255,255,255,.20)!important;}
+.mcard .ic svg{stroke:#fff!important;}
+.mcard .eg{background:rgba(255,255,255,.20)!important;color:#fff!important;}
+.mcard .n{background-color:var(--accent);color:#fff;margin-bottom:auto;}
+.mcard .rtop{margin-bottom:auto;}
+
+/* ============== NAV CONTROLLER ============== */
+#toc,.toc,.slide-index,.thumb-strip,.slide-dots,.page-list{display:none!important;visibility:hidden!important;pointer-events:none!important;}
+#controller{position:fixed;right:24px;bottom:22px;z-index:9999;display:flex;align-items:center;gap:14px;
+  background-color:rgba(10,24,46,.93);border:1px solid rgba(255,255,255,.16);
+  padding:12px 18px;border-radius:999px;opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;}
+#controller.is-visible,#controller:hover{opacity:1;transform:translateY(0);pointer-events:auto;}
+#controller button{width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;background:rgba(255,255,255,.14);
+  color:#fff;font-size:22px;display:flex;align-items:center;justify-content:center;transition:background .15s;}
+#controller button:hover{background:var(--accent);}
+#controller .pgnum{color:#fff;font-size:20px;font-weight:700;min-width:74px;text-align:center;letter-spacing:.05em;}
+.touch-zone{position:fixed;top:0;bottom:0;width:11vw;z-index:9990;cursor:pointer;}
+.touch-zone.left{left:0;}.touch-zone.right{right:0;}
+@media (hover:hover){.touch-zone{display:none;}}
+</style>
+</head>
+<body>
+<div id="viewport">
+
+<!-- ====================== SLIDE 01 — COVER ====================== -->
+<section class="slide active" data-slide="1">
+  <div class="slide-shell cover on-photo">
+    <div class="bg-photo img1"></div>
+    <div class="scrim-cover"></div>
+    <div class="topbar"><span class="kicker light">교양 강연 · 정치철학</span></div>
+    <main class="content cover-content">
+      <p class="cover-eyebrow">우리가 매일 하는 한 가지 착각</p>
+      <h1 class="cover-title">민주주의는<br><span class="strike">다수결</span>이 아니다</h1>
+      <p class="cover-sub">‘더 많은 사람이 원하면 옳다’는 믿음에 대하여</p>
+    </main>
+    <div class="footerbar on"><span>안창현</span><span class="pg">01 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 02 — HOOK ====================== -->
+<section class="slide" data-slide="2">
+  <div class="slide-shell statement">
+    <div class="wash-scene"><div class="wash-img img1"></div><div class="wash-layer"></div></div>
+    <div class="topbar"><span class="kicker">들어가며</span></div>
+    <main class="content">
+      <div class="stmt-wrap">
+        <div class="stmt-quotemark">“</div>
+        <p class="stmt">우리는 <em>더 많은 사람</em>이 원하면<br>그게 곧 옳은 것이라고 배워왔습니다.</p>
+        <p class="stmt-note">— 정말 그럴까요? 오늘 이 믿음을 한번 의심해 봅니다.</p>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">02 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 03 — AGENDA (blend) ====================== -->
+<section class="slide" data-slide="3">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">오늘의 길</span></div>
+    <main class="content">
+      <div class="blend-scene">
+        <div class="blend-image img3"></div>
+        <div class="blend-content">
+          <h2 class="headline">‘공정하다는 <em>느낌</em>’과<br>‘실제로 공정한 <em>것</em>’이<br>어디서 갈라지는가</h2>
+          <div class="chip-row" style="grid-template-columns:1fr;gap:16px;margin-top:38px;">
+            <div class="chip"><b>① 균열</b><span>다수결만으로는 메울 수 없는 틈</span></div>
+            <div class="chip"><b>② 두 개의 공정</b><span>개인적 공정 ≠ 사회적 공정</span></div>
+            <div class="chip"><b>③ 다시 보는 민주주의</b><span>그리고 시민으로서 우리의 질문</span></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">03 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 04 — DIVIDER I ====================== -->
+<section class="slide" data-slide="4">
+  <div class="slide-shell divider on-photo">
+    <div class="tone-img img1"></div>
+    <div class="tone-over"></div>
+    <div class="topbar"><span class="kicker light">PART 1</span></div>
+    <main class="content">
+      <p class="div-num">1 부</p>
+      <h2 class="div-title">우리가 ‘민주주의’라<br>부르는 것</h2>
+      <p class="div-sub">다수결은 왜 이토록 자연스럽고, 공평하게 느껴질까.</p>
+    </main>
+    <div class="footerbar on"><span>민주주의는 다수결이 아니다</span><span class="pg">04 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 05 — 3 REASONS (grid cards) ====================== -->
+<section class="slide" data-slide="5">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">1부 · 우리가 믿는 것</span></div>
+    <main class="content">
+      <h2 class="headline">다수결은 <em>단순하고, 빠르고, 공평해</em> 보입니다.</h2>
+      <p class="subline">그래서 우리는 “그냥 표로 정하자”는 말을 가장 민주적인 해법이라 여깁니다.</p>
+      <div class="card-row">
+        <div class="rcard">
+          <div class="rtop"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8"/></svg></div><span class="idx">01</span></div>
+          <h3>단순하다</h3><p>규칙이 명확하다. 더 많은 쪽이 이긴다 — 누구나 1초 만에 이해한다.</p>
+          <span class="eg">점심 메뉴부터 국가 정책까지</span></div>
+        <div class="rcard">
+          <div class="rtop"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><span class="idx">02</span></div>
+          <h3>빠르다</h3><p>합의가 끝내 어려워도 결정은 난다. 세고, 끝낸다.</p>
+          <span class="eg">마감이 있는 모든 회의</span></div>
+        <div class="rcard">
+          <div class="rtop"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18"/><path d="M5 8h14"/><circle cx="7" cy="14" r="3"/><circle cx="17" cy="14" r="3"/></svg></div><span class="idx">03</span></div>
+          <h3>공평해 보인다</h3><p>한 사람에게 한 표. 겉으로는 완벽히 평등하다.</p>
+          <span class="eg">‘1인 1표’라는 약속</span></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">05 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 06 — ONE PERSON ONE VOTE (overlap) ====================== -->
+<section class="slide" data-slide="6">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">1부 · 가장 강한 직관</span></div>
+    <main class="content">
+      <div class="overlap">
+        <div class="layer-card img2"></div>
+        <div class="float-card">
+          <span class="tagline">개인적 공정의 출발점</span>
+          <p class="q">“한 사람 한 표 —<br>이보다 공평한 게<br>있을까요?”</p>
+          <p class="a">이 직관은 강력합니다. 그리고 바로 이 강력함이, 다음 질문을 어렵게 만듭니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">06 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 07 — WHERE IT WORKS (blend) ====================== -->
+<section class="slide" data-slide="7">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">1부 · 균형</span></div>
+    <main class="content">
+      <div class="blend-scene">
+        <div class="blend-image img1"></div>
+        <div class="blend-content">
+          <h2 class="headline">그렇다고 다수결이<br><em>틀린</em> 것은 아닙니다.</h2>
+          <p class="subline">수많은 일상의 결정에서, 다수결은 충분히 좋은 도구입니다.</p>
+          <div class="attr-row"><span>점심 메뉴</span><span>회의 안건</span><span>예산 우선순위</span></div>
+          <p class="subline" style="color:var(--navy);font-weight:700;margin-top:32px;">문제는 — <span style="color:var(--accent)">누군가의 권리</span>가 걸리는 순간 시작됩니다.</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">07 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 08 — DIVIDER II ====================== -->
+<section class="slide" data-slide="8">
+  <div class="slide-shell divider on-photo">
+    <div class="tone-img img2"></div><div class="tone-over"></div>
+    <div class="topbar"><span class="kicker light">PART 2</span></div>
+    <main class="content">
+      <p class="div-num">2 부</p>
+      <h2 class="div-title">균열 —<br>51 대 49의 밤</h2>
+      <p class="div-sub">다수가 이겼다. 그런데 진 쪽의 권리는 어떻게 되는가.</p>
+    </main>
+    <div class="footerbar on"><span>민주주의는 다수결이 아니다</span><span class="pg">08 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 09 — 51:49 BIG QUESTION ====================== -->
+<section class="slide" data-slide="9">
+  <div class="slide-shell on-photo" style="padding:0;">
+    <div class="bigq">
+      <div class="bg-photo img2"></div>
+      <div class="scrim"></div>
+      <div class="qwrap">
+        <p class="q">51%가 49%의 권리를 빼앗기로<br>투표한다면, 그것도 <em>민주주의</em>입니까?</p>
+        <div class="ratio-bar"><div class="seg maj">다수 51%</div><div class="seg min">소수 49%</div></div>
+      </div>
+    </div>
+    <div class="topbar" style="position:absolute;left:104px;top:72px;z-index:5;"><span class="kicker light">2부 · 핵심 질문</span></div>
+    <div class="footerbar on" style="position:absolute;left:104px;right:104px;bottom:56px;z-index:5;"><span>민주주의는 다수결이 아니다</span><span class="pg">09 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 10 — TYRANNY OF MAJORITY (tone) ====================== -->
+<section class="slide" data-slide="10">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">2부 · 개념</span></div>
+    <main class="content">
+      <div class="tone-scene img2">
+        <div class="tone-content">
+          <h2 style="font-size:70px;font-weight:800;color:#fff;line-height:1.14;letter-spacing:-.02em;">다수의 횡포<br><span style="color:#ffb59a;">— 숫자가 곧 옳음은 아니다</span></h2>
+          <p class="quote">다수의 의견이 곧 진리는 아니다. 오히려 다수의 힘은, 소수의 양심을 ‘합법’이라는 이름으로 침묵시킬 때 가장 위험해진다.</p>
+          <p class="cite">— 토크빌·밀이 경고한 ‘다수의 횡포(tyranny of the majority)’ 개념</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">10 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 11 — PROCEDURE vs LEGITIMACY (compare) ====================== -->
+<section class="slide" data-slide="11">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">2부 · 두 가지를 구분하기</span></div>
+    <main class="content">
+      <h2 class="headline">다수결은 ‘<em>어떻게</em> 정할까’의 답이지,<br>‘<em>무엇이 옳은가</em>’의 답이 아닙니다.</h2>
+      <div class="compare" style="margin-top:32px;">
+        <div class="col a"><span class="tag">절차 · PROCEDURE</span><h3>어떻게 정할까</h3><p>의견이 갈릴 때 결론을 내는 방법. 빠르고 명확하다 — 다수결이 가장 잘하는 일이다.</p></div>
+        <div class="col b"><span class="tag">정당성 · LEGITIMACY</span><h3>무엇이 옳은가</h3><p>그 결론이 정의로운가, 누구의 기본권도 부당하게 짓밟지 않았는가. 표를 세는 것만으로는 답이 나오지 않는다.</p></div>
+        <div class="vs">≠</div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">11 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 12 — CONDORCET / ARROW (SVG diagram) ====================== -->
+<section class="slide" data-slide="12">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">2부 · 수학이 말하는 것</span></div>
+    <main class="content">
+      <h2 class="headline">다수결은 일관된 ‘<em>민의</em>’조차<br>보장하지 못합니다.</h2>
+      <p class="subline">콩도르세의 역설 · 애로우의 불가능성 정리 — 다수의 선택이 ‘가 → 나 → 다 → 다시 가’로 끝없이 돌 수 있다.</p>
+      <div class="diagram-solo">
+        <svg viewBox="0 0 1000 470" preserveAspectRatio="xMidYMid meet">
+          <defs><marker id="ah" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#d8542a"/></marker></defs>
+          <path class="svg-accent-stroke" marker-end="url(#ah)" d="M566,118 Q742,200 792,322"/>
+          <path class="svg-accent-stroke" marker-end="url(#ah)" d="M720,398 Q500,452 280,400"/>
+          <path class="svg-accent-stroke" marker-end="url(#ah)" d="M208,322 Q258,200 434,118"/>
+          <circle cx="500" cy="80" r="66" class="svg-navy"/>
+          <circle cx="812" cy="378" r="66" class="svg-navy"/>
+          <circle cx="188" cy="378" r="66" class="svg-navy"/>
+          <text x="500" y="96" text-anchor="middle" font-size="46" class="svg-white">가</text>
+          <text x="812" y="394" text-anchor="middle" font-size="46" class="svg-white">나</text>
+          <text x="188" y="394" text-anchor="middle" font-size="46" class="svg-white">다</text>
+          <text x="726" y="212" text-anchor="middle" font-size="27" class="svg-label">다수: 가 &gt; 나</text>
+          <text x="500" y="447" text-anchor="middle" font-size="27" class="svg-label">다수: 나 &gt; 다</text>
+          <text x="274" y="212" text-anchor="middle" font-size="27" class="svg-label">다수: 다 &gt; 가</text>
+          <text x="500" y="250" text-anchor="middle" font-size="26" class="svg-muted">민의가 한 방향으로 모이지 않는다</text>
+        </svg>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">12 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 13 — AGENDA SETTING (framing demo) ====================== -->
+<section class="slide" data-slide="13">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">2부 · 숨은 권력</span></div>
+    <main class="content">
+      <h2 class="headline">질문을 바꾸면, <em>다수의 답</em>도 바뀝니다.</h2>
+      <p class="subline">무엇을·언제 물을지 정하는 ‘의제 설정’이, 사실상 결론을 정합니다.</p>
+      <div style="flex:1 1 auto;display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px;min-height:0;">
+        <div class="rcard" style="justify-content:center;">
+          <span class="eg">질문 A</span>
+          <h3 style="font-size:37px;">“증세에 찬성하십니까?”</h3>
+          <p style="font-size:30px;color:var(--navy);font-weight:700;">→ 다수: <span style="color:var(--accent);">반대</span></p>
+        </div>
+        <div class="rcard" style="justify-content:center;">
+          <span class="eg">질문 B</span>
+          <h3 style="font-size:37px;">“더 나은 병원·학교를 위해<br>증세에 찬성하십니까?”</h3>
+          <p style="font-size:30px;color:var(--navy);font-weight:700;">→ 다수: <span style="color:var(--accent);">찬성</span></p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">13 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 14 — DIVIDER III ====================== -->
+<section class="slide" data-slide="14">
+  <div class="slide-shell divider on-photo">
+    <div class="tone-img img3"></div><div class="tone-over"></div>
+    <div class="topbar"><span class="kicker light">PART 3</span></div>
+    <main class="content">
+      <p class="div-num">3 부</p>
+      <h2 class="div-title">두 개의 공정</h2>
+      <p class="div-sub">오늘 강연의 심장 — 공정함은 하나가 아닙니다.</p>
+    </main>
+    <div class="footerbar on"><span>민주주의는 다수결이 아니다</span><span class="pg">14 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 15 — TWO FAIRNESSES (Venn SVG) ====================== -->
+<section class="slide" data-slide="15">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">3부 · 핵심 명제</span></div>
+    <main class="content">
+      <h2 class="headline">개인적으로 공정하다고 ‘<em>느끼는 것</em>’과<br>사회적으로 공정한 ‘<em>것</em>’은 같지 않습니다.</h2>
+      <div class="diagram-solo">
+        <svg viewBox="0 0 1020 430" preserveAspectRatio="xMidYMid meet">
+          <circle cx="410" cy="215" r="195" fill="#d8542a" fill-opacity="0.13" stroke="#d8542a" stroke-width="3"/>
+          <circle cx="610" cy="215" r="195" fill="#0e2a55" fill-opacity="0.12" stroke="#0e2a55" stroke-width="3"/>
+          <text x="270" y="195" text-anchor="middle" font-size="36" class="svg-label">개인적 공정</text>
+          <text x="270" y="240" text-anchor="middle" font-size="25" class="svg-muted">내가 손해 안 봄</text>
+          <text x="750" y="195" text-anchor="middle" font-size="36" class="svg-label">사회적 공정</text>
+          <text x="750" y="240" text-anchor="middle" font-size="25" class="svg-muted">약자·미래도 함께</text>
+          <text x="510" y="205" text-anchor="middle" font-size="27" class="svg-label">겹치지만</text>
+          <text x="510" y="240" text-anchor="middle" font-size="27" fill="#d8542a" font-weight="800">≠ 같지 않다</text>
+        </svg>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">15 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 16 — INDIVIDUAL FAIRNESS (defrow, img left) ====================== -->
+<section class="slide" data-slide="16">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">3부 · 첫 번째 공정</span></div>
+    <main class="content">
+      <div class="defrow">
+        <div class="def-img right img3"></div>
+        <div class="def-body">
+          <p class="def-term">개인적 공정 · INDIVIDUAL</p>
+          <h3>“나도 한 표 썼고,<br>손해 안 봤으면 공정하다.”</h3>
+          <p>내 입장에서 절차가 평등했는지, 내 몫이 부당하게 줄지 않았는지로 판단합니다. 강력하고 자연스러운 직관입니다.</p>
+          <div class="attr-row"><span>절차적 평등</span><span>내 몫 중심</span><span>직관적</span></div>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">16 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 17 — SOCIAL FAIRNESS (defrow, img right) ====================== -->
+<section class="slide" data-slide="17">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">3부 · 두 번째 공정</span></div>
+    <main class="content">
+      <div class="defrow" style="grid-template-columns:1.08fr .92fr;">
+        <div class="def-body">
+          <p class="def-term">사회적 공정 · SOCIAL</p>
+          <h3>“약자·소수·다음 세대까지<br>함께 살 수 있는가.”</h3>
+          <p>나 한 사람이 아니라 사회 전체의 구조를 봅니다. 가장 약한 사람의 처지가, 그 사회가 얼마나 공정한지를 말해 줍니다.</p>
+          <div class="attr-row"><span>구조를 봄</span><span>약자 보호</span><span>미래 세대</span></div>
+        </div>
+        <div class="def-img left img5"></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">17 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 18 — FALLACY OF COMPOSITION (SVG) ====================== -->
+<section class="slide" data-slide="18">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">3부 · 합성의 오류</span></div>
+    <main class="content">
+      <h2 class="headline">각자 공정한 선택의 ‘<em>합</em>’이,<br>사회적으로 공정한 결과가 되진 않습니다.</h2>
+      <div class="diagram-solo">
+        <svg viewBox="0 0 1040 410" preserveAspectRatio="xMidYMid meet">
+          <defs><marker id="ah2" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#d8542a"/></marker></defs>
+          <text x="180" y="60" text-anchor="middle" font-size="28" class="svg-label">개인 — 각자 합리적·공정</text>
+          <g>
+            <circle cx="90" cy="150" r="34" fill="#0e2a55"/><path d="M76,150 l9,10 l18,-22" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="180" cy="150" r="34" fill="#0e2a55"/><path d="M166,150 l9,10 l18,-22" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="270" cy="150" r="34" fill="#0e2a55"/><path d="M256,150 l9,10 l18,-22" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="135" cy="240" r="34" fill="#0e2a55"/><path d="M121,240 l9,10 l18,-22" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="225" cy="240" r="34" fill="#0e2a55"/><path d="M211,240 l9,10 l18,-22" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <text x="180" y="330" text-anchor="middle" font-size="26" class="svg-muted">“나는 내 몫만 챙겼다”</text>
+          <text x="520" y="180" text-anchor="middle" font-size="48" fill="#d8542a" font-weight="800">합 (合)</text>
+          <line x1="370" y1="200" x2="660" y2="200" class="svg-accent-stroke" marker-end="url(#ah2)"/>
+          <rect x="720" y="95" width="250" height="215" rx="20" fill="#d8542a" fill-opacity="0.12" stroke="#d8542a" stroke-width="3"/>
+          <text x="845" y="150" text-anchor="middle" font-size="30" fill="#d8542a" font-weight="800">사회 — 공동의 파국</text>
+          <polyline points="755,180 800,215 845,200 890,250 935,285" class="svg-accent-stroke"/>
+          <text x="845" y="295" text-anchor="middle" font-size="23" class="svg-muted">공유지의 비극</text>
+        </svg>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">18 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 19 — VEIL OF IGNORANCE (bigq, img3) ====================== -->
+<section class="slide" data-slide="19">
+  <div class="slide-shell on-photo" style="padding:0;">
+    <div class="bigq">
+      <div class="bg-photo img3"></div>
+      <div class="scrim"></div>
+      <div class="qwrap">
+        <p class="q" style="font-size:62px;">내가 부자일지 가난할지, 다수일지 소수일지<br><em>모른 채</em> 사회의 규칙을 고른다면 —<br>당신은 어떤 사회를 선택하시겠습니까?</p>
+        <p style="margin-top:38px;font-size:27px;color:#ffd9c7;font-weight:700;">존 롤스 · ‘무지의 베일’ 사고실험 — 이것이 바로 사회적 공정의 관점입니다.</p>
+      </div>
+    </div>
+    <div class="topbar" style="position:absolute;left:104px;top:72px;z-index:5;"><span class="kicker light">3부 · 사고 실험</span></div>
+    <div class="footerbar on" style="position:absolute;left:104px;right:104px;bottom:56px;z-index:5;"><span>민주주의는 다수결이 아니다</span><span class="pg">19 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 20 — THE GAP (SVG) ====================== -->
+<section class="slide" data-slide="20">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">3부 · 정리</span></div>
+    <main class="content">
+      <h2 class="headline">그래서 ‘느낌’과 ‘<em>정의로운 결과</em>’ 사이엔<br>늘 틈이 있습니다.</h2>
+      <div class="diagram-solo">
+        <svg viewBox="0 0 1040 340" preserveAspectRatio="xMidYMid meet">
+          <line x1="70" y1="210" x2="970" y2="210" class="svg-line"/>
+          <circle cx="250" cy="210" r="16" fill="#0e2a55"/>
+          <circle cx="790" cy="210" r="16" fill="#0e2a55"/>
+          <text x="250" y="150" text-anchor="middle" font-size="31" class="svg-label">공정하다는 느낌</text>
+          <text x="250" y="185" text-anchor="middle" font-size="23" class="svg-muted">개인적 공정</text>
+          <text x="790" y="150" text-anchor="middle" font-size="31" class="svg-label">정의로운 결과</text>
+          <text x="790" y="185" text-anchor="middle" font-size="23" class="svg-muted">사회적 공정</text>
+          <path d="M270,250 q270,46 500,0" class="svg-accent-stroke" fill="none" stroke-dasharray="3 12"/>
+          <text x="520" y="312" text-anchor="middle" font-size="28" fill="#d8542a" font-weight="800">이 틈을 메우는 일이 민주주의</text>
+        </svg>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">20 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 21 — DIVIDER IV ====================== -->
+<section class="slide" data-slide="21">
+  <div class="slide-shell divider on-photo">
+    <div class="tone-img img4"></div><div class="tone-over"></div>
+    <div class="topbar"><span class="kicker light">PART 4</span></div>
+    <main class="content">
+      <p class="div-num">4 부</p>
+      <h2 class="div-title">그렇다면<br>민주주의란 무엇인가</h2>
+      <p class="div-sub">다수결을 빼는 게 아니라, 다수결 ‘만’으로 두지 않는 것.</p>
+    </main>
+    <div class="footerbar on"><span>민주주의는 다수결이 아니다</span><span class="pg">21 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 22 — DEMOCRACY IS A BUNDLE (grid6) ====================== -->
+<section class="slide" data-slide="22">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">4부 · 재정의</span></div>
+    <main class="content">
+      <h2 class="headline">민주주의는 다수결 ‘하나’가 아니라,<br><em>여섯 부품</em>의 조립입니다.</h2>
+      <div class="grid6">
+        <div class="gcard lead"><span class="gn">01 · 우리가 아는 것</span><h4>다수결</h4><p>더 많은 쪽이 정한다. 필요하지만, 시작일 뿐이다.</p></div>
+        <div class="gcard"><span class="gn">02</span><h4>소수 보호</h4><p>진 쪽도 존엄하게 함께 산다.</p></div>
+        <div class="gcard mcard" style="--card-img:var(--img4);"><span class="gn">03</span><h4>기본권</h4><p>표로도 빼앗을 수 없는 권리.</p></div>
+        <div class="gcard"><span class="gn">04</span><h4>법치</h4><p>권력도 법 아래에 있다.</p></div>
+        <div class="gcard"><span class="gn">05</span><h4>숙의</h4><p>투표 전에 듣고 설득한다.</p></div>
+        <div class="gcard mcard" style="--card-img:var(--img2);"><span class="gn">06</span><h4>견제와 균형</h4><p>권력이 권력을 견제한다.</p></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">22 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 23 — CONSTITUTIONALISM (tone img4) ====================== -->
+<section class="slide" data-slide="23">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">4부 · 부품 ①</span></div>
+    <main class="content">
+      <div class="tone-scene img4">
+        <div class="tone-content">
+          <h2 style="font-size:70px;font-weight:800;color:#fff;line-height:1.14;letter-spacing:-.02em;">헌정주의<br><span style="color:#ffb59a;">— 다수도 못 건드리는 선</span></h2>
+          <p class="quote">아무리 많은 사람이 찬성해도, 한 사람의 양심·신체·표현의 자유는 투표로 빼앗을 수 없다. 그래서 우리는 헌법을 둔다.</p>
+          <p class="cite">기본권은 ‘다수에 맞서 개인을 지키는(counter-majoritarian)’ 장치</p>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">23 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 24 — DELIBERATION (blend img1) ====================== -->
+<section class="slide" data-slide="24">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">4부 · 부품 ②</span></div>
+    <main class="content">
+      <div class="blend-scene">
+        <div class="blend-image img1"></div>
+        <div class="blend-content">
+          <h2 class="headline">투표는 <em>끝</em>이 아니라<br>마지막 <em>단계</em>입니다.</h2>
+          <p class="subline">그 앞에 ‘듣고, 따지고, 설득하는’ 숙의가 있어야 결정이 정당해집니다.</p>
+          <div class="attr-row"><span>경청</span><span>토론</span><span>설득</span><span>그 다음 투표</span></div>
+        </div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">24 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 25 — CHECKS & MINORITY (card-row) ====================== -->
+<section class="slide" data-slide="25">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">4부 · 부품 ③</span></div>
+    <main class="content">
+      <h2 class="headline">좋은 민주주의는 진 쪽이<br><em>다음에 이길 수 있게</em> 설계합니다.</h2>
+      <p class="subline">오늘의 소수가 영원한 패자가 되지 않기에 — 모두가 결과에 승복할 수 있습니다.</p>
+      <div class="card-row">
+        <div class="rcard mcard" style="--card-img:var(--img1);">
+          <div class="rtop"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div><span class="idx">①</span></div>
+          <h3>정기적 선거</h3><p>오늘 졌어도 다음 기회가 보장된다. 권력은 빌린 것이다.</p>
+          <span class="eg">다음에 이길 권리</span></div>
+        <div class="rcard mcard" style="--card-img:var(--img4);">
+          <div class="rtop"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div><span class="idx">②</span></div>
+          <h3>독립된 사법·언론</h3><p>다수의 권력도 감시받는다. 견제 없는 힘은 폭주한다.</p>
+          <span class="eg">권력을 보는 눈</span></div>
+        <div class="rcard mcard" style="--card-img:var(--img2);">
+          <div class="rtop"><div class="ic"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><span class="idx">③</span></div>
+          <h3>반대할 권리</h3><p>소수 의견이 제도 안에서 계속 말할 수 있다. 반대는 배신이 아니다.</p>
+          <span class="eg">계속 말할 자유</span></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">25 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 26 — DIVIDER V ====================== -->
+<section class="slide" data-slide="26">
+  <div class="slide-shell divider on-photo">
+    <div class="tone-img img5"></div><div class="tone-over"></div>
+    <div class="topbar"><span class="kicker light">PART 5</span></div>
+    <main class="content">
+      <p class="div-num">5 부</p>
+      <h2 class="div-title">시민으로서,<br>우리는</h2>
+      <p class="div-sub">제도는 멀리 있지 않습니다. 묻는 방식에서 시작됩니다.</p>
+    </main>
+    <div class="footerbar on"><span>민주주의는 다수결이 아니다</span><span class="pg">26 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 27 — THE NEW QUESTION (bigq img5) ====================== -->
+<section class="slide" data-slide="27">
+  <div class="slide-shell on-photo" style="padding:0;">
+    <div class="bigq">
+      <div class="bg-photo img5"></div>
+      <div class="scrim"></div>
+      <div class="qwrap">
+        <p class="q">“다수가 원해서 옳은가,<br>아니면 <em>정말 정의로운가?</em>”</p>
+        <p style="margin-top:36px;font-size:30px;color:#fff;font-weight:600;opacity:.94;">이 두 질문을 분리해서 묻는 순간, 우리는 더 나은 시민이 됩니다.</p>
+      </div>
+    </div>
+    <div class="topbar" style="position:absolute;left:104px;top:72px;z-index:5;"><span class="kicker light">5부 · 바꿔야 할 질문</span></div>
+    <div class="footerbar on" style="position:absolute;left:104px;right:104px;bottom:56px;z-index:5;"><span>민주주의는 다수결이 아니다</span><span class="pg">27 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 28 — CHECKLIST (check-row) ====================== -->
+<section class="slide" data-slide="28">
+  <div class="slide-shell">
+    <div class="topbar"><span class="kicker">5부 · 일상의 점검</span></div>
+    <main class="content">
+      <h2 class="headline">결정을 볼 때, <em>세 가지</em>만 물으면 됩니다.</h2>
+      <p class="subline">거창한 이론이 아니라, 회의·투표·뉴스 앞에서 바로 쓰는 점검입니다.</p>
+      <div class="check-row">
+        <div class="check mcard" style="--card-img:var(--img3);"><div class="n">1</div><h4>누가 빠졌나?</h4><p>이 결정의 자리에 없었던 사람은 누구인가 — 약자, 다음 세대, 침묵한 소수.</p></div>
+        <div class="check mcard" style="--card-img:var(--img2);"><div class="n">2</div><h4>진 쪽은 보호받나?</h4><p>49%의 기본권은 안전한가. 한 번 지면 모든 걸 잃는 구조는 아닌가.</p></div>
+        <div class="check mcard" style="--card-img:var(--img4);"><div class="n">3</div><h4>절차를 정당성으로 착각했나?</h4><p>“표로 정했으니 옳다”가 아니라, “정말 옳은가”를 다시 물었는가.</p></div>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">28 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 29 — CLOSE STATEMENT (wash img5) ====================== -->
+<section class="slide" data-slide="29">
+  <div class="slide-shell statement">
+    <div class="wash-scene"><div class="wash-img img5"></div><div class="wash-layer"></div></div>
+    <div class="topbar"><span class="kicker">맺으며</span></div>
+    <main class="content">
+      <div class="stmt-wrap" style="max-width:1580px;">
+        <p class="tagline">결론</p>
+        <p class="stmt">민주주의는 ‘<em>더 많은 수</em>’를 세는 일이 아니라,<br>‘<em>함께 살 수 있는 정당성</em>’을 만드는 일입니다.</p>
+      </div>
+    </main>
+    <div class="footerbar"><span>민주주의는 다수결이 아니다</span><span class="pg">29 / 30</span></div>
+  </div>
+</section>
+
+<!-- ====================== SLIDE 30 — OUTRO + SOURCES (img5) ====================== -->
+<section class="slide" data-slide="30">
+  <div class="slide-shell cover on-photo">
+    <div class="bg-photo img5"></div>
+    <div class="scrim-cover"></div>
+    <div class="topbar"><span class="kicker light">맺으며 · 참고</span></div>
+    <main class="content cover-content">
+      <h1 class="cover-title" style="font-size:84px;line-height:1.16;">다수결은 민주주의의 <span style="color:#ffb59a;">도구</span>일 뿐,<br>민주주의의 <span style="color:#ffb59a;">정의(定義)</span>가 아닙니다.</h1>
+      <p class="cover-sub">오늘부터, ‘두 개의 공정’을 구분해서 보기로 합니다.</p>
+      <div class="source-list" style="justify-content:center;">
+        <span>참고 — 토크빌 『미국의 민주주의』</span><span>밀 『자유론』</span><span>롤스 『정의론』</span><span>콩도르세의 역설</span><span>애로우의 불가능성 정리</span>
+      </div>
+      <p style="margin-top:28px;color:#fff;font-weight:800;font-size:30px;text-shadow:0 4px 26px rgba(0,0,0,.5);">감사합니다 · 안창현</p>
+    </main>
+    <div class="footerbar on"><span>민주주의는 다수결이 아니다</span><span class="pg">30 / 30</span></div>
+  </div>
+</section>
+
+</div><!-- /viewport -->
+
+<div id="controller" class="auto-hide">
+  <button onclick="go(current-1)" aria-label="이전">‹</button>
+  <span class="pgnum" id="pgnum">01 / 30</span>
+  <button onclick="go(current+1)" aria-label="다음">›</button>
+</div>
+<div class="touch-zone left"></div>
+<div class="touch-zone right"></div>
+
+<script>
+const TOTAL=30;let current=1;
+function fit(){const s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
+  document.documentElement.style.setProperty('--deck-scale',s);}
+window.addEventListener('resize',fit);fit();
+
+let navTimer;
+function showController(){const c=document.getElementById('controller');if(!c)return;
+  c.classList.add('is-visible');clearTimeout(navTimer);
+  navTimer=setTimeout(()=>c.classList.remove('is-visible'),1000);}
+
+function go(n){n=Math.max(1,Math.min(TOTAL,n));
+  const cur=document.querySelector('.slide.active');
+  const next=document.querySelector('.slide[data-slide="'+n+'"]');
+  if(!next)return;
+  if(cur)cur.classList.remove('active');
+  next.classList.add('active');current=n;
+  const p=String(n).padStart(2,'0')+' / '+TOTAL;
+  const pe=document.getElementById('pgnum');if(pe)pe.textContent=p;
+  showController();}
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' ')go(current+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp')go(current-1);});
+
+let startX=0;
+document.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;},{passive:true});
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-startX;
+  if(Math.abs(dx)>50){dx<0?go(current+1):go(current-1);}},{passive:true});
+document.querySelector('.touch-zone.left').addEventListener('click',()=>go(current-1));
+document.querySelector('.touch-zone.right').addEventListener('click',()=>go(current+1));
+
+showController();
+</script>
+</body>
+</html>
