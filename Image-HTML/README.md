@@ -2,8 +2,51 @@
 
 이미지를 **배경 재료**로만 쓰고 텍스트·숫자·차트는 전부 **HTML/SVG**로 유지하는 1920×1080 HTML 발표 덱(HTML PPT / 카드뉴스 / 키노트) 제작 **스킬**과 **예시 모음**.
 
+## Showcases
+### 1. Brutalist Dark v8
+<img width="1065" height="590" alt="{2C255996-3798-4334-91F7-0F30209F668D}" src="https://github.com/user-attachments/assets/d20d2693-bce9-497a-be96-64058ccfa752" />
+
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/ai_planner_v8_dark_brutalist_30slides_v3_visibility_fixed.html
+
+### 2. Hallym Light v3
+<img width="1063" height="598" alt="{9704DB3D-E0F2-4ACF-8CBF-5BEF0A89CBFB}" src="https://github.com/user-attachments/assets/f4959a02-1bea-4a61-92e0-e12ff3b66aa8" />
+
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/hallym_ai_convergence_raw5_embedded_v3.html
+
+### 3. Seong-su Editorial
+<img width="1062" height="596" alt="{7E854B2F-2F1C-4E75-8BE9-E7D0AD8BD96D}" src="https://github.com/user-attachments/assets/fcd34039-cb90-419a-9202-0e3177de4376" />
+
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/seongsu_popup_survival_formula_20slides_fixed_v2.html
+
+### 4. University AX v7
+<img width="1060" height="594" alt="{25298341-CD12-4CAF-B4BC-82702D7D1350}" src="https://github.com/user-attachments/assets/c670866f-39fb-4ed3-965c-a24c743b3c6b" />
+
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/university_ax_html_ppt_40slides_single_v7_mobile_swipe.html
+
+### 5. Democracy Deck (Claude Skills Validated)
+<img width="1065" height="597" alt="{A46A8CBC-2005-4C65-AAAD-692653D45FFE}" src="https://github.com/user-attachments/assets/93dda04a-4bbf-44aa-9926-17afdf415f81" />
+
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/democracy/democracy-deck.html
+
+### 6. Behavioral Economics Deck (Claude Skills Validated)
+<img width="1018" height="594" alt="{0AB78ABC-DE4F-42C8-8081-9A09DAA5A0AF}" src="https://github.com/user-attachments/assets/a4b22c73-a832-428d-967c-c7e3d5590ce1" />
+
+
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/behavioral-economics/behavioral-economics-deck.html
+
+
+## Image-embedded-HTML 방법론 요약
 > **핵심 원칙: 이미지는 재료이고, HTML은 진실이다 (images are material; HTML is truth).**
+> CSS클래스로 고급 편집 콤보를 매크로 버튼처럼 만들어서 define 하면, 어도비/포토샵급 고급 편집을 "코딩"으로 구현이 가능하다
 > AI가 만든 raw 이미지 **5장**을 CSS 변수(`--img1`~`--img5`)에 묶어 모든 슬라이드에서 재사용하고(wash / blend / tone / grid / mask / material-image-card 기법), 모든 글자·수치·차트는 선명한 HTML/SVG로 둔다. 그래서 덱은 어떤 확대에서도 또렷하고, 편집·접근성이 살아 있다.
+
+> 위에 보시는 모든 예제는 **이미지가 아니라 Fully-editable html 파일** 입니다.
+> 이미지를 많이 생성해서 넣는 것이 아니라, "이미지를 편집하는 기법"을 다양하게 코딩하면 **이미지 단 몇장으로도 다채로운 고급 디자인 연출이 가능** 합니다.
+> 또한 그러한 **고급 디자인 기법을 `.css`로 define** 해서, `.masked-word`라는 말을 써도 **AI가 글씨 안에 이미지를 집어넣는 고급 편집을 하는 명령을 정확하게 AI도 알아듣게 사람이 지시** 할 수 있게 됩니다.
+
+
+## Image-embedded-HTML 방법론 배우러 가기
+https://laguna821.github.io/Achmage-Skills/Image-HTML/examples/html_ppt_css_cheatsheet_v2_full_system.html
 
 ---
 
