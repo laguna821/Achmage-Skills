@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>component-consulting — pick components by message, not by vibes</title>
+<meta name="description" content="A consulting skill that decides which open-source UI components serve a site's message + design tokens, and where to place them — argued in the ACH Thesis design system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ===== ACH Thesis tokens (consumed from ach-thesis-DESIGN.md) ===== */
+  :root{
+    --ach-bg-canvas:#F5F7FA; --ach-bg-surface:#FFFFFF; --ach-bg-subtle:#EEF2F6; --ach-bg-muted:#E7ECF3;
+    --ach-text-primary:#101828; --ach-text-secondary:#475467; --ach-text-tertiary:#667085; --ach-text-disabled:#98A2B3;
+    --ach-border-subtle:#D0D5DD; --ach-border-default:#98A2B3; --ach-border-strong:#344054;
+    --ach-brand-500:#245BDB; --ach-brand-600:#1D4ED8; --ach-brand-700:#1E40AF;
+    --ach-role-evidence:#B7791F; --ach-role-quote:#0F766E; --ach-role-case:#7C3AED; --ach-role-ai:#6941C6;
+    --ach-status-success:#027A48; --ach-status-warning:#B54708; --ach-status-danger:#B42318; --ach-status-info:#0E7490;
+    --ach-ai-label-bg:#EDF5FF; --ach-ai-label-text:#0043CE; --ach-ai-prov-bg:#F7FAFF; --ach-ai-prov-border:#B8D3FF;
+    --sp1:4px;--sp2:8px;--sp3:12px;--sp4:16px;--sp5:24px;--sp6:32px;--sp7:40px;--sp8:48px;--sp9:64px;--sp10:80px;
+    --r-sm:8px;--r-md:12px;--r-lg:16px;
+    --sans:'Pretendard Variable',Pretendard,-apple-system,'Noto Sans KR','Segoe UI',Roboto,sans-serif;
+    --mono:'JetBrains Mono',SFMono-Regular,ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ach-bg-canvas);color:var(--ach-text-primary);font-family:var(--sans);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:var(--ach-brand-500);text-decoration:none}
+  a:hover{text-decoration:underline;text-underline-offset:3px}
+  .mono{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ach-text-tertiary)}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+
+  /* scroll progress — functional, hairline */
+  #progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--ach-brand-500);z-index:60;transition:width .08s linear}
+
+  /* ===== Masthead (no hero image — mono, condensing) ===== */
+  header{position:sticky;top:0;z-index:50;background:var(--ach-bg-canvas);border-bottom:1px solid var(--ach-border-strong)}
+  .mast{display:flex;align-items:center;justify-content:space-between;padding-block:18px;transition:padding .2s ease}
+  header.shrunk .mast{padding-block:11px}
+  .mark{font-family:var(--mono);font-weight:500;font-size:14px;letter-spacing:.02em;color:var(--ach-text-primary);text-transform:none}
+  .mark b{color:var(--ach-brand-500)}
+  .mast nav{display:flex;gap:28px}
+  .mast nav a{color:var(--ach-text-secondary);font-size:14px}
+  .mast nav a:hover{color:var(--ach-text-primary);text-decoration:none}
+  @media(max-width:760px){.mast nav{display:none}}
+
+  /* ===== ThesisHeader — THE signature moment ===== */
+  .thesis{border-bottom:2px solid var(--ach-border-strong);padding-block:var(--sp10) var(--sp9)}
+  .thesis .overline{margin-bottom:var(--sp5)}
+  .thesis h1{font-size:clamp(34px,5vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.02em;max-width:18ch}
+  .thesis h1 em{font-style:normal;color:var(--ach-brand-500)}
+  .thesis-line{margin-top:var(--sp6);border-left:4px solid var(--ach-brand-500);padding:var(--sp2) 0 var(--sp2) var(--sp5);font-size:19px;line-height:1.6;color:var(--ach-text-secondary);max-width:62ch}
+  .chips{display:flex;flex-wrap:wrap;gap:var(--sp2);margin-top:var(--sp7)}
+  .chip{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ach-text-secondary);background:var(--ach-bg-surface);border:1px solid var(--ach-border-subtle);border-radius:var(--r-sm);padding:5px 10px}
+  .chip b{color:var(--ach-text-primary)}
+  .cta-row{margin-top:var(--sp7);display:flex;align-items:center;gap:var(--sp5);flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--ach-brand-500);color:#fff;font-family:var(--sans);font-size:15px;font-weight:600;padding:13px 22px;border:1px solid var(--ach-brand-700);border-radius:var(--r-sm);cursor:pointer;box-shadow:5px 5px 0 var(--ach-border-strong);transition:transform .12s ease,box-shadow .12s ease,background .12s ease}
+  .btn:hover{background:var(--ach-brand-600);text-decoration:none;transform:translate(-1px,-1px);box-shadow:6px 6px 0 var(--ach-border-strong)}
+  .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ach-border-strong)}
+  .btn:focus-visible{outline:2px solid var(--ach-brand-500);outline-offset:3px}
+  .ghost{color:var(--ach-text-secondary);font-size:14px;font-family:var(--mono)}
+
+  /* ===== AxisStrip — sticky reading axis ===== */
+  .axis{position:sticky;top:57px;z-index:40;background:var(--ach-bg-surface);border-bottom:1px solid var(--ach-border-subtle)}
+  .axis .wrap{display:flex;align-items:center;gap:var(--sp5);padding-block:11px;flex-wrap:wrap}
+  .axis .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ach-text-tertiary);text-transform:uppercase}
+  .axis .v{font-size:14px;font-weight:600;color:var(--ach-text-primary)}
+  .axis .arrow{color:var(--ach-brand-500);font-weight:700}
+  .axis .bad{color:var(--ach-text-tertiary);text-decoration:line-through;font-weight:500}
+
+  /* ===== Content shell: body + citation rail ===== */
+  .shell{display:grid;grid-template-columns:1fr;gap:0}
+  @media(min-width:1200px){.shell{grid-template-columns:minmax(0,1fr) 300px;gap:var(--sp9)}}
+  section.block{padding-block:var(--sp9);border-bottom:1px solid var(--ach-border-subtle)}
+  .seclabel{margin-bottom:var(--sp5);display:flex;align-items:baseline;gap:var(--sp3)}
+  .seclabel .n{font-family:var(--mono);font-size:12px;color:var(--ach-brand-500);font-weight:500}
+  .seclabel h2{font-size:27px;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+  .lede{font-size:18px;line-height:1.7;color:var(--ach-text-secondary);max-width:72ch}
+
+  /* CoreSummaryBox */
+  .summary{background:var(--ach-bg-subtle);border-left:4px solid var(--ach-brand-500);border-radius:var(--r-md);padding:var(--sp6) var(--sp6);max-width:72ch;font-size:18px;line-height:1.7}
+  .summary b{font-weight:700}
+
+  /* AxisCompareBlock */
+  .compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ach-border-strong);border-radius:var(--r-md);overflow:hidden;margin-top:var(--sp5)}
+  .compare .col{padding:var(--sp6)}
+  .compare .col:first-child{border-right:1px solid var(--ach-border-strong);background:var(--ach-bg-surface)}
+  .compare .col:last-child{background:var(--ach-bg-surface)}
+  .compare .colhead{font-family:var(--mono);font-size:12px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:var(--sp4);padding-bottom:var(--sp3);border-bottom:1px solid var(--ach-border-subtle)}
+  .compare .bad .colhead{color:var(--ach-status-danger)}
+  .compare .good .colhead{color:var(--ach-status-success)}
+  .compare ul{list-style:none;display:flex;flex-direction:column;gap:var(--sp3)}
+  .compare li{font-size:15px;line-height:1.55;padding-left:var(--sp5);position:relative;color:var(--ach-text-secondary)}
+  .compare li::before{position:absolute;left:0;font-family:var(--mono);font-size:13px}
+  .compare .bad li::before{content:'×';color:var(--ach-status-danger)}
+  .compare .good li::before{content:'→';color:var(--ach-status-success)}
+  @media(max-width:680px){.compare{grid-template-columns:1fr}.compare .col:first-child{border-right:0;border-bottom:1px solid var(--ach-border-strong)}}
+
+  /* WorkflowStrip */
+  .flow{display:flex;flex-wrap:wrap;gap:var(--sp3);margin-top:var(--sp5)}
+  .step{flex:1 1 150px;min-width:150px;background:var(--ach-bg-surface);border:1px solid var(--ach-border-subtle);border-radius:var(--r-sm);padding:var(--sp4);position:relative}
+  .step .s-n{font-family:var(--mono);font-size:11px;color:var(--ach-text-tertiary)}
+  .step .s-t{font-weight:650;font-size:15px;margin:var(--sp2) 0 var(--sp1)}
+  .step .s-d{font-size:13px;color:var(--ach-text-secondary);line-height:1.5}
+  .step .who{display:inline-block;margin-top:var(--sp3);font-family:var(--mono);font-size:10px;letter-spacing:.05em;padding:2px 7px;border-radius:var(--r-sm)}
+  .step .who.human{background:var(--ach-bg-muted);color:var(--ach-text-secondary)}
+  .step .who.ai{background:var(--ach-ai-label-bg);color:var(--ach-ai-label-text)}
+  .step.gate{border-color:var(--ach-brand-500);border-width:1px;box-shadow:inset 3px 0 0 var(--ach-brand-500)}
+
+  /* EvidenceTable */
+  table{width:100%;border-collapse:collapse;border:1px solid var(--ach-border-strong);border-radius:var(--r-md);overflow:hidden;margin-top:var(--sp5);font-size:14px}
+  thead th{background:var(--ach-bg-subtle);text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ach-text-secondary);padding:12px 16px;border-bottom:1px solid var(--ach-border-strong)}
+  tbody td{padding:14px 16px;border-bottom:1px solid var(--ach-border-subtle);vertical-align:top;line-height:1.55}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--ach-bg-subtle)}
+  td .axis-name{font-weight:700}
+  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.04em;padding:3px 8px;border-radius:var(--r-sm);white-space:nowrap}
+  .tag.gate{background:#FDEDE9;color:var(--ach-status-danger)}
+  .tag.wt{background:var(--ach-bg-muted);color:var(--ach-text-secondary)}
+
+  /* EvidencePanel / CaseScene / SelfCheck — role left borders */
+  .panel{background:var(--ach-bg-surface);border-radius:var(--r-sm);padding:var(--sp5) var(--sp6);margin-top:var(--sp5);max-width:74ch}
+  .panel.evidence{border-left:3px solid var(--ach-role-evidence)}
+  .panel.case{border-left:3px solid var(--ach-role-case)}
+  .panel.selfcheck{border-left:3px solid var(--ach-status-info);background:var(--ach-bg-subtle)}
+  .panel .ptitle{font-size:18px;font-weight:700;margin-bottom:var(--sp2)}
+  .panel .psrc{font-family:var(--mono);font-size:11px;color:var(--ach-text-tertiary);margin-top:var(--sp4);display:block}
+  .panel p{color:var(--ach-text-secondary);line-height:1.7}
+  .panel p+p{margin-top:var(--sp3)}
+  .panel .role-k{font-family:var(--mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;margin-bottom:var(--sp3);display:block}
+  .case .role-k{color:var(--ach-role-case)}
+  .evidence .role-k{color:var(--ach-role-evidence)}
+  .checklist{list-style:none;display:flex;flex-direction:column;gap:var(--sp3);margin-top:var(--sp3)}
+  .checklist li{display:flex;gap:var(--sp3);align-items:flex-start;font-size:15px;color:var(--ach-text-primary)}
+  .checklist input{margin-top:5px;accent-color:var(--ach-brand-500);width:16px;height:16px;flex:0 0 auto}
+  .checklist label{cursor:pointer;line-height:1.5}
+
+  /* AIProvenancePanel + RevisionTimeline */
+  .provenance{background:var(--ach-ai-prov-bg);border:1px solid var(--ach-ai-prov-border);border-left:3px solid var(--ach-role-ai);border-radius:var(--r-sm);padding:var(--sp6);margin-top:var(--sp5)}
+  .provenance .ai-tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.05em;background:var(--ach-ai-label-bg);color:var(--ach-ai-label-text);padding:3px 8px;border-radius:var(--r-sm);margin-bottom:var(--sp4)}
+  .prov-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp4) var(--sp6)}
+  @media(max-width:680px){.prov-grid{grid-template-columns:1fr}}
+  .prov-grid dt{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ach-role-ai);text-transform:uppercase;margin-bottom:var(--sp1)}
+  .prov-grid dd{font-size:14px;color:var(--ach-text-secondary);line-height:1.55}
+  .timeline{margin-top:var(--sp5);border-left:2px solid var(--ach-border-default);padding-left:var(--sp5);display:flex;flex-direction:column;gap:var(--sp3)}
+  .timeline .ev{display:grid;grid-template-columns:auto 1fr;gap:var(--sp4);align-items:baseline}
+  .timeline .t{font-family:var(--mono);font-size:11px;color:var(--ach-text-tertiary);white-space:nowrap}
+  .timeline .d{font-size:14px;color:var(--ach-text-secondary)}
+  .timeline .d b{color:var(--ach-text-primary);font-weight:600}
+
+  /* CitationRail */
+  .rail{padding-block:var(--sp9)}
+  @media(min-width:1200px){.rail{position:sticky;top:120px;align-self:start;height:max-content}}
+  .rail .rk{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ach-text-tertiary);padding-bottom:var(--sp3);border-bottom:1px solid var(--ach-border-strong);margin-bottom:var(--sp4)}
+  .rail ol{list-style:none;counter-reset:src;display:flex;flex-direction:column;gap:var(--sp4)}
+  .rail li{counter-increment:src;position:relative;padding-left:var(--sp6);font-size:13px;line-height:1.5;color:var(--ach-text-secondary)}
+  .rail li::before{content:'['counter(src)']';position:absolute;left:0;font-family:var(--mono);font-size:11px;color:var(--ach-text-tertiary)}
+  .rail li b{display:block;color:var(--ach-text-primary);font-weight:600;font-size:13px}
+
+  /* CTA band */
+  .cta-band{border-top:2px solid var(--ach-border-strong);border-bottom:1px solid var(--ach-border-strong);background:var(--ach-bg-surface)}
+  .cta-band .wrap{padding-block:var(--sp9);display:flex;align-items:center;justify-content:space-between;gap:var(--sp6);flex-wrap:wrap}
+  .cta-band h2{font-size:26px;font-weight:700;letter-spacing:-.01em;max-width:24ch}
+  .cta-band p{color:var(--ach-text-secondary);margin-top:var(--sp2);font-size:15px}
+
+  /* Footer / SourceLedger */
+  footer{padding-block:var(--sp7)}
+  footer .wrap{display:flex;justify-content:space-between;gap:var(--sp4);flex-wrap:wrap}
+  footer .mono{color:var(--ach-text-tertiary)}
+
+  /* Motion — functional reveal only; killed for reduced-motion */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}#progress{transition:none}.btn{transition:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header id="mast">
+  <div class="wrap mast">
+    <span class="mark">component&#8209;<b>consulting</b></span>
+    <nav>
+      <a href="#problem">Problem</a>
+      <a href="#method">Method</a>
+      <a href="#rubric">Rubric</a>
+      <a href="#provenance">Provenance</a>
+      <a href="#start">Get it</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ThesisHeader (SIGNATURE) -->
+<div class="wrap">
+  <section class="thesis">
+    <div class="overline mono">Skill · Frontend component consulting · risk S0 · consumes DESIGN.md</div>
+    <h1>The question isn't <em>which component</em>. It's which component <em>serves the message</em>.</h1>
+    <p class="thesis-line">Anyone can paste a flashy component. The unsolved part — the part that makes an AI-built frontend actually <em>work</em> — is binding a specific message and specific design tokens to a specific component, and placing it where the argument needs it.</p>
+    <div class="chips">
+      <span class="chip"><b>Buy</b>, don't build</span>
+      <span class="chip">One <b>signature</b> moment</span>
+      <span class="chip"><b>5-axis</b> fit rubric</span>
+      <span class="chip"><b>15</b> galleries</span>
+      <span class="chip">Reject the <b>average-AI</b> default</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn" href="#start">Read the SKILL.md →</a>
+      <span class="ghost">built by the skill it documents ↓</span>
+    </div>
+  </section>
+</div>
+
+<!-- AxisStrip (sticky) -->
+<div class="axis">
+  <div class="wrap">
+    <span class="k">The inversion</span>
+    <span class="v"><span class="bad">browse galleries, then justify</span> <span class="arrow">→</span> derive the job from the message, <em>then</em> shop</span>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="shell">
+  <main>
+
+    <!-- CoreSummaryBox -->
+    <section class="block" id="summary">
+      <div class="summary reveal">
+        <b>component-consulting</b> is a consulting hook, not a generator. Given a site's goal and its <b>DESIGN.md</b> tokens, it decides which open-source gallery component fills each job-slot, how to remap it to the tokens, and where to place it — so the page is message-coherent, token-true, and lands in the <b>distinctive</b> band: not bland-safe, not average-AI, not flashy-for-its-own-sake.
+      </div>
+    </section>
+
+    <!-- The problem — AxisCompareBlock -->
+    <section class="block" id="problem">
+      <div class="seclabel"><span class="n">01</span><h2>Why AI frontends look right and behave wrong</h2></div>
+      <p class="lede">They are pretty at a glance and fall apart on inspection. The fix isn't more components — it's a way to choose between them.</p>
+      <div class="compare reveal">
+        <div class="col bad">
+          <div class="colhead">Average-AI frontend</div>
+          <ul>
+            <li>Buttons that look interactive but do nothing</li>
+            <li>A component chosen because it looked cool, not because it fits</li>
+            <li>Everything shredded into same-size cards (card-soup)</li>
+            <li>Inter + an even 3-card grid + a purple gradient — the default</li>
+            <li>Five loud moments competing; none wins</li>
+          </ul>
+        </div>
+        <div class="col good">
+          <div class="colhead">Message-fit frontend</div>
+          <ul>
+            <li>Every interactive element names its real states</li>
+            <li>Every component passes a one-sentence "why it's here" test</li>
+            <li>Hierarchy carried by tables, weighted layouts, typography</li>
+            <li>The obvious average-AI pick is recorded, then consciously rejected</li>
+            <li>Exactly one signature moment; the rest serve it</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- The method — WorkflowStrip -->
+    <section class="block" id="method">
+      <div class="seclabel"><span class="n">02</span><h2>The method: ask → derive → source → score → place → validate</h2></div>
+      <p class="lede">A consulting intake, not a search box. Nothing is recommended before the brief is settled — and the message decides the components, not the gallery.</p>
+      <div class="flow reveal">
+        <div class="step gate"><div class="s-n">Step 0</div><div class="s-t">Ask</div><div class="s-d">Goal, audience, intent, tokens. Blocking — max 5 questions.</div><span class="who human">human-gated</span></div>
+        <div class="step"><div class="s-n">Step 2</div><div class="s-t">Derive</div><div class="s-d">Walk the IA → job-slots. Tag one signature.</div><span class="who ai">ai</span></div>
+        <div class="step"><div class="s-n">Step 3</div><div class="s-t">Source</div><div class="s-d">Name the element in English → route to the right gallery.</div><span class="who ai">ai</span></div>
+        <div class="step gate"><div class="s-n">Step 4</div><div class="s-t">Score</div><div class="s-d">5-axis rubric, gates first. Message-fight = reject.</div><span class="who ai">ai</span></div>
+        <div class="step"><div class="s-n">Step 5</div><div class="s-t">Place</div><div class="s-d">Rhythm, decision-journey order, mobile + backend honesty.</div><span class="who ai">ai</span></div>
+        <div class="step gate"><div class="s-n">Step 6</div><div class="s-t">Validate</div><div class="s-d">Ban-check, one-signature cap, self-check loop.</div><span class="who human">human-reviewed</span></div>
+      </div>
+    </section>
+
+    <!-- The rubric — EvidenceTable -->
+    <section class="block" id="rubric">
+      <div class="seclabel"><span class="n">03</span><h2>The fit rubric — the part the "use a gallery" advice skips</h2></div>
+      <p class="lede">Five axes, gates first. A component that fights the message is rejected even if its colors are perfect.</p>
+      <table class="reveal">
+        <thead><tr><th>Axis</th><th>What it measures</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td><span class="axis-name">A · Token fit</span></td><td>Remap distance from the DESIGN.md tokens — colors, type, radius, elevation, spacing.</td><td><span class="tag wt">weight .35</span></td></tr>
+          <tr><td><span class="axis-name">B · Message fit</span></td><td>Does the component's rhetorical intent reinforce or fight the site's stated intent?</td><td><span class="tag gate">GATE</span></td></tr>
+          <tr><td><span class="axis-name">C · UX + backend honesty</span></td><td>Flow-fit, and whether interactivity is real — a dead control on a critical path is a reject.</td><td><span class="tag wt">weight .30</span></td></tr>
+          <tr><td><span class="axis-name">D · Distinctiveness</span></td><td>Lands in distinctive/awwwards, not bland and not gratuitous. Penalizes average-AI tells.</td><td><span class="tag wt">weight .35</span></td></tr>
+          <tr><td><span class="axis-name">E · House override</span></td><td>When a house system (e.g. ACH Thesis) is in play, its patterns become first-choice.</td><td><span class="tag gate">GATE</span></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Worked case — CaseScene -->
+    <section class="block" id="case">
+      <div class="seclabel"><span class="n">04</span><h2>One scene, to make the message-gate concrete</h2></div>
+      <div class="panel case reveal">
+        <span class="role-k">Case · the message gate in action</span>
+        <p class="ptitle">A grief-support service.</p>
+        <p>The brief: <em>gentle, steady, human</em>. The AI reaches for an aurora-spotlight hero — animated gradient, glowing particles — because it reads as "premium," and it even takes the brand's blue cleanly. Token fit: a 3 out of 4.</p>
+        <p>The rubric rejects it anyway. Axis B is a <b>gate</b>: a hero whose rhetoric is "hype, kinetic, launch" actively undermines a service whose whole job is to feel calm and safe. Token fit becomes irrelevant. The <em>same</em> component scores a 4 on a brutalist agency launch — fit is never a property of the component alone.</p>
+        <span class="psrc">→ fit-rubric.md, Axis B worked pairings</span>
+      </div>
+    </section>
+
+    <!-- The gap — EvidencePanel -->
+    <section class="block" id="gap">
+      <div class="seclabel"><span class="n">05</span><h2>Why this needed its own skill</h2></div>
+      <div class="panel evidence reveal">
+        <span class="role-k">Evidence · the division of labor</span>
+        <p class="ptitle">Component knowledge already exists. Component <em>judgment</em> didn't.</p>
+        <p>A component knowledge base knows what a card is. A token scaffolder knows the colors. A slop validator knows what's average. None of them answer: <b>for this message, with these tokens, buy this component, place it here, and here's why a flashier one would fight the statement.</b></p>
+        <p>That binding — message × tokens × placement, at a defensible distinctiveness band — is the whole job, and it's the one thing none of the neighbors do.</p>
+        <span class="psrc">→ SKILL.md §5, Division of labor</span>
+      </div>
+    </section>
+
+    <!-- SelfCheckBlock -->
+    <section class="block" id="selfcheck">
+      <div class="seclabel"><span class="n">06</span><h2>The self-check it runs before it ships a recommendation</h2></div>
+      <div class="panel selfcheck reveal">
+        <ul class="checklist">
+          <li><input type="checkbox" id="c1"><label for="c1">Can I justify <b>every</b> component with the one-sentence test?</label></li>
+          <li><input type="checkbox" id="c2"><label for="c2">Is there <b>exactly one</b> signature moment?</label></li>
+          <li><input type="checkbox" id="c3"><label for="c3">Did I record <b>and reject</b> the obvious average-AI choice, per slot?</label></li>
+          <li><input type="checkbox" id="c4"><label for="c4">Does every interactive component list its states, and every component its mobile degradation?</label></li>
+          <li><input type="checkbox" id="c5"><label for="c5">Does <b>every token</b> trace back to the DESIGN.md — no invented colors, radii, or fonts?</label></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AIProvenancePanel + RevisionTimeline -->
+    <section class="block" id="provenance">
+      <div class="seclabel"><span class="n">07</span><h2>Provenance — this page was built by the skill it describes</h2></div>
+      <p class="lede">Fittingly, in the ACH Thesis design system: AI contribution is declared, never decorative.</p>
+      <div class="provenance reveal">
+        <span class="ai-tag">AI provenance</span>
+        <dl class="prov-grid">
+          <div><dt>What is AI-generated</dt><dd>The layout, copy, and code — produced by <b>component-consulting</b> running on itself, consuming <span class="mono" style="text-transform:none">ach-thesis-DESIGN.md</span>.</dd></div>
+          <div><dt>What is human-decided</dt><dd>The subject (this skill), the archetype (ACH Thesis), and the sign-off. The human chose the constraints; the skill chose the components.</dd></div>
+          <div><dt>When</dt><dd>2026-06-18 · Axis-E (house-override) mode, so the 14 ACH patterns replaced the gallery catalog.</dd></div>
+          <div><dt>Restore path</dt><dd>Prescription preserved at <span class="mono" style="text-transform:none">consulting-report.md</span>; tokens are the canonical ACH DESIGN.md — revert by re-running with Axis E off.</dd></div>
+        </dl>
+        <div class="timeline">
+          <div class="ev"><span class="t">draft</span><span class="d"><b>Brief settled</b> — goal, audience, ACH override flagged (Step 0)</span></div>
+          <div class="ev"><span class="t">prescription</span><span class="d"><b>Job-slots → ACH patterns</b> — ThesisHeader as the one signature, rest quiet</span></div>
+          <div class="ev"><span class="t">build</span><span class="d"><b>Implemented</b> — borders not shadows, blue used twice, zero gradient/glass</span></div>
+          <div class="ev"><span class="t">verify</span><span class="d"><b>Checked</b> — ACH don'ts + impeccable bans, responsive, real interactivity</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- CitationRail -->
+  <aside class="rail">
+    <div class="rk">Sources</div>
+    <ol>
+      <li><b>The forum post</b>"Buy, don't build" component galleries — the half-solution this skill completes.</li>
+      <li><b>design.md spec</b>Google Labs token grammar. The skill consumes a DESIGN.md.</li>
+      <li><b>ACH Thesis system</b>The house design system this page is built in (Axis-E override).</li>
+      <li><b>Impeccable bans</b>No decorative side-stripe, no gradient text — enforced at validate.</li>
+    </ol>
+  </aside>
+</div>
+</div>
+
+<!-- CTA band -->
+<section class="cta-band" id="start">
+  <div class="wrap">
+    <div>
+      <h2>Stop pasting components. Start prescribing them.</h2>
+      <p>One folder: a SKILL.md, a gallery catalog, a 5-axis rubric, an output template. Risk class S0 — references galleries, vendors no code.</p>
+    </div>
+    <a class="btn" href="#">Read the SKILL.md →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">component-consulting · S0 · consumes DESIGN.md</span>
+    <span class="mono">ACH Thesis · borders not shadows · one accent · built from a DESIGN.md</span>
+  </div>
+</footer>
+
+<script>
+  // scroll progress — functional
+  const bar = document.getElementById('progress');
+  const mast = document.getElementById('mast');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    mast.classList.toggle('shrunk', h.scrollTop > 24);
+  };
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // functional reveal — content is present without JS; this only animates entry
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

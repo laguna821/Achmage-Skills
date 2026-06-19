@@ -8,6 +8,10 @@
 이미지를 **배경 재료**로만 쓰고 텍스트·숫자·차트는 전부 **HTML/SVG**로 유지하는 1920×1080 HTML 발표 덱(HTML PPT / 카드뉴스 / 키노트) 제작 스킬. GPTs “Raw5 v4” 프롬프트 팩을 Claude 스킬로 포팅했다. 4개 모드(V7 밝은 리포트 / V8 다크 / University AX / Street 에디토리얼) · 3단계 워크플로우(기획 → 이미지 5장 프롬프트[HARD STOP] → HTML 빌드).
 → 상세: **[Image-HTML/README.md](Image-HTML/README.md)**
 
+### [`Design-Consulting/component-consulting`](Design-Consulting/component-consulting) — 컴포넌트 컨설팅 (buy, don't build)
+사이트의 목적/메시지 + **DESIGN.md 디자인 토큰**을 받아, **어떤** 오픈소스 UI 컴포넌트를 살지 · **어떻게** 토큰에 remap 할지 · **어디에** 배치할지 처방하는 컨설팅 스킬. 코드 생성기가 아니라 **컨설턴트** — 5축 gates-first rubric(Token · Message-gate · UX+backend · Distinctiveness · House-override) + ~15개 갤러리 **live-scan**(WebFetch/WebSearch). average-AI(Inter + 균등 3카드 + 그라데이션 히어로) floor 와 flashy-for-its-own-sake ceiling 사이의 distinctive 밴드를 노린다. Design.md posture: **consumes**. 3개 쇼케이스(골목 베이커리 / SURGE EV / Skill Landing) 포함.
+→ 상세: **[Design-Consulting/README.md](Design-Consulting/README.md)**
+
 ## 🚀 빠른 설치 (Claude Code)
 
 ```bash
@@ -19,6 +23,7 @@ npx skills add laguna821/Achmage-Skills
 # 방법 B — 플러그인 마켓플레이스 (공식 배포 경로)
 /plugin marketplace add laguna821/Achmage-Skills
 /plugin install raw-5-html@achmage-skills
+/plugin install component-consulting@achmage-skills
 ```
 
 ```bash

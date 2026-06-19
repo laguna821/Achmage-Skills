@@ -5,8 +5,8 @@
     "email": "laguna821@gmail.com"
   },
   "metadata": {
-    "description": "안창현 (Achmage) 의 Claude 스킬 모음 — image-embedded HTML 덱 등.",
-    "version": "1.0.0"
+    "description": "안창현 (Achmage) 의 Claude 스킬 모음 — image-embedded HTML 덱 + component consulting 등.",
+    "version": "1.1.0"
   },
   "plugins": [
     {
@@ -21,6 +21,19 @@
       "license": "Apache-2.0",
       "category": "productivity",
       "tags": ["skill", "html-presentation", "raw5", "deck", "slides"]
+    },
+    {
+      "name": "component-consulting",
+      "source": "./Design-Consulting/component-consulting",
+      "description": "Component consultant: given a site's goal + DESIGN.md tokens, prescribes which open-source UI component to buy, how to remap it to the tokens, and where to place it. 5-axis gates-first rubric + gallery live-scan. Design.md posture: consumes.",
+      "version": "1.0.0",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Design-Consulting/component-consulting",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": ["skill", "component-selection", "design-consulting", "frontend", "design-tokens"]
     }
   ]
 }

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SURGE GT-e — Current, made visible</title>
+<meta name="description" content="The SURGE GT-e. Instant electric torque, made visible. A kinetic premium EV.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="assets/hero-car.webp">
+<link rel="preload" as="image" href="assets/hero-bg.webp">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:opsz,wght@9..144,340;9..144,500&family=JetBrains+Mono:wght@400;500;700&family=Roboto+Flex:opsz,wght@8..144,380;8..144,1000&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --void:#0A0B0C; --void-2:#121417; --carbon:#1C2024; --graphite:#2B3036; --ash:#6E7681;
+    --bone:#E9E3D6; --white-hot:#F6F4EF; --charge:#C6F24E; --charge-deep:#7FA814; --ember:#FF5A2C; --signal:#1F6FEB;
+    --edge:clamp(20px,4vw,72px); --section:clamp(120px,16vh,240px);
+    --anton:'Anton',sans-serif; --serif:'Fraunces',Georgia,serif; --flex:'Roboto Flex',sans-serif; --mono:'JetBrains Mono',monospace;
+    --car:#1A1E22;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--void);color:var(--bone)}
+  body{font-family:var(--flex);font-weight:380;font-size:clamp(16px,1.15vw,19px);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--charge);color:var(--void)}
+  a{color:inherit;text-decoration:none}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--ash)}
+  .eyebrow .c{color:var(--charge)}
+  .mono{font-family:var(--mono)}
+  .edge{padding-inline:var(--edge)}
+
+  #cur,#curdot{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:difference;border-radius:50%;will-change:transform}
+  #cur{width:36px;height:36px;border:1px solid var(--bone);margin:-18px 0 0 -18px}
+  #curdot{width:7px;height:7px;background:var(--bone);margin:-3.5px 0 0 -3.5px}
+  body.no-cursor #cur,body.no-cursor #curdot{display:none}
+
+  #prog{position:fixed;top:0;left:0;height:2px;width:0;background:var(--charge);z-index:200}
+
+  nav{position:fixed;top:0;left:0;width:100%;z-index:180;display:flex;align-items:center;justify-content:space-between;
+    padding:18px var(--edge);border-bottom:1px solid rgba(233,227,214,.14);color:var(--bone)}
+  nav .wm{font-family:var(--anton);font-size:22px;letter-spacing:.02em}
+  nav .right{display:flex;align-items:center;gap:28px}
+  nav .stat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#fff;display:flex;align-items:center;gap:8px}
+  nav .stat i{width:7px;height:7px;border-radius:50%;background:var(--charge);display:inline-block}
+  nav .rsv{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+  @media(max-width:680px){nav .stat{display:none}}
+
+  section{position:relative}
+
+  /* ===== ACT 1 — LAUNCH ===== */
+  #launch{height:100vh}
+  .stage{position:relative;height:100vh;width:100%;overflow:hidden;background:var(--void)}
+  .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 64%;z-index:0;will-change:transform}
+  .scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(10,11,12,.78) 0%,rgba(10,11,12,.20) 34%,rgba(10,11,12,.12) 56%,rgba(10,11,12,.66) 82%,rgba(10,11,12,.96) 100%)}
+  .vign{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(120% 90% at 50% 46%,transparent 55%,rgba(10,11,12,.7) 100%)}
+  .bigword{position:absolute;left:50%;top:30%;transform:translate(-50%,-50%);font-family:var(--anton);
+    font-size:clamp(90px,22vw,360px);line-height:.8;color:transparent;letter-spacing:-.03em;white-space:nowrap;z-index:1;
+    -webkit-text-stroke:1px rgba(233,227,214,.10)}
+  .speedlines{position:absolute;inset:0;z-index:2}
+  .speedlines i{position:absolute;height:2px;background:linear-gradient(90deg,transparent,var(--charge));transform-origin:left center;will-change:transform;opacity:0}
+  .car-rig{position:absolute;bottom:19vh;left:0;width:min(66vw,900px);z-index:3;will-change:transform,filter}
+  .hero-car-img{width:100%;height:auto;display:block;filter:url(#mblur)}
+  .car-fallback svg{width:100%;height:auto;display:block;overflow:visible}
+  .regen{position:absolute;inset:0;z-index:4;pointer-events:none;opacity:0;
+    background:radial-gradient(46% 38% at 62% 56%,rgba(198,242,78,.20),transparent 70%)}
+  .hero-copy{position:absolute;left:var(--edge);bottom:9vh;z-index:6;max-width:62vw}
+  .hero-copy h1{font-family:var(--flex);font-weight:1000;font-stretch:151%;font-size:clamp(40px,8vw,118px);line-height:.9;letter-spacing:-.03em;color:var(--bone);will-change:transform;text-shadow:0 2px 40px rgba(10,11,12,.6)}
+  .hero-copy h1 .row{display:block;overflow:hidden}
+  .hero-copy .sub{margin-top:18px;max-width:40ch;color:#cfcabd;text-shadow:0 1px 20px rgba(10,11,12,.8)}
+  .scroll-cue{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:6;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--ash);text-transform:uppercase}
+
+  .speedo{position:absolute;right:var(--edge);bottom:9vh;z-index:6;width:200px;text-align:right}
+  .speedo svg{width:200px;height:118px;overflow:visible}
+  .speedo .needle{transform-box:fill-box;transform-origin:130px 100px}
+  .speedo .read{font-family:var(--mono);font-weight:700;font-size:46px;color:var(--bone);line-height:1;letter-spacing:-.02em;font-feature-settings:'tnum' 1,'zero' 1}
+  .speedo .unit{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--ash);text-transform:uppercase}
+
+  .act{padding-block:var(--section)}
+  .kick{display:flex;align-items:center;gap:14px;margin-bottom:var(--edge)}
+  .kick .ln{height:1px;width:56px;background:var(--graphite)}
+
+  /* ACT 2 — manifesto */
+  #manifesto{padding-block:calc(var(--section)*1.2)}
+  .manifesto h2{font-family:var(--serif);font-weight:340;font-size:clamp(44px,9vw,150px);line-height:.96;letter-spacing:-.02em;color:var(--bone);max-width:16ch}
+  .manifesto h2 .cur{color:var(--charge);font-style:italic}
+  .manifesto .reveal-mask{clip-path:inset(0 100% 0 0)}
+  .manifesto p{margin-top:var(--section);max-width:46ch;color:var(--ash);font-size:clamp(17px,1.4vw,22px)}
+
+  /* ACT 3 — telemetry */
+  #telemetry{border-top:1px solid var(--carbon)}
+  .tele-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:var(--edge);align-items:end}
+  @media(max-width:860px){.tele-grid{grid-template-columns:1fr;gap:48px}}
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:1px solid var(--graphite);padding-top:32px}
+  @media(max-width:680px){.metrics{grid-template-columns:1fr;gap:32px}}
+  .metric .v{font-family:var(--mono);font-weight:700;font-size:clamp(40px,6vw,76px);color:var(--bone);line-height:1;letter-spacing:-.03em;font-feature-settings:'tnum' 1}
+  .metric .v small{font-size:.4em;color:var(--ash);font-weight:500;margin-left:6px;letter-spacing:0}
+  .metric .l{margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+  .scope{border:1px solid var(--graphite);background:var(--void-2);border-radius:2px;padding:20px}
+  .scope .top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ash);text-transform:uppercase;margin-bottom:14px}
+  .scope svg{width:100%;height:120px;display:block}
+  .scope .trace{fill:none;stroke:var(--signal);stroke-width:2}
+
+  /* ACT 4 — circuit */
+  #circuit{overflow:hidden}
+  .ctrack{display:flex;gap:0;width:max-content;will-change:transform}
+  .cpanel{width:min(78vw,640px);flex:0 0 auto;padding:0 var(--edge);border-left:1px solid var(--carbon);display:flex;flex-direction:column;justify-content:center;height:100vh}
+  .cpanel .num{font-family:var(--anton);font-size:clamp(60px,9vw,130px);color:var(--void-2);-webkit-text-stroke:1px var(--graphite);line-height:.8}
+  .cpanel h3{font-family:var(--serif);font-weight:340;font-size:clamp(30px,3.4vw,52px);margin:18px 0 16px;color:var(--bone);line-height:1.02}
+  .cpanel p{max-width:42ch;color:var(--ash)}
+  .cpanel .chip{margin-top:24px;display:inline-flex;width:max-content;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--charge);border:1px solid var(--graphite);border-radius:2px;padding:7px 12px}
+  .circ-head{position:absolute;top:var(--section);left:var(--edge);z-index:5}
+
+  /* ACT 5 — cabin */
+  #cabin .cabin-stage{position:relative;height:92vh;min-height:560px;border-top:1px solid var(--carbon);border-bottom:1px solid var(--carbon);overflow:hidden;background:var(--void-2)}
+  .cabin-scene{position:absolute;inset:-6% 0;will-change:transform}
+  .cabin-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+  .cabin-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,12,.5),transparent 40%,rgba(10,11,12,.55))}
+  .hot{position:absolute;width:16px;height:16px;cursor:pointer;z-index:3}
+  .hot .ring{position:absolute;inset:0;border:1px solid var(--charge);border-radius:50%}
+  .hot .pip{position:absolute;inset:5px;background:var(--charge);border-radius:50%}
+  .hot .pulse{position:absolute;inset:0;border:1px solid var(--charge);border-radius:50%;animation:pulse 2.4s ease-out infinite}
+  @keyframes pulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+  .hot .cap{position:absolute;left:26px;top:-6px;width:max-content;max-width:240px;background:rgba(10,11,12,.92);border:1px solid var(--graphite);border-radius:2px;padding:10px 14px;
+    opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s;pointer-events:none}
+  .hot:hover .cap,.hot:focus-visible .cap{opacity:1;transform:none}
+  .hot .cap .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--charge);text-transform:uppercase}
+  .hot .cap .d{font-size:14px;color:var(--bone);margin-top:5px;line-height:1.4}
+  .cabin-label{position:absolute;left:var(--edge);bottom:var(--edge);z-index:4}
+
+  /* ACT 6 — build */
+  #build{border-top:1px solid var(--carbon)}
+  .build-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--section);align-items:center}
+  @media(max-width:860px){.build-grid{grid-template-columns:1fr;gap:48px}}
+  .build-car{position:relative}
+  .build-car img{width:100%;height:auto;display:block}
+  .build-tint{position:absolute;inset:0;-webkit-mask:url(assets/build-car.webp) center/contain no-repeat;mask:url(assets/build-car.webp) center/contain no-repeat;mix-blend-mode:color;opacity:0;transition:background-color .55s ease,opacity .55s ease}
+  .chips{display:flex;gap:12px;margin:28px 0 36px;flex-wrap:wrap}
+  .swatch{width:40px;height:40px;border-radius:50%;border:1px solid var(--graphite);cursor:pointer;position:relative;transition:transform .2s}
+  .swatch[aria-pressed="true"]{transform:scale(1.12)}
+  .swatch[aria-pressed="true"]::after{content:'';position:absolute;inset:-6px;border:1px solid var(--charge);border-radius:50%}
+  .swatch:focus-visible{outline:2px solid var(--charge);outline-offset:3px}
+  .build-name{font-family:var(--anton);font-size:clamp(28px,3.2vw,46px);line-height:1;color:var(--bone)}
+  .build-spec{display:flex;gap:36px;margin-top:24px;border-top:1px solid var(--graphite);padding-top:20px}
+  .build-spec .v{font-family:var(--mono);font-weight:700;font-size:26px;color:var(--charge);font-feature-settings:'tnum' 1}
+  .build-spec .l{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);margin-top:6px}
+
+  /* ACT 7 — reserve */
+  #reserve{text-align:center;padding-block:calc(var(--section)*1.1);border-top:1px solid var(--carbon)}
+  #reserve h2{font-family:var(--serif);font-weight:340;font-size:clamp(40px,7vw,104px);line-height:.98;letter-spacing:-.02em;max-width:18ch;margin:0 auto}
+  .resv-form{margin:48px auto 0;max-width:520px;display:flex;gap:12px}
+  @media(max-width:560px){.resv-form{flex-direction:column}}
+  .resv-form input{flex:1;background:var(--void-2);border:1px solid var(--graphite);border-radius:999px;color:var(--bone);
+    font-family:var(--mono);font-size:14px;padding:16px 24px;outline:none}
+  .resv-form input:focus{border-color:var(--charge)}
+  .resv-form input.bad{border-color:var(--ember)}
+  .magnetic{position:relative;background:var(--charge);color:var(--void);border:none;border-radius:999px;cursor:pointer;
+    font-family:var(--mono);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:16px 32px;overflow:hidden;will-change:transform}
+  .magnetic span{position:relative;z-index:1}
+  .magnetic::before{content:'';position:absolute;inset:0;background:var(--charge-deep);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.22,1,.36,1)}
+  .magnetic:hover::before{transform:scaleX(1)}
+  .magnetic:active{transform:scale(.96)}
+  .magnetic:focus-visible{outline:2px solid var(--bone);outline-offset:4px}
+  .resv-meta{margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--ash);text-transform:uppercase}
+  .resv-meta b{color:var(--charge)}
+  .resv-ok{color:var(--charge);margin-top:22px;font-family:var(--mono);font-size:13px;letter-spacing:.06em;display:none}
+
+  /* ACT 8 — ground */
+  #ground{padding-top:var(--section);overflow:hidden}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:48px;border-bottom:1px solid var(--carbon)}
+  .foot-col h4{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ash);margin-bottom:16px}
+  .foot-col a{display:block;color:var(--bone);font-size:15px;padding:5px 0}
+  .foot-col a:hover{color:var(--charge)}
+  .foot-wm{font-family:var(--anton);font-size:clamp(80px,22vw,340px);line-height:.7;color:var(--void-2);-webkit-text-stroke:1px var(--graphite);
+    letter-spacing:-.02em;white-space:nowrap;margin-top:40px;transform:translateY(22%);will-change:transform}
+  .foot-legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:24px 0 40px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ash)}
+
+  @media(prefers-reduced-motion:reduce){
+    .manifesto .reveal-mask{clip-path:none!important}
+    .hot .pulse{animation:none}
+    .car-rig{position:absolute;left:50%;transform:translateX(-50%)!important;bottom:22vh}
+    .hero-car-img{filter:none}
+  }
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div id="cur"></div><div id="curdot"></div>
+
+<!-- motion-blur filter for the streaking car -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+  <filter id="mblur" x="-30%" y="-10%" width="160%" height="120%"><feGaussianBlur id="mblurG" in="SourceGraphic" stdDeviation="0 0"/></filter>
+</defs></svg>
+
+<nav>
+  <div class="wm">SURGE //</div>
+  <div class="right">
+    <span class="stat"><i></i> powertrain: armed</span>
+    <a class="rsv" href="#reserve">Reserve</a>
+  </div>
+</nav>
+
+<!-- ACT 1 — LAUNCH -->
+<section id="launch">
+  <div class="stage">
+    <img class="hero-bg" id="heroBg" src="assets/hero-bg.webp" alt="">
+    <div class="scrim"></div>
+    <div class="vign"></div>
+    <div class="bigword">LAUNCH</div>
+    <div class="speedlines" id="speedlines"></div>
+
+    <div class="car-rig" id="carRig">
+      <img class="hero-car-img" id="heroCar" src="assets/hero-car.webp" alt="SURGE GT-e accelerating">
+    </div>
+
+    <div class="regen" id="regen"></div>
+
+    <div class="hero-copy">
+      <div class="eyebrow" style="margin-bottom:18px">SURGE GT-e · <span class="c">412 kW</span> · all-wheel</div>
+      <h1><span class="row">CURRENT,</span><span class="row">MADE&nbsp;VISIBLE.</span></h1>
+      <p class="sub">Not range anxiety relieved. The felt sensation of instant torque — the moment the circuit closes and the road moves.</p>
+    </div>
+
+    <div class="speedo">
+      <svg viewBox="0 0 200 118">
+        <path d="M30,100 A100,100 0 0,1 170,100" fill="none" stroke="var(--graphite)" stroke-width="2"/>
+        <path id="speedArc" d="M30,100 A100,100 0 0,1 170,100" fill="none" stroke="var(--charge)" stroke-width="3" stroke-dasharray="220" stroke-dashoffset="220"/>
+        <line class="needle" id="needle" x1="130" y1="100" x2="46" y2="100" stroke="var(--bone)" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="130" cy="100" r="6" fill="var(--bone)"/>
+      </svg>
+      <div class="read"><span id="kmh">0</span></div>
+      <div class="unit">km/h · 0–100 in 2.9s</div>
+    </div>
+    <div class="scroll-cue">scroll to launch ↓</div>
+  </div>
+</section>
+
+<!-- ACT 2 — MANIFESTO -->
+<section id="manifesto" class="edge">
+  <div class="kick"><span class="ln"></span><span class="eyebrow">01 — The thesis</span></div>
+  <div class="manifesto">
+    <h2 class="reveal-mask">Electricity isn't quiet. It's <span class="cur">composed.</span></h2>
+    <p>Every other EV sells you silence and software. SURGE sells you the half-second before motion — torque held at the line, then released whole. The page you're reading behaves the same way: charged, then spent.</p>
+  </div>
+</section>
+
+<!-- ACT 3 — TELEMETRY -->
+<section id="telemetry" class="act edge">
+  <div class="kick"><span class="ln"></span><span class="eyebrow">02 — Earned numbers</span></div>
+  <div class="tele-grid">
+    <div>
+      <div class="metrics">
+        <div class="metric"><div class="v"><span data-count="2.9" data-dec="1">0.0</span><small>s</small></div><div class="l">0–100 km/h</div></div>
+        <div class="metric"><div class="v"><span data-count="412">0</span><small>kW</small></div><div class="l">peak output</div></div>
+        <div class="metric"><div class="v"><span data-count="624">0</span><small>km</small></div><div class="l">WLTP range</div></div>
+      </div>
+    </div>
+    <div class="scope">
+      <div class="top"><span>torque · Nm</span><span class="mono" style="color:var(--signal)">live trace</span></div>
+      <svg viewBox="0 0 320 120" preserveAspectRatio="none">
+        <path class="trace" id="trace" d="M0,110 C40,110 50,30 90,28 C140,26 150,40 200,42 C250,44 270,46 320,46"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 4 — CIRCUIT -->
+<section id="circuit">
+  <div class="circ-head edge"><div class="kick"><span class="ln"></span><span class="eyebrow">03 — The circuit</span></div></div>
+  <div class="ctrack" id="ctrack">
+    <div class="cpanel"><div class="num">01</div><h3>800V architecture.</h3><p>A native 800-volt platform moves current with less heat and less loss. 10 to 80 percent in eighteen minutes, on the right charger.</p><span class="chip">PEAK 0.0 → 350 kW</span></div>
+    <div class="cpanel"><div class="num">02</div><h3>Thermal, held.</h3><p>A direct-cooled pack keeps cells in their window lap after lap — the second launch is as hard as the first. Repeatable, not a party trick.</p><span class="chip">±2°C cell delta</span></div>
+    <div class="cpanel"><div class="num">03</div><h3>Torque vectoring.</h3><p>Two motors, one brain, a thousand decisions a second. The car rotates around the corner instead of pushing through it.</p><span class="chip">1000 Hz control</span></div>
+  </div>
+</section>
+
+<!-- ACT 5 — CABIN -->
+<section id="cabin">
+  <div class="cabin-stage">
+    <div class="cabin-scene" id="cabinScene">
+      <img class="cabin-img" id="cabinImg" src="assets/cabin.webp" alt="SURGE GT-e cabin">
+      <div class="cabin-tint"></div>
+    </div>
+    <div class="hot" style="left:34%;top:49%" tabindex="0">
+      <div class="pulse"></div><div class="ring"></div><div class="pip"></div>
+      <div class="cap"><div class="t">Yoke</div><div class="d">Steer-by-wire. No column, variable ratio — tight in the city, calm at speed.</div></div>
+    </div>
+    <div class="hot" style="left:55%;top:36%" tabindex="0">
+      <div class="pulse"></div><div class="ring"></div><div class="pip"></div>
+      <div class="cap"><div class="t">Telemetry</div><div class="d">A single mono readout: power, temperature, charge. No menus buried three taps deep.</div></div>
+    </div>
+    <div class="hot" style="left:30%;top:78%" tabindex="0">
+      <div class="pulse"></div><div class="ring"></div><div class="pip"></div>
+      <div class="cap"><div class="t">Seat</div><div class="d">Magnesium frame, wool-blend over foam. 14 kg lighter than the class average.</div></div>
+    </div>
+    <div class="cabin-label"><div class="eyebrow">04 — Inside · <span class="c">explore</span></div></div>
+  </div>
+</section>
+
+<!-- ACT 6 — BUILD -->
+<section id="build" class="act edge">
+  <div class="kick"><span class="ln"></span><span class="eyebrow">05 — Make it yours</span></div>
+  <div class="build-grid">
+    <div class="build-car" id="buildCar">
+      <img id="buildImg" src="assets/build-car.webp" alt="SURGE GT-e">
+      <div class="build-tint" id="buildTint"></div>
+    </div>
+    <div>
+      <div class="build-name" id="paintName">Graphite Mono</div>
+      <div class="chips" id="chips">
+        <button class="swatch" data-tint="" data-name="Graphite Mono" data-range="624" aria-pressed="true" style="background:#1A1E22"></button>
+        <button class="swatch" data-tint="#1F6FEB" data-name="Signal Deep" data-range="612" aria-pressed="false" style="background:#1F6FEB"></button>
+        <button class="swatch" data-tint="#FF5A2C" data-name="Ember Heat" data-range="606" aria-pressed="false" style="background:#FF5A2C"></button>
+        <button class="swatch" data-tint="#9BCB2E" data-name="Charge Volt" data-range="600" aria-pressed="false" style="background:#9BCB2E"></button>
+      </div>
+      <p style="color:var(--ash);max-width:38ch">One swap, live. Body retints instantly — the only configurator that doesn't make you wait for a render farm.</p>
+      <div class="build-spec">
+        <div><div class="v"><span id="rangeVal">624</span></div><div class="l">km range</div></div>
+        <div><div class="v">412<span style="font-size:.5em">kW</span></div><div class="l">output</div></div>
+        <div><div class="v">2.9<span style="font-size:.5em">s</span></div><div class="l">0–100</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACT 7 — RESERVE -->
+<section id="reserve" class="edge">
+  <div class="kick" style="justify-content:center"><span class="eyebrow">06 — The line forms</span></div>
+  <h2>Close the circuit.</h2>
+  <form class="resv-form" id="resvForm" novalidate>
+    <input type="email" id="email" placeholder="name@domain.com" aria-label="Email" autocomplete="email">
+    <button class="magnetic" id="resvBtn" type="submit"><span>Reserve the GT-e</span></button>
+  </form>
+  <div class="resv-meta"><b id="resvCount">2,418</b> reservations · refundable · delivery from Q3 2027</div>
+  <div class="resv-ok" id="resvOk">// reservation logged — circuit closed. check your inbox.</div>
+</section>
+
+<!-- ACT 8 — GROUND -->
+<footer id="ground" class="edge">
+  <div class="foot-grid">
+    <div class="foot-col"><h4>Vehicle</h4><a href="#">GT-e Coupe</a><a href="#">Performance</a><a href="#">Range</a><a href="#">Charging</a></div>
+    <div class="foot-col"><h4>Own</h4><a href="#reserve">Reserve</a><a href="#">Configure</a><a href="#">Test drive</a><a href="#">Trade-in</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="#">Manifesto</a><a href="#">Engineering</a><a href="#">Careers</a><a href="#">Press</a></div>
+    <div class="foot-col"><h4>Signal</h4><a href="#">Newsletter</a><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Contact</a></div>
+  </div>
+  <div class="foot-wm" id="footWm">SURGE //</div>
+  <div class="foot-legal"><span>© 2027 SURGE MOTORS — a fictional brand built to spec.</span><span>CURRENT, MADE VISIBLE.</span></div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  gsap.registerPlugin(ScrollTrigger);
+  const CINE = "0.22,1,0.36,1";
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const coarse = matchMedia('(pointer: coarse)').matches;
+  const small  = matchMedia('(max-width: 767px)').matches;
+  const fullKinetic = !reduce && !small;
+
+  const prog = document.getElementById('prog');
+
+  /* custom cursor */
+  if (!coarse && !reduce){
+    const ring=document.getElementById('cur'), dot=document.getElementById('curdot');
+    const rx=gsap.quickTo(ring,'x',{duration:.5,ease:'power3'}), ry=gsap.quickTo(ring,'y',{duration:.5,ease:'power3'});
+    const dx=gsap.quickTo(dot,'x',{duration:.12,ease:'power3'}), dy=gsap.quickTo(dot,'y',{duration:.12,ease:'power3'});
+    let lastX=0;
+    addEventListener('pointermove',e=>{
+      rx(e.clientX);ry(e.clientY);dx(e.clientX);dy(e.clientY);
+      const v=Math.max(-.4,Math.min(.4,(e.clientX-lastX)*0.02));lastX=e.clientX;
+      gsap.to(ring,{scaleX:1+Math.abs(v),scaleY:1-Math.abs(v)*0.6,rotation:v*30,duration:.3,overwrite:'auto'});
+    });
+    document.querySelectorAll('a,button,.hot,.swatch').forEach(el=>{
+      el.addEventListener('pointerenter',()=>gsap.to(ring,{scale:1.9,borderColor:'#C6F24E',duration:.3}));
+      el.addEventListener('pointerleave',()=>gsap.to(ring,{scale:1,borderColor:'#E9E3D6',duration:.3}));
+    });
+  } else { document.body.classList.add('no-cursor'); }
+
+  /* speed lines */
+  const slWrap=document.getElementById('speedlines'), lines=[];
+  for(let i=0;i<26;i++){const el=document.createElement('i');
+    el.style.top=(8+Math.random()*84)+'%';el.style.left=(Math.random()*55)+'%';el.style.width=(40+Math.random()*180)+'px';
+    slWrap.appendChild(el);lines.push(el);}
+
+  /* Lenis */
+  let lenis=null, velocity=0;
+  if (fullKinetic && window.Lenis){
+    lenis=new Lenis({lerp:0.1,smoothWheel:true});
+    lenis.on('scroll',(e)=>{ScrollTrigger.update();velocity=e.velocity||0;});
+    gsap.ticker.add(t=>lenis.raf(t*1000)); gsap.ticker.lagSmoothing(0);
+  }
+
+  ScrollTrigger.create({start:0,end:'max',onUpdate:s=>{prog.style.width=(s.progress*100)+'%';}});
+
+  /* velocity nervous-system */
+  const heroH1=document.querySelector('.hero-copy h1');
+  if (fullKinetic){
+    let skew=0;
+    gsap.ticker.add(()=>{
+      skew+=(velocity-skew)*0.1;
+      const s=Math.max(-14,Math.min(14,skew*0.5));
+      if(heroH1) heroH1.style.transform='skewX('+(s*-0.4)+'deg)';
+      const len=Math.min(1,Math.abs(velocity)*0.02);
+      for(const l of lines){l.style.transform='scaleX('+(0.2+len*2)+')';l.style.opacity=(len*0.9);}
+    });
+  }
+
+  const mm=gsap.matchMedia();
+
+  /* FULL KINETIC */
+  mm.add('(min-width: 768px) and (prefers-reduced-motion: no-preference)', () => {
+    const carRig=document.getElementById('carRig');
+    const needle=document.getElementById('needle'), arc=document.getElementById('speedArc'), kmh=document.getElementById('kmh');
+    const regen=document.getElementById('regen');
+    const speed={v:0};
+
+    gsap.set(carRig,{xPercent:-135});
+    const tl=gsap.timeline({scrollTrigger:{trigger:'#launch',start:'top top',end:'+=320%',pin:true,scrub:1}});
+    tl.to(carRig,{xPercent:135,ease:'power1.in'},0)
+      .to(carRig,{rotation:-1.8,ease:'power2.out',duration:.38},0)
+      .to(carRig,{rotation:0,ease:'power2.in',duration:.4},.55)
+      .fromTo('#mblurG',{attr:{stdDeviation:'0 0'}},{attr:{stdDeviation:'34 0'},ease:'power1.in',duration:.5},0)
+      .to('#mblurG',{attr:{stdDeviation:'0 0'},ease:'power1.out',duration:.5},.5)
+      .fromTo('#heroBg',{scale:1.14,xPercent:3},{scale:1.0,xPercent:-3,ease:'none'},0)
+      .to(needle,{rotation:200,transformOrigin:'130px 100px',ease:'power1.in'},0)
+      .to(arc,{strokeDashoffset:0,ease:'power1.in'},0)
+      .to(speed,{v:96,ease:'power1.in',onUpdate:()=>{kmh.textContent=Math.round(speed.v);}},0)
+      .to(regen,{opacity:1,duration:.07},.9).to(regen,{opacity:0,duration:.2},.97);
+
+    gsap.to('.manifesto .reveal-mask',{clipPath:'inset(0 0% 0 0)',ease:'none',
+      scrollTrigger:{trigger:'#manifesto',start:'top 75%',end:'top 30%',scrub:1}});
+    gsap.from('.manifesto p',{y:30,opacity:0,duration:.8,ease:'power2.out',scrollTrigger:{trigger:'.manifesto p',start:'top 85%'}});
+
+    const track=document.getElementById('ctrack');
+    const dist=()=>track.scrollWidth-innerWidth;
+    gsap.to(track,{x:()=>-dist(),ease:'none',
+      scrollTrigger:{trigger:'#circuit',start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true}});
+
+    gsap.fromTo('#cabinScene',{yPercent:-5},{yPercent:5,ease:'none',
+      scrollTrigger:{trigger:'#cabin',start:'top bottom',end:'bottom top',scrub:true}});
+
+    gsap.fromTo('#footWm',{xPercent:-4},{xPercent:4,ease:'none',
+      scrollTrigger:{trigger:'#ground',start:'top bottom',end:'bottom bottom',scrub:1}});
+
+    return ()=>{ gsap.set('.manifesto .reveal-mask',{clearProps:'all'}); };
+  });
+
+  /* counters + scope */
+  mm.add('(prefers-reduced-motion: no-preference)', () => {
+    document.querySelectorAll('[data-count]').forEach(el=>{
+      const end=parseFloat(el.dataset.count), dec=parseInt(el.dataset.dec||'0'), o={v:0};
+      ScrollTrigger.create({trigger:el,start:'top 80%',once:true,onEnter:()=>{
+        gsap.to(o,{v:end,duration:1.6,ease:'power2.out',onUpdate:()=>{el.textContent=o.v.toFixed(dec);}});
+      }});
+    });
+    const trace=document.getElementById('trace');
+    if(trace){const L=trace.getTotalLength();gsap.set(trace,{strokeDasharray:L,strokeDashoffset:L});
+      ScrollTrigger.create({trigger:'#telemetry',start:'top 70%',once:true,
+        onEnter:()=>gsap.to(trace,{strokeDashoffset:0,duration:1.4,ease:'power2.inOut'})});}
+  });
+
+  /* cabin hotspots magnetic */
+  if (fullKinetic){
+    document.querySelectorAll('.hot').forEach(h=>{
+      h.addEventListener('pointermove',e=>{const r=h.getBoundingClientRect();
+        gsap.to(h,{x:(e.clientX-r.left-r.width/2)*0.4,y:(e.clientY-r.top-r.height/2)*0.4,duration:.4});});
+      h.addEventListener('pointerleave',()=>gsap.to(h,{x:0,y:0,duration:.5,ease:CINE}));
+    });
+  }
+
+  /* configurator — photo tint swap */
+  const chips=document.getElementById('chips'), buildTint=document.getElementById('buildTint');
+  chips.addEventListener('click',e=>{
+    const b=e.target.closest('.swatch'); if(!b) return;
+    chips.querySelectorAll('.swatch').forEach(s=>s.setAttribute('aria-pressed','false'));
+    b.setAttribute('aria-pressed','true');
+    document.getElementById('paintName').textContent=b.dataset.name;
+    const tint=b.dataset.tint;
+    if(tint){ gsap.to(buildTint,{backgroundColor:tint,opacity:.62,duration:.55}); }
+    else { gsap.to(buildTint,{opacity:0,duration:.55}); }
+    const rv=document.getElementById('rangeVal'), o={v:parseInt(rv.textContent)};
+    gsap.to(o,{v:parseInt(b.dataset.range),duration:.6,ease:'power2.out',onUpdate:()=>rv.textContent=Math.round(o.v)});
+  });
+
+  /* reserve form */
+  const form=document.getElementById('resvForm'), email=document.getElementById('email'),
+        ok=document.getElementById('resvOk'), cnt=document.getElementById('resvCount');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())){email.classList.add('bad');email.focus();return;}
+    email.classList.remove('bad'); form.style.display='none'; ok.style.display='block';
+    cnt.textContent=(parseInt(cnt.textContent.replace(/,/g,''))+1).toLocaleString();
+    gsap.from(ok,{opacity:0,y:10,duration:.5});
+  });
+  email.addEventListener('input',()=>email.classList.remove('bad'));
+
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(()=>ScrollTrigger.refresh());
+  addEventListener('load',()=>ScrollTrigger.refresh());
+})();
+</script>
+</body>
+</html>
