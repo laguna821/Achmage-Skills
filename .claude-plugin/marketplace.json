@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "안창현 (Achmage) 의 Claude 스킬 모음 — image-embedded HTML 덱 + component consulting 등.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
@@ -34,6 +34,19 @@
       "license": "MIT",
       "category": "productivity",
       "tags": ["skill", "component-selection", "design-consulting", "frontend", "design-tokens"]
+    },
+    {
+      "name": "insta-cardnews",
+      "source": "./Card-News/insta-cardnews",
+      "description": "Instagram photo card-news (카드뉴스): 1080×1440 3:4 portrait, up to 20 cards, ONE purpose-built AI image per card under a single legibility filter (wash/tone/blend/material). Inverse of raw-5-html (one dedicated photo per card, not 5 reused). Two deliverables from one build — carousel 1080×1440 PNGs + a mobile one-card-per-screen HTML viewer. 3-stage HARD-STOP workflow (plan → per-card prompts batched by 10 → build + export).",
+      "version": "1.0.0",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Card-News/insta-cardnews",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "tags": ["skill", "card-news", "instagram", "카드뉴스", "social-media"]
     }
   ]
 }

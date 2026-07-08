@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>여름밤 가이드 · insta-cardnews (Dark Wash)</title>
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ── Preset A · Dark Wash ── */
+:root{
+  --font:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  --card-text:#ffffff;
+  --ink:#0e1116;
+  --accent:#ff5a36;
+  --accent-mult:rgba(232,73,42,.55);
+  --lut:saturate(.9) contrast(1.06) brightness(.98);
+}
+html,body{height:100%;margin:0}
+body{background:#0b0b0c;font-family:var(--font);letter-spacing:-.02em;-webkit-font-smoothing:antialiased}
+
+/* ── one-card-per-screen viewer: swipe/scroll snaps to one full card ── */
+.deck{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.deck::-webkit-scrollbar{width:0;height:0}
+.slide{height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;scroll-snap-align:center;scroll-snap-stop:always}
+.frame{position:relative;width:min(100vw,1080px,75dvh);aspect-ratio:3/4;overflow:hidden;background:#0b0b0c;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.frame>.card{position:absolute;top:0;left:0;transform-origin:top left;transform:scale(var(--s,1))}
+
+/* ── card skeleton (native 1080×1440; export renders this un-scaled) ── */
+.card{position:relative;width:1080px;height:1440px;overflow:hidden;isolation:isolate;color:var(--card-text,#fff);background:#0b0b0c}
+.card-img{position:absolute;inset:0;z-index:-2;background-image:var(--card-img);background-size:cover;background-position:center;filter:var(--lut,none)}
+.card-body{position:relative;z-index:2;width:100%;height:100%;padding:140px 84px 190px;display:flex;flex-direction:column}
+.card-foot{position:absolute;left:84px;right:84px;bottom:84px;z-index:2;display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:600;letter-spacing:.02em;opacity:.8}
+.card-foot .pg{font-weight:800;color:var(--accent)}
+
+/* ── filter classes ── */
+.fx-material .card-img{filter:var(--lut) brightness(.74) saturate(.96) contrast(1.08);transform:scale(1.03)}
+.fx-material::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 22% 12%,rgba(255,255,255,.10),transparent 30%),linear-gradient(180deg,rgba(6,9,14,.10) 0%,rgba(6,9,14,.44) 48%,rgba(6,9,14,.86) 100%)}
+.fx-tone-dark::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(6,9,14,.55),rgba(6,9,14,.92))}
+.fx-blendif .card-img{filter:var(--lut) contrast(1.12) brightness(.9)}
+.fx-blendif::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,5,6,.55),rgba(4,5,6,.18) 42%,rgba(4,5,6,.74))}
+.fx-halftone::before{content:"";position:absolute;inset:0;z-index:-1;mix-blend-mode:multiply;background:linear-gradient(120deg,var(--accent-mult,rgba(232,73,42,.55)),rgba(17,16,14,.82))}
+.fx-halftone::after{content:"";position:absolute;inset:0;z-index:0;opacity:.4;pointer-events:none;mix-blend-mode:multiply;background-image:radial-gradient(circle,rgba(17,16,14,.75) 1.3px,transparent 1.8px);background-size:10px 10px}
+.fx-paper::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,8,.32),rgba(8,8,8,.80))}
+.fx-paper::after{content:"";position:absolute;inset:0;z-index:0;opacity:.12;pointer-events:none;mix-blend-mode:multiply;background-image:radial-gradient(rgba(17,16,14,.6) 1px,transparent 1px);background-size:4px 4px}
+
+/* ── type scale ── */
+.eyebrow{font-size:24px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;opacity:.82}
+.tag{font-size:22px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.headline{font-size:88px;font-weight:900;line-height:1.03;letter-spacing:-.035em}
+.headline em{font-style:normal;color:var(--accent)}
+.big-num{font-size:230px;font-weight:900;line-height:.84;letter-spacing:-.04em;color:var(--accent)}
+.big-num small{font-size:.42em;font-weight:900}
+.sub{font-size:34px;font-weight:400;line-height:1.6;opacity:.92;margin-top:26px}
+.sub b{font-weight:800}
+.body{font-size:32px;font-weight:400;line-height:1.62;opacity:.92}
+.push{margin-top:auto}
+#toc,.toc,.page-list,.dots{display:none!important}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 · COVER — fx-blendif -->
+  <div class="slide"><div class="frame"><section class="card fx-blendif" style="--card-img:url('cards/card01.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">여름밤 가이드</div>
+      <div class="push">
+        <h1 class="headline">한여름 밤은<br>짧고, <em>아름답다</em></h1>
+        <p class="sub">도시가 가장 살 만해지는, 그 몇 시간의 안내서</p>
+      </div>
+    </div>
+    <div class="card-foot"><span>여름밤 가이드</span><span class="pg">01</span></div>
+  </section></div></div>
+
+  <!-- 02 · POINT 01 — fx-material -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:url('cards/card02.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">POINT 01</div>
+      <h2 class="headline" style="font-size:64px;margin-top:18px">해가 지면<br><em>거리로</em> 나가라</h2>
+      <p class="body push">낮의 열기가 식은 골목은 완전히 다른 얼굴이 된다. 에어컨 아래 머물지 말고, 밤공기 속을 걸어라.</p>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">02</span></div>
+  </section></div></div>
+
+  <!-- 03 · POINT 02 — fx-material -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:url('cards/card03.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">POINT 02</div>
+      <h2 class="headline" style="font-size:64px;margin-top:18px">물가로 가라,<br>바람이 <em>거기</em> 있다</h2>
+      <p class="body push">강바람 한 줄기가 도시의 열을 씻어낸다. 한강이든 천변이든, 물이 있는 곳의 밤은 몇 도쯤 더 시원하다.</p>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">03</span></div>
+  </section></div></div>
+
+  <!-- 04 · DATA — fx-material + SVG -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:url('cards/card04.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">DATA</div>
+      <div class="big-num">25<small>일</small></div>
+      <p class="sub">지난여름 서울의 <b>열대야</b> — 밤에도 25°C 아래로 내려가지 않은 날</p>
+      <svg class="push" viewBox="0 0 900 220" style="width:100%;height:220px">
+        <text x="0" y="30" fill="rgba(255,255,255,.62)" font-size="22" font-weight="700">열대야 (지난해)</text>
+        <rect x="0" y="46" width="820" height="18" rx="9" fill="var(--accent)"/>
+        <text x="0" y="122" fill="rgba(255,255,255,.62)" font-size="22" font-weight="700">평년 평균</text>
+        <rect x="0" y="138" width="394" height="18" rx="9" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">04</span></div>
+  </section></div></div>
+
+  <!-- 05 · POINT 03 — fx-tone-dark -->
+  <div class="slide"><div class="frame"><section class="card fx-tone-dark" style="--card-img:url('cards/card05.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">POINT 03</div>
+      <h2 class="headline" style="font-size:60px;margin-top:18px">포장마차 불빛 아래,<br><em>여름밤의 미식</em></h2>
+      <p class="body push">더울수록 뜨거운 걸 먹는 역설. 김 나는 어묵 국물과 시원한 한 잔이 그 밤을 완성한다.</p>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">05</span></div>
+  </section></div></div>
+
+  <!-- 06 · QUOTE — fx-material -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:url('cards/card06.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="tag">QUOTE</div>
+      <div class="push">
+        <h2 class="headline" style="font-size:70px">여름밤은<br>낮보다 <em>정직하다</em></h2>
+        <p class="sub">해가 지면 도시는 서두르지 않는다. 그제야 비로소 보이는 것들이 있다.</p>
+      </div>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">06</span></div>
+  </section></div></div>
+
+  <!-- 07 · POINT 04 — fx-paper -->
+  <div class="slide"><div class="frame"><section class="card fx-paper" style="--card-img:url('cards/card07.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">POINT 04</div>
+      <h2 class="headline" style="font-size:64px;margin-top:18px">옥상으로<br><em>올라가라</em></h2>
+      <p class="body push">도시의 바람은 늘 위에 있다. 작은 옥상, 의자 하나, 그리고 야경이면 충분하다.</p>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">07</span></div>
+  </section></div></div>
+
+  <!-- 08 · CLOSING — fx-halftone -->
+  <div class="slide"><div class="frame"><section class="card fx-halftone" style="--card-img:url('cards/card08.png')">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">여름밤 가이드 · 마무리</div>
+      <div class="push">
+        <h2 class="headline" style="font-size:64px">밤이 깊어도<br><em>괜찮아</em></h2>
+        <p class="sub">이 여름의 밤을 저장해두기 — 다음 열대야에 꺼내 보세요.</p>
+      </div>
+    </div>
+    <div class="card-foot"><span>@night.seoul</span><span class="pg">08 · FIN</span></div>
+  </section></div></div>
+
+</div>
+<script>
+(function(){
+  function fit(){
+    var f=document.querySelectorAll('.frame');
+    for(var i=0;i<f.length;i++){ var c=f[i].firstElementChild; if(c) c.style.setProperty('--s', f[i].clientWidth/1080); }
+  }
+  window.addEventListener('resize',fit);
+  window.addEventListener('orientationchange',fit);
+  window.addEventListener('load',fit);
+  fit();
+})();
+</script>
+</body>
+</html>

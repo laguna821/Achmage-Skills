@@ -12,6 +12,10 @@
 사이트의 목적/메시지 + **DESIGN.md 디자인 토큰**을 받아, **어떤** 오픈소스 UI 컴포넌트를 살지 · **어떻게** 토큰에 remap 할지 · **어디에** 배치할지 처방하는 컨설팅 스킬. 코드 생성기가 아니라 **컨설턴트** — 5축 gates-first rubric(Token · Message-gate · UX+backend · Distinctiveness · House-override) + ~15개 갤러리 **live-scan**(WebFetch/WebSearch). average-AI(Inter + 균등 3카드 + 그라데이션 히어로) floor 와 flashy-for-its-own-sake ceiling 사이의 distinctive 밴드를 노린다. Design.md posture: **consumes**. 3개 쇼케이스(골목 베이커리 / SURGE EV / Skill Landing) 포함.
 → 상세: **[Design-Consulting/README.md](Design-Consulting/README.md)**
 
+### [`Card-News/insta-cardnews`](Card-News/insta-cardnews) — 인스타그램 사진 카드뉴스
+카드마다 **전용 AI 사진 1장 + 필터 1겹**을 씌워 만드는 **1080×1440 (3:4) 인스타 카드뉴스** 스킬. `raw-5-html`의 **정반대** — 이미지 5장 재사용이 아니라 **카드당 사진 1장** + wash/tone/blend/material 필터로 한글 가독성을 잡고, 텍스트·차트는 HTML/SVG 유지. 한 번의 빌드로 **카세로셀 PNG(1080×1440) + 모바일 한-장-씩 HTML 뷰어** 두 결과물이 나온다. 3 프리셋(Dark Wash / Brand Tone / Light Editorial) · 3단계 HARD-STOP 워크플로우.
+→ 상세: **[Card-News/README.md](Card-News/README.md)** · 라이브 데모: [여름밤 카드뉴스(모바일)](https://laguna821.github.io/Achmage-Skills/Card-News/insta-cardnews/examples/summer-night/cardnews-proof.html)
+
 ## 🚀 빠른 설치 (Claude Code)
 
 ```bash
@@ -24,6 +28,7 @@ npx skills add laguna821/Achmage-Skills
 /plugin marketplace add laguna821/Achmage-Skills
 /plugin install raw-5-html@achmage-skills
 /plugin install component-consulting@achmage-skills
+/plugin install insta-cardnews@achmage-skills
 ```
 
 ```bash

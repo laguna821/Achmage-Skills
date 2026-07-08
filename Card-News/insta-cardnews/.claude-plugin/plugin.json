@@ -1,0 +1,11 @@
+{
+  "name": "insta-cardnews",
+  "description": "Instagram photo card-news (카드뉴스) generator — 1080×1440, 3:4 portrait, up to 20 cards, with ONE purpose-built AI image per card under a single legibility filter. The inverse of raw-5-html: instead of reusing 5 background images, each card gets its own photo + one wash/tone/blend/material treatment so Korean text stays readable, while all text/numbers/charts remain crisp HTML/SVG. Two deliverables from one build: carousel-ready 1080×1440 PNGs + a mobile one-card-per-screen HTML viewer you can host and share as a link. 3-stage HARD-STOP workflow (plan → per-card image prompts batched by 10 → build + export). Use when asked to make Instagram/SNS card-news or 카드뉴스.",
+  "version": "1.0.0",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Card-News/insta-cardnews",
+  "license": "Apache-2.0",
+  "keywords": ["skill", "card-news", "카드뉴스", "instagram", "social-media", "image-embedded-html", "claude-code"]
+}

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>insta-cardnews · 예제 프루프 (집중력 습관 · Dark Wash)</title>
+<!-- Worked example. Photos are placeholder --card-img gradients; in a real run each is url('cards/cardNN.png'). Preset A · Dark Wash. One-card-per-screen mobile viewer + PNG-export source in one file. -->
+<style>
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ── Preset A · Dark Wash ── */
+:root{
+  --font:'Pretendard Variable',Pretendard,'Apple SD Gothic Neo','Noto Sans KR',system-ui,sans-serif;
+  --card-text:#ffffff;
+  --ink:#0e1116;
+  --accent:#ff5a36;
+  --accent-mult:rgba(232,73,42,.55);
+  --lut:saturate(.9) contrast(1.06) brightness(.98);
+}
+html,body{height:100%;margin:0}
+body{background:#0b0b0c;font-family:var(--font);letter-spacing:-.02em;-webkit-font-smoothing:antialiased}
+
+/* ── one-card-per-screen viewer: swipe/scroll snaps to one full card ── */
+.deck{height:100vh;height:100dvh;overflow-y:auto;scroll-snap-type:y mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.deck::-webkit-scrollbar{width:0;height:0}
+.slide{height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;scroll-snap-align:center;scroll-snap-stop:always}
+.frame{position:relative;width:min(100vw,1080px,75dvh);aspect-ratio:3/4;overflow:hidden;background:#0b0b0c;box-shadow:0 8px 40px rgba(0,0,0,.5)}
+.frame>.card{position:absolute;top:0;left:0;transform-origin:top left;transform:scale(var(--s,1))}
+
+/* ── card skeleton (native 1080×1440; export renders this un-scaled) ── */
+.card{position:relative;width:1080px;height:1440px;overflow:hidden;isolation:isolate;color:var(--card-text,#fff);background:#0b0b0c}
+.card-img{position:absolute;inset:0;z-index:-2;background-image:var(--card-img);background-size:cover;background-position:center;filter:var(--lut,none)}
+.card-body{position:relative;z-index:2;width:100%;height:100%;padding:140px 84px 190px;display:flex;flex-direction:column}
+.card-foot{position:absolute;left:84px;right:84px;bottom:84px;z-index:2;display:flex;justify-content:space-between;align-items:center;font-size:22px;font-weight:600;letter-spacing:.02em;opacity:.8}
+.card-foot .pg{font-weight:800;color:var(--accent)}
+
+/* ── filter classes (one per card) ── */
+.fx-material .card-img{filter:var(--lut) brightness(.74) saturate(.96) contrast(1.08);transform:scale(1.03)}
+.fx-material::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 22% 12%,rgba(255,255,255,.10),transparent 30%),linear-gradient(180deg,rgba(6,9,14,.10) 0%,rgba(6,9,14,.44) 48%,rgba(6,9,14,.86) 100%)}
+.fx-tone-dark::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(160deg,rgba(6,9,14,.55),rgba(6,9,14,.92))}
+.fx-blendif .card-img{filter:var(--lut) contrast(1.12) brightness(.9)}
+.fx-blendif::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(4,5,6,.60),rgba(4,5,6,.20) 42%,rgba(4,5,6,.72))}
+.fx-halftone::before{content:"";position:absolute;inset:0;z-index:-1;mix-blend-mode:multiply;background:linear-gradient(120deg,var(--accent-mult,rgba(232,73,42,.55)),rgba(17,16,14,.82))}
+.fx-halftone::after{content:"";position:absolute;inset:0;z-index:0;opacity:.4;pointer-events:none;mix-blend-mode:multiply;background-image:radial-gradient(circle,rgba(17,16,14,.75) 1.3px,transparent 1.8px);background-size:10px 10px}
+.fx-paper::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,8,8,.35),rgba(8,8,8,.82))}
+.fx-paper::after{content:"";position:absolute;inset:0;z-index:0;opacity:.12;pointer-events:none;mix-blend-mode:multiply;background-image:radial-gradient(rgba(17,16,14,.6) 1px,transparent 1px);background-size:4px 4px}
+
+/* ── type scale ── */
+.eyebrow{font-size:24px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;opacity:.82}
+.tag{font-size:22px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--accent)}
+.headline{font-size:88px;font-weight:900;line-height:1.03;letter-spacing:-.035em}
+.headline .thin{font-weight:200}
+.headline em{font-style:normal;color:var(--accent)}
+.big-num{font-size:300px;font-weight:900;line-height:.84;letter-spacing:-.04em;color:var(--accent)}
+.big-num small{font-size:.42em;font-weight:900}
+.sub{font-size:34px;font-weight:400;line-height:1.6;opacity:.92;margin-top:26px}
+.sub b{font-weight:800}
+.body{font-size:32px;font-weight:400;line-height:1.62;opacity:.92}
+.push{margin-top:auto}
+#toc,.toc,.page-list,.dots{display:none!important}
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 · COVER — fx-blendif -->
+  <div class="slide"><div class="frame"><section class="card fx-blendif" style="--card-img:radial-gradient(circle at 42% 30%,#3a4a63,#0f1420 62%)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">FOCUS · 다섯 가지 습관</div>
+      <div class="push">
+        <h1 class="headline">집중력은<br><em>지킬 수 있다</em></h1>
+        <p class="sub">산만함의 시대, 몰입을 되찾는 5가지 작은 습관</p>
+      </div>
+    </div>
+    <div class="card-foot"><span>집중력 습관</span><span class="pg">01</span></div>
+  </section></div></div>
+
+  <!-- 02 · HABIT 01 — fx-material -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:linear-gradient(135deg,#4a3b2e,#14100c)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">HABIT 01</div>
+      <h2 class="headline" style="font-size:66px;margin-top:18px">알림을 <em>먼저</em> 끈다</h2>
+      <p class="body push">집중은 의지가 아니라 환경이다. 화면에 뜨는 배지 하나가 흐름을 끊는다. 시작하기 전에 알림부터 <b>전부 끈다</b>.</p>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">02</span></div>
+  </section></div></div>
+
+  <!-- 03 · HABIT 02 — fx-material -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:linear-gradient(160deg,#2c3a3a,#0e1414)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">HABIT 02</div>
+      <h2 class="headline" style="font-size:66px;margin-top:18px">한 번에 <em>하나만</em></h2>
+      <p class="body push">멀티태스킹은 빠른 게 아니라 자주 끊기는 것이다. 창을 하나만 열고, 지금 이 순간엔 한 가지에만 손을 둔다.</p>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">03</span></div>
+  </section></div></div>
+
+  <!-- 04 · DATA — fx-material + SVG -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:linear-gradient(135deg,#3a2f4a,#120e18)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">DATA</div>
+      <div class="big-num" style="font-size:230px">23<small>분</small></div>
+      <p class="sub">한 번 흐름이 끊기면 <b>다시 몰입</b>하기까지 걸리는 평균 시간</p>
+      <svg class="push" viewBox="0 0 900 210" style="width:100%;height:210px">
+        <text x="0" y="30" fill="rgba(255,255,255,.6)" font-size="22" font-weight="700">끊긴 직후</text>
+        <rect x="0" y="48" width="820" height="18" rx="9" fill="var(--accent)"/>
+        <text x="0" y="120" fill="rgba(255,255,255,.6)" font-size="22" font-weight="700">평소 회복</text>
+        <rect x="0" y="138" width="300" height="18" rx="9" fill="rgba(255,255,255,.4)"/>
+      </svg>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">04</span></div>
+  </section></div></div>
+
+  <!-- 05 · HABIT 03 — fx-tone-dark -->
+  <div class="slide"><div class="frame"><section class="card fx-tone-dark" style="--card-img:linear-gradient(200deg,#123047,#08131f)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">HABIT 03</div>
+      <h2 class="headline" style="font-size:66px;margin-top:18px">하루 한 번,<br><em>90분</em> 딥워크</h2>
+      <p class="body push">방해 없는 90분을 캘린더에 예약한다. 이 블록에서는 가장 중요한 일 하나만 한다.</p>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">05</span></div>
+  </section></div></div>
+
+  <!-- 06 · QUOTE — fx-material -->
+  <div class="slide"><div class="frame"><section class="card fx-material" style="--card-img:linear-gradient(150deg,#4a2f38,#150d10)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="tag">QUOTE</div>
+      <div class="push">
+        <h2 class="headline" style="font-size:70px">집중은<br><em>거절</em>의 기술이다</h2>
+        <p class="sub">무엇을 안 할지 먼저 정하는 것 — 거기서 몰입이 시작된다.</p>
+      </div>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">06</span></div>
+  </section></div></div>
+
+  <!-- 07 · HABIT 04 — fx-paper -->
+  <div class="slide"><div class="frame"><section class="card fx-paper" style="--card-img:linear-gradient(135deg,#3d3d2a,#12120b)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">HABIT 04</div>
+      <h2 class="headline" style="font-size:66px;margin-top:18px">책상 위엔 <em>하나만</em></h2>
+      <p class="body push">시야에 있는 물건이 곧 유혹이다. 지금 하는 일과 무관한 것은 전부 시야 밖으로 치운다.</p>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">07</span></div>
+  </section></div></div>
+
+  <!-- 08 · CLOSING — fx-halftone -->
+  <div class="slide"><div class="frame"><section class="card fx-halftone" style="--card-img:radial-gradient(circle at 58% 40%,#403022,#0f0b08 62%)">
+    <div class="card-img"></div>
+    <div class="card-body">
+      <div class="eyebrow">HABIT 05 · 정리</div>
+      <div class="push">
+        <h2 class="headline" style="font-size:64px">오늘 <em>하나</em>만<br>바꿔보기</h2>
+        <p class="sub">가장 쉬운 습관 하나부터. 저장해 두고 내일 시작하세요.</p>
+      </div>
+    </div>
+    <div class="card-foot"><span>@focus.habit</span><span class="pg">08 · FIN</span></div>
+  </section></div></div>
+
+</div>
+<script>
+(function(){
+  function fit(){
+    var f=document.querySelectorAll('.frame');
+    for(var i=0;i<f.length;i++){ var c=f[i].firstElementChild; if(c) c.style.setProperty('--s', f[i].clientWidth/1080); }
+  }
+  window.addEventListener('resize',fit);
+  window.addEventListener('orientationchange',fit);
+  window.addEventListener('load',fit);
+  fit();
+})();
+</script>
+</body>
+</html>
