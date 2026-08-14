@@ -1,0 +1,4 @@
+interface:
+  display_name: "Achmage 화이트보드 올인원"
+  short_description: "마크다운을 음성·자막 포함 4K 강의 영상으로 자동 제작"
+  default_prompt: "Use $achmage-whiteboard-video to turn this Korean markdown into a captioned and voiced 4K whiteboard lecture."

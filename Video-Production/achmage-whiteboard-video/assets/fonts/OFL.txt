@@ -1,0 +1,9 @@
+Copyright 2014-2026 The Noto Project Authors
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+The license is available with a FAQ at https://openfontlicense.org.
+
+The Font Software may be used, studied, modified and redistributed freely as
+long as it is not sold by itself. Derivative versions may not use reserved font
+names without permission. The font and derivatives must remain under this
+license and may be bundled, embedded and redistributed with software.

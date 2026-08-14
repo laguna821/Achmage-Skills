@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 2,
+  "projectId": "project-id",
+  "title": "화이트보드 프로젝트",
+  "language": "ko-KR",
+  "workflowMode": "autoAfterVoiceApproval",
+  "outputProfile": "all-in-one",
+  "defaultAnimation": "line-trace",
+  "defaultDurationMs": 8000,
+  "theme": "achmage-newsroom-light",
+  "themeOverrides": {},
+  "masterProfile": {"width": 3840, "height": 2160, "fps": 60, "crf": 17},
+  "previewProfile": {"width": 960, "height": 540, "fps": 30, "crf": 24},
+  "anchorScenes": [1, 44, 46],
+  "anchorStatus": "pending",
+  "pilotScenes": [1, 2, 3],
+  "tts": {
+    "provider": "elevenlabs",
+    "modelIdByProvider": {
+      "elevenlabs": "eleven_multilingual_v2",
+      "typecast": "ssfm-v30"
+    },
+    "voiceId": null,
+    "voiceName": null,
+    "leadInMs": 1250,
+    "leadOutMs": 1750,
+    "pilotMaxCredits": 1500,
+    "productionMaxCredits": 100000,
+    "auditionMaxCredits": 120,
+    "budgetMode": "pilot",
+    "minimumRemainingFraction": 0.75,
+    "licenseMode": "private-preview",
+    "voiceSettings": {
+      "stability": 0.65,
+      "similarityBoost": 0.8,
+      "style": 0.15,
+      "speed": 0.95
+    }
+  },
+  "voiceApproval": null,
+  "subtitles": {
+    "mode": "burn-in",
+    "maxLines": 2,
+    "maxCharsPerLine": 22,
+    "minimumDurationMs": 1000,
+    "maximumDurationMs": 6000
+  },
+  "pronunciationOverrides": {},
+  "scenes": []
+}

@@ -1,0 +1,7 @@
+Achmage Whiteboard Video
+
+이 프로젝트는 https://github.com/geeklee/srt-whiteboard-animation 의 구조와 아이디어를 바탕으로 수정한 Codex 전용 파생 스킬입니다.
+원본 저작권과 MIT 라이선스 고지는 LICENSE에 보존돼 있습니다.
+
+Achmage 버전은 한국어 UI, Noto Sans KR 합성, 4K 렌더, 선 추적 애니메이션, TTS 승인 게이트, 자동 자막과 올인원 출력 기능을 추가합니다.
+Noto Sans KR은 assets/fonts/OFL.txt의 SIL Open Font License에 따릅니다.

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 2,
+  "sceneId": "sequence-001",
+  "durationMs": 8000,
+  "narration": "",
+  "voiceover": {"script": "", "status": "draft"},
+  "canvas": {"width": 3840, "height": 2160, "theme": "achmage-newsroom-light", "texture": "fine-paper", "textureStrength": 0.025},
+  "source": {"file": "base-art.png", "nativeWidth": 0, "nativeHeight": 0, "status": "pending", "promptFile": "image-prompt.txt"},
+  "textSafeRegions": [{"x": 0.06, "y": 0.04, "width": 0.88, "height": 0.2}],
+  "elements": []
+}

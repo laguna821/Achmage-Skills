@@ -1,0 +1,5 @@
+Pillow==12.3.0
+numpy==2.3.5
+imageio-ffmpeg==0.6.0
+elevenlabs==2.63.0
+typecast-python==0.3.11

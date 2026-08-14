@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Achmage 화이트보드 편집기</title>
+  <style>
+    @font-face{font-family:NotoKR;src:url('../fonts/NotoSansKR-VF.ttf') format('truetype');font-weight:100 900}
+    :root{--bg:#0f1723;--panel:#172232;--line:#2b3b4e;--text:#eef4f8;--muted:#9fb0c2;--blue:#5f8dff;--coral:#ff7863;--canvas:#eef4f7}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:NotoKR,system-ui,sans-serif;font-size:14px}
+    button,input,select,textarea{font:inherit}button{border:1px solid var(--line);border-radius:8px;background:#223247;color:var(--text);padding:8px 12px;cursor:pointer}button:hover{border-color:var(--blue)}button.primary{background:var(--blue);color:white;border-color:var(--blue)}button.danger{color:#ff9c8d}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:7px;background:#101a27;color:var(--text);padding:7px 8px}textarea{min-height:76px;resize:vertical}
+    header{height:62px;display:flex;align-items:center;gap:9px;padding:0 18px;border-bottom:1px solid var(--line);background:#121d2a;position:sticky;top:0;z-index:5}header h1{font-size:17px;margin:0 16px 0 0;white-space:nowrap}.spacer{flex:1}.hint{color:var(--muted);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:360px}
+    main{display:grid;grid-template-columns:minmax(560px,1fr) 370px;height:calc(100vh - 62px)}.stage{padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}.canvas-shell{position:relative;flex:1;display:flex;align-items:center;justify-content:center;min-height:320px;background:#0a111b;border:1px solid var(--line);border-radius:12px;overflow:hidden}.canvas-wrap{position:relative;width:min(100%,calc((100vh - 190px)*16/9));aspect-ratio:16/9;box-shadow:0 22px 70px #0008}canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+    .timeline{display:grid;grid-template-columns:70px 1fr 90px;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}.timeline input{padding:0}.time{font-variant-numeric:tabular-nums;text-align:right}
+    aside{border-left:1px solid var(--line);background:var(--panel);overflow:auto;padding:15px}.section{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}.section h2{font-size:13px;margin:0;padding:10px 12px;background:#1c2a3c}.content{padding:11px}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:9px}.field{display:flex;flex-direction:column;gap:4px;margin-bottom:9px}.field label{font-size:11px;color:var(--muted)}.element-list{display:flex;flex-direction:column;gap:5px;max-height:210px;overflow:auto}.element{display:flex;align-items:center;gap:8px;padding:7px 8px;border:1px solid var(--line);border-radius:7px;cursor:pointer}.element.selected{border-color:var(--blue);background:#243654}.kind{font-size:10px;color:var(--muted);min-width:36px}.label{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.event{display:grid;grid-template-columns:1fr 72px 72px 1fr 32px;gap:5px;margin-bottom:6px}.event input,.event select{padding:5px;font-size:11px}.event button{padding:3px}.buttons{display:flex;gap:7px;flex-wrap:wrap}.status{min-height:20px;color:#9ed9b0}.safe{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px}.safe input{width:auto}
+    @media(max-width:1000px){main{grid-template-columns:1fr;height:auto}.stage{height:65vh}aside{border-left:0;border-top:1px solid var(--line)}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Achmage 화이트보드 편집기</h1>
+    <button id="openScene" class="primary">장면 JSON 열기</button>
+    <button id="openImage">원본 이미지 열기</button>
+    <button id="saveScene">원본에 저장</button>
+    <button id="downloadScene">JSON 다운로드</button>
+    <span class="spacer"></span><span id="projectHint" class="hint"></span>
+  </header>
+  <main>
+    <section class="stage">
+      <div class="canvas-shell"><div class="canvas-wrap"><canvas id="canvas" width="1280" height="720"></canvas></div></div>
+      <div class="timeline">
+        <button id="play">▶ 재생</button>
+        <input id="timeline" type="range" min="0" max="8000" value="8000" step="10">
+        <div id="time" class="time">8.00 / 8.00</div>
+      </div>
+      <div id="status" class="status">장면 JSON과 base-art.png를 차례로 여세요.</div>
+    </section>
+    <aside>
+      <div class="section">
+        <h2>장면</h2>
+        <div class="content">
+          <div class="field"><label>장면 ID</label><input id="sceneId"></div>
+          <div class="row"><div class="field"><label>길이(ms)</label><input id="duration" type="number"></div><div class="field"><label>테마</label><select id="theme"><option>achmage-newsroom-light</option><option>achmage-newsroom-dark</option></select></div></div>
+          <div class="field"><label>내레이션</label><textarea id="narration"></textarea></div>
+          <label class="safe"><input id="showSafe" type="checkbox" checked> 텍스트 안전 영역 표시</label>
+        </div>
+      </div>
+      <div class="section">
+        <h2>요소</h2>
+        <div class="content">
+          <div id="elements" class="element-list"></div>
+          <div class="buttons" style="margin-top:9px"><button data-add="art">+ 그림</button><button data-add="text">+ 텍스트</button><button data-add="shape">+ 도형</button></div>
+        </div>
+      </div>
+      <div id="editor" class="section">
+        <h2>선택 요소 편집</h2>
+        <div class="content">
+          <div class="row"><div class="field"><label>ID</label><input id="elementId"></div><div class="field"><label>종류</label><select id="kind"><option value="art">그림</option><option value="text">텍스트</option><option value="shape">도형</option></select></div></div>
+          <div class="row"><div class="field"><label>레이블</label><input id="label"></div><div class="field"><label>레이어 순서</label><input id="zIndex" type="number"></div></div>
+          <div class="field"><label>정확한 한국어 텍스트</label><textarea id="content"></textarea></div>
+          <div class="row"><div class="field"><label>X</label><input id="rx" type="number" step="0.001"></div><div class="field"><label>Y</label><input id="ry" type="number" step="0.001"></div></div>
+          <div class="row"><div class="field"><label>너비</label><input id="rw" type="number" step="0.001"></div><div class="field"><label>높이</label><input id="rh" type="number" step="0.001"></div></div>
+          <div class="row"><div class="field"><label>글자 크기(4K 기준)</label><input id="fontSize" type="number"></div><div class="field"><label>글자 굵기</label><input id="fontWeight" type="number" step="100"></div></div>
+          <div class="row"><div class="field"><label>글자/선 색</label><input id="color" type="color"></div><div class="field"><label>정렬</label><select id="align"><option value="left">왼쪽</option><option value="center">가운데</option><option value="right">오른쪽</option></select></div></div>
+          <div class="field"><label>이벤트</label><div id="events"></div><button id="addEvent">+ 이벤트 추가</button></div>
+          <div class="buttons"><button id="redrawRegion">영역 다시 그리기</button><button id="deleteElement" class="danger">요소 삭제</button></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <input id="sceneFile" type="file" accept="application/json,.json" hidden>
+  <input id="imageFile" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+  <script>
+    const $=id=>document.getElementById(id), canvas=$('canvas'), ctx=canvas.getContext('2d');
+    const palettes={
+      'achmage-newsroom-light':{bg:'#EEF4F7',ink:'#263238',primary:'#2F6BFF',secondary:'#FF6B4A'},
+      'achmage-newsroom-dark':{bg:'#101827',ink:'#F4F7FB',primary:'#6EA8FF',secondary:'#FF8872'}
+    };
+    let scene=null,image=null,selected=-1,sceneHandle=null,playing=false,playStart=0,regionMode=false,dragStart=null;
+    const markerImg=new Image(),eraserImg=new Image();markerImg.src='../hands/marker-hand.png';eraserImg.src='../hands/eraser-hand.png';
+    $('projectHint').textContent=new URLSearchParams(location.search).get('project')||'로컬 파일 편집 모드';
+    const blank=()=>({schemaVersion:2,sceneId:'sequence-001',durationMs:8000,narration:'',canvas:{width:3840,height:2160,theme:'achmage-newsroom-light',texture:'fine-paper',textureStrength:.025},source:{file:'base-art.png',nativeWidth:0,nativeHeight:0,status:'pending',promptFile:'image-prompt.txt'},textSafeRegions:[{x:.06,y:.035,width:.88,height:.18}],elements:[]});
+    scene=blank();
+    function status(text,bad=false){$('status').textContent=text;$('status').style.color=bad?'#ff9c8d':'#9ed9b0'}
+    function clamp(v){return Math.max(0,Math.min(1,Number(v)||0))}
+    function current(){return scene.elements[selected]||null}
+    function syncScene(){scene.sceneId=$('sceneId').value;scene.durationMs=Math.max(1,Number($('duration').value)||8000);scene.narration=$('narration').value;scene.canvas.theme=$('theme').value;$('timeline').max=scene.durationMs}
+    function fillScene(){ $('sceneId').value=scene.sceneId||'';$('duration').value=scene.durationMs||8000;$('narration').value=scene.narration||'';$('theme').value=scene.canvas?.theme||'achmage-newsroom-light';$('timeline').max=scene.durationMs||8000;$('timeline').value=scene.durationMs||8000;renderList();selectElement(scene.elements.length?0:-1);draw() }
+    function renderList(){const root=$('elements');root.innerHTML='';scene.elements.forEach((el,i)=>{const div=document.createElement('div');div.className='element'+(i===selected?' selected':'');div.innerHTML=`<span class="kind">${{art:'그림',text:'텍스트',shape:'도형'}[el.kind]||el.kind}</span><span class="label"></span><span>${el.zIndex??0}</span>`;div.querySelector('.label').textContent=el.label||el.id;div.onclick=()=>selectElement(i);root.append(div)})}
+    function selectElement(index){selected=index;renderList();const el=current();$('editor').style.opacity=el?1:.45;for(const id of ['elementId','kind','label','zIndex','content','rx','ry','rw','rh','fontSize','fontWeight','color','align'])$(id).disabled=!el;if(!el){$('events').innerHTML='';draw();return}$('elementId').value=el.id||'';$('kind').value=el.kind||'art';$('label').value=el.label||'';$('zIndex').value=el.zIndex??10;$('content').value=el.content||'';const r=el.region||{x:0,y:0,width:1,height:1};$('rx').value=r.x;$('ry').value=r.y;$('rw').value=r.width;$('rh').value=r.height;const s=el.style||{};$('fontSize').value=s.fontSize||72;$('fontWeight').value=s.fontWeight||700;$('color').value=(s.color||s.stroke||palettes[scene.canvas.theme].ink).slice(0,7);$('align').value=s.align||'center';renderEvents();draw()}
+    function syncElement(){const el=current();if(!el)return;el.id=$('elementId').value.trim()||el.id;el.kind=$('kind').value;el.label=$('label').value;el.zIndex=Number($('zIndex').value)||0;el.content=$('content').value;el.region={x:clamp($('rx').value),y:clamp($('ry').value),width:clamp($('rw').value),height:clamp($('rh').value)};if(el.region.x+el.region.width>1)el.region.width=1-el.region.x;if(el.region.y+el.region.height>1)el.region.height=1-el.region.y;el.style=el.style||{};el.style.fontSize=Number($('fontSize').value)||72;el.style.fontWeight=Number($('fontWeight').value)||700;if(el.kind==='shape')el.style.stroke=$('color').value;else el.style.color=$('color').value;el.style.align=$('align').value;renderList();draw()}
+    function renderEvents(){const root=$('events');root.innerHTML='';const el=current();if(!el)return;(el.events||[]).forEach((ev,i)=>{const row=document.createElement('div');row.className='event';row.innerHTML=`<select><option value="draw">그리기</option><option value="hold">유지</option><option value="erase">지우기</option><option value="replace">교체</option></select><input type="number" title="시작(ms)"><input type="number" title="길이(ms)"><select title="애니메이션"><option value="marker-wipe">마커 와이프</option><option value="line-trace">선 따라 정밀 그리기</option><option value="line-by-line">행 단위</option><option value="left-to-right">왼쪽→오른쪽</option><option value="right-to-left">오른쪽→왼쪽</option><option value="top-to-bottom">위→아래</option><option value="bottom-to-top">아래→위</option><option value="center-out">가운데→바깥</option><option value="slide-up">아래에서 등장</option><option value="fade">페이드</option><option value="eraser-wipe">지우개</option><option value="none">없음</option></select><button title="삭제">×</button>`;const controls=row.querySelectorAll('select,input');controls[0].value=ev.action||'draw';controls[1].value=ev.startMs||0;controls[2].value=ev.durationMs||0;controls[3].value=ev.animation||'none';controls.forEach((control,n)=>control.oninput=()=>{if(n===0)ev.action=control.value;if(n===1)ev.startMs=Math.max(0,Number(control.value)||0);if(n===2)ev.durationMs=Math.max(0,Number(control.value)||0);if(n===3)ev.animation=control.value;draw()});row.querySelector('button').onclick=()=>{el.events.splice(i,1);renderEvents();draw()};root.append(row)})}
+    function addElement(kind){const n=scene.elements.length+1;const el={id:`${kind}-${n}`,kind,label:{art:'그림',text:'텍스트',shape:'도형'}[kind]+` ${n}`,zIndex:kind==='text'?20:10,region:{x:.15,y:.2,width:.7,height:.55},events:[{action:'draw',startMs:300,durationMs:2500,animation:kind==='art'?'marker-wipe':'line-by-line'},{action:'hold',startMs:2800,durationMs:5200,animation:'none'}]};if(kind==='text'){el.content='한국어 텍스트';el.style={fontSize:72,fontWeight:700,color:palettes[scene.canvas.theme].ink,align:'center',verticalAlign:'middle',lineSpacing:1.15}}if(kind==='shape')el.style={shape:'roundRect',stroke:palettes[scene.canvas.theme].primary,strokeWidth:8,radius:28};scene.elements.push(el);selectElement(scene.elements.length-1)}
+    function progressFor(el,t){const events=[...(el.events||[])].sort((a,b)=>a.startMs-b.startMs),hasIn=events.some(e=>e.action==='draw'||e.action==='replace');let v=hasIn?0:1,active=null;for(const e of events){const end=e.startMs+e.durationMs;if(t<e.startMs)continue;const p=Math.max(0,Math.min(1,(t-e.startMs)/Math.max(1,e.durationMs)));const q=p*p*(3-2*p);if(e.action==='draw'||e.action==='replace')v=t<end?q:1;if(e.action==='erase')v=t<end?1-q:0;if(t>=e.startMs&&t<end&&e.action!=='hold')active=e}return{v,active}}
+    function drawText(el,r,alpha){const s=el.style||{},size=Math.max(12,(s.fontSize||72)/2160*canvas.height);ctx.save();ctx.globalAlpha=alpha;ctx.fillStyle=s.color||palettes[scene.canvas.theme].ink;ctx.font=`${s.fontWeight||700} ${size}px NotoKR`;ctx.textAlign=s.align||'center';ctx.textBaseline='middle';const words=(el.content||'').split(' '),lines=[];let line='';for(const word of words){const test=line?line+' '+word:word;if(ctx.measureText(test).width<r.w*.94)line=test;else{if(line)lines.push(line);line=word}}if(line)lines.push(line);const step=size*1.18,start=r.y+r.h/2-(lines.length-1)*step/2;lines.forEach((txt,i)=>ctx.fillText(txt,(s.align==='left'?r.x+r.w*.03:s.align==='right'?r.x+r.w*.97:r.x+r.w/2),start+i*step));ctx.restore()}
+    function draw(){syncScene();const p=palettes[scene.canvas.theme]||palettes['achmage-newsroom-light'];ctx.fillStyle=p.bg;ctx.fillRect(0,0,canvas.width,canvas.height);ctx.save();ctx.globalAlpha=.04;for(let y=6;y<canvas.height;y+=13){for(let x=(y%26);x<canvas.width;x+=26){ctx.fillStyle=p.ink;ctx.fillRect(x,y,1,1)}}ctx.restore();const t=Number($('timeline').value);let cursor=null;[...scene.elements].sort((a,b)=>(a.zIndex||0)-(b.zIndex||0)).forEach(el=>{const st=progressFor(el,t),r={x:el.region.x*canvas.width,y:el.region.y*canvas.height,w:el.region.width*canvas.width,h:el.region.height*canvas.height};if(st.v<=0)return;ctx.save();if(el.kind==='art'&&image){const erase=st.active?.action==='erase',anim=st.active?.animation||'left-to-right';ctx.beginPath();if(erase){ctx.rect(r.x+r.w*(1-st.v),r.y,r.w*st.v,r.h)}else if(anim==='right-to-left'){ctx.rect(r.x+r.w*(1-st.v),r.y,r.w*st.v,r.h)}else if(anim==='top-to-bottom'||anim==='marker-wipe'||anim==='line-by-line'){ctx.rect(r.x,r.y,r.w,r.h*st.v)}else if(anim==='bottom-to-top'){ctx.rect(r.x,r.y+r.h*(1-st.v),r.w,r.h*st.v)}else{ctx.rect(r.x,r.y,r.w*st.v,r.h)}ctx.clip();ctx.globalAlpha=.96;ctx.drawImage(image,0,0,canvas.width,canvas.height);if(st.active){const ep=Math.max(0,Math.min(1,(t-st.active.startMs)/Math.max(1,st.active.durationMs)));cursor={img:erase?eraserImg:markerImg,x:r.x+r.w*ep,y:r.y+r.h*.5}}}else if(el.kind==='text')drawText(el,r,st.v);else if(el.kind==='shape'){ctx.globalAlpha=st.v;ctx.strokeStyle=el.style?.stroke||p.primary;ctx.lineWidth=Math.max(2,(el.style?.strokeWidth||8)/2160*canvas.height);ctx.strokeRect(r.x,r.y,r.w,r.h)}ctx.restore()});if(cursor&&cursor.img.complete){const h=canvas.height*.2,w=cursor.img.naturalWidth/cursor.img.naturalHeight*h;ctx.drawImage(cursor.img,cursor.x-w*.12,cursor.y-h*.18,w,h)}if($('showSafe').checked){ctx.save();ctx.setLineDash([8,7]);ctx.strokeStyle=p.primary+'99';(scene.textSafeRegions||[]).forEach(r=>ctx.strokeRect(r.x*canvas.width,r.y*canvas.height,r.width*canvas.width,r.height*canvas.height));ctx.restore()}const el=current();if(el){const r=el.region;ctx.save();ctx.strokeStyle='#ff7863';ctx.lineWidth=2;ctx.strokeRect(r.x*canvas.width,r.y*canvas.height,r.width*canvas.width,r.height*canvas.height);ctx.fillStyle='#ff7863';ctx.fillRect((r.x+r.width)*canvas.width-5,(r.y+r.height)*canvas.height-5,10,10);ctx.restore()}$('time').textContent=`${(t/1000).toFixed(2)} / ${(scene.durationMs/1000).toFixed(2)}`}
+    async function openScene(){if(window.showOpenFilePicker){try{[sceneHandle]=await showOpenFilePicker({types:[{description:'장면 JSON',accept:{'application/json':['.json']}}]});const file=await sceneHandle.getFile();scene=JSON.parse(await file.text());selected=-1;fillScene();status(`${file.name}을 열었습니다.`);return}catch(e){if(e.name==='AbortError')return}}$('sceneFile').click()}
+    function openImage(){ $('imageFile').click() }
+    $('sceneFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;scene=JSON.parse(await file.text());sceneHandle=null;selected=-1;fillScene();status(`${file.name}을 열었습니다.`)};
+    $('imageFile').onchange=e=>{const file=e.target.files[0];if(!file)return;const url=URL.createObjectURL(file),img=new Image();img.onload=()=>{image=img;scene.source=scene.source||{};scene.source.nativeWidth=img.naturalWidth;scene.source.nativeHeight=img.naturalHeight;scene.source.status='ready';draw();status(`${file.name} ${img.naturalWidth}×${img.naturalHeight}을 열었습니다.`);URL.revokeObjectURL(url)};img.src=url};
+    async function saveScene(){syncScene();syncElement();const text=JSON.stringify(scene,null,2)+'\n';if(sceneHandle){const out=await sceneHandle.createWritable();await out.write(text);await out.close();status('장면 JSON을 UTF-8로 저장했습니다.');return}download(text);status('브라우저 다운로드로 저장했습니다.')}
+    function download(text=JSON.stringify(scene,null,2)+'\n'){const blob=new Blob([text],{type:'application/json;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(scene.sceneId||'scene')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+    function play(){if(playing){playing=false;$('play').textContent='▶ 재생';return}playing=true;$('play').textContent='■ 정지';playStart=performance.now()-Number($('timeline').value);requestAnimationFrame(tick)}
+    function tick(now){if(!playing)return;let t=now-playStart;if(t>scene.durationMs){t=scene.durationMs;playing=false;$('play').textContent='▶ 재생'}$('timeline').value=t;draw();if(playing)requestAnimationFrame(tick)}
+    $('openScene').onclick=openScene;$('openImage').onclick=openImage;$('saveScene').onclick=saveScene;$('downloadScene').onclick=()=>download();$('play').onclick=play;$('timeline').oninput=draw;$('showSafe').onchange=draw;
+    ['sceneId','duration','narration','theme'].forEach(id=>$(id).oninput=()=>{syncScene();draw()});['elementId','kind','label','zIndex','content','rx','ry','rw','rh','fontSize','fontWeight','color','align'].forEach(id=>$(id).oninput=syncElement);
+    document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>addElement(b.dataset.add));$('addEvent').onclick=()=>{const el=current();if(!el)return;el.events=el.events||[];el.events.push({action:'draw',startMs:0,durationMs:1000,animation:'left-to-right'});renderEvents()};$('deleteElement').onclick=()=>{if(!current())return;scene.elements.splice(selected,1);selectElement(Math.min(selected,scene.elements.length-1))};$('redrawRegion').onclick=()=>{regionMode=true;status('캔버스에서 새 영역을 드래그하세요.')};
+    canvas.onpointerdown=e=>{if(!regionMode||!current())return;const b=canvas.getBoundingClientRect();dragStart={x:clamp((e.clientX-b.left)/b.width),y:clamp((e.clientY-b.top)/b.height)};canvas.setPointerCapture(e.pointerId)};
+    canvas.onpointermove=e=>{if(!dragStart)return;const b=canvas.getBoundingClientRect(),x=clamp((e.clientX-b.left)/b.width),y=clamp((e.clientY-b.top)/b.height),el=current();el.region={x:Math.min(x,dragStart.x),y:Math.min(y,dragStart.y),width:Math.abs(x-dragStart.x),height:Math.abs(y-dragStart.y)};$('rx').value=el.region.x.toFixed(4);$('ry').value=el.region.y.toFixed(4);$('rw').value=el.region.width.toFixed(4);$('rh').value=el.region.height.toFixed(4);draw()};
+    canvas.onpointerup=()=>{if(!dragStart)return;dragStart=null;regionMode=false;status('영역을 갱신했습니다.')};
+    fillScene();
+  </script>
+</body>
+</html>
