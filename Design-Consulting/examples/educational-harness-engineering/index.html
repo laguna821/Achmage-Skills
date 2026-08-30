@@ -1,0 +1,1027 @@
+<!doctype html>
+<html lang="ko" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Educational Harness Engineering — 학생이 꼼수를 쓴 게 아닙니다</title>
+<meta name="description" content="AI 시대, 학생들의 꼼수에 강한 수업·평가를 설계하는 법. 탐지도 금지도 파산한 지금, 남은 답은 설계다. 안창현(한림대 미디어스쿨).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN.md 토큰 — 이 블록 밖에서 색·크기·폭을 발명하지 않는다
+   ============================================================ */
+:root{
+  /* 채색: teal 한 계열의 명도 사다리 (V2 L1) */
+  --key-900:#04343A; --key-700:#0A6069; --key:#0B7C87; --key-300:#7FBFC6; --key-050:#E8F3F4;
+  /* 중립: 키 hue 쪽으로 미세 틴트 (V2 L4) */
+  /* --faint 는 #66787C 에서 하향 — RQ2 실측 4.50:1(하한 경계선)이라 여유가 0 이었다 */
+  --paper:#FBFCFC; --paper-2:#F1F5F5; --ink:#0E1719; --pencil:#3A4A4D; --faint:#5C6E72;
+  --border:#DDE6E7; --border-hard:#B9C7C9;
+  /* 미드 지면 전용 저강조색 — faint 는 미드 지면(L≈.43) 위에서 2.05:1 로 무너진다.
+     미드는 '진짜 가운데 단'이어야 하므로(I4) 지면을 밝히는 대신 텍스트를 내린다. */
+  --on-mid-soft:#232D30;
+  /* 어두운 지면 대응색 */
+  --onink-strong:#EEF5F5; --onink-body:#C3D2D4; --onink-soft:#8FA2A5;
+  --onink-line:#22343A; --onink-key:#6FD3DE;
+  /* 지면 3등급 (밝기 교대 축 I4) — 페이지-상대 사다리 */
+  --bg-light:#FBFCFC; --bg-mid:#9DB2B5; --bg-dark:#04343A;
+  --on-light:#0E1719; --on-mid:#0E1719; --on-dark:#EEF5F5;
+  /* 타입 사다리 — 비율 1.250, base 17px (T2) */
+  --fs--1:.85rem; --fs-0:1.0625rem; --fs-1:1.328rem; --fs-2:1.66rem;
+  --fs-3:2.075rem; --fs-4:2.594rem; --fs-5:3.242rem; --fs-6:4.053rem;
+  --ff:"Asta Sans",system-ui,-apple-system,sans-serif;
+  --ff-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  /* 폭 폐집합 (G1) */
+  --w-prose:720px; --w-content:900px; --w-wide:1240px; --w-satellite:560px;
+  --u:4px; --gutter:clamp(20px,5vw,48px);
+  --r-none:0px; --r-sm:2px; --r-md:6px; --r-pill:999px;
+  color-scheme:light;
+}
+:root[data-theme="dark"]{
+  --key-900:#02181C; --key-700:#8FDCE5; --key:#4FC2CE; --key-300:#2A7B85; --key-050:#10262A;
+  /* --faint 는 #83989B 에서 상향 — RQ2 실측에서 band--light(#22383D) 위 4.07:1 로
+     본문 하한 4.5 미달이었다 (근사 아님, 정확 측정 → 즉시 수리). 현재 4.97:1 */
+  --paper:#101A1D; --paper-2:#16262A; --ink:#E9F1F1; --pencil:#B3C3C5; --faint:#93A8AB;
+  --border:#223236; --border-hard:#33474B;
+  --onink-strong:#EEF5F5; --onink-body:#C3D2D4; --onink-soft:#8FA2A5;
+  --onink-line:#22343A; --onink-key:#6FD3DE;
+  --bg-light:#22383D; --bg-mid:#16262A; --bg-dark:#050B0D;
+  --on-light:#E9F1F1; --on-mid:#E9F1F1; --on-dark:#EEF5F5;
+  --on-mid-soft:#A9BCBF;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --key-900:#02181C; --key-700:#8FDCE5; --key:#4FC2CE; --key-300:#2A7B85; --key-050:#10262A;
+    --paper:#101A1D; --paper-2:#16262A; --ink:#E9F1F1; --pencil:#B3C3C5; --faint:#93A8AB;
+    --border:#223236; --border-hard:#33474B;
+    --bg-light:#22383D; --bg-mid:#16262A; --bg-dark:#050B0D;
+    --on-light:#E9F1F1; --on-mid:#E9F1F1; --on-dark:#EEF5F5;
+    --on-mid-soft:#A9BCBF;
+    color-scheme:dark;
+  }
+}
+
+/* ============================================================
+   Reset + CJK 하드룰 (V4 — 블로킹)
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--ff);font-size:var(--fs-0);font-weight:400;line-height:1.78;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,p,ul,ol,dl,dd,figure,blockquote,table{margin:0;padding:0}
+ul,ol{list-style:none}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--key-700);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--key);outline-offset:2px}
+::selection{background:var(--key-300);color:var(--key-900)}
+
+/* ============================================================
+   타입 역할 시트 (T3) — 크기는 역할을 통해서만 받는다
+   ============================================================ */
+.r-display{font-size:clamp(var(--fs-4),calc(1.5rem + 4.2vw),var(--fs-6));
+  font-weight:800;line-height:1.06;letter-spacing:-.025em;text-wrap:balance}
+.r-headline{font-size:clamp(var(--fs-2),calc(1.2rem + 2.1vw),var(--fs-4));
+  font-weight:800;line-height:1.2;letter-spacing:-.015em;text-wrap:balance}
+.r-title{font-size:clamp(var(--fs-1),calc(1.1rem + .8vw),var(--fs-2));
+  font-weight:600;line-height:1.35;letter-spacing:-.005em}
+.r-body{font-size:var(--fs-0);font-weight:400;line-height:1.78}
+.r-label{font-size:var(--fs--1);font-weight:600;line-height:1.45;letter-spacing:.02em}
+.r-caption{font-size:var(--fs--1);font-weight:400;line-height:1.5}
+.r-figures{font-size:clamp(var(--fs-3),calc(1.2rem + 3.6vw),var(--fs-5));
+  font-weight:800;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+
+/* ============================================================
+   지면 · 폭 (G1/G2) · 슬라이드 단위
+   ============================================================ */
+.slide{min-height:100svh;display:grid;align-content:center;gap:calc(var(--u)*10);
+  padding:calc(var(--u)*24) var(--gutter);position:relative;isolation:isolate}
+.slide[data-slide-exempt]{min-height:0;padding-block:calc(var(--u)*20)}
+.wrap{width:100%;margin-inline:auto}
+.wrap--prose{max-width:var(--w-prose)}
+.wrap--content{max-width:var(--w-content)}
+.wrap--wide{max-width:var(--w-wide)}
+.wrap--satellite{max-width:var(--w-satellite)}
+
+.band--light{background:var(--bg-light);color:var(--on-light)}
+.band--mid{background:var(--bg-mid);color:var(--on-mid)}
+.band--dark{background:var(--bg-dark);color:var(--on-dark)}
+.band--dark .r-headline,.band--dark .r-display{color:var(--onink-strong)}
+.band--dark .r-body{color:var(--onink-body)}
+/* lede 는 캡션이 아니라 1차 독해 행이다. 씬 위 onink-body 는 최악 픽셀에서
+   4.39:1 이었다 (RQ2, 375). */
+.band--dark .lede{color:var(--onink-strong)}
+/* RQ2 수리: onink-soft(#8FA2A5)는 씬 위에서 1.8:1 로 무너진다 — 씬 밴드의
+   소형 텍스트는 body 등급까지 올린다 */
+.band--dark .src,.band--dark .label{color:var(--onink-body)}
+.band--dark em{color:var(--onink-key)}
+/* RQ2 수리: 미드 지면 위 저강조 텍스트 전량 */
+.band--mid .src,.band--mid .why,.band--mid .gist,.band--mid .q-by,
+.band--mid .unit,.band--mid .term-note{color:var(--on-mid-soft)}
+
+em{font-style:normal;color:var(--key-700)}
+.lede{font-size:var(--fs-1);line-height:1.7;color:var(--pencil);max-width:var(--w-prose)}
+.src{font-size:var(--fs--1);line-height:1.5;color:var(--faint)}
+.figure-inline{font-weight:800;color:var(--key-700);font-variant-numeric:tabular-nums}
+.band--dark .figure-inline{color:var(--onink-key)}
+.eyebrow{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--onink-key)}
+
+/* ============================================================
+   씬 3층 문법 (image-prescription I2) — 층1 원본 / 층2 트리트먼트 / 층3 콘텐츠
+   ============================================================ */
+/* overflow:clip — scale() 한 층1 의사요소를 가둔다. hidden 이 아니라 clip 인 이유:
+   hidden 은 스크롤 컨테이너를 만들어 BEAT 4 의 position:sticky 헤딩을 죽인다. */
+.scene{overflow:clip}
+.scene::before,.scene::after{content:"";position:absolute;inset:0;pointer-events:none}
+.scene::before{z-index:-2;background-image:var(--section-img);background-size:cover;
+  background-position:var(--raw-pos,center);filter:saturate(.86) contrast(1.1)}
+.scene::after{z-index:-1}
+/* cover — 풀블리드 무대 */
+/* RQ2 수리: 하한 .60 → .74. raw-01 의 광선이 텍스트 밴드를 가로질러 최악 픽셀
+   대비를 3.15:1 로 끌어내렸다. --raw-pos 도 42% → 58% 로 내려 광선을 텍스트
+   위쪽으로 밀어낸다(빌드 인라인). */
+.sc-cover::after{mix-blend-mode:multiply;background:
+  linear-gradient(135deg,rgba(4,52,58,.94),rgba(4,52,58,.84) 55%,rgba(4,52,58,.74)),
+  radial-gradient(circle at 78% 22%,rgba(127,191,198,.22),transparent 32%)}
+/* tone — 다크 밴드 */
+.sc-tone::after{mix-blend-mode:multiply;background:
+  linear-gradient(135deg,rgba(4,52,58,.9),rgba(4,52,58,.72) 60%,rgba(4,52,58,.56)),
+  radial-gradient(circle at 12% 84%,rgba(11,124,135,.18),transparent 28%)}
+/* neon — SIGNATURE 전용, glow 증폭 */
+.sc-neon::after{mix-blend-mode:multiply;background:
+  linear-gradient(135deg,rgba(4,52,58,.9),rgba(4,52,58,.62)),
+  radial-gradient(circle at 72% 18%,rgba(127,191,198,.42),transparent 30%),
+  radial-gradient(circle at 15% 80%,rgba(11,124,135,.24),transparent 26%)}
+/* wash — 라이트 지면, 블러 워시 */
+.sc-wash::before{filter:blur(8px) saturate(.75) contrast(1.02);opacity:.34;transform:scale(1.08)}
+.sc-wash::after{background:linear-gradient(180deg,
+  color-mix(in srgb,var(--bg-light) 82%,transparent),
+  color-mix(in srgb,var(--bg-light) 90%,transparent))}
+.sc-wash-012::before{filter:blur(10px) saturate(.7);opacity:.12;transform:scale(1.06)}
+.sc-wash-012::after{background:linear-gradient(180deg,
+  color-mix(in srgb,var(--bg-mid) 78%,transparent),
+  color-mix(in srgb,var(--bg-mid) 88%,transparent))}
+/* behind-image — 텍스트 뒤 희미한 이미지 */
+.sc-behind::before{opacity:.16}
+.sc-behind::after{background:linear-gradient(180deg,
+  color-mix(in srgb,var(--bg-light) 80%,transparent),
+  color-mix(in srgb,var(--bg-light) 88%,transparent))}
+/* luma — 색 제거, 질감만 */
+/* RQ2 수리: 라이트 지면 luma 스크림 72% → 84%. raw-07(어두운 작업대)이 표 헤더·
+   캡션 뒤를 끌어내려 3.39:1 이었다. */
+.sc-luma::before{mix-blend-mode:luminosity;opacity:.4;filter:saturate(0) contrast(1.06)}
+.sc-luma::after{background:color-mix(in srgb,var(--bg-mid) 84%,transparent)}
+.band--light.sc-luma::after{background:color-mix(in srgb,var(--bg-light) 84%,transparent)}
+/* 씬 위 캡션은 한 단계 무겁게 — faint 는 씬 지면에서 하한 근처로 떨어진다 */
+.scene.band--light .src,.scene.band--light .topics th{color:var(--pencil)}
+/* cut — 사선 절단면 */
+/* RQ2 수리: 하한 스크림 46% → 78%. raw-04(어두운 콘크리트 복도)가 46% 구간에서
+   지면을 L≈.17 의 '중간-어둠'으로 끌어내려, 어두운 글자도 밝은 글자도 4.5:1 을
+   못 만드는 사각지대를 만들었다. 미드 지면은 미드로 유지한다. */
+.sc-cut::before{clip-path:polygon(38% 0,100% 0,100% 100%,16% 100%);opacity:.62}
+.sc-cut::after{background:linear-gradient(105deg,
+  color-mix(in srgb,var(--bg-mid) 96%,transparent) 34%,
+  color-mix(in srgb,var(--bg-mid) 75%,transparent))}
+/* horizon — 하단 띠만 */
+.sc-horizon::before{inset:auto 0 0 0;height:min(42vh,420px)}
+.sc-horizon::after{background:linear-gradient(180deg,
+  rgba(4,52,58,.97) 6%,rgba(4,52,58,.72) 58%,rgba(4,52,58,.5))}
+/* card-window — 카드 내부 소형 크롭용 무대 */
+.sc-cardwindow::before{opacity:.5;filter:saturate(.8) contrast(1.05)}
+.sc-cardwindow::after{background:linear-gradient(180deg,
+  color-mix(in srgb,var(--bg-mid) 74%,transparent),
+  color-mix(in srgb,var(--bg-mid) 86%,transparent))}
+/* ============================================================
+   I2.7 다크 변주 (v3.5 규칙 F44 — 2026-08-30 REVISE)
+   라이트-밴드 기법(wash/wash-012/behind/luma/cut/card-window)의 층1 op·
+   층2 를 다크 스킴에서 재정의한다 — 라이트 값 무언 승계 금지. 다크-밴드
+   기법(cover/tone/neon/horizon — 고정 multiply)은 스킴 불변(I2.7-2).
+   기제: 다크에서 band 토큰 color-mix 스크림은 "다크 워시"로 뒤집혀
+   저op 층1 을 소거한다 (실측 detection 33.1→5.5 등). 다크 변주는
+   층1 을 올리고(1.0/.85/.9) 층2 를 multiply 다크 스크림 또는 저농도
+   패널로 바꾼다 — tone/neon 이 두 스킴 sd 동일(38.8/11.0)이었던
+   메커니즘의 이식. 값 수리 시 감사 SCRIM 표 동기화 의무 (F39).
+   ============================================================ */
+:root[data-theme="dark"] .sc-wash::before{opacity:1;filter:blur(6px) saturate(.7)}
+:root[data-theme="dark"] .sc-wash::after{mix-blend-mode:multiply;background:
+  linear-gradient(180deg,rgba(34,56,61,.86),rgba(34,56,61,.92))}
+:root[data-theme="dark"] .sc-wash-012::before{opacity:1;filter:blur(8px) saturate(.65)}
+:root[data-theme="dark"] .sc-wash-012::after{mix-blend-mode:multiply;background:
+  linear-gradient(180deg,rgba(22,38,42,.78),rgba(22,38,42,.86))}
+:root[data-theme="dark"] .sc-behind::before{opacity:.85;filter:saturate(.75)}
+:root[data-theme="dark"] .sc-behind::after{mix-blend-mode:multiply;background:
+  linear-gradient(180deg,rgba(34,56,61,.84),rgba(34,56,61,.90))}
+:root[data-theme="dark"] .sc-luma::before{opacity:1}
+:root[data-theme="dark"] .sc-luma::after{background:color-mix(in srgb,var(--bg-mid) 70%,transparent)}
+:root[data-theme="dark"] .band--light.sc-luma::after{background:color-mix(in srgb,var(--bg-light) 76%,transparent)}
+:root[data-theme="dark"] .sc-cut::before{opacity:.9}
+:root[data-theme="dark"] .sc-cut::after{background:linear-gradient(105deg,
+  color-mix(in srgb,var(--bg-mid) 96%,transparent) 34%,
+  color-mix(in srgb,var(--bg-mid) 62%,transparent))}
+:root[data-theme="dark"] .sc-cardwindow::before{opacity:.8}
+:root[data-theme="dark"] .sc-cardwindow::after{background:linear-gradient(180deg,
+  color-mix(in srgb,var(--bg-mid) 70%,transparent),
+  color-mix(in srgb,var(--bg-mid) 84%,transparent))}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .sc-wash::before{opacity:1;filter:blur(6px) saturate(.7)}
+  :root:not([data-theme="light"]) .sc-wash::after{mix-blend-mode:multiply;background:
+    linear-gradient(180deg,rgba(34,56,61,.86),rgba(34,56,61,.92))}
+  :root:not([data-theme="light"]) .sc-wash-012::before{opacity:1;filter:blur(8px) saturate(.65)}
+  :root:not([data-theme="light"]) .sc-wash-012::after{mix-blend-mode:multiply;background:
+    linear-gradient(180deg,rgba(22,38,42,.78),rgba(22,38,42,.86))}
+  :root:not([data-theme="light"]) .sc-behind::before{opacity:.85;filter:saturate(.75)}
+  :root:not([data-theme="light"]) .sc-behind::after{mix-blend-mode:multiply;background:
+    linear-gradient(180deg,rgba(34,56,61,.84),rgba(34,56,61,.90))}
+  :root:not([data-theme="light"]) .sc-luma::before{opacity:1}
+  :root:not([data-theme="light"]) .sc-luma::after{background:color-mix(in srgb,var(--bg-mid) 70%,transparent)}
+  :root:not([data-theme="light"]) .band--light.sc-luma::after{background:color-mix(in srgb,var(--bg-light) 76%,transparent)}
+  :root:not([data-theme="light"]) .sc-cut::before{opacity:.9}
+  :root:not([data-theme="light"]) .sc-cut::after{background:linear-gradient(105deg,
+    color-mix(in srgb,var(--bg-mid) 96%,transparent) 34%,
+    color-mix(in srgb,var(--bg-mid) 62%,transparent))}
+  :root:not([data-theme="light"]) .sc-cardwindow::before{opacity:.8}
+  :root:not([data-theme="light"]) .sc-cardwindow::after{background:linear-gradient(180deg,
+    color-mix(in srgb,var(--bg-mid) 70%,transparent),
+    color-mix(in srgb,var(--bg-mid) 84%,transparent))}
+}
+:root[data-theme="dark"] .scene .topics th{color:var(--ink)} /* RQ2 768 다크: pencil TH 3.2:1 */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .scene .topics th{color:var(--ink)}
+}
+/* crop-shape — 무필터 원색 (filter 선언 자체가 없다) */
+.crop{background-image:var(--crop-img);background-size:cover;
+  background-position:var(--crop-pos,center 40%)}
+.crop--arch{border-radius:var(--r-pill) var(--r-pill) var(--r-md) var(--r-md)}
+.crop--circle{border-radius:50%}
+
+/* ============================================================
+   테마 토글 (V5 활성 경로 의무)
+   ============================================================ */
+.themetoggle{position:fixed;top:calc(var(--u)*4);right:calc(var(--u)*4);z-index:50;
+  display:flex;align-items:center;gap:calc(var(--u)*2);min-height:44px;
+  padding:calc(var(--u)*2) calc(var(--u)*4);border:1px solid var(--border-hard);
+  border-radius:var(--r-sm);background:var(--paper);color:var(--pencil);
+  font-family:var(--ff);font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;cursor:pointer}
+.themetoggle:hover{border-color:var(--key);color:var(--key-700)}
+.themetoggle .dotk{width:10px;height:10px;border-radius:var(--r-pill);
+  border:1px solid currentColor;background:var(--key)}
+
+/* ============================================================
+   BEAT 1 — hero (tailark:dusk/hero-section/three)
+   ============================================================ */
+#frame .wrap{display:grid;gap:calc(var(--u)*6)}
+.scroll-hint{width:1px;height:56px;background:var(--onink-line);margin-top:calc(var(--u)*6)}
+
+/* BEAT 2 — stats (tailark:veil/stats/two) */
+.statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*6);
+  margin-top:calc(var(--u)*10)}
+.stat{border-block:1px solid var(--border);padding-block:calc(var(--u)*6);
+  display:grid;gap:calc(var(--u)*3);align-content:start}
+.figure{font-size:clamp(var(--fs-3),calc(1.2rem + 3.6vw),var(--fs-5));font-weight:800;
+  line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--key-700)}
+.unit{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--faint);display:block;
+  margin-top:calc(var(--u)*2)}
+.bars{display:flex;align-items:flex-end;justify-content:space-between;gap:calc(var(--u)*2);
+  height:min(26svh,240px);margin-top:calc(var(--u)*10);border-bottom:1px solid var(--border)}
+.bars li{position:relative;flex:1 1 0;display:flex;flex-direction:column;justify-content:flex-end;
+  align-items:center;height:100%;gap:calc(var(--u)*2)}
+.bars b{display:block;width:2px;background:var(--border-hard);height:var(--h);
+  transition:width .2s,background .2s}
+.bars li:hover b{width:calc(var(--u)*3);background:var(--key)}
+.bars i{font-style:normal;font-size:var(--fs--1);color:var(--faint);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.bars li:hover i{color:var(--key-700)}
+
+/* BEAT 3 — content (tailark:dusk/content/one) */
+.split{display:grid;grid-template-columns:7fr 5fr;gap:calc(var(--u)*12);align-items:start}
+.facts{display:grid;gap:calc(var(--u)*8)}
+/* RQ2 수리 — 지면 패널. raw-02(밝은 책상 격자) 위에서는 스크림을 아무리 올려도
+   소형 텍스트가 4.5:1 에 못 미친다. 스크림을 더 올리면 이미지가 죽는다(I1.5 이중
+   하네스). 그래서 텍스트에 표면을 준다 — V8-05 정보 카드 계보. */
+.fact{border-top:1px solid var(--onink-line);border-left:0;
+  background:rgba(2,20,23,.86);padding:calc(var(--u)*5) calc(var(--u)*5) calc(var(--u)*5);
+  display:grid;gap:calc(var(--u)*3)}
+.fact .figure{color:var(--onink-key)}
+.fact .label{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--onink-soft)}
+
+/* BEAT 4 — faq (tailark:mist/faqs/two) */
+.faqgrid{display:grid;grid-template-columns:2fr 3fr;gap:calc(var(--u)*12);align-items:start}
+.faqhead{position:sticky;top:calc(var(--u)*24);display:grid;gap:calc(var(--u)*4)}
+.faqlist details{border-top:1px solid var(--border);padding-block:calc(var(--u)*2)}
+.faqlist details[open]{border-top-color:var(--key-300)}
+.faqlist summary{font-size:clamp(var(--fs-1),calc(1.1rem + .8vw),var(--fs-2));font-weight:600;
+  line-height:1.35;color:var(--ink);cursor:pointer;min-height:44px;
+  display:flex;align-items:center;gap:calc(var(--u)*2);padding-block:calc(var(--u)*2)}
+.faqlist summary::marker,.faqlist summary::-webkit-details-marker{color:var(--key)}
+.faqlist summary:hover{background:var(--key-050)}
+.faqlist details>p{margin-top:calc(var(--u)*2);color:var(--pencil);max-width:var(--w-prose)}
+.faqlist details>p.src{margin-top:calc(var(--u)*3)}
+
+/* BEAT 5 — comparator (tailark:veil/comparator/three) */
+.cmp{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--u)*3);
+  margin-top:calc(var(--u)*10)}
+.cmp-col{border:1px solid var(--border-hard);border-radius:var(--r-sm);
+  padding:calc(var(--u)*6);background:var(--paper);display:grid;gap:calc(var(--u)*4);
+  align-content:start}
+.cmp-col:hover{border-color:var(--key-300)}
+.cmp-col h3{font-size:var(--fs-1);font-weight:800;line-height:1.35;color:var(--ink)}
+.cmp-col .verdict{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--faint)}
+.cmp-col.is-verdict{border:2px solid var(--key)}
+.cmp-col.is-verdict .verdict{color:var(--key-700)}
+.cmp-col dl>div{display:flex;justify-content:space-between;gap:calc(var(--u)*2);
+  border-bottom:1px solid var(--border);padding-block:calc(var(--u)*3);font-size:var(--fs--1);line-height:1.5}
+.cmp-col dl>div:last-child{border-bottom:0}
+.cmp-col dt{color:var(--faint)}
+.cmp-col dd{margin:0;color:var(--ink);font-weight:600;text-align:right}
+/* RQ2 수리: 이 캡션은 sc-cut 이 이미지를 노출하는 우측(38%~100%)까지 가로질러
+   최악 픽셀이 밝은 복도 위에 놓였다. 폭을 prose 로 묶어 좌측 클린 밴드에 유지한다. */
+#elimination > .wrap > .src{max-width:var(--w-prose)}
+
+/* BEAT 6 — terminal (magicui:terminal) */
+.term{border:1px solid var(--border-hard);border-radius:var(--r-md);background:var(--paper-2);
+  overflow:hidden;margin-top:calc(var(--u)*10)}
+.term-bar{display:flex;gap:calc(var(--u)*2);padding:calc(var(--u)*3);
+  border-bottom:1px solid var(--border)}
+.term-bar i{width:8px;height:8px;border-radius:var(--r-pill);background:var(--border-hard)}
+.term-body{padding:calc(var(--u)*6);display:grid;gap:calc(var(--u)*2)}
+.term-label{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--key-700)}
+.term-line{font-family:var(--ff-mono);font-size:var(--fs-0);line-height:1.7;color:var(--ink);
+  white-space:pre-wrap;overflow-wrap:anywhere}
+.term-line .sig{color:var(--key)}
+.term-line em{font-weight:600}
+.term-note{color:var(--pencil);margin-bottom:calc(var(--u)*5);max-width:var(--w-prose)}
+
+/* BEAT 7 — testimonials (tailark:dusk/testimonials/one) */
+.quotegrid{display:grid;grid-template-columns:repeat(5,1fr);gap:calc(var(--u)*3);
+  margin-top:calc(var(--u)*10)}
+.q{border:1px solid var(--border-hard);border-radius:var(--r-md);padding:calc(var(--u)*8);
+  display:grid;gap:calc(var(--u)*5);align-content:start}
+.q--lead{grid-column:span 3;background:var(--paper)}
+.q--sub{grid-column:span 2;background:var(--key-900);border-color:var(--onink-line)}
+.q-en{font-style:italic;color:var(--pencil)}
+.q-ko{font-size:clamp(var(--fs-1),calc(1.1rem + .8vw),var(--fs-2));font-weight:600;line-height:1.45;color:var(--ink)}
+.q--sub .q-ko{color:var(--onink-strong)}
+.q--sub .q-ko strong{color:var(--onink-key)}
+.q-by{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--faint);
+  border-left:2px solid var(--key-300);padding-left:calc(var(--u)*4)}
+.q-by span{font-weight:400;display:block;margin-top:var(--u)}
+.q--sub .q-by{color:var(--onink-soft);border-left-color:var(--onink-key)}
+
+/* BEAT 8 — SIGNATURE (smoothui:reveal-text × uiverse Patterns) */
+/* 격자선은 키 틴트로 — 중립 라인(#22343A)은 다크 teal 지면 위에서 관측되지 않아
+   밀도 회계에 계상할 수 없었다 (F22 관측 가능성 기준). */
+#mindset::after{background-image:
+  linear-gradient(rgba(127,191,198,.16) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(127,191,198,.16) 1px,transparent 1px),
+  linear-gradient(135deg,rgba(4,52,58,.9),rgba(4,52,58,.62)),
+  radial-gradient(circle at 72% 18%,rgba(127,191,198,.42),transparent 30%),
+  radial-gradient(circle at 15% 80%,rgba(11,124,135,.24),transparent 26%);
+  background-size:32px 32px,32px 32px,auto,auto,auto;mix-blend-mode:normal}
+.decl{display:grid;gap:calc(var(--u)*7)}
+.decl-line{font-size:clamp(var(--fs-2),calc(1.1rem + 2.6vw),var(--fs-4));font-weight:800;
+  line-height:1.22;letter-spacing:-.02em;color:var(--onink-strong);
+  border-top:1px solid var(--onink-line);padding-top:calc(var(--u)*5)}
+.decl-line em{color:var(--onink-key)}
+/* 은닉은 .js 스코프에서만 — 스크립트 없으면 5줄 전문이 그대로 보인다 */
+html.js .decl-line{opacity:0;transform:translateY(24px)}
+html.js .decl.is-in .decl-line{opacity:1;transform:none;
+  transition:opacity .25s ease-out calc(var(--i)*120ms),transform .25s ease-out calc(var(--i)*120ms)}
+@media (prefers-reduced-motion:reduce){
+  html.js .decl-line{opacity:1;transform:none;transition:none}}
+
+/* BEAT 9 — features (tailark:dusk/features/three) */
+.subg{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--u)*4) calc(var(--u)*6);
+  margin-top:calc(var(--u)*10)}
+.subg-col{grid-row:span 2;display:grid;grid-template-rows:subgrid;gap:calc(var(--u)*4)}
+.shot{aspect-ratio:9/12;border:1px solid var(--border-hard);border-radius:var(--r-md);
+  background-color:var(--paper-2);overflow:hidden}
+.shot:hover{border-color:var(--key-300)}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.lead{color:var(--ink);font-weight:600}
+.topiclist{padding:calc(var(--u)*5);display:grid;gap:calc(var(--u)*3);align-content:center;
+  background:var(--paper-2)}
+.topiclist li{font-size:var(--fs--1);line-height:1.5;color:var(--pencil);
+  border-bottom:1px solid var(--border);padding-bottom:calc(var(--u)*3)}
+.topiclist li:last-child{border-bottom:0;padding-bottom:0}
+.topiclist b{display:block;font-weight:600;letter-spacing:.02em;color:var(--key-700)}
+
+/* BEAT 10 — testimonials (tailark:veil/testimonials/two) */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--u)*3);margin-top:calc(var(--u)*10)}
+.vcard{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"tok quote" ". by";
+  gap:calc(var(--u)*3) calc(var(--u)*4);border:1px solid var(--border-hard);
+  border-radius:var(--r-md);padding:calc(var(--u)*6);background:color-mix(in srgb,var(--bg-mid) 60%,transparent)}
+.vcard:hover{border-color:var(--key)}
+.vcard p{grid-area:quote;color:var(--ink)}
+.vcard p strong{font-weight:600;color:var(--key-700)}
+/* 귀속행은 key 의 자리가 아니다 (V2 L3 — key 의 자리는 수치·인용 규칙선·활성·링크).
+   미드 지면 위 key-700 은 RQ2 에서 3.45:1 이었다. */
+.vcard footer{grid-area:by;font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;
+  color:var(--on-mid-soft)}
+.vtok{grid-area:tok;width:20px;height:20px;border:1px solid var(--key);
+  background-image:url(assets/images/raw-08.webp);background-size:cover;align-self:start;
+  margin-top:calc(var(--u)*2)}
+
+/* BEAT 11 — content (tailark:dusk/content/three) */
+.c3{display:grid;grid-template-columns:2fr 1fr;gap:calc(var(--u)*12);align-items:start;
+  margin-top:calc(var(--u)*10)}
+.panel{display:grid;gap:calc(var(--u)*3)}
+.panel img{width:100%;border:1px solid var(--border-hard);border-radius:var(--r-md)}
+.panel img:hover{border-color:var(--key-300)}
+.c3-text{display:grid;gap:calc(var(--u)*5)}
+.topics{width:100%;border-collapse:collapse;margin-top:calc(var(--u)*12)}
+.topics caption{caption-side:top;text-align:left;padding-bottom:calc(var(--u)*3)}
+.topics th{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--faint);
+  text-align:left;border-bottom:1px solid var(--border-hard);padding-block:calc(var(--u)*3)}
+.topics td{border-bottom:1px solid var(--border);padding:calc(var(--u)*4);
+  vertical-align:top;color:var(--ink);width:50%}
+.topics tr:hover td{background:var(--key-050)}
+.why{display:block;font-size:var(--fs--1);line-height:1.5;color:var(--faint);margin-top:var(--u)}
+
+/* BEAT 12 — logo-cloud (smoothui:logo-cloud-3) */
+.marks{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);
+  border:1px solid var(--border);margin-top:calc(var(--u)*10)}
+.marks li{background:var(--bg-light);padding:calc(var(--u)*5);display:grid;gap:calc(var(--u)*2);
+  align-content:start}
+.mark{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;color:var(--pencil)}
+.gist{font-size:var(--fs--1);line-height:1.5;color:var(--faint)}
+.marks li:hover .gist{color:var(--ink)}
+.marks li:hover .mark{color:var(--key-700)}
+
+/* BEAT 13 — stepper (smoothui:animated-stepper) */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:calc(var(--u)*6);
+  margin-top:calc(var(--u)*12)}
+.steps li{position:relative;display:grid;gap:calc(var(--u)*3);align-content:start;
+  padding-top:calc(var(--u)*12)}
+.steps li::before{content:"";position:absolute;top:14px;left:0;right:0;height:1px;
+  background:var(--border-hard)}
+.steps li:first-child::before{left:50%}
+.steps li:last-child::before{right:50%}
+.dot{position:absolute;top:0;left:50%;translate:-50% 0;width:28px;height:28px;
+  border-radius:var(--r-pill);border:1px solid var(--border-hard);background:var(--bg-mid);
+  display:grid;place-items:center;font-size:var(--fs--1);font-weight:600;color:var(--ink)}
+.steps li:hover .dot{background:var(--key);border-color:var(--key);color:var(--paper)}
+.steps li:hover .stepq{color:var(--key-700)}
+/* ⚠️ 클래스명은 .stepq 다 — .q 는 BEAT 7 인용 카드(blockquote.q)가 이미 쓰고 있고
+   그 규칙에 display:grid 가 있어, 같은 이름을 쓰면 질문 문단의 인라인 자식들이
+   각각 그리드 행이 되어 한 줄짜리 문장이 3행으로 쪼개진다 (RQ3 실측). */
+.stepq{font-weight:600;color:var(--ink);font-size:var(--fs-0);line-height:1.55}
+
+/* BEAT 14 — cta (tailark:mist/call-to-action/two) */
+.closebar{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
+  gap:calc(var(--u)*10)}
+.closelinks{display:flex;gap:calc(var(--u)*3)}
+.closelinks a{font-size:var(--fs--1);font-weight:600;letter-spacing:.02em;
+  color:var(--onink-strong);text-decoration:none;border:1px solid var(--onink-line);
+  border-radius:var(--r-sm);padding:calc(var(--u)*3) calc(var(--u)*5);min-height:48px;
+  display:flex;align-items:center}
+.closelinks a:hover{border-color:var(--onink-key);background:rgba(11,124,135,.22)}
+.closelinks a:active{background:rgba(11,124,135,.34)}
+
+/* BEAT 15 — faq (tailark:veil/faqs/four) */
+.srcgroup{border:1px solid var(--border);border-radius:var(--r-sm);
+  padding:calc(var(--u)*3) calc(var(--u)*4);margin-bottom:calc(var(--u)*2)}
+.srcgroup[open]{border-top-color:var(--key-300)}
+.srcgroup summary{font-size:var(--fs-0);font-weight:600;line-height:1.5;color:var(--ink);
+  cursor:pointer;min-height:44px;display:flex;align-items:center}
+.srcgroup summary:hover{background:var(--key-050)}
+.srcgroup ul{margin-top:calc(var(--u)*2)}
+.srcgroup li{font-size:var(--fs--1);line-height:1.6;color:var(--pencil);
+  padding-block:calc(var(--u)*2);overflow-wrap:anywhere}
+.srcgroup li.unverified{color:var(--faint);border-bottom:1px dashed var(--border-hard)}
+.metabar{max-width:var(--w-satellite);margin:calc(var(--u)*14) auto 0;
+  padding-top:calc(var(--u)*6);border-top:1px solid var(--border);
+  font-size:var(--fs--1);line-height:1.6;color:var(--faint);display:grid;gap:calc(var(--u)*2)}
+
+/* ============================================================
+   반응형 (recomposition move 5) — 375 / 768 / 1440
+   ============================================================ */
+@media (max-width:1279px){
+  .steps{grid-template-columns:1fr;gap:calc(var(--u)*8);margin-top:calc(var(--u)*8)}
+  .steps li{padding:0 0 0 calc(var(--u)*12)}
+  .steps li::before{top:0;bottom:0;left:14px;right:auto;width:1px;height:auto}
+  .steps li:first-child::before{top:14px;left:14px;bottom:auto;height:calc(100% - 14px)}
+  .steps li:last-child::before{bottom:50%;height:auto}
+  .dot{top:0;left:0;translate:0 0}
+}
+@media (max-width:1023px){
+  .cmp{grid-template-columns:1fr}
+  .marks{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:767px){
+  /* RQ3 수리: 모바일에서 테마 토글이 우하단 고정이라 마지막 행과 겹쳤다.
+     지면 하단에 토글 높이 + 여유만큼 패딩을 준다. */
+  .slide{padding:calc(var(--u)*20) var(--gutter) calc(var(--u)*26);gap:calc(var(--u)*8)}
+  /* I7 모바일 리크롭 — 세로 화면에서 네거티브 스페이스가 유지되도록 */
+  .scene::before{background-position:var(--raw-pos-m,var(--raw-pos,center))}
+  .split,.faqgrid,.c3,.quotegrid,.subg,.voices{grid-template-columns:1fr}
+  .faqhead{position:static}
+  .q--lead,.q--sub{grid-column:auto}
+  .subg-col{grid-row:auto;grid-template-rows:none}
+  .shot{aspect-ratio:4/3}
+  .statrow{grid-template-columns:1fr}
+  .bars li:nth-child(2n) b{opacity:.35}
+  .bars i{display:none}
+  .bars li:hover i{display:block;position:absolute;bottom:calc(var(--u)*-6)}
+  .closebar{flex-direction:column;align-items:stretch}
+  .closelinks{flex-direction:column}
+  .closelinks a{justify-content:center}
+  .topics,.topics tbody,.topics tr,.topics td{display:block;width:auto}
+  .topics thead{display:none}
+  .topics td{border-bottom:0;padding-inline:0}
+  .topics td::before{content:attr(data-k);display:block;font-size:var(--fs--1);
+    font-weight:600;letter-spacing:.02em;color:var(--faint);margin-bottom:var(--u)}
+  .topics tr{border-bottom:1px solid var(--border);padding-block:calc(var(--u)*4)}
+  .themetoggle{top:auto;bottom:calc(var(--u)*4);right:calc(var(--u)*4)}
+}
+@media print{
+  .themetoggle,.scroll-hint{display:none}
+  .slide{min-height:0;page-break-inside:avoid}
+  .steps{break-inside:avoid}
+  .scene::before,.scene::after{display:none}
+  .band--dark,.band--mid{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+
+<button class="themetoggle" type="button" id="theme" aria-pressed="false">
+  <span class="dotk" aria-hidden="true"></span><span id="themelabel">다크</span>
+</button>
+
+<main>
+
+<!-- BEAT 1 · I1 · full-bleed · cover · D -->
+<section id="frame" class="slide band--dark scene sc-cover"
+         style="--section-img:url(assets/images/raw-01.webp);--raw-pos:center 58%;--raw-pos-m:center 78%"
+         data-gallery="tailark:dusk/hero-section/three" data-component="hero">
+  <div class="wrap wrap--content">
+    <p class="eyebrow">Educational Harness Engineering</p>
+    <h1 class="r-display">학생이 꼼수를 쓴 게 아닙니다.<br><em>당신의 평가가</em> 예측 가능한 방식으로 뚫린 겁니다.</h1>
+    <p class="lede">AI 시대, 학생들의 꼼수에 강한 수업·평가를 설계하는 법</p>
+    <span class="scroll-hint" aria-hidden="true"></span>
+  </div>
+</section>
+
+<!-- BEAT 2 · I2 · wide · 무이미지 · L -->
+<section id="scale" class="slide band--light"
+         data-gallery="tailark:veil/stats/two" data-component="stats">
+  <div class="wrap wrap--content">
+    <h2 class="r-headline">AI 사용은 이미 학생 다수의 <em>기본값</em>입니다.</h2>
+    <p class="lede">“쓰느냐 마느냐”는 끝난 논쟁입니다. 남은 질문은 하나입니다 — 그래서 평가를 어떻게 설계할 것인가.</p>
+  </div>
+  <div class="wrap wrap--wide">
+    <div class="statrow">
+      <div class="stat">
+        <p><span class="figure">95%</span><span class="unit">2026년 학업 AI 활용 학부생 비율</span></p>
+        <p class="src">HEPI Student Gen-AI Survey 2026 (Report 199, n=1,054) · 2024년 66% → 92% → 95%</p>
+      </div>
+      <div class="stat">
+        <p><span class="figure">91.7%</span><span class="unit">과제·프로젝트 자료검색에 AI 활용</span></p>
+        <p class="src">한국직업능력연구원 2024 (n=726) · 60.2%는 “AI 의존 후 사고력 저하가 두렵다”고 응답</p>
+      </div>
+      <div class="stat">
+        <p><span class="figure">2,200만</span><span class="unit">건이 20% 이상 AI 작성으로 표시</span></p>
+        <p class="src">Turnitin 실측 — 2억 건 이상 검사 중 · 600만 건 이상은 80% 이상 AI 작성</p>
+      </div>
+    </div>
+    <ul class="bars">
+      <li><b style="--h:66%"></b><i>66</i></li>
+      <li><b style="--h:92%"></b><i>92</i></li>
+      <li><b style="--h:95%"></b><i>95</i></li>
+      <li><b style="--h:56%"></b><i>56</i></li>
+      <li><b style="--h:38%"></b><i>38</i></li>
+      <li><b style="--h:37%"></b><i>37</i></li>
+      <li><b style="--h:31%"></b><i>31</i></li>
+      <li><b style="--h:22%"></b><i>22</i></li>
+      <li><b style="--h:91.7%"></b><i>91.7</i></li>
+      <li><b style="--h:60.2%"></b><i>60.2</i></li>
+    </ul>
+    <p class="src">막대는 왼쪽부터 — HEPI 학업 활용률 3개년(66·92·95) · 2026년 활용 유형 5종(텍스트 생성 56 · 요약 38 · 문장 교정 37 · 번역 31 · 이미지 22) · KRIVET 2024(자료검색 91.7 · 사고력 저하 우려 60.2). 단위 %. <strong>장식 없이 실측값만 씁니다.</strong></p>
+  </div>
+</section>
+
+<!-- BEAT 3 · I2 · full-bleed · tone · D -->
+<section id="collective" class="slide band--dark scene sc-tone"
+         style="--section-img:url(assets/images/raw-02.webp);--raw-pos:center 38%;--raw-pos-m:center 50%"
+         data-gallery="tailark:dusk/content/one" data-component="content">
+  <div class="wrap wrap--wide split">
+    <h2 class="r-headline">한 명의 일탈이 아닙니다.<br><em>다수의 합리적 선택</em>이었습니다.</h2>
+    <div class="facts">
+      <div class="fact">
+        <p class="label">연세대 · 비대면 중간고사 (2025-10)</p>
+        <p><span class="figure">387명 중 211명</span></p>
+        <p class="r-body">익명 설문에서 <strong>절반 이상이 “커닝했다”고 스스로 인정</strong>했습니다. 안 베끼면 손해를 보는 구조에서 다수가 내린 선택입니다.</p>
+        <p class="src">아시아경제 보도</p>
+      </div>
+      <div class="fact">
+        <p class="label">고려대 · 교양 중간고사 (2025-10)</p>
+        <p><span class="figure">1,400명 / 500명</span></p>
+        <p class="r-body">수강생 1,400명 강의에서 <strong>약 500명이 카카오톡 오픈채팅방으로 문제와 정답을 공유</strong>해 중간고사가 전면 무효화됐습니다.</p>
+        <p class="src">시사저널 보도</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 4 · I4 · content · wash · L -->
+<section id="detection" class="slide band--light scene sc-wash"
+         style="--section-img:url(assets/images/raw-03.webp);--raw-pos-m:center 50%"
+         data-gallery="tailark:mist/faqs/two" data-component="faq">
+  <div class="wrap wrap--content faqgrid">
+    <div class="faqhead">
+      <h2 class="r-headline">“탐지기로 잡으면 되잖아요.”</h2>
+      <p class="lede">그 길은 이미 막혀 있습니다. 그것도 탐지 기술을 가장 잘 만들 수 있는 곳이 스스로 증명했습니다.</p>
+    </div>
+    <div class="faqlist">
+      <details>
+        <summary>만든 회사가 자기 탐지기를 폐기했습니다</summary>
+        <p class="r-body">OpenAI 는 <em>AI Text Classifier</em> 를 <strong>2023-07-20</strong> “낮은 정확도”를 이유로 중단했습니다. 공개된 성능은 정탐 <span class="figure-inline">26%</span> · 사람 글 오탐 <span class="figure-inline">9%</span>였습니다.</p>
+        <p class="src">OpenAI 공지 · TechCrunch 교차 확인</p>
+      </details>
+      <details>
+        <summary>비원어민 학생에게 누명을 씌웁니다</summary>
+        <p class="r-body">비원어민 TOEFL 에세이 오탐률 <span class="figure-inline">61.3%</span>, 입학 에세이 <span class="figure-inline">70.0%</span>, 논문 초록 <span class="figure-inline">43.9%</span>. 반대로 “원어민처럼 풍부한 단어를 써줘” 프롬프트 한 줄이면 탐지율이 <span class="figure-inline">11.3%</span>까지 떨어집니다.</p>
+        <p class="src">Liang et al. (2023), <em>Patterns</em> 4(7):100779 — 탐지가 perplexity 에 의존하기 때문입니다</p>
+      </details>
+      <details>
+        <summary>이공계 글은 특히 못 잡습니다</summary>
+        <p class="r-body">Turnitin 오탐 <span class="figure-inline">32%</span> · Originality <span class="figure-inline">37%</span>. 이공계 학술 글에서는 각각 <span class="figure-inline">49%</span> · <span class="figure-inline">42%</span>로 뛰며, 인문학 글(86% · 96%)과 정확도가 크게 벌어집니다 — 짧고 수치·사실 위주인 글일수록 탐지기가 부적합합니다.</p>
+        <p class="src">Hadra, Cambridge &amp; Mesbah (2026)</p>
+      </details>
+      <details>
+        <summary>1% 오탐도 대학 규모에서는 수백 명입니다</summary>
+        <p class="r-body">밴더빌트대는 수개월 테스트 후 Turnitin AI 탐지를 껐습니다. 1% 오탐률이라도 연 75,000편 기준 <span class="figure-inline">약 750편</span>의 학생 글이 잘못 표시됩니다.</p>
+        <p class="src">Vanderbilt University (2023) — “AI 탐지가 효과적 도구라고 믿지 않는다”</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 5 · I5 · wide · cut · M -->
+<section id="elimination" class="slide band--mid scene sc-cut"
+         style="--section-img:url(assets/images/raw-04.webp);--raw-pos:60% center;--raw-pos-m:center 45%"
+         data-gallery="tailark:veil/comparator/three" data-component="comparator">
+  <div class="wrap wrap--wide">
+    <h2 class="r-headline">네 갈래 중 셋은 이미 닫혔습니다.</h2>
+    <div class="cmp">
+      <article class="cmp-col"><h3>금지형</h3><p class="verdict">확인 불가능</p>
+        <dl><div><dt>확인 가능성</dt><dd><span aria-label="아니오">—</span></dd></div>
+            <div><dt>학생 역량 성장</dt><dd><span aria-label="아니오">—</span></dd></div>
+            <div><dt>윤리적 비용</dt><dd>낮음</dd></div>
+            <div><dt>교수자 통제</dt><dd>없음</dd></div></dl></article>
+      <article class="cmp-col"><h3>탐지형</h3><p class="verdict">기술적 파산</p>
+        <dl><div><dt>확인 가능성</dt><dd><span aria-label="아니오">—</span></dd></div>
+            <div><dt>학생 역량 성장</dt><dd><span aria-label="아니오">—</span></dd></div>
+            <div><dt>윤리적 비용</dt><dd>매우 높음</dd></div>
+            <div><dt>교수자 통제</dt><dd>거짓 신호</dd></div></dl></article>
+      <article class="cmp-col"><h3>방임형</h3><p class="verdict">최악</p>
+        <dl><div><dt>확인 가능성</dt><dd><span aria-label="아니오">—</span></dd></div>
+            <div><dt>학생 역량 성장</dt><dd><span aria-label="아니오">—</span></dd></div>
+            <div><dt>윤리적 비용</dt><dd>낮음</dd></div>
+            <div><dt>교수자 통제</dt><dd>없음</dd></div></dl></article>
+      <article class="cmp-col is-verdict"><h3>설계형</h3><p class="verdict">남는 답</p>
+        <dl><div><dt>확인 가능성</dt><dd><span aria-label="예">✓</span></dd></div>
+            <div><dt>학생 역량 성장</dt><dd><span aria-label="예">✓</span></dd></div>
+            <div><dt>윤리적 비용</dt><dd>없음</dd></div>
+            <div><dt>교수자 통제</dt><dd>설계 시점에</dd></div></dl></article>
+    </div>
+    <p class="src">금지는 확인이 안 되고, 탐지는 위에서 본 대로 파산했으며, 방임은 교수자가 아무것도 통제하지 못합니다. 소거하고 나면 하나가 남습니다.</p>
+  </div>
+</section>
+
+<!-- BEAT 6 · I6 · full-bleed · behind-image · L -->
+<section id="harness" class="slide band--light scene sc-behind"
+         style="--section-img:url(assets/images/raw-03.webp);--raw-pos-m:center 50%"
+         data-gallery="magicui:terminal" data-component="code-block">
+  <div class="wrap wrap--content">
+    <h2 class="r-headline">“하네스”는 비유가 아니라 <em>제약을 명시하는 일</em>입니다.</h2>
+    <div class="term" role="group" aria-label="프롬프트 세 판본 비교">
+      <div class="term-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="term-body">
+        <p class="term-label">Prompt</p>
+        <p class="term-line"><span class="sig">&gt;</span> 팩트체크 해줘</p>
+        <p class="term-note">AI 는 “팩트체크”가 무엇인지 모릅니다.</p>
+        <p class="term-label">Context</p>
+        <p class="term-line"><span class="sig">&gt;</span> 한국기자협회(journalist.or.kr) ‘이달의 기자상’ 수상작 페이지에 있는 <em>기사 본문만</em> 대상으로 이 텍스트를 대조해줘</p>
+        <p class="term-note">말을 다 풀어서 설명해야 비로소 제대로 작동합니다. 이것이 <strong>컨텍스트 엔지니어링</strong>입니다.</p>
+        <p class="term-label">Harness</p>
+        <p class="term-line"><span class="sig">&gt;</span> …그리고 <em>그 사이트 이외에는 네 멋대로 참조하지 마</em></p>
+        <p class="term-note">잘 생각해보면, 무언가를 더 구체적으로 명시한다는 것은 사실 <strong>“하지 마”라는 제약을 더 세게 거는 일</strong>과 같습니다. 이것이 <strong>하네스 엔지니어링</strong>입니다.</p>
+      </div>
+    </div>
+    <p class="src">위 창은 프롬프트 <em>인용</em>이며 실시간 콘솔이 아닙니다.</p>
+  </div>
+</section>
+
+<!-- BEAT 7 · I3 · content · luma · M -->
+<section id="attacker" class="slide band--mid scene sc-luma"
+         style="--section-img:url(assets/images/raw-07.webp);--raw-pos-m:center 50%"
+         data-gallery="tailark:dusk/testimonials/one" data-component="testimonials">
+  <div class="wrap wrap--content">
+    <h2 class="r-headline">이건 즉흥적인 비유가 아닙니다.</h2>
+    <div class="quotegrid">
+      <blockquote class="q q--lead">
+        <p class="q-en">“Good engineering involves thinking about how things can be made to work; the security mindset involves thinking about how things can be made to fail. It involves thinking like an attacker, an adversary or a criminal.”</p>
+        <p class="q-ko">좋은 공학은 무엇이 <em>작동하게</em> 만들지를 생각합니다. 보안 마인드셋은 무엇이 <em>실패하게</em> 만들 수 있을지를 생각합니다.</p>
+        <footer class="q-by">Bruce Schneier<span>The Security Mindset (2008)</span></footer>
+      </blockquote>
+      <blockquote class="q q--sub">
+        <p class="q-ko">Dawson 은 BYOD 전자시험을 <strong>직접 해킹</strong>해 5개 공격 중 <strong>4개가 실제로 작동</strong>함을 보였습니다. 평가 설계자가 곧 <strong>침투 테스터</strong>가 된 연구입니다.</p>
+        <footer class="q-by">Phillip Dawson<span><em>BJET</em> 47(4), 2016 · <em>Defending Assessment Security in a Digital World</em> (Routledge, 2020)</span></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- BEAT 8 · I1 · full-bleed · neon · D · ★SIGNATURE -->
+<section id="mindset" class="slide band--dark scene sc-neon"
+         style="--section-img:url(assets/images/raw-05.webp);--raw-pos:center 45%;--raw-pos-m:center 50%"
+         data-gallery="smoothui:reveal-text"
+         data-gallery-2="uiverse:Patterns/adamgiebl_curvy-earwig-79"
+         data-component="statement">
+  <div class="wrap wrap--wide decl">
+    <p class="decl-line" style="--i:0">마인드를 바꾸셔야 합니다.</p>
+    <p class="decl-line" style="--i:1">학생들이 꼼수를 쓴다면,</p>
+    <p class="decl-line" style="--i:2">교수님 본인께서 학생들이 “꼼수를 쓸 것까지 감안해서”<br><em>틀어막는 평가 설계에 실패한 것</em>입니다.</p>
+    <p class="decl-line" style="--i:3">학생들은 <em>“반드시”</em> 생각을 안 하려는 꼼수를 씁니다.</p>
+    <p class="decl-line" style="--i:4">아예 모든 시험과 과제 평가를 거기에서부터 출발해야 합니다.</p>
+  </div>
+</section>
+
+<!-- BEAT 9 · I9 · wide · crop-shape · L -->
+<section id="case-a" class="slide band--light"
+         data-gallery="tailark:dusk/features/three" data-component="features">
+  <div class="wrap wrap--wide">
+    <h2 class="r-headline"><em>안창현의 2026-1학기</em> AI활용조사방법론에서 실제로 한 것</h2>
+    <div class="subg">
+      <div class="subg-col">
+        <div class="shot crop crop--arch"
+             style="--crop-img:url(assets/images/raw-06.webp)" aria-hidden="true"></div>
+        <p class="r-body"><strong class="lead">소크라테스식 캐묻기.</strong> 학생이 AI 답을 눈으로 읽으려 하면 말을 끊고 되묻습니다. “수식은 됐고, 그래서 이 논문에 따르면 LLM 은 어떻게 작동하나요?” — “잘 모르겠습니다”가 나올 때까지. 그때 알려줍니다. 이해할 때까지 AI 에게 끝까지 되물으라고.</p>
+      </div>
+      <div class="subg-col">
+        <ul class="shot topiclist">
+          <li><b>2주차</b> 나는 나를 어떤 사람이라고 생각하는데, 최근 그 생각이 흔들린 순간은?</li>
+          <li><b>3주차</b> 중요하다고 자주 말하지만 실제로 꾸준히 지키지 못하는 것은?</li>
+          <li><b>4주차</b> 사람을 처음 볼 때 무엇을 보고 믿을 만한지 아닌지 판단하는가?</li>
+          <li><b>5주차</b> 혼자 있을 때의 나와 사람들 사이에 있을 때의 나는 어떻게 다른가?</li>
+          <li><b>6주차</b> 당연하게 따르는 규칙 하나는 누구에게 유리한 규칙인가?</li>
+          <li><b>7주차</b> 무엇을 볼 때 ‘공평하다’고 느끼고 무엇을 볼 때 ‘억울하다’고 느끼는가?</li>
+        </ul>
+        <p class="r-body"><strong class="lead">AI 가 대신 써주면 의미가 없는 주제.</strong> 매주 수업시간에 30분–1시간씩 <span class="figure-inline">8회</span>. 주제는 자기 인식·말과 행동의 틈·판단 기준·관계·규칙과 순응·공정성으로 옮겨 갑니다. “너 자신에 대한 글쓰기를 AI 한테 시키면 그걸 도대체 어디다 써먹을 건데?”</p>
+      </div>
+      <div class="subg-col">
+        <div class="shot"><img src="assets/images/report-sample.webp" alt="AI 메타인지 분석 리포트 예시 화면 — 사고·메타인지 프로파일 8축과 글쓰기 역량 프로파일 6축이 축별 강도와 함께 표로 정리되어 있다 (익명 처리)" loading="lazy" width="663" height="829"></div>
+        <p class="r-body"><strong class="lead">글 묶음을 데이터로 만들어 돌려주기.</strong> <span class="figure-inline">21일</span> 매일 글쓰기 뒤 개인별 메타인지 리포트 <span class="figure-inline">1회</span>(6/12). 사고 8축 + 글쓰기 6축, 모든 피드백은 학생이 쓴 본문을 근거로만 — 아첨도 가스라이팅도 금지, 이론 출처 포함.</p>
+      </div>
+    </div>
+    <p class="src">성과: 기말 대면 자필 제출물 기준 <strong>90% 이상</strong>의 학생이 자기 문장 습관과 사고의 취약점을 스스로 설명해 냈고, 학기 소감 발표에서 <strong>모든 학생</strong>이 화면을 보지 않고 교수자와 눈을 맞춘 채 말했습니다. (안창현의 2026-1 수업 실적입니다.)</p>
+  </div>
+</section>
+
+<!-- BEAT 10 · I3 · full-bleed · card-window · M -->
+<section id="voices" class="slide band--mid scene sc-cardwindow"
+         style="--section-img:url(assets/images/raw-08.webp);--raw-pos:center 35%;--raw-pos-m:center 40%"
+         data-gallery="tailark:veil/testimonials/two" data-component="testimonials">
+  <div class="wrap wrap--wide">
+    <h2 class="r-headline">그 변화를 <em>학생들의 문장</em>으로 확인합니다.</h2>
+    <div class="voices">
+      <blockquote class="vcard">
+        <span class="vtok crop crop--circle" style="--crop-pos:20% 30%" aria-hidden="true"></span>
+        <p>“항상 끝맺음이 글을 읽는 독자에게 책임을 전가한다”… 리포트를 받은 이후 크게 달라진 점은 <strong>내 주장에 대한 내 생각을 명확히 전달하고 타인 입장도 생각하며 ‘이해’를 해보려고 하기 시작했다</strong>는 것이다. 나조차도 리포트를 읽고 <strong>간파당한 느낌</strong>에 ‘핑계’가 아닌 방식을 택한 것이다.</p>
+        <footer>학생 A</footer>
+      </blockquote>
+      <blockquote class="vcard">
+        <span class="vtok crop crop--circle" style="--crop-pos:70% 40%" aria-hidden="true"></span>
+        <p>습관적으로 ‘굉장히’를 쓰고 문장 끝마다 ‘~인 것 같다’를 붙여 생각을 흐리는 버릇이 있었다. <strong>알아차리고 곧바로 지웠다.</strong> 원래 같으면 ‘잘못된 것 같다’라고 썼겠지만 지금은 <strong>‘잘못됐다’라고 쓴다.</strong> 지금 보면 습관을 고친 글이 더 자연스러운데 과거에는 왜 저렇게 썼을까 하는 생각이 든다.</p>
+        <footer>학생 B</footer>
+      </blockquote>
+      <blockquote class="vcard">
+        <span class="vtok crop crop--circle" style="--crop-pos:35% 70%" aria-hidden="true"></span>
+        <p>이전 글들은 멋있게 적으려 한 것들이 보였다. “이건 나 같지는 않다”는 에세이들도 있었다. 그 이후부터는 생각나는 대로 두서없이 적기도 했다. <strong>그 과정에서 이런 글을 적는 나도 내 모습 중 하나임을 받아들이게 되어</strong>… <strong>내가 나를 잘 알면 그걸로 충분하다는 게 뭔지 조금은 알 것 같다.</strong></p>
+        <footer>학생 C</footer>
+      </blockquote>
+      <blockquote class="vcard">
+        <span class="vtok crop crop--circle" style="--crop-pos:80% 65%" aria-hidden="true"></span>
+        <p>AI 리포트는 내가 ‘정보를 무조건적으로 수용하는 태도’를 지녔다고 분석했다. 리포트를 받은 뒤 <strong>‘지나친’ 긍정의 태도는 역설적으로 나태함과 안일함을 가져온다는 것을 깨닫고</strong> 나의 문제 상황과 사회 문제를 더욱 날카롭게 바라보며 기록하려 했다.</p>
+        <footer>학생 D</footer>
+      </blockquote>
+    </div>
+    <p class="src">2026-1학기 AI활용조사방법론 기말(대면 자필) 답안 발췌 · 저자 승인, 익명 처리</p>
+  </div>
+</section>
+
+<!-- BEAT 11 · I2 · wide · luma · L -->
+<section id="case-b" class="slide band--light scene sc-luma"
+         style="--section-img:url(assets/images/raw-07.webp);--raw-pos-m:center 50%"
+         data-gallery="tailark:dusk/content/three" data-component="content">
+  <div class="wrap wrap--wide">
+    <h2 class="r-headline">다른 과목에서도 작동합니다 — <em>AI Digital Graphic Design</em></h2>
+    <div class="c3">
+      <div class="panel">
+        <img src="assets/images/dgd-final-1.webp" alt="학생이 제출한 기말 HTML PPT 5번 슬라이드 — 기존 관광 앱과의 차별화를 비교표로 정리한 화면 (익명)" loading="lazy" width="1600" height="758">
+        <img src="assets/images/dgd-final-2.webp" alt="학생이 제출한 기말 HTML PPT 6번 슬라이드 — 지원금 확보 시 예산 배분 계획을 항목별 비율로 정리한 화면 (익명)" loading="lazy" width="1600" height="763">
+      </div>
+      <div class="c3-text">
+        <p class="lede">AI 사용을 <strong>전면 허용</strong>하고, 대신 제한 시간 안에 실제 심사위원을 상정한 창업·투자 제안 HTML PPT 를 만들게 했습니다.</p>
+        <p class="r-body"><strong class="lead">작업 로그 미제출 시 <span class="figure-inline">50%</span> 즉시 감점.</strong> 제출물은 슬라이드 8장 + AI 채팅창 작업과정 전체 로그입니다.</p>
+        <p class="r-body"><strong class="lead">평균 채점 <span class="figure-inline">5분 미만</span>.</strong> “앱”이라는데 앱 시안이 없으면, 기획이 레드오션이거나 근거가 없으면, “내가 왜 굳이 너희한테 돈을 줘야 하는데?”에 답이 없으면 — 자동적으로 낮은 점수입니다.</p>
+        <p class="src">오른쪽 아래 슬라이드가 정확히 그 지적을 받았습니다 — <strong>“바이브 코딩으로 자본금 0원에 매출을 올리는 시대에, 왜 지원금을 받으면 그때부터 개발하겠다는 사람에게 예산을 줘야 하는가?”</strong></p>
+      </div>
+    </div>
+    <table class="topics" data-handroll="true">
+      <caption class="src">기말 주제 선정 기준 — 학생 배포본 발췌 · 코퍼스에 대응 컴포넌트가 없어 직접 작성했습니다</caption>
+      <thead><tr><th scope="col">나쁜 주제</th><th scope="col">좋은 주제</th></tr></thead>
+      <tbody>
+        <tr>
+          <td data-k="나쁜 주제">AI 기반 쇼핑몰 창업<span class="why">너무 넓고, 본인이 아는 내용인지 알기 어려움</span></td>
+          <td data-k="좋은 주제">교내 외국인 유학생을 위한 지역 생활 정보 HTML 뉴스레터<span class="why">실제 사용자와 정보 문제가 비교적 분명함</span></td>
+        </tr>
+        <tr>
+          <td data-k="나쁜 주제">대학생 대상 앱 만들기<span class="why">누구의 어떤 문제인지 불분명함</span></td>
+          <td data-k="좋은 주제">운동 초보자를 위한 학교 주변 헬스장·운동 루틴 비교 서비스<span class="why">본인 경험, 자료조사, 비교표, 시장성 설명이 가능함</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- BEAT 12 · I2 · content · 무이미지 · L -->
+<section id="consensus" class="slide band--light"
+         data-gallery="smoothui:logo-cloud-3" data-component="logo-cloud">
+  <div class="wrap wrap--content">
+    <h2 class="r-headline">한 교수의 취향이 아닙니다.</h2>
+    <p class="lede">규제기관·대학·기업·학술지가 같은 방향의 문서를 내고 있습니다. 이들이 저를 지지한 것이 아니라, 각자 같은 결론에 도착한 것입니다.</p>
+    <ul class="marks">
+      <li><span class="mark">TEQSA</span><span class="gist">AI 시대 평가 개혁 — 신뢰할 수 있는 판단에는 다중·맥락적 평가가 필요하다</span></li>
+      <li><span class="mark">QAA</span><span class="gist">신뢰할 수 없는 탐지 소프트웨어 배치 대신 장기·발달적 재설계</span></li>
+      <li><span class="mark">Russell Group</span><span class="gist">생성형 AI 의 윤리적 활용을 교육·평가에 통합한다</span></li>
+      <li><span class="mark">UNESCO</span><span class="gist">GenAI 가 인간보다 잘하는 과제를 평가에 쓰지 않도록 재설계</span></li>
+      <li><span class="mark">Univ. of Sydney</span><span class="gist">two-lane — 보안 평가(대면·구술)와 오픈 평가의 분리</span></li>
+      <li><span class="mark">AIAS</span><span class="gist">AI 허용 수준 5단계 명시 — 금지/허용 이분법 대신 투명한 선언</span></li>
+      <li><span class="mark">SK AX</span><span class="gist">정부 공인 시험이 결과물이 아니라 <em>구조화 과정</em>을 채점 (최고 S등급 0명)</span></li>
+      <li><span class="mark">Northwestern</span><span class="gist">제출물에 <em>interaction traces</em> — 입력·도구 호출·출력·인간 개입 시점 전량</span></li>
+    </ul>
+    <p class="src">Nature(2025-05-14, 전 세계 연구자 약 5,000명) 설문에서는 AI 사용 시 ‘프롬프트까지 공개’해야 한다는 응답이 시나리오에 따라 20–42% 로 나타났습니다. 학계가 ‘사용 여부’를 넘어 <strong>과정의 재현 가능성</strong>을 요구하기 시작했다는 신호입니다.</p>
+  </div>
+</section>
+
+<!-- BEAT 13 · I6 · wide · wash(.12) · M -->
+<section id="design-questions" class="slide band--mid scene sc-wash-012"
+         style="--section-img:url(assets/images/raw-02.webp);--raw-pos-m:center 50%"
+         data-gallery="smoothui:animated-stepper" data-component="stepper">
+  <div class="wrap wrap--wide">
+    <h2 class="r-headline">다음 학기 과제 하나를 떠올리고, <em>다섯 번 물어보십시오.</em></h2>
+    <ol class="steps">
+      <li><span class="dot">1</span><p class="stepq">이 과제는 <strong>어떻게 우회</strong>될 수 있는가?</p><p class="src">위협 모델링 — Schneier · Dawson</p></li>
+      <li><span class="dot">2</span><p class="stepq">우회하더라도 <strong>반드시 남아야 할 사고의 증거</strong>는 무엇인가?</p><p class="src">authentic · 과정 평가 — Villarroel · QAA</p></li>
+      <li><span class="dot">3</span><p class="stepq">이 중 <strong>AI 에게 맡길 반복 작업</strong>은 무엇인가?</p><p class="src">개인화 · 정리 · 초안</p></li>
+      <li><span class="dot">4</span><p class="stepq">교수자가 <strong>반드시 직접 판단</strong>해야 하는 지점은 어디인가?</p><p class="src">분석 틀 · 최종 판단</p></li>
+      <li><span class="dot">5</span><p class="stepq">마지막에 학생이 <strong>자기 말로 회수</strong>하는 장치가 있는가?</p><p class="src">Lane 1 — 대면 · 구술 · 자필 (Univ. of Sydney)</p></li>
+    </ol>
+    <p class="src">실패하면 학생 탓이 아니라 <strong>설계 실패</strong>입니다. 새로 발견한 꼼수는 그때그때 교수자 노트에 기록하고 다음 학기 설계에 반영하십시오 — 그것이 하네스 업데이트입니다.</p>
+  </div>
+</section>
+
+<!-- BEAT 14 · I11 · full-bleed · horizon · D -->
+<section id="close" class="slide band--dark scene sc-horizon"
+         style="--section-img:url(assets/images/raw-01.webp);--raw-pos:center 42%;--raw-pos-m:center 55%"
+         data-gallery="tailark:mist/call-to-action/two" data-component="cta">
+  <div class="wrap wrap--content closebar">
+    <h2 class="r-display">AI 를 막지 마십시오.<br>AI 를 써도 <em>‘생각’ 없이는</em><br><em>통과 못 하게</em> 설계하십시오.<br>그것이 Educational Harness Engineering 입니다.</h2>
+    <nav class="closelinks" aria-label="다음 읽을 곳">
+      <a href="#design-questions">5가지 설계 질문 다시 보기</a>
+      <a href="#sources">근거 전체 보기</a>
+    </nav>
+  </div>
+</section>
+
+<!-- BEAT 15 · I8 · satellite · 무이미지 · L -->
+<section id="sources" class="slide band--light" data-slide-exempt
+         data-gallery="tailark:veil/faqs/four" data-component="faq">
+  <div class="wrap wrap--satellite">
+    <h2 class="r-title">근거 전체 보기</h2>
+    <div class="srcgrid">
+      <details class="srcgroup"><summary>A · 평가 보안 / 보안 마인드셋</summary>
+        <ul>
+          <li>Dawson, P. (2020). <em>Defending Assessment Security in a Digital World</em>. Routledge.</li>
+          <li>Dawson, P. (2016). Five ways to hack and cheat with BYOD electronic examinations. <em>BJET</em> 47(4), 592–600.</li>
+          <li>Schneier, B. (2008). The Security Mindset.</li>
+          <li class="unverified">Jonathan, J. &amp; Walsh, C. (2025). Secure online assessments. ASCILITE 2025 — ⚠️ 초록이 ‘preliminary pilot findings’ 로 규정한 예비 결과</li>
+        </ul></details>
+      <details class="srcgroup"><summary>B · AI 시대 평가 개혁 프레임워크</summary>
+        <ul>
+          <li>Lodge, J., Howard, S., Bearman, M., Dawson, P. (2023). <em>Assessment reform for the age of AI</em>. TEQSA. <span class="unverified">⚠️ 부차 수치(전문가 수·다운로드 수)는 원문 재확인 권장</span></li>
+          <li>QAA (2023). Reconsidering assessment for the ChatGPT era.</li>
+          <li>Russell Group (2023). Principles on the use of generative AI tools in education.</li>
+          <li>UNESCO (2023). Guidance for generative AI in education and research.</li>
+          <li>van der Vleuten, C. et al. (2014). 12 Tips for programmatic assessment. <em>Medical Teacher</em>.</li>
+        </ul></details>
+      <details class="srcgroup"><summary>C · 블룸 분류와 그 역전</summary>
+        <ul>
+          <li>Larsen, T. et al. (2022). Probing Internal Assumptions of the Revised Bloom’s Taxonomy. <em>CBE—Life Sciences Education</em> 21(4):ar66.</li>
+          <li>Gonsalves, C. (2026). Generative AI’s Impact on Critical Thinking. <em>Journal of Marketing Education</em> 48(1).</li>
+          <li>Lubbe, A., Marais, E., Kruger, D. (2025). Cultivating independent thinkers. <em>Education and Information Technologies</em> 30(12).</li>
+          <li>Rivers, C. &amp; Holland, A. (2023). How can generative AI intersect with Bloom’s taxonomy? <em>THE</em> Campus.</li>
+          <li class="unverified">Krathwohl, D. (2002). A Revision of Bloom’s Taxonomy — ⚠️ 재인용, 1차 출처 미대조</li>
+          <li class="unverified">Schoonover, J. (2026). Bloom’s Taxonomy Needs an Update for the AI Age — ⚠️ Opinion</li>
+        </ul></details>
+      <details class="srcgroup"><summary>D · 인지적 오프로딩 · 비판적 사고 저하</summary>
+        <ul>
+          <li>Gerlich, M. (2025). AI Tools in Society. <em>Societies</em> 15(1):6. (n=666, 상관 — 인과 아님)</li>
+          <li>Lee, H-P. et al. (2025). The Impact of Generative AI on Critical Thinking. <em>CHI 2025</em>. (Microsoft Research &amp; CMU, n=319)</li>
+          <li>Fan, Y. et al. (2025). Beware of metacognitive laziness. <em>BJET</em> 56(2). (RCT, n=117)</li>
+          <li>Risko, E. &amp; Gilbert, S. (2016). Cognitive Offloading. <em>Trends in Cognitive Sciences</em> 20(9).</li>
+        </ul></details>
+      <details class="srcgroup"><summary>E · 탐지기의 한계</summary>
+        <ul>
+          <li>OpenAI (2023). New AI classifier for indicating AI-written text — 중단 공지 (2023-07-20).</li>
+          <li>Liang, W. et al. (2023). GPT detectors are biased against non-native English writers. <em>Patterns</em> 4(7):100779.</li>
+          <li>Hadra, Cambridge &amp; Mesbah (2026). <em>International Journal for Educational Integrity</em>.</li>
+          <li>Vanderbilt University (2023). Guidance on AI Detection and Why We’re Disabling Turnitin’s AI Detector.</li>
+          <li>Ardito, C. (2024). Contra generative AI detection in higher education assessments. <em>European Journal of Education</em>.</li>
+        </ul></details>
+      <details class="srcgroup"><summary>F · Authentic 평가 · 구술 · AI 활용 명시</summary>
+        <ul>
+          <li>Liu, D. &amp; Bridgeman, A. (2023). Two-lane approach to assessment. <em>Teaching@Sydney</em>.</li>
+          <li>Perkins, M., Furze, L., Roe, J., MacVaugh, J. (2024). The AI Assessment Scale (AIAS). <em>JUTLP</em> 21(6).</li>
+          <li>Sotiriadou, P. et al. (2020). The role of authentic assessment. <em>Studies in Higher Education</em> 45(11).</li>
+          <li>Villarroel, V. et al. (2018). Authentic assessment: creating a blueprint for course design.</li>
+          <li>University of Toronto CTSI (2024). Viva Voce Oral Exam (AI-Resistant Approach).</li>
+        </ul></details>
+      <details class="srcgroup"><summary>G · 사용 실태 통계 · 국내외 실사례</summary>
+        <ul>
+          <li>HEPI (2026). Student Generative AI Survey, Report 199. (n=1,054)</li>
+          <li>한국직업능력연구원(KRIVET, 2024) 대학생 생성형 AI 이용 조사. (n=726)</li>
+          <li>Turnitin 실측 데이터 — <em>Campus Technology</em> (2024-05).</li>
+          <li>연세대 비대면 시험 AI 부정 — 아시아경제 (2025-11).</li>
+          <li>고려대 온라인 시험 부정 — 시사저널.</li>
+          <li>영국 대학 AI 부정 급증 — <em>THE</em> (2024) · <em>The Register</em>/<em>Guardian</em> (2025).</li>
+          <li>“공부는 쉬워지고 사고의 필요성은 줄었다” — 한국대학신문 (2026-01-31).</li>
+        </ul></details>
+      <details class="srcgroup"><summary>H · 산업 · 저널리즘 현장</summary>
+        <ul>
+          <li>SK AX AI 역량인증 시험 — KBS 뉴스 (2026-06-01).</li>
+          <li>Northwestern University — Agentic AI Investigative Journalism Challenge (2026).</li>
+          <li>Nature (2025-05-14). 전 세계 연구자 약 5,000명 AI 활용 설문.</li>
+        </ul></details>
+    </div>
+    <p class="src" style="margin-top:calc(var(--u)*6)">⚠️ 표시 항목은 <strong>서지·존재는 확인했으나 원문 직접 대조가 미완</strong>인 것들입니다. 이 페이지의 본문은 이들을 단언에 사용하지 않았습니다.</p>
+    <footer class="metabar">
+      <p>원고: 안창현(Achmage), <em>Educational Harness Engineering — AI 시대, 학생들의 꼼수에 강한 수업·평가를 설계하는 법</em> · 한림대학교 미디어스쿨 하계 워크숍, 2026-07-06.</p>
+      <p>컴포넌트 출처 · 라이선스: Tailark (Méschac Irung) · smoothui (Eduardo Calvo) · Magic UI · Uiverse (adamgiebl) — 전부 MIT. 서체: Asta Sans (42dot, OFL).</p>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<script>
+/* 진입 애니메이션은 여기서부터만 유효하다 — 이 스크립트가 실행되지 않으면
+   .decl-line 은 숨겨지지 않고 5줄 전문이 그대로 보인다 (은닉 금지). */
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+
+(function () {
+  var decl = document.querySelector('.decl');
+  if (!decl) return;
+  if (!('IntersectionObserver' in window)) { decl.classList.add('is-in'); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { decl.classList.add('is-in'); io.disconnect(); } });
+  }, { threshold: 0.25 });
+  io.observe(decl);
+})();
+
+(function () {
+  var btn = document.getElementById('theme');
+  var label = document.getElementById('themelabel');
+  var root = document.documentElement;
+  var saved = null;
+  try { saved = localStorage.getItem('ehe-theme'); } catch (e) {}
+  if (saved === 'dark' || saved === 'light') root.setAttribute('data-theme', saved);
+  function isDark() {
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function sync() {
+    var d = isDark();
+    btn.setAttribute('aria-pressed', String(d));
+    label.textContent = d ? '라이트' : '다크';
+    btn.setAttribute('aria-label', d ? '라이트 모드로 전환' : '다크 모드로 전환');
+  }
+  btn.addEventListener('click', function () {
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('ehe-theme', next); } catch (e) {}
+    sync();
+  });
+  sync();
+})();
+</script>
+</body>
+</html>
