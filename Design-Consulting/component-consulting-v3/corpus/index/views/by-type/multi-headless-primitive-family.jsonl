@@ -1,0 +1,2 @@
+{"id": "radix:radix-primitives-headless-layer", "name": "Radix Primitives (headless layer)", "canonical_type": "multi-headless-primitive-family", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}
+{"id": "baseui:base-ui-primitives-headless-layer", "name": "Base UI Primitives (headless layer)", "canonical_type": "multi-headless-primitive-family", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

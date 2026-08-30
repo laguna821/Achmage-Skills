@@ -1,0 +1,279 @@
+{
+  "canonical_vocabulary_authority": "component.gallery (60 types, sitemap 2026-08-28)",
+  "cg_60": [
+    "accordion",
+    "alert",
+    "avatar",
+    "badge",
+    "breadcrumbs",
+    "button",
+    "button-group",
+    "card",
+    "carousel",
+    "checkbox",
+    "color-picker",
+    "combobox",
+    "date-input",
+    "datepicker",
+    "drawer",
+    "dropdown-menu",
+    "empty-state",
+    "fieldset",
+    "file",
+    "file-upload",
+    "footer",
+    "form",
+    "header",
+    "heading",
+    "hero",
+    "icon",
+    "image",
+    "label",
+    "link",
+    "list",
+    "modal",
+    "navigation",
+    "pagination",
+    "popover",
+    "progress-bar",
+    "progress-indicator",
+    "quote",
+    "radio-button",
+    "rating",
+    "rich-text-editor",
+    "search-input",
+    "segmented-control",
+    "select",
+    "separator",
+    "skeleton",
+    "skip-link",
+    "slider",
+    "spinner",
+    "stack",
+    "stepper",
+    "table",
+    "tabs",
+    "text-input",
+    "textarea",
+    "toast",
+    "toggle",
+    "tooltip",
+    "tree-view",
+    "video",
+    "visually-hidden"
+  ],
+  "extension_types": [
+    "pattern",
+    "effect",
+    "stats",
+    "testimonials",
+    "pricing",
+    "faq",
+    "contact",
+    "comparator",
+    "features",
+    "content",
+    "integrations",
+    "team",
+    "logo-cloud",
+    "cta",
+    "auth-form",
+    "bento",
+    "marquee",
+    "timeline"
+  ],
+  "aliases": {
+    "hero": [
+      "jumbotron",
+      "masthead",
+      "banner",
+      "page-header"
+    ],
+    "toast": [
+      "notification",
+      "snackbar",
+      "alert-toast"
+    ],
+    "drawer": [
+      "off-canvas",
+      "side-panel",
+      "slide-out"
+    ],
+    "modal": [
+      "dialog",
+      "lightbox",
+      "overlay"
+    ],
+    "carousel": [
+      "image-slider",
+      "gallery-slider",
+      "slideshow"
+    ],
+    "avatar": [
+      "profile-image",
+      "user-photo"
+    ],
+    "breadcrumbs": [
+      "breadcrumb-trail",
+      "breadcrumb"
+    ],
+    "tooltip": [
+      "hint",
+      "info-tip",
+      "gloss"
+    ],
+    "select": [
+      "dropdown",
+      "picker"
+    ],
+    "dropdown-menu": [
+      "menu",
+      "context-menu"
+    ],
+    "tabs": [
+      "tab-bar",
+      "tab-switcher"
+    ],
+    "toggle": [
+      "switch",
+      "toggle-switch"
+    ],
+    "spinner": [
+      "loader",
+      "loading-indicator",
+      "activity-indicator"
+    ],
+    "skeleton": [
+      "placeholder",
+      "shimmer",
+      "ghost-loading"
+    ],
+    "pagination": [
+      "pager",
+      "page-navigation"
+    ],
+    "stepper": [
+      "wizard",
+      "step-indicator",
+      "progress-steps"
+    ],
+    "badge": [
+      "chip",
+      "tag",
+      "pill",
+      "label-badge"
+    ],
+    "card": [
+      "tile",
+      "panel"
+    ],
+    "accordion": [
+      "disclosure",
+      "collapse",
+      "expander"
+    ],
+    "progress-bar": [
+      "progress",
+      "meter"
+    ],
+    "text-input": [
+      "input",
+      "input-field",
+      "text-field"
+    ],
+    "search-input": [
+      "search-bar",
+      "search-box",
+      "search-field"
+    ],
+    "button": [
+      "cta-button",
+      "action-button"
+    ],
+    "checkbox": [
+      "check-box",
+      "tick-box"
+    ],
+    "radio-button": [
+      "radio",
+      "option-button"
+    ],
+    "table": [
+      "data-table",
+      "grid-table"
+    ],
+    "footer": [
+      "site-footer",
+      "page-footer"
+    ],
+    "header": [
+      "site-header",
+      "navbar",
+      "navigation-bar",
+      "top-bar"
+    ],
+    "logo-cloud": [
+      "logo-strip",
+      "logo-marquee",
+      "brand-wall"
+    ],
+    "testimonials": [
+      "reviews",
+      "social-proof",
+      "quotes-section"
+    ],
+    "pricing": [
+      "pricing-table",
+      "plans",
+      "tiers"
+    ],
+    "stats": [
+      "stats-strip",
+      "kpi-row",
+      "metrics-band",
+      "counters"
+    ],
+    "faq": [
+      "frequently-asked-questions",
+      "q-and-a",
+      "questions"
+    ],
+    "cta": [
+      "call-to-action",
+      "cta-band",
+      "closing-call"
+    ],
+    "features": [
+      "feature-grid",
+      "value-props",
+      "capabilities"
+    ],
+    "comparator": [
+      "comparison-table",
+      "versus",
+      "before-after"
+    ],
+    "bento": [
+      "bento-grid",
+      "mosaic-grid"
+    ],
+    "marquee": [
+      "ticker",
+      "infinite-scroll-strip"
+    ],
+    "empty-state": [
+      "blank-slate",
+      "zero-state"
+    ],
+    "pattern": [
+      "background-pattern",
+      "texture",
+      "backdrop"
+    ],
+    "timeline": [
+      "chronology",
+      "history-line",
+      "changelog-visual"
+    ]
+  }
+}

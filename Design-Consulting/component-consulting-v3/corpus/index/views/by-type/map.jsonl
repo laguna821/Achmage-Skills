@@ -1,0 +1,2 @@
+{"id": "magicui:dotted-map", "name": "Dotted Map", "canonical_type": "map", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/dotted-map.tsx", "ats_verdict": "pass"}
+{"id": "magicui:globe", "name": "Globe", "canonical_type": "map", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/globe.tsx", "ats_verdict": "conditional"}

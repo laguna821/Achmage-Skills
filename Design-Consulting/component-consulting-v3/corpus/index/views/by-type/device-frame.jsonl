@@ -1,0 +1,4 @@
+{"id": "smoothui:book", "name": "Book", "canonical_type": "device-frame", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/book.tsx", "ats_verdict": "pass"}
+{"id": "magicui:android", "name": "Android", "canonical_type": "device-frame", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/android.tsx", "ats_verdict": "pass"}
+{"id": "magicui:iphone", "name": "iPhone", "canonical_type": "device-frame", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/iphone.tsx", "ats_verdict": "pass"}
+{"id": "magicui:safari", "name": "Safari", "canonical_type": "device-frame", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/safari.tsx", "ats_verdict": "pass"}

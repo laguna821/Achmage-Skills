@@ -1,0 +1,5 @@
+{"id": "smoothui:basic-modal", "name": "Basic Modal", "canonical_type": "modal", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/basic-modal.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:dialog", "name": "Dialog", "canonical_type": "modal", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/dialog.tsx", "ats_verdict": "pass"}
+{"id": "magicui:hero-video-dialog", "name": "Hero Video Dialog", "canonical_type": "modal", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/hero-video-dialog.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}
+{"id": "shadcn:dialog-shadcn", "name": "Dialog (shadcn)", "canonical_type": "modal", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}
+{"id": "aceternity:animated-modal", "name": "Animated Modal", "canonical_type": "modal", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}

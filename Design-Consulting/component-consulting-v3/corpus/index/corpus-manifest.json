@@ -1,0 +1,72 @@
+{
+  "corpus_version": "3.0.1",
+  "built_at": "2026-08-28",
+  "total_components": 4275,
+  "vendored": 4196,
+  "index_only": 79,
+  "by_source": {
+    "aceternity": 30,
+    "baseui": 2,
+    "inspira": 23,
+    "magicui": 77,
+    "radix": 1,
+    "shadcn": 23,
+    "smoothui": 167,
+    "tailark": 150,
+    "uiverse": 3802
+  },
+  "by_altitude": {
+    "atom": 3802,
+    "molecule": 244,
+    "section": 229
+  },
+  "by_intent_primary": {
+    "I1": 95,
+    "I2": 25,
+    "I3": 24,
+    "I4": 20,
+    "I5": 21,
+    "I6": 67,
+    "I7": 4,
+    "I8": 27,
+    "I9": 72,
+    "I10": 51,
+    "I11": 56,
+    "I12": 45
+  },
+  "v2_annotations_matched": 244,
+  "legacy_unmatched": 9,
+  "sources": {
+    "uiverse": {
+      "upstream": "https://github.com/uiverse-io/galaxy",
+      "pin": "commit adbd2adde0a299a3956ea288fb444ec01891ca41"
+    },
+    "tailark": {
+      "upstream": "https://github.com/tailark/blocks",
+      "pin": "commit 8139698115c1341bfd2e3e286c04bb4d8146f472"
+    },
+    "smoothui": {
+      "upstream": "https://github.com/educlopez/smoothui",
+      "pin": "registry snapshot 2026-08-28"
+    },
+    "magicui": {
+      "upstream": "https://github.com/magicuidesign/magicui",
+      "pin": "registry snapshot 2026-08-28"
+    }
+  },
+  "slop_scan": {
+    "flags": {
+      "gradient-text": 69,
+      "clip-text": 4,
+      "initial-hidden": 41,
+      "auto-advance": 4,
+      "auto-cycle": 12
+    },
+    "backfilled_ats": 0,
+    "curator_review_queue": [
+      "magicui:dia-text-reveal",
+      "magicui:line-shadow-text"
+    ]
+  },
+  "patch_note": "3.0.1 (2026-08-29): F31 ATS annotation backfill (11 rows to cut) + F31-b slop_flags stamped by scan_slop.py; no component additions/removals"
+}

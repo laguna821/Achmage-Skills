@@ -1,0 +1,2 @@
+{"id": "smoothui:combobox", "name": "Combobox", "canonical_type": "combobox", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/combobox.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:searchable-dropdown", "name": "Searchable Dropdown", "canonical_type": "combobox", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/searchable-dropdown.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}

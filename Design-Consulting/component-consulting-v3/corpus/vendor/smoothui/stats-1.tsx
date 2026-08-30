@@ -1,0 +1,134 @@
+"use client";
+
+import { motion, useInView, useReducedMotion } from "motion/react";
+import { useRef } from "react";
+
+const STAGGER_DELAY = 0.1;
+const VALUE_DELAY_OFFSET = 0.2;
+
+interface StatsGridProps {
+  description?: string;
+  stats?: Array<{
+    value: string;
+    label: string;
+    description?: string;
+  }>;
+  title?: string;
+}
+
+export function StatsGrid({
+  title = "Our Impact in Numbers",
+  description = "See how we're making a difference across the globe",
+  stats = [
+    {
+      description: "Growing every day",
+      label: "Active Users",
+      value: "10M+",
+    },
+    {
+      description: "Reliable service",
+      label: "Uptime",
+      value: "99.9%",
+    },
+    {
+      description: "Worldwide reach",
+      label: "Countries",
+      value: "150+",
+    },
+    {
+      description: "Always here to help",
+      label: "Support",
+      value: "24/7",
+    },
+  ],
+}: StatsGridProps) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <section className="py-20">
+      <div className="mx-auto max-w-7xl px-6">
+        <motion.div
+          className="mb-16 text-center"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+          viewport={{ once: true }}
+          whileInView={
+            shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }
+          }
+        >
+          <h2 className="mb-4 font-bold text-3xl text-foreground lg:text-4xl">
+            {title}
+          </h2>
+          <p className="mx-auto max-w-2xl text-foreground/70 text-lg">
+            {description}
+          </p>
+        </motion.div>
+        <div
+          className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
+          ref={ref}
+        >
+          {stats.map((stat, index) => (
+            <motion.div
+              animate={(() => {
+                if (shouldReduceMotion) {
+                  return { opacity: 1 };
+                }
+                return isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 };
+              })()}
+              className="group relative overflow-hidden rounded-2xl border border-border bg-background p-8 text-center transition-all hover:border-brand hover:shadow-lg"
+              initial={
+                shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 30 }
+              }
+              key={stat.label}
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : { delay: index * STAGGER_DELAY, duration: 0.6 }
+              }
+            >
+              <motion.div
+                animate={(() => {
+                  if (shouldReduceMotion) {
+                    return { scale: 1 };
+                  }
+                  return isInView ? { scale: 1 } : { scale: 0.5 };
+                })()}
+                className="mb-2 font-bold text-4xl text-brand lg:text-5xl"
+                initial={shouldReduceMotion ? { scale: 1 } : { scale: 0.5 }}
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : {
+                        delay: index * STAGGER_DELAY + VALUE_DELAY_OFFSET,
+                        duration: 0.8,
+                        stiffness: 200,
+                        type: "spring" as const,
+                      }
+                }
+              >
+                {stat.value}
+              </motion.div>
+              <h3 className="mb-2 font-semibold text-foreground text-lg">
+                {stat.label}
+              </h3>
+              {stat.description ? (
+                <p className="text-foreground/70 text-sm">{stat.description}</p>
+              ) : null}
+              {/* Hover effect background */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100"
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                whileHover={{ opacity: 1 }}
+              />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default StatsGrid;

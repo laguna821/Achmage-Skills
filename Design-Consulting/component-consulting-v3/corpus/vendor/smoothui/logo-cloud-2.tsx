@@ -1,0 +1,222 @@
+"use client";
+
+import { motion, useReducedMotion } from "motion/react";
+import type React from "react";
+import {
+  Canpoy,
+  Canva,
+  Casetext,
+  Clearbit,
+  Descript,
+  Duolingo,
+  Faire,
+  Strava,
+} from "@/components/smoothui/shared";
+
+const ANIMATION_DURATION = 25;
+const STAGGER_DELAY = 0.1;
+const HOVER_SCALE = 1.2;
+const HOVER_ROTATE = 5;
+const SPRING_STIFFNESS = 300;
+const SCROLL_DISTANCE_FACTOR = 33.333;
+
+interface LogoCloudAnimatedProps {
+  description?: string;
+  logos?: Array<{
+    name: string;
+    logo: React.ComponentType;
+    url?: string;
+  }>;
+  title?: string;
+}
+
+export function LogoCloudAnimated({
+  title = "Trusted by the world's most innovative teams",
+  description = "Join thousands of developers and designers who are already building with Smoothui",
+  logos = [
+    { logo: Canpoy, name: "Canpoy", url: "https://canpoy.com" },
+    { logo: Canva, name: "Canva", url: "https://canva.com" },
+    { logo: Casetext, name: "Casetext", url: "https://casetext.com" },
+    { logo: Strava, name: "Strava", url: "https://strava.com" },
+    { logo: Descript, name: "Descript", url: "https://descript.com" },
+    { logo: Duolingo, name: "Duolingo", url: "https://duolingo.com" },
+    { logo: Faire, name: "Faire", url: "https://faire.com" },
+    { logo: Clearbit, name: "Clearbit", url: "https://clearbit.com" },
+  ],
+}: LogoCloudAnimatedProps) {
+  const shouldReduceMotion = useReducedMotion();
+  return (
+    <section className="overflow-hidden py-20">
+      <div className="mx-auto max-w-7xl px-6">
+        <motion.div
+          animate={shouldReduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
+          className="mb-16 text-center"
+          initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
+          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6 }}
+        >
+          <h2 className="mb-4 font-bold text-2xl text-foreground lg:text-3xl">
+            {title}
+          </h2>
+          <p className="text-foreground/70 text-lg">{description}</p>
+        </motion.div>
+        {/* Infinite scrolling logos */}
+        <div
+          className="relative overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0))",
+            WebkitMaskImage:
+              "linear-gradient(to right, hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0))",
+          }}
+        >
+          <motion.div
+            animate={
+              shouldReduceMotion
+                ? { x: 0 }
+                : { x: [0, -SCROLL_DISTANCE_FACTOR * logos.length] }
+            }
+            className="flex min-w-full shrink-0 items-center justify-around gap-8"
+            transition={
+              shouldReduceMotion
+                ? { duration: 0 }
+                : {
+                    x: {
+                      duration: ANIMATION_DURATION,
+                      ease: "linear",
+                      repeat: Number.POSITIVE_INFINITY,
+                      repeatType: "loop",
+                    },
+                  }
+            }
+          >
+            {/* First set */}
+            {logos.map((logo, index) => (
+              <motion.a
+                animate={
+                  shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }
+                }
+                aria-label={`Visit ${logo.name}`}
+                className="group flex shrink-0 flex-col items-center justify-center p-6 transition-all hover:scale-105"
+                href={logo.url}
+                initial={
+                  shouldReduceMotion
+                    ? { opacity: 1 }
+                    : { opacity: 0, scale: 0.8 }
+                }
+                key={`first-${logo.name}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : {
+                        delay: index * STAGGER_DELAY,
+                        duration: 0.4,
+                      }
+                }
+              >
+                <motion.div
+                  className="mb-2 text-4xl *:fill-foreground"
+                  transition={
+                    shouldReduceMotion
+                      ? { duration: 0 }
+                      : { stiffness: SPRING_STIFFNESS, type: "spring" as const }
+                  }
+                  whileHover={
+                    shouldReduceMotion
+                      ? {}
+                      : { rotate: HOVER_ROTATE, scale: HOVER_SCALE }
+                  }
+                >
+                  <logo.logo />
+                </motion.div>
+              </motion.a>
+            ))}
+            {/* Second set for seamless loop */}
+            {logos.map((logo, index) => (
+              <motion.a
+                animate={
+                  shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }
+                }
+                aria-label={`Visit ${logo.name}`}
+                className="group flex shrink-0 flex-col items-center justify-center p-6 transition-all hover:scale-105"
+                href={logo.url}
+                initial={
+                  shouldReduceMotion
+                    ? { opacity: 1 }
+                    : { opacity: 0, scale: 0.8 }
+                }
+                key={`second-${logo.name}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : { delay: index * STAGGER_DELAY, duration: 0.4 }
+                }
+              >
+                <motion.div
+                  className="mb-2 text-4xl *:fill-foreground"
+                  transition={
+                    shouldReduceMotion
+                      ? { duration: 0 }
+                      : { stiffness: SPRING_STIFFNESS, type: "spring" as const }
+                  }
+                  whileHover={
+                    shouldReduceMotion
+                      ? {}
+                      : { rotate: HOVER_ROTATE, scale: HOVER_SCALE }
+                  }
+                >
+                  <logo.logo />
+                </motion.div>
+              </motion.a>
+            ))}
+            {/* Third set for even smoother loop */}
+            {logos.map((logo, index) => (
+              <motion.a
+                animate={
+                  shouldReduceMotion ? { opacity: 1 } : { opacity: 1, scale: 1 }
+                }
+                aria-label={`Visit ${logo.name}`}
+                className="group flex shrink-0 flex-col items-center justify-center p-6 transition-all hover:scale-105"
+                href={logo.url}
+                initial={
+                  shouldReduceMotion
+                    ? { opacity: 1 }
+                    : { opacity: 0, scale: 0.8 }
+                }
+                key={`third-${logo.name}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                transition={
+                  shouldReduceMotion
+                    ? { duration: 0 }
+                    : { delay: index * STAGGER_DELAY, duration: 0.4 }
+                }
+              >
+                <motion.div
+                  className="mb-2 text-4xl *:fill-foreground"
+                  transition={
+                    shouldReduceMotion
+                      ? { duration: 0 }
+                      : { stiffness: SPRING_STIFFNESS, type: "spring" as const }
+                  }
+                  whileHover={
+                    shouldReduceMotion
+                      ? {}
+                      : { rotate: HOVER_ROTATE, scale: HOVER_SCALE }
+                  }
+                >
+                  <logo.logo />
+                </motion.div>
+              </motion.a>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default LogoCloudAnimated;

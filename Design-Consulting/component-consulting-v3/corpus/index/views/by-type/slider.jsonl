@@ -1,0 +1,3 @@
+{"id": "smoothui:exposure-slider", "name": "Exposure Slider", "canonical_type": "slider", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/exposure-slider.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:infinite-slider", "name": "Infinite Slider", "canonical_type": "slider", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/infinite-slider.tsx", "ats_verdict": "conditional"}
+{"id": "smoothui:scrubber", "name": "Scrubber", "canonical_type": "slider", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/scrubber.tsx", "ats_verdict": "pass"}

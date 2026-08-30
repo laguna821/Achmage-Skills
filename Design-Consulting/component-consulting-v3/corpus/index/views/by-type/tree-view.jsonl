@@ -1,0 +1,2 @@
+{"id": "magicui:file-tree", "name": "File Tree", "canonical_type": "tree-view", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/file-tree.tsx", "ats_verdict": null}
+{"id": "inspira:file-tree-inspira", "name": "File Tree (Inspira)", "canonical_type": "tree-view", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

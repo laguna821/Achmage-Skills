@@ -1,0 +1,11 @@
+{
+  "name": "component-consulting-v3",
+  "description": "Page-as-text component consultant with a real vendored corpus. Treats one loaded HTML page as one complete piece of writing: derives WHO reads it, WHAT genre it is, and HOW to compose it (Reader → Genre → Beats), then fills each beat from a 4,200+ open-source component corpus with actual code (uiverse, smoothui, magicui, tailark — MIT, commit-pinned, author-attributed) via deterministic retrieval. No live-scan sourcing, no model-memory stubs: every STUB is copied from a corpus code_path. Ships blocking gates (license, density floor, slop bans, prescription completeness) and emits a Render QA hand-off contract consumed by the render-audit skill. Supersedes component-consulting v1/v2. Design.md posture: consumes.",
+  "version": "3.6.0",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Design-Consulting/component-consulting-v3",
+  "license": "MIT",
+  "keywords": ["skill", "component-selection", "design-consulting", "frontend", "design-tokens", "design-md", "component-corpus", "page-as-text", "claude-code"]
+}

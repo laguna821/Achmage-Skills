@@ -1,0 +1,2 @@
+{"id": "smoothui:animated-file-upload", "name": "Animated File Upload", "canonical_type": "file-upload", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/animated-file-upload.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}
+{"id": "aceternity:file-upload-aceternity", "name": "File Upload (Aceternity)", "canonical_type": "file-upload", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}

@@ -1,0 +1,1 @@
+{"id": "smoothui:animated-stepper", "name": "Animated Stepper", "canonical_type": "stepper", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/animated-stepper.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}

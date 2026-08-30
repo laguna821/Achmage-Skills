@@ -1,0 +1,2 @@
+{"id": "smoothui:contribution-graph", "name": "Contribution Graph", "canonical_type": "timeline", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/contribution-graph.tsx", "ats_verdict": "pass"}
+{"id": "aceternity:timeline-aceternity", "name": "Timeline (Aceternity)", "canonical_type": "timeline", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}

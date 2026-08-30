@@ -1,0 +1,11 @@
+{
+  "name": "render-audit",
+  "description": "Render-measured QA auditor for built frontend pages. Runs four layers against the RENDERED page, never just the source: RQ1 deterministic structure checks (9 items, getBoundingClientRect), RQ2 pixel-contrast measurement (canvas worst-pixel WCAG), RQ2-OBS scene observability & coverage accounting (texture-energy sd — the dual pull that stops scrim monotone escalation), RQ3 multimodal screenshot traversal with a mandatory section×scheme matrix. FULL sweep (3 widths × 2 schemes) is the default; reduced runs are legal only by explicit declaration. Findings follow audit discipline: HIGH/MED/LOW severity, evidence-not-taste, cap 15, honest Not-reviewed listing. Pairs with component-consulting-v3's Render QA hand-off contract, but audits any frontend build.",
+  "version": "1.0.1",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Design-Consulting/render-audit",
+  "license": "MIT",
+  "keywords": ["skill", "qa", "render-audit", "accessibility", "contrast", "frontend", "design-consulting", "claude-code"]
+}

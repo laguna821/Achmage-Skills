@@ -5,8 +5,8 @@
     "email": "laguna821@gmail.com"
   },
   "metadata": {
-    "description": "안창현 (Achmage) 의 Claude 스킬 모음 — image-embedded HTML 덱 + component consulting 등.",
-    "version": "1.2.0"
+    "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등.",
+    "version": "1.3.0"
   },
   "plugins": [
     {
@@ -20,7 +20,13 @@
       "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Image-HTML/raw-5-html",
       "license": "Apache-2.0",
       "category": "productivity",
-      "tags": ["skill", "html-presentation", "raw5", "deck", "slides"]
+      "tags": [
+        "skill",
+        "html-presentation",
+        "raw5",
+        "deck",
+        "slides"
+      ]
     },
     {
       "name": "component-consulting",
@@ -33,7 +39,13 @@
       "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Design-Consulting/component-consulting",
       "license": "MIT",
       "category": "productivity",
-      "tags": ["skill", "component-selection", "design-consulting", "frontend", "design-tokens"]
+      "tags": [
+        "skill",
+        "component-selection",
+        "design-consulting",
+        "frontend",
+        "design-tokens"
+      ]
     },
     {
       "name": "insta-cardnews",
@@ -46,7 +58,57 @@
       "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Card-News/insta-cardnews",
       "license": "Apache-2.0",
       "category": "productivity",
-      "tags": ["skill", "card-news", "instagram", "카드뉴스", "social-media"]
+      "tags": [
+        "skill",
+        "card-news",
+        "instagram",
+        "카드뉴스",
+        "social-media"
+      ]
+    },
+    {
+      "name": "component-consulting-v3",
+      "source": "./Design-Consulting/component-consulting-v3",
+      "description": "Page-as-text component consultant with a real vendored corpus. Treats one loaded HTML page as one complete piece of writing: derives WHO reads it, WHAT genre it is, and HOW to compose it (Reader → Genre → Beats), then fills each beat from a 4,200+ open-source component corpus with actual code (uiverse, smoothui, magicui, tailark — MIT, commit-pinned, author-attributed) via deterministic retrieval. No live-scan sourcing, no model-memory stubs: every STUB is copied from a corpus code_path. Ships blocking gates (license, density floor, slop bans, prescription completeness) and emits a Render QA hand-off contract consumed by the render-audit skill. Supersedes component-consulting v1/v2. Design.md posture: consumes.",
+      "version": "3.6.0",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Design-Consulting/component-consulting-v3",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "skill",
+        "component-selection",
+        "design-consulting",
+        "frontend",
+        "design-tokens",
+        "design-md",
+        "component-corpus",
+        "page-as-text"
+      ]
+    },
+    {
+      "name": "render-audit",
+      "source": "./Design-Consulting/render-audit",
+      "description": "Render-measured QA auditor for built frontend pages. Runs four layers against the RENDERED page, never just the source: RQ1 deterministic structure checks (9 items, getBoundingClientRect), RQ2 pixel-contrast measurement (canvas worst-pixel WCAG), RQ2-OBS scene observability & coverage accounting (texture-energy sd — the dual pull that stops scrim monotone escalation), RQ3 multimodal screenshot traversal with a mandatory section×scheme matrix. FULL sweep (3 widths × 2 schemes) is the default; reduced runs are legal only by explicit declaration. Findings follow audit discipline: HIGH/MED/LOW severity, evidence-not-taste, cap 15, honest Not-reviewed listing. Pairs with component-consulting-v3's Render QA hand-off contract, but audits any frontend build.",
+      "version": "1.0.1",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Design-Consulting/render-audit",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "skill",
+        "qa",
+        "render-audit",
+        "accessibility",
+        "contrast",
+        "frontend",
+        "design-consulting",
+        "claude-code"
+      ]
     }
   ]
 }

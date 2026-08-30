@@ -1,0 +1,1 @@
+{"id": "magicui:dock", "name": "Dock", "canonical_type": "navigation", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/dock.tsx", "ats_verdict": "pass"}
