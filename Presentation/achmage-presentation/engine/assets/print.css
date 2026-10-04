@@ -1,0 +1,39 @@
+/* Static projection for CSS paged-media engines: no interactive state mutation. */
+@media print{
+ .slide,body[data-mode=present] .slide{display:block!important;position:relative!important}
+ .sheet-body{display:block!important;position:relative!important;min-height:0!important;height:auto!important}
+ .sheet-evidence{position:absolute!important;left:110px!important;right:110px!important;bottom:94px!important;margin:0!important}
+ .sheet-footer{position:absolute!important;left:110px!important;right:110px!important;bottom:40px!important;margin:0!important}
+ .progress-ticks{gap:6px!important}
+ .r-foot{display:flex!important;gap:32px!important}
+ .r-kicker{line-height:1.2!important}
+ .word{white-space:nowrap!important}
+ .r-links .word-url{white-space:normal!important;overflow-wrap:anywhere}
+ .r-headline{line-height:1.02!important}
+ .r-steps,.r-grid,.r-compare,.r-stats,.r-bars,.r-tbl,.r-diagram,.r-terminal,.r-toggle{flex:none!important}
+ .r-tbl th{padding:0 20px 14px 0!important}
+ .r-tbl td{padding:10px 20px 10px 0!important}
+ .r-ladder .r-step{padding:20px 0!important;gap:20px!important;grid-template-columns:266px 410px 1fr!important}
+ .r-ladder .r-step-title{font-size:48px!important;line-height:1.08!important}
+ .r-ladder .r-step-text{font-size:26px!important;line-height:1.35!important}
+ .r-ladder .r-hi{padding:20px 28px!important;margin:0 -28px!important}
+ .r-grid{row-gap:28px!important}
+ .r-grid .r-cell-text{line-height:1.35!important}
+ .r-stats{display:block!important;position:relative!important;height:390px!important;margin-top:30px!important}
+ .r-stat{display:block!important;position:absolute!important;width:690px!important;left:1000px!important;padding:12px 0!important;margin:0!important}
+ .r-stat:first-child{left:0!important;bottom:0!important;width:970px!important;border:0!important}
+ .r-stat:nth-child(2){top:0!important}.r-stat:nth-child(3){top:135px!important}.r-stat:nth-child(4){top:270px!important}
+ .r-stat .r-num,.r-stat .r-unit{display:inline!important}.r-stat .r-label{display:block!important;margin-top:10px!important;white-space:normal!important;max-width:100%!important}
+ .r-stat .r-num{font-size:100px!important}.r-stat:first-child .r-num{font-size:250px!important}.r-stat:first-child .r-unit{font-size:72px!important}
+ .r-dg-layer rect{fill:none!important;stroke:#111827!important;stroke-width:1.5!important}
+ .r-dg-t{fill:#111827!important}.r-dg-s{fill:#485565!important}.r-dg-v{fill:#0066b3!important}
+ .r-dg-arrow path{stroke:#0066b3!important;fill:none!important}.r-dg-loop path{stroke:#cbd3dd!important;fill:none!important}.r-dg-loop .r-dg-v{fill:#485565!important}
+ .r-dg-layer:nth-of-type(3) rect{fill:#002e6e!important;stroke:#002e6e!important}
+ .r-dg-layer:nth-of-type(3) .r-dg-t,.r-dg-layer:nth-of-type(3) .r-dg-s{fill:#fff!important}
+ body[data-theme=dark] .r-dg-layer rect{stroke:#fff!important}
+ body[data-theme=dark] .r-dg-t{fill:#fff!important}body[data-theme=dark] .r-dg-s{fill:#bccbdf!important}body[data-theme=dark] .r-dg-v{fill:#4d9ed1!important}
+ body[data-theme=dark] .r-dg-arrow path{stroke:#4d9ed1!important}body[data-theme=dark] .r-dg-loop path{stroke:#4a6283!important}body[data-theme=dark] .r-dg-loop .r-dg-v{fill:#bccbdf!important}
+ body[data-theme=dark] .r-dg-layer:nth-of-type(3) rect{fill:#002e6e!important;stroke:#4d9ed1!important}
+ body[data-theme=dark] .r-dg-layer:nth-of-type(3) .r-dg-t,body[data-theme=dark] .r-dg-layer:nth-of-type(3) .r-dg-s{fill:#fff!important}
+ .kind-outro .r-grid{margin-top:28px!important}.kind-outro .r-lead:last-child{margin-top:28px!important;font-size:28px!important}
+}

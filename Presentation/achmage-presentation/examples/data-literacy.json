@@ -1,0 +1,1777 @@
+{
+  "schemaVersion": 2,
+  "title": "숫자를 믿기 전에, 분모부터",
+  "audience": "대학생",
+  "purpose": "설문 비율을 과장 없이 해석하고 다시 쓰는 10분 강의",
+  "contentPolicy": "authored-fictional-educational-data",
+  "slides": [
+    {
+      "id": "s1",
+      "kind": "cover",
+      "title": "숫자를 믿기 전에, 분모부터.",
+      "sectionName": "시작",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 시작"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "숫자를 믿기 전에,",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "분모부터."
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "대학생을 위한 데이터 리터러시 · 10분"
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "오늘의 목표: 설문 결과를 과장 없이 한 문장으로 쓰기."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "모든 캠퍼스 사례와 수치는 학습을 위해 만든 가상 자료입니다."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "statement",
+      "title": "“학생 80%가 찬성했다.”",
+      "sectionName": "첫 질문",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 첫 질문"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "“학생 80%가 찬성했다.”"
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "가상 게시물: 도서관의 밤 11시 연장 운영"
+          ]
+        },
+        {
+          "type": "blockquote",
+          "roles": [
+            "quote"
+          ],
+          "children": [
+            {
+              "type": "p",
+              "roles": [
+                "lead"
+              ],
+              "children": [
+                "이 문장, 그대로 공유해도 될까?"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "찬성한 사람은 누구이고, 전체는 몇 명일까?"
+          ],
+          "reveal": true
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "다음 장에서 조사 조건을 공개합니다. 실제 뉴스·설문 결과가 아닙니다."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "diagram",
+      "title": "80%의 분모는 응답자 100명이다.",
+      "sectionName": "분모",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 분모"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "80%의 분모는 응답자 100명이다."
+          ]
+        },
+        {
+          "type": "svg",
+          "roles": [
+            "diagram"
+          ],
+          "children": [
+            {
+              "type": "g",
+              "roles": [
+                "dg-layer"
+              ],
+              "children": [
+                {
+                  "type": "rect",
+                  "roles": [],
+                  "children": [],
+                  "geometry": {
+                    "x": "0",
+                    "y": "25",
+                    "width": "280",
+                    "height": "145",
+                    "rx": "0"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-t"
+                  ],
+                  "children": [
+                    "500명"
+                  ],
+                  "geometry": {
+                    "x": "140",
+                    "y": "89",
+                    "text-anchor": "middle"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-s"
+                  ],
+                  "children": [
+                    "설문을 받은 학생"
+                  ],
+                  "geometry": {
+                    "x": "140",
+                    "y": "127",
+                    "text-anchor": "middle"
+                  }
+                }
+              ],
+              "reveal": true
+            },
+            {
+              "type": "g",
+              "roles": [
+                "dg-arrow"
+              ],
+              "children": [
+                {
+                  "type": "path",
+                  "roles": [],
+                  "children": [],
+                  "geometry": {
+                    "d": "M290 98 H349 M339 88 L349 98 L339 108"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-v"
+                  ],
+                  "children": [
+                    "응답"
+                  ],
+                  "geometry": {
+                    "x": "320",
+                    "y": "69",
+                    "text-anchor": "middle"
+                  }
+                }
+              ],
+              "reveal": true
+            },
+            {
+              "type": "g",
+              "roles": [
+                "dg-layer"
+              ],
+              "children": [
+                {
+                  "type": "rect",
+                  "roles": [],
+                  "children": [],
+                  "geometry": {
+                    "x": "360",
+                    "y": "25",
+                    "width": "280",
+                    "height": "145",
+                    "rx": "0"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-t"
+                  ],
+                  "children": [
+                    "100명"
+                  ],
+                  "geometry": {
+                    "x": "500",
+                    "y": "89",
+                    "text-anchor": "middle"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-s"
+                  ],
+                  "children": [
+                    "응답을 완료한 학생"
+                  ],
+                  "geometry": {
+                    "x": "500",
+                    "y": "127",
+                    "text-anchor": "middle"
+                  }
+                }
+              ],
+              "reveal": true
+            },
+            {
+              "type": "g",
+              "roles": [
+                "dg-arrow"
+              ],
+              "children": [
+                {
+                  "type": "path",
+                  "roles": [],
+                  "children": [],
+                  "geometry": {
+                    "d": "M650 98 H709 M699 88 L709 98 L699 108"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-v"
+                  ],
+                  "children": [
+                    "찬성"
+                  ],
+                  "geometry": {
+                    "x": "680",
+                    "y": "69",
+                    "text-anchor": "middle"
+                  }
+                }
+              ],
+              "reveal": true
+            },
+            {
+              "type": "g",
+              "roles": [
+                "dg-layer"
+              ],
+              "children": [
+                {
+                  "type": "rect",
+                  "roles": [],
+                  "children": [],
+                  "geometry": {
+                    "x": "720",
+                    "y": "25",
+                    "width": "280",
+                    "height": "145",
+                    "rx": "0"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-t"
+                  ],
+                  "children": [
+                    "80명"
+                  ],
+                  "geometry": {
+                    "x": "860",
+                    "y": "89",
+                    "text-anchor": "middle"
+                  }
+                },
+                {
+                  "type": "text",
+                  "roles": [
+                    "dg-s"
+                  ],
+                  "children": [
+                    "그중 찬성한 학생"
+                  ],
+                  "geometry": {
+                    "x": "860",
+                    "y": "127",
+                    "text-anchor": "middle"
+                  }
+                }
+              ],
+              "reveal": true
+            }
+          ],
+          "geometry": {
+            "viewbox": "0 0 1000 210"
+          },
+          "role": "img",
+          "aria-label": "초대 500명 중 100명이 응답했고, 응답한 100명 중 80명이 찬성했다. 상자는 크기 비례가 아닌 포함 관계를 뜻한다."
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "80 ÷ 100 × 100 = 80%"
+          ],
+          "reveal": true
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "가상 9월 설문 · 초대받은 500명 중 100명 완전 응답 · 상자는 크기 비례가 아닌 관계도"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "compare",
+      "title": "나머지 400명의 의견은 아직 모른다.",
+      "sectionName": "대표성",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 대표성"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "나머지 400명의",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "의견은 아직 모른다."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "compare"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "col",
+                "a"
+              ],
+              "children": [
+                {
+                  "type": "h3",
+                  "roles": [],
+                  "children": [
+                    "알고 있는 것"
+                  ]
+                },
+                {
+                  "type": "ul",
+                  "roles": [],
+                  "children": [
+                    {
+                      "type": "li",
+                      "roles": [],
+                      "children": [
+                        "응답자 100명 중 80명 찬성"
+                      ]
+                    },
+                    {
+                      "type": "li",
+                      "roles": [],
+                      "children": [
+                        "응답자 안의 찬성 비율은 80%"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "col",
+                "b"
+              ],
+              "children": [
+                {
+                  "type": "h3",
+                  "roles": [],
+                  "children": [
+                    "알 수 없는 것"
+                  ]
+                },
+                {
+                  "type": "ul",
+                  "roles": [],
+                  "children": [
+                    {
+                      "type": "li",
+                      "roles": [],
+                      "children": [
+                        "미응답 400명의 찬반"
+                      ]
+                    },
+                    {
+                      "type": "li",
+                      "roles": [],
+                      "children": [
+                        "500명 전체의 찬성 비율"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "미응답 = 반대가 아니다. 응답률이 낮다는 사실만으로 편향의 크기를 단정할 수도 없다."
+              ]
+            },
+            {
+              "type": "span",
+              "roles": [
+                "foot-src"
+              ],
+              "children": [
+                {
+                  "type": "a",
+                  "roles": [],
+                  "children": [
+                    "조사 설계 원칙 · AAPOR"
+                  ],
+                  "url": "https://aapor.org/standards-and-ethics/best-practices/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "bars",
+      "title": "60%에서 80%로: 20%p 상승이다.",
+      "sectionName": "비교",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 비교"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "60%에서 80%로:",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "20%p 상승이다."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "bars"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "bar"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "bar-label"
+                  ],
+                  "children": [
+                    "8월 · 응답자 100명 중 60명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "bar-track"
+                  ],
+                  "children": [
+                    {
+                      "type": "i",
+                      "roles": [],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "bar-val"
+                  ],
+                  "children": [
+                    "60%"
+                  ]
+                }
+              ],
+              "value": 60
+            },
+            {
+              "type": "div",
+              "roles": [
+                "bar",
+                "hi"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "bar-label"
+                  ],
+                  "children": [
+                    "9월 · 응답자 100명 중 80명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "bar-track"
+                  ],
+                  "children": [
+                    {
+                      "type": "i",
+                      "roles": [],
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "bar-val"
+                  ],
+                  "children": [
+                    "80%"
+                  ]
+                }
+              ],
+              "value": 80
+            }
+          ],
+          "role": "group",
+          "aria-label": "같은 0에서 100퍼센트 축에서 8월 60%, 9월 80%. 두 가상 설문의 응답자 찬성 비율."
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "막대 전체 길이 = 100% · 두 조사 모두 0%부터 표시"
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "비율의 차이: 80 − 60 = 20%p"
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "기존 비율 대비 증가: (80 − 60) ÷ 60 × 100 ≈ 33.3%"
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "계산용 가상 비교 · 두 시점의 응답자는 같다고 가정하지 않음 · 전체 학생의 변화는 아직 모름"
+              ]
+            },
+            {
+              "type": "span",
+              "roles": [
+                "foot-src"
+              ],
+              "children": [
+                {
+                  "type": "a",
+                  "roles": [],
+                  "children": [
+                    "단위 원칙 · ONS"
+                  ],
+                  "url": "https://service-manual.ons.gov.uk/content/numbers/percentages"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "ladder",
+      "title": "계산이 맞아도, 같은 비교인지는 묻자.",
+      "sectionName": "비교 조건",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 비교 조건"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "계산이 맞아도,",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "같은 비교인지는 묻자."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "steps",
+            "ladder"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "01"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "질문"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "두 조사에서 같은 문장과 선택지를 썼는가?"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step",
+                "hi"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "02"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "모집"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "누구에게, 어떤 방식으로 응답을 받았는가?"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "03"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "시점"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "시험 기간처럼 응답 맥락이 달라지지 않았는가?"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "비교 조건 확인 전에는 ‘학생 전체의 찬성이 늘었다’고 해석하지 않는다."
+              ]
+            },
+            {
+              "type": "span",
+              "roles": [
+                "foot-src"
+              ],
+              "children": [
+                {
+                  "type": "a",
+                  "roles": [],
+                  "children": [
+                    "변화 측정 원칙 · AAPOR"
+                  ],
+                  "url": "https://aapor.org/standards-and-ethics/best-practices/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "toggle",
+      "title": "주장의 범위를 응답 범위에 맞춘다.",
+      "sectionName": "문장 고치기",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 문장 고치기"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "주장의 범위를",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "응답 범위에 맞춘다."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "toggle"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "toggle-ctl"
+              ],
+              "children": [
+                {
+                  "type": "button",
+                  "roles": [],
+                  "children": [
+                    "과장된 표현"
+                  ],
+                  "view": "delegate"
+                },
+                {
+                  "type": "button",
+                  "roles": [],
+                  "children": [
+                    "범위를 지킨 표현"
+                  ],
+                  "view": "keep"
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "toggle-grid"
+              ],
+              "children": [
+                {
+                  "type": "div",
+                  "roles": [
+                    "tg"
+                  ],
+                  "children": [
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-a"
+                      ],
+                      "children": [
+                        "학생 전체"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-a"
+                      ],
+                      "children": [
+                        "대상을 전체 학생으로 넓힌다."
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-b"
+                      ],
+                      "children": [
+                        "응답자"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-b"
+                      ],
+                      "children": [
+                        "실제로 답한 사람으로 한정한다."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "roles": [
+                    "tg"
+                  ],
+                  "children": [
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-a"
+                      ],
+                      "children": [
+                        "80%"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-a"
+                      ],
+                      "children": [
+                        "분모와 사람 수를 생략한다."
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-b"
+                      ],
+                      "children": [
+                        "80 / 100"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-b"
+                      ],
+                      "children": [
+                        "100명 중 80명임을 쓴다."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "roles": [
+                    "tg"
+                  ],
+                  "children": [
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-a"
+                      ],
+                      "children": [
+                        "시점 미표기"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-a"
+                      ],
+                      "children": [
+                        "문장에 조사 시점이 빠져 있다."
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-b"
+                      ],
+                      "children": [
+                        "9월 설문"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-b"
+                      ],
+                      "children": [
+                        "조사한 시점을 붙인다."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "div",
+                  "roles": [
+                    "tg"
+                  ],
+                  "children": [
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-a"
+                      ],
+                      "children": [
+                        "전체 여론"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-a"
+                      ],
+                      "children": [
+                        "응답을 전체 의견처럼 해석한다."
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-b"
+                      ],
+                      "children": [
+                        "응답 결과"
+                      ]
+                    },
+                    {
+                      "type": "div",
+                      "roles": [
+                        "tg-desc",
+                        "tg-desc-b"
+                      ],
+                      "children": [
+                        "미응답자의 의견은 모른다."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "roles": [
+                "toggle-verdict"
+              ],
+              "children": [],
+              "delegate": "과장: 학생 전체의 80%가 연장 운영에 찬성했다.",
+              "keep": "수정: 9월 설문 응답자 100명 중 80명(80%)이 연장 운영에 찬성했다."
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "가상 사례 · 문장의 숫자를 버리는 대신 대상을 정확히 한정한다. M 키로 관점 전환."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "steps",
+      "title": "직접 고쳐보자. “학생 70%가 원한다.”",
+      "sectionName": "연습",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 연습"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "직접 고쳐보자.",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "“학생 70%가 원한다.”"
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "가상 10월 설문 · 스터디룸 주말 개방을 원하는가?"
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "steps"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "초대"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "200명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "모두 재학생"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "완전 응답"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "50명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "나머지 150명 미응답"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "개방 희망"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "35명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "응답자 50명 중 35명"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "45초"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "한 문장"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "누가 · 몇 명 중 · 몇 명 · 언제"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "교육용 가상 설문 · 실제 조사 아님 · 정답은 다음 장"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "stats",
+      "title": "70%는 응답자 50명 안의 비율이다.",
+      "sectionName": "연습 해설",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 연습 해설"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "70%는 응답자",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "50명 안의 비율이다."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "stats"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "stat"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "num"
+                  ],
+                  "children": [
+                    "70"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "unit"
+                  ],
+                  "children": [
+                    "%"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "label"
+                  ],
+                  "children": [
+                    "35 ÷ 50 × 100"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "stat"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "num"
+                  ],
+                  "children": [
+                    "50"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "unit"
+                  ],
+                  "children": [
+                    "명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "label"
+                  ],
+                  "children": [
+                    "응답자"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "stat"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "num"
+                  ],
+                  "children": [
+                    "35"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "unit"
+                  ],
+                  "children": [
+                    "명"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "label"
+                  ],
+                  "children": [
+                    "주말 개방 희망"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "roles": [
+            "lead"
+          ],
+          "children": [
+            "“10월 설문 응답자 50명 중 35명(70%)이 스터디룸 주말 개방을 원했다.”"
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "가상 사례 · 응답하지 않은 150명의 의견은 모른다. 전체 학생 70%로 바꾸면 안 된다."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "closing",
+      "title": "공유하기 전에, 숫자 옆의 조건을 읽자.",
+      "sectionName": "가져갈 질문",
+      "nodes": [
+        {
+          "type": "p",
+          "roles": [
+            "kicker"
+          ],
+          "children": [
+            "DATA LITERACY / 가져갈 질문"
+          ]
+        },
+        {
+          "type": "h2",
+          "roles": [
+            "headline"
+          ],
+          "children": [
+            "공유하기 전에,",
+            {
+              "type": "br",
+              "roles": [],
+              "children": []
+            },
+            "숫자 옆의 조건을 읽자."
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "steps",
+            "ladder"
+          ],
+          "children": [
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "분모"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "몇 명 중?"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "비율을 실제 사람 수로 풀어본다."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step",
+                "hi"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "누락"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "누가 빠졌나?"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "응답한 사람과 전체 대상을 구분한다."
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "div",
+              "roles": [
+                "step"
+              ],
+              "children": [
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-no"
+                  ],
+                  "children": [
+                    "비교"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-title"
+                  ],
+                  "children": [
+                    "같은 조건인가?"
+                  ]
+                },
+                {
+                  "type": "span",
+                  "roles": [
+                    "step-text"
+                  ],
+                  "children": [
+                    "질문·모집 방식·시점을 확인한다."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "div",
+          "roles": [
+            "foot"
+          ],
+          "children": [
+            {
+              "type": "span",
+              "roles": [
+                "foot-note"
+              ],
+              "children": [
+                "숫자 + 대상 + 분모 + 시점. 오늘 본 ‘80%’ 문장을 이 조건과 함께 써보자."
+              ]
+            },
+            {
+              "type": "span",
+              "roles": [
+                "foot-src"
+              ],
+              "children": [
+                {
+                  "type": "a",
+                  "roles": [],
+                  "children": [
+                    "조사 해석 원칙 · AAPOR"
+                  ],
+                  "url": "https://aapor.org/standards-and-ethics/best-practices/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

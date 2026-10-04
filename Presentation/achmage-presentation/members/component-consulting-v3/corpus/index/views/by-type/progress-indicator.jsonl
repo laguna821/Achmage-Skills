@@ -1,0 +1,2 @@
+{"id": "magicui:scroll-progress", "name": "Scroll Progress", "canonical_type": "progress-indicator", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/scroll-progress.tsx", "ats_verdict": "pass"}
+{"id": "aceternity:multi-step-loader", "name": "Multi-step Loader", "canonical_type": "progress-indicator", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}

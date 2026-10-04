@@ -1,0 +1,3 @@
+{"id": "tailark:mist/contact/one", "name": "mist-contact-one", "canonical_type": "contact", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/tailark/mist/contact/one.tsx", "ats_verdict": null}
+{"id": "tailark:veil/contact/one", "name": "veil-contact-one", "canonical_type": "contact", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/tailark/veil/contact/one.tsx", "ats_verdict": null}
+{"id": "tailark:veil/contact/two", "name": "veil-contact-two", "canonical_type": "contact", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/tailark/veil/contact/two.tsx", "ats_verdict": null}

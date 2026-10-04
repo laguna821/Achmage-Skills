@@ -1,0 +1,3 @@
+{"id": "smoothui:animated-tags", "name": "Animated Tags", "canonical_type": "badge", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/animated-tags.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:notification-badge", "name": "Notification Badge", "canonical_type": "badge", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/notification-badge.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}
+{"id": "shadcn:badge-shadcn", "name": "Badge (shadcn)", "canonical_type": "badge", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": "pass"}

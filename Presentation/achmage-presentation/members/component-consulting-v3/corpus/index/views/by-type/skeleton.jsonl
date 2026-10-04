@@ -1,0 +1,2 @@
+{"id": "smoothui:skeleton-loader", "name": "Skeleton Loader", "canonical_type": "skeleton", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/skeleton-loader.tsx", "ats_verdict": "pass"}
+{"id": "shadcn:skeleton-shadcn", "name": "Skeleton (shadcn)", "canonical_type": "skeleton", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "packageSha256": "35e3ba49b55268f827b12c55ff96223e03586f0887873e1a4793624878aed37d",
+  "files": {
+    "adapters/check_mobile_matrix.js": "86fe54eff73e16d8f8b5aa38f2060748b0086b2e49f99cbe5d1091d29f4ee646",
+    "adapters/extract_reference.py": "3682ae6f52c91a0d2b69a2c8aa0e6b28ae6c2b1e7437bb17207f0c6473a5bbbe",
+    "adapters/measure_mobile_layout.js": "c836e38c788319d2145ea4d4272d26bd05e0304a95d03e50e8f49887829c5671",
+    "adapters/reference-layout-hints.json": "6452c62f99da113018667843d0e3fc90930ded10d10bee01eebb5e7d9b7f7a7e",
+    "assets/controller.js": "f3ce7f50013583c4239bf4e034e2b94d006ca66f8ed947d32407c2a83dddf054",
+    "assets/deck.css": "3ce89fbf4161da6e6b6f62d160df603ee555e0f0770996cbfa9a654227635d51",
+    "assets/fit.css": "a850d3e9d5e15cf9260b251a6f69e65915ac5f927b76e7ba6b3c9596af321279",
+    "assets/MOBILE-QA.md": "be644b8eee021942585231fcc1825606dd40d29276cdae17cb2364e8aed81950",
+    "assets/print.css": "59fb283b627f54782d0974b4e6356adf9ac1902537b2f41f95c13989b195a21e",
+    "assets/state.js": "60c337d2fab56d807e0374c2d27488517ea62d8bcb42a95bb32c92429194d430",
+    "brand-tokens.json": "11a8e7769075dee0b0da3982bc1d1fd87d07ee381632ae67ab496fe35806e14d",
+    "deck.css": "fe76235caecc19fc6870cfeb9de9745848b0ea1c4f2753dcbdce6fcded407ef8",
+    "deck.js": "10d4105a1fa4ff97b2ad899f066f2a0d6340f9866cd603b2555c4d94eda5bb8d",
+    "fonts/JetBrainsMono-OFL.txt": "30f0c136e3c88e422d0791acd97238870f9054a9729bc34cf2ff0d4ed8cac4ad",
+    "fonts/JetBrainsMono.woff2": "a9cb1cd82332b23a47e3a1239d25d13c86d16c4220695e34b243effa999f45f2",
+    "fonts/Pretendard-OFL.txt": "d31ddd9f2bed32fd7e302a205cf2380ba0de6529152d239ef99cfb6f261bfc04",
+    "fonts/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
+    "qa.cjs": "c46ba0127c26ac21d1eb3fedfb58ee78e00466935f1be1998e46aea5457e96ea",
+    "render.py": "6c84f3beb400dd94e5f4927547cba71bf3883d9663ad16c7009e4a07e4fea3bc"
+  }
+}

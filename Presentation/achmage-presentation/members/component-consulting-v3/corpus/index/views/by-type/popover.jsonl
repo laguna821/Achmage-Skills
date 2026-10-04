@@ -1,0 +1,3 @@
+{"id": "smoothui:gooey-popover", "name": "Gooey Popover", "canonical_type": "popover", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": false, "code_path": "corpus/vendor/smoothui/gooey-popover/", "ats_verdict": "cut"}
+{"id": "smoothui:rich-popover", "name": "Rich Popover", "canonical_type": "popover", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/rich-popover.tsx", "ats_verdict": "pass"}
+{"id": "shadcn:popover-shadcn", "name": "Popover (shadcn)", "canonical_type": "popover", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

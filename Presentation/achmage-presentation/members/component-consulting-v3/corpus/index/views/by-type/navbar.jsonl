@@ -1,0 +1,2 @@
+{"id": "aceternity:floating-navbar", "name": "Floating Navbar", "canonical_type": "navbar", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}
+{"id": "shadcn:navigation-menu", "name": "Navigation Menu", "canonical_type": "navbar", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

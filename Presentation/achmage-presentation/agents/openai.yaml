@@ -1,0 +1,7 @@
+interface:
+  display_name: "Achmage Presentation"
+  short_description: "전체 컨설팅 세트로 만드는 Hallym 반응형 발표자료"
+  default_prompt: "Use $achmage-presentation to create a source-grounded deck with mobile single-slide fitting and PDF."
+policy:
+  allow_implicit_invocation: true
+

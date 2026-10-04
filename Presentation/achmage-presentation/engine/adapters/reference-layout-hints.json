@@ -1,0 +1,47 @@
+{
+  "sourceSha256": "ff482eafa06dba482a96ee1b24f97339f6dd74c75aaac7c16eb8d3be7e2e9905",
+  "rationale": "Language-specific fit experiment; translated words and original KO geometry remain unchanged. Typed hints are renderer projections, not source content.",
+  "layoutHints": {
+    "en": {
+      "s13.headline": {
+        "lines": [
+          "The four things around the model",
+          "decide the result"
+        ]
+      },
+      "s24.headline": {
+        "lines": [
+          "Separate the sources",
+          "from the interpretation"
+        ]
+      },
+      "s33.headline": {
+        "lines": [
+          "Thirty minutes tomorrow morning",
+          "is enough to start"
+        ]
+      },
+      "s13": {
+        "diagramViewBoxTop": 100
+      },
+      "s24": {
+        "diagramViewBoxTop": 130
+      },
+      "s05": {
+        "compactCompare": true
+      },
+      "s09": {
+        "wideLadderLabel": true
+      },
+      "s20": {
+        "compactStats": true
+      },
+      "s26": {
+        "denseBody": true
+      },
+      "s34": {
+        "denseBars": true
+      }
+    }
+  }
+}

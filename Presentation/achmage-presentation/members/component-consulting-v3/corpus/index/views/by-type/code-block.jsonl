@@ -1,0 +1,2 @@
+{"id": "magicui:code-comparison", "name": "Code Comparison", "canonical_type": "code-block", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/code-comparison.tsx", "ats_verdict": "pass"}
+{"id": "magicui:terminal", "name": "Terminal", "canonical_type": "code-block", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/terminal.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}

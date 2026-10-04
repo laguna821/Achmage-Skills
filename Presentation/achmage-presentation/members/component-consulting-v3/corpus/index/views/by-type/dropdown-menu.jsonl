@@ -1,0 +1,4 @@
+{"id": "smoothui:basic-dropdown", "name": "Basic Dropdown", "canonical_type": "dropdown-menu", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/basic-dropdown.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:context-menu", "name": "Context Menu", "canonical_type": "dropdown-menu", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/context-menu.tsx", "ats_verdict": null}
+{"id": "smoothui:dropdown-menu", "name": "Dropdown Menu", "canonical_type": "dropdown-menu", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/dropdown-menu.tsx", "ats_verdict": null}
+{"id": "shadcn:dropdown-menu-shadcn", "name": "Dropdown Menu (shadcn)", "canonical_type": "dropdown-menu", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}
