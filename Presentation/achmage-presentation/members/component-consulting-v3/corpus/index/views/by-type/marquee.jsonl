@@ -1,0 +1,3 @@
+{"id": "magicui:marquee", "name": "Marquee", "canonical_type": "marquee", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/marquee.tsx", "ats_verdict": "conditional"}
+{"id": "aceternity:infinite-moving-cards", "name": "Infinite Moving Cards", "canonical_type": "marquee", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": "cut"}
+{"id": "inspira:marquee-inspira", "name": "Marquee (inspira)", "canonical_type": "marquee", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": "cut"}

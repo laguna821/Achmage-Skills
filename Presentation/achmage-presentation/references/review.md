@@ -1,0 +1,7 @@
+# Shared-engine change contract
+Normal authoring uses the installed immutable engine. Never rewrite the package to fix a single deck.
+A shared-engine proposal must state reproduced defect, preserved functions, minimum alternative, expected improvement and falsifying test. An actual independent reviewer attacks the diagnosis/alternative first. Freeze baseline, candidate, issue lineage and checks. Counterreview attacks the implemented candidate, then a reviewer distinct from author and counter performs final verification. Same author adopting another label is not independence.
+Mandatory checks: preservation, claim-evidence, regression, accessibility, reference-39, light-dark, keyboard-modal, print-state, pdf-semantics, mobile-reading, mobile-presentation, mobile-fit, no-js, motion, compatibility.
+Retain failed evidence. At most three distinct candidates on the same baseline/issue before defer. This package carries no personal fourth-candidate grant. Do not weaken criteria or infer activation from scores. Without an independent execution facility, retain the last verified engine and mark the proposal unverified.
+Bind evidence to exact file hashes and distinguish host-attested review from cryptographic execution verification. The package does not launch models. Approved changed bytes require a new version, tests and release; prior review does not cover them. The original39 corpus is an internal regression fixture, not included or licensed for redistribution by this package.
+

@@ -1,0 +1,4 @@
+{"id": "smoothui:number-flow", "name": "Number Flow", "canonical_type": "counter", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/number-flow.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:price-flow", "name": "Price Flow", "canonical_type": "counter", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/price-flow.tsx", "ats_verdict": "pass"}
+{"id": "magicui:number-ticker", "name": "Number Ticker", "canonical_type": "counter", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/magicui/number-ticker.tsx", "ats_verdict": "pass"}
+{"id": "inspira:number-ticker-inspira", "name": "Number Ticker (Inspira)", "canonical_type": "counter", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

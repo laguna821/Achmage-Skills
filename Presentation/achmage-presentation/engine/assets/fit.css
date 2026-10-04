@@ -1,0 +1,178 @@
+/* One-page responsive projection. This stylesheet never changes the print projection. */
+.diagram-fit,#tools-toggle{display:none}
+@media screen{
+body[data-mode=fit] .diagram-fit-node :is(.r-dg-t,.r-dg-s){min-width:0;overflow-wrap:anywhere}
+}
+@media screen{
+select{font:inherit;min-height:44px;padding:8px 10px;color:var(--ink);background:var(--surface);border:1px solid var(--line);max-width:100%}
+.toolbar{padding-top:max(8px,env(safe-area-inset-top));padding-left:max(12px,env(safe-area-inset-left));padding-right:max(12px,env(safe-area-inset-right))}
+.controls{bottom:calc(var(--view-bottom,0px) + max(6px,env(safe-area-inset-bottom)));max-width:calc(100% - 16px)}
+body:is([data-mode=fit],[data-mode=present]){overflow:hidden}
+body:is([data-mode=fit],[data-mode=present]) .toolbar{position:fixed;top:var(--view-top,0px);left:var(--view-left,0px);width:var(--view-width,100%);box-sizing:border-box}
+body:is([data-mode=fit],[data-mode=present]) #slides{position:fixed;inset:auto!important;left:var(--stage-left,0px)!important;top:var(--stage-top,64px)!important;width:var(--stage-width,100%);height:var(--stage-height,calc(100dvh - 128px));max-width:none;margin:0;padding:0}
+body[data-mode=fit] .slide{display:none;position:absolute;left:50%;top:50%;width:var(--fit-width,360px);height:auto;min-height:0;margin:0;border:0;padding:16px 18px 14px;transform:translate(-50%,-50%) scale(var(--fit-scale,1));transform-origin:center;overflow:visible}
+body[data-mode=fit] .slide.active{display:block}
+body[data-mode=fit] .sheet-body{display:flex;flex-direction:column;min-height:0}
+body[data-mode=fit] .sheet-evidence{margin-top:20px}
+body[data-mode=fit] .sheet-footer{margin-top:16px;padding-top:10px;gap:16px}
+body[data-mode=fit] .sheet-number{font-size:13px}
+body[data-mode=fit] .progress-ticks{gap:3px}
+body[data-mode=fit] .progress-ticks i{height:5px}
+body[data-mode=fit] .r-kicker{font-size:11px;line-height:1.3;margin:0 0 20px;padding-bottom:10px;letter-spacing:.03em}
+body[data-mode=fit] .r-headline,body[data-mode=fit] .r-quote p{font-size:36px;line-height:1.08;white-space:normal;overflow-wrap:anywhere;word-break:keep-all;letter-spacing:-.035em}
+body[data-mode=fit] .kind-cover .r-headline{font-size:48px}
+body[data-mode=fit] :is(.kind-section,.kind-divider) .r-headline{font-size:60px}
+body[data-mode=fit] .r-headline .r-sub{font-size:20px;line-height:1.3;margin-top:16px}
+body[data-mode=fit] .r-lead{font-size:18px;line-height:1.45;margin-top:18px}
+body[data-mode=fit] .r-foot{display:block;padding-top:10px}
+body[data-mode=fit] .r-foot-note,body[data-mode=fit] .r-foot-src{display:block;font-size:12px;line-height:1.4;max-width:100%;margin:0}
+body[data-mode=fit] .r-foot-src{margin-top:8px;font-family:"Pretendard Variable",sans-serif}
+body[data-mode=fit] .r-body-list{margin-top:20px}
+body[data-mode=fit] .r-body-list li{font-size:17px;line-height:1.4;padding:14px 0}
+body[data-mode=fit] .r-body-list b{display:block;min-width:0;margin-bottom:6px}
+body[data-mode=fit] :is(.r-grid,.r-steps){grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 16px;margin-top:22px}
+body[data-mode=fit] :is(.r-step,.r-cell){padding-top:12px}
+body[data-mode=fit] :is(.r-step-title,.r-cell-title){font-size:25px;line-height:1.15;margin-top:8px}
+body[data-mode=fit] :is(.r-step-text,.r-cell-text){font-size:16px;line-height:1.4;margin-top:10px}
+body[data-mode=fit] :is(.r-step-no,.r-cell-no){font-size:12px}
+body[data-mode=fit] .r-steps.r-ladder{grid-template-columns:1fr;gap:0}
+body[data-mode=fit] .r-ladder .r-step{grid-template-columns:54px 1fr;gap:6px 14px;padding:14px 0}
+body[data-mode=fit] .r-ladder .r-step-title{font-size:25px;margin:0}
+body[data-mode=fit] .r-ladder .r-step-text{grid-column:2;font-size:16px;margin:0}
+body[data-mode=fit] .r-ladder .r-hi{margin:0 -18px;padding:14px 18px}
+body[data-mode=fit] .r-compare{grid-template-columns:1fr;gap:20px;margin-top:22px}
+body[data-mode=fit] .r-compare h3{font-size:25px;padding-bottom:10px}
+body[data-mode=fit] .r-compare li{font-size:17px;line-height:1.4;padding:10px 0}
+body[data-mode=fit] .r-tbl{font-size:14px;line-height:1.4;margin-top:22px;min-width:0}
+body[data-mode=fit] .r-tbl th,body[data-mode=fit] .r-tbl td:first-child{font-size:12px;font-family:"Pretendard Variable",sans-serif}
+body[data-mode=fit] .r-tbl th,body[data-mode=fit] .r-tbl td{padding:10px 6px 10px 0;word-break:normal;overflow-wrap:anywhere}
+body[data-mode=fit] .r-stats{grid-template-columns:1fr 1fr;gap:12px 20px;margin-top:22px}
+body[data-mode=fit] .r-stat:first-child{grid-column:1/-1;grid-row:auto}
+body[data-mode=fit] .r-stat:first-child .r-num{font-size:110px}
+body[data-mode=fit] .r-stat:first-child .r-unit{font-size:32px}
+body[data-mode=fit] .r-stat:not(:first-child){padding:12px 0}
+body[data-mode=fit] .r-num{font-size:48px}
+body[data-mode=fit] .r-unit{font-size:24px}
+body[data-mode=fit] .r-label{font-size:13px;line-height:1.4;margin-top:8px}
+body[data-mode=fit] .r-terminal{font-size:15px;line-height:1.5;padding:18px;margin-top:22px}
+body[data-mode=fit] .r-bars{margin-top:22px}
+body[data-mode=fit] .r-bar{grid-template-columns:1fr 80px;gap:8px;padding:14px 0}
+body[data-mode=fit] .r-bar-track{grid-column:1/-1;grid-row:2;height:12px}
+body[data-mode=fit] .r-bar-label,body[data-mode=fit] .r-bar-val{font-size:17px}
+body[data-mode=fit] .r-toggle{margin-top:22px}
+body[data-mode=fit] .r-toggle-grid{grid-template-columns:1fr 1fr;gap:20px 16px;margin-top:0}
+body[data-mode=fit] .r-tg{display:grid;grid-template-areas:"a" "da" "b" "db";grid-template-columns:1fr;padding-top:12px}
+body[data-mode=fit] :is(.r-tg-a,.r-tg-b){font-size:23px;line-height:1.1}
+body[data-mode=fit] .r-tg-b{margin-top:16px}
+body[data-mode=fit] .r-tg-desc{font-size:14px;line-height:1.35;margin-top:8px;margin-bottom:0}
+body[data-mode=fit] .r-toggle-verdict{grid-template-columns:1fr;font-size:16px;line-height:1.4;gap:12px;margin-top:20px}
+body[data-mode=fit] .r-quote{margin-top:8px}
+body[data-mode=fit] .r-quote cite{font-size:14px;margin-top:20px}
+body[data-mode=fit] .r-diagram[data-fit-projection=linear]{display:none}
+body[data-mode=fit] .diagram-fit{display:block;list-style:none;margin:22px 0 0;padding:0}
+body[data-mode=fit] .diagram-fit-node{border:1px solid var(--line);padding:12px 16px}
+body[data-mode=fit] .diagram-fit-node span{display:block;fill:currentColor}
+body[data-mode=fit] .diagram-fit-node .r-dg-t{font:800 24px/1.15 "Pretendard Variable",sans-serif;color:var(--ink)}
+body[data-mode=fit] .diagram-fit-node .r-dg-s{font:400 15px/1.4 "Pretendard Variable",sans-serif;color:var(--muted);margin-top:5px}
+body[data-mode=fit] .diagram-fit-link{padding:6px 16px;color:var(--secondary);font-size:13px}
+body[data-mode=fit] .diagram-fit-link::before{content:"↓ ";font-weight:800}
+body[data-mode=fit] .diagram-fit-loop{padding:12px 16px;margin-top:12px;border-left:3px solid var(--secondary);background:var(--hair);font-size:14px;line-height:1.4}
+body[data-mode=fit] .diagram-fit-loop::before{content:"↶ "}
+body[data-mode=fit] .r-qr{width:84px;height:84px}
+body[data-mode=fit] .r-image img{max-height:260px}
+body[data-mode=fit] .r-image figcaption{font-size:14px}
+body[data-mode=fit] .r-chart-data{font-size:14px}
+body[data-mode=fit] .r-chart-data caption{font-size:12px}
+body[data-mode=fit] .word-url{overflow-wrap:anywhere;word-break:break-all}
+body[data-mode=fit][data-fit-density=compact] .r-kicker{margin-bottom:14px;padding-bottom:8px}
+body[data-mode=fit][data-fit-density=compact] .r-headline{font-size:32px}
+body[data-mode=fit][data-fit-density=compact] .r-lead{font-size:17px;margin-top:14px}
+body[data-mode=fit][data-fit-density=compact] :is(.r-grid,.r-steps,.r-compare,.r-tbl,.r-stats,.r-terminal,.r-bars,.r-toggle,.diagram-fit){margin-top:16px}
+body[data-mode=fit][data-fit-density=compact] :is(.r-ladder .r-step,.r-compare li,.r-body-list li){padding-top:10px;padding-bottom:10px}
+body[data-mode=fit][data-fit-density=compact] .sheet-evidence{margin-top:16px}
+body[data-mode=fit][data-fit-density=compact] .sheet-footer{margin-top:12px}
+}
+@media screen and (max-width:850px){
+#tools-toggle{display:block;min-width:44px}
+.toolbar{flex-direction:row;flex-wrap:wrap;gap:8px;align-items:center}
+.deck-title{flex:1;min-width:0;max-width:none}
+.toolbar nav{display:contents}
+.toolbar select{font-size:13px;width:128px}
+body:not([data-tools=open]) .toolbar nav button{display:none}
+body[data-tools=open] .toolbar nav button{display:block}
+body[data-tools=open] .toolbar nav{display:flex;flex-wrap:wrap;width:100%}
+#notes-panel{bottom:calc(var(--view-bottom,0px) + var(--controls-height,60px) + 16px);max-height:45dvh}
+}
+@media print{.diagram-fit,#tools-toggle{display:none!important}}
+
+
+@media screen{body[data-mode=fit] .diagram-fit-node.fit-emphasis{background:var(--emphasis-surface);border-color:var(--emphasis-border)}body[data-mode=fit] .diagram-fit-node.fit-emphasis :is(.r-dg-t,.r-dg-s){color:var(--emphasis-ink)}}
+
+@media screen{
+body[data-mode=fit] .r-compare{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body[data-mode=fit] .r-compare h3{font-size:23px}
+body[data-mode=fit] .r-compare li{font-size:16px;line-height:1.35}
+body[data-mode=fit] .r-tbl th,body[data-mode=fit] .r-tbl td:first-child{font-size:14px}
+body[data-mode=fit] .r-tg-desc{font-size:16px}
+body[data-mode=fit] .r-terminal{font-size:16px;line-height:1.4}
+body[data-mode=fit] .r-stat:first-child .r-num{font-size:78px}
+body[data-mode=fit] .diagram-fit-node{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px}
+body[data-mode=fit] .diagram-fit-node .r-dg-t{font-size:24px}
+body[data-mode=fit] .diagram-fit-node .r-dg-s{font-size:16px;margin:0}
+body[data-mode=fit] .diagram-fit-link{padding:4px 12px;font-size:14px}
+body[data-mode=fit] .diagram-fit-loop{padding:10px 12px;font-size:16px}
+body[data-mode=fit] .r-links:has(.r-qr){grid-template-columns:1fr;gap:12px}
+body[data-mode=fit] .r-links .r-cell:has(.r-qr){display:grid;grid-template-columns:minmax(0,1fr) 72px;grid-template-areas:"title qr" "text qr";gap:8px 14px}
+body[data-mode=fit] .r-cell:has(.r-qr) .r-cell-title{grid-area:title;font-size:18px;line-height:1.2;margin:0}
+body[data-mode=fit] .r-cell:has(.r-qr) .r-cell-text{grid-area:text;font-size:16px;line-height:1.3;margin:0}
+body[data-mode=fit] .r-cell:has(.r-qr) .r-qr{grid-area:qr;width:72px;height:72px;margin:0;align-self:center}
+body[data-mode=fit] .r-cell:has(.r-qr) .r-web{font-size:14px}
+}
+
+
+@media screen{
+ body[data-mode=fit] .diagram-fit :is(.r-dg-v,.diagram-fit-loop span){font-size:16px}
+ body[data-ready=true][data-mode=read]{overflow:hidden}
+ body[data-ready=true][data-mode=read] .toolbar{position:fixed;top:var(--view-top,0px);left:var(--view-left,0px);width:var(--view-width,100%)}
+ body[data-ready=true][data-mode=read] #slides{position:fixed;inset:auto;top:var(--stage-top,64px);left:var(--stage-left,0px);width:var(--stage-width,100%);height:var(--stage-height,calc(100dvh - 128px));max-width:none;margin:0;overflow:auto;overscroll-behavior:contain;scroll-padding-top:12px}
+ body[data-ready=true][data-mode=read] .slide{max-width:1232px;margin-left:auto;margin-right:auto;scroll-margin-top:12px}
+}
+
+@media screen{body[data-mode=fit] .diagram-fit-rel{font-size:16px;line-height:1.35;padding:8px 12px;border-left:3px solid var(--secondary);color:var(--secondary)}}
+@media screen{body[data-mode=fit] .diagram-fit-link[data-direction=none]::before{content:"│"}}
+@media screen{
+body[data-mode=fit] .diagram-fit-loop::before{content:""}
+body[data-mode=fit][data-fit-density=compact] :is(.r-grid,.r-toggle-grid){row-gap:12px}
+body[data-mode=fit][data-fit-density=compact] :is(.r-step-text,.r-cell-text){margin-top:8px}
+body[data-mode=fit][data-fit-density=compact] .r-tg-b{margin-top:12px}
+body[data-mode=fit][data-fit-density=compact] .r-toggle-verdict{gap:8px;margin-top:16px}
+body[data-mode=fit] :is(.r-label,.r-step-no,.r-cell-no){font-size:16px}
+}
+/* English uses longer phrases; preserve every paired statement while reducing empty space. */
+@media screen{
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-headline{font-size:30px;line-height:1.06}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-kicker{margin-bottom:10px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-lead{margin-top:10px;line-height:1.3}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] :is(.r-cell,.r-step){padding-top:8px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] :is(.r-cell-title,.r-step-title){font-size:23px;margin-top:6px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] :is(.r-cell-text,.r-step-text){line-height:1.3;margin-top:6px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] :is(.r-tbl th,.r-tbl td){padding-top:8px;padding-bottom:8px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .diagram-fit-node{padding-top:8px;padding-bottom:8px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .diagram-fit-loop{padding-top:8px;padding-bottom:8px;margin-top:8px}
+html[lang=en] body[data-mode=fit] .r-toggle-grid{grid-template-columns:1fr;row-gap:10px}
+html[lang=en] body[data-mode=fit] .r-tg{grid-template-columns:1fr 1fr;grid-template-areas:"a b" "da db";column-gap:16px;padding-top:8px}
+html[lang=en] body[data-mode=fit] .r-tg-b{margin-top:0}
+html[lang=en] body[data-mode=fit] :is(.r-tg-a,.r-tg-b){font-size:21px}
+html[lang=en] body[data-mode=fit] .r-tg-desc{margin-top:6px;line-height:1.3}
+html[lang=en] body[data-mode=fit] .r-toggle-verdict{grid-template-columns:1fr 1fr;column-gap:16px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .kind-toggle .r-headline{font-size:26px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-toggle-grid{row-gap:6px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-tg{padding-top:6px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] :is(.r-tg-a,.r-tg-b){font-size:19px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-tg-desc{margin-top:4px;line-height:1.2}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-toggle-verdict{line-height:1.2;margin-top:12px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .sheet-evidence{margin-top:12px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .sheet-footer{margin-top:8px}
+html[lang=en] body[data-mode=fit][data-fit-density=compact] .r-cell:has(.r-qr) .r-cell-title{font-size:18px;margin-top:0}
+html[lang=en] body[data-mode=fit] .diagram-fit-node .r-dg-t{font-size:20px}
+}

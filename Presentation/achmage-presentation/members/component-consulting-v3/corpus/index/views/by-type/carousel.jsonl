@@ -1,0 +1,4 @@
+{"id": "smoothui:photo-stack", "name": "Photo Stack", "canonical_type": "carousel", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/photo-stack.tsx", "ats_verdict": null}
+{"id": "smoothui:reviews-carousel", "name": "Reviews Carousel", "canonical_type": "carousel", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/reviews-carousel.tsx", "ats_verdict": "pass"}
+{"id": "aceternity:apple-cards-carousel", "name": "Apple Cards Carousel", "canonical_type": "carousel", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}
+{"id": "shadcn:carousel-shadcn", "name": "Carousel (shadcn)", "canonical_type": "carousel", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}

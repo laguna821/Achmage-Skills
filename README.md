@@ -4,6 +4,13 @@
 
 ## 📦 수록 스킬
 
+### [Presentation/achmage-presentation](Presentation/achmage-presentation) — 독립 발표자료 전체 세트 (1.0.0)
+
+컨설팅·논증·Hallym 프로필·Impeccable·UI/UX·렌더 감사를 한 진입점으로 묶습니다. Achmage OS/MCP 없이 Python/Node 환경에서 오프라인 HTML과 PDF를 만들며, 모바일은 세로 재배치 후 한 장 전체를 맞춥니다. 승인 엔진과 코퍼스를 함께 배포하고 원본 보존·대안 재검토·실제 화면 검증 규칙을 포함합니다.
+설치는 [전체 폴더 설치 안내](Presentation/achmage-presentation/README.md)를 따릅니다. Codex·Claude Code·Gemini용 복사 설치 도구를 포함하며, 호스트별 자동 선택은 실제 클라이언트 설정에 따릅니다.
+
+기존 Raw5 등 별도 빌더를 명시적으로 요청하면 그 선택이 우선합니다. 일반 발표자료 요청에는 이 세트 한 개를 사용하고 경쟁 빌더를 겹쳐 실행하지 않습니다.
+
 ### [`Image-HTML/raw-5-html`](Image-HTML/raw-5-html) — Raw5 이미지 임베드 HTML 덱
 이미지를 **배경 재료**로만 쓰고 텍스트·숫자·차트는 전부 **HTML/SVG**로 유지하는 1920×1080 HTML 발표 덱(HTML PPT / 카드뉴스 / 키노트) 제작 스킬. GPTs “Raw5 v4” 프롬프트 팩을 Claude 스킬로 포팅했다. 4개 모드(V7 밝은 리포트 / V8 다크 / University AX / Street 에디토리얼) · 3단계 워크플로우(기획 → 이미지 5장 프롬프트[HARD STOP] → HTML 빌드).
 → 상세: **[Image-HTML/README.md](Image-HTML/README.md)**

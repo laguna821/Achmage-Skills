@@ -1,0 +1,11 @@
+# Collecting actual browser evidence
+Use only the host-approved browser backend. The renderer/collector files are not an authorization to use hidden browser connections. In Codex environments with CUA-only browser policy use CUA, its viewport capability, native locators and read-only DOM evaluation.
+
+1. Serve generated HTML on a loopback address or open the local file when the permitted browser supports it. Hash all input HTML files before capture.
+2. Obtain actual .slide IDs from the DOM. For every requested theme/language navigate the documented ?mode=read|present|fit&lang=...#actualId URLs; never guess numeric IDs. Wait for the visible heading/fonts/fit state.
+3. Collect rows with engine/adapters/measure_mobile_layout.js. Its file is an arrow function: a backend accepting expression strings must evaluate "(" + collectorText + ")()", not the uninvoked function text. Assert the result is a non-null object with schemaVersion3 before appending. Read mode can contain the whole slide inventory; preserve the collector's row shape. The checker enforces exact coverage at each required viewport. For visual inspection visit each actual slide ID; a fullPage screenshot does not expand the internal reading scroll pane. Long reading slides require additional internal-scroll views.
+4. Store all raw rows in observations.json. In observations.sources.json store {"engineSha256":"<engine.lock.json packageSha256>","observationsSha256":"<SHA256 of exact saved observations.json bytes>","html":{"light.html":"<sha256>","dark.html":"<sha256>"},"errors":[]}. Record any actual browser errors in errors, never erase them to pass. Confirm HTML hashes still match after capture. No paths, private runtime receipts or cookies are needed.
+5. Run presentation.py verify with both HTMLs and supplied language list. Capture screenshots and perform semantic/visual review independently of geometry. Verify interactions per MOBILE-QA.md; collecting URL states alone is not a keyboard test.
+6. Reset temporary viewport overrides, close only owned tabs and stop the owned local server.
+
+The standalone helper scripts/capture.mjs is an optional ordinary Playwright collector for environments permitting that backend. It is not used to evade CUA. Its result remains Chromium/WebKit evidence, not physical iPhone evidence.

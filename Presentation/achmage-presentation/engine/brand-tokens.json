@@ -1,0 +1,37 @@
+{
+  "version": "hallym-preservation-v2",
+  "font": "Pretendard Variable",
+  "mono": "JetBrains Mono",
+  "light": {
+    "surface": "#FFFFFF",
+    "ink": "#111827",
+    "primary": "#002E6E",
+    "secondary": "#0066B3",
+    "accent": "#00B5AD",
+    "smallAccent": "#007F86",
+    "emphasisSurface": "#002E6E",
+    "emphasisInk": "#FFFFFF",
+    "emphasisBorder": "#002E6E",
+    "heading": "#002E6E"
+  },
+  "dark": {
+    "surface": "#001A44",
+    "ink": "#FFFFFF",
+    "primary": "#FFFFFF",
+    "secondary": "#4D9ED1",
+    "accent": "#00B5AD",
+    "smallAccent": "#00B5AD",
+    "emphasisSurface": "#002E6E",
+    "emphasisInk": "#FFFFFF",
+    "emphasisBorder": "#4D9ED1",
+    "heading": "#FFFFFF"
+  },
+  "invariants": [
+    "light-cover-remains-white",
+    "dark-cover-remains-navy",
+    "no-logo",
+    "no-invented-affiliation",
+    "per-slide-segmented-footer",
+    "same-layout-across-themes"
+  ]
+}

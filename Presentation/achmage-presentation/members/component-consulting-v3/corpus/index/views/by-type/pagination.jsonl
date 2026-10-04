@@ -1,0 +1,1 @@
+{"id": "smoothui:pagination", "name": "Pagination", "canonical_type": "pagination", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/pagination.tsx", "ats_verdict": "pass"}

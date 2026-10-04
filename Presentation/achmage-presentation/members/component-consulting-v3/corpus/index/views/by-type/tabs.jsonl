@@ -1,0 +1,5 @@
+{"id": "smoothui:animated-tabs", "name": "Animated Tabs", "canonical_type": "tabs", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/animated-tabs.tsx", "ats_verdict": "pass"}
+{"id": "smoothui:phototab", "name": "Phototab", "canonical_type": "tabs", "altitude": "molecule", "style_tags": [], "deck_safe": false, "usable": true, "code_path": "corpus/vendor/smoothui/phototab.tsx", "ats_verdict": "pass", "slop_flags": ["initial-hidden"]}
+{"id": "shadcn:tabs-shadcn", "name": "Tabs (shadcn)", "canonical_type": "tabs", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}
+{"id": "aceternity:tabs-aceternity", "name": "Tabs (Aceternity)", "canonical_type": "tabs", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": false, "code_path": null, "ats_verdict": null}
+{"id": "inspira:morphing-tabs", "name": "Morphing Tabs", "canonical_type": "tabs", "altitude": "section", "style_tags": [], "deck_safe": false, "usable": true, "code_path": null, "ats_verdict": null}
