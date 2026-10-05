@@ -1,8 +1,27 @@
-# Video-Production — Achmage 화이트보드 비디오
+# Video-Production
+
+## Motion Art Director · 3.0.0-rc.1
+
+기획 질문 → 연출안·스타일프레임·사운드 계획 → 검토 → 대표 컷 → 전체 제작 → 수정·검수까지 연결하는 Codex·Claude Code 공통 스킬입니다. 기본 SVG CPU 제작과 선택 Skia·공간 카메라·이미지 흐름을 지원합니다.
+
+[스킬·설치 안내](motion-art-director) · [공개 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [영상 파일과 출처](examples/motion-art-director) · [Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)
+
+| 작품 | 보기 |
+|---|---|
+| 자동차 150초 / 주행음·음악·엔딩 | [전체](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [마지막 12초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) |
+| 책 150초 / 12개 시퀀스·새 작곡 | [보기](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#book) |
+| 항공 15초 / 안내표·지도·기체 | [보기](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#flight) |
+| 체 거르기 12초 / 물·입자 분리 | [보기](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#water) |
+
+이 패키지는 Claude 플러그인으로 등록되어 있습니다. 아래 화이트보드 스킬의 Codex 전용 조건과 별개입니다. 전용 GPU·Blender는 기본 의존성이 아니며 실제 일반 노트북 실측은 미완료입니다.
+
+---
+
+# Achmage 화이트보드 비디오
 
 한국어 마크다운·강의 원고 한 편을 **음성·번인 자막 포함 4K(3840×2160) 화이트보드 강의 영상**으로 만드는 올인원 파이프라인 스킬. 장면별 이미지 생성 → 선 추적(line-trace) 애니메이션 → ElevenLabs/Typecast TTS → 자막 번인 → 시퀀스 병합, 그리고 프리미어식 후반작업용 **편집 패키지 내보내기**까지 한 번에 간다.
 
-> **⚠ Codex CLI 전용.** 이 폴더의 스킬은 Claude 플러그인이 아니다 — 장면 설계와 이미지 생성이 **Codex 네이티브 이미지 도구**에 위임되어 있고, 상태머신이 `nextCodexAction` 필드로 Codex 에게 다음 행동을 지시한다. 그래서 이 리포의 `.claude-plugin/marketplace.json` 에도 **의도적으로 등록하지 않았다.**
+> **⚠ Codex CLI 전용.** 화이트보드 스킬은 Claude 플러그인이 아니다 — 장면 설계와 이미지 생성이 **Codex 네이티브 이미지 도구**에 위임되어 있고, 상태머신이 `nextCodexAction` 필드로 Codex 에게 다음 행동을 지시한다. 그래서 이 리포의 `.claude-plugin/marketplace.json` 에도 **의도적으로 등록하지 않았다.**
 
 ## 🎯 무엇을 하나
 

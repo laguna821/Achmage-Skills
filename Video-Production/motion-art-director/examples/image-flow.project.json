@@ -1,0 +1,297 @@
+{
+  "schema_version": "3.0.0",
+  "project_id": "material-image-flow-20s",
+  "revision": 2,
+  "status": "draft",
+  "title": "형태에서 관계로",
+  "label": "STATES OF MATTER",
+  "audience": "일반 독자",
+  "direction": "현재 사용자 제안에 따른 생성 원화 합성 벤치마크. 결정 전경/후경을 분리하고 제목을 사이에 둔다. 금속 링의 빈 공간·전경 가림, 연기의 밀도 마스크, 플라즈마 근접에서 작은 별로 이어지는 연결. 카메라와 레이어 움직임으로 연출하며 실제 유체 시뮬레이션이나 원화 밖 3D 회전은 하지 않는다.",
+  "visual_policy": "licensed_media",
+  "render_network": "local_only",
+  "seed": 9156,
+  "routes": [
+    "video-editing",
+    "promo",
+    "shorts",
+    "newsletter",
+    "infographic",
+    "thumbnail",
+    "deck-and-site"
+  ],
+  "profile": {
+    "jobs": 1,
+    "gpu": false,
+    "draftWidth": 1280,
+    "draftHeight": 720
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_frames": 600
+  },
+  "sources": [
+    {
+      "source_id": "author",
+      "title": "PRD v2의 자체 작성 시나리오",
+      "locator": "PRD v2 / example design",
+      "retrieval_state": "authored",
+      "raw_sha256": null,
+      "role": "content"
+    }
+  ],
+  "content_units": [
+    {
+      "content_id": "c01",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_locator": "Example content unit 1; display text is a design proposal unless explicitly quoted",
+      "source_text": "형태가 생기고",
+      "display_text": "형태가 생기고",
+      "copy_lock": false,
+      "delivery": "screen_text"
+    },
+    {
+      "content_id": "c02",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_locator": "Example content unit 2; display text is a design proposal unless explicitly quoted",
+      "source_text": "성질이 바뀌고",
+      "display_text": "성질이 바뀌고",
+      "copy_lock": false,
+      "delivery": "screen_text"
+    },
+    {
+      "content_id": "c03",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_locator": "Example content unit 3; display text is a design proposal unless explicitly quoted",
+      "source_text": "더 큰 관계가 드러납니다.",
+      "display_text": "더 큰 관계가 드러납니다.",
+      "copy_lock": false,
+      "delivery": "screen_text"
+    }
+  ],
+  "required_content_ids": [
+    "c01",
+    "c02",
+    "c03"
+  ],
+  "omissions": [],
+  "events": [],
+  "assets": [
+    {
+      "asset_id": "crystal",
+      "path": "skill:assets/art/crystal.png",
+      "kind": "raster",
+      "origin": "generated",
+      "provider": "OpenAI built-in image_gen",
+      "prompt": "Use case: stylized-concept\nAsset type: cinematic motion graphics art plate, widescreen 16:9, full frame.\nPrimary request: create exquisite optical crystal sculpture imagery for a premium film about changing states of matter. A sculptural cluster of six large irregular quartz/glass prisms floats across the center, with one tall oblique shard pointing toward upper right and a heavy shard toward lower left. It should feel like an art-directed macro photograph of real physical optical glass, not a polygon illustration.\nScene/backdrop: deep almost-black midnight navy void, subtle blue atmospheric scattering immediately near the sculpture only. No floor or horizon.\nComposition/framing: cluster occupies about 65% of frame width and 80% of frame height, generous dark negative space at both sides, subject completely inside frame. Camera near the prisms, tactile large bevels and complex internal surfaces, asymmetric visual balance.\nLighting/mood: narrow brilliant white rim lights, icy blue internal caustics, extremely restrained tiny prismatic red/violet edge highlights. Strong cinematic contrast; mostly black glass surfaces with luminous edges and luminous refracted layers. Some shards slightly out of focus behind crisp foreground shards.\nMaterials/textures: convincing translucent optical crystal, internal reflection/refraction, fine imperfection, tiny scratches, subtle film grain. Dramatic high-end physical render / experimental title sequence art.\nText: none. Leave all typography for compositing later.\nAvoid: typography, logos, watermarks, UI, diagrams, wireframes, geometric flat vector art, cheap neon outline, generic low-poly, gradients drawn as flat triangles, flowers, floating dust clouds. No baked border.",
+      "provenance": "Native generated artwork, author prompts and original hashes retained",
+      "sha256": "60d72b72c70113d3b12d4ff75344bf77d77749e9214c41c3fe7024ab5871d965",
+      "width": 1672,
+      "height": 941,
+      "review": "visual_review_pending"
+    },
+    {
+      "asset_id": "crystal-rear",
+      "path": "skill:assets/art/crystal-rear.png",
+      "kind": "raster",
+      "origin": "generated",
+      "provider": "OpenAI built-in image_gen",
+      "prompt": "Use case: precise-object-edit\nAsset type: rear layer clean plate for 2.5D motion compositing.\nInput image: the supplied crystal image is the edit target.\nPrimary request: REMOVE ONLY the two large foreground crystals: the large horizontal/diagonal long crystal pointing lower left, and the dominant long diagonal crystal pointing upper right. Inpaint their former areas with the same near-black navy atmospheric background. Keep the smaller rear crystals behind them: central vertical shard, left smaller shard, right smaller shard and lower vertical small shard. Keep these rear crystals in their original positions with their original lighting, camera, material and scale. Where they were partially hidden, complete their natural shape. Final should show the smaller back row of crystals on otherwise mostly empty dark navy space.\nConstraints: exact same canvas and composition, preserve remaining object positions; no text, no new subjects, no watermark. Do not move or grow the remaining crystals.",
+      "provenance": "Native generated artwork, author prompts and original hashes retained",
+      "sha256": "3b3696cd9fb14a46c4f322c1f844c677c6712614745cf627a50f1f16f3012c4d",
+      "width": 1672,
+      "height": 941,
+      "review": "visual_review_pending"
+    },
+    {
+      "asset_id": "liquid",
+      "path": "skill:assets/art/liquid.png",
+      "kind": "raster",
+      "origin": "generated",
+      "provider": "OpenAI built-in image_gen",
+      "prompt": "Use case: stylized-concept\nAsset type: cinematic motion art plate, widescreen 16:9, no typography.\nPrimary request: a breathtaking mercury sculpture, one glossy liquid chrome ribbon curving into a generous almost-closed oval, organic thick lobes, suspended in dark space, with three small satellite droplets. Premium experimental title-sequence art, highly tactile realistic physical liquid metal.\nScene/backdrop: near-black deep petrol teal void, very restrained soft teal atmospheric glow behind the central sculpture, no floor/horizon.\nComposition: centered asymmetrical oval sculpture fills 65% of image width and 75% of height; oval opening clearly visible; fully framed with negative space at sides. Thick ribbon arcs from lower left around to upper center and tapers toward right; organic fluid dynamics frozen in a photograph.\nLighting: broad soft ivory white studio reflections over deep black chrome, thin pale-cyan reflected edges, subtle warm silver tone. Complex realistic curved reflected highlights; cinematic depth of field with sharp main surface.\nMaterials: perfectly polished liquid mercury with fluid, smooth, continuous surface; no polygon facets, no crystal, no glitter.\nConstraints: no letters, logos, watermark, annotations, frame, UI, diagram, illustration, neon outlines, plastic or CGI toy appearance. Not a solid donut or regular mechanical ring.",
+      "provenance": "Native generated artwork, author prompts and original hashes retained",
+      "sha256": "463abc0f4f544fcd559fac5d0b1d4e49d6f378f7dc77d8d8cfff22fcf0696c38",
+      "width": 1672,
+      "height": 941,
+      "review": "visual_review_pending"
+    },
+    {
+      "asset_id": "gas",
+      "path": "skill:assets/art/gas.png",
+      "kind": "raster",
+      "origin": "generated",
+      "provider": "OpenAI built-in image_gen",
+      "prompt": "Use case: stylized-concept\nAsset type: cinematic motion graphics art plate, widescreen 16:9.\nPrimary request: breathtaking ivory vapor folding and billowing in near-black space. A sculptural horizontal smoke ribbon flowing from left to right, with a large curl at upper left, delicate whorls across center, one tall rolling column at right. Premium experimental title sequence art about gaseous matter.\nScene/backdrop: near-black aubergine-plum void. No floor/horizon.\nComposition: smoke occupies the central horizontal 80% width, middle 65% of height, floats fully inside frame. Deep negative space above and below. Thin ethereal translucent wisps on left, creamy dense cloud with fine curled filaments near right. Asymmetric balance, macro cinematic lighting.\nLighting: warm soft cream rim light from upper left, strong volumetric internal shadows and aubergine reflected light. Beautiful intricate turbulent filaments and folds, believable soft density; not a white cotton ball.\nMaterials: richly detailed fine aerosol vapor, photorealistic physical volumetric photograph, subtle film grain and depth of field.\nText: none; typography added separately.\nAvoid: text, logo, watermark, border, UI, vector illustration, neon, flame, explosion, storm sky, cartoon, plastic, gray fog over entire image.",
+      "provenance": "Native generated artwork, author prompts and original hashes retained",
+      "sha256": "cd277963d9941eb290cb6dbadca52b69a0f0572afaad61a24e9020c617f8ae59",
+      "width": 1672,
+      "height": 941,
+      "review": "visual_review_pending"
+    },
+    {
+      "asset_id": "plasma",
+      "path": "skill:assets/art/plasma.png",
+      "kind": "raster",
+      "origin": "generated",
+      "provider": "OpenAI built-in image_gen",
+      "prompt": "Use case: stylized-concept\nAsset type: cinematic motion graphic texture art plate, widescreen 16:9.\nPrimary request: extreme macro view of glowing plasma, luminous golden molten cellular surface with dark vermilion channels and incandescent yellow-white edges. The camera is so close that this abstract surface fills every pixel. Beautiful experimental cinema texture for the fourth stage of a matter title sequence.\nComposition: large irregular organic cells varying in size, top left very hot bright region, lower right deep red shadows. A few subtly layered curled filaments across the surface. No recognizable sun globe, no object, no horizon.\nLighting/material: realistic granular incandescent texture, fine turbulent gas details, cinematic luminous glow inside cells, strong depth in darker crevices. Restrained rich orange, amber, vermilion, warm yellow-white.\nText: none. No watermarks, no vector polygons, no diagrams, no regular hexagonal pattern, no typography, no UI, no border.",
+      "provenance": "Native generated artwork, author prompts and original hashes retained",
+      "sha256": "f29103ae464b464ce5f23ca47f9d097a12919c0e80cb8e117dab7ee7f46eedab",
+      "width": 1672,
+      "height": 941,
+      "review": "visual_review_pending"
+    }
+  ],
+  "footer": "생성 원화 · 자체 작성 합성 연출",
+  "scenes": [
+    {
+      "id": "s01",
+      "start": 0,
+      "end": 150,
+      "mode": "crystal",
+      "hero": "SOLID",
+      "content_ids": [
+        "c01"
+      ],
+      "art_asset": "crystal",
+      "event_depictions": [],
+      "anchor": "中心 대상과 색·광원의 연결",
+      "note": "결정 전후경과 타이포 가림"
+    },
+    {
+      "id": "s02",
+      "start": 150,
+      "end": 300,
+      "mode": "liquid",
+      "hero": "LIQUID",
+      "content_ids": [
+        "c02"
+      ],
+      "art_asset": "liquid",
+      "event_depictions": [],
+      "anchor": "中心 대상과 색·광원의 연결",
+      "note": "수은의 곡면과 빈 공간"
+    },
+    {
+      "id": "s03",
+      "start": 300,
+      "end": 450,
+      "mode": "smoke",
+      "hero": "GAS",
+      "content_ids": [
+        "c02"
+      ],
+      "art_asset": "gas",
+      "event_depictions": [],
+      "anchor": "中心 대상과 색·광원의 연결",
+      "note": "대기의 밀도와 문자"
+    },
+    {
+      "id": "s04",
+      "start": 450,
+      "end": 600,
+      "mode": "star",
+      "hero": "PLASMA",
+      "content_ids": [
+        "c03"
+      ],
+      "art_asset": "plasma",
+      "event_depictions": [],
+      "anchor": "中心 대상과 색·광원의 연결",
+      "note": "부분에서 전체로"
+    }
+  ],
+  "audio": {
+    "bpm": 84,
+    "motif": [
+      72,
+      79,
+      76,
+      74,
+      67,
+      72,
+      74,
+      76
+    ],
+    "description": "희소한 벨 동기, 낮은 지속 화음, 문장 전환의 여백. 사건에만 효과음.",
+    "sections": [
+      {
+        "start": 0,
+        "end": 5,
+        "energy": 0.45,
+        "transpose": 0,
+        "chord": [
+          45,
+          52,
+          60
+        ]
+      },
+      {
+        "start": 5,
+        "end": 10,
+        "energy": 0.6,
+        "transpose": 0,
+        "chord": [
+          48,
+          55,
+          62
+        ]
+      },
+      {
+        "start": 10,
+        "end": 15,
+        "energy": 0.5,
+        "transpose": 0,
+        "chord": [
+          50,
+          57,
+          65
+        ]
+      },
+      {
+        "start": 15,
+        "end": 20,
+        "energy": 0.7,
+        "transpose": -2,
+        "chord": [
+          45,
+          52,
+          60
+        ]
+      }
+    ],
+    "cues": [
+      {
+        "time": 5,
+        "kind": "whoosh",
+        "duration": 0.7
+      },
+      {
+        "time": 10,
+        "kind": "whoosh",
+        "duration": 1
+      },
+      {
+        "time": 15,
+        "kind": "chime",
+        "duration": 0.9
+      },
+      {
+        "time": 17.6,
+        "kind": "whoosh",
+        "duration": 1.1
+      }
+    ],
+    "silence": []
+  },
+  "renderer": "image-composite",
+  "style_pack": "generated_material_poetry",
+  "end_title": "MATTER",
+  "material_flow": true,
+  "flow_preview": false
+}
