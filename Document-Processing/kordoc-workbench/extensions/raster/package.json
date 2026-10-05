@@ -1,0 +1,8 @@
+{
+  "name": "kordoc-workbench-raster",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "sharp": "0.35.5"
+  }
+}

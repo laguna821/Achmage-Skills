@@ -1,8 +1,14 @@
 # Achmage-Skills
 
-안창현 (Achmage)의 Codex·Claude Code 제작 스킬 모음.
+안창현 (Achmage) 의 AI 스킬 모음. 스킬별로 지원하는 실행 환경과 설치 방법을 확인하세요.
 
 ## 📦 수록 스킬
+
+### [Document-Processing/kordoc-workbench](Document-Processing) — 한글 양식 분석·HWPX 보고서 (0.2.0)
+
+참조 HWP/HWPX 양식을 분석하고 Markdown을 같은 스타일의 보고서로 조판합니다. **기본 ZIP 1.04MB**에 공식 kordoc 4.18.13 엔진과 공문서·양식·검증 기능을 포함하며 OCR·PDF 확장은 필요할 때 준비합니다. Codex·Claude Code·코드 실행 가능한 Claude/ChatGPT 웹에서 사용합니다.
+→ [설치·사용 안내](Document-Processing/README.md) · [기본 ZIP](Document-Processing/downloads/kordoc-workbench-0.2.0-core.zip) · [검증 범위](Document-Processing/VALIDATION.md)
+
 
 ### [Video-Production/motion-art-director](Video-Production/motion-art-director) — 기획부터 영상·음향·수정까지 (3.0.0-rc.1)
 
@@ -43,7 +49,7 @@ Codex·Claude Code 공통 설치와 Claude 플러그인을 제공합니다. 전�
 
 ## 🚀 빠른 설치 (Claude Code)
 
-> 플러그인은 아래 목록에서 필요한 것만 설치하세요. Motion Art Director의 Node·Chromium·FFmpeg 설정은 [별도 설치 안내](Video-Production/motion-art-director/README.md)를 따릅니다. Codex 전용 화이트보드 스킬은 해당 폴더의 설치 절차를 사용합니다.
+> 아래는 Claude Code용 설치 방법입니다. kordoc-workbench의 1.04MB ZIP·Codex·웹 설치는 [전용 안내](Document-Processing/README.md)를 참조하세요. Motion Art Director의 Node·Chromium·FFmpeg 설정은 [설치 안내](Video-Production/motion-art-director/README.md)를 따릅니다. 다른 스킬도 각 폴더의 지원 환경을 확인하세요.
 
 ```bash
 # 방법 A — npx (가장 간단)
@@ -57,6 +63,7 @@ npx skills add laguna821/Achmage-Skills
 /plugin install component-consulting-v3@achmage-skills
 /plugin install render-audit@achmage-skills
 /plugin install insta-cardnews@achmage-skills
+/plugin install kordoc-workbench@achmage-skills
 /plugin install motion-art-director@achmage-skills
 ```
 
@@ -81,4 +88,6 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 
 ## License
 
-저장소 기본: Apache-2.0 — [LICENSE](LICENSE). 개별 스킬의 LICENSE가 우선합니다. Motion Art Director 신규 코드는 MIT, 도감·폰트·음원·상표 등은 [별도 조건](Video-Production/motion-art-director/THIRD_PARTY_NOTICES.md)을 따릅니다.
+기본 라이선스는 Apache-2.0 — [LICENSE](LICENSE). 개별 스킬과 포함된 외부 코드에는 해당 폴더의 라이선스·고지가 우선합니다. kordoc-workbench는 MIT와 포함된 의존성 라이선스를 따릅니다.
+
+Motion Art Director 신규 코드는 MIT이며, 도감·폰트·음악·상표는 [개별 고지](Video-Production/motion-art-director/THIRD_PARTY_NOTICES.md)를 따릅니다.

@@ -1,0 +1,3 @@
+# Preserve verified release bytes, including upstream license whitespace and CRLF.
+kordoc-workbench/** -text -whitespace
+downloads/*.zip -text
