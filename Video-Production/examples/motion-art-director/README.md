@@ -22,3 +22,18 @@
 - 책·항공·체 거르기 음악/효과음은 로컬 합성입니다.
 
 자동 디코딩·신호 검사와 인간의 전체 감상 검토는 별개입니다. [자동차 측정](grandeur-qa.json) · [책 측정](book-review.json).
+
+## 이전 음악 비교·분리 음향
+
+이 폴더의 추가 MP4/M4A는 갤러리의 이전 실험과 분리 청취 파일입니다. [작품별 문맥과 출처](https://motion-art-director-review-oct05.achmage2.chatgpt.site/experiments.html) · [12초 음악 비교](https://motion-art-director-review-oct05.achmage2.chatgpt.site/music.html).
+
+- car-review.mp4 및 car-catalyst.m4a: “Catalyst” by Scott Buckley — https://www.scottbuckley.com.au/library/catalyst/ .
+- car-phase-shift.m4a: “Phase Shift” by Scott Buckley — https://www.scottbuckley.com.au/library/phase-shift/ .
+- car-signal-to-noise.m4a: “Signal to Noise” by Scott Buckley — https://www.scottbuckley.com.au/library/signal-to-noise/ .
+- 위 Scott Buckley 음악 모두 CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ . Edited excerpts, fades, gain changes and original synthesized SFX.
+- deep-dirty-12 MP4/M4A: “Deep and Dirty” Kevin MacLeod (incompetech.com), https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1900021 , CC BY 4.0. Edited excerpt and gain changes.
+- shiny-tech-12 MP4/M4A: “Shiny Tech II” Kevin MacLeod (incompetech.com), https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1100077 , CC BY 4.0. Edited excerpt and gain changes.
+- exit-premises-12 MP4/M4A 및 grandeur-music.m4a: 위 Exit the Premises 크레딧·CC BY 4.0·144 BPM 편집 조건 적용.
+- music-only.m4a·sfx-only.m4a는 책 제작용 자체 합성 음원. car-sfx.m4a·grandeur-sfx.m4a는 자체 합성 효과음이며 실제 차량 녹음이 아닙니다.
+
+미디어는 GitHub Pages의 Range 응답으로 제공하며 갤러리에서 로그인 없이 재생·탐색합니다.
