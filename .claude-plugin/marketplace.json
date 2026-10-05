@@ -5,8 +5,8 @@
     "email": "laguna821@gmail.com"
   },
   "metadata": {
-    "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등.",
-    "version": "1.3.1"
+    "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등. Motion Art Director: 모션그래픽 기획·영상·음향·검수.",
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -88,6 +88,26 @@
         "contrast",
         "frontend",
         "design-consulting",
+        "claude-code"
+      ]
+    },
+    {
+      "name": "motion-art-director",
+      "source": "./Video-Production/motion-art-director",
+      "description": "Codex/Claude Code motion graphics: art direction, SVG CPU rendering, optional Skia/spatial cameras, music/SFX, review and revisions.",
+      "version": "3.0.0-rc.1",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Video-Production/motion-art-director",
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "motion-graphics",
+        "video",
+        "svg",
+        "audio",
+        "codex",
         "claude-code"
       ]
     }

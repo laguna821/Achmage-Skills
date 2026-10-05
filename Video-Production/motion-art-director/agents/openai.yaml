@@ -1,0 +1,7 @@
+interface:
+  display_name: "Motion Art Director"
+  short_description: "기획·검토부터 음악·영상 제작과 일곱 출력까지 이어지는 모션그래픽 스킬"
+  brand_color: "#143B37"
+  default_prompt: "$motion-art-director로 이 내용을 기획하고, 연출안 검토를 거쳐 실제 모션그래픽 결과물로 만들어줘."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,66 @@
+{
+  "film": {
+    "duration": 150,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "frames": 4500,
+    "sha256": "94e41b629fae5fd4220e32c2ad13d1ac81fb452109b29b639975588f158dc275",
+    "bytes": 12597726
+  },
+  "sound": {
+    "new_score_notes": 414,
+    "new_cues": 98,
+    "loudness_lufs": "-18.10",
+    "true_peak_dbtp": "-1.88",
+    "separate_stems": true
+  },
+  "validation": {
+    "full_decode": "passed",
+    "source_frames_inspected": 36,
+    "boundary_frames_inspected": 44,
+    "adversarial": 29,
+    "existing_regressions": 22,
+    "total_test_groups": 51,
+    "packaged_copy": "all passed",
+    "actual_caption_revision": {
+      "reused_cuts": 10,
+      "rerendered": [
+        "colour",
+        "printing"
+      ]
+    },
+    "actual_audio_revision": {
+      "reused_cuts": 12,
+      "new_music": true
+    },
+    "source_and_original_film_preserved": true,
+    "mobile_viewports": [
+      [
+        390,
+        844
+      ],
+      [
+        844,
+        390
+      ],
+      [
+        1280,
+        800
+      ]
+    ],
+    "range_requests": "206 passed"
+  },
+  "catalog": {
+    "preserved_cards": 637,
+    "preserved_clips": 128,
+    "preserved_recipes": 11,
+    "applied_techniques": 14,
+    "meaning": "Selected principles authored for this topic. Not all 637 effects are executable or aesthetically approved."
+  },
+  "limitations": {
+    "aesthetic": "user review pending",
+    "full_human_listening": "pending",
+    "integrated_gpu_16gb_laptop": "not measured; CPU GPU-disabled test used current desktop"
+  }
+}

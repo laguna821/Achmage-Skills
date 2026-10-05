@@ -1,0 +1,202 @@
+{
+  "schema_version": "3.0.0",
+  "project_id": "water-cycle-public",
+  "revision": 2,
+  "status": "draft",
+  "title": "도시의 물은 어디로 갈까요?",
+  "label": "WATER / EXPLAINER",
+  "audience": "중학생",
+  "direction": "중학생용 자체 작성 설명: 사용→처리→재이용 관계를 순서로 표현하고, 가상 시설의 처리수 재이용률을 단위와 분모를 명시해 비교한다.",
+  "visual_policy": "strict_svg",
+  "render_network": "local_only",
+  "seed": 2405,
+  "routes": [
+    "video-editing",
+    "promo",
+    "shorts",
+    "newsletter",
+    "infographic",
+    "thumbnail",
+    "deck-and-site"
+  ],
+  "profile": {
+    "jobs": 1,
+    "gpu": false,
+    "draftWidth": 1280,
+    "draftHeight": 720
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_frames": 900
+  },
+  "sources": [
+    {
+      "source_id": "author",
+      "title": "기능 검증을 위한 자체 작성 설명",
+      "retrieval_state": "authored",
+      "locator": "transfer fixture"
+    }
+  ],
+  "content_units": [
+    {
+      "content_id": "c01",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_text": "도시의 물은 사용·처리·재이용을 거칩니다.",
+      "display_text": "도시의 물은 사용·처리·재이용을 거칩니다.",
+      "copy_lock": false
+    },
+    {
+      "content_id": "c02",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_text": "처리된 물은 용도에 맞춰 다시 쓰입니다.",
+      "display_text": "처리된 물은 용도에 맞춰 다시 쓰입니다.",
+      "copy_lock": false
+    },
+    {
+      "content_id": "c03",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_text": "가상 시설 재이용률: A 28% · B 46% · C 73%",
+      "display_text": "가상 시설 재이용률: A 28% · B 46% · C 73%",
+      "copy_lock": true
+    }
+  ],
+  "required_content_ids": [
+    "c01",
+    "c02",
+    "c03"
+  ],
+  "events": [],
+  "omissions": [],
+  "assets": [],
+  "footer": "기능 검증용 자체 작성 예시 · 수치는 가상 값",
+  "scenes": [
+    {
+      "id": "s01",
+      "start": 0,
+      "end": 300,
+      "mode": "route",
+      "hero": "순환",
+      "content_ids": [
+        "c01"
+      ],
+      "note": "사용 → 처리 → 재이용",
+      "deck": {
+        "kind": "cover",
+        "body": "사용한 물은 처리 단계를 거쳐 적절한 용도로 연결된다."
+      }
+    },
+    {
+      "id": "s02",
+      "start": 300,
+      "end": 600,
+      "mode": "liquid",
+      "hero": "흐름",
+      "content_ids": [
+        "c02"
+      ],
+      "note": "처리된 물을 적절한 용도로 연결",
+      "deck": {
+        "kind": "steps",
+        "items": [
+          {
+            "label": "사용",
+            "text": "생활과 시설에서 물을 사용한다."
+          },
+          {
+            "label": "처리",
+            "text": "사용한 물을 처리한다."
+          },
+          {
+            "label": "재이용",
+            "text": "처리된 물을 목적에 맞는 용도로 연결한다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "start": 600,
+      "end": 900,
+      "mode": "data",
+      "hero": "다시 쓰다",
+      "content_ids": [
+        "c03"
+      ],
+      "values": [
+        28,
+        46,
+        73
+      ],
+      "labels": [
+        "가상 A",
+        "가상 B",
+        "가상 C"
+      ],
+      "note": "재이용량 ÷ 처리수량 × 100 · 실제 측정자료 아님",
+      "unit": "%",
+      "deck": {
+        "kind": "metrics",
+        "title": "가상 시설의 재이용률",
+        "body": "재이용량 ÷ 처리수량 × 100",
+        "items": [
+          {
+            "value": "28%",
+            "label": "시설 A",
+            "text": "가상 값"
+          },
+          {
+            "value": "46%",
+            "label": "시설 B",
+            "text": "가상 값"
+          },
+          {
+            "value": "73%",
+            "label": "시설 C",
+            "text": "가상 값"
+          }
+        ],
+        "source": "비교 기능용 예시 · 실제 측정자료 아님"
+      }
+    }
+  ],
+  "audio": {
+    "bpm": 80,
+    "motif": [
+      72,
+      76,
+      79,
+      76
+    ],
+    "description": "가벼운 반복 동기와 경로의 전환",
+    "sections": [
+      {
+        "start": 0,
+        "end": 30,
+        "energy": 0.55,
+        "chord": [
+          48,
+          55,
+          60
+        ]
+      }
+    ],
+    "cues": [
+      {
+        "time": 10.35,
+        "kind": "whoosh"
+      },
+      {
+        "time": 20.35,
+        "kind": "chime"
+      }
+    ],
+    "silence": []
+  },
+  "renderer": "cinematic",
+  "style_pack": "water_explainer"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "motion-art-director",
+  "version": "3.0.0-rc.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "doctor": "node scripts/motion.mjs doctor"
+  },
+  "dependencies": {
+    "playwright": "1.62.1"
+  },
+  "license": "MIT"
+}

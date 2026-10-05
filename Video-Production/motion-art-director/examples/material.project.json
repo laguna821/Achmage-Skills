@@ -1,0 +1,426 @@
+{
+  "schema_version": "3.0.0",
+  "project_id": "material-vector-20s",
+  "revision": 1,
+  "status": "draft",
+  "title": "형태에서 관계로",
+  "label": "MATTER / THREE STATES",
+  "audience": "일반 독자",
+  "direction": "R1 재검토: 고정된 제목/삽화/설명 구조를 제거. 중앙 결정의 반사와 타이포 가림, 금속 방울의 분리, 화면으로 퍼지는 대기, 열의 근접 질감에서 별로의 연결을 절차적 SVG로 연출.",
+  "visual_policy": "strict_svg",
+  "render_network": "local_only",
+  "seed": 9156,
+  "routes": [
+    "video-editing",
+    "promo",
+    "shorts",
+    "newsletter",
+    "infographic",
+    "thumbnail",
+    "deck-and-site"
+  ],
+  "profile": {
+    "jobs": 1,
+    "gpu": false,
+    "draftWidth": 1280,
+    "draftHeight": 720
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_frames": 600
+  },
+  "sources": [
+    {
+      "source_id": "author",
+      "title": "PRD v2의 자체 작성 시나리오",
+      "locator": "PRD v2 / example design",
+      "retrieval_state": "authored",
+      "raw_sha256": null,
+      "role": "content"
+    }
+  ],
+  "content_units": [
+    {
+      "content_id": "c01",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_locator": "Example content unit 1; display text is a design proposal unless explicitly quoted",
+      "source_text": "형태가 생기고",
+      "display_text": "형태가 생기고",
+      "copy_lock": false,
+      "delivery": "screen_text"
+    },
+    {
+      "content_id": "c02",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_locator": "Example content unit 2; display text is a design proposal unless explicitly quoted",
+      "source_text": "성질이 바뀌고",
+      "display_text": "성질이 바뀌고",
+      "copy_lock": false,
+      "delivery": "screen_text"
+    },
+    {
+      "content_id": "c03",
+      "kind": "interpretation",
+      "source_ref": "author",
+      "source_locator": "Example content unit 3; display text is a design proposal unless explicitly quoted",
+      "source_text": "더 큰 관계가 드러납니다.",
+      "display_text": "더 큰 관계가 드러납니다.",
+      "copy_lock": false,
+      "delivery": "screen_text"
+    }
+  ],
+  "required_content_ids": [
+    "c01",
+    "c02",
+    "c03"
+  ],
+  "omissions": [],
+  "events": [],
+  "assets": [],
+  "footer": "자체 작성 연출 · 절차적 SVG",
+  "scenes": [
+    {
+      "id": "s01",
+      "start": 0,
+      "end": 180,
+      "mode": "crystal",
+      "hero": "FORM",
+      "content_ids": [
+        "c01"
+      ],
+      "event_depictions": [],
+      "anchor": "중심 대상·구도·조명 연결",
+      "note": "면과 빛",
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#07121a",
+        "defs": "<linearGradient id=\"metal\"><stop stop-color=\"#0c2036\"/><stop offset=\".3\" stop-color=\"#ecf7fc\"/><stop offset=\".5\" stop-color=\"#183c50\"/><stop offset=\".7\" stop-color=\"#b1dce4\"/><stop offset=\"1\" stop-color=\"#152638\"/></linearGradient><radialGradient id=\"mist\"><stop stop-color=\"#e7d4b0\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#58727b\" stop-opacity=\"0\"/></radialGradient><filter id=\"soft\"><feGaussianBlur stdDeviation=\"3\"/></filter><radialGradient id=\"sun\"><stop stop-color=\"#fff4ac\"/><stop offset=\"1\" stop-color=\"#d77033\"/></radialGradient>",
+        "layers": [
+          {
+            "kind": "procedural",
+            "mode": "crystal",
+            "x": 960,
+            "y": 500,
+            "scale": 1.25,
+            "pivot": [
+              0,
+              0
+            ],
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 1.65
+              },
+              {
+                "at": 4.5,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "c01",
+            "position": [
+              960,
+              960
+            ],
+            "size": 40,
+            "color": "#eceddf"
+          }
+        ]
+      },
+      "portrait_composition": {
+        "width": 1080,
+        "height": 1920,
+        "background": "#07121a",
+        "defs": "<linearGradient id=\"metal\"><stop stop-color=\"#0c2036\"/><stop offset=\".3\" stop-color=\"#ecf7fc\"/><stop offset=\".5\" stop-color=\"#183c50\"/><stop offset=\".7\" stop-color=\"#b1dce4\"/><stop offset=\"1\" stop-color=\"#152638\"/></linearGradient><radialGradient id=\"mist\"><stop stop-color=\"#e7d4b0\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#58727b\" stop-opacity=\"0\"/></radialGradient><filter id=\"soft\"><feGaussianBlur stdDeviation=\"3\"/></filter><radialGradient id=\"sun\"><stop stop-color=\"#fff4ac\"/><stop offset=\"1\" stop-color=\"#d77033\"/></radialGradient>",
+        "layers": [
+          {
+            "kind": "procedural",
+            "mode": "crystal",
+            "x": 540,
+            "y": 720,
+            "scale": 1.25,
+            "pivot": [
+              0,
+              0
+            ],
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 1.65
+              },
+              {
+                "at": 4.5,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "c01",
+            "position": [
+              540,
+              1500
+            ],
+            "size": 48,
+            "color": "#eceddf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s02",
+      "start": 180,
+      "end": 360,
+      "mode": "liquid",
+      "hero": "FLOW",
+      "content_ids": [
+        "c02"
+      ],
+      "event_depictions": [],
+      "anchor": "중심 대상·구도·조명 연결",
+      "note": "윤곽과 반사",
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#07121a",
+        "defs": "<linearGradient id=\"metal\"><stop stop-color=\"#0c2036\"/><stop offset=\".3\" stop-color=\"#ecf7fc\"/><stop offset=\".5\" stop-color=\"#183c50\"/><stop offset=\".7\" stop-color=\"#b1dce4\"/><stop offset=\"1\" stop-color=\"#152638\"/></linearGradient><radialGradient id=\"mist\"><stop stop-color=\"#e7d4b0\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#58727b\" stop-opacity=\"0\"/></radialGradient><filter id=\"soft\"><feGaussianBlur stdDeviation=\"3\"/></filter><radialGradient id=\"sun\"><stop stop-color=\"#fff4ac\"/><stop offset=\"1\" stop-color=\"#d77033\"/></radialGradient>",
+        "layers": [
+          {
+            "kind": "procedural",
+            "mode": "liquid",
+            "x": 960,
+            "y": 500,
+            "scale": 1.25,
+            "pivot": [
+              0,
+              0
+            ],
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 1.65
+              },
+              {
+                "at": 4.5,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "c02",
+            "position": [
+              960,
+              960
+            ],
+            "size": 40,
+            "color": "#eceddf"
+          }
+        ]
+      },
+      "portrait_composition": {
+        "width": 1080,
+        "height": 1920,
+        "background": "#07121a",
+        "defs": "<linearGradient id=\"metal\"><stop stop-color=\"#0c2036\"/><stop offset=\".3\" stop-color=\"#ecf7fc\"/><stop offset=\".5\" stop-color=\"#183c50\"/><stop offset=\".7\" stop-color=\"#b1dce4\"/><stop offset=\"1\" stop-color=\"#152638\"/></linearGradient><radialGradient id=\"mist\"><stop stop-color=\"#e7d4b0\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#58727b\" stop-opacity=\"0\"/></radialGradient><filter id=\"soft\"><feGaussianBlur stdDeviation=\"3\"/></filter><radialGradient id=\"sun\"><stop stop-color=\"#fff4ac\"/><stop offset=\"1\" stop-color=\"#d77033\"/></radialGradient>",
+        "layers": [
+          {
+            "kind": "procedural",
+            "mode": "liquid",
+            "x": 540,
+            "y": 720,
+            "scale": 1.25,
+            "pivot": [
+              0,
+              0
+            ],
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 1.65
+              },
+              {
+                "at": 4.5,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "c02",
+            "position": [
+              540,
+              1500
+            ],
+            "size": 48,
+            "color": "#eceddf"
+          }
+        ]
+      }
+    },
+    {
+      "id": "s03",
+      "start": 360,
+      "end": 600,
+      "mode": "star",
+      "hero": "ENERGY",
+      "content_ids": [
+        "c03"
+      ],
+      "event_depictions": [],
+      "anchor": "중심 대상·구도·조명 연결",
+      "note": "부분에서 더 큰 관계로",
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#07121a",
+        "defs": "<linearGradient id=\"metal\"><stop stop-color=\"#0c2036\"/><stop offset=\".3\" stop-color=\"#ecf7fc\"/><stop offset=\".5\" stop-color=\"#183c50\"/><stop offset=\".7\" stop-color=\"#b1dce4\"/><stop offset=\"1\" stop-color=\"#152638\"/></linearGradient><radialGradient id=\"mist\"><stop stop-color=\"#e7d4b0\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#58727b\" stop-opacity=\"0\"/></radialGradient><filter id=\"soft\"><feGaussianBlur stdDeviation=\"3\"/></filter><radialGradient id=\"sun\"><stop stop-color=\"#fff4ac\"/><stop offset=\"1\" stop-color=\"#d77033\"/></radialGradient>",
+        "layers": [
+          {
+            "kind": "procedural",
+            "mode": "star",
+            "x": 960,
+            "y": 500,
+            "scale": 1.25,
+            "pivot": [
+              0,
+              0
+            ],
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 1.65
+              },
+              {
+                "at": 4.5,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "c03",
+            "position": [
+              960,
+              960
+            ],
+            "size": 40,
+            "color": "#eceddf"
+          }
+        ]
+      },
+      "portrait_composition": {
+        "width": 1080,
+        "height": 1920,
+        "background": "#07121a",
+        "defs": "<linearGradient id=\"metal\"><stop stop-color=\"#0c2036\"/><stop offset=\".3\" stop-color=\"#ecf7fc\"/><stop offset=\".5\" stop-color=\"#183c50\"/><stop offset=\".7\" stop-color=\"#b1dce4\"/><stop offset=\"1\" stop-color=\"#152638\"/></linearGradient><radialGradient id=\"mist\"><stop stop-color=\"#e7d4b0\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#58727b\" stop-opacity=\"0\"/></radialGradient><filter id=\"soft\"><feGaussianBlur stdDeviation=\"3\"/></filter><radialGradient id=\"sun\"><stop stop-color=\"#fff4ac\"/><stop offset=\"1\" stop-color=\"#d77033\"/></radialGradient>",
+        "layers": [
+          {
+            "kind": "procedural",
+            "mode": "star",
+            "x": 540,
+            "y": 720,
+            "scale": 1.25,
+            "pivot": [
+              0,
+              0
+            ],
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 1.65
+              },
+              {
+                "at": 4.5,
+                "scale": 1.05
+              }
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "c03",
+            "position": [
+              540,
+              1500
+            ],
+            "size": 48,
+            "color": "#eceddf"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "bpm": 84,
+    "motif": [
+      72,
+      79,
+      76,
+      74,
+      67,
+      72,
+      74,
+      76
+    ],
+    "description": "희소한 벨 동기, 낮은 지속 화음, 문장 전환의 여백. 사건에만 효과음.",
+    "sections": [
+      {
+        "start": 0,
+        "end": 6,
+        "energy": 0.65,
+        "transpose": 0,
+        "chord": [
+          45,
+          52,
+          60
+        ]
+      },
+      {
+        "start": 6,
+        "end": 12,
+        "energy": 0.65,
+        "transpose": 0,
+        "chord": [
+          48,
+          55,
+          62
+        ]
+      },
+      {
+        "start": 12,
+        "end": 20,
+        "energy": 0.65,
+        "transpose": -2,
+        "chord": [
+          45,
+          52,
+          60
+        ]
+      }
+    ],
+    "cues": [
+      {
+        "time": 6.35,
+        "kind": "whoosh",
+        "duration": 0.8,
+        "event_id": null
+      },
+      {
+        "time": 12.35,
+        "kind": "chime",
+        "duration": 0.8,
+        "event_id": null
+      }
+    ],
+    "silence": []
+  },
+  "renderer": "vector-composite",
+  "style_pack": "material_poetry"
+}

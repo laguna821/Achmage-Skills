@@ -1,0 +1,192 @@
+{
+  "full_decode": "passed",
+  "frames": 4500,
+  "seconds": 150,
+  "full_resolution": "1920x1080",
+  "mobile_resolution": "1280x720",
+  "mobile_bytes": 22140766,
+  "reused_cuts": 44,
+  "rerendered_cuts": [
+    "settle",
+    "hero-end"
+  ],
+  "audio": {
+    "music": {
+      "launch": {
+        "peak": 0.44000244140625,
+        "peak_dbfs": -7.130898275443485,
+        "rms_dbfs": -20.090485863151294,
+        "exact_zero": false
+      },
+      "drift": {
+        "peak": 0.4453125,
+        "peak_dbfs": -7.026702279507539,
+        "rms_dbfs": -19.23624825644664,
+        "exact_zero": false
+      },
+      "prestop": {
+        "peak": 0.422119140625,
+        "peak_dbfs": -7.491299093877036,
+        "rms_dbfs": -18.75331975287579,
+        "exact_zero": false
+      },
+      "pause": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      },
+      "logo": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      },
+      "tail": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      }
+    },
+    "sfx": {
+      "launch": {
+        "peak": 0.180419921875,
+        "peak_dbfs": -14.874310191458973,
+        "rms_dbfs": -22.98543005263129,
+        "exact_zero": false
+      },
+      "drift": {
+        "peak": 0.340606689453125,
+        "peak_dbfs": -9.354936536508271,
+        "rms_dbfs": -18.93593693897458,
+        "exact_zero": false
+      },
+      "prestop": {
+        "peak": 0.055908203125,
+        "peak_dbfs": -25.05048931255773,
+        "rms_dbfs": -35.07448601026789,
+        "exact_zero": false
+      },
+      "pause": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      },
+      "logo": {
+        "peak": 0.02752685546875,
+        "peak_dbfs": -31.204867948355528,
+        "rms_dbfs": -42.71490267613739,
+        "exact_zero": false
+      },
+      "tail": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      }
+    },
+    "mix": {
+      "launch": {
+        "peak": 0.475433349609375,
+        "peak_dbfs": -6.458207152899984,
+        "rms_dbfs": -18.697374346610065,
+        "exact_zero": false
+      },
+      "drift": {
+        "peak": 0.53997802734375,
+        "peak_dbfs": -5.3524782404855245,
+        "rms_dbfs": -16.445846744714473,
+        "exact_zero": false
+      },
+      "prestop": {
+        "peak": 0.5302734375,
+        "peak_dbfs": -5.5100025410193,
+        "rms_dbfs": -16.81580872414091,
+        "exact_zero": false
+      },
+      "pause": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      },
+      "logo": {
+        "peak": 0.0340576171875,
+        "peak_dbfs": -29.35571480716316,
+        "rms_dbfs": -40.86492451976831,
+        "exact_zero": false
+      },
+      "tail": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      }
+    },
+    "aac": {
+      "launch": {
+        "peak": 0.4569091796875,
+        "peak_dbfs": -6.803402330346673,
+        "rms_dbfs": -18.73793880245471,
+        "exact_zero": false
+      },
+      "drift": {
+        "peak": 0.540435791015625,
+        "peak_dbfs": -5.345117940377215,
+        "rms_dbfs": -16.506276647036948,
+        "exact_zero": false
+      },
+      "prestop": {
+        "peak": 0.5572509765625,
+        "peak_dbfs": -5.078983235228756,
+        "rms_dbfs": -16.889681365240257,
+        "exact_zero": false
+      },
+      "pause": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      },
+      "logo": {
+        "peak": 0.040374755859375,
+        "peak_dbfs": -27.87780181544434,
+        "rms_dbfs": -40.969838608113555,
+        "exact_zero": false
+      },
+      "tail": {
+        "peak": 0,
+        "peak_dbfs": null,
+        "rms_dbfs": null,
+        "exact_zero": true
+      }
+    }
+  },
+  "encoded_loudness": {
+    "input_i": "-16.08",
+    "input_tp": "-4.49",
+    "input_lra": "2.30",
+    "input_thresh": "-26.14",
+    "output_i": "-15.71",
+    "output_tp": "-4.11",
+    "output_lra": "2.40",
+    "output_thresh": "-25.77",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.29"
+  },
+  "ending": {
+    "stop": 140.5,
+    "music_cut": 140.5,
+    "quiet": 140.7,
+    "logo": 143,
+    "tail": 148
+  },
+  "reviews": {
+    "sampled_frames": "inspected",
+    "listening": "user chose 12s C; full listening pending",
+    "aesthetic": "pending",
+    "notebook": "not measured"
+  }
+}

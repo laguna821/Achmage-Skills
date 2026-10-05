@@ -1,8 +1,18 @@
 # Achmage-Skills
 
-안창현 (Achmage) 의 Claude 스킬 모음.
+안창현 (Achmage)의 Codex·Claude Code 제작 스킬 모음.
 
 ## 📦 수록 스킬
+
+### [Video-Production/motion-art-director](Video-Production/motion-art-director) — 기획부터 영상·음향·수정까지 (3.0.0-rc.1)
+
+내용에 맞는 사물과 행동을 그리는 연출, SVG·CPU 제작, 선택 Skia·공간 카메라, 음악과 효과음, 정지·무음·로고 엔딩, 부분 수정과 검수를 연결합니다. awesome-ai-motion의 637개 카드·128개 클립·11개 레시피도 출처와 함께 보존합니다.
+
+**[공개 영상 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/)** · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [책 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#book) · [항공](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#flight) · [물 거르기](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#water) · [Release·설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)
+
+[<img src="Video-Production/examples/motion-art-director/grandeur-poster.jpg" width="49%" alt="자동차 150초 제작 연구작">](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) [<img src="Video-Production/examples/motion-art-director/book.png" width="49%" alt="책 제작 150초">](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#book)
+
+Codex·Claude Code 공통 설치와 Claude 플러그인을 제공합니다. 전용 GPU·Blender는 필수가 아닙니다. **시험판**이며 실제 내장 그래픽·16GB 노트북 실측은 남아 있습니다. 자동차는 공간 렌더 확장을 쓴 비공식 연구작입니다. [설치·검증 범위](Video-Production/motion-art-director/README.md).
 
 ### [Presentation/achmage-presentation](Presentation/achmage-presentation) — 독립 발표자료 전체 세트 (1.0.0)
 
@@ -33,7 +43,7 @@
 
 ## 🚀 빠른 설치 (Claude Code)
 
-> 아래 3법은 Claude 스킬 3종(`raw-5-html` · `component-consulting` · `insta-cardnews`)용. **Codex CLI 전용**인 `achmage-whiteboard-video` 는 [Video-Production/README.md](Video-Production/README.md)의 설치 절차를 따른다.
+> 플러그인은 아래 목록에서 필요한 것만 설치하세요. Motion Art Director의 Node·Chromium·FFmpeg 설정은 [별도 설치 안내](Video-Production/motion-art-director/README.md)를 따릅니다. Codex 전용 화이트보드 스킬은 해당 폴더의 설치 절차를 사용합니다.
 
 ```bash
 # 방법 A — npx (가장 간단)
@@ -47,6 +57,7 @@ npx skills add laguna821/Achmage-Skills
 /plugin install component-consulting-v3@achmage-skills
 /plugin install render-audit@achmage-skills
 /plugin install insta-cardnews@achmage-skills
+/plugin install motion-art-director@achmage-skills
 ```
 
 ```bash
@@ -59,6 +70,8 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 
 ## 🖼 예시
 
+- [Motion Art Director 공개 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) — 자동차·책 150초, 항공·물 설명 영상과 음향 비교. [저장소 영상 파일](Video-Production/examples/motion-art-director).
+
 - [`Image-HTML/examples/`](Image-HTML/examples) — 정전 샘플 덱(V7 / V8 / University AX / Street) + 원본 GPTs Raw5 프롬프트 팩 + 검증용 “민주주의” · “행동경제학” 덱
 - [`Design-Consulting/examples/`](Design-Consulting/examples) — **v3 풀 파이프라인 쇼케이스 2종**: [잔광 殘光 — 가상 전시 full exhibition](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/janggwang-exhibition/) (방 8개 × 상이한 감상 장치 + 3D 복도) · [Educational Harness Engineering](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/educational-harness-engineering/) (Mode A 논증형 + 프릭션 로그) — 각각 도록/처방문/DESIGN.md/RAW-PROMPTS 전 과정 동봉. v1 계보: [골목 베이커리](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/golmok-bakery-deck/) · [SURGE EV](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/surge-ev/) · [Skill Landing](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/skill-landing-ach/)
 
@@ -68,4 +81,4 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 
 ## License
 
-Apache-2.0 — [LICENSE](LICENSE).
+저장소 기본: Apache-2.0 — [LICENSE](LICENSE). 개별 스킬의 LICENSE가 우선합니다. Motion Art Director 신규 코드는 MIT, 도감·폰트·음원·상표 등은 [별도 조건](Video-Production/motion-art-director/THIRD_PARTY_NOTICES.md)을 따릅니다.

@@ -1,0 +1,164 @@
+{
+  "schema_version": "3.0.0",
+  "project_id": "flow-general-layers",
+  "revision": 2,
+  "status": "draft",
+  "title": "형태에서 관계로",
+  "label": "STATES OF MATTER",
+  "audience": "일반 독자",
+  "direction": "현재 사용자 제안에 따른 생성 원화 합성 벤치마크. 결정 전경/후경을 분리하고 제목을 사이에 둔다. 금속 링의 빈 공간·전경 가림, 연기의 밀도 마스크, 플라즈마 근접에서 작은 별로 이어지는 연결. 카메라와 레이어 움직임으로 연출하며 실제 유체 시뮬레이션이나 원화 밖 3D 회전은 하지 않는다.",
+  "visual_policy": "licensed_media",
+  "render_network": "local_only",
+  "seed": 9156,
+  "routes": [
+    "video-editing",
+    "promo",
+    "shorts",
+    "newsletter",
+    "infographic",
+    "thumbnail",
+    "deck-and-site"
+  ],
+  "profile": {
+    "jobs": 1,
+    "gpu": false,
+    "draftWidth": 1280,
+    "draftHeight": 720
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_frames": 180
+  },
+  "sources": [
+    {
+      "source_id": "author",
+      "title": "PRD v2의 자체 작성 시나리오",
+      "locator": "PRD v2 / example design",
+      "retrieval_state": "authored",
+      "raw_sha256": null,
+      "role": "content"
+    }
+  ],
+  "content_units": [
+    {
+      "content_id": "new-copy",
+      "source_ref": "author",
+      "source_text": "새로운 이미지에도 내부 흐름",
+      "display_text": "새로운 이미지에도 내부 흐름",
+      "copy_lock": false
+    }
+  ],
+  "required_content_ids": [
+    "new-copy"
+  ],
+  "omissions": [],
+  "events": [],
+  "assets": [
+    {
+      "asset_id": "new-flow-art",
+      "path": "skill:assets/art/gas.png",
+      "kind": "raster",
+      "origin": "generated",
+      "provider": "OpenAI built-in image_gen",
+      "prompt": "Use case: stylized-concept\nAsset type: cinematic motion graphics art plate, widescreen 16:9.\nPrimary request: breathtaking ivory vapor folding and billowing in near-black space. A sculptural horizontal smoke ribbon flowing from left to right, with a large curl at upper left, delicate whorls across center, one tall rolling column at right. Premium experimental title sequence art about gaseous matter.\nScene/backdrop: near-black aubergine-plum void. No floor/horizon.\nComposition: smoke occupies the central horizontal 80% width, middle 65% of height, floats fully inside frame. Deep negative space above and below. Thin ethereal translucent wisps on left, creamy dense cloud with fine curled filaments near right. Asymmetric balance, macro cinematic lighting.\nLighting: warm soft cream rim light from upper left, strong volumetric internal shadows and aubergine reflected light. Beautiful intricate turbulent filaments and folds, believable soft density; not a white cotton ball.\nMaterials: richly detailed fine aerosol vapor, photorealistic physical volumetric photograph, subtle film grain and depth of field.\nText: none; typography added separately.\nAvoid: text, logo, watermark, border, UI, vector illustration, neon, flame, explosion, storm sky, cartoon, plastic, gray fog over entire image.",
+      "provenance": "Native generated artwork, author prompts and original hashes retained",
+      "sha256": "cd277963d9941eb290cb6dbadca52b69a0f0572afaad61a24e9020c617f8ae59",
+      "width": 1672,
+      "height": 941,
+      "review": "visual_review_pending"
+    }
+  ],
+  "footer": "생성 원화 · 자체 작성 합성 연출",
+  "scenes": [
+    {
+      "id": "new-asset-name",
+      "start": 0,
+      "end": 180,
+      "mode": "composite",
+      "content_ids": [
+        "new-copy"
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#03060b",
+        "layers": [
+          {
+            "kind": "image",
+            "asset_id": "new-flow-art",
+            "motion": {
+              "preset": "smoke",
+              "intensity": 0.8,
+              "speed": 0.7,
+              "region": [
+                0.02,
+                0.02,
+                0.96,
+                0.96
+              ],
+              "pins": [
+                [
+                  0.5,
+                  0.5,
+                  0.08
+                ]
+              ]
+            },
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ]
+          },
+          {
+            "kind": "text",
+            "content_id": "new-copy",
+            "position": [
+              960,
+              960
+            ],
+            "size": 42,
+            "color": "#e9ddc7"
+          }
+        ]
+      }
+    }
+  ],
+  "audio": {
+    "bpm": 84,
+    "motif": [
+      72,
+      79,
+      76,
+      74,
+      67,
+      72,
+      74,
+      76
+    ],
+    "description": "희소한 벨 동기, 낮은 지속 화음, 문장 전환의 여백. 사건에만 효과음.",
+    "sections": [
+      {
+        "start": 0,
+        "end": 6,
+        "energy": 0.4,
+        "chord": [
+          45,
+          52,
+          60
+        ],
+        "transpose": 0
+      }
+    ],
+    "cues": [],
+    "silence": []
+  },
+  "renderer": "image-composite",
+  "style_pack": "generated_material_poetry",
+  "end_title": "MATTER",
+  "material_flow": true,
+  "flow_preview": false
+}

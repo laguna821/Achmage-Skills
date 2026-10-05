@@ -1,0 +1,27 @@
+{
+  "origin": "OpenAI native image generation",
+  "scope": "Authored material artwork for this package",
+  "assets": [
+    {
+      "file": "crystal-rear.png",
+      "sha256": "3b3696cd9fb14a46c4f322c1f844c677c6712614745cf627a50f1f16f3012c4d"
+    },
+    {
+      "file": "crystal.png",
+      "sha256": "60d72b72c70113d3b12d4ff75344bf77d77749e9214c41c3fe7024ab5871d965"
+    },
+    {
+      "file": "gas.png",
+      "sha256": "cd277963d9941eb290cb6dbadca52b69a0f0572afaad61a24e9020c617f8ae59"
+    },
+    {
+      "file": "liquid.png",
+      "sha256": "463abc0f4f544fcd559fac5d0b1d4e49d6f378f7dc77d8d8cfff22fcf0696c38"
+    },
+    {
+      "file": "plasma.png",
+      "sha256": "f29103ae464b464ce5f23ca47f9d097a12919c0e80cb8e117dab7ee7f46eedab"
+    }
+  ],
+  "prompts": "Individual example project asset records contain author prompts. Local session IDs omitted."
+}
