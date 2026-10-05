@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "nodes": {
+    "win32-x64": {
+      "url": "https://nodejs.org/dist/v22.23.3/node-v22.23.3-win-x64.zip",
+      "sha256": "2b0ff57b049cda1bbcea2240eec20467018713c1efe1f7360c2681859b90ed71",
+      "entry": "node-v22.23.3-win-x64/node.exe"
+    }
+  },
+  "browsers": {
+    "win32-x64": {
+      "version": "154.0.8037.92",
+      "url": "https://storage.googleapis.com/chrome-for-testing-public/154.0.8037.92/win64/chrome-headless-shell-win64.zip",
+      "sha256": "3ac2561f02d9d87aadc0399d00b9002d718a4c365624fa67db9e7bfaf6b1a568",
+      "entry": "chrome-headless-shell-win64/chrome-headless-shell.exe"
+    },
+    "linux-x64": {
+      "version": "154.0.8037.92",
+      "url": "https://storage.googleapis.com/chrome-for-testing-public/154.0.8037.92/linux64/chrome-headless-shell-linux64.zip",
+      "sha256": "636aa5c79f2693632e9921b8bbb050038ba11672e02346c06c20f991aed096f9",
+      "entry": "chrome-headless-shell-linux64/chrome-headless-shell"
+    }
+  },
+  "font": {
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/Variable/TTF/Subset/NotoSansKR-VF.ttf",
+    "sha256": "9e1d729e7e2b36f9ef439da102f8c134c10aabe46f1c843bf0aca5c043b86f76",
+    "license": "OFL-1.1"
+  }
+}

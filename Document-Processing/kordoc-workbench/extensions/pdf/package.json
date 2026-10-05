@@ -1,0 +1,9 @@
+{
+  "name": "kordoc-workbench-pdf",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "pdfjs-dist": "4.10.38",
+    "@hyzyla/pdfium": "2.1.13"
+  }
+}

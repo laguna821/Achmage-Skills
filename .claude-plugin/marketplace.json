@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등.",
-    "version": "1.3.1"
+    "version": "1.4.0"
   },
   "plugins": [
     {
@@ -89,6 +89,26 @@
         "frontend",
         "design-consulting",
         "claude-code"
+      ]
+    },
+    {
+      "name": "kordoc-workbench",
+      "description": "Analyze Korean HWP/HWPX forms and create deterministic HWPX reports from Markdown. Lightweight core with optional OCR/PDF extensions.",
+      "version": "0.2.0",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Document-Processing",
+      "license": "MIT",
+      "source": "./Document-Processing",
+      "category": "productivity",
+      "tags": [
+        "skill",
+        "hwp",
+        "hwpx",
+        "korean",
+        "document-processing",
+        "reports"
       ]
     }
   ]

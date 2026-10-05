@@ -1,0 +1,8 @@
+{
+  "name": "kordoc-workbench-print",
+  "version": "0.2.0",
+  "private": true,
+  "dependencies": {
+    "puppeteer-core": "24.39.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "kordoc-workbench",
+  "version": "0.2.0",
+  "description": "Analyze Korean HWP/HWPX forms and create deterministic HWPX reports from Markdown. Lightweight core with optional OCR/PDF extensions.",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Document-Processing",
+  "license": "MIT",
+  "keywords": [
+    "skill",
+    "hwp",
+    "hwpx",
+    "korean",
+    "document-processing",
+    "reports"
+  ],
+  "skills": [
+    "./kordoc-workbench"
+  ]
+}

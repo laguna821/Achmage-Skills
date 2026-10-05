@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "version": "0.2.0",
+  "engine": {
+    "version": "4.18.13",
+    "commit": "969526345dde7d6acd2f2bfd3c8e592069333355"
+  },
+  "artifacts": [
+    {
+      "file": "kordoc-workbench-0.2.0-core.zip",
+      "bytes": 1040300,
+      "sha256": "cbee5bdbcf6bc59d4c70bc0e4499ecc6c3053ed1258f6d0002fb52bc68ad8c24"
+    },
+    {
+      "file": "kordoc-workbench-0.2.0-source.zip",
+      "bytes": 392369,
+      "sha256": "945e959c46b2a644ca407f4e4d8ca57932db564f2cb2b513983c8a1de8a840f2"
+    }
+  ],
+  "sourceArchiveNotes": "Public documentation substituted; private-template integration helper excluded. Runtime core unchanged."
+}
