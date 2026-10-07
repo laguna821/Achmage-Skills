@@ -22,4 +22,3 @@ export function duckPCM(music,key,target,{duration,threshold,ratio,attack,releas
  }finally{fs.closeSync(m.fd);if(k)fs.closeSync(k.fd);if(out!==undefined)fs.closeSync(out);}
  return target;
 }
-

@@ -72,4 +72,3 @@ export async function selectRange(receipt,out,{start,duration}){
  for(const [i,t]of[start,start+duration/2,Math.max(start,start+duration-1/30)].entries()){const f=path.join(folder,path.basename(out,'.json')+'-'+i+'.jpg');await run(tool('ffmpeg'),['-y','-v','error','-ss',String(t),'-i',source,'-frames:v','1','-vf','scale=640:-2',f]);frames.push(f);}
  const selected={asset_id:a.asset_id,source_sha256:a.sha256,source_in:start,duration,frames,review:'pending',reason:null};write(out,selected);return selected;
 }
-

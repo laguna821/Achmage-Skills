@@ -171,4 +171,3 @@ export async function renderHybrid(p,base,options,legacyRender,audio,probe){
  return {out,final,log};
  }catch(e){log.state='interrupted';log.error=e.message;write(state,log);throw e;}finally{await b?.close();}
 }
-
