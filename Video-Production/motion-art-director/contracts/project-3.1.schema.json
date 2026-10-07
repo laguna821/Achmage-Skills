@@ -1477,6 +1477,12 @@
                   "layer_id": {
                     "type": "string",
                     "minLength": 1
+                  },
+                  "phase": {
+                    "enum": [
+                      "start",
+                      "arrival"
+                    ]
                   }
                 }
               },
@@ -2448,6 +2454,47 @@
               "repetition_reason": {
                 "type": "string",
                 "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "sequences": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "question",
+              "consequence",
+              "musical_role",
+              "shot_ids"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "consequence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "musical_role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shot_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
               }
             },
             "additionalProperties": false

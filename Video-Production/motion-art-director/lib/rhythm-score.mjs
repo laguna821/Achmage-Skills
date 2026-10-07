@@ -5,7 +5,8 @@ const clone=p=>{const q=structuredClone(p);if(p.__projectDir)Object.defineProper
 const finite=Number.isFinite;
 const keys=['x','y','scale','scaleX','scaleY','rotation','opacity','draw','reveal','tracking','weight'];
 const timing=c=>({asset_id:c?.asset_id,start:c?.start,source_in:c?.source_in,duration:c?.duration,speed:c?.speed??1});
-export function rhythmSignature(p){const {materialized,...score}=p.rhythm_score;return hash({score,fps:p.output.fps,music:timing(p.audio.clips[score.music.clip_index]),asset:p.assets.find(a=>a.asset_id===score.music.asset_id)?.sha256,scenes:p.scenes.map(s=>({id:s.id,start:s.start,end:s.end}))});}
+export function rhythmSignature(p){const {materialized,...score}=p.rhythm_score;return hash({score,fps:p.output.fps,music:timing(p.audio.clips[score.music.clip_index]),asset:p.assets.find(a=>a.asset_id===score.music.asset_id)?.sha256,scenes:p.scenes.map(s=>({id:s.id,start:s.start,end:s.end,...(score.bindings?.some(b=>b.scene_id===s.id&&b.target?.phase==='arrival')?{arrival_transition:s.transition_in}:{} )}))});}
+const leadFrames=(s,t)=>t.phase==='arrival'?Math.round((s.transition_in?.duration||0)*30):0;
 function setup(p){
  const errors=[],warnings=[],events=[],bindings=[],r=p.rhythm_score;
  const check=(ok,m)=>{if(!ok)errors.push(m);};
@@ -43,7 +44,8 @@ function setup(p){
   const offset=b.impact_offset_frames??0;check(Number.isInteger(offset)&&Math.abs(offset)<=30,'rhythm offset invalid');
   check(!s.portrait_composition,'rhythm v1 binds landscape only; author a separate portrait project');
   const f=e.frame+offset, l=t.layer_id?s.composition?.layers.find(l=>l.id===t.layer_id):null;
-  if(t.kind==='cut'){check(p.scenes.indexOf(s)>0,'cannot move initial scene');check(f===s.start,'cut is not on selected music anchor');}
+  check(t.phase===undefined||t.kind==='cut'&&['start','arrival'].includes(t.phase),'transition phase only supports cut start/arrival');
+  if(t.kind==='cut'){check(p.scenes.indexOf(s)>0,'cannot move initial scene');if(t.phase==='arrival')check(Number.isFinite(s.transition_in?.duration)&&Number.isInteger(s.transition_in.duration*30)&&s.transition_in.duration>0,'arrival cut needs an actual whole-frame transition');check(f-leadFrames(s,t)===s.start,'cut/transition arrival is not on selected music anchor');}
   else check(f>=s.start&&f<s.end,'rhythm impact outside scene');
   if(t.kind==='layer'){
    check(!(p.sync_score?.cues||[]).some(c=>c.scene_id===s.id&&c.layer_id===t.layer_id),'word/rhythm target ownership conflict');
@@ -63,7 +65,7 @@ function setup(p){
    if(l?.kind==='video'&&va){const start=b.source_event_seconds-(f-s.start)/30*(l.speed??1),index=p.scenes.indexOf(s),frames=s.end-s.start+Math.round((p.scenes[index+1]?.transition_in?.duration||0)*30);check(start>=0&&start+frames/30*(l.speed??1)<=va.duration+.001,'rhythm source action leaves insufficient clip handles');}
   }
   check(Math.abs(offset)<=(r.tolerance_frames??0),'rhythm intentional offset exceeds explicit tolerance');
-  bindings.push({id:b.id,scene_id:s.id,kind:t.kind,layer_id:t.layer_id,event_id:e.id,anchor_frame:e.frame,impact_frame:f,quantization_ms:e.quantization_ms});
+  bindings.push({id:b.id,scene_id:s.id,kind:t.kind,layer_id:t.layer_id,event_id:e.id,anchor_frame:e.frame,impact_frame:f,...(t.kind==='cut'?{cut_start_frame:f-leadFrames(s,t),phase:t.phase||'start'}:{}),quantization_ms:e.quantization_ms});
  }
  for(const h of r.holds||[]){const s=p.scenes.find(s=>s.id===h.scene_id);check(s&&Number.isInteger(h.start_frame)&&Number.isInteger(h.end_frame)&&h.start_frame>=s.start&&h.end_frame<=s.end&&h.end_frame>h.start_frame&&typeof h.reason==='string'&&h.reason.length>=8,'intentional sustained window broken');}
  return {ok:errors.length===0,errors,warnings,events,bindings,status:'structural-only; story and listening review separate'};
@@ -71,7 +73,7 @@ function setup(p){
 function frames(b,row,s){const at=(row.impact_frame-s.start)/30,out=[];if(b.prepare_frames>0)out.push({at:(row.impact_frame-b.prepare_frames-s.start)/30,...b.before,ease:'hold'});out.push({at,...b.after,ease:b.prepare_frames?'out':'hold'});if(b.hold_frames>0)out.push({at:at+b.hold_frames/30,...b.after,ease:'hold'});return out;}
 function expected(p,b,row){
  const s=p.scenes.find(s=>s.id===b.scene_id),t=b.target;
- if(t.kind==='cut')return {start:row.impact_frame,previousEnd:row.impact_frame};
+ if(t.kind==='cut')return {start:row.cut_start_frame,previousEnd:row.cut_start_frame};
  if(t.kind==='layer')return {...b.before,keyframes:frames(b,row,s)};
  if(t.kind==='camera')return {keyframes:frames(b,row,s)};
  const l=s.composition.layers.find(l=>l.id===t.layer_id);
@@ -97,7 +99,7 @@ export function compileRhythm(p){
  for(const b of r.bindings.filter(b=>b.target?.kind==='cut')){
   const e=r.events?.find(e=>e.id===b.event_id),c=q.audio?.clips?.[r.music?.clip_index],i=q.scenes.findIndex(s=>s.id===b.scene_id);
   if(!e||!c||i<1)throw Error('invalid cut binding');
-  const f=Math.round((c.start+(e.source_seconds-c.source_in)/(c.speed??1))*30)+(b.impact_offset_frames??0);
+  const f=Math.round((c.start+(e.source_seconds-c.source_in)/(c.speed??1))*30)+(b.impact_offset_frames??0)-leadFrames(q.scenes[i],b.target);
   q.scenes[i].start=f;q.scenes[i-1].end=f;
  }
  const review=setup(q);if(!review.ok)throw Error(review.errors.join('\n'));
@@ -111,4 +113,4 @@ export function compileRhythm(p){
  r.materialized={signature:rhythmSignature(q),status:'compiled; perceptual review pending'};
  return q;
 }
-export function rhythmReviewFrames(p){const r=rhythmCheck(p);return [...new Set(r.bindings.flatMap(b=>[b.impact_frame-1,b.impact_frame,b.impact_frame+1]))].filter(f=>f>=0&&f<p.output.total_frames).sort((a,b)=>a-b).slice(0,300);}
+export function rhythmReviewFrames(p){const r=rhythmCheck(p);return [...new Set(r.bindings.flatMap(b=>[b.impact_frame-1,b.impact_frame,b.impact_frame+1,...(b.phase==='arrival'?[b.cut_start_frame-1,b.cut_start_frame,b.cut_start_frame+1]:[])]))].filter(f=>f>=0&&f<p.output.total_frames).sort((a,b)=>a-b).slice(0,300);}

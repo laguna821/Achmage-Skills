@@ -9,10 +9,15 @@ def analyze(file,bpm_hint):
         y=np.frombuffer(w.readframes(w.getnframes()),dtype='<i2').astype(np.float32)/32768
     hop=256;n=1024;win=np.hanning(n);last=np.zeros(n//2+1)
     flux=[];energy=[]
+    freq=np.fft.rfftfreq(n,1/rate)
+    masks={name:(freq>=lo)&(freq<hi) for name,lo,hi in [('low',35,180),('mid',180,2000),('high',2000,10000)]}
+    bands={name:[] for name in masks}
     for i in range(0,max(1,len(y)-n+1),hop):
         v=np.pad(y[i:i+n],(0,max(0,n-len(y[i:i+n]))))*win
         mag=np.log1p(np.abs(np.fft.rfft(v))*10)
-        flux.append(float(np.maximum(0,mag-last).sum()));energy.append(float(np.sqrt(np.mean(v*v))))
+        delta=np.maximum(0,mag-last)
+        flux.append(float(delta.sum()));energy.append(float(np.sqrt(np.mean(v*v))))
+        for name,mask in masks.items():bands[name].append(float(delta[mask].sum()))
         last=mag
     f=np.asarray(flux); med=float(np.median(f));scale=float(np.percentile(f,95)) or 1
     candidates=[];lastidx=-100
@@ -29,7 +34,12 @@ def analyze(file,bpm_hint):
             if score>best[0]:best=(score,float(bpm),float(phase))
     _,bpm,phase=best
     grid=[round(float(t),6) for t in np.arange(phase,len(y)/rate,60/bpm)]
-    return {'version':'spectral-flux-v1','sample_rate':rate,'hop':hop,'window':n,'duration':len(y)/rate,'bpm_hint':bpm_hint,'estimated_bpm':round(bpm,4),'phase_seconds':phase,'pulse_candidates':grid,'onset_candidates':candidates,'energy_1s':[round(float(np.sqrt(np.mean(y[i:i+rate]**2))),6) for i in range(0,len(y),rate)],'review':'unreviewed; no instrument/downbeat/chorus classification'}
+    band_events={}
+    for name,values in bands.items():
+        a=np.asarray(values);q=float(np.percentile(a,95)) or 1;threshold=max(float(np.median(a))*1.25,q*.12)
+        band_events[name]=[{'seconds':round((i*hop+n/2)/rate,6),'strength':round(float(a[i]/q),4)} for i in range(2,len(a)-2) if a[i]>threshold and a[i]>=max(a[i-2:i+3])]
+    density=[{'start':i,'end':min(i+2,len(y)/rate),'count':sum(i<=c['seconds']<i+2 for c in candidates)} for i in range(0,int(np.ceil(len(y)/rate)),2)]
+    return {'version':'spectral-flux-v2','sample_rate':rate,'hop':hop,'window':n,'duration':len(y)/rate,'bpm_hint':bpm_hint,'estimated_bpm':round(bpm,4),'phase_seconds':phase,'pulse_candidates':grid,'onset_candidates':candidates,'band_onsets':band_events,'band_ranges_hz':{'low':[35,180],'mid':[180,2000],'high':[2000,10000]},'onset_density_2s':density,'energy_1s':[round(float(np.sqrt(np.mean(y[i:i+rate]**2))),6) for i in range(0,len(y),rate)],'review':'unreviewed; bands are frequency ranges, not instrument/downbeat/chorus labels'}
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('file');p.add_argument('--bpm',type=float,required=True);p.add_argument('--out',required=True);a=p.parse_args()
     with open(a.out,'x',encoding='utf-8') as f:json.dump(analyze(a.file,a.bpm),f,ensure_ascii=False,indent=2)

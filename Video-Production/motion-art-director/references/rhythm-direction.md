@@ -21,6 +21,14 @@ After a user rejects the edit, retain its technical evidence but label the work 
 
 ## Public commands
 
+rhythm-review PROJECT --movie HTTPS_MP4 --analysis ANALYSIS_JSON --out NEW_FOLDER creates a browser-local event editor. The supplied movie must represent the project's output clock. It supports frame stepping, looping, waveform/source-energy comparison and event correction export. It never marks all events listening-corrected automatically. A local MP4 file can be selected in the page without uploading it.
+
+rhythm-compile PROJECT --events corrected-events.json --out NEW_PROJECT verifies the exact original score/music clock identity and rebuilds owned targets. Wrong songs, stale score revisions, trims, duplicated events and unsupported listening assertions are rejected. Retain the original project, output and approval; the new project has no approval.
+
+Optional editorial_plan.sequences groups actual shot_ids in contiguous timeline order. Every actual shot must appear exactly once. Each group states question, consequence and musical_role. This checks membership, not narrative quality. Legacy projects without groups remain supported.
+
+The frequency-band analysis reports low (35–180Hz), mid (180–2000Hz) and high (2000–10000Hz) onset candidates and a two-second density series. These ranges do not identify instruments. A high-band transient is not automatically a snare/hi-hat, and density is not automatic chorus detection.
+
 rhythm-analyze PROJECT --out NEW_FOLDER extracts the first registered music clip with FFmpeg and analyzes it with NumPy spectral flux. It keeps the original source clock and separates the authored volume envelope from source changes. BPM, phase and onsets are candidates, not verified kick/snare, chorus or first-bar labels.
 
 rhythm-compile SCORE_PROJECT --out NEW_PROJECT materializes music-impact-v1 bindings into an ordinary3.1 project. Keep output beside input to preserve relative paths. The original and previous approval are preserved; the new project needs a production-scope approval record.
@@ -57,3 +65,5 @@ Music gain changes do not invalidate graphic timing. Source trims, speeds, hashe
 lib/mechanism.mjs returns ordinary SVG layers with a transmission-v1 receipt. One pitch-distance controls chain dash offset, front/rear angular displacement and optional wheel. Front/rear radii and centers are explicit. This is illustrative single-ratio mechanics, not measured bicycle data or a full gear-shift/freewheel simulation. Chromium time/scroll/still share one calculation. Skia currently rejects animated dash_offset.
 
 New pedal-click, ratchet and tire-roll cues are deterministic authored sound design, not recordings. Keep them below musical drum accents, listen for synthetic harshness, and never infer naturalness from finite-sample checks.
+
+Cut targets may declare phase: arrival. The incoming transition starts its duration before the event and completes on the selected impact frame. Default start preserves old projects. An arrival target requires an actual whole-frame transition; its settings enter the score signature. Recheck shot intent local times, source handles and neighboring cuts after compiling.

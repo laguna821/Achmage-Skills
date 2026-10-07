@@ -1,4 +1,10 @@
 # CLI
+
+## Music event review and corrections
+
+Create a new review folder with `rhythm-review PROJECT --movie HTTPS_MP4 --analysis ANALYSIS_JSON --out NEW_FOLDER`. Open its index.html, compare music and image, adjust source_seconds, and export corrected-events.json. No file is uploaded when selecting a local comparison movie.
+
+Apply it with `rhythm-compile PROJECT --events corrected-events.json --out NEW_PROJECT`. The target must be a new sibling file. Re-run rhythm-audit and visual/listening review after correction. The exact prior event/clock fingerprint is required.
 설치 폴더의 scripts/motion.mjs를 절대 경로로 호출하면 작업 폴더 위치에 의존하지 않습니다.
 ```sh
 node scripts/motion.mjs doctor

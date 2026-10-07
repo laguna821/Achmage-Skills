@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {createRhythmReview,applyEventCorrections} from '../lib/rhythm-review.mjs';
 import {analyzeRhythm} from '../lib/rhythm-analyze.mjs';
 import {pacingInventory} from '../lib/pacing.mjs';
 import {compileRhythm,rhythmCheck,rhythmReviewFrames} from '../lib/rhythm-score.mjs';
@@ -32,8 +33,9 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
 async function main(){
  switch(command){
  case 'pacing-review':{const r=pacingInventory(project(),{windowSeconds:Number(flags['window-seconds']||15)});write(path.join(out(),'pacing-review.json'),r);return r;}
+ case 'rhythm-review':return createRhythmReview(project(),out(),{movie:flags.movie,analysis:flags.analysis?read(flags.analysis):undefined});
  case 'rhythm-analyze':return analyzeRhythm(project(),out());
- case 'rhythm-compile':{const input=path.resolve(positional[0]),target=path.resolve(flags.out||'rhythm.project.json');if(input===target||fs.existsSync(target)||path.dirname(input)!==path.dirname(target))throw Error('Use a new compiled file beside source');const p=compileRhythm(project()),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,report:rhythmCheck(p)};}
+ case 'rhythm-compile':{const input=path.resolve(positional[0]),target=path.resolve(flags.out||'rhythm.project.json');if(input===target||fs.existsSync(target)||path.dirname(input)!==path.dirname(target))throw Error('Use a new compiled file beside source');const inputProject=project(),p=compileRhythm(flags.events?applyEventCorrections(inputProject,read(flags.events)):inputProject),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,report:rhythmCheck(p)};}
  case 'rhythm-audit':{const p=project(),r=rhythmCheck(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:rhythmReviewFrames(p)});write(path.join(out(),'rhythm-audit.json'),r);return r;}
  case 'doctor':return doctor();
  case 'soundbed':return soundbed(read(positional[0]),path.join(out(),flags.name||'ambience.wav'));
@@ -58,6 +60,6 @@ async function main(){
  case 'effect':{const p=project();if(TECHNIQUES[flags.id]){if(!flags.spec||!flags.scene)throw Error('Reusable adapter requires --spec adapter-input.json --scene scene-id');const input=read(flags.spec),s=p.scenes.find(s=>s.id===flags.scene);if(!s?.composition)throw Error('Target scene composition required');const result=technique({...input,id:flags.id});s.composition.layers.push(...result.layers);if(result.transition)s.transition_in=result.transition;(p.techniques??=[]).push({...result.receipt,scene_id:s.id});}else{const mode=ADAPTERS[flags.id];if(!mode)throw new Error('카드/기존 클립 상태: 실행 어댑터 없음');p.scenes[0].mode=mode;}p.approval=undefined;const v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(path.join(out(),'adapted.project.json'),p);return plan(p,path.join(out(),'direction.html'));}
  case 'serve':{const s=await serve(path.resolve(positional[0]||out()),Number(flags.port||0));console.log(JSON.stringify({url:s.url}));await new Promise(()=>{});return;}
  case 'package':return pack(path.join(out(),'motion-art-director'));
- default:return {usage:'node scripts/motion.mjs <doctor|status|resume|catalog|techniques|assets|plan|direction-review|pacing-review|rhythm-analyze|rhythm-compile|rhythm-audit|sync-compile|sync-audit|validate|approve|styleframe|roughcut|soundbed|audio|render|export|audit|revise|effect|serve|package> [project.json] --out PATH',help:'references/cli.md'};
+ default:return {usage:'node scripts/motion.mjs <doctor|status|resume|catalog|techniques|assets|plan|direction-review|pacing-review|rhythm-review|rhythm-analyze|rhythm-compile|rhythm-audit|sync-compile|sync-audit|validate|approve|styleframe|roughcut|soundbed|audio|render|export|audit|revise|effect|serve|package> [project.json] --out PATH',help:'references/cli.md'};
  }}
 try{const r=await main();if(positional[0]&&['plan','styleframe','approve','render','roughcut','export','audit'].includes(command))record(project(),out(),command,r);console.log(JSON.stringify(r,null,2));if(r?.ok===false)process.exitCode=1;}catch(e){console.error(JSON.stringify({error:e.message}));process.exitCode=1;}

@@ -1,3 +1,4 @@
+import {sequenceCheck} from './sequences.mjs';
 // Evidence about intent and bindings is not perceptual or aesthetic approval.
 import {hash} from './io.mjs';
 const arr=x=>Array.isArray(x)?x:[];
@@ -22,6 +23,7 @@ export function editorialCheck(p){
  if(!required)return {ok:true,required:false,errors,warnings,review:'not authored'};
  const error=(ok,msg)=>{if(!ok)errors.push(msg);};
  if(!e||e.version!=='shot-intent-v1'||!Array.isArray(e.shots))return {ok:false,required:true,errors:['editorial_plan requires shot-intent-v1 and shots array'],warnings};
+ errors.push(...sequenceCheck(p).errors);
  const scenes=arr(p.scenes),fps=p.output?.fps||30,ids=new Map(e.shots.map(x=>[x?.scene_id,x]));
  error(ids.size===e.shots.length,'editorial shots must have unique scene_id');
  error(e.shots.length===scenes.length&&e.shots.every(x=>scenes.some(s=>s.id===x?.scene_id)),'editorial plan must cover exactly the actual scenes');
