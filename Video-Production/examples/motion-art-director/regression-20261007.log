@@ -1,0 +1,176 @@
+PASS upstream inventory preserved
+PASS all public examples valid and unapproved
+PASS approval, source locks and unsafe SVG enforced
+PASS only changed cut invalidates; visual settings invalidate
+PASS revision preserves input and relocates project assets
+PASS HTTP seeking range, HEAD, invalid ranges and traversal
+PASS absolute-time SVG seek and web controls
+PASS general image flow uses arbitrary asset ID and zero intensity
+PASS audio repeatability and bounded samples
+PASS interrupted render resumes completed cut; changed cut rerenders
+PASS optional Skia actual frames and MP4
+{"ok":true,"out":"<temporary-test-output>"}
+PASS both topics have authored object plans
+PASS missing plan fails the strict contract
+PASS legacy examples are explicitly marked incomplete
+PASS phantom and duplicate object bindings fail
+PASS calling a caption an aircraft does not satisfy drawing requirement
+PASS unmapped content and invalid beat windows fail
+PASS malformed plan returns validation error
+PASS data field must bind to its own object
+PASS changing visual intent invalidates prior approval
+PASS reviewable plan contains subjects, values, actions and continuity
+PASS real bound layers appear at required beats and preserve data
+PASS minimal spatial data
+PASS reject null node
+PASS reject node keyframes scalar
+PASS reject mesh without vertices
+PASS reject null plate
+PASS reject null ground anchor
+PASS reject zero camera direction
+PASS reject negative shutter
+PASS reject mirror without camera
+PASS reject zero mirror direction
+PASS audio editing is optional
+PASS audio edit refuses absent rights
+PASS schema exposes spatial camera and all supported new cues
+PASS valid driving data
+PASS frequency integral is continuous at shift
+PASS same speed curve integrates travelled distance
+PASS reject empty curve
+PASS reject unordered
+PASS reject nonfinite
+PASS reject uncovered end
+PASS reject too loud
+PASS slip creates dedicated skid cue
+PASS finite audible deterministic effect
+PASS parameterized surface rejects nonfinite points
+PASS surface triangle and UV indices correspond
+PASS camera orbit retains final target and radius
+{"checks":13}
+PASS planning can pass while listening remains pending
+PASS missing brief
+PASS genre-only brief
+PASS invalid BPM
+PASS only one candidate
+PASS no excerpt
+PASS fake listened without listener
+PASS select rejected
+PASS malformed candidates
+PASS null candidate
+PASS no sync
+PASS malformed sync
+PASS late sync
+{"passed":13}
+PASS complete event contract
+PASS sample envelope exact endpoints
+PASS music returns under logo
+PASS engine leaks into pause
+PASS moving after stop
+PASS geometry moves despite zero speed
+PASS unbound vehicle
+PASS logo visible before event
+PASS logo layer missing
+PASS unknown ending version
+PASS reversed narrative order
+PASS extra whoosh over logo
+PASS duplicate logo cue identity
+PASS external sound under logo
+PASS effect has long tail
+PASS no final silence
+PASS unknown audio bus
+PASS malformed envelope
+PASS nonfinite envelope
+PASS unordered envelope
+PASS rendered music actually ends at event sample
+PASS rendered pause excludes SFX and music
+PASS only SFX can reenter during logo
+PASS rendered final silence
+{"passed":24,"fixture":"<temporary-test-output>"}
+PASS publication: unsupported overlay/transition/version rejection; public approvals absent
+PASS 3.1 valid video contract
+PASS missing composition
+PASS unknown rasterizer
+PASS unsupported video transform
+PASS unsupported graphic blend
+PASS source out of range
+PASS sound claimed on silent source
+PASS rectangle outside canvas
+PASS transition exceeds incoming scene
+PASS subframe transition
+PASS draft right-edge panel does not overflow by one pixel
+PASS draft bottom-edge panel preserves exact edge
+PASS genuinely out-of-canvas rectangles still rejected
+PASS video geometry invalidates source track
+PASS procedural scene values invalidate graphics
+PASS portrait defs invalidate graphics
+PASS music data does not invalidate graphic tracks
+PASS video duration excludes long audio tail
+PASS generic ending binds an ordinary graphic event
+PASS music tail leak rejected
+PASS ambience tail leak rejected
+PASS voice tail leak rejected
+PASS sfx tail leak rejected
+PASS source audio actually enters ambience stem
+PASS all buses silent in pause
+PASS identified title effect audible after pause
+PASS all buses silent after ending
+PASS ending cue boundary tolerates arithmetic roundoff
+PASS mastering preserves exact pause boundary
+PASS mastering preserves exact final-silence boundary
+PASS exact gating preserves intended title cue
+{"passed":31,"out":"<temporary-test-output>"}
+PASS overlapping-action
+PASS symmetric-panel-open
+PASS pulse
+PASS split-flap
+PASS crossfade
+PASS pan
+PASS bar-grow
+PASS cursor-click
+PASS progressive-disclosure
+PASS piece-assembly
+PASS crt-scanlines
+PASS particle-burst
+PASS deep-parallax
+PASS breathing-loop
+PASS lower-third-reveal
+{"passed":15,"out":"<temporary-test-output>"}
+{"passed":true,"out":"<temporary-test-output>","picture":"<temporary-test-output>","frames":90}
+{"passed":true,"out":"<temporary-test-output>","exactSeekFrames":5}
+{"passed":22,"root":"<temporary-test-output>","sourceAndFinalPreserved":true,"oversizedRetryAccumulation":0,"audioFailureRetry":true}
+{"passed":5,"root":"<temporary-test-output>"}
+{"passed":1,"name":"actual720p right-edge video and mask retain final column","pixel":[0,0,254]}
+PASS specific moving subjects and matched direction pass
+PASS missing scene coverage rejected
+PASS duplicate scene intent rejected
+PASS phantom subject rejected
+PASS generic action state rejected
+PASS equal event times rejected
+PASS end-exclusive timestamp rejected
+PASS static changed object rejected
+PASS static frame-zero override rejected
+PASS phantom cue rejected
+PASS cue outside contact tolerance rejected
+PASS excessive sync tolerance rejected
+PASS text bound to drawing rejected
+PASS camera intent without camera rejected
+PASS wrong next scene rejected
+PASS reversed match-action rejected
+PASS stationary match-action rejected
+PASS anchor outside frame rejected
+PASS phantom bridge layer rejected
+PASS unexplained silence rejected
+PASS null shot data rejected
+PASS intentional direction reversal accepted with reason
+PASS sound bridge must cross actual cut
+PASS ambience requires texture intent and keeps listening distinct
+PASS observation can be motionless and silent with purpose
+PASS legacy input remains renderable but reports missing intent
+PASS review picks exact authored local times
+PASS listening and intent notes do not invalidate unchanged picture caches
+PASS empty selection rejected without recursion
+PASS both project schemas embed the same offline editorial contract
+PASS intent changes invalidate approval and render into planning document
+PASS 135 selected output frames retain exact black/white boundary
+foley: deterministic pour/grind, bounded cues and schema agreement passed; listening not asserted

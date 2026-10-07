@@ -50,3 +50,13 @@
 - music-only.m4a·sfx-only.m4a는 책 제작용 자체 합성 음원. car-sfx.m4a·grandeur-sfx.m4a는 자체 합성 효과음이며 실제 차량 녹음이 아닙니다.
 
 미디어는 GitHub Pages의 Range 응답으로 제공하며 갤러리에서 로그인 없이 재생·탐색합니다.
+
+
+### City v4 and coffee transfer revision
+
+- [City180 v4](city-pulse-180-v4.mp4):14 action/continuity cuts revised; synthetic river bed removed; preserve prior film.
+- [Coffee30](coffee-transfer-30-v1.mp4): fresh seven-scene SVG work, new88-note score and object foley; no generated images.
+- [Actual revision tests and output report](city-coffee-revision-report.json): text/music/source edits, interruption/resume and original hashes.
+- [Gallery](https://motion-art-director-review-oct05.achmage2.chatgpt.site/coffee.html).
+
+Technical verification does not imply full human listening/aesthetic approval, blind independent-agent transfer, complete3.1 release or physical16GB notebook validation. Existing footage/music credits remain in the city project and gallery. Source footage is relinked, not republished as raw stock.
