@@ -1,0 +1,3984 @@
+{
+  "schema_version": "3.1.0",
+  "project_id": "coffee-from-one-bean-30-v1",
+  "title": "한 잔이 완성되는 순간",
+  "direction": "한 알이 부서지고 물을 만나 한 잔이 되는 과정. 실제 대상의 구조와 반응을 보여주는 새 SVG 작품. 다크 매크로, 기계 단면, 밝은 종이 필터, 물과 커피의 단면, 따뜻한 컵을 서로 다른 구도로 연결한다. 현장 녹음이나 정확한 추출 수치의 기록이 아닌 설명용 연출이다.",
+  "renderer": "hybrid-composite",
+  "timeline_semantics": "segments-v1",
+  "editing_contract": "shot-rhythm-v1",
+  "direction_contract": "object-first-v1",
+  "visual_policy": "strict_svg",
+  "render_network": "local_only",
+  "seed": 10072026,
+  "profile": {
+    "jobs": 1,
+    "gpu": false
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_frames": 900
+  },
+  "routes": [
+    "video-editing"
+  ],
+  "sources": [
+    {
+      "source_id": "author",
+      "title": "새로 작성한 원두에서 한 잔까지의 기획·SVG·악보",
+      "retrieval_state": "authored"
+    }
+  ],
+  "assets": [],
+  "scenes": [
+    {
+      "id": "bean",
+      "start": 0,
+      "end": 120,
+      "mode": "composite",
+      "content_ids": [
+        "bean-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "bean-copy",
+          "start": 0.25,
+          "end": 3.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#181b17",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "copper-halo",
+            "kind": "svg",
+            "svg": "<defs><radialGradient id=\"halo\"><stop stop-color=\"#916142\" stop-opacity=\".35\"/><stop offset=\"1\" stop-color=\"#181b17\" stop-opacity=\"0\"/></radialGradient></defs><ellipse cx=\"1230\" cy=\"540\" rx=\"760\" ry=\"630\" fill=\"url(#halo)\"/>"
+          },
+          {
+            "id": "hero-bean",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"1210\" cy=\"540\" rx=\"241.4\" ry=\"355\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"8.875\"/><path d=\"M1231.3 231.14999999999998C1060.9 461.9 1344.9 639.4 1167.4 855.95\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"35.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1202.9 234.7C1085.75 476.1 1359.1 611 1195.8 841.75\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"8.875\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "pivot": [
+              1210,
+              540
+            ],
+            "rotation": -28,
+            "scale": 0.9,
+            "keyframes": [
+              {
+                "at": 2.9,
+                "rotation": 4,
+                "scale": 1.05
+              },
+              {
+                "at": 4,
+                "rotation": 18,
+                "scale": 0.72,
+                "y": 120
+              }
+            ]
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              120,
+              440
+            ],
+            "size": 180,
+            "font": "Pretendard",
+            "weight": 850,
+            "color": "#f0dfc4",
+            "align": "start",
+            "content_id": "bean-copy"
+          },
+          {
+            "id": "small",
+            "kind": "text",
+            "text": "FROM A SINGLE BEAN",
+            "position": [
+              125,
+              550
+            ],
+            "size": 28,
+            "font": "Pretendard",
+            "weight": 450,
+            "color": "#cb8956",
+            "align": "start",
+            "tracking": 5
+          },
+          {
+            "id": "seam-trace",
+            "kind": "svg",
+            "svg": "<path pathLength=\"1\" d=\"M1230 225C1060 415 1360 595 1170 855\" fill=\"none\" stroke=\"#f0dfc4\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "draw": 0,
+            "opacity": 0.45,
+            "keyframes": [
+              {
+                "at": 2.5,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "id": "bean-deep-parallax-0",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"1830\" cy=\"120\" rx=\"88.4\" ry=\"130\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"3.25\"/><path d=\"M1837.8 6.900000000000006C1775.4 91.4 1879.4 156.4 1814.4 235.7\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"13\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1827.4 8.200000000000003C1784.5 96.6 1884.6 146 1824.8 230.5\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"3.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "opacity": 0.28,
+            "rotation": 30,
+            "pivot": [
+              1830,
+              120
+            ],
+            "x": 0,
+            "keyframes": [
+              {
+                "at": 4,
+                "x": -40,
+                "ease": "linear"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "원두 한 알의 홈을 따라 돌아본다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "원두 한 알의 홈을 따라 돌아본다",
+            "features": [
+              "원두의 곡면과 중앙 홈이 비스듬히 놓인다",
+              "원두가 작아지며 아래의 분쇄기로 이어진다"
+            ],
+            "bindings": [
+              "copper-halo",
+              "hero-bean",
+              "copy",
+              "small",
+              "seam-trace",
+              "bean-deep-parallax-0"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "bean-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "원두 한 알의 홈을 따라 돌아본다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              4
+            ],
+            "action": "원두 한 알의 홈을 따라 돌아본다",
+            "before": "원두의 곡면과 중앙 홈이 비스듬히 놓인다",
+            "after": "원두가 작아지며 아래의 분쇄기로 이어진다"
+          }
+        ],
+        "continuity": [
+          "원두가 작아지며 아래의 분쇄기로 이어진다에서 다음 작업으로 공간·재료를 잇는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    },
+    {
+      "id": "grinder",
+      "start": 120,
+      "end": 240,
+      "mode": "composite",
+      "content_ids": [
+        "grinder-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "grinder-copy",
+          "start": 0.25,
+          "end": 3.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#253c34",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "housing",
+            "kind": "svg",
+            "svg": "<rect x=\"620\" y=\"80\" width=\"680\" height=\"890\" rx=\"92\" fill=\"#142d27\" stroke=\"#6b8372\" stroke-width=\"5\"/><path d=\"M720 80H1200L1090 335H830Z\" fill=\"#a7baa7\" opacity=\".14\" stroke=\"#d1dbc5\" stroke-width=\"5\"/><circle cx=\"960\" cy=\"550\" r=\"265\" fill=\"#0e211c\" stroke=\"url(#metal)\" stroke-width=\"33\"/><path d=\"M800 778L850 940H1070L1120 778\" fill=\"#102820\" stroke=\"#769180\" stroke-width=\"6\"/>"
+          },
+          {
+            "id": "outer-burr",
+            "kind": "svg",
+            "svg": "<path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(0 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(15 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(30 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(45 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(60 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(75 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(90 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(105 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(120 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(135 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(150 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(165 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(180 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(195 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(210 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(225 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(240 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(255 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(270 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(285 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(300 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(315 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(330 960 550)\"/><path d=\"M940 350L977 382 957 440 925 409Z\" fill=\"#a0ad98\" stroke=\"#465c50\" stroke-width=\"2\" transform=\"rotate(345 960 550)\"/>",
+            "pivot": [
+              960,
+              550
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 4,
+                "rotation": 330,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "inner-burr",
+            "kind": "svg",
+            "svg": "<circle cx=\"960\" cy=\"550\" r=\"112\" fill=\"url(#metal)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(0 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(30 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(60 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(90 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(120 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(150 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(180 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(210 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(240 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(270 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(300 960 550)\"/><path d=\"M950 452L996 510\" fill=\"none\" stroke=\"#46574b\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(330 960 550)\"/><circle cx=\"960\" cy=\"550\" r=\"39\" fill=\"#20352d\"/>",
+            "pivot": [
+              960,
+              550
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 4,
+                "rotation": -430,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              108,
+              940
+            ],
+            "size": 96,
+            "font": "Pretendard",
+            "weight": 750,
+            "color": "#e5ddbc",
+            "align": "start",
+            "content_id": "grinder-copy"
+          },
+          {
+            "id": "annotation",
+            "kind": "text",
+            "text": "BURR / 설명용 단면",
+            "position": [
+              1350,
+              200
+            ],
+            "size": 27,
+            "font": "Pretendard",
+            "weight": 450,
+            "color": "#acc4af",
+            "align": "start"
+          },
+          {
+            "id": "input-bean-0",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"925\" cy=\"145\" rx=\"23.8\" ry=\"35\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"0.875\"/><path d=\"M927.1 114.55C910.3 137.3 938.3 154.8 920.8 176.15\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M924.3 114.9C912.75 138.7 939.7 152 923.6 174.75\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"0.875\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "y": 0,
+            "pivot": [
+              960,
+              145
+            ],
+            "keyframes": [
+              {
+                "at": 0.1,
+                "y": 0,
+                "opacity": 1
+              },
+              {
+                "at": 1.4,
+                "y": 345,
+                "opacity": 1
+              },
+              {
+                "at": 1.55,
+                "y": 365,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "input-bean-1",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"995\" cy=\"65\" rx=\"23.8\" ry=\"35\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"0.875\"/><path d=\"M997.1 34.55C980.3 57.3 1008.3 74.8 990.8 96.15\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M994.3 34.900000000000006C982.75 58.7 1009.7 72 993.6 94.75\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"0.875\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "y": 0,
+            "pivot": [
+              960,
+              145
+            ],
+            "keyframes": [
+              {
+                "at": 0.35,
+                "y": 0,
+                "opacity": 1
+              },
+              {
+                "at": 1.68,
+                "y": 425,
+                "opacity": 1
+              },
+              {
+                "at": 1.83,
+                "y": 445,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "input-bean-2",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"925\" cy=\"-15\" rx=\"23.8\" ry=\"35\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"0.875\"/><path d=\"M927.1 -45.45C910.3 -22.7 938.3 -5.199999999999999 920.8 16.150000000000002\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M924.3 -45.099999999999994C912.75 -21.3 939.7 -8 923.6 14.75\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"0.875\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "y": 0,
+            "pivot": [
+              960,
+              145
+            ],
+            "keyframes": [
+              {
+                "at": 0.6,
+                "y": 0,
+                "opacity": 1
+              },
+              {
+                "at": 1.96,
+                "y": 505,
+                "opacity": 1
+              },
+              {
+                "at": 2.1100000000000003,
+                "y": 525,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "input-bean-3",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"995\" cy=\"-95\" rx=\"23.8\" ry=\"35\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"0.875\"/><path d=\"M997.1 -125.45C980.3 -102.7 1008.3 -85.2 990.8 -63.849999999999994\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M994.3 -125.1C982.75 -101.3 1009.7 -88 993.6 -65.25\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"0.875\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "y": 0,
+            "pivot": [
+              960,
+              145
+            ],
+            "keyframes": [
+              {
+                "at": 0.85,
+                "y": 0,
+                "opacity": 1
+              },
+              {
+                "at": 2.24,
+                "y": 585,
+                "opacity": 1
+              },
+              {
+                "at": 2.39,
+                "y": 605,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "input-bean-4",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"925\" cy=\"-175\" rx=\"23.8\" ry=\"35\" fill=\"url(#bean)\" stroke=\"#815337\" stroke-width=\"0.875\"/><path d=\"M927.1 -205.45C910.3 -182.7 938.3 -165.2 920.8 -143.85\" fill=\"none\" stroke=\"#1d1a13\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M924.3 -205.1C912.75 -181.3 939.7 -168 923.6 -145.25\" fill=\"none\" stroke=\"#bd8856\" stroke-width=\"0.875\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "y": 0,
+            "pivot": [
+              960,
+              145
+            ],
+            "keyframes": [
+              {
+                "at": 1.1,
+                "y": 0,
+                "opacity": 1
+              },
+              {
+                "at": 2.52,
+                "y": 665,
+                "opacity": 1
+              },
+              {
+                "at": 2.67,
+                "y": 685,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "ground-0",
+            "kind": "svg",
+            "svg": "<path d=\"M918 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.69,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 0.7,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 1.5,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 1.6,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-1",
+            "kind": "svg",
+            "svg": "<path d=\"M938 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.83,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 0.84,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 1.6400000000000001,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 1.74,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-2",
+            "kind": "svg",
+            "svg": "<path d=\"M958 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.97,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 0.98,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 1.78,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 1.88,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-3",
+            "kind": "svg",
+            "svg": "<path d=\"M978 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.11,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.12,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 1.9200000000000002,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.02,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-4",
+            "kind": "svg",
+            "svg": "<path d=\"M998 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.25,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.26,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.06,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.16,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-5",
+            "kind": "svg",
+            "svg": "<path d=\"M918 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.39,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.4,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.2,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.3,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-6",
+            "kind": "svg",
+            "svg": "<path d=\"M938 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.53,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.54,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.34,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.44,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-7",
+            "kind": "svg",
+            "svg": "<path d=\"M958 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.6700000000000002,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.6800000000000002,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.4800000000000004,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.58,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-8",
+            "kind": "svg",
+            "svg": "<path d=\"M978 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.81,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.82,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.62,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.72,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-9",
+            "kind": "svg",
+            "svg": "<path d=\"M998 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 1.9500000000000002,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.9600000000000002,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.7600000000000002,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 2.8600000000000003,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-10",
+            "kind": "svg",
+            "svg": "<path d=\"M918 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 2.0900000000000003,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.1,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.9000000000000004,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 3,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-11",
+            "kind": "svg",
+            "svg": "<path d=\"M938 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 2.2300000000000004,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.24,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.04,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 3.14,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-12",
+            "kind": "svg",
+            "svg": "<path d=\"M958 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 2.37,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.38,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.1799999999999997,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 3.28,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-13",
+            "kind": "svg",
+            "svg": "<path d=\"M978 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 2.5100000000000007,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.5200000000000005,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.3200000000000003,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 3.4200000000000004,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-14",
+            "kind": "svg",
+            "svg": "<path d=\"M998 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 2.6500000000000004,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.66,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.46,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 3.56,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          },
+          {
+            "id": "ground-15",
+            "kind": "svg",
+            "svg": "<path d=\"M918 780l8 -4 7 7 -4 11 -10 -2Z\" fill=\"#c2925f\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 2.79,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.8,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.5999999999999996,
+                "opacity": 1,
+                "y": 230
+              },
+              {
+                "at": 3.6999999999999997,
+                "opacity": 0,
+                "y": 260
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "원두를 두 분쇄날 사이로 보낸다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "원두를 두 분쇄날 사이로 보낸다",
+            "features": [
+              "투입구 위 원두와 분쇄날 사이 틈이 보인다",
+              "작은 가루가 아래 출구로 흘러나온다"
+            ],
+            "bindings": [
+              "housing",
+              "outer-burr",
+              "inner-burr",
+              "copy",
+              "annotation",
+              "input-bean-0",
+              "input-bean-1",
+              "input-bean-2",
+              "input-bean-3",
+              "input-bean-4",
+              "ground-0",
+              "ground-1",
+              "ground-2",
+              "ground-3",
+              "ground-4",
+              "ground-5",
+              "ground-6",
+              "ground-7",
+              "ground-8",
+              "ground-9",
+              "ground-10",
+              "ground-11",
+              "ground-12",
+              "ground-13",
+              "ground-14",
+              "ground-15"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "grinder-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "원두를 두 분쇄날 사이로 보낸다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              4
+            ],
+            "action": "원두를 두 분쇄날 사이로 보낸다",
+            "before": "투입구 위 원두와 분쇄날 사이 틈이 보인다",
+            "after": "작은 가루가 아래 출구로 흘러나온다"
+          }
+        ],
+        "continuity": [
+          "작은 가루가 아래 출구로 흘러나온다에서 다음 작업으로 공간·재료를 잇는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    },
+    {
+      "id": "grounds",
+      "start": 240,
+      "end": 330,
+      "mode": "composite",
+      "content_ids": [
+        "grounds-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "grounds-copy",
+          "start": 0.25,
+          "end": 2.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#f0dfc4",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "filter-ring",
+            "kind": "svg",
+            "svg": "<circle cx=\"1180\" cy=\"540\" r=\"390\" fill=\"url(#paper)\" stroke=\"#7a866d\" stroke-width=\"8\"/><g clip-path=\"url(#filterCircle)\"><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(0 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(9 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(18 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(27 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(36 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(45 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(54 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(63 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(72 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(81 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(90 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(99 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(108 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(117 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(126 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(135 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(144 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(153 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(162 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(171 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(180 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(189 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(198 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(207 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(216 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(225 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(234 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(243 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(252 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(261 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(270 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(279 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(288 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(297 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(306 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(315 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(324 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(333 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(342 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(351 1180 540)\"/></g><defs><clipPath id=\"filterCircle\"><circle cx=\"1180\" cy=\"540\" r=\"374\"/></clipPath></defs>"
+          },
+          {
+            "id": "ground-bed",
+            "kind": "svg",
+            "svg": "<circle cx=\"1180\" cy=\"540\" r=\"245\" fill=\"#61412b\" stroke=\"#3c2d20\" stroke-width=\"4\"/>",
+            "pivot": [
+              1180,
+              540
+            ],
+            "scale": 0.65,
+            "keyframes": [
+              {
+                "at": 2.35,
+                "scale": 1
+              }
+            ]
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              120,
+              430
+            ],
+            "size": 154,
+            "font": "Pretendard",
+            "weight": 850,
+            "color": "#4f2d20",
+            "align": "start",
+            "content_id": "grounds-copy"
+          },
+          {
+            "id": "grain-note",
+            "kind": "text",
+            "text": "작은 입자가 넓은 만남을 만든다",
+            "position": [
+              120,
+              565
+            ],
+            "size": 34,
+            "font": "Pretendard",
+            "weight": 450,
+            "color": "#6f634f",
+            "align": "start"
+          },
+          {
+            "id": "grounds-overlapping-action-0",
+            "kind": "svg",
+            "svg": "<path d=\"M1200.1723344440616 540l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1154.2594394849434 563.6261036808852l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1183.856916113883 495.05848708926396l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1212.5952362228704 582.2612365417391l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1120.3679196469047 529.6887107949735l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1236.2770601687305 503.8192545002328l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1161.5246088955328 610.3467122439775l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1143.523995247137 470.9105852455293l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1258.3433930071956 567.9285710306203l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1099.016962056711 574.2532630126575l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1218.3725628974523 455.8992804307497l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1209.9300710191135 631.9968565659806l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1092.1546343611165 490.43924275348724l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1282.0838678514356 516.2133020069257l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1118.7269543244095 629.7016337889463l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1163.9585909494574 428.83665810939044l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1269.7488378427656 613.304895091218l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1060.857496487078 546.882699251097l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1265.462206148951 451.9524834745008l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1176.4848988987249 665.9271379181145l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1095.3471612021324 442.44107915055446l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1311.4274698863778 554.9837400857573l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1070.5839216268866 619.6219834906617l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1207.3567639310315 404.43823517449164l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1253.0183754186367 660.8616879761896l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1041.741287593941 499.53266296263655l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1311.73108217832 475.0858639042947l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1125.8526971803117 679.4590937448047l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1124.6085571907895 398.13244399042696l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1319.1169847994854 608.2270186858642l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1028.8768274620343 584.5431747225981l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1262.5356949115414 402.7993698570491l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1212.473064912215 699.3596562973423l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1046.306938571022 443.0979284040134l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1346.4493205320348 520.7045082437306l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1068.8446737343213 668.5925032974667l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1174.8650046924108 367.7240108472l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1301.912592318285 665.1261387699084l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1003.2641160213091 530.1255766068275l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1318.6478607717952 426.31757488367884l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1154.4098214028604 719.738454400097l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1076.0535533699267 388.44224989266735l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1361.2071312678775 581.8621203013871l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1016.3017612914962 632.7641867103971l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1238.5336736905997 358.92000969064463l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1260.2098519578067 714.918208454428l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1000.6896868755528 464.5569237036371l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1365.0742532795123 473.6282207506589l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1087.575305903249 715.8670360888034l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1128.6482425212382 345.9680912343873l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1350.735079450948 649.3103993868342l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M978.3331673297822 575.2642244185139l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1305.930994311425 376.0844493385116l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1198.235346177734 747.865921643129l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1024.5741824191286 397.88233532057654l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1392.5283509195835 539.5980126073435l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1022.2965507857499 685.2994487196568l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1198.0894190127972 324.4334748484049l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1313.5860190976057 712.524709829213l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M963.0930701811994 502.91590704320697l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1366.4225889121535 419.6492183200186l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1123.5797909934379 756.490873888934l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1074.3257943306257 340.7555599984496l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1394.2751156039346 615.9302680237022l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M969.1547813353034 629.6513842018804l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/>",
+            "pivot": [
+              1180,
+              540
+            ],
+            "x": 0,
+            "keyframes": [
+              {
+                "at": 0.05,
+                "y": -120,
+                "opacity": 0
+              },
+              {
+                "at": 0.35,
+                "y": -90,
+                "opacity": 1
+              },
+              {
+                "at": 1.8,
+                "y": 0,
+                "opacity": 1
+              }
+            ],
+            "y": -120
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "필터 안으로 분쇄 가루를 모은다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "필터 안으로 분쇄 가루를 모은다",
+            "features": [
+              "주름진 필터의 중앙에 작은 가루층이 있다",
+              "가루가 필터 바닥에 고르게 놓인다"
+            ],
+            "bindings": [
+              "filter-ring",
+              "ground-bed",
+              "copy",
+              "grain-note",
+              "grounds-overlapping-action-0"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "grounds-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "필터 안으로 분쇄 가루를 모은다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              3
+            ],
+            "action": "필터 안으로 분쇄 가루를 모은다",
+            "before": "주름진 필터의 중앙에 작은 가루층이 있다",
+            "after": "가루가 필터 바닥에 고르게 놓인다"
+          }
+        ],
+        "continuity": [
+          "가루가 필터 바닥에 고르게 놓인다에서 다음 작업으로 공간·재료를 잇는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    },
+    {
+      "id": "bloom",
+      "start": 330,
+      "end": 480,
+      "mode": "composite",
+      "content_ids": [
+        "bloom-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "bloom-copy",
+          "start": 0.25,
+          "end": 4.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#f0dfc4",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "filter-ring",
+            "kind": "svg",
+            "svg": "<circle cx=\"1180\" cy=\"540\" r=\"390\" fill=\"url(#paper)\" stroke=\"#7a866d\" stroke-width=\"8\"/><g clip-path=\"url(#filterCircle)\"><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(0 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(9 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(18 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(27 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(36 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(45 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(54 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(63 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(72 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(81 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(90 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(99 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(108 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(117 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(126 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(135 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(144 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(153 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(162 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(171 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(180 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(189 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(198 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(207 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(216 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(225 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(234 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(243 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(252 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(261 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(270 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(279 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(288 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(297 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(306 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(315 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(324 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(333 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(342 1180 540)\"/><path d=\"M1180 166L1180 875\" fill=\"none\" stroke=\"#bead8a\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" transform=\"rotate(351 1180 540)\"/></g><defs><clipPath id=\"filterCircle\"><circle cx=\"1180\" cy=\"540\" r=\"374\"/></clipPath></defs>"
+          },
+          {
+            "id": "dry-ground",
+            "kind": "svg",
+            "svg": "<circle cx=\"1180\" cy=\"540\" r=\"245\" fill=\"#61412b\"/><path d=\"M1200.1723344440616 540l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1154.2594394849434 563.6261036808852l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1183.856916113883 495.05848708926396l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1212.5952362228704 582.2612365417391l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1120.3679196469047 529.6887107949735l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1236.2770601687305 503.8192545002328l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1161.5246088955328 610.3467122439775l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1143.523995247137 470.9105852455293l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1258.3433930071956 567.9285710306203l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1099.016962056711 574.2532630126575l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1218.3725628974523 455.8992804307497l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1209.9300710191135 631.9968565659806l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1092.1546343611165 490.43924275348724l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1282.0838678514356 516.2133020069257l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1118.7269543244095 629.7016337889463l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1163.9585909494574 428.83665810939044l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1269.7488378427656 613.304895091218l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1060.857496487078 546.882699251097l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1265.462206148951 451.9524834745008l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1176.4848988987249 665.9271379181145l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1095.3471612021324 442.44107915055446l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1311.4274698863778 554.9837400857573l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1070.5839216268866 619.6219834906617l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1207.3567639310315 404.43823517449164l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1253.0183754186367 660.8616879761896l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1041.741287593941 499.53266296263655l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1311.73108217832 475.0858639042947l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1125.8526971803117 679.4590937448047l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1124.6085571907895 398.13244399042696l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1319.1169847994854 608.2270186858642l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1028.8768274620343 584.5431747225981l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1262.5356949115414 402.7993698570491l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1212.473064912215 699.3596562973423l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1046.306938571022 443.0979284040134l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1346.4493205320348 520.7045082437306l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1068.8446737343213 668.5925032974667l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1174.8650046924108 367.7240108472l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1301.912592318285 665.1261387699084l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1003.2641160213091 530.1255766068275l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1318.6478607717952 426.31757488367884l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1154.4098214028604 719.738454400097l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1076.0535533699267 388.44224989266735l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1361.2071312678775 581.8621203013871l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1016.3017612914962 632.7641867103971l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1238.5336736905997 358.92000969064463l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1260.2098519578067 714.918208454428l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1000.6896868755528 464.5569237036371l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1365.0742532795123 473.6282207506589l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1087.575305903249 715.8670360888034l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1128.6482425212382 345.9680912343873l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1350.735079450948 649.3103993868342l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M978.3331673297822 575.2642244185139l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1305.930994311425 376.0844493385116l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1198.235346177734 747.865921643129l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1024.5741824191286 397.88233532057654l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1392.5283509195835 539.5980126073435l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1022.2965507857499 685.2994487196568l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1198.0894190127972 324.4334748484049l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1313.5860190976057 712.524709829213l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M963.0930701811994 502.91590704320697l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1366.4225889121535 419.6492183200186l4 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M1123.5797909934379 756.490873888934l5 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1074.3257943306257 340.7555599984496l6 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/><path d=\"M1394.2751156039346 615.9302680237022l7 -3 5 4 -2 6 -7 -2Z\" fill=\"#3b291b\"/><path d=\"M969.1547813353034 629.6513842018804l8 -3 5 4 -2 6 -7 -2Z\" fill=\"#b28758\"/>"
+          },
+          {
+            "id": "wet-bloom",
+            "kind": "svg",
+            "svg": "<circle cx=\"1180\" cy=\"540\" r=\"235\" fill=\"#342820\"/><circle cx=\"1180\" cy=\"540\" r=\"222\" fill=\"#946139\" opacity=\".55\"/>",
+            "pivot": [
+              1180,
+              540
+            ],
+            "scale": 0.04,
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.45,
+                "scale": 0.04,
+                "opacity": 1
+              },
+              {
+                "at": 3.3,
+                "scale": 1,
+                "opacity": 1
+              },
+              {
+                "at": 4.9,
+                "scale": 1.025,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "id": "pour-path",
+            "kind": "svg",
+            "svg": "<path pathLength=\"1\" d=\"M1650 250Q1560 440 1180 500\" fill=\"none\" stroke=\"#aac9c3\" stroke-width=\"12\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "draw": 0,
+            "opacity": 0.82,
+            "keyframes": [
+              {
+                "at": 0.05,
+                "draw": 0,
+                "opacity": 0.82
+              },
+              {
+                "at": 0.5,
+                "draw": 1,
+                "opacity": 0.82
+              },
+              {
+                "at": 3.8,
+                "draw": 1,
+                "opacity": 0.82
+              },
+              {
+                "at": 4.1,
+                "draw": 1,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "kettle-spout",
+            "kind": "svg",
+            "svg": "<path d=\"M1910 90C1710 10 1740 190 1650 250\" fill=\"none\" stroke=\"#66776b\" stroke-width=\"36\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1910 83C1710 3 1740 183 1650 243\" fill=\"none\" stroke=\"#bdcbb7\" stroke-width=\"10\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              90,
+              570
+            ],
+            "size": 188,
+            "font": "Pretendard",
+            "weight": 850,
+            "color": "#4f2d20",
+            "align": "start",
+            "content_id": "bloom-copy"
+          },
+          {
+            "id": "bloom-note",
+            "kind": "text",
+            "text": "물과 원두가 처음 만나는 시간",
+            "position": [
+              110,
+              690
+            ],
+            "size": 31,
+            "font": "Pretendard",
+            "weight": 450,
+            "color": "#75634b",
+            "align": "start"
+          },
+          {
+            "id": "bubble-0",
+            "kind": "svg",
+            "svg": "<circle cx=\"1215\" cy=\"540\" r=\"5\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1215,
+              540
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 0.85,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 1.1,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 2.05,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-1",
+            "kind": "svg",
+            "svg": "<circle cx=\"1143.1303142229376\" cy=\"573.7731590275575\" r=\"6\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1143.1303142229376,
+              573.7731590275575
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 1.07,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 1.32,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 2.27,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-2",
+            "kind": "svg",
+            "svg": "<circle cx=\"1185.687433923564\" cy=\"475.24930042567036\" r=\"7\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1185.687433923564,
+              475.24930042567036
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 1.29,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 1.54,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 2.49,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-3",
+            "kind": "svg",
+            "svg": "<circle cx=\"1228.6681051625803\" cy=\"603.4934291079322\" r=\"8\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1228.6681051625803,
+              603.4934291079322
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 1.51,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 1.76,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 2.71,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-4",
+            "kind": "svg",
+            "svg": "<circle cx=\"1086.4546536995579\" cy=\"523.4389557838169\" r=\"5\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1086.4546536995579,
+              523.4389557838169
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 1.73,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 1.98,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 2.9299999999999997,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-5",
+            "kind": "svg",
+            "svg": "<circle cx=\"1272.8239354605741\" cy=\"480.9769790199522\" r=\"6\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1272.8239354605741,
+              480.9769790199522
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 1.9500000000000002,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 2.2,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 3.1500000000000004,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-6",
+            "kind": "svg",
+            "svg": "<circle cx=\"1147.5228304732807\" cy=\"660.7072220686598\" r=\"7\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1147.5228304732807,
+              660.7072220686598
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 2.17,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 2.42,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 3.37,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-7",
+            "kind": "svg",
+            "svg": "<circle cx=\"1115.5049977624092\" cy=\"415.7406152985894\" r=\"8\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1115.5049977624092,
+              415.7406152985894
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 2.39,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 2.64,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 3.59,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-8",
+            "kind": "svg",
+            "svg": "<circle cx=\"1325.579153738015\" cy=\"593.2138139670838\" r=\"5\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1325.579153738015,
+              593.2138139670838
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 2.61,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 2.86,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 3.8099999999999996,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          },
+          {
+            "id": "bubble-9",
+            "kind": "svg",
+            "svg": "<circle cx=\"1022.8397982645995\" cy=\"604.8125835813404\" r=\"6\" fill=\"#c39157\" stroke=\"#e4b16c\" stroke-width=\"2\"/>",
+            "pivot": [
+              1022.8397982645995,
+              604.8125835813404
+            ],
+            "opacity": 0,
+            "scale": 0.2,
+            "keyframes": [
+              {
+                "at": 2.83,
+                "opacity": 0,
+                "scale": 0.2
+              },
+              {
+                "at": 3.08,
+                "opacity": 0.8,
+                "scale": 1
+              },
+              {
+                "at": 4.03,
+                "opacity": 0.2,
+                "scale": 1.6
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "물로 가루를 적셔 부풀게 한다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "물로 가루를 적셔 부풀게 한다",
+            "features": [
+              "건조한 가루의 밝고 거친 입자가 보인다",
+              "전체 층이 젖고 작은 기포가 올라온다"
+            ],
+            "bindings": [
+              "filter-ring",
+              "dry-ground",
+              "wet-bloom",
+              "pour-path",
+              "kettle-spout",
+              "copy",
+              "bloom-note",
+              "bubble-0",
+              "bubble-1",
+              "bubble-2",
+              "bubble-3",
+              "bubble-4",
+              "bubble-5",
+              "bubble-6",
+              "bubble-7",
+              "bubble-8",
+              "bubble-9"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "bloom-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "물로 가루를 적셔 부풀게 한다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              5
+            ],
+            "action": "물로 가루를 적셔 부풀게 한다",
+            "before": "건조한 가루의 밝고 거친 입자가 보인다",
+            "after": "전체 층이 젖고 작은 기포가 올라온다"
+          }
+        ],
+        "continuity": [
+          "전체 층이 젖고 작은 기포가 올라온다에서 다음 작업으로 공간·재료를 잇는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    },
+    {
+      "id": "extraction",
+      "start": 480,
+      "end": 630,
+      "mode": "composite",
+      "content_ids": [
+        "extraction-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "extraction-copy",
+          "start": 0.25,
+          "end": 4.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#181b17",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "dripper",
+            "kind": "svg",
+            "svg": "<path d=\"M630 60H1330L1100 465H860Z\" fill=\"url(#paper)\" stroke=\"#d4c5a6\" stroke-width=\"5\"/><path d=\"M655 76L875 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M703 76L891 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M751 76L907 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M799 76L923 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M847 76L939 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M895 76L955 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M943 76L971 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M991 76L987 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1039 76L1003 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1087 76L1019 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1135 76L1035 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1183 76L1051 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1231 76L1067 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M1279 76L1083 450\" fill=\"none\" stroke=\"#a88b64\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M711 207H1249L1125 425H835Z\" fill=\"#62432c\"/><ellipse cx=\"980\" cy=\"207\" rx=\"269\" ry=\"31\" fill=\"#ad763d\"/>"
+          },
+          {
+            "id": "filter-flow",
+            "kind": "svg",
+            "svg": "<path pathLength=\"1\" d=\"M850 214L937 429M978 214V429M1110 214L1023 429\" fill=\"none\" stroke=\"#d5af78\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "draw": 0,
+            "keyframes": [
+              {
+                "at": 1.8,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "id": "server",
+            "kind": "svg",
+            "svg": "<path d=\"M856 665V746L754 970Q736 1010 790 1020H1170Q1220 1010 1204 970L1100 746V665Z\" fill=\"#a6b4a2\" fill-opacity=\".07\" stroke=\"#9daaa1\" stroke-width=\"7\"/><path d=\"M1107 760Q1260 746 1280 835Q1300 930 1190 950\" fill=\"none\" stroke=\"#a0b1a9\" stroke-width=\"14\"/><path d=\"M890 690V755L800 957\" fill=\"none\" stroke=\"#e2e9d6\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>"
+          },
+          {
+            "id": "server-liquid",
+            "kind": "svg",
+            "fill": "url(#coffee)",
+            "stroke": "none",
+            "stroke_width": 0,
+            "morph": [
+              {
+                "at": 0,
+                "d": "M780 990H1180L1190 990Q1198 1006 1166 1010H794Q766 1006 772 990Z"
+              },
+              {
+                "at": 4.45,
+                "d": "M822 848H1136L1190 990Q1198 1006 1166 1010H794Q766 1006 772 990Z"
+              }
+            ]
+          },
+          {
+            "id": "server-surface",
+            "kind": "svg",
+            "fill": "#9d6634",
+            "stroke": "none",
+            "stroke_width": 0,
+            "morph": [
+              {
+                "at": 0,
+                "d": "M780 990C780 983 1180 983 1180 990C1180 997 780 997 780 990Z"
+              },
+              {
+                "at": 4.45,
+                "d": "M823 848C823 834 1137 834 1137 848C1137 862 823 862 823 848Z"
+              }
+            ]
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              100,
+              545
+            ],
+            "size": 112,
+            "font": "Pretendard",
+            "weight": 820,
+            "color": "#f0dfc4",
+            "align": "start",
+            "content_id": "extraction-copy"
+          },
+          {
+            "id": "process-note",
+            "kind": "text",
+            "text": "FILTER → DROP → CUP",
+            "position": [
+              1370,
+              600
+            ],
+            "size": 22,
+            "font": "Pretendard",
+            "weight": 500,
+            "color": "#cb8956",
+            "align": "start",
+            "tracking": 2
+          },
+          {
+            "id": "drop-0",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 0.44,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 0.45,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 0.9299999999999999,
+                "opacity": 1,
+                "y": 443.9862060090586,
+                "ease": "linear"
+              },
+              {
+                "at": 0.97,
+                "opacity": 0,
+                "y": 447.70034571165536
+              }
+            ]
+          },
+          {
+            "id": "drop-1",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 0.99,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 1.48,
+                "opacity": 1,
+                "y": 423.3269281117326,
+                "ease": "linear"
+              },
+              {
+                "at": 1.52,
+                "opacity": 0,
+                "y": 426.6156533634812
+              }
+            ]
+          },
+          {
+            "id": "drop-2",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 1.54,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 1.55,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.0300000000000002,
+                "opacity": 1,
+                "y": 398.30981093353034,
+                "ease": "linear"
+              },
+              {
+                "at": 2.0700000000000003,
+                "opacity": 0,
+                "y": 401.4070996823974
+              }
+            ]
+          },
+          {
+            "id": "drop-3",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 2.0900000000000003,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.1,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 2.58,
+                "opacity": 1,
+                "y": 372.1520512589915,
+                "ease": "linear"
+              },
+              {
+                "at": 2.62,
+                "opacity": 0,
+                "y": 375.29188145294336
+              }
+            ]
+          },
+          {
+            "id": "drop-4",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 2.6400000000000006,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 2.6500000000000004,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.1300000000000003,
+                "opacity": 1,
+                "y": 348.07084587265535,
+                "ease": "linear"
+              },
+              {
+                "at": 3.1700000000000004,
+                "opacity": 0,
+                "y": 351.48719545965855
+              }
+            ]
+          },
+          {
+            "id": "drop-5",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 3.1900000000000004,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 3.2,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 3.68,
+                "opacity": 1,
+                "y": 329.28339155906144,
+                "ease": "linear"
+              },
+              {
+                "at": 3.72,
+                "opacity": 0,
+                "y": 333.2102384870824
+              }
+            ]
+          },
+          {
+            "id": "drop-6",
+            "kind": "svg",
+            "svg": "<path d=\"M980 470Q945 518 980 530Q1015 518 980 470Z\" fill=\"#bf8650\"/>",
+            "opacity": 0,
+            "y": 0,
+            "keyframes": [
+              {
+                "at": 3.7400000000000007,
+                "opacity": 0,
+                "y": 0
+              },
+              {
+                "at": 3.7500000000000004,
+                "opacity": 1,
+                "y": 0
+              },
+              {
+                "at": 4.23,
+                "opacity": 1,
+                "y": 319.00688510274927,
+                "ease": "linear"
+              },
+              {
+                "at": 4.2700000000000005,
+                "opacity": 0,
+                "y": 323.6782073197545
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "필터를 지난 커피를 모은다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "필터를 지난 커피를 모은다",
+            "features": [
+              "분쇄층 아래 필터와 빈 서버가 분리돼 보인다",
+              "방울을 받은 서버 수면이 높아진다"
+            ],
+            "bindings": [
+              "dripper",
+              "filter-flow",
+              "server",
+              "server-liquid",
+              "server-surface",
+              "copy",
+              "process-note",
+              "drop-0",
+              "drop-1",
+              "drop-2",
+              "drop-3",
+              "drop-4",
+              "drop-5",
+              "drop-6"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "extraction-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "필터를 지난 커피를 모은다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              5
+            ],
+            "action": "필터를 지난 커피를 모은다",
+            "before": "분쇄층 아래 필터와 빈 서버가 분리돼 보인다",
+            "after": "방울을 받은 서버 수면이 높아진다"
+          }
+        ],
+        "continuity": [
+          "방울을 받은 서버 수면이 높아진다에서 다음 작업으로 공간·재료를 잇는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    },
+    {
+      "id": "cup",
+      "start": 630,
+      "end": 780,
+      "mode": "composite",
+      "content_ids": [
+        "cup-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "cup-copy",
+          "start": 0.25,
+          "end": 4.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#e4d2ae",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "table-shadow",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"1160\" cy=\"880\" rx=\"550\" ry=\"86\" fill=\"#958368\" opacity=\".22\"/>"
+          },
+          {
+            "id": "saucer",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"1190\" cy=\"878\" rx=\"440\" ry=\"123\" fill=\"url(#cup)\" stroke=\"#ad9c7c\" stroke-width=\"3\"/><ellipse cx=\"1190\" cy=\"872\" rx=\"245\" ry=\"60\" fill=\"none\" stroke=\"#c0ae8a\" stroke-width=\"5\"/>"
+          },
+          {
+            "id": "cup-handle",
+            "kind": "svg",
+            "svg": "<path d=\"M1480 550Q1750 430 1730 650Q1710 820 1460 730\" fill=\"none\" stroke=\"#b3a07f\" stroke-width=\"74\"/><path d=\"M1490 550Q1690 490 1670 650Q1640 760 1465 720\" fill=\"none\" stroke=\"#f5e8c9\" stroke-width=\"34\"/>"
+          },
+          {
+            "id": "cup-body",
+            "kind": "svg",
+            "svg": "<path d=\"M835 540Q830 869 1180 870Q1530 869 1525 540Z\" fill=\"url(#cup)\" stroke=\"#b29e7b\" stroke-width=\"4\"/><ellipse cx=\"1180\" cy=\"540\" rx=\"345\" ry=\"114\" fill=\"#f8edd4\" stroke=\"#b5a280\" stroke-width=\"4\"/><ellipse cx=\"1180\" cy=\"542\" rx=\"302\" ry=\"86\" fill=\"url(#coffee)\"/>"
+          },
+          {
+            "id": "settling-ripple",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"1180\" cy=\"543\" rx=\"120\" ry=\"30\" fill=\"none\" stroke=\"#c19054\" stroke-width=\"3\"/>",
+            "pivot": [
+              1180,
+              543
+            ],
+            "scale": 0.3,
+            "opacity": 0.8,
+            "keyframes": [
+              {
+                "at": 1.2,
+                "scale": 1.7,
+                "opacity": 0.5
+              },
+              {
+                "at": 4,
+                "scale": 2.2,
+                "opacity": 0
+              },
+              {
+                "at": 5,
+                "scale": 2.2,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              105,
+              310
+            ],
+            "size": 110,
+            "font": "Pretendard",
+            "weight": 800,
+            "color": "#4f2d20",
+            "align": "start",
+            "content_id": "cup-copy"
+          },
+          {
+            "id": "cup-note",
+            "kind": "text",
+            "text": "서두르던 움직임이, 한 잔에 머문다.",
+            "position": [
+              110,
+              420
+            ],
+            "size": 34,
+            "font": "Pretendard",
+            "weight": 450,
+            "color": "#7c674b",
+            "align": "start"
+          },
+          {
+            "id": "steam-0",
+            "kind": "svg",
+            "svg": "<path d=\"M1060 410C1000 300 1180 270 1100 100\" fill=\"none\" stroke=\"#fff9e5\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "opacity": 0,
+            "y": 45,
+            "keyframes": [
+              {
+                "at": 1,
+                "opacity": 0.5,
+                "y": 0
+              },
+              {
+                "at": 5,
+                "opacity": 0.06,
+                "y": -65
+              }
+            ]
+          },
+          {
+            "id": "steam-1",
+            "kind": "svg",
+            "svg": "<path d=\"M1180 410C1130 300 1265 270 1210 100\" fill=\"none\" stroke=\"#fff9e5\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "opacity": 0,
+            "y": 45,
+            "keyframes": [
+              {
+                "at": 1.35,
+                "opacity": 0.5,
+                "y": 0
+              },
+              {
+                "at": 5,
+                "opacity": 0.06,
+                "y": -65
+              }
+            ]
+          },
+          {
+            "id": "steam-2",
+            "kind": "svg",
+            "svg": "<path d=\"M1300 410C1260 300 1350 270 1320 100\" fill=\"none\" stroke=\"#fff9e5\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "opacity": 0,
+            "y": 45,
+            "keyframes": [
+              {
+                "at": 1.7,
+                "opacity": 0.5,
+                "y": 0
+              },
+              {
+                "at": 5,
+                "opacity": 0.06,
+                "y": -65
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "수면을 가라앉히고 한 잔에 머문다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "수면을 가라앉히고 한 잔에 머문다",
+            "features": [
+              "컵 안의 물결이 작게 번진다",
+              "25초 물결이 멎고 컵이 고요하게 남는다"
+            ],
+            "bindings": [
+              "table-shadow",
+              "saucer",
+              "cup-handle",
+              "cup-body",
+              "settling-ripple",
+              "copy",
+              "cup-note",
+              "steam-0",
+              "steam-1",
+              "steam-2"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "cup-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "수면을 가라앉히고 한 잔에 머문다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              5
+            ],
+            "action": "수면을 가라앉히고 한 잔에 머문다",
+            "before": "컵 안의 물결이 작게 번진다",
+            "after": "25초 물결이 멎고 컵이 고요하게 남는다"
+          }
+        ],
+        "continuity": [
+          "25초 물결이 멎고 컵이 고요하게 남는다에서 다음 작업으로 공간·재료를 잇는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    },
+    {
+      "id": "title",
+      "start": 780,
+      "end": 900,
+      "mode": "composite",
+      "content_ids": [
+        "title-copy"
+      ],
+      "shot_role": "reading",
+      "reading_windows": [
+        {
+          "content_id": "title-copy",
+          "start": 0.65,
+          "end": 3.9
+        }
+      ],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#181b17",
+        "defs": "<linearGradient id=\"bean\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#b8794c\"/><stop offset=\".28\" stop-color=\"#69412c\"/><stop offset=\".75\" stop-color=\"#2e2119\"/><stop offset=\"1\" stop-color=\"#8b5636\"/></linearGradient><linearGradient id=\"metal\" x2=\"1\" y2=\"1\"><stop stop-color=\"#c6c6ae\"/><stop offset=\".25\" stop-color=\"#6a7971\"/><stop offset=\".55\" stop-color=\"#d5d0b8\"/><stop offset=\"1\" stop-color=\"#536257\"/></linearGradient><linearGradient id=\"paper\" x2=\"0\" y2=\"1\"><stop stop-color=\"#fff5db\"/><stop offset=\"1\" stop-color=\"#cbb18a\"/></linearGradient><linearGradient id=\"coffee\" x2=\"0\" y2=\"1\"><stop stop-color=\"#b7793b\"/><stop offset=\".32\" stop-color=\"#6c3c20\"/><stop offset=\"1\" stop-color=\"#2c2118\"/></linearGradient><radialGradient id=\"cup\"><stop stop-color=\"#fff7df\"/><stop offset=\".7\" stop-color=\"#e2d1ae\"/><stop offset=\"1\" stop-color=\"#a79776\"/></radialGradient>",
+        "layers": [
+          {
+            "id": "title-mark",
+            "kind": "svg",
+            "svg": "<path d=\"M838 305Q838 405 960 405Q1082 405 1082 305M848 305H1072M1100 320Q1170 320 1110 380M884 260Q870 235 890 215M960 260Q946 235 966 215M1036 260Q1022 235 1042 215\" fill=\"none\" stroke=\"#cb8956\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.2,
+                "opacity": 0
+              },
+              {
+                "at": 0.8,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "id": "copy",
+            "kind": "text",
+            "position": [
+              960,
+              620
+            ],
+            "size": 116,
+            "font": "Pretendard",
+            "weight": 850,
+            "color": "#f0dfc4",
+            "align": "middle",
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.2,
+                "opacity": 0
+              },
+              {
+                "at": 0.8,
+                "opacity": 1
+              }
+            ],
+            "content_id": "title-copy"
+          },
+          {
+            "id": "closing",
+            "kind": "text",
+            "text": "원두 · 분쇄 · 만남 · 추출 · 한 잔",
+            "position": [
+              960,
+              725
+            ],
+            "size": 32,
+            "font": "Pretendard",
+            "weight": 450,
+            "color": "#cb8956",
+            "align": "middle",
+            "tracking": 3,
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.8,
+                "opacity": 0
+              },
+              {
+                "at": 1.35,
+                "opacity": 1
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "완성된 한 잔의 제목을 남긴다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "완성된 한 잔의 제목을 남긴다",
+            "features": [
+              "음악이 멎은 어두운 화면이다",
+              "제목과 부제를 정지해 읽는다"
+            ],
+            "bindings": [
+              "title-mark",
+              "copy",
+              "closing"
+            ]
+          }
+        ],
+        "content_links": [
+          {
+            "content_id": "title-copy",
+            "shown_by": [
+              "subject"
+            ],
+            "reason": "완성된 한 잔의 제목을 남긴다"
+          }
+        ],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              4
+            ],
+            "action": "완성된 한 잔의 제목을 남긴다",
+            "before": "음악이 멎은 어두운 화면이다",
+            "after": "제목과 부제를 정지해 읽는다"
+          }
+        ],
+        "continuity": [
+          "음악 없이 제목을 읽는다"
+        ],
+        "medium_reason": "원두와 도구의 내부 구조·물 반응을 수정 가능한 정밀SVG로 직접 제작",
+        "sound_role": "기존 곡 대신 이 작품의 새 악보와 접촉 사건 소리를 사용"
+      }
+    }
+  ],
+  "events": [],
+  "content_units": [
+    {
+      "content_id": "bean-copy",
+      "source_ref": "author",
+      "source_text": "한 알에서",
+      "display_text": "한 알에서",
+      "copy_lock": false
+    },
+    {
+      "content_id": "grinder-copy",
+      "source_ref": "author",
+      "source_text": "향을 여는 틈",
+      "display_text": "향을 여는 틈",
+      "copy_lock": false
+    },
+    {
+      "content_id": "grounds-copy",
+      "source_ref": "author",
+      "source_text": "잘게, 깊게",
+      "display_text": "잘게, 깊게",
+      "copy_lock": false
+    },
+    {
+      "content_id": "bloom-copy",
+      "source_ref": "author",
+      "source_text": "만나다",
+      "display_text": "만나다",
+      "copy_lock": false
+    },
+    {
+      "content_id": "extraction-copy",
+      "source_ref": "author",
+      "source_text": "한 방울의 밀도",
+      "display_text": "한 방울의 밀도",
+      "copy_lock": false
+    },
+    {
+      "content_id": "cup-copy",
+      "source_ref": "author",
+      "source_text": "짙어지는 시간",
+      "display_text": "짙어지는 시간",
+      "copy_lock": false
+    },
+    {
+      "content_id": "title-copy",
+      "source_ref": "author",
+      "source_text": "한 잔이 완성되는 순간",
+      "display_text": "한 잔이 완성되는 순간",
+      "copy_lock": false
+    }
+  ],
+  "required_content_ids": [
+    "bean-copy",
+    "grinder-copy",
+    "grounds-copy",
+    "bloom-copy",
+    "extraction-copy",
+    "cup-copy",
+    "title-copy"
+  ],
+  "techniques": [
+    {
+      "instance": "bean-deep-parallax",
+      "card_id": "deep-parallax",
+      "family": "depth",
+      "parameters": {
+        "duration": 4,
+        "amount": 40
+      },
+      "input_hash": "72227bffa08a140d33912f981e081e9790a58597f830aa73a8dc88a4003a0999",
+      "layer_ids": [
+        "bean-deep-parallax-0"
+      ],
+      "selection_reason": "멀리 놓인 작은 원두와 큰 원두의 상대 움직임으로 매크로 깊이를 만든다",
+      "review": {
+        "automated": "pending",
+        "aesthetic": "pending"
+      },
+      "scene_id": "bean"
+    },
+    {
+      "instance": "grounds-overlapping-action",
+      "card_id": "overlapping-action",
+      "family": "principles",
+      "parameters": {
+        "duration": 1.8,
+        "amount": 60
+      },
+      "input_hash": "1ec8befc6263a8b9f97fa37f49a12113248db3c490a4567ed43947545eebb3ee",
+      "layer_ids": [
+        "grounds-overlapping-action-0"
+      ],
+      "selection_reason": "분쇄 입자가 내려앉는 방향을 층의 확장과 함께 보여준다",
+      "review": {
+        "automated": "pending",
+        "aesthetic": "pending"
+      },
+      "scene_id": "grounds",
+      "project_adjustment": "replace horizontal offset with downward settling while retaining overlap timing"
+    }
+  ],
+  "audio": {
+    "bpm": 100,
+    "motif": [
+      62,
+      65,
+      69,
+      72
+    ],
+    "sections": [
+      {
+        "start": 0,
+        "end": 11,
+        "energy": 0.7
+      },
+      {
+        "start": 11,
+        "end": 16,
+        "energy": 0.3
+      },
+      {
+        "start": 16,
+        "end": 25.3,
+        "energy": 0.6
+      },
+      {
+        "start": 25.3,
+        "end": 30,
+        "energy": 0
+      }
+    ],
+    "notes": [
+      {
+        "start": 0,
+        "duration": 2.3,
+        "note": 50,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 0.015,
+        "duration": 2.3,
+        "note": 57,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 0.03,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 0.045,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 0,
+        "duration": 0.95,
+        "note": 38,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 0,
+        "duration": 0.27,
+        "note": 62,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 0.9,
+        "duration": 0.27,
+        "note": 69,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 1.5,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 2.1,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 2.4,
+        "duration": 2.3,
+        "note": 53,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 2.415,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 2.4299999999999997,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 2.445,
+        "duration": 2.3,
+        "note": 69,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 2.4,
+        "duration": 0.95,
+        "note": 41,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 2.4,
+        "duration": 0.27,
+        "note": 65,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 3.3,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 3.9,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 4.5,
+        "duration": 0.27,
+        "note": 81,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 4.8,
+        "duration": 2.3,
+        "note": 55,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 4.8149999999999995,
+        "duration": 2.3,
+        "note": 62,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 4.83,
+        "duration": 2.3,
+        "note": 65,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 4.845,
+        "duration": 2.3,
+        "note": 69,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 4.8,
+        "duration": 0.95,
+        "note": 43,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 4.8,
+        "duration": 0.27,
+        "note": 67,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 5.7,
+        "duration": 0.27,
+        "note": 74,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 6.3,
+        "duration": 0.27,
+        "note": 77,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 6.9,
+        "duration": 0.27,
+        "note": 81,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 7.199999999999999,
+        "duration": 2.3,
+        "note": 48,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 7.214999999999999,
+        "duration": 2.3,
+        "note": 55,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 7.2299999999999995,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 7.244999999999999,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 7.199999999999999,
+        "duration": 0.95,
+        "note": 36,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 7.199999999999999,
+        "duration": 0.27,
+        "note": 60,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 8.1,
+        "duration": 0.27,
+        "note": 67,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 8.7,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 9.299999999999999,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 9.6,
+        "duration": 2.3,
+        "note": 50,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 9.615,
+        "duration": 2.3,
+        "note": 57,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 9.629999999999999,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 9.645,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 9.6,
+        "duration": 0.95,
+        "note": 38,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 9.6,
+        "duration": 0.27,
+        "note": 62,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 10.5,
+        "duration": 0.27,
+        "note": 69,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 11.1,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 11.7,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 12,
+        "duration": 2.3,
+        "note": 53,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 12.015,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 12.03,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 12.045,
+        "duration": 2.3,
+        "note": 69,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 12,
+        "duration": 0.95,
+        "note": 41,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 14.399999999999999,
+        "duration": 2.3,
+        "note": 55,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 14.415,
+        "duration": 2.3,
+        "note": 62,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 14.429999999999998,
+        "duration": 2.3,
+        "note": 65,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 14.444999999999999,
+        "duration": 2.3,
+        "note": 69,
+        "amp": 0.02,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 14.399999999999999,
+        "duration": 0.95,
+        "note": 43,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 16.8,
+        "duration": 2.3,
+        "note": 48,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 16.815,
+        "duration": 2.3,
+        "note": 55,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 16.830000000000002,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 16.845000000000002,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 16.8,
+        "duration": 0.95,
+        "note": 36,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 16.8,
+        "duration": 0.27,
+        "note": 60,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 17.7,
+        "duration": 0.27,
+        "note": 67,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 18.3,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 18.900000000000002,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 19.2,
+        "duration": 2.3,
+        "note": 50,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 19.215,
+        "duration": 2.3,
+        "note": 57,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 19.23,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 19.245,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 19.2,
+        "duration": 0.95,
+        "note": 38,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 19.2,
+        "duration": 0.27,
+        "note": 62,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 20.099999999999998,
+        "duration": 0.27,
+        "note": 69,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 20.7,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 21.3,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 21.599999999999998,
+        "duration": 2.3,
+        "note": 53,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.34500000000000003
+      },
+      {
+        "start": 21.615,
+        "duration": 2.3,
+        "note": 60,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": -0.115
+      },
+      {
+        "start": 21.63,
+        "duration": 2.3,
+        "note": 64,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.115
+      },
+      {
+        "start": 21.645,
+        "duration": 2.3,
+        "note": 69,
+        "amp": 0.038,
+        "instrument": "felt",
+        "pan": 0.34500000000000003
+      },
+      {
+        "start": 21.599999999999998,
+        "duration": 0.95,
+        "note": 41,
+        "amp": 0.065,
+        "instrument": "bass",
+        "pan": -0.08
+      },
+      {
+        "start": 21.599999999999998,
+        "duration": 0.27,
+        "note": 65,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 22.499999999999996,
+        "duration": 0.27,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 23.099999999999998,
+        "duration": 0.27,
+        "note": 76,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": -0.32
+      },
+      {
+        "start": 23.7,
+        "duration": 0.27,
+        "note": 81,
+        "amp": 0.045,
+        "instrument": "pluck",
+        "pan": 0.32
+      },
+      {
+        "start": 21,
+        "duration": 0.65,
+        "note": 74,
+        "amp": 0.045,
+        "instrument": "felt",
+        "pan": 0.12
+      },
+      {
+        "start": 21.6,
+        "duration": 0.65,
+        "note": 72,
+        "amp": 0.045,
+        "instrument": "felt",
+        "pan": 0.12
+      },
+      {
+        "start": 22.2,
+        "duration": 0.65,
+        "note": 69,
+        "amp": 0.045,
+        "instrument": "felt",
+        "pan": 0.12
+      },
+      {
+        "start": 22.8,
+        "duration": 0.65,
+        "note": 67,
+        "amp": 0.045,
+        "instrument": "felt",
+        "pan": 0.12
+      },
+      {
+        "start": 23.4,
+        "duration": 0.65,
+        "note": 65,
+        "amp": 0.045,
+        "instrument": "felt",
+        "pan": 0.12
+      },
+      {
+        "start": 24,
+        "duration": 0.65,
+        "note": 64,
+        "amp": 0.045,
+        "instrument": "felt",
+        "pan": 0.12
+      }
+    ],
+    "cues": [
+      {
+        "id": "bean-turn",
+        "kind": "thread",
+        "time": 0.5,
+        "duration": 1.5,
+        "amp": 0.25,
+        "pan": -0.2
+      },
+      {
+        "id": "grinder-turn",
+        "kind": "grind",
+        "time": 4.35,
+        "duration": 3.3,
+        "amp": 0.72,
+        "pan": 0
+      },
+      {
+        "id": "grounds-settle",
+        "kind": "paper",
+        "time": 8.05,
+        "duration": 1.4,
+        "amp": 0.24,
+        "pan": 0.3
+      },
+      {
+        "id": "bloom-contact",
+        "kind": "pour",
+        "time": 11.5,
+        "duration": 3.4,
+        "amp": 0.8,
+        "pan": 0.25
+      },
+      {
+        "id": "drop-hit-0",
+        "kind": "pour",
+        "time": 16.93,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "drop-hit-1",
+        "kind": "pour",
+        "time": 17.48,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "drop-hit-2",
+        "kind": "pour",
+        "time": 18.03,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "drop-hit-3",
+        "kind": "pour",
+        "time": 18.580000000000002,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "drop-hit-4",
+        "kind": "pour",
+        "time": 19.13,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "drop-hit-5",
+        "kind": "pour",
+        "time": 19.68,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "drop-hit-6",
+        "kind": "pour",
+        "time": 20.23,
+        "duration": 0.14,
+        "amp": 0.36,
+        "pan": 0.1
+      },
+      {
+        "id": "cup-rest",
+        "kind": "press",
+        "time": 21.05,
+        "duration": 0.25,
+        "amp": 0.2,
+        "pan": 0.15
+      },
+      {
+        "id": "coffee-title",
+        "kind": "chime",
+        "time": 26.2,
+        "duration": 1.3,
+        "amp": 0.24,
+        "pan": 0
+      }
+    ],
+    "composition": "New100BPM felt/pluck/bass score authored for bean/grind/bloom/extraction/cup. Dm9/Fmaj7/Gm7/C motion resolves down. Synthesized object sounds; no natural-recording claim, no reused city music.",
+    "bus_envelopes": {
+      "music": [
+        [
+          0,
+          0
+        ],
+        [
+          0.25,
+          0.8
+        ],
+        [
+          10.7,
+          0.8
+        ],
+        [
+          11.3,
+          0.48
+        ],
+        [
+          16,
+          0.7
+        ],
+        [
+          22,
+          0.65
+        ],
+        [
+          24.5,
+          0.4
+        ],
+        [
+          25.3,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ],
+      "sfx": [
+        [
+          0,
+          1
+        ],
+        [
+          25.6,
+          1
+        ],
+        [
+          25.8,
+          0
+        ],
+        [
+          26.2,
+          0
+        ],
+        [
+          26.20002,
+          1
+        ],
+        [
+          29.2,
+          1
+        ],
+        [
+          29.4,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ],
+      "ambience": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ],
+      "voice": [
+        [
+          0,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    },
+    "mix": {
+      "sfx_gain_db": 1,
+      "ambience_gain_db": 0,
+      "voice_gain_db": 0,
+      "duck_sfx": true,
+      "duck_voice": false
+    },
+    "loudness": {
+      "integrated": -16,
+      "true_peak": -1.5
+    },
+    "silence": [
+      {
+        "start": 25.8,
+        "end": 26.2
+      },
+      {
+        "start": 29.4,
+        "end": 30
+      }
+    ],
+    "ending": {
+      "version": "event-ending-v2",
+      "event_scene": "cup",
+      "event_layer": "settling-ripple",
+      "event_property": "opacity",
+      "event_value": 0,
+      "event_time": 25,
+      "music_stop": 25.3,
+      "quiet_time": 25.8,
+      "title_scene": "title",
+      "title_layer": "copy",
+      "title_time": 26.2,
+      "tail_silence": 29.4,
+      "title_cue_ids": [
+        "coffee-title"
+      ]
+    }
+  },
+  "editorial_plan": {
+    "version": "shot-intent-v1",
+    "shots": [
+      {
+        "scene_id": "bean",
+        "role": "action",
+        "framing": "비대칭 원두 매크로",
+        "layout": "bean",
+        "purpose": "원두 한 알의 홈을 따라 돌아본다",
+        "subject_layers": [
+          "copper-halo",
+          "hero-bean",
+          "copy",
+          "small",
+          "seam-trace",
+          "bean-deep-parallax-0"
+        ],
+        "action": {
+          "verb": "원두 한 알의 홈을 따라 돌아본다",
+          "before": {
+            "at": 0,
+            "state": "원두의 곡면과 중앙 홈이 비스듬히 놓인다"
+          },
+          "contact": {
+            "at": 1.92,
+            "state": "홈을 따라 가느다란 선이 그어진다"
+          },
+          "after": {
+            "at": 3.966666666666667,
+            "state": "원두가 작아지며 아래의 분쇄기로 이어진다"
+          },
+          "changed_layers": [
+            "hero-bean",
+            "seam-trace",
+            "bean-deep-parallax-0"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "small"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "bean-turn",
+              "visible_event": "홈을 따라 가느다란 선이 그어진다",
+              "at": 0.5
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "grinder",
+          "reason": "원두가 작아지며 아래의 분쇄기로 이어진다을 다음 과정의 입력으로 삼되 다른 시점으로 작업 원리를 읽게 한다"
+        }
+      },
+      {
+        "scene_id": "grinder",
+        "role": "action",
+        "framing": "정면 분쇄기 단면",
+        "layout": "grinder",
+        "purpose": "원두를 두 분쇄날 사이로 보낸다",
+        "subject_layers": [
+          "housing",
+          "outer-burr",
+          "inner-burr",
+          "copy",
+          "annotation",
+          "input-bean-0",
+          "input-bean-1",
+          "input-bean-2",
+          "input-bean-3",
+          "input-bean-4",
+          "ground-0",
+          "ground-1",
+          "ground-2",
+          "ground-3",
+          "ground-4",
+          "ground-5",
+          "ground-6",
+          "ground-7",
+          "ground-8",
+          "ground-9",
+          "ground-10",
+          "ground-11",
+          "ground-12",
+          "ground-13",
+          "ground-14",
+          "ground-15"
+        ],
+        "action": {
+          "verb": "원두를 두 분쇄날 사이로 보낸다",
+          "before": {
+            "at": 0,
+            "state": "투입구 위 원두와 분쇄날 사이 틈이 보인다"
+          },
+          "contact": {
+            "at": 1.92,
+            "state": "날들이 반대로 돌며 원두가 틈에 들어간다"
+          },
+          "after": {
+            "at": 3.966666666666667,
+            "state": "작은 가루가 아래 출구로 흘러나온다"
+          },
+          "changed_layers": [
+            "outer-burr",
+            "inner-burr",
+            "input-bean-0",
+            "input-bean-1",
+            "input-bean-2",
+            "input-bean-3",
+            "input-bean-4",
+            "ground-0",
+            "ground-1",
+            "ground-2",
+            "ground-3",
+            "ground-4",
+            "ground-5",
+            "ground-6",
+            "ground-7",
+            "ground-8",
+            "ground-9",
+            "ground-10",
+            "ground-11",
+            "ground-12",
+            "ground-13",
+            "ground-14",
+            "ground-15"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "annotation"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "grinder-turn",
+              "visible_event": "날들이 반대로 돌며 원두가 틈에 들어간다",
+              "at": 0.35
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "grounds",
+          "reason": "작은 가루가 아래 출구로 흘러나온다을 다음 과정의 입력으로 삼되 다른 시점으로 작업 원리를 읽게 한다"
+        }
+      },
+      {
+        "scene_id": "grounds",
+        "role": "action",
+        "framing": "필터 탑뷰",
+        "layout": "grounds",
+        "purpose": "필터 안으로 분쇄 가루를 모은다",
+        "subject_layers": [
+          "filter-ring",
+          "ground-bed",
+          "copy",
+          "grain-note",
+          "grounds-overlapping-action-0"
+        ],
+        "action": {
+          "verb": "필터 안으로 분쇄 가루를 모은다",
+          "before": {
+            "at": 0,
+            "state": "주름진 필터의 중앙에 작은 가루층이 있다"
+          },
+          "contact": {
+            "at": 1.44,
+            "state": "가루가 내려앉으며 층이 넓어진다"
+          },
+          "after": {
+            "at": 2.966666666666667,
+            "state": "가루가 필터 바닥에 고르게 놓인다"
+          },
+          "changed_layers": [
+            "ground-bed",
+            "grounds-overlapping-action-0"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "grain-note"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "grounds-settle",
+              "visible_event": "가루가 내려앉으며 층이 넓어진다",
+              "at": 0.05
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "match-shape",
+          "next_scene": "bloom",
+          "relationship": "same-object",
+          "reason": "필터와 가루의 탑뷰를 같은 좌표로 보존하고 물 반응만 더한다",
+          "outgoing": {
+            "layer_id": "filter-ring",
+            "at": 2.966,
+            "anchor": [
+              0.6145833333333334,
+              0.5
+            ],
+            "velocity": [
+              0,
+              0
+            ]
+          },
+          "incoming": {
+            "layer_id": "filter-ring",
+            "at": 0,
+            "anchor": [
+              0.6145833333333334,
+              0.5
+            ],
+            "velocity": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "scene_id": "bloom",
+        "role": "action",
+        "framing": "같은 탑뷰의 물 반응",
+        "layout": "bloom",
+        "purpose": "물로 가루를 적셔 부풀게 한다",
+        "subject_layers": [
+          "filter-ring",
+          "dry-ground",
+          "wet-bloom",
+          "pour-path",
+          "kettle-spout",
+          "copy",
+          "bloom-note",
+          "bubble-0",
+          "bubble-1",
+          "bubble-2",
+          "bubble-3",
+          "bubble-4",
+          "bubble-5",
+          "bubble-6",
+          "bubble-7",
+          "bubble-8",
+          "bubble-9"
+        ],
+        "action": {
+          "verb": "물로 가루를 적셔 부풀게 한다",
+          "before": {
+            "at": 0,
+            "state": "건조한 가루의 밝고 거친 입자가 보인다"
+          },
+          "contact": {
+            "at": 0.5,
+            "state": "물줄기가 가운데에 닿고 젖은 원이 커진다"
+          },
+          "after": {
+            "at": 4.966666666666667,
+            "state": "전체 층이 젖고 작은 기포가 올라온다"
+          },
+          "changed_layers": [
+            "wet-bloom",
+            "pour-path",
+            "bubble-0",
+            "bubble-1",
+            "bubble-2",
+            "bubble-3",
+            "bubble-4",
+            "bubble-5",
+            "bubble-6",
+            "bubble-7",
+            "bubble-8",
+            "bubble-9"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "bloom-note"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "bloom-contact",
+              "visible_event": "물줄기가 가운데에 닿고 젖은 원이 커진다",
+              "at": 0.5
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "extraction",
+          "reason": "전체 층이 젖고 작은 기포가 올라온다을 다음 과정의 입력으로 삼되 다른 시점으로 작업 원리를 읽게 한다"
+        }
+      },
+      {
+        "scene_id": "extraction",
+        "role": "action",
+        "framing": "수직 필터와 서버 단면",
+        "layout": "extraction",
+        "purpose": "필터를 지난 커피를 모은다",
+        "subject_layers": [
+          "dripper",
+          "filter-flow",
+          "server",
+          "server-liquid",
+          "server-surface",
+          "copy",
+          "process-note",
+          "drop-0",
+          "drop-1",
+          "drop-2",
+          "drop-3",
+          "drop-4",
+          "drop-5",
+          "drop-6"
+        ],
+        "action": {
+          "verb": "필터를 지난 커피를 모은다",
+          "before": {
+            "at": 0,
+            "state": "분쇄층 아래 필터와 빈 서버가 분리돼 보인다"
+          },
+          "contact": {
+            "at": 0.93,
+            "state": "방울이 필터 끝에서 떨어진다"
+          },
+          "after": {
+            "at": 4.966666666666667,
+            "state": "방울을 받은 서버 수면이 높아진다"
+          },
+          "changed_layers": [
+            "filter-flow",
+            "drop-0",
+            "drop-1",
+            "drop-2",
+            "drop-3",
+            "drop-4",
+            "drop-5",
+            "drop-6"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "process-note"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "drop-hit-0",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 0.93
+            },
+            {
+              "cue_id": "drop-hit-1",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 1.48
+            },
+            {
+              "cue_id": "drop-hit-2",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 2.03
+            },
+            {
+              "cue_id": "drop-hit-3",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 2.58
+            },
+            {
+              "cue_id": "drop-hit-4",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 3.13
+            },
+            {
+              "cue_id": "drop-hit-5",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 3.68
+            },
+            {
+              "cue_id": "drop-hit-6",
+              "visible_event": "방울이 필터 끝에서 떨어진다",
+              "at": 4.23
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "cup",
+          "reason": "방울을 받은 서버 수면이 높아진다을 다음 과정의 입력으로 삼되 다른 시점으로 작업 원리를 읽게 한다"
+        }
+      },
+      {
+        "scene_id": "cup",
+        "role": "action",
+        "framing": "큰 컵의 낮은 시점",
+        "layout": "cup",
+        "purpose": "수면을 가라앉히고 한 잔에 머문다",
+        "subject_layers": [
+          "table-shadow",
+          "saucer",
+          "cup-handle",
+          "cup-body",
+          "settling-ripple",
+          "copy",
+          "cup-note",
+          "steam-0",
+          "steam-1",
+          "steam-2"
+        ],
+        "action": {
+          "verb": "수면을 가라앉히고 한 잔에 머문다",
+          "before": {
+            "at": 0,
+            "state": "컵 안의 물결이 작게 번진다"
+          },
+          "contact": {
+            "at": 2.4,
+            "state": "넓어진 물결과 수증기가 함께 보인다"
+          },
+          "after": {
+            "at": 4.966666666666667,
+            "state": "25초 물결이 멎고 컵이 고요하게 남는다"
+          },
+          "changed_layers": [
+            "settling-ripple",
+            "steam-0",
+            "steam-1",
+            "steam-2"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              5
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "cup-note"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "cup-rest",
+              "visible_event": "넓어진 물결과 수증기가 함께 보인다",
+              "at": 0.05
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "title",
+          "reason": "25초 물결이 멎고 컵이 고요하게 남는다을 다음 과정의 입력으로 삼되 다른 시점으로 작업 원리를 읽게 한다"
+        }
+      },
+      {
+        "scene_id": "title",
+        "role": "action",
+        "framing": "중앙 제목",
+        "layout": "title",
+        "purpose": "완성된 한 잔의 제목을 남긴다",
+        "subject_layers": [
+          "title-mark",
+          "copy",
+          "closing"
+        ],
+        "action": {
+          "verb": "완성된 한 잔의 제목을 남긴다",
+          "before": {
+            "at": 0,
+            "state": "음악이 멎은 어두운 화면이다"
+          },
+          "contact": {
+            "at": 0.25,
+            "state": "짧은 단발음에 제목이 보이기 시작한다"
+          },
+          "after": {
+            "at": 3.966666666666667,
+            "state": "제목과 부제를 정지해 읽는다"
+          },
+          "changed_layers": [
+            "title-mark",
+            "copy",
+            "closing"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "재료의 변화를 주동작으로 하고 대상 없는 카메라 흔들림은 쓰지 않는다",
+          "steady_windows": [
+            [
+              0,
+              4
+            ]
+          ]
+        },
+        "typography": {
+          "role": "information",
+          "reason": "대상의 상태를 짧은 한국어 문장으로 남긴다",
+          "layers": [
+            "copy",
+            "closing"
+          ]
+        },
+        "sound": {
+          "music_role": "작품용으로 새로 작곡한 악보의 밀도를 공정에 맞춰 바꾼다",
+          "ambience_role": "배경 잡음을 더하지 않아 재료 접촉과 악기를 분리한다",
+          "events": [
+            {
+              "cue_id": "coffee-title",
+              "visible_event": "짧은 단발음에 제목이 보이기 시작한다",
+              "at": 0.2
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "end"
+        }
+      }
+    ]
+  }
+}

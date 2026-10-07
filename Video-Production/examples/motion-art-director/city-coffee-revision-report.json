@@ -1,0 +1,116 @@
+{
+  "city": {
+    "sha256": "50fb73e6a5dd33b42186a9f491a02a18ea59c65dc37ca85da50b5f65c3086053",
+    "bytes": 80309985,
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "frames": 5400,
+      "duration": 180,
+      "fps": "30/1",
+      "pixelFormat": "yuv420p"
+    },
+    "audio": {
+      "integratedLUFS": -16.05,
+      "truePeakDBTP": -1.68
+    },
+    "fullDecode": "passed",
+    "stemsPauseAndTailZero": true,
+    "decodedAacPausePeakDbfs": -68.72537377824186,
+    "renderSeconds": 957.958,
+    "peakProcessTreePrivateBytes": 1075044352,
+    "memoryCaveat": "Observed render PID and recursive descendants; sampled every5s after rendering began; summed working sets may double count shared pages; not a physical16GB notebook measurement"
+  },
+  "coffee": {
+    "sha256": "f7264f3793cd349bff90b89862d84ce0ff6cb7c0768d2fee85a907195d4d7c68",
+    "bytes": 2129323,
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "frames": 900,
+      "duration": 30,
+      "fps": 30
+    },
+    "audio": {
+      "integratedLUFS": -16.03,
+      "truePeakDBTP": -1.5,
+      "silence": [
+        {
+          "start": 25.8,
+          "end": 26.2,
+          "zeroPCM": true,
+          "bytes": 76800
+        },
+        {
+          "start": 29.4,
+          "end": 30,
+          "zeroPCM": true,
+          "bytes": 115200
+        }
+      ]
+    },
+    "fullDecode": "passed",
+    "exactFrames": 21,
+    "newScoreNotes": 88,
+    "objectSounds": [
+      "grind",
+      "pour"
+    ],
+    "reviews": {
+      "rootAuthoredFreshTopic": true,
+      "blindIndependentAgent": false,
+      "styleframes": "observed; fixed liquid crossing glass boundary",
+      "wholeListening": "pending",
+      "fullBrowserPlayback": "pending",
+      "physical16GBNotebook": "not measured"
+    },
+    "renderSeconds": 134.411
+  },
+  "tests": {
+    "ok": true,
+    "rows": [
+      {
+        "test": "actual editable-copy revision",
+        "affected": [
+          "bean"
+        ],
+        "rendered": [
+          "bean"
+        ],
+        "reusedAudio": true
+      },
+      {
+        "test": "actual music-only revision",
+        "pictureClipsReused": 7,
+        "assemblyReused": true,
+        "audioRebuilt": true
+      },
+      {
+        "test": "intentional cut-boundary interruption/resume",
+        "completedCutReused": true,
+        "frames": 240,
+        "completeRunReuse": true
+      },
+      {
+        "test": "actual source interval1s→3s revision",
+        "videoTrackRebuilt": true,
+        "audioReused": true,
+        "oldHash": "1494e261416a2b5eb2e401b871a77d4eddb2887a18505a42f2793aa67a0695cd",
+        "newHash": "cd837d53ebdf312011d7088da232f09f15713bdc8ca94b86f30e7364681831bc"
+      }
+    ],
+    "originalCoffeePreserved": true,
+    "originalCityPreserved": true,
+    "limits": "Root-authored test, not independent agent or full human listening"
+  },
+  "reviews": {
+    "cityMidpointContactSheets": "45 cuts observed",
+    "changedCityStyleframes": "before/contact/after observed",
+    "coffeeStyleframes": "observed and corrected liquid boundary",
+    "wholeListening": "pending",
+    "userAesthetic": "pending",
+    "physical16GBNotebook": "not measured"
+  },
+  "regressionLog": "regression-20261007.log",
+  "release": "3.1 remains work in progress; no release/OS promotion claim"
+}
