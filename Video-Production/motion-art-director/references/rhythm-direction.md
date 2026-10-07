@@ -51,7 +51,8 @@ Music gain changes do not invalidate graphic timing. Source trims, speeds, hashe
 
 ## Counterexamples
 
-- Keep music fixed; move visual landings by ±1/2/4frames. The actual compiled target must fail while the unchanged positive case passes.
+- Technical mutation test: keep the declared intended target fixed and move rendered landings by ±1/2/4frames. Reject deviations from that contract and retain an unchanged positive case. This tests execution, not whether the original musical anchor was right.
+- Perceptual audition: keep music fixed and present picture offsets with neutral labels. No option is a known aesthetic failure before listening. If an offset is preferred, record the exact files, interval, output device and observation, then revise the intended target. A reviewed nonzero target must pass exact execution; deviations from that revised target must fail. Do not accept every offset by widening an error tolerance.
 - Replace a sustained image with beat-by-beat cuts. Its protected hold must fail, even when every new cut lands perfectly.
 - Conversely, an edit dominated by holds must not be reported as good rhythmic direction merely because it passes hold validation. Report its actual duration distribution.
 - Split one source into many shots or swap words over the same composition. Count the cuts but keep repeated coverage visible; no automatic variety or narrative pass.

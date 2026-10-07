@@ -15,3 +15,11 @@ Separate true tempo change, syncopation, halftime feel, instrumentation density 
 Validation distinguishes source/clock consistency, correct frame execution, human-attested phase, and aesthetic judgment. Moving every boundary by half a beat keeps recurrence intact but invalidates its prior review. The software cannot infer that an arbitrary newly-attested phase is musically wrong. Audition it against alternatives. Keep unreviewed regions pending.
 
 No mandatory paid model, generated voice, GPU or new audio API. User calibration is a bounded review of prepared examples, not a request to annotate the entire film manually. Preserve previous films and maps. After rejection, do not produce another full film until the agreed representative calibration checkpoint.
+
+## Perceived impact versus measured onset
+
+Separate the measured source attack, interpreted motif boundary, intended visual impact and actual decoded frame. A listener can prefer an offset to an initially measured candidate; it is not automatically playback error or an incorrect preference. Record the device path and clip identity. A single-device preference supports that audition, not a universal correction for other songs or every section.
+
+An edit plan may explicitly set `tolerance_frames: 4` and binding `impact_offset_frames: 4` (or a negative value) to place an intended picture event after (or before) the source anchor. Default is zero; the allowed magnitude is currently 0..4 frames, inherited from music-impact-v1. Despite the legacy field name, this allows an authored offset, not imprecise output: the compiled event must still execute at its exact revised frame. The measured source timestamp and musical-structure review remain unchanged. Listening preference for a whole preview does not automatically attest every boundary or group.
+
+Picture-only padding/trimming is a comparison method, not a complete production correction. Retime source contacts, local graphic actions, transitions and event SFX together; preserve handles, the final title and intentional silence. Recheck neighboring cuts. Keep original files and observations. Audition choices use neutral labels until the listener chooses; an implementation mutant is not a proven perceptual counterexample.

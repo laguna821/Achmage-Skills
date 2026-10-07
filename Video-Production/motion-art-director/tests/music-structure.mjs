@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import {musicIdentity,structureDigest,checkStructure,compileStructure} from '../lib/music-structure.mjs';
+import {compileRhythm,rhythmCheck} from '../lib/rhythm-score.mjs';
 const p={assets:[{asset_id:'song',sha256:'a'.repeat(64)}],audio:{clips:[{bus:'music',asset_id:'song',start:0,source_in:100,duration:172}]}};
 const m={version:'musical-structure-v1',identity:musicIdentity(p),boundaries:[{id:'a',source_seconds:100.37,method:'authored',evidence:'Fixture phase'},{id:'b',source_seconds:107.61,method:'authored',evidence:'Explicit independently located end'}],groups:[{id:'g',start:'a',end:'b',reason:'Musical motif fixture'}],sections:[],review:{status:'pending'}};
 const edit={version:'musical-edit-plan-v1',bindings:[{id:'cut',boundary_id:'b',scene_id:'next',target:{kind:'cut'},reason:'Motif resolves into next action'}]};let n=0;
@@ -15,4 +16,23 @@ test('unordered, duplicate and orphan group endpoints rejected',()=>{for(const m
 test('nonuniform and syncopated times retained without grid snapping',()=>{const q=structuredClone(m);q.boundaries[1].source_seconds=108.027;const r=compileStructure(p,q,edit,{draft:true});assert.equal(r.rhythm_score.events[0].source_seconds,108.027);});
 test('unknown edit boundary rejected',()=>{const e=structuredClone(edit);e.bindings[0].boundary_id='missing';assert.throws(()=>compileStructure(p,m,e,{draft:true}),/missing/);});
 test('unattested listening claim rejected',()=>{const q=structuredClone(m);q.boundaries[0].method='listening-corrected';assert.equal(checkStructure(p,q).ok,false);});
+test('explicit picture offset keeps measured source clock and exact execution',()=>{
+ const source={...structuredClone(p),schema_version:'3.1.0',output:{fps:30,total_frames:5160},scenes:[{id:'first',start:0,end:228,composition:{layers:[]}},{id:'next',start:228,end:5160,composition:{layers:[]}}]};source.assets[0].kind='audio';
+ const e=structuredClone(edit);e.tolerance_frames=4;e.bindings[0].impact_offset_frames=4;
+ const q=compileRhythm(compileStructure(source,m,e,{draft:true}));
+ assert.equal(q.scenes[1].start,232);assert.equal(q.scenes[0].end,232);
+ assert.deepEqual(q.audio,source.audio);assert.deepEqual(q.musical_structure,m);
+ assert.equal(q.rhythm_score.events[0].source_seconds,107.61);
+ assert.equal(rhythmCheck(q).ok,true);assert.equal(checkStructure(q,m).calibrated,false);
+ const wrong=structuredClone(q);wrong.scenes[1].start++;wrong.scenes[0].end++;
+ assert.equal(rhythmCheck(wrong).ok,false,'intentional offset allowance is not a renderer error budget');
+ assert.equal(source.scenes[1].start,228,'original project preserved');
+});
+test('nonzero offset requires explicit bounded allowance',()=>{
+ const e=structuredClone(edit);e.bindings[0].impact_offset_frames=4;
+ assert.throws(()=>compileStructure(p,m,e,{draft:true}),/allowance/);
+ for(const value of [-1,5,1.5,NaN])assert.throws(()=>compileStructure(p,m,{...e,tolerance_frames:value},{draft:true}),/allowance/);
+ e.tolerance_frames=4;e.bindings[0].impact_offset_frames=4.1;
+ assert.throws(()=>compileStructure(p,m,e,{draft:true}),/allowance/);
+});
 console.log('music-structure: '+n+' contracts passed; phase review invalidation is not automatic perception of a wrong first beat');

@@ -27,13 +27,16 @@ export function compileStructure(p,m,edit,{draft=false}={}){
  const check=checkStructure(p,m);if(!check.ok)throw Error(check.errors.join('; '));
  if(!check.calibrated&&!draft)throw Error('Review musical boundaries first; use --draft for a provisional comparison only');
  if(edit?.version!=='musical-edit-plan-v1'||!Array.isArray(edit.bindings))throw Error('Explicit musical edit plan required');
+ const allowance=edit.tolerance_frames??0;
+ if(!Number.isInteger(allowance)||allowance<0||allowance>4)throw Error('Explicit intentional offset allowance must be 0..4 frames');
+ for(const b of edit.bindings){const offset=b.impact_offset_frames??0;if(!Number.isInteger(offset)||Math.abs(offset)>allowance)throw Error('Intentional offset exceeds explicit edit allowance');}
  const q=structuredClone(p);if(p.__projectDir)Object.defineProperty(q,'__projectDir',{value:p.__projectDir});
  const used=new Set(edit.bindings.map(b=>b.boundary_id)),events=m.boundaries.filter(b=>used.has(b.id));
  if(events.length!==used.size)throw Error('Edit references missing musical boundary');
  const end=m.identity.source_in+m.identity.duration*m.identity.speed;
  if(events.some(b=>b.source_seconds>=end))throw Error('Music end cannot start a new bound scene');
  q.musical_structure=structuredClone(m);
- q.rhythm_score={version:'music-impact-v1',music:{asset_id:m.identity.asset_id,sha256:m.identity.sha256,clip_index:m.identity.clip_index},tolerance_frames:0,events:events.map(b=>({id:b.id,source_seconds:b.source_seconds,role:'phrase',method:check.calibrated&&b.method==='listening-corrected'?'listening-corrected':'authored',confidence:check.calibrated?1:.3,evidence:b.evidence})),bindings:edit.bindings.map(({boundary_id,...b})=>({...b,event_id:boundary_id})),holds:edit.holds||[]};
+ q.rhythm_score={version:'music-impact-v1',music:{asset_id:m.identity.asset_id,sha256:m.identity.sha256,clip_index:m.identity.clip_index},tolerance_frames:allowance,events:events.map(b=>({id:b.id,source_seconds:b.source_seconds,role:'phrase',method:check.calibrated&&b.method==='listening-corrected'?'listening-corrected':'authored',confidence:check.calibrated?1:.3,evidence:b.evidence})),bindings:edit.bindings.map(({boundary_id,...b})=>({...b,event_id:boundary_id})),holds:edit.holds||[]};
  delete q.approval;return q;
 }
 export async function analyzeStructure(p,analysisFolder){
