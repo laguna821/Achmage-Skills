@@ -19,7 +19,7 @@ export function directionCheck(p){
   for(const o of objects.values()){
    check(nonempty(o.kind)&&nonempty(o.depicts)&&strings(o.features)&&strings(o.bindings),o.id+': 그릴 대상·식별 특징·레이어 대응 필요');
    check(Array.isArray(o.bindings)&&o.bindings.every(id=>layers.has(id)),o.id+': 명세에만 있고 실제 레이어에 없는 대상');
-   if(o.kind!=='typography')check(Array.isArray(o.bindings)&&o.bindings.some(id=>['svg','image','procedural'].includes(layers.get(id)?.kind)),o.id+': 실제 그림 없이 글자만 연결된 대상');
+   if(o.kind!=='typography')check(Array.isArray(o.bindings)&&o.bindings.some(id=>['svg','image','procedural','video'].includes(layers.get(id)?.kind)),o.id+': 실제 그림 없이 글자만 연결된 대상');
    check(o.information===undefined||Array.isArray(o.information),o.id+': information must be an array');
    for(const f of Array.isArray(o.information)?o.information:[])check(f&&nonempty(f.name)&&f.value!==undefined&&nonempty(f.basis)&&nonempty(f.layer_id)&&layers.has(f.layer_id)&&o.bindings?.includes(f.layer_id),o.id+': 정보의 값·근거·대상에 연결된 표시 레이어 필요');
   }

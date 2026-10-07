@@ -42,11 +42,11 @@ window.__artReady=(async function(){
   const travel=c.travel||{},dist=(travel.offset??0)+(s.driving?window.__driveIntegral(s.driving.speed,t):(travel.speed??0)*t+.5*(travel.acceleration??0)*t*t);
   const visible=new Set(c.show||[]),transforms=[];
   for(const {o,n}of registry.values()){
-   const q=c.transforms?.[n.id]||{},tr=sample(q.keyframes||n.keyframes,q.keyframes?t:frame/30,{position:q.position||n.position||[0,0,0],rotation:q.rotation||n.rotation||[0,0,0],scale:q.scale||n.scale||[1,1,1]});o.position.fromArray(tr.position);o.rotation.set(...tr.rotation);o.scale.fromArray(tr.scale);
+   const q=c.transforms?.[n.id]||{},tr=sample(q.keyframes||n.keyframes,q.keyframes?t:frame/30+(p.spatial.clock_origin||0),{position:q.position||n.position||[0,0,0],rotation:q.rotation||n.rotation||[0,0,0],scale:q.scale||n.scale||[1,1,1]});o.position.fromArray(tr.position);o.rotation.set(...tr.rotation);o.scale.fromArray(tr.scale);
    o.visible=!(n.tags||[]).some(tag=>(c.hide||[]).includes(tag))&&(!n.variant||visible.has(n.variant));
    if(n.motion?.kind==='wheel')o.rotation[n.motion.axis||'x']+=(c.wheel_distance??dist)/n.motion.radius*(n.motion.sign??1);
    if(n.motion?.kind==='repeat'){const a=n.motion.min,b=n.motion.max,axis=n.motion.axis||'z';o.position[axis]=a+((o.position[axis]-a+dist)%(b-a)+(b-a))%(b-a);}
-   if(n.motion?.kind==='oscillate')o.position[n.motion.axis||'y']+=Math.sin(frame/30*n.motion.frequency+p.seed)*n.motion.amplitude;
+   if(n.motion?.kind==='oscillate')o.position[n.motion.axis||'y']+=Math.sin((frame/30+(p.spatial.clock_origin||0))*n.motion.frequency+p.seed)*n.motion.amplitude;
    if(n.id===p.spatial.subject)transforms.push({id:n.id,position:[...tr.position],rotation:[...tr.rotation]});
   }
   world.updateMatrixWorld(true);

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:motion-art-director:project:3.0.0",
-  "title": "Motion Art Director v3",
+  "$id": "urn:motion-art-director:project:3.1.0",
+  "title": "Motion Art Director 3.1 project",
   "type": "object",
   "required": [
     "schema_version",
@@ -23,7 +23,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "3.0.0"
+      "const": "3.1.0"
     },
     "project_id": {
       "type": "string",
@@ -212,7 +212,18 @@
               "layers": {
                 "type": "array",
                 "minItems": 1,
-                "maxItems": 64
+                "maxItems": 64,
+                "items": {
+                  "$ref": "#/$defs/hybrid_layer"
+                }
+              },
+              "width": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0
               }
             }
           },
@@ -228,6 +239,10 @@
             "properties": {
               "kind": {
                 "enum": [
+                  "fade",
+                  "wipeleft",
+                  "wiperight",
+                  "circleopen",
                   "wipe-x",
                   "wipe-y",
                   "iris"
@@ -719,6 +734,45 @@
                 "type": "string"
               }
             }
+          },
+          "renderer": {
+            "enum": [
+              "vector-composite",
+              "image-composite",
+              "cinematic",
+              "spatial-three",
+              "hybrid-composite"
+            ]
+          },
+          "rasterizer": {
+            "enum": [
+              "chromium",
+              "skia"
+            ]
+          },
+          "portrait_composition": {
+            "type": "object",
+            "required": [
+              "layers"
+            ],
+            "properties": {
+              "layers": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "$ref": "#/$defs/hybrid_layer"
+                }
+              },
+              "width": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
           }
         }
       }
@@ -894,7 +948,9 @@
               "bus": {
                 "enum": [
                   "music",
-                  "sfx"
+                  "sfx",
+                  "ambience",
+                  "voice"
                 ]
               },
               "start": {
@@ -922,6 +978,11 @@
               "fade_out": {
                 "type": "number",
                 "minimum": 0
+              },
+              "speed": {
+                "type": "number",
+                "minimum": 0.25,
+                "maximum": 4
               }
             }
           }
@@ -941,9 +1002,22 @@
             },
             "duck_sfx": {
               "type": "boolean"
+            },
+            "ambience_gain_db": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": 18
+            },
+            "voice_gain_db": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": 18
+            },
+            "duck_voice": {
+              "type": "boolean"
             }
           },
-          "description": "Requires edited clips; independent from synthesis master gain."
+          "description": "Separate synthesis gain and delivered four-bus mix. Bus envelopes apply after clip mixing and tails."
         },
         "bus_envelopes": {
           "type": "object",
@@ -974,70 +1048,176 @@
                   "minimum": 0
                 }
               }
+            },
+            "ambience": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "voice": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
             }
           }
         },
         "ending": {
-          "type": "object",
-          "required": [
-            "version",
-            "stop_time",
-            "stop_scene",
-            "subject_id",
-            "mechanical_quiet",
-            "logo_time",
-            "logo_scene",
-            "logo_layer",
-            "logo_cue_ids",
-            "tail_silence"
-          ],
-          "properties": {
-            "version": {
-              "const": "event-ending-v1"
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "version",
+                "stop_time",
+                "stop_scene",
+                "subject_id",
+                "mechanical_quiet",
+                "logo_time",
+                "logo_scene",
+                "logo_layer",
+                "logo_cue_ids",
+                "tail_silence"
+              ],
+              "properties": {
+                "version": {
+                  "const": "event-ending-v1"
+                },
+                "stop_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "mechanical_quiet": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "logo_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tail_silence": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "stop_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "subject_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "logo_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "logo_layer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "logo_cue_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
             },
-            "stop_time": {
-              "type": "number",
-              "minimum": 0
-            },
-            "mechanical_quiet": {
-              "type": "number",
-              "minimum": 0
-            },
-            "logo_time": {
-              "type": "number",
-              "minimum": 0
-            },
-            "tail_silence": {
-              "type": "number",
-              "minimum": 0
-            },
-            "stop_scene": {
-              "type": "string",
-              "minLength": 1
-            },
-            "subject_id": {
-              "type": "string",
-              "minLength": 1
-            },
-            "logo_scene": {
-              "type": "string",
-              "minLength": 1
-            },
-            "logo_layer": {
-              "type": "string",
-              "minLength": 1
-            },
-            "logo_cue_ids": {
-              "type": "array",
-              "minItems": 1,
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "minLength": 1
+            {
+              "type": "object",
+              "required": [
+                "version",
+                "event_time",
+                "music_stop",
+                "quiet_time",
+                "title_time",
+                "tail_silence",
+                "event_scene",
+                "event_layer",
+                "event_property",
+                "event_value",
+                "title_scene",
+                "title_layer",
+                "title_cue_ids"
+              ],
+              "properties": {
+                "version": {
+                  "const": "event-ending-v2"
+                },
+                "event_value": {
+                  "type": "number"
+                },
+                "title_cue_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "event_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "music_stop": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quiet_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "title_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tail_silence": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "event_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_layer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_property": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title_layer": {
+                  "type": "string",
+                  "minLength": 1
+                }
               }
             }
-          }
-        }
+          ]
+        },
+        "narration": false
       }
     },
     "approval": {
@@ -1060,7 +1240,8 @@
         "vector-composite",
         "image-composite",
         "cinematic",
-        "spatial-three"
+        "spatial-three",
+        "hybrid-composite"
       ]
     },
     "direction_contract": {
@@ -1151,7 +1332,7 @@
     }
   },
   "additionalProperties": true,
-  "$comment": "JSON Schema is the shape contract. lib/contract.mjs enforces source linkage, copy locks, event distinctions, coverage, contiguous frames, reading time and approval hash.",
+  "$comment": "JSON Schema checks structural shape. scripts/motion.mjs validate is also required for cross-field time, source duration, source rights, renderer compatibility, object bindings and reading windows. Schema3.0 original is preserved.",
   "$defs": {
     "visual_plan": {
       "type": "object",
@@ -1393,6 +1574,213 @@
         "relative_to": {
           "type": "string"
         }
+      }
+    },
+    "video_layer": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "asset_id",
+        "source_in",
+        "rect"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "video"
+        },
+        "asset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rect": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "fit": {
+          "enum": [
+            "cover",
+            "contain"
+          ]
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.25,
+          "maximum": 4
+        },
+        "sound": {
+          "enum": [
+            "mute",
+            "source"
+          ]
+        },
+        "sound_gain_db": {
+          "type": "number",
+          "minimum": -60,
+          "maximum": 12
+        },
+        "sound_fade_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sound_fade_out": {
+          "type": "number",
+          "minimum": 0
+        },
+        "crop": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "mask": {
+          "type": "object",
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "ellipse",
+                "roundrect",
+                "path"
+              ]
+            },
+            "radius": {
+              "type": "number",
+              "minimum": 0
+            },
+            "d": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "opacity": {
+          "const": 1
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "x"
+                ]
+              },
+              {
+                "required": [
+                  "y"
+                ]
+              },
+              {
+                "required": [
+                  "scale"
+                ]
+              },
+              {
+                "required": [
+                  "scaleX"
+                ]
+              },
+              {
+                "required": [
+                  "scaleY"
+                ]
+              },
+              {
+                "required": [
+                  "rotation"
+                ]
+              },
+              {
+                "required": [
+                  "draw"
+                ]
+              },
+              {
+                "required": [
+                  "reveal"
+                ]
+              },
+              {
+                "required": [
+                  "reveal_rect"
+                ]
+              },
+              {
+                "required": [
+                  "clip"
+                ]
+              },
+              {
+                "required": [
+                  "pivot"
+                ]
+              },
+              {
+                "required": [
+                  "position"
+                ]
+              },
+              {
+                "required": [
+                  "keyframes"
+                ]
+              },
+              {
+                "required": [
+                  "motion"
+                ]
+              },
+              {
+                "required": [
+                  "morph"
+                ]
+              },
+              {
+                "required": [
+                  "clip_path"
+                ]
+              },
+              {
+                "required": [
+                  "blend"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "hybrid_layer": {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "video"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "$ref": "#/$defs/video_layer"
       }
     }
   },

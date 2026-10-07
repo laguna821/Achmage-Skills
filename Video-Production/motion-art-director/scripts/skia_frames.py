@@ -66,11 +66,11 @@ def morph(layer,t):
             return re.sub(r'-?(?:\d*\.\d+|\d+)(?:e[-+]?\d+)?',lambda m:str(float(m[0])+(next(numbers)-float(m[0]))*u),a['d'],flags=re.I)
         a=b
     return a['d']
-def render(project,frame,width,height,portrait=False):
+def render(project,frame,width,height,portrait=False,alpha=False):
     scene=next(s for s in project['scenes'] if s['start']<=frame<s['end']);t=(frame-scene['start'])/30
     composition=scene.get('portrait_composition',scene['composition']) if portrait else scene['composition']
     bw,bh=composition.get('width',1920),composition.get('height',1080)
-    surface=skia.Surface(width,height);canvas=surface.getCanvas();canvas.clear(color(composition.get('background','#ede8dc')))
+    surface=skia.Surface(width,height);canvas=surface.getCanvas();canvas.clear(skia.ColorTRANSPARENT if alpha else color(composition.get('background','#ede8dc')))
     fit=min(width/bw,height/bh);canvas.translate((width-bw*fit)/2,(height-bh*fit)/2);canvas.scale(fit,fit)
     units={c['content_id']:c['display_text'] for c in project['content_units']}
     for layer in composition['layers']:
@@ -94,16 +94,17 @@ def render(project,frame,width,height,portrait=False):
         canvas.restore();canvas.restore()
     return surface.makeImageSnapshot()
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--project',type=Path,required=True);ap.add_argument('--width',type=int,default=1920);ap.add_argument('--height',type=int,default=1080);ap.add_argument('--start',type=int,default=0);ap.add_argument('--end',type=int);ap.add_argument('--frame',type=int);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--ffmpeg');ap.add_argument('--crf',default='18');ap.add_argument('--portrait',action='store_true');ap.add_argument('--stop-after',type=int);a=ap.parse_args();p=json.loads(a.project.read_text(encoding='utf-8-sig'));a.out.parent.mkdir(parents=True,exist_ok=True)
+    ap=argparse.ArgumentParser();ap.add_argument('--project',type=Path,required=True);ap.add_argument('--width',type=int,default=1920);ap.add_argument('--height',type=int,default=1080);ap.add_argument('--start',type=int,default=0);ap.add_argument('--end',type=int);ap.add_argument('--frame',type=int);ap.add_argument('--out',type=Path,required=True);ap.add_argument('--ffmpeg');ap.add_argument('--crf',default='18');ap.add_argument('--portrait',action='store_true');ap.add_argument('--stop-after',type=int);ap.add_argument('--alpha',action='store_true');a=ap.parse_args();p=json.loads(a.project.read_text(encoding='utf-8-sig'));a.out.parent.mkdir(parents=True,exist_ok=True)
     if a.frame is not None:
-        render(p,a.frame,a.width,a.height,a.portrait).save(str(a.out),skia.kPNG);return
+        render(p,a.frame,a.width,a.height,a.portrait,a.alpha).save(str(a.out),skia.kPNG);return
     if not a.ffmpeg or a.end is None:raise ValueError('Video needs --ffmpeg and --end')
     cmd=[a.ffmpeg,'-y','-v','error','-f','rawvideo','-pixel_format','rgba','-video_size',f'{a.width}x{a.height}','-framerate','30','-i','pipe:0','-an','-c:v','libx264','-threads','2','-preset','veryfast','-crf',a.crf,'-pix_fmt','yuv420p','-movflags','+faststart',str(a.out)]
+    if a.alpha:cmd=cmd[:cmd.index('-c:v')]+['-c:v','ffv1','-level','3','-threads','2','-pix_fmt','bgra',str(a.out)]
     process=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=subprocess.PIPE);started=time.perf_counter()
     try:
         for index,frame in enumerate(range(a.start,a.end)):
             if a.stop_after is not None and index>=a.stop_after:raise RuntimeError('Test interruption requested')
-            image=render(p,frame,a.width,a.height,a.portrait);process.stdin.write(image.toarray(colorType=skia.kRGBA_8888_ColorType,alphaType=skia.kPremul_AlphaType).tobytes())
+            image=render(p,frame,a.width,a.height,a.portrait,a.alpha);process.stdin.write(image.toarray(colorType=skia.kRGBA_8888_ColorType,alphaType=skia.kUnpremul_AlphaType if a.alpha else skia.kPremul_AlphaType).tobytes())
         process.stdin.close();error=process.stderr.read();code=process.wait()
         if code:raise RuntimeError(error.decode(errors='replace'))
     finally:

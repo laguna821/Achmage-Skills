@@ -1,3 +1,5 @@
+import {mediaErrors} from './media.mjs';
+import {cameraErrors} from './camera31.mjs';
 import {spatialErrors} from './spatial.mjs';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -16,10 +18,10 @@ export function validate(p){
  if(p.assets!==undefined)check(Array.isArray(p.assets),'assets must be an array');
  if(errors.length)return {ok:false,errors,warnings:warn};
  check(typeof p.title==='string'&&p.title.length>0&&typeof p.direction==='string'&&p.direction.length>0,'title and direction required');
- check(p.renderer===undefined||['cinematic','vector-composite','image-composite','spatial-three'].includes(p.renderer),'unknown renderer');
+ check(p.renderer===undefined||['cinematic','vector-composite','image-composite','spatial-three','hybrid-composite'].includes(p.renderer),'unknown renderer');
  check(p.timeline_semantics===undefined||['segments-v1'].includes(p.timeline_semantics),'unknown timeline semantics');
  check(p.profile?.rasterizer===undefined||['chromium','skia'].includes(p.profile.rasterizer),'unknown rasterizer');
- check(p.schema_version==='3.0.0','schema_version must be 3.0.0');check(/^[a-z0-9-]+$/.test(p.project_id),'safe project_id required');
+ check(['3.0.0','3.1.0'].includes(p.schema_version),'schema_version must be 3.0.0 or 3.1.0');check(p.renderer!=='hybrid-composite'||p.schema_version==='3.1.0','hybrid requires 3.1.0');check(/^[a-z0-9-]+$/.test(p.project_id),'safe project_id required');
  check(['strict_svg','procedural_only','licensed_media'].includes(p.visual_policy),'visual_policy required');
  check(p.renderer!=='image-composite'||p.visual_policy==='licensed_media','image composite requires licensed_media');
  check(p.render_network==='local_only','baseline requires local_only');check(Number.isInteger(p.seed),'integer seed required');
@@ -32,22 +34,25 @@ export function validate(p){
  for(const c of units.values()){check(typeof c.display_text==='string'&&c.display_text.length>0,'empty text '+c.content_id);check(!c.copy_lock||c.display_text===c.source_text,'locked text changed '+c.content_id);check((p.sources||[]).some(s=>s.source_id===c.source_ref),'missing source '+c.content_id);}
  let cursor=0;const covered=new Set();
  for(const s of p.scenes||[]){
-  if(p.renderer==='vector-composite')check(!!s.composition,'vector renderer needs a composition');
-  if(p.profile?.rasterizer==='skia')check(p.renderer==='vector-composite'&&!!s.composition,'Skia needs a vector composition');
+  const renderer=s.renderer||p.renderer,rasterizer=s.rasterizer||p.profile?.rasterizer;check(p.schema_version==='3.1.0'||s.renderer===undefined,'scene renderer requires 3.1.0');
+  check(s.rasterizer===undefined||['chromium','skia'].includes(s.rasterizer),'unknown scene rasterizer');
+  if(['vector-composite','hybrid-composite'].includes(renderer))check(!!s.composition,'vector renderer needs a composition');
+  if(rasterizer==='skia')check(['vector-composite','hybrid-composite'].includes(renderer)&&!!s.composition,'Skia needs a vector composition');
   check(s.start===cursor&&Number.isInteger(s.end)&&s.end>s.start,'scene continuity '+s.id);cursor=s.end;
-  if(s.transition_in){check(['wipe-x','wipe-y','iris'].includes(s.transition_in.kind)&&Number.isFinite(s.transition_in.duration)&&s.transition_in.duration>0&&s.transition_in.duration<=2,'invalid scene transition');check(p.renderer==='vector-composite'&&p.profile?.rasterizer!=='skia','authored transitions currently require Chromium vector');}
+  if(s.transition_in){check((renderer==='hybrid-composite'?['fade','wipeleft','wiperight','circleopen','wipe-x','wipe-y','iris']:['wipe-x','wipe-y','iris']).includes(s.transition_in.kind)&&Number.isFinite(s.transition_in.duration)&&s.transition_in.duration>0&&s.transition_in.duration<=2,'invalid scene transition');check(['vector-composite','hybrid-composite'].includes(renderer)&&(renderer==='hybrid-composite'||rasterizer!=='skia'),'authored transitions require Chromium vector or hybrid compositor');}
   check(MODES.includes(s.mode)||s.custom_svg,'unknown scene mode '+s.id);
-  if(p.renderer==='image-composite'){check(['crystal','liquid','smoke','star'].includes(s.mode)||s.composition,'image renderer needs an authored composition');if(!s.composition)check((p.assets||[]).some(a=>a.asset_id===s.art_asset&&a.kind==='raster'),'missing scene art asset '+s.id);}
+  if(renderer==='image-composite'){check(['crystal','liquid','smoke','star'].includes(s.mode)||s.composition,'image renderer needs an authored composition');if(!s.composition)check((p.assets||[]).some(a=>a.asset_id===s.art_asset&&a.kind==='raster'),'missing scene art asset '+s.id);}
 
   for(const composition of [s.composition,s.portrait_composition].filter(Boolean)){
+   if(composition.camera){check(p.schema_version==='3.1.0'&&renderer==='hybrid-composite','common footage/graphic camera requires 3.1 hybrid compositor');for(const error of cameraErrors(composition.camera))check(false,error);}
    const layers=Array.isArray(composition.layers)?composition.layers:[];
-   if(p.profile?.rasterizer==='skia')check(p.renderer==='vector-composite'&&layers.every(l=>['svg','text'].includes(l.kind)),'Skia supports vector svg/text compositions');
-   check(['image-composite','vector-composite','spatial-three'].includes(p.renderer)&&Array.isArray(composition.layers)&&composition.layers.length>0&&composition.layers.length<=64,'composition requires supported renderer and at most 64 layers');
+   if(rasterizer==='skia')check(['vector-composite','hybrid-composite'].includes(renderer)&&layers.every(l=>['svg','text','video'].includes(l.kind)),'Skia supports vector svg/text compositions');
+   check(['image-composite','vector-composite','spatial-three','hybrid-composite'].includes(renderer)&&Array.isArray(composition.layers)&&composition.layers.length>0&&composition.layers.length<=64,'composition requires supported renderer and at most 64 layers');
    if(composition.defs)check(safeSvg(composition.defs),'unsafe SVG definitions');
    check((s.content_ids||[]).every(id=>layers.some(l=>l.kind==='text'&&l.content_id===id)),'composition must show editable required text '+s.id);
    for(const l of layers){
-    check((['vector-composite','spatial-three'].includes(p.renderer)?['svg','text','procedural']:['image','text']).includes(l.kind),'invalid layer kind');
-    if(p.renderer==='spatial-three'&&p.spatial?.version!=='precision-1'){
+    check((renderer==='hybrid-composite'?['svg','text','procedural','video']:['vector-composite','spatial-three'].includes(renderer)?['svg','text','procedural']:['image','text']).includes(l.kind),'invalid layer kind');
+    if(renderer==='spatial-three'&&p.spatial?.version!=='precision-1'){
      check(!composition.defs,'spatial overlay definitions are not implemented');
      check(['svg','text'].includes(l.kind),'spatial overlay supports svg/text only');
      check(!l.morph&&!l.clip_path&&!l.blend&&!l.reveal_rect,'spatial overlay does not implement morph/clip/blend/reveal');
@@ -57,14 +62,14 @@ export function validate(p){
      check((l.keyframes||[]).every(k=>k.ease!=='out'),'spatial overlay out easing is not implemented');
      check(l.kind!=='text'||l.scale===undefined&&(l.keyframes||[]).every(k=>k.scale===undefined),'spatial text scale not implemented');
     }
-    if(p.renderer==='vector-composite'||p.renderer==='spatial-three')check(l.clip_path===undefined&&l.blend===undefined,'vector overlays do not implement clip_path/blend; author SVG defs and clip instead');
+    if(['vector-composite','spatial-three','hybrid-composite'].includes(renderer))check(l.clip_path===undefined&&l.blend===undefined,'vector overlays do not implement clip_path/blend; author SVG defs and clip instead');
     if(l.kind==='svg'&&!l.morph)check(safeSvg(l.svg),'unsafe vector layer');
     if(l.kind==='procedural')check(MODES.includes(l.mode)&&l.mode!=='composite','unknown procedural layer');
     if(l.morph){let previous=-1,signature=null;for(const k of l.morph){const sig=String(k.d).replace(/-?(?:\d*\.\d+|\d+)(?:e[-+]?\d+)?/gi,'#').replace(/[\s,]+/g,'');check(Number.isFinite(k.at)&&k.at>=0&&k.at>previous&&/^[MmLlHhVvCcSsQqTtAaZz0-9., +\-]+$/.test(k.d),'invalid path morph');check(signature===null||sig===signature,'morph topology must match');signature=sig;previous=k.at;}}
     for(const name of ['x','y','scale','scaleX','scaleY','rotation','opacity','size','weight','tracking','draw','reveal'])check(l[name]===undefined||Number.isFinite(l[name]),'non numeric layer value');
     for(const candidate of [l,...(l.keyframes||[])])for(const name of ['opacity','draw','reveal'])check(candidate[name]===undefined||Number.isFinite(candidate[name])&&candidate[name]>=0&&candidate[name]<=1,'layer '+name+' outside 0..1');
     if(l.reveal_rect)check(Array.isArray(l.reveal_rect)&&l.reveal_rect.length===4&&l.reveal_rect.every(Number.isFinite)&&l.reveal_rect[2]>0&&l.reveal_rect[3]>0,'invalid reveal rectangle');
-    if(p.profile?.rasterizer==='skia')check(!l.reveal_rect&&!['scaleX','scaleY','reveal'].some(n=>l[n]!==undefined||(l.keyframes||[]).some(k=>k[n]!==undefined)),'Skia does not yet support anisotropic/reveal layers; select Chromium');
+    if(rasterizer==='skia')check(!l.reveal_rect&&!['scaleX','scaleY','reveal'].some(n=>l[n]!==undefined||(l.keyframes||[]).some(k=>k[n]!==undefined)),'Skia does not yet support anisotropic/reveal layers; select Chromium');
     for(const [name,length] of [['rect',4],['position',2],['pivot',2]])check(l[name]===undefined||Array.isArray(l[name])&&l[name].length===length&&l[name].every(Number.isFinite),'invalid layer geometry');
     if(l.kind==='text'&&l.content_id)check(units.has(l.content_id),'unknown editable text reference');
     check(!l.clip_path||/^[MmLlHhVvCcSsQqTtAaZz0-9., +\\-]+$/.test(l.clip_path),'invalid clip path');
@@ -95,6 +100,7 @@ export function validate(p){
  check(p.audio?.sections?.length>0&&Array.isArray(p.audio?.motif)&&p.audio.motif.length>0,'authored audio plan required');
  check(Number.isFinite(p.audio?.bpm)&&p.audio.bpm>=30&&p.audio.bpm<=200,'audio bpm outside 30..200');
  check(p.audio?.master_gain_db===undefined||Number.isFinite(p.audio.master_gain_db)&&p.audio.master_gain_db>=-12&&p.audio.master_gain_db<=18,'master gain outside -12..18 dB');
+ if(p.schema_version==='3.1.0')errors.push(...mediaErrors(p));
  errors.push(...audioErrors(p),...spatialErrors(p));
  if(p.audio?.music_brief){const music=musicDirectionAudit(p);errors.push(...music.errors);warn.push(...music.pending);}
  if(p.approval)check(p.approval.hash===approvalHash(p),'approval is stale: changed direction requires confirmation');

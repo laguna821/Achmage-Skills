@@ -12,6 +12,7 @@ function scenePlan(p,s){
   out+='</article>';
  }
  out+='<h3>내용과 그림의 대응</h3>'+list(v.content_links.map(c=>c.content_id+' → '+c.shown_by.join(', ')+' : '+c.reason));
+ if(p.schema_version==='3.1.0')out+='<h3>매체·촬영 조건·선택 구간</h3>'+list(['매체 선택: '+(v.media_reason||'미작성'),'촬영 조건: '+(v.required_footage_conditions||'미작성'),'좋은 구간: '+(v.good_range||'미작성'),'글자 여백: '+(v.text_space||'미작성'),'소리의 역할: '+(v.sound_role||'미작성')]);
  out+='<h3>실제 화면에서 일어날 일</h3><ol>'+v.beats.map(b=>'<li><strong>'+e(b.window.join('–'))+'초 · '+e(b.action)+'</strong><p>'+e(b.before)+' → '+e(b.after)+'</p><small>대상: '+e(b.object_ids.join(', '))+'</small></li>').join('')+'</ol><h3>다음 화면까지 유지할 관계</h3>'+list(v.continuity);
  const cues=(p.audio.cues||[]).filter(c=>c.time>=s.start/p.output.fps&&c.time<s.end/p.output.fps);
  out+='<h3>장면 소리</h3>'+list(cues.map(c=>c.kind+' @ '+c.time+'초'))+'<p class="warning">검토: 대상이 식별되는가 · 정보가 일치하는가 · 행동과 원인이 보이는가 · 다음 장면까지 대상이 이어지는가. 레이어 대응 통과는 이 판단을 대신하지 않습니다.</p></section>';

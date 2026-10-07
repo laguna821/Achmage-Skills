@@ -1,17 +1,22 @@
+import {editAudio31,gateFinal31} from './audio31.mjs';
 import {editAudio,editErrors,choreographyErrors} from './audio-edit.mjs';
 import {drivingErrors,drivingCues,vehicleSample,curve,automotiveCoverage} from './automotive-audio.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {mkdir,write,hash,run,tool} from './io.mjs';
+import {withStorage,ownedReserve,ownedComplete,ownedCopy,currentStorage} from './storage.mjs';
+export async function audio(p,out,options={}){return withStorage(out,{duration:p.output.total_frames/30},()=>synthAudio(p,out,options));}
 export const RATE=48000,CHANNELS=2;
 export const INSTRUMENTS=['bell','pad','felt','marimba','bass','pluck','air'];
-export const CUE_KINDS=['impact','chime','whoosh','tick','paper','pencil','press','thread','shear','key','drive','wind','passby'];
+export const CUE_KINDS=['impact','chime','whoosh','tick','paper','pencil','press','thread','shear','key','drive','wind','passby','footstep'];
 export function audioErrors(p){
  const a=p.audio||{},end=p.output?.total_frames/30,errors=[],check=(v,s)=>{if(!v)errors.push(s);},finite=(v,lo,hi)=>Number.isFinite(v)&&v>=lo&&v<=hi;
  for(const name of ['sections','notes','cues','silence'])if(a[name]!==undefined&&(!Array.isArray(a[name])||a[name].some(x=>!x||typeof x!=='object'||Array.isArray(x))))errors.push('invalid audio '+name+' array');
  if(errors.length)return errors;
+ if(p.schema_version==='3.1.0'&&a.narration)errors.push('3.1 narration must be a registered voice clip');
+ if(a.mix?.duck_voice!==undefined&&typeof a.mix.duck_voice!=='boolean')errors.push('duck_voice must be boolean');
  if(a.loudness){check(finite(a.loudness.integrated,-24,-14)&&finite(a.loudness.true_peak,-6,-1),'invalid loudness target');}
- if(a.mix){check(!!a.clips?.length,'stem mix settings require an edited audio bus');for(const k of ['music_gain_db','sfx_gain_db'])check(a.mix[k]===undefined||finite(a.mix[k],-40,18),'invalid stem mix gain');check(a.mix.duck_sfx===undefined||typeof a.mix.duck_sfx==='boolean','invalid sidechain option');}
+ if(a.mix){check(p.schema_version==='3.1.0'||!!a.clips?.length,'stem mix settings require an edited audio bus');for(const k of ['music_gain_db','sfx_gain_db','ambience_gain_db','voice_gain_db'])check(a.mix[k]===undefined||finite(a.mix[k],-40,18),'invalid stem mix gain');check(a.mix.duck_sfx===undefined||typeof a.mix.duck_sfx==='boolean','invalid sidechain option');}
  for(const s of a.sections||[]){check(finite(s.start,0,end)&&finite(s.end,0,end)&&s.end>s.start,'invalid audio section time');check(s.energy===undefined||finite(s.energy,0,2),'invalid section energy');if(s.instrument)check(INSTRUMENTS.includes(s.instrument),'unknown section instrument');}
  for(const n of a.notes||[]){check(finite(n.start,0,end)&&finite(n.duration,.005,end)&&n.start+n.duration<=end+.0001,'invalid note time');check(finite(n.note,0,127)&&finite(n.amp,0,.5)&&finite(n.pan??0,-1,1),'invalid note pitch/amplitude/pan');check(INSTRUMENTS.includes(n.instrument),'unknown note instrument');}
  for(const c of a.cues||[]){check(CUE_KINDS.includes(c.kind),'unknown sound cue');check(finite(c.time,0,end)&&finite(c.duration??.7,.005,end)&&c.time+(c.duration??.7)<=end+.0001,'invalid cue time');check(c.amp===undefined||finite(c.amp,0,2),'invalid cue amplitude');check(c.pan===undefined||finite(c.pan,-1,1),'invalid cue pan');}
@@ -51,6 +56,7 @@ function effect(c,t,n,seed){
  case 'wind':v=(slow*.6+rough*.4)*swell*.055;break;
  case 'passby':v=(Math.sin(TAU*(100*dt-20*dt*dt))*.3+rough*.7)*swell**3*.13;break;
  case 'pencil':v=(white-rough*.5)*(.35+.65*Math.sin(TAU*17*dt)**2)*swell*.03;break;
+ case 'footstep':v=(Math.sin(TAU*76*dt)*.7+rough*.8+white*.13)*Math.exp(-dt*24)*.12;break;
  case 'paper':v=(rough*.65+white*.35)*(swell**.7)*(.55+.45*Math.sin(TAU*31*dt)**2)*.06;break;
  case 'press':v=(Math.sin(TAU*53*dt)*.38+Math.sin(TAU*107*dt)*.18+rough*.22)*(.4+.6*Math.cos(TAU*3.2*dt)**8)*.1;break;
  case 'thread':v=(white-rough)*.022*swell*(.7+.3*Math.sin(TAU*70*dt));break;
@@ -62,9 +68,9 @@ function effect(c,t,n,seed){
  default:v=rough*swell**2*.06;
  }return v*edge*(c.amp??1);
 }
-export async function audio(p,out){
+async function synthAudio(p,out,{portrait=false}={}){
  mkdir(out);const data=score(p),samples=Math.round(data.duration*RATE),paths=['music','sfx','mix'].map(n=>path.join(out,n+'.wav'));
- const handles=paths.map(f=>fs.openSync(f,'w'));handles.forEach(h=>fs.writeSync(h,wavHeader(samples)));
+ paths.forEach(f=>ownedReserve(f,{maxBytes:samples*4+65536}));const handles=paths.map(f=>fs.openSync(f,'w'));handles.forEach(h=>fs.writeSync(h,wavHeader(samples)));
  let peak=0,sq=0,count=0,active=[],activeCues=[],index=0,cueIndex=0,filter=[0,0];
  data.notes.sort((a,b)=>a.start-b.start);const cues=[...data.cues].sort((a,b)=>a.time-b.time);
  const delayL=new Float64Array(11003),delayR=new Float64Array(14983),gain=10**(data.master_gain_db/20);
@@ -83,21 +89,28 @@ export async function audio(p,out){
  const mix=[Math.tanh((l+el)*gain)*.89,Math.tanh((r+er)*gain)*.89],values=[[l,r],[el,er],mix];
  values.forEach((v,k)=>v.forEach((x,ch)=>buffers[k].writeInt16LE(Math.round(Math.max(-.999,Math.min(.999,x))*32767),j*4+ch*2)));
  for(const x of mix){peak=Math.max(peak,Math.abs(x));sq+=x*x;count++;}
- }buffers.forEach((b,i)=>fs.writeSync(handles[i],b));}
+ }buffers.forEach((b,i)=>fs.writeSync(handles[i],b));if(start%65536===0)currentStorage()?.check();}
  }finally{handles.forEach(h=>fs.closeSync(h));}
- if(p.audio.clips?.length||p.audio.bus_envelopes)await editAudio(p,out,paths);
+ if(p.schema_version==='3.1.0')await editAudio31(p,out,paths,{portrait});
+ else if(p.audio.clips?.length||p.audio.bus_envelopes)await editAudio(p,out,paths);
  if(p.audio.narration){const mixed=path.join(out,'narrated.wav');await run(tool('ffmpeg'),['-y','-i',paths[2],'-i',p.audio.narration,'-filter_complex','[1:a]asplit=2[voice][key];[0:a][key]sidechaincompress=threshold=0.02:ratio=8:attack=20:release=350[bed];[bed][voice]amix=inputs=2:normalize=0,alimiter=limit=0.9[out]','-map','[out]','-t',String(data.duration),mixed]);paths[2]=mixed;}
  const rawStats={peak_dbfs:20*Math.log10(peak||1e-9),rms_dbfs:20*Math.log10(Math.sqrt(sq/count)||1e-9)};let loudness=null;
  if(p.audio.loudness){
-  const target=p.audio.loudness,pre=path.join(out,'premaster.wav'),master=path.join(out,'master.wav');fs.copyFileSync(paths[2],pre);
+  const target=p.audio.loudness,pre=path.join(out,'premaster.wav'),master=path.join(out,'master.wav');ownedCopy(paths[2],pre,{kind:'temporary'});
   const filter='loudnorm=I='+target.integrated+':TP='+target.true_peak+':LRA=11';
   const first=await run(tool('ffmpeg'),['-hide_banner','-i',pre,'-af',filter+':print_format=json','-f','null','-']);
   const match=first.err.match(/\{\s*"input_i"[\s\S]*?\}/);if(!match)throw new Error('Loudness measurement missing');
   const m=JSON.parse(match[0]);if(!Number.isFinite(Number(m.input_i)))throw new Error('Cannot normalize silent or invalid audio');
   const second=await run(tool('ffmpeg'),['-y','-hide_banner','-i',pre,'-af',filter+':measured_I='+m.input_i+':measured_TP='+m.input_tp+':measured_LRA='+m.input_lra+':measured_thresh='+m.input_thresh+':offset='+m.target_offset+':linear=true:print_format=json','-ar','48000','-ac','2','-c:a','pcm_s16le',master]);
-  const measured=second.err.match(/\{\s*"input_i"[\s\S]*?\}/);loudness={target,input:m,output:measured?JSON.parse(measured[0]):null};fs.copyFileSync(master,paths[2]);
+  const measured=second.err.match(/\{\s*"input_i"[\s\S]*?\}/);loudness={target,input:m,output:measured?JSON.parse(measured[0]):null};ownedCopy(master,paths[2]);
  }
- const result={synthesis:data,files:paths,sha256:paths.map(f=>hash(fs.readFileSync(f))),...rawStats,statistics_scope:p.audio.clips?.length?'synthesizer statistics only; see loudness.output for edited master':loudness?'premaster; see loudness.output for delivered master':'delivered mix',loudness,listening_review:'pending'};
- result.automotive=automotiveCoverage(p);write(path.join(out,'score.json'),data);write(path.join(out,'audio-report.json'),result);return result;
+ if(p.schema_version==='3.1.0')await gateFinal31(p,paths[2],out);
+ const result={synthesis:data,files:paths,sha256:paths.map(f=>hash(fs.readFileSync(f))),...rawStats,statistics_scope:p.schema_version==='3.1.0'?'synthesizer statistics only; delivered measurements are recorded separately':p.audio.clips?.length?'synthesizer statistics only; see loudness.output for edited master':loudness?'premaster; see loudness.output for delivered master':'delivered mix',loudness,listening_review:'pending'};
+ if(p.schema_version==='3.1.0'){
+  const measured=await run(tool('ffmpeg'),['-hide_banner','-i',paths[2],'-af','astats=metadata=0:reset=0','-f','null','-']);
+  const peaks=[...measured.err.matchAll(/Peak level dB: ([^\s]+)/g)],rms=[...measured.err.matchAll(/RMS level dB: ([^\s]+)/g)];
+  result.delivered_pcm={peak_dbfs:peaks.at(-1)?.[1]||'unavailable',rms_dbfs:rms.at(-1)?.[1]||'unavailable'};
+ }
+ paths.forEach(ownedComplete);result.stems=Object.fromEntries((p.schema_version==='3.1.0'?['music','sfx','ambience','voice','mix']:['music','sfx','mix']).map(name=>{const file=path.join(out,name+'.wav');return [name,{file,sha256:hash(fs.readFileSync(file))}];}));result.automotive=automotiveCoverage(p);write(path.join(out,'score.json'),data);write(path.join(out,'audio-report.json'),result);return result;
 }
 

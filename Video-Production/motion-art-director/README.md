@@ -89,6 +89,10 @@ node scripts/motion.mjs styleframe examples/object-flight.project.json --time 5 
 
 ## 시험판 범위
 
+3.1 개발 경로에는 촬영 영상과 투명 그래픽의 합성, 장면별 엔진 선택, 네 음원 버스, 일반화된 사건 엔딩, 실제 소스 구간 검사, 결정론적 환경음 생성과 도감 기법 어댑터가 추가되어 있습니다. [도시의 맥박 제작·검수 페이지](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city)에서 장편 실험과 남은 제한을 구분합니다. 기존3.0 프로젝트의 스키마를 자동 변환하지 않습니다.
+
+이 개발 변경이 설치판3.1 전체의 배포 검증 완료를 뜻하지는 않습니다. 새 혼합 영상의 일곱 출력 루트, 독립 전이 작품, 깨끗한 설치 및 배포 ZIP 재검증은 별도로 완료해야 합니다. [혼합 제작 계약](references/hybrid-production.md)과 [CLI](references/cli.md)를 참고하세요.
+
 [검증표](VALIDATION.md)에서 자동 검사, 프레임 관찰, 전체 청취, 미감 검토를 구분합니다. 현재 PC에서 GPU를 비활성화한 실행을 확인했으며 **실제 내장 그래픽·RAM 16GB 노트북 실측은 아직 없습니다.** 새로운 주제의 완성도는 연출과 대표 컷 검토로 판단해야 합니다.
 
 신규 코드는 MIT입니다. 도감·폰트·GSAP·외부 음악 등은 [개별 고지](THIRD_PARTY_NOTICES.md)를 따릅니다. 사용자 레퍼런스 MP4와 비공개 작업 기록은 배포하지 않습니다.

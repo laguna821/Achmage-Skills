@@ -1,9 +1,11 @@
+import {genericEndingErrors} from './ending31.mjs';
+import {ownedCopy} from './storage.mjs';
 import fs from 'node:fs';import path from 'node:path';import {ROOT,hash,run,tool,write} from './io.mjs';
 export function editErrors(p){const errors=[],a=p.audio||{},duration=p.output?.total_frames/30;if(a.clips===undefined)return errors;
  if(!Array.isArray(a.clips)||!a.clips.length)return ['audio clips must be a nonempty array'];
  for(const c of a.clips){const n=(v,min,max)=>Number.isFinite(v)&&v>=min&&v<=max;
  if(!c||typeof c!=='object'){errors.push('invalid audio clip');continue;}
- if(!['music','sfx'].includes(c.bus)||!n(c.start,0,duration)||!n(c.duration,.01,duration)||c.start+c.duration>duration+.001||!n(c.source_in,0,86400)||!n(c.gain_db??0,-60,12)||!n(c.fade_in??0,0,c.duration)||!n(c.fade_out??0,0,c.duration))errors.push('invalid audio edit time/gain/fade');
+ if(!(p.schema_version==='3.1.0'?['music','sfx','ambience','voice']:['music','sfx']).includes(c.bus)||!n(c.start,0,duration)||!n(c.duration,.01,duration)||c.start+c.duration>duration+.001||!n(c.source_in,0,86400)||!n(c.gain_db??0,-60,12)||!n(c.fade_in??0,0,c.duration)||!n(c.fade_out??0,0,c.duration)||!n(c.speed??1,.25,4))errors.push('invalid audio edit time/gain/fade');
  const asset=(p.assets||[]).find(a=>a.asset_id===c.asset_id);if(asset?.kind!=='audio'||!asset.path||!asset.sha256)errors.push('missing audio asset');
  if(!asset?.rights?.commercial||!asset?.rights?.adaptation||!asset?.rights?.source_url||!asset?.rights?.license_url||!asset?.rights?.attribution)errors.push('audio permission evidence missing');
  }
@@ -12,7 +14,7 @@ export function editErrors(p){const errors=[],a=p.audio||{},duration=p.output?.t
 export function audioAssetPath(p,a){const f=path.isAbsolute(a.path)?a.path:path.resolve(p.__projectDir||ROOT,a.path);if(!fs.existsSync(f)||hash(fs.readFileSync(f))!==a.sha256)throw Error('Audio asset missing/hash mismatch: '+a.asset_id);return f;}
 export async function editAudio(p,out,paths){const errs=editErrors(p);if(errs.length)throw Error(errs.join('\n'));const duration=p.output.total_frames/30,edits=[];
  const choreography=choreographyErrors(p);if(choreography.length)throw Error(choreography.join('\n'));
- for(const bus of ['music','sfx']){const clips=(p.audio.clips||[]).filter(c=>c.bus===bus);if(!clips.length)continue;const target=path.join(out,bus+'.wav'),original=path.join(out,'synth-'+bus+'.wav');fs.copyFileSync(target,original);
+ for(const bus of ['music','sfx']){const clips=(p.audio.clips||[]).filter(c=>c.bus===bus);if(!clips.length)continue;const target=path.join(out,bus+'.wav'),original=path.join(out,'synth-'+bus+'.wav');ownedCopy(target,original,{kind:'temporary'});
   const args=['-y','-hide_banner','-v','error','-i',original],filters=['[0:a]aformat=sample_rates=48000:channel_layouts=stereo[b0]'];let i=1;
   for(const c of clips){const a=p.assets.find(a=>a.asset_id===c.asset_id),file=audioAssetPath(p,a);const probe=await run(tool('ffprobe'),['-v','error','-show_entries','format=duration','-of','json',file]);if(c.source_in+c.duration>Number(JSON.parse(probe.out).format.duration)+.02)throw Error('Audio source range exceeds duration: '+a.asset_id);
    args.push('-i',file);filters.push('['+i+':a]atrim=start='+c.source_in+':duration='+c.duration+',asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,volume='+(c.gain_db??0)+'dB,afade=t=in:d='+(c.fade_in??0)+',afade=t=out:st='+(c.duration-(c.fade_out??0))+':d='+(c.fade_out??0)+',adelay='+Math.round(c.start*48000)+'S:all=1[b'+i+']');edits.push({...c,sha256:a.sha256,source:a.rights.source_url,attribution:a.rights.attribution});i++;
@@ -22,7 +24,7 @@ export async function editAudio(p,out,paths){const errs=editErrors(p);if(errs.le
  // Apply to each complete bus (including recording tails) at sample resolution.
  for(const [index,bus]of ['music','sfx'].entries()){
   const keys=p.audio.bus_envelopes?.[bus];if(!keys)continue;
-  const raw=path.join(out,'ungated-'+bus+'.wav');fs.copyFileSync(paths[index],raw);
+  const raw=path.join(out,'ungated-'+bus+'.wav');ownedCopy(paths[index],raw,{kind:'temporary'});
   const e=envelopeExpression(keys),filter="aeval=exprs='val(0)*("+e+")|val(1)*("+e+")'";
   await run(tool('ffmpeg'),['-y','-v','error','-i',raw,'-af',filter,'-ar','48000','-ac','2','-c:a','pcm_s16le',paths[index]]);
  }
@@ -51,12 +53,13 @@ export function choreographyErrors(p){
  if(env!==undefined){
   if(!env||typeof env!=='object'||Array.isArray(env))return ['audio.bus_envelopes must be an object'];
   for(const [bus,keys]of Object.entries(env)){
-   if(!['music','sfx'].includes(bus)){errors.push('unknown audio envelope bus');continue;}
+   if(!(p.schema_version==='3.1.0'?['music','sfx','ambience','voice']:['music','sfx']).includes(bus)){errors.push('unknown audio envelope bus');continue;}
    if(!Array.isArray(keys)||keys.length<2||keys.some((k,i)=>!Array.isArray(k)||k.length!==2||!k.every(n)||k[0]<0||k[0]>end||k[1]<0||k[1]>1||(i&&k[0]<=keys[i-1]?.[0]))||keys[0]?.[0]!==0||keys.at(-1)?.[0]!==end)errors.push('invalid '+bus+' envelope: cover whole duration, strictly ordered, gain 0..1');
   }
  }
  if(errors.length)return errors;
  const e=a.ending;if(e===undefined)return errors;
+ if(e?.version==='event-ending-v2')return genericEndingErrors(p,envelopeGain);
  if(!e||e.version!=='event-ending-v1')return ['unknown ending contract'];
  for(const k of ['stop_time','mechanical_quiet','logo_time','tail_silence'])if(!n(e[k])||e[k]<0||e[k]>end)errors.push('invalid ending '+k);
  if(errors.length)return errors;

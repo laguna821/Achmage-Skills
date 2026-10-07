@@ -10,6 +10,7 @@ node scripts/motion.mjs styleframe project.json --time 2 --out work
 node scripts/motion.mjs approve project.json --by <actual-reviewer> --note <actual-confirmation> --expected-hash <plan-hash>
 node scripts/motion.mjs render project.json --draft --out work
 node scripts/motion.mjs audio project.json --out work/audio
+node scripts/motion.mjs soundbed ambience-spec.json --out work/assets --name river.wav
 node scripts/motion.mjs render project.json --out work
 node scripts/motion.mjs export project.json --routes promo,shorts --out work
 node scripts/motion.mjs audit project.json --movie <final.mp4> --out work/audit
@@ -27,6 +28,10 @@ glyphs.py --text <word> --out <word.svg> creates CPU Skia outlines, with a JSON 
 install.mjs --agent codex|claude [--dest <skills-directory>] copies the complete package and preserves existing installations.
 
 Package publication is a separate user-authorized action. This CLI does not upload user projects.
+
+In 3.1, `roughcut project.json --out work` renders the complete timeline at720p. A completed identical run is reused after validating the final film and all five WAV hashes. A changed project uses a new output identity; prior verified outputs are preserved.
+
+`soundbed` accepts `{"kind":"river","duration":24,"seed":79,"gain_db":-8}`. Kinds are river, wind, street and room. This is deterministic procedural ambience, not a field recording. Output is streamed stereo48kHzPCM and includes a source/hash receipt. Register it as an audio asset with that provenance before using it. Durations are bounded to600seconds. An existing matching receipt is reused; unrelated files and previous different outputs are preserved.
 
 
 Skia CPU frames: install requirements-skia.txt in a dedicated Python environment, then setup.mjs --ffmpeg-dir <bin> --python <python> [--skia-path <site-packages>]. Set profile.rasterizer to skia on a vector-composite project. SVG/text layers are supported. The same CLI render/snapshot/cache/audio pipeline is used.
