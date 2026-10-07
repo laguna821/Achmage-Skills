@@ -52,3 +52,8 @@ Instrumental clock: rhythm-analyze project.json --out new-analysis; rhythm-compi
 Analysis also preserves separate fine_transients; low-confidence or silent windows retain coarse evidence. rhythm-audit includes a descriptive text_landings inventory. Neither automatically certifies audible beat alignment.
 
 For an independent encoder-clock witness, decode the final audio to48kHzPCM16 using FFmpeg, then run: python scripts/audio_clock_audit.py mix.wav decoded.wav --windows 15,80,140 --out new-clock-report.json. Choose actual nonperiodic music windows within the film. The script rejects ambiguous tonal windows, silent windows and measurable offsets; it does not replace listening. Compare isolated ending sounds by their onset envelope against preceding silence.
+# Audio-only revision after intermediate cache eviction
+
+`node scripts/motion.mjs remix revised.project.json --from prior-completed-run --out new-remix-folder`
+
+For homogeneous hybrid-composite projects, `remix` verifies the completed final hash, project receipt, unchanged picture inputs, source files, exact renderer version and encoded frame count. It copies the encoded video stream and rebuilds the audio. The output must be a new directory. It refuses picture or runtime changes; use normal render for those revisions. This keeps long-film audio revisions independent of bounded intermediate cache retention. The resulting receipt records zero rendered picture frames and the identical video bitstream hash. Listening remains a separate review.

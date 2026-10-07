@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {remix} from '../lib/remix.mjs';
 import {createRhythmReview,applyEventCorrections} from '../lib/rhythm-review.mjs';
 import {landingInventory} from '../lib/rhythm-landings.mjs';
 import {analyzeRhythm} from '../lib/rhythm-analyze.mjs';
@@ -44,6 +45,7 @@ async function main(){
  case 'sync-compile':{const input=path.resolve(positional[0]),target=path.resolve(flags.out||'compiled.project.json');if(input===target)throw Error('Preserve source: choose a new output file');if(path.dirname(input)!==path.dirname(target))throw Error('Keep compiled project beside source to preserve relative asset paths');if(fs.existsSync(target))throw Error('Preserve prior compiled project');const p=compileSyncScore(project()),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,report:syncScoreCheck(p)};}
  case 'sync-audit':{const p=project(),r=syncScoreCheck(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:syncReviewFrames(p)});write(path.join(out(),'sync-audit.json'),r);return r;}
  case 'roughcut':return render(project(),out(),{draft:true,portrait:!!flags.portrait});
+ case 'remix':if(!flags.from||!flags.out)throw Error('remix requires --from verified-run-folder --out new-folder');return remix(project(),flags.from,out());
  case 'status':return status(project(),out());
  case 'resume':{const p=project(),s=status(p,out());if(!s.ok||!p.approval)return {...s,next:'plan / styleframe / user direction confirmation'};const r=await render(p,out(),{draft:!!flags.draft,portrait:!!flags.portrait});record(p,out(),'render',r);return r;}
  case 'catalog':if(flags.site)return catalogSite(out());return search(positional.join(' '),Number(flags.limit||25),Object.fromEntries(['media','engine','family','status'].filter(k=>flags[k]).map(k=>[k,flags[k]])));
