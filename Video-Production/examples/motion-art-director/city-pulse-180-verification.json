@@ -1,0 +1,170 @@
+{
+  "title": "도시의 맥박",
+  "movie": "city-pulse-180-v1.mp4",
+  "sha256": "4f316451f961fd6affc235d6b42bfe88f2efc0698f8117a038e08f7ef200bfc3",
+  "bytes": 86206604,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 5400,
+    "duration": 180,
+    "fps": "30/1",
+    "pixelFormat": "yuv420p"
+  },
+  "audio": {
+    "codec": "aac",
+    "duration": 180,
+    "deliveredAAC": {
+      "integratedLUFS": -16.07,
+      "truePeakDBTP": -1.75
+    },
+    "target": {
+      "integratedLUFS": -16,
+      "truePeakDBTP": -1.5
+    },
+    "stems": {
+      "music": {
+        "pause": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "tail": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "sha256": "dc8813671bfbcd79b9810e268de5a15c0c0712f14542071c8e96e0a599a46693"
+      },
+      "sfx": {
+        "pause": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "tail": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "sha256": "4968b39ba8c130e604b87fb1484e3b9a92849bc5a95edd89ac1ddbfe00bcecef"
+      },
+      "ambience": {
+        "pause": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "tail": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "sha256": "c4c04c03c6159f771775aa6380a5136e1b8e150411e8c17be72e802441f6d28c"
+      },
+      "voice": {
+        "pause": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "tail": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "sha256": "c70eadc0a5e42c874d2cbfb94013dc281d826828b5e69bd2ccf616269aaf484a"
+      },
+      "mix": {
+        "pause": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "tail": {
+          "samples": 8640000,
+          "peakLSB": 0,
+          "peakDbfs": null,
+          "nonzeroSamples": 0
+        },
+        "sha256": "62de11abe8d8bf526078f5855c01caad75049a491e1ffd9c8fb7651a7fc19d35"
+      }
+    },
+    "musicStop": {
+      "samples": 8640000,
+      "peakLSB": 0,
+      "peakDbfs": null,
+      "nonzeroSamples": 0
+    },
+    "titleCue": {
+      "samples": 8640000,
+      "peakLSB": 563,
+      "peakDbfs": -35.29883080216743,
+      "nonzeroSamples": 129728
+    },
+    "decodedEnding": {
+      "pause": {
+        "samples": 576000,
+        "peakLSB": 8,
+        "peakDbfs": -72.24719895935549,
+        "nonzeroSamples": 210
+      },
+      "tail": {
+        "samples": 576000,
+        "peakLSB": 0,
+        "peakDbfs": null,
+        "nonzeroSamples": 0
+      },
+      "title": {
+        "samples": 576000,
+        "peakLSB": 2057,
+        "peakDbfs": -24.04431286529988,
+        "nonzeroSamples": 93616
+      }
+    }
+  },
+  "fullDecode": "passed",
+  "render": {
+    "started": "2026-10-07T05:15:19.375Z",
+    "finished": "2026-10-07T05:31:23.673Z",
+    "elapsedSeconds": 964.298,
+    "profile": {
+      "width": 1920,
+      "height": 1080,
+      "portrait": false,
+      "crf": 18,
+      "fps": 30,
+      "gpu": false,
+      "jobs": 1
+    }
+  },
+  "reviews": {
+    "contactSheets": "45 shot midpoints visually reviewed",
+    "fullBrowserPlayback": "pending publication",
+    "humanWholeListening": "pending",
+    "userAesthetic": "pending",
+    "physical16GBNotebook": "not measured"
+  },
+  "regression": {
+    "command": "node scripts/test.mjs",
+    "suites": 14,
+    "status": "passed",
+    "date": "2026-10-07"
+  },
+  "performance": {
+    "elapsedSeconds": 964.298,
+    "peakObservedWorkingSetBytes": 983465984,
+    "peakObservedPrivateBytes": 1075433472,
+    "scope": "Observed render PID and recursive descendants; sampled every5s after rendering began; summed working sets may double count shared pages; not a physical16GB notebook measurement"
+  },
+  "runtimeStatus": "3.1 development source; full release and clean install verification pending"
+}

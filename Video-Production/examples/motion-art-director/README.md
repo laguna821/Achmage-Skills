@@ -4,6 +4,7 @@
 
 | 파일 | 내용 |
 |---|---|
+| [city-pulse-180-v1.mp4](city-pulse-180-v1.mp4) | 도시의 맥박:180초·45컷·1080p30, 서울·부산 촬영 자료 + 자체 SVG·타이포 |
 | [grandeur-150.mp4](grandeur-150.mp4) | 150초·720p30 모바일 자동차 연구작. 1080p본은 Release 첨부 |
 | [ending-12.mp4](ending-12.mp4) | 정지·음악 종료·정적·로고 효과음, 12초·1080p |
 | [book.mp4](book.mp4) | 책 제작 150초·1080p, SVG·자체 작곡·효과음 |
@@ -13,6 +14,18 @@
 원본 사용자 레퍼런스 영상은 포함하지 않습니다. 책·항공·체 거르기는 공통 스킬의 examples/에 승인 기록을 제거한 편집 가능한 프로젝트가 있습니다. 자동차 연구작의 형상은 직접 작성한 Three.js/SwiftShader 기하이며 완성 실차 CAD 모델이 아닙니다. 생성 원화·공식 카탈로그·음악 원곡은 공통 패키지에 포함하지 않습니다.
 
 ## 크레딧과 재사용
+
+### 도시의 맥박
+
+[본편·장면별 탐색·기법과 검수 기록](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city?v=13#film) · [편집 가능한 프로젝트](city-pulse-180-source.project.json) · [출력 검사](city-pulse-180-verification.json).
+
+- 음악: **The Lift — Kevin MacLeod (incompetech.com)**, [원곡](https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1500066), [CC BY4.0](https://creativecommons.org/licenses/by/4.0/). 발췌·페이드·음량 변화·사건 효과음·합성 환경음과 혼합. 크레딧과 변경 고지를 유지합니다.
+- 촬영 자료: [서울역 야간 / Timo Volz](https://www.pexels.com/video/a-busy-city-street-at-night-with-many-cars-26690702/), [부산 해안열차 / 정규송 Nui MALAMA](https://www.pexels.com/video/scenic-tram-ride-by-the-ocean-in-busan-35003236/), [남산 새벽 / Giang](https://www.pexels.com/video/the-sun-rising-behind-the-namsan-tower-7855642/), FREE VIDEO HAPPY의 [도심 교차로](https://www.pexels.com/video/bustling-daytime-intersection-in-seoul-korea-31727051/)·[시장](https://www.pexels.com/video/bustling-street-market-in-seoul-south-korea-36718310/)·[청계천](https://www.pexels.com/video/cheonggyecheon-stream-in-seoul-during-spring-31758112/). [Pexels License](https://www.pexels.com/license/)에 따라 발췌·크롭·합성. 원본 영상은 이 저장소에 재배포하지 않습니다.
+- 지도: [Natural Earth50m](https://github.com/nvkelso/natural-earth-vector), public domain. 연결선은 실제 철도 노선이 아닌 개념 표현입니다.
+- 새 SVG·타이포·절차적 환경음·효과음 코드: MIT. 환경음과 효과음은 실제 장소의 녹음이 아닙니다.
+- 여러 시기에 촬영된 서울·부산 자료를 편집한 독립 작품입니다. 기관의 공식 광고·같은 날의 실제 기록·영상 속 인물의 추천을 뜻하지 않습니다.
+
+이 혼합 작품에 포함된 외부 촬영·음악에는 위 개별 조건이 적용됩니다. 아래 기존 자체 제작 데모의 일반 고지만으로 외부 자산의 조건을 대체하지 않습니다. 사용자 대화·승인 기록·원본 레퍼런스는 포함하지 않았습니다.
 
 자체 제작 영상/그림: Achmage, 2026, 저장소 기본 Apache-2.0. 다음 제3자 구성요소에는 별도 조건이 적용됩니다.
 
