@@ -1,0 +1,17 @@
+# Musical structure before the edit
+
+Listen, locate recurring motifs and their actual phase, correct source-time boundaries, then plan shots and actions. A recurrence lag is not a downbeat, and a high spectral peak is not automatically a musically satisfying edit point. Never turn a user's approximate loop duration into a repeated rounded grid.
+
+`rhythm-analyze PROJECT --out NEW_FOLDER` now produces local recurrence/phase **candidates** and an empty `musical-structure.json`. Use `--structure-only EXISTING_ANALYSIS_FOLDER` to add structure candidates to an existing mono analysis without rerunning the flux analysis. Outputs are create-only. The CPU analyzer uses 24-second local windows at 12-second intervals. Short, changing or nonperiodic passages need explicit review; frequency features do not identify instruments.
+
+`rhythm-review PROJECT --structure MAP --audio SELECTED_INTERVAL_MONO_WAV --analysis CANDIDATES --out NEW_FOLDER` creates a local audio audition/editor. The audio must start at the map's source_in and run in original source time. It is a mono original-source audition, not the final edited-volume mix. Full groups can loop; JSON allows boundary insertion/deletion, group split/merge and free source-time correction. Only actual human review may set reviewed, with a note and exact structure digest. Browser review export is an attestation, not proof of hearing.
+
+`rhythm-compile PROJECT --structure MAP --edit-plan EDIT --out NEW_PROJECT [--draft]` converts explicit boundary references into the existing music-impact-v1 bindings. Without --draft, a current review is required. --draft is for a provisional audition, never an aesthetic approval. Reauthor shot content, local action timing, reading and footage handles when lengths change. The compiler deliberately does not invent a new story or stretch footage.
+
+Map version is musical-structure-v1, with exact music identity/clock, ordered boundaries `{id,source_seconds,method,evidence}`, groups and sections `{id,start,end,reason}`. Method is candidate, authored or listening-corrected. Groups may have unequal durations; nesting is represented by explicit endpoints. No universal beat count is imposed. Review has status pending/reviewed, note, and structure_digest. Edit plan version is musical-edit-plan-v1; each existing binding uses boundary_id instead of event_id. Existing flat scores remain supported.
+
+Separate true tempo change, syncopation, halftime feel, instrumentation density and volume automation. Offbeats do not automatically demand long takes. A story sequence can span many fast shots; an important physical process can remain uncut while internal actions follow the groove. Choose cut start, transition arrival or object contact deliberately. Compare music alone, picture without music, and the final mix.
+
+Validation distinguishes source/clock consistency, correct frame execution, human-attested phase, and aesthetic judgment. Moving every boundary by half a beat keeps recurrence intact but invalidates its prior review. The software cannot infer that an arbitrary newly-attested phase is musically wrong. Audition it against alternatives. Keep unreviewed regions pending.
+
+No mandatory paid model, generated voice, GPU or new audio API. User calibration is a bounded review of prepared examples, not a request to annotate the entire film manually. Preserve previous films and maps. After rejection, do not produce another full film until the agreed representative calibration checkpoint.

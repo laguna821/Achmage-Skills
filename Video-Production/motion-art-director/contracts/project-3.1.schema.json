@@ -1563,6 +1563,9 @@
           }
         }
       }
+    },
+    "musical_structure": {
+      "$ref": "musical-structure.schema.json"
     }
   },
   "additionalProperties": true,

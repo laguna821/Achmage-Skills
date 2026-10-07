@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "version",
+    "identity",
+    "boundaries",
+    "groups",
+    "sections",
+    "review"
+  ],
+  "properties": {
+    "version": {
+      "const": "musical-structure-v1"
+    },
+    "identity": {
+      "type": "object",
+      "required": [
+        "asset_id",
+        "sha256",
+        "clip_index",
+        "start",
+        "source_in",
+        "duration",
+        "speed"
+      ]
+    },
+    "boundaries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_seconds",
+          "method",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "method": {
+            "enum": [
+              "candidate",
+              "authored",
+              "listening-corrected"
+            ]
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/group"
+      }
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/group"
+      }
+    },
+    "review": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        },
+        "note": {
+          "type": "string"
+        },
+        "structure_digest": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "group": {
+      "type": "object",
+      "required": [
+        "id",
+        "start",
+        "end",
+        "reason"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

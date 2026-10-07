@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {analyzeStructure,compileStructure,checkStructure} from '../lib/music-structure.mjs';
+import {createStructureReview} from '../lib/structure-review.mjs';
 import {remix} from '../lib/remix.mjs';
 import {createRhythmReview,applyEventCorrections} from '../lib/rhythm-review.mjs';
 import {landingInventory} from '../lib/rhythm-landings.mjs';
@@ -35,10 +37,10 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
 async function main(){
  switch(command){
  case 'pacing-review':{const r=pacingInventory(project(),{windowSeconds:Number(flags['window-seconds']||15)});write(path.join(out(),'pacing-review.json'),r);return r;}
- case 'rhythm-review':return createRhythmReview(project(),out(),{movie:flags.movie,analysis:flags.analysis?read(flags.analysis):undefined});
- case 'rhythm-analyze':return analyzeRhythm(project(),out());
- case 'rhythm-compile':{const input=path.resolve(positional[0]),target=path.resolve(flags.out||'rhythm.project.json');if(input===target||fs.existsSync(target)||path.dirname(input)!==path.dirname(target))throw Error('Use a new compiled file beside source');const inputProject=project(),p=compileRhythm(flags.events?applyEventCorrections(inputProject,read(flags.events)):inputProject),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,report:rhythmCheck(p)};}
- case 'rhythm-audit':{const p=project(),r=rhythmCheck(p);r.text_landings=landingInventory(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:rhythmReviewFrames(p)});write(path.join(out(),'rhythm-audit.json'),r);return r;}
+ case 'rhythm-review':if(flags.structure)return createStructureReview(project(),read(flags.structure),out(),{audio:flags.audio,analysis:flags.analysis?read(flags.analysis):undefined});return createRhythmReview(project(),out(),{movie:flags.movie,analysis:flags.analysis?read(flags.analysis):undefined});
+ case 'rhythm-analyze':if(flags['structure-only'])return analyzeStructure(project(),path.resolve(flags['structure-only']));{const r=await analyzeRhythm(project(),out());r.structure=await analyzeStructure(project(),out());return r;}
+ case 'rhythm-compile':{const input=path.resolve(positional[0]),target=path.resolve(flags.out||'rhythm.project.json');if(input===target||fs.existsSync(target)||path.dirname(input)!==path.dirname(target))throw Error('Use a new compiled file beside source');const inputProject=project(),prepared=flags.structure?compileStructure(inputProject,read(flags.structure),read(flags['edit-plan']),{draft:!!flags.draft}):inputProject,p=compileRhythm(flags.events?applyEventCorrections(prepared,read(flags.events)):prepared),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,report:rhythmCheck(p)};}
+ case 'rhythm-audit':{const p=project(),r=rhythmCheck(p);r.text_landings=landingInventory(p);if(p.musical_structure)r.musical_structure=checkStructure(p,p.musical_structure);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:rhythmReviewFrames(p)});write(path.join(out(),'rhythm-audit.json'),r);return r;}
  case 'doctor':return doctor();
  case 'soundbed':return soundbed(read(positional[0]),path.join(out(),flags.name||'ambience.wav'));
  case 'assets':{const [action,file]=positional;if(action==='inspect')return inspectMedia(file);if(action==='import')return importMedia(file,out(),{id:flags.id,source:read(flags.receipt)});if(action==='select')return selectRange(file,out(),{start:Number(flags.start),duration:Number(flags.duration)});throw Error('assets inspect|import|select FILE');}

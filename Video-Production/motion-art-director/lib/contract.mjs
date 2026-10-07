@@ -1,5 +1,6 @@
 import {syncScoreCheck} from './sync-score.mjs';
 import {rhythmCheck} from './rhythm-score.mjs';
+import {checkStructure} from './music-structure.mjs';
 import {mediaErrors} from './media.mjs';
 import {cameraErrors} from './camera31.mjs';
 import {spatialErrors} from './spatial.mjs';
@@ -107,6 +108,7 @@ export function validate(p){
  errors.push(...audioErrors(p),...spatialErrors(p));
  const sync=syncScoreCheck(p);errors.push(...sync.errors);warn.push(...sync.warnings);
  const rhythm=rhythmCheck(p);errors.push(...rhythm.errors);warn.push(...rhythm.warnings);
+ if(p.musical_structure){try{const r=checkStructure(p,p.musical_structure);errors.push(...r.errors);if(!r.calibrated)warn.push('Musical structure listening calibration pending');}catch(e){errors.push(e.message);}}
  if(p.audio?.music_brief){const music=musicDirectionAudit(p);errors.push(...music.errors);warn.push(...music.pending);}
  if(p.approval)check(p.approval.hash===approvalHash(p),'approval is stale: changed direction requires confirmation');
  if((p.sources||[]).some(s=>s.retrieval_state==='web_excerpt'))warn.push('원 웹 본문 스냅샷 없음: 제공된 발췌만 근거로 사용');

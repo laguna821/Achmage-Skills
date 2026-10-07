@@ -66,3 +66,6 @@ references/quality.md를 적용한다. 자동 검사, 실제 프레임 관찰, �
 # Long-film audio revisions
 
 When only audio changes and intermediate picture caches have been evicted, use `remix` from the verified completed run into a new output directory. Do not claim every intermediate clip was cached: report verified final-stream reuse. Picture inputs, source integrity, project receipt and exact renderer must match. Preserve the previous result and review the new encoded audio separately.
+
+## 음악 묶음과 시작 위치 교정
+반복 음악을 편집할 때 references/musical-structure.md를 읽는다. 실제로 들리는 묶음의 시작·끝을 교정한 뒤 컷을 기획한다. 반복 길이/BPM/최대 타격만으로 첫 박을 확정하지 않는다. 엇박·실제 템포 변화·밀도·볼륨 변화를 구별하고 전체 이야기와 컷 내부 동작을 함께 설계한다. 구조 분석 후보와 청취 교정, 프레임 검사, 미감 판단을 별도로 기록한다.
