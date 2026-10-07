@@ -8,6 +8,7 @@ node scripts/motion.mjs validate project.json
 node scripts/motion.mjs plan project.json --out work
 node scripts/motion.mjs direction-review project.json --out work/intent-review
 node scripts/motion.mjs direction-review project.json --movie final.mp4 --out work/review-v1
+node scripts/motion.mjs pacing-review project.json --window-seconds 15 --out work/pacing
 node scripts/motion.mjs styleframe project.json --time 2 --out work
 node scripts/motion.mjs approve project.json --by <actual-reviewer> --note <actual-confirmation> --expected-hash <plan-hash>
 node scripts/motion.mjs render project.json --draft --out work

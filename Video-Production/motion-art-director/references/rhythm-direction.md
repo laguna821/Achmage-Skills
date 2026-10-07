@@ -4,11 +4,20 @@ Use this workflow for instrumental films, beat-led edits and optional word-led p
 
 ## Order of decisions
 
-1. Write the viewer's question, visible action and resulting change for each narrative movement.
-2. Decide where an image must remain: observing a process, reading a message, feeling distance, or receiving a consequence. Declare those exact windows in rhythm_score.holds before cutting.
-3. Select music events that serve the changes. One musical hit may complete a crank rotation, light a line, land a word, or end a camera move without creating another shot.
-4. Use a short regular 2/4-beat passage when useful. Contrast it with sustained observation and deliberate stillness. Do not assign every drum hit to a new cut or default zoom.
-5. Review the film muted for story and spatial continuity, then music-only, full mix and final encoding for timing, hierarchy and fatigue. Technical reports cannot pass these perceptual gates.
+1. Write the question, action and consequence for each **sequence**. A sequence can sustain one thought across many short shots. A renderer scene is usually one shot; it is not automatically an entire narrative sequence.
+2. Co-design each sequence with its musical phrase. List its shot roles: preparation, contact, transfer, response, scale change and consequence. Decide the subject, viewpoint and outgoing/incoming connection for every shot. Sustained storytelling is continuity of meaning, not default long shot duration.
+3. When rhythmic editing is requested, provide recurring runs of clearly music-locked cuts and object actions throughout the relevant phrases. Use 2/4-beat shots and selective shorter fills as starting hypotheses, contrasted with 8-beat shots or a justified pause. Choose against the actual track and reference; these are not universal duration limits. A constant grid alone does not prove a heard drum or accent.
+4. Use rhythm_score.holds only when an uninterrupted image actually matters: a particular process, required reading or a deliberate pause. It protects that one shot technically. It must not protect the whole sequence from internal cuts. Long-shot percentages are descriptive, never a success target.
+5. Make a continuous 24–32 second editorial proof before another full render after a pacing rejection. Include multiple genuinely different subject/viewpoint states, a complete phrase, a handoff into the next phrase and visible music-locked events. A montage of the best isolated frames cannot pass it. Splitting the same source, changing copy, adding global shake or increasing cut count alone cannot repair weak coverage.
+6. Review muted for causal continuity, then with music for perceived impacts, flow and fatigue. Inspect reference passages and record observed boundaries/action landings separately from inferences. Technical reports cannot pass these perceptual gates. If listening has not happened, leave the heard-anchor and groove gates pending.
+
+## Coverage before duration
+
+Maintain a sequence → shot → action map. For each shot, record: what changes from the preceding image; the new camera distance/viewpoint or visual information; the source interval or new graphic required; the target music event; and the object, direction, shape or sound passed forward. Record unavailable coverage as a sourcing/art task. Do not lengthen a few convenient clips merely to fill a long runtime. A reprise can be intentional, but label why it changes meaning.
+
+For example, a 12-second power-transfer sequence can pass from shoe pressure to pedal, tooth contact, chain travel, rear sprocket, tire contact and road motion. These are shot roles, not a claim that stock footage has been found or that every cut should land on the same metrical subdivision.
+
+After a user rejects the edit, retain its technical evidence but label the work product-rejected. Reconsider coverage and phrase construction before adding more validators. Do not promote it as a quality baseline or represent all remaining review as merely pending.
 
 ## Public commands
 
@@ -17,6 +26,8 @@ rhythm-analyze PROJECT --out NEW_FOLDER extracts the first registered music clip
 rhythm-compile SCORE_PROJECT --out NEW_PROJECT materializes music-impact-v1 bindings into an ordinary3.1 project. Keep output beside input to preserve relative paths. The original and previous approval are preserved; the new project needs a production-scope approval record.
 
 rhythm-audit PROJECT --movie FINAL_MP4 --out NEW_FOLDER checks bindings and extracts exact decoded frames around selected impacts. Rendering a report does not imply listening approval.
+
+pacing-review PROJECT --out NEW_FOLDER [--window-seconds 15] reports shot duration distribution, time spent in longer shots, local cut density, explicit cut bindings, music-evidence methods and repeated source ranges. It does not issue an aesthetic pass/fail. Unbound cuts may still coincide with music; estimated-grid bindings do not establish heard-onset accuracy. Source hashes join aliases, and shot count is kept separate from unique source intervals.
 
 ## Clock and ownership
 
@@ -34,6 +45,8 @@ Music gain changes do not invalidate graphic timing. Source trims, speeds, hashe
 
 - Keep music fixed; move visual landings by ±1/2/4frames. The actual compiled target must fail while the unchanged positive case passes.
 - Replace a sustained image with beat-by-beat cuts. Its protected hold must fail, even when every new cut lands perfectly.
+- Conversely, an edit dominated by holds must not be reported as good rhythmic direction merely because it passes hold validation. Report its actual duration distribution.
+- Split one source into many shots or swap words over the same composition. Count the cuts but keep repeated coverage visible; no automatic variety or narrative pass.
 - Change source trim, speed, contact time or source hash.
 - Re-render selected frames in reverse/shuffled order.
 - Test copy-only, event-only, source-only and gain-only revisions and preserve prior outputs.
