@@ -1,4 +1,5 @@
 import {escape,write} from './io.mjs';
+import {syncScoreCheck} from './sync-score.mjs';
 import {requireValid,approvalHash} from './contract.mjs';
 const e=x=>escape(x??'');
 const list=items=>'<ul>'+items.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>';
@@ -11,7 +12,9 @@ function scenePlan(p,s){
  const v=s.visual_plan,units=s.content_ids.map(id=>p.content_units.find(c=>c.content_id===id));
  let out='<section><p class="eyebrow">'+e(s.id)+' · '+s.start/p.output.fps+'–'+s.end/p.output.fps+'초</p><h2>'+e(v?.viewer_takeaway||'대상 중심 연출안 미작성')+'</h2><h3>전달할 내용</h3>'+list(units.map(c=>c.display_text));
  if(!v)return out+'<p class="warning">이 장면은 이전 기술 예제입니다. mode='+e(s.mode)+'만으로 실제로 무엇을 그려 보여줄지 판단할 수 없습니다. 대상·식별 특징·정보·행동·장면 연결을 작성하고 스타일프레임과 대조해야 합니다.</p></section>';
- out+=shotIntent(p,s)+'<h3>그릴 대상과 식별 특징</h3>';
+ out+=shotIntent(p,s);
+ if(p.sync_score){const rows=syncScoreCheck(p).cues.filter(c=>c.scene_id===s.id);out+='<h3>단어와 음성의 시간표</h3><div class="scroll"><table><tr><th>단어</th><th>소리 기준(초)</th><th>준비/착지/유지(프레임)</th><th>양자화 오차(ms)</th></tr>'+rows.map(c=>'<tr><td>'+e(c.text)+'</td><td>'+c.anchor_seconds.toFixed(4)+'</td><td>'+[c.prepare_frame,c.impact_frame,c.hold_until_frame].join(' / ')+'</td><td>'+c.quantization_ms.toFixed(2)+'</td></tr>').join('')+'</table></div><p>위 수치는 음원·키프레임 대응이며 실제 강세 청취 판정은 별도입니다.</p>';}
+ out+='<h3>그릴 대상과 식별 특징</h3>';
  for(const o of v.objects){out+='<article><h4>'+e(o.depicts)+' <small>'+e(o.id)+' / '+e(o.kind)+'</small></h4>'+list(o.features)+'<p class="binding">실제 레이어: '+o.bindings.map(e).join(', ')+'</p>';
   if(o.information?.length)out+='<div class="scroll"><table><tr><th>표시할 정보</th><th>값</th><th>근거</th><th>레이어</th></tr>'+o.information.map(f=>'<tr><td>'+e(f.name)+'</td><td>'+e(f.value)+'</td><td>'+e(f.basis)+'</td><td>'+e(f.layer_id)+'</td></tr>').join('')+'</table></div>';
   out+='</article>';

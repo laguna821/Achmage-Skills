@@ -1,3 +1,4 @@
+import {syncScoreCheck} from './sync-score.mjs';
 import {mediaErrors} from './media.mjs';
 import {cameraErrors} from './camera31.mjs';
 import {spatialErrors} from './spatial.mjs';
@@ -103,6 +104,7 @@ export function validate(p){
  check(p.audio?.master_gain_db===undefined||Number.isFinite(p.audio.master_gain_db)&&p.audio.master_gain_db>=-12&&p.audio.master_gain_db<=18,'master gain outside -12..18 dB');
  if(p.schema_version==='3.1.0')errors.push(...mediaErrors(p));
  errors.push(...audioErrors(p),...spatialErrors(p));
+ const sync=syncScoreCheck(p);errors.push(...sync.errors);warn.push(...sync.warnings);
  if(p.audio?.music_brief){const music=musicDirectionAudit(p);errors.push(...music.errors);warn.push(...music.pending);}
  if(p.approval)check(p.approval.hash===approvalHash(p),'approval is stale: changed direction requires confirmation');
  if((p.sources||[]).some(s=>s.retrieval_state==='web_excerpt'))warn.push('원 웹 본문 스냅샷 없음: 제공된 발췌만 근거로 사용');

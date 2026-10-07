@@ -67,3 +67,6 @@
 - 효과 개수를 품질 점수로 사용하지 않음. 원본 도감637개 카드/128개 클립/11개 레시피는 보존.
 - ‘숨’ 구간 합성 river는 청취 피드백에서 잡음 질감 부적합 판정. 해당 음원 제거22초 비교본 제작, 그림45컷·실사23트랙 키 불변 확인. 새 비교본의 청취 승인은 pending.
 - [검수 보고서와 소리 비교](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city/editorial-review.html#sound). 열차 방향·상태 변화·구도·사건음의 작품 수정안은 본편에 아직 미적용.
+
+## Word-impact prototype (3.1 work in progress)
+13 structural unit checks cover source sample clocks, retiming, stale materialization, portrait timing, ±1/2/4 frame drift, clipped release and delayed handoff. An original 12-second Korean spoken-word prototype is being checked separately. This does not claim singing alignment, whole listening or artistic acceptance. The 3.1 release gate remains open.

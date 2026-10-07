@@ -96,3 +96,7 @@ node scripts/motion.mjs styleframe examples/object-flight.project.json --time 5 
 [검증표](VALIDATION.md)에서 자동 검사, 프레임 관찰, 전체 청취, 미감 검토를 구분합니다. 현재 PC에서 GPU를 비활성화한 실행을 확인했으며 **실제 내장 그래픽·RAM 16GB 노트북 실측은 아직 없습니다.** 새로운 주제의 완성도는 연출과 대표 컷 검토로 판단해야 합니다.
 
 신규 코드는 MIT입니다. 도감·폰트·GSAP·외부 음악 등은 [개별 고지](THIRD_PARTY_NOTICES.md)를 따릅니다. 사용자 레퍼런스 MP4와 비공개 작업 기록은 배포하지 않습니다.
+
+### 단어·음성 동기화 개발 시험
+
+[12초 정상본과 ±1·2·4프레임 비교](https://motion-art-director-review-oct05.achmage2.chatgpt.site/word-sync.html)에서 새 한국어 스포큰 워드와 4개 SVG 장면을 확인할 수 있습니다. 공통 sync-compile / sync-audit는 원본 샘플 시각·출력 프레임·단어 착지·프레이즈 경계를 연결합니다. 자세한 기획과 명령은 [word-sync.md](references/word-sync.md)에 있습니다. 실제 가창 정렬·장편 미감·전체 청취는 별도 미완료 항목입니다.
