@@ -1,5 +1,7 @@
 # Motion Art Director · 3.0.0-rc.1
 
+3.1 개발판에 악기 음악의 사건 시간표와 긴 호흡 보존 기능을 추가했습니다. [리듬 연출 안내](references/rhythm-direction.md)에 따라 이야기의 변화와 충분히 볼 시간을 먼저 정하고, 선택한 박자에 화면을 착지시킵니다. 음성과 유료 AI API는 필수가 아닙니다. [페달 제작·비교 페이지](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/)에서 빠른 구간과 긴 관찰 구간을 함께 검토합니다.
+
 **기획 질문부터 스타일프레임, 대표 컷, 영상·음악·효과음, 수정과 검수까지 이어지는 Codex·Claude Code 공통 제작 스킬입니다.**
 
 [공개 영상 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [정지·무음·로고 엔딩](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) · [다운로드와 설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)

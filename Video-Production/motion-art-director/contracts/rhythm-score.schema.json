@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:motion-art-director:rhythm-score:1",
+  "type": "object",
+  "required": [
+    "version",
+    "music",
+    "tolerance_frames",
+    "events",
+    "bindings"
+  ],
+  "properties": {
+    "version": {
+      "const": "music-impact-v1"
+    },
+    "tolerance_frames": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4
+    },
+    "music": {
+      "type": "object",
+      "required": [
+        "asset_id",
+        "clip_index",
+        "sha256"
+      ],
+      "properties": {
+        "asset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "clip_index": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_seconds",
+          "role",
+          "method",
+          "confidence",
+          "evidence"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "role": {
+            "enum": [
+              "pulse",
+              "onset",
+              "accent",
+              "phrase",
+              "release"
+            ]
+          },
+          "method": {
+            "enum": [
+              "measured-onset",
+              "estimated-grid",
+              "authored",
+              "listening-corrected"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "event_id",
+          "scene_id",
+          "target",
+          "reason"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 8
+          },
+          "target": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "cut",
+                  "layer",
+                  "camera",
+                  "video"
+                ]
+              },
+              "layer_id": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "prepare_frames": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "hold_frames": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "impact_offset_frames": {
+            "type": "integer",
+            "minimum": -30,
+            "maximum": 30
+          },
+          "before": {
+            "type": "object"
+          },
+          "after": {
+            "type": "object"
+          },
+          "source_sha256": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_event_seconds": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "holds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id",
+          "start_frame",
+          "end_frame",
+          "reason"
+        ],
+        "properties": {
+          "scene_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "start_frame": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end_frame": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 8
+          }
+        }
+      }
+    },
+    "materialized": {
+      "type": "object",
+      "required": [
+        "signature",
+        "status"
+      ],
+      "properties": {
+        "signature": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

@@ -4,6 +4,19 @@ const rand=(i,seed)=>{let x=Math.imul(i+seed,374761393);x=Math.imul(x^x>>>13,127
 export function objectFoley(kind,t,duration,seed=1){
  if(!Number.isFinite(t)||t<=0||t>=duration)return 0;
  const edge=Math.min(1,t/.035,(duration-t)/.065);let v=0;
+ if(kind==='pedal-click'){
+  const strike=(dt,f,a)=>dt>0?a*(Math.sin(TAU*f*dt)+.35*Math.sin(TAU*f*2.31*dt))*Math.exp(-dt*95)*Math.min(1,dt/.0008):0;
+  return (strike(t,940,.34)+strike(t-.028,510,.17))*Math.min(1,(duration-t)/.015);
+ }
+ if(kind==='ratchet'){
+  const rate=42,k=Math.floor(t*rate),dt=t-(k+.08*rand(k,seed))/rate;
+  return dt<0?0:(Math.sin(TAU*(1100+450*rand(k,seed+4))*dt)+.22*Math.sin(TAU*3100*dt))*Math.exp(-dt*450)*.075*edge;
+ }
+ if(kind==='tire-roll'){
+  // Authored contact texture, kept low and bounded; not labelled a field recording.
+  const k=Math.floor(t*1300),n=rand(k,seed)*2-1;
+  return (.008*n+.01*Math.sin(TAU*73*t)+.006*Math.sin(TAU*147*t))*(.65+.35*Math.sin(TAU*.8*t)**2)*edge;
+ }
  if(kind==='pour'){
   // Isolated, overlapping bubble resonances instead of a white-noise river bed.
   const rate=29,k=Math.floor(t*rate);

@@ -39,3 +39,5 @@ In 3.1, `roughcut project.json --out work` renders the complete timeline at720p.
 Skia CPU frames: install requirements-skia.txt in a dedicated Python environment, then setup.mjs --ffmpeg-dir <bin> --python <python> [--skia-path <site-packages>]. Set profile.rasterizer to skia on a vector-composite project. SVG/text layers are supported. The same CLI render/snapshot/cache/audio pipeline is used.
 
 Word/voice clock: sync-compile source.project.json --out compiled.project.json (same directory, new file); sync-audit compiled.project.json [--movie final.mp4] --out review. See references/word-sync.md.
+
+Instrumental clock: rhythm-analyze project.json --out new-analysis; rhythm-compile source.project.json --out new-compiled.project.json; rhythm-audit new-compiled.project.json [--movie final.mp4] --out review. See references/rhythm-direction.md. Candidate pulse/onset detection requires NumPy and FFmpeg, no voice/API. Sustained narrative holds and explicit event bindings coexist.

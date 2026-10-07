@@ -70,3 +70,12 @@
 
 ## Word-impact prototype (3.1 work in progress)
 13 structural unit checks cover source sample clocks, retiming, stale materialization, portrait timing, ±1/2/4 frame drift, clipped release and delayed handoff. An original 12-second Korean spoken-word prototype is being checked separately. This does not claim singing alignment, whole listening or artistic acceptance. The 3.1 release gate remains open.
+
+## Instrumental rhythm and sustained narrative (3.1 work in progress)
+
+- Optional music-impact-v1, rhythm-analyze/compile/audit, source-hash clocks, selected cut/layer/camera/video bindings and explicit sustained windows.
+-13 rhythm tests cover absolute time without repeated-frame rounding,±1/2/4frame visual mutations, source trim/speed/hash changes, conflicting word ownership, clipped video handles, camera and protected holds. Mechanism tests cover pitch-distance/rotor ratios and deterministic bicycle effects.
+-19 regression suites passed before the final two targeted guard additions; the complete13-test rhythm suite passed after those additions.
+- Full39-shot PEDAL project:14 deliberately invalid variants rejected, three positive controls retained. A perfectly pulse-aligned cut that breaks a declared sustained window is still invalid.
+- First720p180s draft completed5400frames and reached the end in a native browser without decoder error. Final1080p output, actual edit trials and public playback are recorded with the work's delivery report.
+- Physical16GB notebook measurement, whole perceptual listening and aesthetic acceptance are not inferred from these checks. This is development work within PR5, not completion of all3.1 Release/OS gates.

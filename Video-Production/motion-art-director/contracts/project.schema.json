@@ -780,7 +780,10 @@
                   "passby",
                   "footstep",
                   "pour",
-                  "grind"
+                  "grind",
+                  "pedal-click",
+                  "ratchet",
+                  "tire-roll"
                 ]
               },
               "duration": {

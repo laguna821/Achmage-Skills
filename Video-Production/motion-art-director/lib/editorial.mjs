@@ -5,7 +5,7 @@ const text=x=>typeof x==='string'&&x.trim().length>0;
 const point=x=>Array.isArray(x)&&x.length===2&&x.every(Number.isFinite);
 const norm=x=>point(x)&&x.every(n=>n>=0&&n<=1);
 const generic=x=>/등장과 이동[·・]변화를 관찰|장면 진입|다음 장면에 연결되는 완결 상태|동작의 방향 또는 형태를 다음 컷에 연결/.test(x||'');
-const defaults={x:0,y:0,rotation:0,scale:1,scaleX:1,scaleY:1,opacity:1,draw:1,tracking:0,weight:400,reveal:1};
+const defaults={x:0,y:0,rotation:0,scale:1,scaleX:1,scaleY:1,opacity:1,draw:1,tracking:0,weight:400,reveal:1,dash_offset:0};
 const moving=l=>{
  if(!l)return false;
  if(l.kind==='video'||l.kind==='procedural'||arr(l.morph).length>1)return true;

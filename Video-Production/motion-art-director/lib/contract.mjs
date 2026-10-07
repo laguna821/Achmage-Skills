@@ -1,4 +1,5 @@
 import {syncScoreCheck} from './sync-score.mjs';
+import {rhythmCheck} from './rhythm-score.mjs';
 import {mediaErrors} from './media.mjs';
 import {cameraErrors} from './camera31.mjs';
 import {spatialErrors} from './spatial.mjs';
@@ -68,17 +69,17 @@ export function validate(p){
     if(l.kind==='svg'&&!l.morph)check(safeSvg(l.svg),'unsafe vector layer');
     if(l.kind==='procedural')check(MODES.includes(l.mode)&&l.mode!=='composite','unknown procedural layer');
     if(l.morph){let previous=-1,signature=null;for(const k of l.morph){const sig=String(k.d).replace(/-?(?:\d*\.\d+|\d+)(?:e[-+]?\d+)?/gi,'#').replace(/[\s,]+/g,'');check(Number.isFinite(k.at)&&k.at>=0&&k.at>previous&&/^[MmLlHhVvCcSsQqTtAaZz0-9., +\-]+$/.test(k.d),'invalid path morph');check(signature===null||sig===signature,'morph topology must match');signature=sig;previous=k.at;}}
-    for(const name of ['x','y','scale','scaleX','scaleY','rotation','opacity','size','weight','tracking','draw','reveal'])check(l[name]===undefined||Number.isFinite(l[name]),'non numeric layer value');
+    for(const name of ['x','y','scale','scaleX','scaleY','rotation','opacity','size','weight','tracking','draw','reveal','dash_offset'])check(l[name]===undefined||Number.isFinite(l[name]),'non numeric layer value');
     for(const candidate of [l,...(l.keyframes||[])])for(const name of ['opacity','draw','reveal'])check(candidate[name]===undefined||Number.isFinite(candidate[name])&&candidate[name]>=0&&candidate[name]<=1,'layer '+name+' outside 0..1');
     if(l.reveal_rect)check(Array.isArray(l.reveal_rect)&&l.reveal_rect.length===4&&l.reveal_rect.every(Number.isFinite)&&l.reveal_rect[2]>0&&l.reveal_rect[3]>0,'invalid reveal rectangle');
-    if(rasterizer==='skia')check(!l.reveal_rect&&!['scaleX','scaleY','reveal'].some(n=>l[n]!==undefined||(l.keyframes||[]).some(k=>k[n]!==undefined)),'Skia does not yet support anisotropic/reveal layers; select Chromium');
+    if(rasterizer==='skia')check(!l.reveal_rect&&!['scaleX','scaleY','reveal','dash_offset'].some(n=>l[n]!==undefined||(l.keyframes||[]).some(k=>k[n]!==undefined)),'Skia does not yet support anisotropic/reveal layers; select Chromium');
     for(const [name,length] of [['rect',4],['position',2],['pivot',2]])check(l[name]===undefined||Array.isArray(l[name])&&l[name].length===length&&l[name].every(Number.isFinite),'invalid layer geometry');
     if(l.kind==='text'&&l.content_id)check(units.has(l.content_id),'unknown editable text reference');
     check(!l.clip_path||/^[MmLlHhVvCcSsQqTtAaZz0-9., +\\-]+$/.test(l.clip_path),'invalid clip path');
     check(!l.blend||['normal','screen','multiply','overlay'].includes(l.blend),'invalid blend');
     if(l.kind==='image')check((p.assets||[]).some(a=>a.asset_id===l.asset_id&&a.kind==='raster'),'layer image asset missing');
     if(l.motion){check(l.kind==='image'&&['none','crystal','metal','smoke','plasma'].includes(l.motion.preset),'image motion preset required');for(const n of ['intensity','speed'])check(l.motion[n]===undefined||Number.isFinite(l.motion[n])&&l.motion[n]>=0&&l.motion[n]<=2,'motion '+n+' outside 0..2');if(l.motion.region){const r=l.motion.region;check(Array.isArray(r)&&r.length===4&&r.every(Number.isFinite)&&r[0]>=0&&r[1]>=0&&r[2]>0&&r[3]>0&&r[0]+r[2]<=1&&r[1]+r[3]<=1,'normalized motion region required');}if(l.motion.pins)check(Array.isArray(l.motion.pins)&&l.motion.pins.every(a=>Array.isArray(a)&&a.length===3&&a.every(Number.isFinite)&&a[0]>=0&&a[0]<=1&&a[1]>=0&&a[1]<=1&&a[2]>0),'invalid motion pins');}
-    let previous=-1;for(const k of l.keyframes||[]){check(Number.isFinite(k.at)&&k.at>=0&&k.at>previous&&k.at<=(s.end-s.start)/30,'invalid absolute keyframe times');previous=k.at;for(const name of ['x','y','scale','scaleX','scaleY','rotation','opacity','draw','reveal','tracking','weight'])check(k[name]===undefined||Number.isFinite(k[name]),'non numeric transform');check(k.ease===undefined||['smooth','linear','hold','out'].includes(k.ease),'unknown keyframe ease');}
+    let previous=-1;for(const k of l.keyframes||[]){check(Number.isFinite(k.at)&&k.at>=0&&k.at>previous&&k.at<=(s.end-s.start)/30,'invalid absolute keyframe times');previous=k.at;for(const name of ['x','y','scale','scaleX','scaleY','rotation','opacity','draw','reveal','tracking','weight','dash_offset'])check(k[name]===undefined||Number.isFinite(k[name]),'non numeric transform');check(k.ease===undefined||['smooth','linear','hold','out'].includes(k.ease),'unknown keyframe ease');}
    }
   }
   if(s.custom_svg){check(typeof s.custom_svg==='string'&&!/<(?:script|image|feImage|foreignObject|iframe|style)\b|\bon\w+\s*=|(?:href|src)\s*=\s*["'](?!#)|url\(\s*["']?(?!#)/i.test(s.custom_svg),'unsafe/non-vector custom SVG '+s.id);}
@@ -105,6 +106,7 @@ export function validate(p){
  if(p.schema_version==='3.1.0')errors.push(...mediaErrors(p));
  errors.push(...audioErrors(p),...spatialErrors(p));
  const sync=syncScoreCheck(p);errors.push(...sync.errors);warn.push(...sync.warnings);
+ const rhythm=rhythmCheck(p);errors.push(...rhythm.errors);warn.push(...rhythm.warnings);
  if(p.audio?.music_brief){const music=musicDirectionAudit(p);errors.push(...music.errors);warn.push(...music.pending);}
  if(p.approval)check(p.approval.hash===approvalHash(p),'approval is stale: changed direction requires confirmation');
  if((p.sources||[]).some(s=>s.retrieval_state==='web_excerpt'))warn.push('원 웹 본문 스냅샷 없음: 제공된 발췌만 근거로 사용');
