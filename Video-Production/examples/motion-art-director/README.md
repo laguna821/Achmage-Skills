@@ -64,3 +64,7 @@ Technical verification does not imply full human listening/aesthetic approval, b
 ## 단어·음성 동기화 12초 시제품
 
 [모바일 비교 페이지](https://motion-art-director-review-oct05.achmage2.chatgpt.site/word-sync.html) · [정상 MP4](sync-parcel-12-v3-normal.mp4) · [검증 기록](sync-parcel-12-v3-report.json). 네 개의 새 SVG 장면과 직접 쓴 한국어 문장, 로컬 합성 음성, 새 절차적 드럼·베이스·전환음으로 단어의 시점을 시험합니다. ±1·2·4프레임 비교는 전체 믹스를 이동한 의도적 불량 예시입니다. 실제 노래 정렬·미감·전체 청취 합격을 뜻하지 않습니다.
+
+## 페달 — 리듬이 속도가 되는 순간
+
+[180초 본편](pedal-180-v2.mp4) · [음악만 비교](pedal-180-v2-music-only.mp4) · [모바일 감상·박자 진단](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/) · [검증 기록](pedal-180-v2-verification.json) · [개발 패키지](motion-art-director-development-5f5cef5.zip). 새 실사6개와 정밀SVG,39컷,14개 지속 구간으로 박자와 서사를 함께 시험합니다. 전체 청취·사용자 미감과 실제16GB노트북은 미확정입니다. The Lift / Kevin MacLeod, CC BY4.0, 편집·믹스. Pexels 원본은 동봉하지 않고 프로젝트에 출처·해시·재연결 정보를 제공합니다.
