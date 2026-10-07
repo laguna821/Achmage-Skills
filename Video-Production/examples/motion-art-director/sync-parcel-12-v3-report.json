@@ -1,0 +1,657 @@
+{
+  "version": 1,
+  "frames": 360,
+  "seconds": 12,
+  "sha256": "7a79eab306315c572ce36ded353fe27df5d38f8e3b01af9055bba1b89ee428f7",
+  "scope": "Original spoken-word prototype, no singing/perceptual approval",
+  "score": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "sync w0: perceived anchor not listening-verified",
+      "sync w0: low-confidence alignment",
+      "sync w1: perceived anchor not listening-verified",
+      "sync w1: low-confidence alignment",
+      "sync w2: perceived anchor not listening-verified",
+      "sync w2: low-confidence alignment",
+      "sync w3: perceived anchor not listening-verified",
+      "sync w3: low-confidence alignment",
+      "sync w4: perceived anchor not listening-verified",
+      "sync w4: low-confidence alignment",
+      "sync w5: perceived anchor not listening-verified",
+      "sync w5: low-confidence alignment",
+      "sync w6: perceived anchor not listening-verified",
+      "sync w6: low-confidence alignment",
+      "sync w7: perceived anchor not listening-verified",
+      "sync w7: low-confidence alignment",
+      "sync w8: perceived anchor not listening-verified",
+      "sync w8: low-confidence alignment",
+      "phrase phrase-0: bridge geometry and motion require rendered-frame review",
+      "phrase phrase-1: bridge geometry and motion require rendered-frame review",
+      "phrase phrase-2: bridge geometry and motion require rendered-frame review"
+    ],
+    "cues": [
+      {
+        "id": "w0",
+        "text": "한",
+        "scene_id": "select",
+        "layer_id": "word-0",
+        "onset_seconds": 0.402,
+        "anchor_seconds": 0.402,
+        "expected_frame": 12,
+        "impact_frame": 12,
+        "prepare_frame": 12,
+        "release_frame": 20,
+        "hold_until_frame": 76,
+        "exit_end_frame": 79,
+        "quantization_ms": -2.0000000000000018,
+        "offset_frames": 0
+      },
+      {
+        "id": "w1",
+        "text": "번의",
+        "scene_id": "select",
+        "layer_id": "word-1",
+        "onset_seconds": 1.002,
+        "anchor_seconds": 1.002,
+        "expected_frame": 30,
+        "impact_frame": 30,
+        "prepare_frame": 30,
+        "release_frame": 39,
+        "hold_until_frame": 76,
+        "exit_end_frame": 79,
+        "quantization_ms": -2.0000000000000018,
+        "offset_frames": 0
+      },
+      {
+        "id": "w2",
+        "text": "선택이",
+        "scene_id": "select",
+        "layer_id": "word-2",
+        "onset_seconds": 1.602,
+        "anchor_seconds": 1.602,
+        "expected_frame": 48,
+        "impact_frame": 48,
+        "prepare_frame": 48,
+        "release_frame": 64,
+        "hold_until_frame": 76,
+        "exit_end_frame": 79,
+        "quantization_ms": -2.0000000000000018,
+        "offset_frames": 0
+      },
+      {
+        "id": "w3",
+        "text": "길을",
+        "scene_id": "pack",
+        "layer_id": "word-3",
+        "onset_seconds": 3.402,
+        "anchor_seconds": 3.402,
+        "expected_frame": 102,
+        "impact_frame": 102,
+        "prepare_frame": 102,
+        "release_frame": 110,
+        "hold_until_frame": 166,
+        "exit_end_frame": 169,
+        "quantization_ms": -2.000000000000224,
+        "offset_frames": 0
+      },
+      {
+        "id": "w4",
+        "text": "열고",
+        "scene_id": "pack",
+        "layer_id": "word-4",
+        "onset_seconds": 4.302,
+        "anchor_seconds": 4.302,
+        "expected_frame": 129,
+        "impact_frame": 129,
+        "prepare_frame": 129,
+        "release_frame": 141,
+        "hold_until_frame": 166,
+        "exit_end_frame": 169,
+        "quantization_ms": -1.9999999999997797,
+        "offset_frames": 0
+      },
+      {
+        "id": "w5",
+        "text": "도시를",
+        "scene_id": "cross",
+        "layer_id": "word-5",
+        "onset_seconds": 6.352,
+        "anchor_seconds": 6.352,
+        "expected_frame": 191,
+        "impact_frame": 191,
+        "prepare_frame": 191,
+        "release_frame": 203,
+        "hold_until_frame": 256,
+        "exit_end_frame": 259,
+        "quantization_ms": 14.66666666666594,
+        "offset_frames": 0
+      },
+      {
+        "id": "w6",
+        "text": "건너",
+        "scene_id": "cross",
+        "layer_id": "word-6",
+        "onset_seconds": 7.202,
+        "anchor_seconds": 7.202,
+        "expected_frame": 216,
+        "impact_frame": 216,
+        "prepare_frame": 216,
+        "release_frame": 227,
+        "hold_until_frame": 256,
+        "exit_end_frame": 259,
+        "quantization_ms": -1.9999999999997797,
+        "offset_frames": 0
+      },
+      {
+        "id": "w7",
+        "text": "너에게",
+        "scene_id": "arrive",
+        "layer_id": "word-7",
+        "onset_seconds": 9.352,
+        "anchor_seconds": 9.352,
+        "expected_frame": 281,
+        "impact_frame": 281,
+        "prepare_frame": 281,
+        "release_frame": 293,
+        "hold_until_frame": 346,
+        "exit_end_frame": 349,
+        "quantization_ms": 14.666666666666828,
+        "offset_frames": 0
+      },
+      {
+        "id": "w8",
+        "text": "닿는다",
+        "scene_id": "arrive",
+        "layer_id": "word-8",
+        "onset_seconds": 10.302,
+        "anchor_seconds": 10.302,
+        "expected_frame": 309,
+        "impact_frame": 309,
+        "prepare_frame": 309,
+        "release_frame": 324,
+        "hold_until_frame": 346,
+        "exit_end_frame": 349,
+        "quantization_ms": -1.9999999999988916,
+        "offset_frames": 0
+      }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-0",
+        "cues": [
+          "w0",
+          "w1",
+          "w2"
+        ],
+        "release_frame": 76,
+        "arrival_frame": 90
+      },
+      {
+        "id": "phrase-1",
+        "cues": [
+          "w3",
+          "w4"
+        ],
+        "release_frame": 166,
+        "arrival_frame": 180
+      },
+      {
+        "id": "phrase-2",
+        "cues": [
+          "w5",
+          "w6"
+        ],
+        "release_frame": 256,
+        "arrival_frame": 270
+      },
+      {
+        "id": "phrase-3",
+        "cues": [
+          "w7",
+          "w8"
+        ],
+        "release_frame": 346
+      }
+    ],
+    "status": "structural-only; listening pending",
+    "fps": 30
+  },
+  "counterexamples": [
+    {
+      "kind": "voice retime",
+      "frames": -4,
+      "detected": true,
+      "errors": [
+        "sync materialization stale; run sync-compile into a new project",
+        "sync w0: rendered keyframes differ from score",
+        "sync w1: rendered keyframes differ from score",
+        "sync w2: rendered keyframes differ from score",
+        "sync w3: rendered keyframes differ from score",
+        "sync w4: rendered keyframes differ from score",
+        "sync w5: rendered keyframes differ from score",
+        "sync w6: rendered keyframes differ from score",
+        "sync w7: rendered keyframes differ from score",
+        "sync w8: rendered keyframes differ from score"
+      ]
+    },
+    {
+      "kind": "voice retime",
+      "frames": -2,
+      "detected": true,
+      "errors": [
+        "sync materialization stale; run sync-compile into a new project",
+        "sync w0: rendered keyframes differ from score",
+        "sync w1: rendered keyframes differ from score",
+        "sync w2: rendered keyframes differ from score",
+        "sync w3: rendered keyframes differ from score",
+        "sync w4: rendered keyframes differ from score",
+        "sync w5: rendered keyframes differ from score",
+        "sync w6: rendered keyframes differ from score",
+        "sync w7: rendered keyframes differ from score",
+        "sync w8: rendered keyframes differ from score"
+      ]
+    },
+    {
+      "kind": "voice retime",
+      "frames": -1,
+      "detected": true,
+      "errors": [
+        "sync materialization stale; run sync-compile into a new project",
+        "sync w0: rendered keyframes differ from score",
+        "sync w1: rendered keyframes differ from score",
+        "sync w2: rendered keyframes differ from score",
+        "sync w3: rendered keyframes differ from score",
+        "sync w4: rendered keyframes differ from score",
+        "sync w5: rendered keyframes differ from score",
+        "sync w6: rendered keyframes differ from score",
+        "sync w7: rendered keyframes differ from score",
+        "sync w8: rendered keyframes differ from score"
+      ]
+    },
+    {
+      "kind": "voice retime",
+      "frames": 1,
+      "detected": true,
+      "errors": [
+        "sync materialization stale; run sync-compile into a new project",
+        "sync w0: rendered keyframes differ from score",
+        "sync w1: rendered keyframes differ from score",
+        "sync w2: rendered keyframes differ from score",
+        "sync w3: rendered keyframes differ from score",
+        "sync w4: rendered keyframes differ from score",
+        "sync w5: rendered keyframes differ from score",
+        "sync w6: rendered keyframes differ from score",
+        "sync w7: rendered keyframes differ from score",
+        "sync w8: rendered keyframes differ from score"
+      ]
+    },
+    {
+      "kind": "voice retime",
+      "frames": 2,
+      "detected": true,
+      "errors": [
+        "sync materialization stale; run sync-compile into a new project",
+        "sync w0: rendered keyframes differ from score",
+        "sync w1: rendered keyframes differ from score",
+        "sync w2: rendered keyframes differ from score",
+        "sync w3: rendered keyframes differ from score",
+        "sync w4: rendered keyframes differ from score",
+        "sync w5: rendered keyframes differ from score",
+        "sync w6: rendered keyframes differ from score",
+        "sync w7: rendered keyframes differ from score",
+        "sync w8: rendered keyframes differ from score"
+      ]
+    },
+    {
+      "kind": "voice retime",
+      "frames": 4,
+      "detected": true,
+      "errors": [
+        "sync materialization stale; run sync-compile into a new project",
+        "sync w0: rendered keyframes differ from score",
+        "sync w1: rendered keyframes differ from score",
+        "sync w2: rendered keyframes differ from score",
+        "sync w3: rendered keyframes differ from score",
+        "sync w4: rendered keyframes differ from score",
+        "sync w5: rendered keyframes differ from score",
+        "sync w6: rendered keyframes differ from score",
+        "sync w7: rendered keyframes differ from score",
+        "sync w8: rendered keyframes differ from score"
+      ]
+    },
+    {
+      "kind": "last word clipped",
+      "detected": true,
+      "errors": [
+        "sync w8: word clipped by preparation, release or scene boundary"
+      ]
+    },
+    {
+      "kind": "delayed next scene",
+      "detected": true,
+      "errors": [
+        "phrase phrase-0: next scene arrives late or at wrong boundary"
+      ]
+    },
+    {
+      "kind": "source replaced",
+      "detected": true,
+      "errors": [
+        "sync w0: audio hash changed or source missing",
+        "sync w1: audio hash changed or source missing",
+        "sync w2: audio hash changed or source missing",
+        "sync w3: audio hash changed or source missing",
+        "sync w4: audio hash changed or source missing",
+        "sync w5: audio hash changed or source missing",
+        "sync w6: audio hash changed or source missing",
+        "sync w7: audio hash changed or source missing",
+        "sync w8: audio hash changed or source missing",
+        "phrase phrase-0: valid cue list required",
+        "phrase phrase-1: valid cue list required",
+        "phrase phrase-2: valid cue list required",
+        "phrase phrase-3: valid cue list required"
+      ]
+    },
+    {
+      "kind": "rendered timing differs",
+      "detected": true,
+      "errors": [
+        "sync w0: rendered keyframes differ from score"
+      ]
+    }
+  ],
+  "fullDecode": true,
+  "evidence": {
+    "version": "indexed-review-v1",
+    "movie_sha256": "7a79eab306315c572ce36ded353fe27df5d38f8e3b01af9055bba1b89ee428f7",
+    "project_hash": "5c4138be9d18610e29db357858a4f52a95c9e8048bb0bbd9f2f933c26111a895",
+    "method": "sequential decode then select exact zero-based output frame; no input seek",
+    "width": 640,
+    "frames": [
+      {
+        "frame": 11,
+        "time": 0.36666666666666664,
+        "file": "frame-0000.png",
+        "sha256": "040d4b0d0a22b867cd34d03b39ae88ff1fd35a12d943063e614f144f0c086578"
+      },
+      {
+        "frame": 12,
+        "time": 0.4,
+        "file": "frame-0001.png",
+        "sha256": "d13b66c625e6bedbd6b5f24712a5b97b85fff891a4ad7d11e11dc113e22ef5a0"
+      },
+      {
+        "frame": 13,
+        "time": 0.43333333333333335,
+        "file": "frame-0002.png",
+        "sha256": "9e60db8d01edda60b5e89d0c6a2f29061fb40f49444aaf001de6fb59708e7c93"
+      },
+      {
+        "frame": 20,
+        "time": 0.6666666666666666,
+        "file": "frame-0003.png",
+        "sha256": "d52769d755d3edcd3110252ce2a39682d05c72092a7adbca3523f272b1ac4b75"
+      },
+      {
+        "frame": 29,
+        "time": 0.9666666666666667,
+        "file": "frame-0004.png",
+        "sha256": "bd732992886b75416500206038abc20b6b07a77fd78e0c51f6650ba4aa23e3d2"
+      },
+      {
+        "frame": 30,
+        "time": 1,
+        "file": "frame-0005.png",
+        "sha256": "e81ccc91234729e29bf87cd39b71e3b796ae70984c70f033cff4f0eb09a42251"
+      },
+      {
+        "frame": 31,
+        "time": 1.0333333333333334,
+        "file": "frame-0006.png",
+        "sha256": "acdbaffb5fa21fb4c28d15bd444fd50f85e56c16d8434a57c881e3a76c61d3c7"
+      },
+      {
+        "frame": 39,
+        "time": 1.3,
+        "file": "frame-0007.png",
+        "sha256": "32c6ab0e7f662e4ed5716d77252f48c46a39af1105ab0e9c622e7c7fea785036"
+      },
+      {
+        "frame": 47,
+        "time": 1.5666666666666667,
+        "file": "frame-0008.png",
+        "sha256": "458a51224d021fd92828af763c59f5dab22d00794dde6fee020d9b10adfdbb39"
+      },
+      {
+        "frame": 48,
+        "time": 1.6,
+        "file": "frame-0009.png",
+        "sha256": "725043a9a67f735526ec922e1bbbad649dc30dde1c4eb09d8e372bb357ced4cb"
+      },
+      {
+        "frame": 49,
+        "time": 1.6333333333333333,
+        "file": "frame-0010.png",
+        "sha256": "1b927951be56e3c2b8c6fb048b20f44ec2452d36c29f67a02f8b624a8a064a77"
+      },
+      {
+        "frame": 64,
+        "time": 2.1333333333333333,
+        "file": "frame-0011.png",
+        "sha256": "e6c86284c912a018d7b52f0844f86415a80446cf94bffb633df8caa6ffbab4b5"
+      },
+      {
+        "frame": 78,
+        "time": 2.6,
+        "file": "frame-0012.png",
+        "sha256": "90ae7fd2862f8051826d37ea71c306ad254aeef7e243e5856e4f5f2e389afb64"
+      },
+      {
+        "frame": 89,
+        "time": 2.966666666666667,
+        "file": "frame-0013.png",
+        "sha256": "5b01cecbdcf5624d5a4897be805f2306a5da0014dc40c1960ebfd12bba4e2e7b"
+      },
+      {
+        "frame": 90,
+        "time": 3,
+        "file": "frame-0014.png",
+        "sha256": "d2c6e99f3a0d6a52e3349a4d0499bfb61fcc5751a294ca76c28744c8083c6426"
+      },
+      {
+        "frame": 101,
+        "time": 3.3666666666666667,
+        "file": "frame-0015.png",
+        "sha256": "e00c17888a13b3675fc7e19393d6f081d93c389309d016423e861a3497ab403c"
+      },
+      {
+        "frame": 102,
+        "time": 3.4,
+        "file": "frame-0016.png",
+        "sha256": "ba05fd7b0b63362f8697d768409bfe07b8128547a100872bd8a2ab3646acedc7"
+      },
+      {
+        "frame": 103,
+        "time": 3.433333333333333,
+        "file": "frame-0017.png",
+        "sha256": "72a798b7cdb48419bf7cae24c53007cefe4fc38930abcba459ba0a2f01b04a97"
+      },
+      {
+        "frame": 110,
+        "time": 3.6666666666666665,
+        "file": "frame-0018.png",
+        "sha256": "a2113915c52724f1f0c2113e2d878b53e2dbf0ab0bf27406a0590ba3c854184b"
+      },
+      {
+        "frame": 128,
+        "time": 4.266666666666667,
+        "file": "frame-0019.png",
+        "sha256": "58f40885e60be26920bd6825b41954d94e617bcfc8d85e32e860ac24a78dd863"
+      },
+      {
+        "frame": 129,
+        "time": 4.3,
+        "file": "frame-0020.png",
+        "sha256": "355373531a62f1e0c0245ed3da1e5ea5440620a17f5070d4930d27528f5a243e"
+      },
+      {
+        "frame": 130,
+        "time": 4.333333333333333,
+        "file": "frame-0021.png",
+        "sha256": "979965385fad318ba308c70bf1c7e705ba894e2d7ab0f7519ba8a6261a6da613"
+      },
+      {
+        "frame": 141,
+        "time": 4.7,
+        "file": "frame-0022.png",
+        "sha256": "a1f17b97c8089382e83acab2aba19d0e423cee71c36f241c152626017c303aef"
+      },
+      {
+        "frame": 168,
+        "time": 5.6,
+        "file": "frame-0023.png",
+        "sha256": "0f4933d6157a8c3e1492f4cf29427602ff65c2ed21ca004ad123c980df228a47"
+      },
+      {
+        "frame": 179,
+        "time": 5.966666666666667,
+        "file": "frame-0024.png",
+        "sha256": "8c3360e66ded12f5c444d9c251f93ff1f33b90b3c4b575b9fcc9c194f10903b9"
+      },
+      {
+        "frame": 180,
+        "time": 6,
+        "file": "frame-0025.png",
+        "sha256": "a4102c0c1eef7a189c484b403244294d04d0c551ef8f62bd2d3f1c46c549b364"
+      },
+      {
+        "frame": 190,
+        "time": 6.333333333333333,
+        "file": "frame-0026.png",
+        "sha256": "c0805a054e8e552ac27d8f26410ba2d85e53ec9b116811b76e6195ddb0a51c6c"
+      },
+      {
+        "frame": 191,
+        "time": 6.366666666666666,
+        "file": "frame-0027.png",
+        "sha256": "9489d43a24ddd879f646ef7e867a78a599364f5135302f9e19c12d145ed2f4c3"
+      },
+      {
+        "frame": 192,
+        "time": 6.4,
+        "file": "frame-0028.png",
+        "sha256": "2668bd94ab9a7d263c64b5f858d03ab72885eea53a68f2e7947541bb05eae97e"
+      },
+      {
+        "frame": 203,
+        "time": 6.766666666666667,
+        "file": "frame-0029.png",
+        "sha256": "aaa2fbd62242380c32156b6a9dcdbaacbd4c8c1b1ae09990e13718960aed90a9"
+      },
+      {
+        "frame": 215,
+        "time": 7.166666666666667,
+        "file": "frame-0030.png",
+        "sha256": "9bc65e9f6282ee14cd2b8751c7a4ca3b1029a6489ba3f966f5f8785c23a4a471"
+      },
+      {
+        "frame": 216,
+        "time": 7.2,
+        "file": "frame-0031.png",
+        "sha256": "326eab0028aaf0c08945541f2259faee58c75d8b7136b20920efd4b9a32bee0b"
+      },
+      {
+        "frame": 217,
+        "time": 7.233333333333333,
+        "file": "frame-0032.png",
+        "sha256": "a00604360e6b95ec425002aa9883e9ab1a1493152546ac0a961ad854f07087fd"
+      },
+      {
+        "frame": 227,
+        "time": 7.566666666666666,
+        "file": "frame-0033.png",
+        "sha256": "192b543d01134664495000b2c530090f79c2b6aa68ed9858e0f9320211b1c409"
+      },
+      {
+        "frame": 258,
+        "time": 8.6,
+        "file": "frame-0034.png",
+        "sha256": "2ab0021bd44f491de616da9cbadefd47dc57ca24dc4633a662afbccbb3a240d6"
+      },
+      {
+        "frame": 269,
+        "time": 8.966666666666667,
+        "file": "frame-0035.png",
+        "sha256": "ac6259524338dafa681bc322fb8f4b29e5e2d2c895a7e6d4b4fb7348c16f93c6"
+      },
+      {
+        "frame": 270,
+        "time": 9,
+        "file": "frame-0036.png",
+        "sha256": "cb62b74e4eca6df7377352bc18a1e2f4e18e9f8b743e9c6a053c89555623dd89"
+      },
+      {
+        "frame": 280,
+        "time": 9.333333333333334,
+        "file": "frame-0037.png",
+        "sha256": "b24587191154de98749122429c4a564502b1b94a164e0b16a39b79739fae0684"
+      },
+      {
+        "frame": 281,
+        "time": 9.366666666666667,
+        "file": "frame-0038.png",
+        "sha256": "1dc286176f93a4f0ba817ff632bd34c4911f530d797eb598e297cbdde41f6a11"
+      },
+      {
+        "frame": 282,
+        "time": 9.4,
+        "file": "frame-0039.png",
+        "sha256": "dd107040863218e04a7ed0e8658936497d47221cbb1cff0debfe73ac9be300ad"
+      },
+      {
+        "frame": 293,
+        "time": 9.766666666666667,
+        "file": "frame-0040.png",
+        "sha256": "ac570fb2682fe6d976797746c0ed49c079c2927344a1a24dec4db0974ab97bb7"
+      },
+      {
+        "frame": 308,
+        "time": 10.266666666666667,
+        "file": "frame-0041.png",
+        "sha256": "c474bf780dff399d0dc7c9f563f51fcf610ec9f29826b21e34db823eae4df36a"
+      },
+      {
+        "frame": 309,
+        "time": 10.3,
+        "file": "frame-0042.png",
+        "sha256": "15d45ad673e308eed2efa62c77cd62a44f0f34a4e99010c562dc5837b862485b"
+      },
+      {
+        "frame": 310,
+        "time": 10.333333333333334,
+        "file": "frame-0043.png",
+        "sha256": "84edc4d1371ca6d170ade88212275c22078b7d90883cac275e9071b33cb0c3e4"
+      },
+      {
+        "frame": 324,
+        "time": 10.8,
+        "file": "frame-0044.png",
+        "sha256": "a8d5cff4724422508a61fb9b4516eb89c87cfcf8a720acd8eb570f47d7dd4e62"
+      },
+      {
+        "frame": 348,
+        "time": 11.6,
+        "file": "frame-0045.png",
+        "sha256": "7885452d3bf019f645e045aad8bc9a4726cad4ebdef3638e7c704b7b97c3573d"
+      }
+    ],
+    "perceptual_review": "pending"
+  },
+  "shuffledSeekIdentical": true,
+  "observations": [
+    "Four authored SVG scenes; last cup returns the selected first-scene object",
+    "Contrast corrected in pack scene; belt restricted to its geometry",
+    "Perceptual listening and final taste pending; energy onset is not proven stress"
+  ]
+}

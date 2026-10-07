@@ -60,3 +60,7 @@
 - [Gallery](https://motion-art-director-review-oct05.achmage2.chatgpt.site/coffee.html).
 
 Technical verification does not imply full human listening/aesthetic approval, blind independent-agent transfer, complete3.1 release or physical16GB notebook validation. Existing footage/music credits remain in the city project and gallery. Source footage is relinked, not republished as raw stock.
+
+## 단어·음성 동기화 12초 시제품
+
+[모바일 비교 페이지](https://motion-art-director-review-oct05.achmage2.chatgpt.site/word-sync.html) · [정상 MP4](sync-parcel-12-v3-normal.mp4) · [검증 기록](sync-parcel-12-v3-report.json). 네 개의 새 SVG 장면과 직접 쓴 한국어 문장, 로컬 합성 음성, 새 절차적 드럼·베이스·전환음으로 단어의 시점을 시험합니다. ±1·2·4프레임 비교는 전체 믹스를 이동한 의도적 불량 예시입니다. 실제 노래 정렬·미감·전체 청취 합격을 뜻하지 않습니다.
