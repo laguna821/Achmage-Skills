@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import {inspectMedia,importMedia,selectRange} from '../lib/media.mjs';
 import {soundbed} from '../lib/soundbed.mjs';
+import {editorialInventory} from '../lib/editorial.mjs';
+import {extractReviewFrames} from '../lib/review-evidence.mjs';
 import {TECHNIQUES,technique,techniqueCoverage} from '../lib/techniques.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -34,6 +36,7 @@ async function main(){
  case 'catalog':if(flags.site)return catalogSite(out());return search(positional.join(' '),Number(flags.limit||25),Object.fromEntries(['media','engine','family','status'].filter(k=>flags[k]).map(k=>[k,flags[k]])));
  case 'techniques':return positional[0]?techniqueCoverage(project()):TECHNIQUES;
  case 'validate':return validate(project());
+ case 'direction-review':{const p=project(),r=editorialInventory(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'));write(path.join(out(),'editorial-review.json'),r);return {...r,ok:r.contract.ok};}
  case 'plan':return plan(project(),path.join(out(),'direction.html'));
  case 'approve':return approve(path.resolve(positional[0]),flags.by,flags.note,flags['expected-hash']);
  case 'audio':return audio(project(),out());
@@ -45,6 +48,6 @@ async function main(){
  case 'effect':{const p=project();if(TECHNIQUES[flags.id]){if(!flags.spec||!flags.scene)throw Error('Reusable adapter requires --spec adapter-input.json --scene scene-id');const input=read(flags.spec),s=p.scenes.find(s=>s.id===flags.scene);if(!s?.composition)throw Error('Target scene composition required');const result=technique({...input,id:flags.id});s.composition.layers.push(...result.layers);if(result.transition)s.transition_in=result.transition;(p.techniques??=[]).push({...result.receipt,scene_id:s.id});}else{const mode=ADAPTERS[flags.id];if(!mode)throw new Error('카드/기존 클립 상태: 실행 어댑터 없음');p.scenes[0].mode=mode;}p.approval=undefined;const v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(path.join(out(),'adapted.project.json'),p);return plan(p,path.join(out(),'direction.html'));}
  case 'serve':{const s=await serve(path.resolve(positional[0]||out()),Number(flags.port||0));console.log(JSON.stringify({url:s.url}));await new Promise(()=>{});return;}
  case 'package':return pack(path.join(out(),'motion-art-director'));
- default:return {usage:'node scripts/motion.mjs <doctor|status|resume|catalog|techniques|assets|plan|validate|approve|styleframe|roughcut|soundbed|audio|render|export|audit|revise|effect|serve|package> [project.json] --out PATH',help:'references/cli.md'};
+ default:return {usage:'node scripts/motion.mjs <doctor|status|resume|catalog|techniques|assets|plan|direction-review|validate|approve|styleframe|roughcut|soundbed|audio|render|export|audit|revise|effect|serve|package> [project.json] --out PATH',help:'references/cli.md'};
  }}
 try{const r=await main();if(positional[0]&&['plan','styleframe','approve','render','roughcut','export','audit'].includes(command))record(project(),out(),command,r);console.log(JSON.stringify(r,null,2));if(r?.ok===false)process.exitCode=1;}catch(e){console.error(JSON.stringify({error:e.message}));process.exitCode=1;}

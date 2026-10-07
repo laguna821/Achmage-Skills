@@ -27,6 +27,7 @@ references/engine-selection.md를 읽는다. 엔진 이름보다 작품의 표�
 내용 대응 → 연출안·스타일프레임·사운드 계획 → 사용자 확인 → 대표 컷 → 전체 제작 → 검수·수정 → 전달.
 - references/contract.md에 맞춰 project.json을 작성한다. source_text/display_text/copy_lock, 수치·단위·출처, actual/proposed/hypothetical/symbolic 사건을 구별한다. 사용자 지정 브랜드가 우선이다.
 - 새 작품은 direction_contract=object-first-v1을 사용한다. 각 scene.visual_plan의 objects, content_links, beats, continuity를 실제 그림 레이어 ID에 연결한다. 대상이 필요한 내용을 추상 선·큰 단어만으로 처리하지 않는다. 이전 기술 예제는 기획 계약이 없는 legacy 상태이며 새 작품의 완성 기준으로 복사하지 않는다.
+- 새 작품의 컷 기획과 기존 작품의 개선에는 references/editorial-review.md를 읽는다. 새 작품은 editorial_plan=shot-intent-v1에 전후 상태·실제 레이어·움직임의 주체·타이포 역할·사건 소리·다음 컷 연결을 작성한다. direction-review의 구조 검사를 실제 프레임·전체 재생·청취와 구분하고, 범용 행동 문구만으로 기획 완료를 판정하지 않는다.
 - catalog로 필요한 기법을 조회한다. 카드/원본 클립/공통 실행 기능/자동 검사/미감 확인은 서로 다른 상태다. 637개 효과 모두가 구현·미감 검증됐다고 말하지 않는다.
 - 90초 이상 다중 시퀀스 작품은 references/longform.md를 읽는다. 시퀀스의 역할·구체 대상·전달 상태를 나누고 새 음악·사건별 효과음, 전환 의존 캐시와 공격적 검수를 적용한다.
 - plan과 styleframe으로 실제 화면·장면별 사건·읽기 시간·소리를 보여준다. 음악 계획에는 동기·화음·악기 역할·강약·침묵·사건 큐를 포함한다.

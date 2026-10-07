@@ -5,6 +5,7 @@ import path from 'node:path';
 import fs from 'node:fs';
 import {hash,read,write,ROOT} from './io.mjs';
 import {directionCheck} from './direction.mjs';
+import {editorialCheck} from './editorial.mjs';
 import {audioErrors} from './audio.mjs';
 import {musicDirectionAudit} from './music-direction.mjs';
 export const ROUTES=['video-editing','promo','shorts','newsletter','infographic','thumbnail','deck-and-site'];
@@ -106,7 +107,8 @@ export function validate(p){
  if(p.approval)check(p.approval.hash===approvalHash(p),'approval is stale: changed direction requires confirmation');
  if((p.sources||[]).some(s=>s.retrieval_state==='web_excerpt'))warn.push('원 웹 본문 스냅샷 없음: 제공된 발췌만 근거로 사용');
  const direction=directionCheck(p);errors.push(...direction.errors);warn.push(...direction.warnings);
- return {ok:!errors.length,errors,warnings:warn,direction};
+ const editorial=editorialCheck(p);errors.push(...editorial.errors);warn.push(...editorial.warnings);
+ return {ok:!errors.length,errors,warnings:warn,direction,editorial};
 }
 export function requireValid(p,approved=false){const v=validate(p);if(!v.ok)throw new Error(v.errors.join('\n'));if(approved&&!p.approval)throw new Error('연출안 사용자 확인이 필요합니다. approve --by --note --expected-hash 사용');return v;}
 export function approve(file,by,note,expected){const p=read(file);requireValid(p);const h=approvalHash(p);if(expected!==h||!by||!note)throw new Error('현재 연출안 hash와 확인 주체·확인 근거가 필요합니다');p.approval={hash:h,by,note,at:new Date().toISOString()};p.status='direction_approved';write(file,p);return p.approval;}

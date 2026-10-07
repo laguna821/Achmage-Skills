@@ -2,17 +2,22 @@ import {escape,write} from './io.mjs';
 import {requireValid,approvalHash} from './contract.mjs';
 const e=x=>escape(x??'');
 const list=items=>'<ul>'+items.map(x=>'<li>'+e(x)+'</li>').join('')+'</ul>';
+function shotIntent(p,s){
+ const q=p.editorial_plan?.shots.find(x=>x.scene_id===s.id);
+ if(!q)return '<aside class="warning">구체적인 컷 의도 미작성: 이전 프로젝트 실행은 보존하지만 새 기획 검수를 통과한 것으로 표시하지 않습니다.</aside>';
+ return '<h3>컷의 목적과 변화 증거</h3>'+list([q.role+' · '+q.framing+' · '+q.purpose,...['before','contact','after'].map(k=>k+' @ '+q.action[k].at+'초: '+q.action[k].state),'변화 레이어: '+(q.action.changed_layers||[]).join(', '),'움직임의 주체: '+q.motion.driver+' / '+q.motion.reason,'정지 구간: '+JSON.stringify(q.motion.steady_windows),'타이포 역할: '+q.typography.role+' / '+q.typography.reason,'음악: '+q.sound.music_role,'현장·환경음: '+q.sound.ambience_role,...q.sound.events.map(x=>'사건음 '+x.cue_id+' @ '+x.at+'초: '+x.visible_event),q.sound.no_sync_reason||'','다음 컷: '+q.bridge.kind+' / '+(q.bridge.reason||'종료'),'관계: '+(q.bridge.relationship||'의도한 컷')]);
+}
 function scenePlan(p,s){
  const v=s.visual_plan,units=s.content_ids.map(id=>p.content_units.find(c=>c.content_id===id));
  let out='<section><p class="eyebrow">'+e(s.id)+' · '+s.start/p.output.fps+'–'+s.end/p.output.fps+'초</p><h2>'+e(v?.viewer_takeaway||'대상 중심 연출안 미작성')+'</h2><h3>전달할 내용</h3>'+list(units.map(c=>c.display_text));
  if(!v)return out+'<p class="warning">이 장면은 이전 기술 예제입니다. mode='+e(s.mode)+'만으로 실제로 무엇을 그려 보여줄지 판단할 수 없습니다. 대상·식별 특징·정보·행동·장면 연결을 작성하고 스타일프레임과 대조해야 합니다.</p></section>';
- out+='<h3>그릴 대상과 식별 특징</h3>';
+ out+=shotIntent(p,s)+'<h3>그릴 대상과 식별 특징</h3>';
  for(const o of v.objects){out+='<article><h4>'+e(o.depicts)+' <small>'+e(o.id)+' / '+e(o.kind)+'</small></h4>'+list(o.features)+'<p class="binding">실제 레이어: '+o.bindings.map(e).join(', ')+'</p>';
   if(o.information?.length)out+='<div class="scroll"><table><tr><th>표시할 정보</th><th>값</th><th>근거</th><th>레이어</th></tr>'+o.information.map(f=>'<tr><td>'+e(f.name)+'</td><td>'+e(f.value)+'</td><td>'+e(f.basis)+'</td><td>'+e(f.layer_id)+'</td></tr>').join('')+'</table></div>';
   out+='</article>';
  }
  out+='<h3>내용과 그림의 대응</h3>'+list(v.content_links.map(c=>c.content_id+' → '+c.shown_by.join(', ')+' : '+c.reason));
- if(p.schema_version==='3.1.0')out+='<h3>매체·촬영 조건·선택 구간</h3>'+list(['매체 선택: '+(v.media_reason||'미작성'),'촬영 조건: '+(v.required_footage_conditions||'미작성'),'좋은 구간: '+(v.good_range||'미작성'),'글자 여백: '+(v.text_space||'미작성'),'소리의 역할: '+(v.sound_role||'미작성')]);
+ if(p.schema_version==='3.1.0')out+='<h3>매체·촬영 조건·선택 구간</h3>'+list(['매체 선택: '+(v.media_reason||v.medium_reason||'미작성'),'촬영 조건: '+(v.required_footage_conditions||'미작성'),'좋은 구간: '+(v.good_range||'미작성'),'글자 여백: '+(v.text_space||'미작성'),'소리의 역할: '+(v.sound_role||'미작성')]);
  out+='<h3>실제 화면에서 일어날 일</h3><ol>'+v.beats.map(b=>'<li><strong>'+e(b.window.join('–'))+'초 · '+e(b.action)+'</strong><p>'+e(b.before)+' → '+e(b.after)+'</p><small>대상: '+e(b.object_ids.join(', '))+'</small></li>').join('')+'</ol><h3>다음 화면까지 유지할 관계</h3>'+list(v.continuity);
  const cues=(p.audio.cues||[]).filter(c=>c.time>=s.start/p.output.fps&&c.time<s.end/p.output.fps);
  out+='<h3>장면 소리</h3>'+list(cues.map(c=>c.kind+' @ '+c.time+'초'))+'<p class="warning">검토: 대상이 식별되는가 · 정보가 일치하는가 · 행동과 원인이 보이는가 · 다음 장면까지 대상이 이어지는가. 레이어 대응 통과는 이 판단을 대신하지 않습니다.</p></section>';
