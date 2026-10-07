@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import {createRhythmReview,applyEventCorrections} from '../lib/rhythm-review.mjs';
+import {landingInventory} from '../lib/rhythm-landings.mjs';
 import {analyzeRhythm} from '../lib/rhythm-analyze.mjs';
 import {pacingInventory} from '../lib/pacing.mjs';
 import {compileRhythm,rhythmCheck,rhythmReviewFrames} from '../lib/rhythm-score.mjs';
@@ -36,7 +37,7 @@ async function main(){
  case 'rhythm-review':return createRhythmReview(project(),out(),{movie:flags.movie,analysis:flags.analysis?read(flags.analysis):undefined});
  case 'rhythm-analyze':return analyzeRhythm(project(),out());
  case 'rhythm-compile':{const input=path.resolve(positional[0]),target=path.resolve(flags.out||'rhythm.project.json');if(input===target||fs.existsSync(target)||path.dirname(input)!==path.dirname(target))throw Error('Use a new compiled file beside source');const inputProject=project(),p=compileRhythm(flags.events?applyEventCorrections(inputProject,read(flags.events)):inputProject),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,report:rhythmCheck(p)};}
- case 'rhythm-audit':{const p=project(),r=rhythmCheck(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:rhythmReviewFrames(p)});write(path.join(out(),'rhythm-audit.json'),r);return r;}
+ case 'rhythm-audit':{const p=project(),r=rhythmCheck(p);r.text_landings=landingInventory(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:rhythmReviewFrames(p)});write(path.join(out(),'rhythm-audit.json'),r);return r;}
  case 'doctor':return doctor();
  case 'soundbed':return soundbed(read(positional[0]),path.join(out(),flags.name||'ambience.wav'));
  case 'assets':{const [action,file]=positional;if(action==='inspect')return inspectMedia(file);if(action==='import')return importMedia(file,out(),{id:flags.id,source:read(flags.receipt)});if(action==='select')return selectRange(file,out(),{start:Number(flags.start),duration:Number(flags.duration)});throw Error('assets inspect|import|select FILE');}

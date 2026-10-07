@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';
 import {ROOT,read,write,hash,inside,mkdir} from '../lib/io.mjs';
 export function pack(target){target=path.resolve(target);if(inside(ROOT,target)||fs.existsSync(target))throw new Error('Use a new directory outside skill');mkdir(target);
  const files=['SKILL.md','README.md','VALIDATION.md','LICENSE','THIRD_PARTY_NOTICES.md','package.json','package-lock.json','requirements-skia.txt','agents/openai.yaml','.claude-plugin/plugin.json'];
- const scripts=['motion.mjs','setup.mjs','install.mjs','connect-presentation.mjs','pack.mjs','glyphs.py','rhythm_features.py','skia_frames.py','create-demo.mjs','music-audit.mjs','test.mjs'];
+ const scripts=['motion.mjs','setup.mjs','install.mjs','connect-presentation.mjs','pack.mjs','glyphs.py','rhythm_features.py','rhythm_refine.py','audio_clock_audit.py','skia_frames.py','create-demo.mjs','music-audit.mjs','test.mjs'];
  const refs=['cli.md','contract.md','directing.md','show-the-subject.md','longform.md','quality.md','visual-acceptance.md','image-art.md','material-flow.md','brand-direction.md','engine-selection.md','production-methods.md','spatial.md','audio-edit.md','automotive-review.md','precision-driving.md','music-direction.md','event-ending.md','routes.md','hybrid-production.md','editorial-review.md','word-sync.md','rhythm-direction.md'];
  for(const folder of ['lib','assets','contracts','vendor','examples-public','tests-public']){
   const source=path.join(ROOT,fs.existsSync(path.join(ROOT,folder))?folder:folder.replace('-public','')),name={'examples-public':'examples','tests-public':'tests'}[folder]||folder;if(!fs.existsSync(source))throw new Error('Missing public component '+folder);

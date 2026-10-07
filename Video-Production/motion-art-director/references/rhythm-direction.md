@@ -67,3 +67,11 @@ lib/mechanism.mjs returns ordinary SVG layers with a transmission-v1 receipt. On
 New pedal-click, ratchet and tire-roll cues are deterministic authored sound design, not recordings. Keep them below musical drum accents, listen for synthetic harshness, and never infer naturalness from finite-sample checks.
 
 Cut targets may declare phase: arrival. The incoming transition starts its duration before the event and completes on the selected impact frame. Default start preserves old projects. An arrival target requires an actual whole-frame transition; its settings enter the score signature. Recheck shot intent local times, source handles and neighboring cuts after compiling.
+
+## Attack evidence and visible landing
+
+Coarse spectral-flux peaks are not exact drum labels. Analysis now also emits bounded fine high-frequency transient candidates (256-sample window, 32-sample hop) separately, retaining coarse timestamps and low-confidence fallbacks. A raw PCM energy maximum can lock to a waveform cycle or window edge; do not automatically use it as an onset correction. Synthetic known-attack fixtures verify timing and silence rejection, not human groove.
+
+An on-beat cut may contain a word that finishes easing 120–160ms later. Decide which event carries the accent: cut start, transition arrival, word pose or physical contact. For immediate accent words, show the intended pose at the cut; otherwise bind preparation and landing to an explicit layer event. Do not remove slow intentional movement from quiet sections.
+
+The rhythm-audit text_landings inventory exposes each cut-bound text layer's first authored pose and its frame offset. It is descriptive, since the first keyframe is not universally the perceived landing. Inspect decoded frames around intended impacts and compare unchanged audio against picture-only ±1/2/4-frame controls. Also compare decoded AAC against PCM in early, middle and late windows; metadata and intended event numbers alone cannot prove encoded audiovisual alignment.

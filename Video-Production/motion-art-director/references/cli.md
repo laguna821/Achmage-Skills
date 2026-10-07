@@ -48,3 +48,7 @@ Skia CPU frames: install requirements-skia.txt in a dedicated Python environment
 Word/voice clock: sync-compile source.project.json --out compiled.project.json (same directory, new file); sync-audit compiled.project.json [--movie final.mp4] --out review. See references/word-sync.md.
 
 Instrumental clock: rhythm-analyze project.json --out new-analysis; rhythm-compile source.project.json --out new-compiled.project.json; rhythm-audit new-compiled.project.json [--movie final.mp4] --out review. See references/rhythm-direction.md. Candidate pulse/onset detection requires NumPy and FFmpeg, no voice/API. Sustained narrative holds and explicit event bindings coexist.
+
+Analysis also preserves separate fine_transients; low-confidence or silent windows retain coarse evidence. rhythm-audit includes a descriptive text_landings inventory. Neither automatically certifies audible beat alignment.
+
+For an independent encoder-clock witness, decode the final audio to48kHzPCM16 using FFmpeg, then run: python scripts/audio_clock_audit.py mix.wav decoded.wav --windows 15,80,140 --out new-clock-report.json. Choose actual nonperiodic music windows within the film. The script rejects ambiguous tonal windows, silent windows and measurable offsets; it does not replace listening. Compare isolated ending sounds by their onset envelope against preceding silence.

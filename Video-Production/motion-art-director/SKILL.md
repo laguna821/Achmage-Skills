@@ -61,3 +61,5 @@ references/quality.md를 적용한다. 자동 검사, 실제 프레임 관찰, �
 음성과 단어 착지를 정밀하게 맞추는 요청에는 references/word-sync.md를 읽는다. 기획의 의미·대상·준비·착지·유지·프레이즈 연결을 원본 음원의 샘플 시계와 묶고 sync-compile / sync-audit로 검증한다. 실제 듣지 않은 자동 정렬을 강세 승인으로 표시하지 않는다. 기존 장면·원문·음악 선택·엔딩 검수는 계속 적용한다.
 
 음악 사건의 사람 교정에는 rhythm-review를 사용한다. 원본 시간·음악 해시·점수 서명이 맞는 교정 JSON만 rhythm-compile --events로 적용한다. editorial_plan.sequences는 짧은 컷들을 하나의 질문과 결과로 묶으며, 자동 검사는 컷 소속만 확인한다.
+
+박자 오차를 수정할 때는 음악 타격 후보, 컷 시작, 전환 도착, 활자·물체의 착지를 각각 확인한다. 컷이 맞아도 활자가 뒤늦게 도착할 수 있다. rhythm-audit의 text_landings와 실제 출력 프레임을 함께 보고, 원본 음악을 고정한 ±1·2·4프레임 반례로 확인한다. rhythm-analyze의 fine_transients는 별도 측정 후보이며 청취 승인이나 자동 드럼 분류가 아니다.
