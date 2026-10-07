@@ -832,7 +832,9 @@
                   "drive",
                   "wind",
                   "passby",
-                  "footstep"
+                  "footstep",
+                  "pour",
+                  "grind"
                 ]
               },
               "duration": {

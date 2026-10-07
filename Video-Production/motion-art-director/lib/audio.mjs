@@ -1,4 +1,5 @@
 import {editAudio31,gateFinal31} from './audio31.mjs';
+import {objectFoley} from './foley.mjs';
 import {editAudio,editErrors,choreographyErrors} from './audio-edit.mjs';
 import {drivingErrors,drivingCues,vehicleSample,curve,automotiveCoverage} from './automotive-audio.mjs';
 import fs from 'node:fs';
@@ -8,7 +9,7 @@ import {withStorage,ownedReserve,ownedComplete,ownedCopy,currentStorage} from '.
 export async function audio(p,out,options={}){return withStorage(out,{duration:p.output.total_frames/30},()=>synthAudio(p,out,options));}
 export const RATE=48000,CHANNELS=2;
 export const INSTRUMENTS=['bell','pad','felt','marimba','bass','pluck','air'];
-export const CUE_KINDS=['impact','chime','whoosh','tick','paper','pencil','press','thread','shear','key','drive','wind','passby','footstep'];
+export const CUE_KINDS=['impact','chime','whoosh','tick','paper','pencil','press','thread','shear','key','drive','wind','passby','footstep','pour','grind'];
 export function audioErrors(p){
  const a=p.audio||{},end=p.output?.total_frames/30,errors=[],check=(v,s)=>{if(!v)errors.push(s);},finite=(v,lo,hi)=>Number.isFinite(v)&&v>=lo&&v<=hi;
  for(const name of ['sections','notes','cues','silence'])if(a[name]!==undefined&&(!Array.isArray(a[name])||a[name].some(x=>!x||typeof x!=='object'||Array.isArray(x))))errors.push('invalid audio '+name+' array');
@@ -52,6 +53,7 @@ function effect(c,t,n,seed){
  const dt=t-c.time,d=c.duration??.7,u=dt/d,white=noise(n,seed+13),rough=noise(Math.floor(n/5),seed+41),slow=noise(Math.floor(n/37),seed+97);
  const edge=Math.min(1,dt/.004,(d-dt)/.012),swell=Math.sin(Math.PI*u),decay=Math.exp(-dt*11);let v=0;
  switch(c.kind){
+ case 'pour':case 'grind':v=objectFoley(c.kind,dt,d,seed+Math.round(c.time*48000));break;
  case 'drive':v=(Math.sin(TAU*(48*dt+3*dt*dt))*.55+Math.sin(TAU*97*dt)*.15+slow*.15)*swell*.075;break;
  case 'wind':v=(slow*.6+rough*.4)*swell*.055;break;
  case 'passby':v=(Math.sin(TAU*(100*dt-20*dt*dt))*.3+rough*.7)*swell**3*.13;break;
