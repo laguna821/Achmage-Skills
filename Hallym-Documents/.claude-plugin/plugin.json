@@ -1,0 +1,12 @@
+{
+  "name": "hallym-kordoc",
+  "version": "1.0.0-rc.1",
+  "description": "Hallym University document routing, Markdown authoring and HWPX forms. Local core release candidate.",
+  "author": {
+    "name": "laguna821"
+  },
+  "license": "MIT",
+  "skills": [
+    "./hallym-kordoc"
+  ]
+}

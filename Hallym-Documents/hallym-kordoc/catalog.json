@@ -1,0 +1,2882 @@
+{
+  "schemaVersion": 1,
+  "kind": "hallym-kordoc-catalog",
+  "version": "1.0.0-rc.1",
+  "research": "research:rr-d6b4ac8b9f4584f41514e9fae7c70d2d:809a0e35ac5041d47e55f9d24b23f28bfa19b6db16bee53eaec214e3607dd22c",
+  "engine": {
+    "name": "kordoc",
+    "version": "4.18.13",
+    "commit": "969526345dde7d6acd2f2bfd3c8e592069333355"
+  },
+  "routes": [
+    {
+      "id": "meeting.media",
+      "title": "미디어스쿨 회의록",
+      "hints": [
+        "미디어스쿨 회의록",
+        "학과 회의록"
+      ],
+      "strategy": "minutes",
+      "fields": [
+        {
+          "id": "meeting.date",
+          "label": "회의일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "meeting.place",
+          "label": "회의장소",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "participants",
+          "label": "참석자",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "안건",
+        "논의 내용",
+        "결정 사항",
+        "후속 조치"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "미디어스쿨 회의록",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "55d78e83c95e5a46527d16f40d18b1d51d28aeff18addd6b99d2c4e9d2978b6b",
+      "archiveEntry": "meeting.media.kordoc-template.json",
+      "selectionKeys": "회의 목적·자료 배포/의결 기록",
+      "qualificationNotes": "기존 회의록과 자료집을 구분; 해당 부서 스타일 확인"
+    },
+    {
+      "id": "report.hallym",
+      "title": "한림대학교 보고서",
+      "hints": [
+        "한림대 보고서",
+        "정책 제안서",
+        "일반 보고서"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "department",
+          "label": "제출 부서",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "purpose",
+          "label": "보고 목적",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "추진 배경",
+        "현황과 문제",
+        "제안 내용",
+        "추진 일정",
+        "기대효과"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "한림대학교 보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "b49a189736cf4638ac7f77bb54d575342a3a0127e1572479b35bbd56c9f24ee0",
+      "archiveEntry": "report.hallym.kordoc-template.json",
+      "selectionKeys": "제출 부서·보고 목적·분량",
+      "qualificationNotes": "HanMark 일송/AICR 마감 처리 결합; 범용 보고서를 특정 사업 양식으로 오인하지 않기"
+    },
+    {
+      "id": "pbl.apply",
+      "title": "지역사회 문제해결 PBL 운영 승인 신청서",
+      "hints": [
+        "PBL 신청",
+        "PBL 운영 승인",
+        "PBL 변경 신청"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "partner",
+          "label": "협력기관",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "지역사회 문제와 필요성",
+        "교육목표",
+        "운영 계획",
+        "협력기관 역할",
+        "평가 방법",
+        "예산 계획"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "지역사회 문제해결 PBL 운영 승인 신청서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "d95b759d5cdd65c4f3f07f723912dcbcd88be40d59c862bf1e84954d376e7acf",
+      "archiveEntry": "pbl.apply.kordoc-template.json",
+      "selectionKeys": "학기·신규/변경·교과목·협력기관",
+      "qualificationNotes": "2026-2 로컬 신청서; 다음 학기 서식 동일 여부 확인"
+    },
+    {
+      "id": "pbl.result",
+      "title": "PBL 교과목 결과보고서",
+      "hints": [
+        "PBL 결과",
+        "Hi-Flex 결과"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "운영 개요",
+        "수행 과정",
+        "학생 산출물",
+        "교육 성과",
+        "예산 집행",
+        "개선 사항"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "PBL 교과목 결과보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "f8ea56792cfd697563cd6615f80a26ee192bfef874473c398fc7ed1816bcd129",
+      "archiveEntry": "pbl.result.kordoc-template.json",
+      "selectionKeys": "학기·교육모델·결과보고 대상",
+      "qualificationNotes": "교육모델별 필수 항목과 중첩표를 개별 패키지로 검증"
+    },
+    {
+      "id": "pbl.meeting",
+      "title": "PBL 회의록",
+      "hints": [
+        "PBL 회의록",
+        "PBL 회의비"
+      ],
+      "strategy": "minutes",
+      "fields": [
+        {
+          "id": "account",
+          "label": "계정과목",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "budget",
+          "label": "예산액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "spent",
+          "label": "집행액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "meeting.place",
+          "label": "회의장소",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "meeting.date",
+          "label": "회의일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "meeting.time",
+          "label": "회의시간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "교과목 담당 교수",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "회의내용",
+        "회의참가자",
+        "증빙서류 첨부란"
+      ],
+      "sourceId": "W0124",
+      "templateStatus": "reference-reconstructed",
+      "representative": "PBL 회의록",
+      "signatures": [
+        "교과목 담당 교수 (인)"
+      ],
+      "notes": [
+        "회의비는 실행예산이 편성되어 있는 경우에 한하며, 예산액 내에서 집행하여야 함."
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "sourceTerm": "2026-1",
+      "tables": {
+        "회의참가자": [
+          "소속(학과)",
+          "직위(학번)",
+          "성명"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0124",
+        "name": "[서식1-1] 지역사회문제해결 PBL 교과목_회의록.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/ls/1358/227987/download.do",
+        "sha256": "b2b2e20560f306146b3961d7d3a9ec0bcca35f19e9aa2fe94dcfea7d0a64be57",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "5c6d8b36320fdcefdef7df63924fd8ca12c850646fcbaf6c5284bedd3f61efd7",
+      "archiveEntry": "pbl.meeting.kordoc-template.json",
+      "selectionKeys": "해당 사업·학기·참가자 수·증빙 형태",
+      "qualificationNotes": "로컬 HWPX 장소 한 항목 채우기 확인; 2026-1 공개 HWP와 버전 비교 필요"
+    },
+    {
+      "id": "pbl.advisory",
+      "title": "PBL 자문내용보고서",
+      "hints": [
+        "PBL 자문",
+        "PBL 자문내용보고서"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "program",
+          "label": "사업 및 부서명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "group",
+          "label": "협의체명(소속)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "responsible.name",
+          "label": "책임자 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "responsible.department",
+          "label": "책임자 소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "need",
+          "label": "자문필요성",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "adviser.name",
+          "label": "자문자 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "adviser.affiliation",
+          "label": "자문자 소속 및 직위",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "content",
+          "label": "자문내용",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "attachment",
+          "label": "첨부",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "sourceId": "W0126",
+      "templateStatus": "reference-reconstructed",
+      "representative": "PBL 자문내용보고서",
+      "signatures": [
+        "책임자 (인)"
+      ],
+      "notes": [
+        "상기와 같이 자문내용을 보고합니다.",
+        "한림대학교 New Hallym 혁신본부장",
+        "서명란의 책임자: 프로그램을 담당하는 교내의 협의체 총괄 책임장"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "sourceTerm": "2026-1",
+      "representativeTerms": [
+        "자문",
+        "자문내용보고서"
+      ],
+      "excludedTerms": [
+        "영수증",
+        "동의서"
+      ],
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0126",
+        "name": "[서식4] 지역사회문제해결 PBL 교과목_자문료 서식.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/ls/1358/227989/download.do",
+        "sha256": "490680c9dd825716a7c9b430b2d3ddbb3d4bf1c83aa57375d8e7cfbf30453ecf",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "129e62a1bf593b516c5db7f24f8c7ec297e8ef6bfa585d182e5b940f1feeb5eb",
+      "archiveEntry": "pbl.advisory.kordoc-template.json",
+      "selectionKeys": "자문자·자문 주제·기간·지급 근거",
+      "qualificationNotes": "중복 성명과 중첩표; 담당자/자문자를 별도 슬롯으로 고정"
+    },
+    {
+      "id": "pbl.lecture",
+      "title": "PBL 특강 결과 및 지급 신청 초안",
+      "hints": [
+        "PBL 특강",
+        "PBL 강사료"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "event.name",
+          "label": "행사명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lecturer.name",
+          "label": "강사 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lecturer.affiliation",
+          "label": "강사 소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "event.date",
+          "label": "일시",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "event.hours",
+          "label": "강의시간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "topic",
+          "label": "강의 주제",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "amount",
+          "label": "신청 금액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "evidence",
+          "label": "지급 근거 및 첨부",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "templateStatus": "common-draft",
+      "representative": "PBL 특강 결과 및 지급 신청 초안",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "100809152aeeb24af3166391d83a2525d4e740b1623c26be72bc423bfccc614c",
+      "archiveEntry": "pbl.lecture.kordoc-template.json",
+      "selectionKeys": "행사명·강사·일시·시간·지급 정보",
+      "qualificationNotes": "고정 양식 유지; 사용자 제공 정보만 채움; 중첩표 검증"
+    },
+    {
+      "id": "pbl.visit",
+      "title": "PBL 현장실습·견학·행사 결과보고서",
+      "hints": [
+        "PBL 견학",
+        "PBL 현장실습",
+        "PBL 행사"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "topic",
+          "label": "주제",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "place",
+          "label": "장소",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "purpose",
+          "label": "목적",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "participants.target",
+          "label": "참가대상",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "participants.count",
+          "label": "참가인원",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당 교수",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "내용",
+        "일정",
+        "활동 사진",
+        "참석자 명단"
+      ],
+      "sourceId": "W0127",
+      "templateStatus": "reference-reconstructed",
+      "representative": "PBL 현장실습·견학·행사 결과보고서",
+      "signatures": [
+        "담당 교수 (인)"
+      ],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "sourceTerm": "2026-1",
+      "tables": {
+        "일정": [
+          "일정",
+          "세부 내용"
+        ],
+        "참석자 명단": [
+          "연번",
+          "소속학과(전공)",
+          "학번",
+          "이름"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0127",
+        "name": "[서식2] 지역사회문제해결PBL_현장실습&견학&행사 결과 보고서.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/ls/1358/228003/download.do",
+        "sha256": "17d0eeb642bc4ec304e23446e5c0dc4c5cf6f081ce61b3904ab0687e5be5873d",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "fa57dd5a83f25e29c9212923891544996fa86887772029c149a6d0ee85765d76",
+      "archiveEntry": "pbl.visit.kordoc-template.json",
+      "selectionKeys": "학기·일정·참여·활동·성과",
+      "qualificationNotes": "최신 공개 HWP와 내용/서식 비교"
+    },
+    {
+      "id": "teaching.ai-apply",
+      "title": "AI 결합 교과목 신청서",
+      "hints": [
+        "AI 결합 교과목 신청",
+        "AI 융합 교과목 신청"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "application.type",
+          "label": "신규·지속 구분",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "신청 목적",
+        "AI 활용 계획",
+        "수업 운영",
+        "학습 평가",
+        "지원 요청"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "AI 결합 교과목 신청서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "22fdf857a322a0fa496deba6f96a0ee3164922602ae0577d198814275c53a15b",
+      "archiveEntry": "teaching.ai-apply.kordoc-template.json",
+      "selectionKeys": "학기·교과목·신규/지속",
+      "qualificationNotes": "2024-2 원본 최신 사용 적합성 확인"
+    },
+    {
+      "id": "teaching.ai-result",
+      "title": "AI 결합 교과목 결과보고서",
+      "hints": [
+        "AI 결합 교과목 결과",
+        "AI 융합 교과목 결과"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "운영 내용",
+        "AI 활용 사례",
+        "학습 성과",
+        "한계와 개선",
+        "증빙 자료"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "AI 결합 교과목 결과보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "568cec236e8982814436b0ce57ae048282c1c2b2c6aad84776dd981d75f57db9",
+      "archiveEntry": "teaching.ai-result.kordoc-template.json",
+      "selectionKeys": "학기·교과목·AI 활용·성과",
+      "qualificationNotes": "기입 완료 예시는 본문·개인정보 제거 후 템플릿화"
+    },
+    {
+      "id": "ai.plan",
+      "title": "AI+X 융합산학 연구과제 계획서",
+      "hints": [
+        "AI+X 계획",
+        "AI융합연구원 계획",
+        "AI 연구과제 신청"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "연구과제명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.name",
+          "label": "연구책임자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.department",
+          "label": "소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "연구기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "budget",
+          "label": "연구비",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "연구 필요성",
+        "목표와 내용",
+        "추진 방법",
+        "참여기관과 역할",
+        "일정",
+        "예산",
+        "예상 산출물"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "AI+X 융합산학 연구과제 계획서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "cc1b05c1a4fa8456ac305e41df5fa2393bb4303446813690e41e20f5fd3cb121",
+      "archiveEntry": "ai.plan.kordoc-template.json",
+      "selectionKeys": "공고·연도·융합/산학/에듀테크·차수",
+      "qualificationNotes": "2026 AI+X 공고와 AI에듀테크를 별개 경로로 분할"
+    },
+    {
+      "id": "ai.report",
+      "title": "AI 연구과제 결과보고서",
+      "hints": [
+        "AI 연구과제 결과",
+        "AI 연구 중간보고",
+        "AI융합연구원 보고"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "연구과제명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.name",
+          "label": "연구책임자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "보고기간",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "목표 대비 실적",
+        "연구 수행 내용",
+        "연구 성과",
+        "연구비 집행",
+        "후속 계획"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "AI 연구과제 결과보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "d7b4f5a702734d485fc9f498d3f01c7d0e5090cd4e1331c2cdc917439243442e",
+      "archiveEntry": "ai.report.kordoc-template.json",
+      "selectionKeys": "사업·과제·중간/최종",
+      "qualificationNotes": "HWP에서 추정 필드0; 제목·절별 글쓰기 골격 필요"
+    },
+    {
+      "id": "glocal.meeting",
+      "title": "글로컬대학 회의록",
+      "hints": [
+        "글로컬 회의록",
+        "글로컬 회의비"
+      ],
+      "strategy": "minutes",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "사업명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "meeting.date",
+          "label": "회의일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "meeting.place",
+          "label": "회의장소",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "participants",
+          "label": "참석자",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "회의 목적",
+        "논의 내용",
+        "결정 사항",
+        "집행 및 증빙"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "글로컬대학 회의록",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "611e368f09c90cfd04fdb6a1d3e69874e8c7f570eddc1be1581c29e8628c12a6",
+      "archiveEntry": "glocal.meeting.kordoc-template.json",
+      "selectionKeys": "사업명·계정·일시·참석자",
+      "qualificationNotes": "HWP를 hwpx-preserve fill로 직접 처리 불가"
+    },
+    {
+      "id": "glocal.advisory",
+      "title": "글로컬대학 자문내용보고서",
+      "hints": [
+        "글로컬 자문",
+        "글로컬 전문가 활용"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "사업명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "자문일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "responsible.name",
+          "label": "책임자 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "adviser.name",
+          "label": "자문자 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "adviser.affiliation",
+          "label": "소속 및 직위",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "topic",
+          "label": "자문 주제",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "content",
+          "label": "자문내용",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "amount",
+          "label": "지급 금액",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "templateStatus": "common-draft",
+      "representative": "글로컬대학 자문내용보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "c33a74d7a2ed930f006b8e91a61a89159f89c5cd78492a6f1f16cdbd7a266cd3",
+      "archiveEntry": "glocal.advisory.kordoc-template.json",
+      "selectionKeys": "결과보고/지급 서류·자문 정보",
+      "qualificationNotes": "날인·증빙 자산과 중첩표 보존 검증"
+    },
+    {
+      "id": "glocal.travel",
+      "title": "글로컬대학 출장 결과보고서",
+      "hints": [
+        "글로컬 출장",
+        "글로컬 여비"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "사업명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "traveler.name",
+          "label": "출장자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "출장기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "destination",
+          "label": "출장지",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "출장 목적",
+        "일정 및 수행 내용",
+        "성과",
+        "여비 산출",
+        "증빙 자료"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "글로컬대학 출장 결과보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "7ed3d84cc5ddf8b1fcd3844a36194df8f1010027dda15f8038420211bdc0eb3c",
+      "archiveEntry": "glocal.travel.kordoc-template.json",
+      "selectionKeys": "출장명·기간·성과·증빙",
+      "qualificationNotes": "16MiB 표본 상한으로 본문 미분석"
+    },
+    {
+      "id": "rise.program",
+      "title": "RISE 프로그램 운영계획서",
+      "hints": [
+        "RISE 프로그램",
+        "RISE 운영",
+        "라이즈 사업"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "사업명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "program.name",
+          "label": "프로그램명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "department",
+          "label": "담당 부서",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "운영기간",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "사업 연계성",
+        "목표와 대상",
+        "운영 내용",
+        "역할 분담",
+        "예산",
+        "성과지표"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "RISE 프로그램 운영계획서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "b40c30594f66f605dded58f4a8d55d7858592f9889c43e0a14704be7b9e1f519",
+      "archiveEntry": "rise.program.kordoc-template.json",
+      "selectionKeys": "RISE 세부 사업·기획/결과·참여자",
+      "qualificationNotes": "글로컬과 같은 이름의 서식도 혼용 금지"
+    },
+    {
+      "id": "hss.plan",
+      "title": "인문사회융합 지산학 프로젝트 계획서",
+      "hints": [
+        "인문사회융합 계획",
+        "지산학 프로젝트",
+        "인문사회 지산학협의체"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "topic",
+          "label": "자유주제",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "project.title",
+          "label": "프로젝트명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "goal",
+          "label": "사업 목표",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "host",
+          "label": "주관기관",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "partners",
+          "label": "참여기관",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.name",
+          "label": "사업 책임자 및 소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "researchers",
+          "label": "공동 연구자 및 소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "사업 기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "budget",
+          "label": "사업비",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "deliverables",
+          "label": "사업 결과물",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "related",
+          "label": "관련 사업",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "기대 성과",
+        "성과 확산 및 자립화 계획",
+        "필요성",
+        "사업목적",
+        "사업개요",
+        "프로그램 내용",
+        "세부 추진 일정",
+        "추진 방법 및 운영 방안",
+        "참여명단",
+        "집행계획서",
+        "기대효과"
+      ],
+      "sourceId": "W0131",
+      "templateStatus": "reference-reconstructed",
+      "representative": "인문사회융합 지산학 프로젝트 계획서",
+      "signatures": [],
+      "notes": [
+        "참여기관은 지역 산업체·자치단체·공공기관 1개 이상 필수로 안내된 원문을 참고했습니다.",
+        "항목별 산출내역을 세부적으로 작성합니다. 원문의 예시 집행액은 입력값으로 사용하지 않습니다."
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "프로젝트"
+      ],
+      "excludedTerms": [
+        "협의체"
+      ],
+      "tables": {
+        "세부 추진 일정": [
+          "회차",
+          "일시",
+          "장소",
+          "주요내용",
+          "비고"
+        ],
+        "참여명단": [
+          "연번",
+          "소속",
+          "직책",
+          "연락처",
+          "이메일",
+          "성명",
+          "비고"
+        ],
+        "집행계획서": [
+          "항목",
+          "금액",
+          "산출내역"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0131",
+        "name": "2026 인문사회융합연구원 지산학협의체,프로젝트 신청서.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/icrhss/1268/228684/download.do",
+        "sha256": "0943db785e8c9433f87c23f6a8c04795a384fd8b9b01d9add84c34dd14a45d1c",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "ee46c75a18abf149ae514100a58b29426e93c8e08ae2ae213987f182a94347e9",
+      "archiveEntry": "hss.plan.kordoc-template.json",
+      "selectionKeys": "융합연구/지산학협의체/프로젝트·연도",
+      "qualificationNotes": "2025 융합공동연구 로컬본과 2026 지산학 공개 신청서 별도"
+    },
+    {
+      "id": "irb.bundle",
+      "title": "IRB 신규연구 심의신청서",
+      "hints": [
+        "IRB 신청",
+        "IRB 심의",
+        "연구윤리 심의"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "project.ko",
+          "label": "연구과제명 국문",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "project.en",
+          "label": "연구과제명 영문",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.name",
+          "label": "연구책임자 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.affiliation",
+          "label": "본교 소속 및 직위",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.phone",
+          "label": "유선 및 핸드폰",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.email",
+          "label": "이메일",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "purpose",
+          "label": "연구 목적(학술용·학위논문용·기타)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "research.type",
+          "label": "연구 종류",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "institutions",
+          "label": "연구 기관 및 참여기관 수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "위원회 승인일부터 연구예정 종료일",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "risk",
+          "label": "연구위험성(연구자 제공 판단)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "consent",
+          "label": "동의취득방법",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "contact",
+          "label": "연구대상자 접촉 여부",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "identifiable",
+          "label": "개인식별정보 포함 여부",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "funding.type",
+          "label": "연구비 지원기관 종류",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "funding.name",
+          "label": "기관명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "funding.total",
+          "label": "연구비 총액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "funding.contact",
+          "label": "연구비 담당자 성명 및 부서명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "제출일자",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "공동 연구자",
+        "인간대상연구 정보",
+        "인체유래물연구 정보",
+        "필수 제출자료",
+        "해당시 제출자료"
+      ],
+      "sourceId": "W0049-12",
+      "templateStatus": "reference-reconstructed",
+      "representative": "신규연구 심의신청서",
+      "signatures": [
+        "연구책임자 (서명)"
+      ],
+      "notes": [
+        "과제 관리번호는 신청인이 작성하지 않습니다. 해당사항란에 V 표시합니다.",
+        "인간대상연구 정보에는 모집방법·대상자 수 또는 자료 건수, 대상자군과 취약한 환경 여부, 연구 방법·시술내용·수집 및 이용 정보범위를 표시합니다.",
+        "인체유래물연구 정보에는 수량·종류·수집방법·익명화 여부와 방법·인체유래물 보관 및 유전학적 정보보관 여부를 표시합니다.",
+        "해당하지 않는 연구 유형에는 해당없음을 명시합니다. 연구위험성·면제·동의 여부는 AI가 임의 판정하지 않습니다.",
+        "필수 제출자료: 자가점검표, 연구계획서, 연구책임자 생명윤리준수서약서, 연구대상자설명서, 해당 동의서 또는 면제사유서 및 점검표, 연구진 생명윤리교육이수증(원문: 접수일 기준 최근 2년 이내).",
+        "해당시 제출자료: 모집 문서, 설문지·검사지, 이해상충보고서, 연구자료 제공 관련 서류, 물질양도각서, 외부연구비 신청 연구계획서 사본.",
+        "제출전체서식을 한 파일로 합하여 전체 페이지에 일련번호가 부여되게 출력하여 제출하도록 원문에서 안내합니다. 이 대표 신청서만으로 전체 제출 묶음이 완성된 것은 아닙니다.",
+        "본인은 이 연구 과제의 연구책임자로서, 본 서식에 기입된 모든 정보는 수행하고자 하는 연구과제와 일치함을 확인하였으며 심의신청서를 생명윤리위원회에 제출합니다."
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "신규",
+        "IRB 신청",
+        "IRB 심의",
+        "연구윤리 심의"
+      ],
+      "excludedTerms": [
+        "변경",
+        "면제",
+        "지속",
+        "종료"
+      ],
+      "tables": {
+        "공동 연구자": [
+          "성명",
+          "소속 및 직위",
+          "유선 및 핸드폰",
+          "이메일"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0049-12",
+        "name": "[서식 1] 신규연구 심의신청서.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/ethics/1024/232611/download.do",
+        "sha256": "67911d6e836b2d632211ad00a115c548d5fe157fa205862ff869b1a1a157dba0",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "7b5c2df78ff5cf8292927e8550bd082636a81b42f3f9679c56f8109ee61eb3d8",
+      "archiveEntry": "irb.bundle.kordoc-template.json",
+      "selectionKeys": "인간대상/인체유래물·심의 단계·요청 문서",
+      "qualificationNotes": "현재 공지의 첨부 묶음 우선; 심의 판단·승인 여부 자동 확정 금지"
+    },
+    {
+      "id": "purchase.request",
+      "title": "구매 신청서",
+      "hints": [
+        "구매 신청",
+        "물품 구매",
+        "기자재 신청"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "department",
+          "label": "신청 부서",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "applicant.name",
+          "label": "신청자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "item.name",
+          "label": "품명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "spec",
+          "label": "규격",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "quantity",
+          "label": "수량",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "price",
+          "label": "단가",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "total",
+          "label": "총액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "purpose",
+          "label": "구매 목적",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "budget",
+          "label": "예산 계정",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "delivery",
+          "label": "납품 희망일",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "templateStatus": "common-draft",
+      "representative": "구매 신청서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "efba98e67452f083d9f464f5c964bfd114af406cb4b22786489eca4f6da96b6c",
+      "archiveEntry": "purchase.request.kordoc-template.json",
+      "selectionKeys": "재원·품목·수량·견적·담당 부서",
+      "qualificationNotes": "문서 작성과 연구행정통합시스템 접수 구분"
+    },
+    {
+      "id": "purchase.justify",
+      "title": "구매 사유서",
+      "hints": [
+        "구매 사유",
+        "수의계약 사유",
+        "단일 견적"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "department",
+          "label": "신청 부서",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "item.name",
+          "label": "구매 대상",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "amount",
+          "label": "금액",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "필요성",
+        "규격 선정 근거",
+        "공급자 선정 근거",
+        "가격 적정성",
+        "첨부 자료"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "구매 사유서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "0b97fa1bbd910d30f79eb94fe7770353327440f73ae4836f98ebdd7469c7838b",
+      "archiveEntry": "purchase.justify.kordoc-template.json",
+      "selectionKeys": "모델 지정/업체 선정/구독 도입·비교 근거",
+      "qualificationNotes": "서로 다른 사유서 이름과 목적 구분"
+    },
+    {
+      "id": "research.fee",
+      "title": "국제 학술지 논문 교정(번역)료 지원신청서",
+      "hints": [
+        "논문 교정료",
+        "논문 번역료",
+        "교정료 지원"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "authors",
+          "label": "저자 전원 및 소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "author.role",
+          "label": "신청자 참여구분",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "paper.ko",
+          "label": "논문명 국문",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "paper.en",
+          "label": "논문명 영문",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "journal.name",
+          "label": "학술지명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "journal.type",
+          "label": "학술지구분",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "publisher",
+          "label": "발행기관",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "country",
+          "label": "발행국",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "volume",
+          "label": "발행번호",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "published",
+          "label": "발행일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "issn",
+          "label": "ISSN",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "paid",
+          "label": "납부액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "paid.date",
+          "label": "납부일자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "vendor",
+          "label": "교정(번역) 의뢰처",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "requested",
+          "label": "신청액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "bank",
+          "label": "은행명·계좌번호·예금주명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "office.phone",
+          "label": "연구실 연락처",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "mobile",
+          "label": "휴대전화",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "email",
+          "label": "이메일",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "applicant.affiliation",
+          "label": "신청인 대학·학부(학과)·전공",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "applicant.name",
+          "label": "신청인 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "신청일",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "sourceId": "W0094",
+      "templateStatus": "reference-reconstructed",
+      "representative": "국제 학술지 논문 교정(번역)료 지원신청서",
+      "signatures": [
+        "신청인 (인)"
+      ],
+      "notes": [
+        "저자 전원 기입",
+        "1편당 1회에 한하여 30만원 이내 지원",
+        "교원이 연구지원 목적으로 지급받는 논문 교정(번역)료 지원금은 기타소득 원천징수 후 지급함(종합소득세 신고 및 납부사항)",
+        "첨부: 논문 교정(번역)료 청구서 및 영수증, 입금/지출 증빙자료, 논문 별쇄본(게재 확정 시 게재확정증명서 또는 알림 사본과 논문 교정본)",
+        "「산학협력단 간접비 관리운영 지침」에 의거하여 상기와 같이 논문 교정(번역)료를 신청합니다.",
+        "한림대학교산학협력단 귀하"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0094",
+        "name": "다운로드",
+        "url": "https://www.hallym.ac.kr/sites/sanhak/files/sanhak02.hwp",
+        "sha256": "c3e886524637aaba9695d91973d3fe8fa0ecec379658db211ed6d7ed58e6cc9f",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "8b55792e3a3f4b40cd7718097eef8bdd62ab6a320af4ae1d76031474327f8b08",
+      "archiveEntry": "research.fee.kordoc-template.json",
+      "selectionKeys": "게재/교정·지원 부서·실제 증빙",
+      "qualificationNotes": "게재료와 교정료를 분리; 지급요건은 해당 공식 페이지 연결"
+    },
+    {
+      "id": "research.conference",
+      "title": "학술회의 개최 지원신청서",
+      "hints": [
+        "학술회의 개최 지원",
+        "학술대회 개최 지원"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "event.type",
+          "label": "국내·국제 구분",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "event.name",
+          "label": "행사명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "topic",
+          "label": "주제",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "datetime",
+          "label": "일시 및 장소",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "host",
+          "label": "주최",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "sponsor",
+          "label": "후원",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "media",
+          "label": "연계언론",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "papers",
+          "label": "발표논문 수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "participants",
+          "label": "예상 참석인원",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "requested",
+          "label": "지원요청액",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "bank",
+          "label": "수령계좌",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "개최목적",
+        "개최경비 내역",
+        "예산 편성 계획",
+        "지원금 집행 계획",
+        "첨부 자료"
+      ],
+      "sourceId": "W0093",
+      "templateStatus": "reference-reconstructed",
+      "representative": "학술회의 개최 지원신청서",
+      "signatures": [
+        "주관 학부(과)장 (인)",
+        "소속 대학장 (인)"
+      ],
+      "notes": [
+        "재원: 연구간접비(산학협력단)",
+        "첨부: 학술회의 개최 세부계획서(프로그램, 예산편성계획서 등 포함) 1부",
+        "직접경비는 산학협력단 법인카드 사용 및 행사 종료 후 계좌이체 신청을 하여야 함.",
+        "「산학협력단 간접비 관리운영 지침」에 의거하여 상기와 같이 학술회의 개최 지원 경비를 신청합니다.",
+        "한림대학교산학협력단 귀하"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "tables": {
+        "예산 편성 계획": [
+          "항목",
+          "지원금(간접비)",
+          "자체부담",
+          "기타",
+          "계",
+          "세부 내용"
+        ],
+        "지원금 집행 계획": [
+          "총 예산",
+          "법인카드 사용 예정액",
+          "업체송금 예정액",
+          "현금집행 예정액"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0093",
+        "name": "서식 다운로드",
+        "url": "https://www.hallym.ac.kr/sites/sanhak/files/%ED%95%99%EC%88%A0%ED%9A%8C%EC%9D%98%20%EA%B0%9C%EC%B5%9C%20%EC%A7%80%EC%9B%90%EC%8B%A0%EC%B2%AD%EC%84%9C.hwp",
+        "sha256": "3efe9cdb5cd147c2ae87a78a87984f8b9bceac11b3d4c45463b2fb0a42018573",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "eccec15f03c21ca49e162beb64a54966376e67c83b3ccee05f4f8f9cd935d20d",
+      "archiveEntry": "research.conference.kordoc-template.json",
+      "selectionKeys": "행사명·일정·주최·계획·예산",
+      "qualificationNotes": "공식 지원 신청서와 필수 첨부 목록 연결"
+    },
+    {
+      "id": "research.grant",
+      "title": "교내 연구비 지원 신청서",
+      "hints": [
+        "교내 연구비 신청",
+        "연구 지원금",
+        "연구 장려금"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "project.title",
+          "label": "과제명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "lead.name",
+          "label": "책임자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "연구기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "amount",
+          "label": "신청금액",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "신청 근거",
+        "연구 목적",
+        "연구 내용",
+        "추진 일정",
+        "예산",
+        "기대 성과"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "교내 연구비 지원 신청서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "500623687e06afd43607ecff602a9903a32adee9642ebb1438298f9bf2b2f5ea",
+      "archiveEntry": "research.grant.kordoc-template.json",
+      "selectionKeys": "사업·연도·신청/중간/결과",
+      "qualificationNotes": "과거 사업은 과거 작성본으로만 사용; 현재 공고 확인 필요"
+    },
+    {
+      "id": "teaching.coaching",
+      "title": "교수법 코칭 신청서",
+      "hints": [
+        "교수법 코칭",
+        "교수 코칭",
+        "수업 코칭"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "수업 현황",
+        "개선 과제",
+        "코칭 요청 사항",
+        "활동 계획",
+        "기대효과"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "교수법 코칭 신청서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "db12eb79fd71df024b1db541078305a74699139ff2fd126cf558314807dcfa52",
+      "archiveEntry": "teaching.coaching.kordoc-template.json",
+      "selectionKeys": "학기·신청/활동/결과/정산",
+      "qualificationNotes": "신청·결과·비용 서류를 각각 선택"
+    },
+    {
+      "id": "teaching.models",
+      "title": "수업모델 운영 결과보고서",
+      "hints": [
+        "HA-BL 결과",
+        "HA-FL 결과",
+        "ITS-AL 결과",
+        "e+ 결과",
+        "Hmeta 결과"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "model",
+          "label": "승인 수업모델",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "수업 설계",
+        "모델 적용 과정",
+        "학습자 활동",
+        "평가 및 성과",
+        "개선 사항"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "수업모델 운영 결과보고서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "f4da3740810e9181dd0fd887ea626a2a15915b5b625c34400fc93b6bc5f5528e",
+      "archiveEntry": "teaching.models.kordoc-template.json",
+      "selectionKeys": "학기·승인된 수업모델",
+      "qualificationNotes": "유사 결과보고서를 모델별 버전으로 유지"
+    },
+    {
+      "id": "teaching.syllabus",
+      "title": "강의계획 및 수업개선 문서",
+      "hints": [
+        "강의계획서",
+        "Syllabus",
+        "HCQI",
+        "교과목 해설"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "term",
+          "label": "학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "course.name",
+          "label": "교과목명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "document.type",
+          "label": "강의계획·개선·해설 구분",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "교과목 개요",
+        "학습목표",
+        "수업 방법",
+        "평가 방법",
+        "주차별 계획",
+        "개선 사항"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "강의계획 및 수업개선 문서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "2bac3de4857b9b8180fff75cb55c4a8232e3d5ef3ed00acf968202bfb8637f88",
+      "archiveEntry": "teaching.syllabus.kordoc-template.json",
+      "selectionKeys": "학기·교과목·강의계획/개선/해설",
+      "qualificationNotes": "가이드북·작성본·빈 양식 구분"
+    },
+    {
+      "id": "grad.admin",
+      "title": "대학원 학과 내규·교과과정 개정 신청서",
+      "hints": [
+        "대학원 교과과정",
+        "대학원 전공 신설",
+        "대학원 내규"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "department",
+          "label": "학과·전공",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "document.number",
+          "label": "문서번호",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "change.type",
+          "label": "제·개정 구분",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "effective",
+          "label": "시행일",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "제·개정 사유",
+        "교과과정 개정 전후",
+        "첨부물",
+        "소속 교수 서명",
+        "내규 신구대조",
+        "교과목 신설",
+        "교과목 폐지",
+        "이수구분·학점·수강대상 변경",
+        "교과목 명칭 변경",
+        "변경 후 교과과정표 및 교과목 해설"
+      ],
+      "sourceId": "W0115",
+      "templateStatus": "reference-reconstructed",
+      "representative": "대학원 학과 내규·교과과정 개정 신청서",
+      "signatures": [
+        "학과장·전공주임교수 (인)",
+        "소속 교수 전원 (인)"
+      ],
+      "notes": [
+        "상기와 같이 학과 내규 및 교과과정 제·개정을 요청합니다.",
+        "원문 제출 안내: 학과별 수시 개정 요청 건이 많아 연 2회로 제한함. 2학기 시행은 4월말, 1학기 시행은 10월말까지 제출. 적용 여부는 제출 부서에 확인합니다.",
+        "첨부: 학과 내규 개정안 1부, 학과 교과과정 개정안 1부.",
+        "원문 제출 안내: 문서와 e-mail(grad@hallym.ac.kr)로 함께 제출.",
+        "코드번호는 대학원에서 부여함. 개정안에는 현행에서 변경되는 부분만 표시함."
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "내규",
+        "교과과정"
+      ],
+      "excludedTerms": [
+        "전공 신설"
+      ],
+      "tables": {
+        "내규 신구대조": [
+          "현행",
+          "개정안"
+        ],
+        "교과목 신설": [
+          "코드번호",
+          "이수구분",
+          "교과목명",
+          "학점",
+          "수강대상"
+        ],
+        "교과목 폐지": [
+          "코드번호",
+          "이수구분",
+          "교과목명",
+          "학점",
+          "수강대상"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0115",
+        "name": "학과내규 및 교과과정 개정 신청서.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/grad/291/198696/download.do",
+        "sha256": "2b48752ade604a582cb3fdffa9984bae19bd8f4aafef84cd15278cdbffbbfcf1",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "aff8975d6eaaa5e75eac036ff03aa83b2cc67796c6e2183e50434600b8223ae5",
+      "archiveEntry": "grad.admin.kordoc-template.json",
+      "selectionKeys": "신설/개설사유/교육목표·전공·학기",
+      "qualificationNotes": "일반대학원 공식 각종서식과 대조"
+    },
+    {
+      "id": "faculty.hr",
+      "title": "교원 인사 신청 초안",
+      "hints": [
+        "교원 재임용",
+        "교원 임용",
+        "교원 업적",
+        "학술상 신청"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "department",
+          "label": "소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "applicant.name",
+          "label": "신청자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "hr.type",
+          "label": "인사 구분",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "대상기간",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "신청 개요",
+        "경력",
+        "교육 실적",
+        "연구 실적",
+        "봉사 실적",
+        "증빙 목록"
+      ],
+      "templateStatus": "common-draft",
+      "representative": "교원 인사 신청 초안",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "e3c1451d70d109782217ea5a3150da8aafee0783021cb1dfd3338db77204e04e",
+      "archiveEntry": "faculty.hr.kordoc-template.json",
+      "selectionKeys": "전임/연구교원·인사단계·공고",
+      "qualificationNotes": "개인 경력·서명은 공개 패키지 제외; 2016 임용 서식 최신 확인"
+    },
+    {
+      "id": "staff.requests",
+      "title": "교직원 행정 신청서",
+      "hints": [
+        "명함 신청",
+        "신분증 신청",
+        "IP 신청",
+        "관사 신청",
+        "관사 퇴사"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "request.type",
+          "label": "신청 업무",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "department",
+          "label": "소속",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "applicant.name",
+          "label": "신청자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "employee.id",
+          "label": "교직원번호",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "contact",
+          "label": "연락처",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "details",
+          "label": "신청 내용",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "reason",
+          "label": "신청 사유",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "신청일",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "templateStatus": "common-draft",
+      "representative": "교직원 행정 신청서",
+      "signatures": [],
+      "notes": [],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공식 양식 미적용: 공통 초안입니다."
+      ],
+      "packHash": "b59e4867ee7c523bf69b43355b22a0386140be51bf166b129cdf2cd6df4efffd",
+      "archiveEntry": "staff.requests.kordoc-template.json",
+      "selectionKeys": "서비스 종류·소속·필수 정보",
+      "qualificationNotes": "관사 퇴사원 추정 필드0; 시각적 빈칸 수동 매핑 필요"
+    },
+    {
+      "id": "central.academic",
+      "title": "학부 복학원",
+      "hints": [
+        "학부 복학",
+        "학부 휴학",
+        "학부 자퇴",
+        "학점 교류",
+        "증명 신청"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "college",
+          "label": "대학",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "department",
+          "label": "학부(과)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "major",
+          "label": "전공",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "year",
+          "label": "학년",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "student.id",
+          "label": "학번",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "student.name",
+          "label": "성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "term",
+          "label": "복학신청 학기",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "phone",
+          "label": "전화",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "mobile",
+          "label": "휴대폰",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "parent.address",
+          "label": "보호자 주소",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "parent.phone",
+          "label": "보호자 휴대폰",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "신청일",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "consent",
+          "label": "개인정보 수집 및 이용 동의 여부",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "sourceId": "W0007",
+      "templateStatus": "reference-reconstructed",
+      "representative": "학부 복학원",
+      "signatures": [
+        "복학 신청인 (인)",
+        "작성자 (서명 또는 인)",
+        "지도 교수 (인)",
+        "학부(과)장 (인)"
+      ],
+      "notes": [
+        "상기 본인은 현재 휴학(입대, 일반) 중이던 바, 위와 같이 복학하고자 하오니 허가하여 주시기 바랍니다.",
+        "한림대학교총장 귀하",
+        "개인정보 수집 및 이용 동의서\nConsent to Collection and Use of Personal Information\n복학 신청과 관련하여 아래와 같이 귀하의 개인정보를 수집·이용하기 위하여 「개인정보보호법」 제15조에 따라 관련\n사항을 알려드리며 다음과 같은 목적을 위해 활용합니다.\nIn regard to your request, Hallym University needs your consent for the collection and use of your personal information in accordance with Article 15 of the Personal Information Protection Act.\n□ 개인정보의 수집·이용 목적 : 복학 신청 관련 접수\nPurpose for collection and use: To accept reinstatement request\n□ 한림대학교가 수집·이용할 개인정보 항목 : 성명, 학과, 학번, 연락전화번호 등 이력사항, 보호자(학부모) 성명,\n주소 및 연락처 등 신청서 기재사항\nInformation to be collected and used: Name, Dept., Student ID number, Contact number, Name/Address/Contact number of parents\n□ 개인정보의 보유, 이용기간 : 수집·이용 동의일로부터 5년\nPeriod of Retention and use: 5 years after receipt of consent\n□ 신청자는 개인정보 수집을 거부할 수 있는 권리가 있지만, 이 경우 복학 신청이 취소될 수 있습니다.\nYou have the right not to consent to the collection and use of your personal information. However, your request may be canceled.\n□ 동의함. Agree □ 동의하지 않음. Disagree\n작성자 Applicant: (서명 또는 인) Signature"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "복학"
+      ],
+      "excludedTerms": [
+        "휴학",
+        "자퇴",
+        "교류",
+        "증명"
+      ],
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0007",
+        "name": "11.복학원(Reinstatement Request Form).hwp",
+        "url": "https://www.hallym.ac.kr/bbs/hallym/419/176799/download.do",
+        "sha256": "847a5dfdcaa9a5350ae7cea2d212be58e01d84fba6888097a35b04f6c5cb216d",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "035db323e10f58c2a92f92dd7761ed1cb32ba49fff1f4a87b959fa5defb5e9f6",
+      "archiveEntry": "central.academic.kordoc-template.json",
+      "selectionKeys": "학부/대학원·휴학유형·요청 업무",
+      "qualificationNotes": "학부·대학원 동일 명칭도 별도; 온라인 전용 절차 표시"
+    },
+    {
+      "id": "central.facility",
+      "title": "게시물 설치 및 부착 신청서",
+      "hints": [
+        "게시물 신청",
+        "게시물 설치",
+        "시설 사용",
+        "집회 신고",
+        "출입 신청"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "department",
+          "label": "신청 기관(부서)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "applicant.name",
+          "label": "신청자",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "office.phone",
+          "label": "사무실 연락처",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "mobile",
+          "label": "휴대폰",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "email",
+          "label": "이메일",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "purpose",
+          "label": "게시 목적",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "content",
+          "label": "게시 내용(요약)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "event.period",
+          "label": "행사 기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "posting.period",
+          "label": "게시 기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "poster.type",
+          "label": "유형 및 매수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "locations",
+          "label": "게시 희망 장소·매수·유형",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "consent",
+          "label": "개인정보 수집 및 이용 동의 여부",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "신청일",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "sourceId": "W0015",
+      "templateStatus": "reference-reconstructed",
+      "representative": "게시물 설치 및 부착 신청서",
+      "signatures": [
+        "담당 (인)",
+        "계장 (인)",
+        "팀장 (인)",
+        "처장 (인)",
+        "작성자 (서명 또는 인)",
+        "신청자 (인)",
+        "부서장(기관장) (인)"
+      ],
+      "notes": [
+        "「옥외 게시물 관리 규정」에 따라 상기와 같이 게시물을 설치(부착)하고자 신청서를 제출하오니 승인하여 주시기 바랍니다.",
+        "한림대학교 총장 귀하",
+        "첨부: 게시 내용을 확인할 수 있는 사진 또는 출력물 1부",
+        "승인받은 경우 게시하고자 하는 게시물을 소지하여 학생지원팀으로 방문 후 확인도장을 받은 후 게시하여야 함.",
+        "개인정보 수집 및 이용 동의서\n게시물 설치 및 부착 신청과 관련하여 아래와 같이 귀하의 개인정보를 수집·이용하기 위하여 「개인정보보호법」 제15조에 따라\n관련 사항을 알려드리며 다음과 같은 목적을 위해 활용합니다.\n□ 개인정보의 수집·이용 목적 : 게시물 설치 및 부착 신청 관련 접수\n□ 한림대학교가 수집·이용할 개인정보 항목 : 성명, 학과(부서), 이메일, 연락처 등 신청서 기재사항\n□ 개인정보의 보유, 이용기간 : 수집·이용 동의일로부터 12개월\n□ 신청자는 개인정보 수집을 거부할 수 있는 권리가 있지만, 거부시 신청사항이 취소될 수 있습니다.\n□ 동의함. □ 동의하지 않음.\n작성자: (서명 또는 인)"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "게시물"
+      ],
+      "excludedTerms": [
+        "시설 사용",
+        "집회",
+        "출입"
+      ],
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0015",
+        "name": "8.게시물 설치 및 부착 신청서(2016).hwp",
+        "url": "https://www.hallym.ac.kr/bbs/hallym/419/176809/download.do",
+        "sha256": "7a035daf328fa64511f2d6c335c4da348d22561b39d2f8e0dc96687e277191b9",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "36e7934a48f270a378825f9a187d788cc19b1b2baccca1aeae870494705de7d4",
+      "archiveEntry": "central.facility.kordoc-template.json",
+      "selectionKeys": "교내/교외·신고 종류·신청인",
+      "qualificationNotes": "구형 집회신고서와 2025 공개본 구분"
+    },
+    {
+      "id": "grad.thesis",
+      "title": "박사학위청구 논문요지 공개발표 평가서",
+      "hints": [
+        "대학원 논문",
+        "학위논문 심사",
+        "박사 공개발표",
+        "논문 제목 변경"
+      ],
+      "strategy": "fixed",
+      "fields": [
+        {
+          "id": "department",
+          "label": "학과(전공)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "presenter.name",
+          "label": "발표자 성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "thesis.title",
+          "label": "논문제목",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "evaluation.result",
+          "label": "평가결과(可·否)",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "evaluation.content",
+          "label": "평가내용",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "date",
+          "label": "평가일",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "chair.name",
+          "label": "학과장 성명",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [],
+      "sourceId": "W0121",
+      "templateStatus": "reference-reconstructed",
+      "representative": "박사학위청구 논문요지 공개발표 평가서",
+      "signatures": [
+        "평가결과 可 (인) / 否 (인)",
+        "학과장 (인)"
+      ],
+      "notes": [
+        "첨부: 박사학위청구논문 요지 1부.",
+        "대학원장 귀하"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "공개발표",
+        "논문요지"
+      ],
+      "excludedTerms": [
+        "제목 변경",
+        "본심사"
+      ],
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0121",
+        "name": "02- 공개발표 평가서.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/grad/291/198688/download.do",
+        "sha256": "96083c929af947fb04a2b486bf938a6696c144add7e01e9dbbae1ae353176cc9",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "85e0bd70f93ef3a2856d7234a6b216b5febfb98a5bbf265094d2ad4f746d25f3",
+      "archiveEntry": "grad.thesis.kordoc-template.json",
+      "selectionKeys": "예비/본심사·평가서/요지/제목변경·학위과정",
+      "qualificationNotes": "평가 점수·심사의견·위원 서명을 임의 생성하지 않기"
+    },
+    {
+      "id": "grad.ta",
+      "title": "교육조교 수업보조일지",
+      "hints": [
+        "교육조교 일지",
+        "수업보조일지",
+        "대학원 조교 일지"
+      ],
+      "strategy": "minutes",
+      "fields": [
+        {
+          "id": "period",
+          "label": "근무기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "department",
+          "label": "소속학과",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "assistant.name",
+          "label": "이름",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "employee.id",
+          "label": "사번",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "professor.name",
+          "label": "담당교수",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "hours",
+          "label": "근무시간",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "업무 기록"
+      ],
+      "sourceId": "W0095",
+      "templateStatus": "reference-reconstructed",
+      "representative": "교육조교 수업보조일지",
+      "signatures": [
+        "근무자 서명",
+        "담당교수 서명"
+      ],
+      "notes": [
+        "칸이 부족한 경우 추가하거나 2장을 철하여 제출"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "tables": {
+        "업무 기록": [
+          "일자",
+          "업무 내용",
+          "과목명",
+          "장소",
+          "시간"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0095",
+        "name": "붙임. 교육조교 수업보조일지 양식.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/grad/291/227994/download.do",
+        "sha256": "6ca7fb16109a35cf4156422e49e3954c573ec8b89f389d49a5f4df87068aa45a",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "8f16fd7477499d19d7528315d7d0421f3ef611d95232cd2b57ff9f5b3443ce69",
+      "archiveEntry": "grad.ta.kordoc-template.json",
+      "selectionKeys": "학기·과목·일자·실제 보조 내용",
+      "qualificationNotes": "지급·장학 서류와 구분"
+    },
+    {
+      "id": "grad.student",
+      "title": "대학원 공결처리원",
+      "hints": [
+        "대학원 공결",
+        "대학원 휴학",
+        "대학원 복학",
+        "대학원 학점인정"
+      ],
+      "strategy": "report",
+      "fields": [
+        {
+          "id": "department",
+          "label": "소속학과",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "student.id",
+          "label": "학번",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "student.name",
+          "label": "성명",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "phone",
+          "label": "연락처",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "reason",
+          "label": "신청사유",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "period",
+          "label": "공결기간",
+          "required": true,
+          "type": "text"
+        },
+        {
+          "id": "consent",
+          "label": "개인정보 수집 및 이용 동의 여부",
+          "required": true,
+          "type": "text"
+        }
+      ],
+      "sections": [
+        "공결과목",
+        "상세 사유",
+        "증빙서류",
+        "서명 및 대학원 확인"
+      ],
+      "sourceId": "W0096",
+      "templateStatus": "reference-reconstructed",
+      "representative": "대학원 공결처리원",
+      "signatures": [
+        "신청인 (인)",
+        "담당교수 확인(서명)",
+        "대학원 확인"
+      ],
+      "notes": [
+        "위와 같은 사유로 공결신청원을 제출합니다.",
+        "한림대학교 대학원장 귀하",
+        "관련 증빙서류를 첨부합니다.",
+        "※ 개인정보 수집 및 이용 동의서(Consent to Collection and Use of Personal Information)\n대학원 공결 신청과 관련하여 아래와 같이 귀하의 개인정보를 수집․이용하기 위하여 「개인정보보호법」 제15조에 따라 관련 사항을 알려드리며 다음과 같은 목적을 위해 활용합니다.\nIn regard to your request, Hallym University Graduate School needs your consent for the collection and use of your personal information in accordance with Article 15 of the Personal Information Protection Act.\n⦁ 개인정보의 수집 및 이용 목적: 공결 처리 (Purpose for collection and use: excused absence processing)\n⦁ 한림대학교가 수집·이용할 개인정보 항목(필수항목): 소속학과, 학번, 성명, 연락처\n(Information to be collected and used: Department, Student ID, Name, Phone number)\n⦁ 개인정보 보유 및 이용기간: 준영구 (Period of retention and use: Semi-Persistent)\n⦁ 동의하지 않을 경우의 처리: 이용자는 개인정보 수집을 거부할 수 있는 권리가 있으며, 이 경우 공결 신청이 취소될 수 있습니다.\n(You have the right not to consent to the collection and use of your personal information. However, your request may be canceled.)\n동의함(Agree) □ 　/ 동의하지 않음(Disagree) □\n\n신청사유 선택 항목(원문 참고):\n□ 병역법, 예비군법 등 관계 법령에 따라 동원 또는 훈련 등을 위하여 소집된 경우\n(Military training related: not applicable to foreign students)\n□ 총장이 허가한 각종 공식 행사 참가 (Participation in official university activities permitted by the president)\n□ 본인과 직계 존비속의 결혼 또는 상사 (Marriage or death of immediate family members)\n□ 여학생의 생리로 인한 사유: 월 1일 이내, 학기당 3일 이내(시험 기간은 제외)\n(Menstruation: a day per month, no more than 3 days per semester(not permitted during exam periods)\n□ 졸업예정자(마지막 학기 등록자)의 조기 취업으로 인한 결석: 해당 기간 (Early employment of a prospective graduate)\n□ 장애학생이 일신상의 이유로 공결 요청한 경우 (when a student with a diability requests for personal reasons)\n□ 법정감염병으로 인한 격리 조치로 출석이 불가능한 경우\n(When attendance is not possible due to quarantine measures related to a legally designated infectious disease)\n□ 기타 상응하는 이유가 있다고 담당교수가 인정한 경우\n(When the professor acknowledges other equivalent reasons for the absence)"
+      ],
+      "version": "1.0.0",
+      "asOf": "2026-10-07",
+      "representativeTerms": [
+        "공결"
+      ],
+      "excludedTerms": [
+        "휴학",
+        "복학",
+        "학점인정"
+      ],
+      "tables": {
+        "공결과목": [
+          "과목명",
+          "분반",
+          "요일",
+          "교시",
+          "담당교수",
+          "담당교수 확인(서명)"
+        ]
+      },
+      "limitations": [
+        "기관 접수 가능성 및 최신 적용 여부는 확인되지 않았습니다.",
+        "공개 HWP를 참고하여 항목과 서명란을 HWPX로 재구성했습니다. 원본과 시각적으로 동일하지 않습니다."
+      ],
+      "source": {
+        "id": "W0096",
+        "name": "공결처리원(양식, 한영)-대학원.hwp",
+        "url": "https://www.hallym.ac.kr/bbs/grad/291/198715/download.do",
+        "sha256": "baba85373d52b55e2ba4606cc6b14b5ee42a3af1f58ef2c4e8544f94cf25d319",
+        "format": "hwp",
+        "accessedAt": "2026-10-07"
+      },
+      "packHash": "431ebb12e2f17fcde4b7fa619cf8999d7330dbfa5a47a83ee3a892f5d7683204",
+      "archiveEntry": "grad.student.kordoc-template.json",
+      "selectionKeys": "대학원 과정·신청 종류·대상 학기",
+      "qualificationNotes": "학부와 동일 이름의 양식 혼용 금지"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "hanmark": "2.7.0",
+  "engine": "4.18.13",
+  "sources": [
+    {
+      "path": "HanMark/src/io/institutionStyles.ts",
+      "sha256": "a1fc5175a7639a69894816ab6884f369f58d3c84834248ff4fd12fe53a10f3b4"
+    },
+    {
+      "path": "HanMark/src/io/gongmunOutline.ts",
+      "sha256": "545df1c4338e7e73eaf7565ca558300c6f9bb2da73d76689304d411bdb95ebb1"
+    },
+    {
+      "path": "HanMark/src/io/hwpxFinish.ts",
+      "sha256": "4c69bb7406e4ad3dcae57e69249c8a4481b47a1dbccee5e0675f847f2e8a188e"
+    }
+  ],
+  "styles": [
+    {
+      "id": "builtin:hallym-ilsong",
+      "name": "gongmun.builtin.hallymIlsong.name",
+      "description": "gongmun.builtin.hallymIlsong.desc",
+      "group": "gongmun.builtin.group.hallym",
+      "fileLabel": "gongmun.fileName.hallymIlsong",
+      "preset": "minutes",
+      "options": {
+        "bodyPt": 11,
+        "lineSpacing": 160,
+        "numbering": "standard",
+        "fonts": {
+          "body": "한림고딕체 Regular",
+          "heading": "한림고딕체 Regular",
+          "ref": "한림고딕체 Regular",
+          "table": "한림고딕체 Regular"
+        },
+        "levels": {
+          "0": {
+            "bold": true
+          }
+        },
+        "margins": {
+          "top": 20,
+          "bottom": 15,
+          "left": 20,
+          "right": 20
+        },
+        "pageNumbers": true,
+        "endMark": false
+      },
+      "finish": {
+        "markers": {
+          "legal1": "•",
+          "legal2": "-",
+          "legal3": "·",
+          "legal4": "·",
+          "legal5": "·",
+          "legal6": "·",
+          "legal7": "·"
+        },
+        "tableHeader": {
+          "fill": "#203864",
+          "textColor": "#FFFFFF"
+        },
+        "title": {
+          "pt": 15,
+          "bold": true,
+          "font": "body"
+        },
+        "chapter": {
+          "blankLineBefore": true
+        }
+      },
+      "outline": {
+        "boldSubHeadings": true
+      }
+    },
+    {
+      "id": "builtin:hallym-aicr",
+      "name": "gongmun.builtin.hallymAicr.name",
+      "description": "gongmun.builtin.hallymAicr.desc",
+      "group": "gongmun.builtin.group.hallym",
+      "fileLabel": "gongmun.fileName.hallymAicr",
+      "preset": "report",
+      "options": {
+        "bodyPt": 11,
+        "lineSpacing": 160,
+        "numbering": "report",
+        "h2Marker": "number",
+        "bullet2": "○",
+        "fonts": {
+          "body": "휴먼명조",
+          "heading": "휴먼명조",
+          "ref": "휴먼명조",
+          "table": "휴먼명조"
+        },
+        "levels": {
+          "0": {
+            "font": "휴먼명조",
+            "pt": 13,
+            "bold": false
+          },
+          "1": {
+            "font": "휴먼명조",
+            "pt": 11
+          },
+          "2": {
+            "font": "휴먼명조",
+            "pt": 11
+          },
+          "3": {
+            "font": "휴먼명조",
+            "pt": 11
+          }
+        },
+        "cover": true,
+        "pageNumbers": true
+      },
+      "finish": {
+        "markers": {
+          "box0": "{n})"
+        },
+        "chapter": {
+          "pt": 13,
+          "bold": true
+        },
+        "cover": {
+          "removeInfoBox": true,
+          "removeBodyTitle": true,
+          "barColors": [
+            "#0066B3",
+            "#00B6AD"
+          ],
+          "linePt": 15,
+          "lineBold": false
+        }
+      },
+      "quietEngineNotes": [
+        "보고서 요약박스가 없습니다"
+      ],
+      "coverDate": "day",
+      "outline": {
+        "nestChapterLists": true
+      }
+    }
+  ]
+}
