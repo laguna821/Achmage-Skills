@@ -79,3 +79,10 @@ Technical verification does not imply full human listening/aesthetic approval, b
 음악: “The Lift” Kevin MacLeod ([원곡](https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1500066)), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 기존 편집 일부와 볼륨 흐름·상수 마스터 게인을 보존하고, 새 합성 효과음을 추가했습니다. 영상: Pexels 개별 출처/저자/해시/이용 조건은 프로젝트에 기재합니다. 원본 촬영 파일은 동봉하지 않습니다. 서로 다른 인물·자전거의 시각적 비유이며 한 선수의 경기 기록이 아닙니다.
 
 개발 ZIP은 커밋 5ca05fe 기준으로 새 리듬 교정·시퀀스 검사·전환 도착 시점 기능을 포함합니다. 기존 패키지 버전을 유지한 개발 빌드이며 3.1 정식판/시험판 Release 완료를 의미하지 않습니다. 공통 코드의 MIT 및 외부 구성요소별 고지는 ZIP에 포함됩니다.
+
+
+## 페달 — 180초 편집 리메이크
+
+[180초·97컷 본편 / 음악만 비교 / 타격 진단 / 시점 교정](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/film/) · [재제작 및 출처](pedal-180-editorial-v4-REPRODUCE.md) · [검증 기록](pedal-180-editorial-v4-verification.json) · [개발 설치 ZIP](motion-art-director-development-290d166.zip).
+
+짧은 대표 구간의 방향을9개 서사 흐름으로 확장했습니다. 기존 음악 편집을 유지하고 활자의 늦은 도착, 금속 연결선, 회전 관계를 수정했습니다. 공통 스킬에는 세밀한 타격 후보·활자 착지 점검·AAC/PCM 시계 비교를 추가했습니다. 기술 검증과 사람의 청취·최종 미감은 별도로 기록합니다. 이전 영상은 보존하며 전체3.1 Release·Achmage OS 완료를 의미하지 않습니다.

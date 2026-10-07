@@ -1,0 +1,458 @@
+{
+  "work": "페달: 리듬이 속도가 되는 순간",
+  "version": "180-second editorial remake / picture v4, mastered audio v5",
+  "sourceCommit": "290d166",
+  "durationSeconds": 180,
+  "frames": 5400,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "shots": 97,
+  "sequenceGroups": 9,
+  "mediaSeconds": {
+    "footage": 83.633,
+    "graphics": 96.367
+  },
+  "pacing": {
+    "medianShotSeconds": 1.8,
+    "meanShotSeconds": 1.856,
+    "longerThanOrEqual4SecondsShare": 0.157
+  },
+  "tests": {
+    "fullProject": {
+      "positiveControls": 4,
+      "invalidCasesRejected": 13,
+      "rows": [
+        {
+          "name": "picture-only cut drift -4",
+          "errors": [
+            "invalid absolute keyframe times",
+            "invalid absolute keyframe times",
+            "cut/transition arrival is not on selected music anchor",
+            "build-10: 행동 시간 범위 오류",
+            "build-10: after: exact local time and specific visible state required"
+          ]
+        },
+        {
+          "name": "picture-only cut drift -2",
+          "errors": [
+            "invalid absolute keyframe times",
+            "invalid absolute keyframe times",
+            "cut/transition arrival is not on selected music anchor",
+            "build-10: 행동 시간 범위 오류",
+            "build-10: after: exact local time and specific visible state required"
+          ]
+        },
+        {
+          "name": "picture-only cut drift -1",
+          "errors": [
+            "invalid absolute keyframe times",
+            "invalid absolute keyframe times",
+            "cut/transition arrival is not on selected music anchor",
+            "build-10: 행동 시간 범위 오류",
+            "build-10: after: exact local time and specific visible state required"
+          ]
+        },
+        {
+          "name": "picture-only cut drift 1",
+          "errors": [
+            "cut/transition arrival is not on selected music anchor",
+            "build-11: 행동 시간 범위 오류",
+            "build-11: after: exact local time and specific visible state required"
+          ]
+        },
+        {
+          "name": "picture-only cut drift 2",
+          "errors": [
+            "cut/transition arrival is not on selected music anchor",
+            "build-11: 행동 시간 범위 오류",
+            "build-11: after: exact local time and specific visible state required"
+          ]
+        },
+        {
+          "name": "picture-only cut drift 4",
+          "errors": [
+            "cut/transition arrival is not on selected music anchor",
+            "build-11: 행동 시간 범위 오류",
+            "build-11: after: exact local time and specific visible state required"
+          ]
+        },
+        {
+          "name": "wrong original music hash",
+          "errors": [
+            "rhythm source hash changed"
+          ]
+        },
+        {
+          "name": "music start shifted without picture",
+          "errors": [
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor",
+            "cut/transition arrival is not on selected music anchor"
+          ]
+        },
+        {
+          "name": "transition arrival changed",
+          "errors": [
+            "cut/transition arrival is not on selected music anchor"
+          ]
+        },
+        {
+          "name": "video source range overflow",
+          "errors": [
+            "video range or transition handle exceeds source footage"
+          ]
+        },
+        {
+          "name": "source contact altered after compilation",
+          "errors": [
+            "rhythm actual target differs: return-hand-contact"
+          ]
+        },
+        {
+          "name": "music ending leak",
+          "errors": [
+            "music must end including its tails"
+          ]
+        },
+        {
+          "name": "voice ending leak",
+          "errors": [
+            "voice leaks into deliberate pause",
+            "voice leaks into final silence",
+            "voice must remain quiet under title"
+          ]
+        }
+      ],
+      "lateTextPoseDetectedFrames": 5,
+      "originalMusicEditPreserved": true,
+      "review": "Technical negative controls; not listening or aesthetic approval"
+    },
+    "encodedPictureOffsets": {
+      "sourceCutFrame": 2712,
+      "rows": [
+        {
+          "offsetFrames": 0,
+          "observedLanding": 15,
+          "expectedNormal": 15,
+          "accepted": true,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        },
+        {
+          "offsetFrames": -4,
+          "observedLanding": 11,
+          "expectedNormal": 15,
+          "accepted": false,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        },
+        {
+          "offsetFrames": -2,
+          "observedLanding": 13,
+          "expectedNormal": 15,
+          "accepted": false,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        },
+        {
+          "offsetFrames": -1,
+          "observedLanding": 14,
+          "expectedNormal": 15,
+          "accepted": false,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        },
+        {
+          "offsetFrames": 1,
+          "observedLanding": 16,
+          "expectedNormal": 15,
+          "accepted": false,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        },
+        {
+          "offsetFrames": 2,
+          "observedLanding": 17,
+          "expectedNormal": 15,
+          "accepted": false,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        },
+        {
+          "offsetFrames": 4,
+          "observedLanding": 19,
+          "expectedNormal": 15,
+          "accepted": false,
+          "audioSHA": "94df758503c77ee58dae45d5304fef2f68c42f59c65058aba2320389b581029e"
+        }
+      ],
+      "unchangedAACAcrossAllVariants": true,
+      "scope": "Actual decoded accent-word onset; ±1/2/4picture-only offsets. Does not certify that chosen source transient is the listener-preferred beat."
+    },
+    "encodedAudioClock": {
+      "sampleRate": 48000,
+      "windows": [
+        {
+          "at": 15,
+          "lagSamples": 0,
+          "lagMS": 0,
+          "zeroLagCorrelation": 0.998584
+        },
+        {
+          "at": 80,
+          "lagSamples": 0,
+          "lagMS": 0,
+          "zeroLagCorrelation": 0.999916
+        },
+        {
+          "at": 140,
+          "lagSamples": 0,
+          "lagMS": 0,
+          "zeroLagCorrelation": 0.999151
+        }
+      ],
+      "audioOnlyOffsetCounterexamples": 18,
+      "endingEnvelope": {
+        "PCMOnset": 175.002,
+        "AACOnset": 175.002
+      },
+      "excludedWitness": "Periodic title chime is unsuitable for unique waveform-lag negatives; onset envelope compared instead",
+      "listening": "Not performed by this waveform comparison"
+    },
+    "loudness": {
+      "input_i": "-16.06",
+      "input_tp": "-1.64",
+      "input_lra": "11.70",
+      "input_thresh": "-26.58",
+      "output_i": "-16.18",
+      "output_tp": "-1.75",
+      "output_lra": "9.30",
+      "output_thresh": "-26.48",
+      "normalization_type": "dynamic",
+      "target_offset": "0.18"
+    },
+    "actualAudioRevision": {
+      "all97ShotsReusedFromVerifiedFinal": true,
+      "videoBitstreamIdentical": true,
+      "renderedPictureFrames": 0,
+      "audioRegenerated": true,
+      "priorFinalPreserved": true,
+      "editedMusicStemByteIdentical": true,
+      "masterDeltaDB": -0.2
+    },
+    "installedRevisionTrials": {
+      "interrupted": true,
+      "resumedFirstSceneReuse": true,
+      "rows": [
+        {
+          "name": "copy",
+          "clips": [
+            {
+              "id": "first-contact",
+              "reused": true
+            },
+            {
+              "id": "power-transfer",
+              "reused": false
+            }
+          ],
+          "audioReused": true
+        },
+        {
+          "name": "event",
+          "clips": [
+            {
+              "id": "first-contact",
+              "reused": true
+            },
+            {
+              "id": "power-transfer",
+              "reused": false
+            }
+          ],
+          "audioReused": true
+        },
+        {
+          "name": "source",
+          "clips": [
+            {
+              "id": "first-contact",
+              "reused": false
+            },
+            {
+              "id": "power-transfer",
+              "reused": true
+            }
+          ],
+          "audioReused": true
+        },
+        {
+          "name": "gain",
+          "clips": [
+            {
+              "id": "first-contact",
+              "reused": true
+            },
+            {
+              "id": "power-transfer",
+              "reused": true
+            }
+          ],
+          "audioReused": false
+        }
+      ],
+      "priorFinalAndAudioPreserved": true,
+      "scope": "Actual six-second fixture using the new footage, transmission and music clock; not five full180second rerenders"
+    },
+    "cacheEvictionRemix": "Actual zero-cache-retention fixture passed from clean installed package, including identical encoded video hash; picture/runtime/receipt/tampered final/existing output rejection",
+    "publicProjectAndCorrectionImport": "valid; exact music clock identity retained after privacy sanitization"
+  },
+  "preserved": {
+    "oldFilm": true,
+    "representativeV7": true,
+    "sourceMusicEditAndEnvelope": true,
+    "editedMusicStemSHA256": "dc8813671bfbcd79b9810e268de5a15c0c0712f14542071c8e96e0a599a46693"
+  },
+  "performance": {
+    "renderer": "CPU Chromium / FFmpeg",
+    "gpu": false,
+    "jobs": 1,
+    "frames": 5400,
+    "renderSeconds": 774.342,
+    "observedProcessTreePeakWorkingSetBytes": 939188224,
+    "observedProcessTreePeakPrivateBytes": 903438336,
+    "samplingLimitation": "Observed render PID and recursive descendants; sampled every5s after rendering began; summed working sets may double count shared pages; not a physical16GB notebook measurement",
+    "actual16GBIntegratedNotebook": "not measured"
+  },
+  "review": {
+    "technical": "listed evidence passed",
+    "visual": "97-shot encoded contact sheets reviewed; late text arrival, invisible metal spokes and wheel relation corrected",
+    "listening": "Human full listening pending; waveform and browser playback do not certify hearing",
+    "aesthetics": "Representative direction accepted; final180 not yet assessed by user",
+    "publicPlayback": "Pending deployment verification; final follow-up evidence is recorded separately"
+  },
+  "package": {
+    "archive": "motion-art-director-development-290d166.zip",
+    "bytes": 84530453,
+    "sha256": "dd0fc684ac710660b2fead1d69f37f6e60816c2256d5041587327d8efd1e104c",
+    "sourceCommit": "290d166",
+    "status": "development package; not full3.1 release"
+  },
+  "scopeLimit": "Development PR and package; not completion of full3.1 release, allsevenroutes, coffee transfer or AchmageOS promotion",
+  "publicDeliveries": {
+    "deliveries": [
+      {
+        "file": "pedal-180-editorial-v4.mp4",
+        "bytes": 94498785,
+        "sha256": "623d3a682871d7a3fe76e7fec3bce8046132cb25787f84743c2da7be6bcf7036",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "duration": "180.000000",
+        "nb_read_frames": "5400"
+      },
+      {
+        "file": "pedal-180-editorial-v4-music-only.mp4",
+        "bytes": 94481430,
+        "sha256": "f7dfc6aafc4aa74cbe6805713021c0d05f15878e715e6714aa417c9e04344610",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "30/1",
+        "duration": "180.000000",
+        "nb_read_frames": "5400"
+      },
+      {
+        "file": "pedal-180-editorial-v4-diagnostic.mp4",
+        "bytes": 54642952,
+        "sha256": "32a1c5058ac91633043cd04b4e83085a640ce176edb178e0330c7a111e62ff08",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "30/1",
+        "duration": "180.000000",
+        "nb_read_frames": "5400"
+      }
+    ],
+    "quantizationMaximumMS": 16.59833333334859
+  }
+}
