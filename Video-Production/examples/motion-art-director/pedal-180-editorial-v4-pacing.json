@@ -1,0 +1,1405 @@
+{
+  "version": "pacing-inventory-v1",
+  "project": "pedal-180-editorial-v4",
+  "durationSeconds": 180,
+  "shotCount": 97,
+  "cutCount": 96,
+  "meanShotSeconds": 1.856,
+  "medianShotSeconds": 1.8,
+  "maxShotSeconds": 6.8,
+  "durationBins": [
+    {
+      "seconds": [
+        0,
+        1
+      ],
+      "shots": 28,
+      "screenSeconds": 24.3,
+      "screenShare": 0.135
+    },
+    {
+      "seconds": [
+        1,
+        2
+      ],
+      "shots": 50,
+      "screenSeconds": 88.167,
+      "screenShare": 0.49
+    },
+    {
+      "seconds": [
+        2,
+        4
+      ],
+      "shots": 13,
+      "screenSeconds": 39.3,
+      "screenShare": 0.218
+    },
+    {
+      "seconds": [
+        4,
+        8
+      ],
+      "shots": 6,
+      "screenSeconds": 28.233,
+      "screenShare": 0.157
+    },
+    {
+      "seconds": [
+        8,
+        null
+      ],
+      "shots": 0,
+      "screenSeconds": 0,
+      "screenShare": 0
+    }
+  ],
+  "protectedSingleShotSeconds": 0,
+  "eventMethods": {
+    "measured-onset": 90
+  },
+  "bindingsByTarget": {
+    "cut": 89,
+    "video": 1
+  },
+  "explicitCutBindingCount": 89,
+  "videoSources": [
+    {
+      "key": "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396",
+      "assetIds": [
+        "cycle-5837706"
+      ],
+      "shotIds": [
+        "contact-02",
+        "direction-01",
+        "return-grip",
+        "return-hand-control",
+        "distance-05"
+      ],
+      "outputSeconds": 6.7,
+      "selectedSourceSeconds": 6.7,
+      "uniqueSourceSeconds": 6.7
+    },
+    {
+      "key": "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad",
+      "assetIds": [
+        "cycle-5837698"
+      ],
+      "shotIds": [
+        "contact-03",
+        "transfer-03",
+        "cadence-02",
+        "build-03",
+        "return-press"
+      ],
+      "outputSeconds": 6.167,
+      "selectedSourceSeconds": 6.167,
+      "uniqueSourceSeconds": 5.467
+    },
+    {
+      "key": "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89",
+      "assetIds": [
+        "cycle-5789979"
+      ],
+      "shotIds": [
+        "contact-05",
+        "transfer-08",
+        "cadence-07",
+        "build-01",
+        "return-low-ride",
+        "return-contact-real",
+        "return-wheel-return"
+      ],
+      "outputSeconds": 11.3,
+      "selectedSourceSeconds": 11.3,
+      "uniqueSourceSeconds": 9
+    },
+    {
+      "key": "47ffd240edae4e6397f12e168d96e0ae7162e9fcb0102c95e7272b7f0a37d314",
+      "assetIds": [
+        "cycle-5790076"
+      ],
+      "shotIds": [
+        "contact-07",
+        "direction-09",
+        "build-12",
+        "return-front-result"
+      ],
+      "outputSeconds": 7.967,
+      "selectedSourceSeconds": 7.967,
+      "uniqueSourceSeconds": 7.967
+    },
+    {
+      "key": "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743",
+      "assetIds": [
+        "cycle-5790147"
+      ],
+      "shotIds": [
+        "transfer-10",
+        "cadence-09",
+        "direction-11",
+        "build-09",
+        "return-side-result"
+      ],
+      "outputSeconds": 10.4,
+      "selectedSourceSeconds": 10.4,
+      "uniqueSourceSeconds": 8.6
+    },
+    {
+      "key": "6b33984da044b7e68ba02ae50b531b6d6cce8a0a387721ccd5164abea43c3f05",
+      "assetIds": [
+        "cycle-5790078"
+      ],
+      "shotIds": [
+        "cadence-04",
+        "build-05"
+      ],
+      "outputSeconds": 2.7,
+      "selectedSourceSeconds": 2.7,
+      "uniqueSourceSeconds": 2.7
+    },
+    {
+      "key": "bc3a248e152f56d5eab16df54fc92bbc2332b2ebdc965cf5e2b9aa0e00cf0e12",
+      "assetIds": [
+        "cycle-5789980"
+      ],
+      "shotIds": [
+        "cadence-13",
+        "build-15",
+        "distance-01"
+      ],
+      "outputSeconds": 6.333,
+      "selectedSourceSeconds": 6.333,
+      "uniqueSourceSeconds": 6.333
+    },
+    {
+      "key": "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38",
+      "assetIds": [
+        "cycle-9758409"
+      ],
+      "shotIds": [
+        "cadence-14",
+        "direction-06",
+        "build-16",
+        "breath-2",
+        "return-open-road",
+        "distance-03"
+      ],
+      "outputSeconds": 17.2,
+      "selectedSourceSeconds": 17.2,
+      "uniqueSourceSeconds": 13.967
+    },
+    {
+      "key": "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb",
+      "assetIds": [
+        "cycle-5790152"
+      ],
+      "shotIds": [
+        "direction-05",
+        "direction-14",
+        "breath-4",
+        "return-forest-exit",
+        "distance-07"
+      ],
+      "outputSeconds": 14.867,
+      "selectedSourceSeconds": 14.867,
+      "uniqueSourceSeconds": 10.2
+    }
+  ],
+  "windows": [
+    {
+      "start": 0,
+      "end": 15,
+      "shotStarts": 8,
+      "explicitMusicCutBindings": 8,
+      "activeShots": [
+        "contact-01",
+        "contact-02",
+        "contact-03",
+        "contact-04",
+        "contact-05",
+        "contact-06",
+        "contact-07",
+        "transfer-01",
+        "transfer-02"
+      ],
+      "uniqueVideoSources": 4,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 15,
+      "end": 30,
+      "shotStarts": 9,
+      "explicitMusicCutBindings": 9,
+      "activeShots": [
+        "transfer-02",
+        "transfer-03",
+        "transfer-04",
+        "transfer-05",
+        "transfer-06",
+        "transfer-07",
+        "transfer-08",
+        "transfer-09",
+        "transfer-10",
+        "cadence-01"
+      ],
+      "uniqueVideoSources": 3,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 30,
+      "end": 45,
+      "shotStarts": 9,
+      "explicitMusicCutBindings": 9,
+      "activeShots": [
+        "cadence-01",
+        "cadence-02",
+        "cadence-03",
+        "cadence-04",
+        "cadence-05",
+        "cadence-06",
+        "cadence-07",
+        "cadence-08",
+        "cadence-09",
+        "cadence-10"
+      ],
+      "uniqueVideoSources": 4,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 45,
+      "end": 60,
+      "shotStarts": 9,
+      "explicitMusicCutBindings": 9,
+      "activeShots": [
+        "cadence-10",
+        "cadence-11",
+        "cadence-12",
+        "cadence-13",
+        "cadence-14",
+        "direction-01",
+        "direction-02",
+        "direction-03",
+        "direction-04",
+        "direction-05"
+      ],
+      "uniqueVideoSources": 4,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 60,
+      "end": 75,
+      "shotStarts": 9,
+      "explicitMusicCutBindings": 9,
+      "activeShots": [
+        "direction-05",
+        "direction-06",
+        "direction-07",
+        "direction-08",
+        "direction-09",
+        "direction-10",
+        "direction-11",
+        "direction-12",
+        "direction-13",
+        "direction-14"
+      ],
+      "uniqueVideoSources": 4,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 75,
+      "end": 90,
+      "shotStarts": 10,
+      "explicitMusicCutBindings": 10,
+      "activeShots": [
+        "direction-14",
+        "build-01",
+        "build-02",
+        "build-03",
+        "build-04",
+        "build-05",
+        "build-06",
+        "build-07",
+        "build-08",
+        "build-09",
+        "build-10"
+      ],
+      "uniqueVideoSources": 5,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 90,
+      "end": 105,
+      "shotStarts": 7,
+      "explicitMusicCutBindings": 6,
+      "activeShots": [
+        "build-10",
+        "build-11",
+        "build-12",
+        "build-13",
+        "build-14",
+        "build-15",
+        "build-16",
+        "breath-1"
+      ],
+      "uniqueVideoSources": 3,
+      "secondsInShotsAtLeastFourSeconds": 4.233
+    },
+    {
+      "start": 105,
+      "end": 120,
+      "shotStarts": 4,
+      "explicitMusicCutBindings": 0,
+      "activeShots": [
+        "breath-2",
+        "breath-3",
+        "breath-4",
+        "breath-5"
+      ],
+      "uniqueVideoSources": 2,
+      "secondsInShotsAtLeastFourSeconds": 12
+    },
+    {
+      "start": 120,
+      "end": 135,
+      "shotStarts": 12,
+      "explicitMusicCutBindings": 12,
+      "activeShots": [
+        "breath-5",
+        "return-grip",
+        "return-press",
+        "return-crank",
+        "return-tooth",
+        "return-links",
+        "return-low-ride",
+        "return-cassette",
+        "return-hub",
+        "return-contact",
+        "return-contact-real",
+        "return-side-result",
+        "return-top-curve"
+      ],
+      "uniqueVideoSources": 4,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 135,
+      "end": 150,
+      "shotStarts": 11,
+      "explicitMusicCutBindings": 11,
+      "activeShots": [
+        "return-top-curve",
+        "return-hand-control",
+        "return-lean",
+        "return-forest-exit",
+        "return-road-speed",
+        "return-speed-type",
+        "return-whole-transfer",
+        "return-wheel-return",
+        "return-front-result",
+        "return-open-road",
+        "return-phrase-handoff",
+        "distance-01"
+      ],
+      "uniqueVideoSources": 6,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 150,
+      "end": 165,
+      "shotStarts": 6,
+      "explicitMusicCutBindings": 6,
+      "activeShots": [
+        "distance-01",
+        "distance-02",
+        "distance-03",
+        "distance-04",
+        "distance-05",
+        "distance-06",
+        "distance-07"
+      ],
+      "uniqueVideoSources": 4,
+      "secondsInShotsAtLeastFourSeconds": 0
+    },
+    {
+      "start": 165,
+      "end": 180,
+      "shotStarts": 2,
+      "explicitMusicCutBindings": 0,
+      "activeShots": [
+        "distance-07",
+        "closing-event",
+        "final-title"
+      ],
+      "uniqueVideoSources": 1,
+      "secondsInShotsAtLeastFourSeconds": 12
+    }
+  ],
+  "shots": [
+    {
+      "id": "contact-01",
+      "start": 0,
+      "end": 1.967,
+      "seconds": 1.967,
+      "sourceKeys": [],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "contact-02",
+      "start": 1.967,
+      "end": 2.433,
+      "seconds": 0.467,
+      "sourceKeys": [
+        "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "contact-03",
+      "start": 2.433,
+      "end": 4.233,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "contact-04",
+      "start": 4.233,
+      "end": 5.167,
+      "seconds": 0.933,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "contact-05",
+      "start": 5.167,
+      "end": 6.9,
+      "seconds": 1.733,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "contact-06",
+      "start": 6.9,
+      "end": 8.7,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "contact-07",
+      "start": 8.7,
+      "end": 11.9,
+      "seconds": 3.2,
+      "sourceKeys": [
+        "47ffd240edae4e6397f12e168d96e0ae7162e9fcb0102c95e7272b7f0a37d314"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-01",
+      "start": 11.9,
+      "end": 13.7,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-02",
+      "start": 13.7,
+      "end": 15.5,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-03",
+      "start": 15.5,
+      "end": 16.4,
+      "seconds": 0.9,
+      "sourceKeys": [
+        "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-04",
+      "start": 16.4,
+      "end": 17.3,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-05",
+      "start": 17.3,
+      "end": 19.133,
+      "seconds": 1.833,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-06",
+      "start": 19.133,
+      "end": 20.933,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-07",
+      "start": 20.933,
+      "end": 22.733,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-08",
+      "start": 22.733,
+      "end": 24.533,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-09",
+      "start": 24.533,
+      "end": 26.333,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "transfer-10",
+      "start": 26.333,
+      "end": 29.933,
+      "seconds": 3.6,
+      "sourceKeys": [
+        "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-01",
+      "start": 29.933,
+      "end": 31.767,
+      "seconds": 1.833,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-02",
+      "start": 31.767,
+      "end": 33.567,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-03",
+      "start": 33.567,
+      "end": 35.367,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-04",
+      "start": 35.367,
+      "end": 36.267,
+      "seconds": 0.9,
+      "sourceKeys": [
+        "6b33984da044b7e68ba02ae50b531b6d6cce8a0a387721ccd5164abea43c3f05"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-05",
+      "start": 36.267,
+      "end": 37.167,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-06",
+      "start": 37.167,
+      "end": 38.967,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-07",
+      "start": 38.967,
+      "end": 40.767,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-08",
+      "start": 40.767,
+      "end": 42.567,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-09",
+      "start": 42.567,
+      "end": 44.4,
+      "seconds": 1.833,
+      "sourceKeys": [
+        "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-10",
+      "start": 44.4,
+      "end": 45.3,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-11",
+      "start": 45.3,
+      "end": 46.6,
+      "seconds": 1.3,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-12",
+      "start": 46.6,
+      "end": 48.467,
+      "seconds": 1.867,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-13",
+      "start": 48.467,
+      "end": 50.233,
+      "seconds": 1.767,
+      "sourceKeys": [
+        "bc3a248e152f56d5eab16df54fc92bbc2332b2ebdc965cf5e2b9aa0e00cf0e12"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "cadence-14",
+      "start": 50.233,
+      "end": 53.867,
+      "seconds": 3.633,
+      "sourceKeys": [
+        "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-01",
+      "start": 53.867,
+      "end": 55.6,
+      "seconds": 1.733,
+      "sourceKeys": [
+        "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-02",
+      "start": 55.6,
+      "end": 57.467,
+      "seconds": 1.867,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-03",
+      "start": 57.467,
+      "end": 58.367,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-04",
+      "start": 58.367,
+      "end": 59.267,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-05",
+      "start": 59.267,
+      "end": 61.067,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-06",
+      "start": 61.067,
+      "end": 62.833,
+      "seconds": 1.767,
+      "sourceKeys": [
+        "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-07",
+      "start": 62.833,
+      "end": 63.767,
+      "seconds": 0.933,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-08",
+      "start": 63.767,
+      "end": 64.733,
+      "seconds": 0.967,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-09",
+      "start": 64.733,
+      "end": 66.933,
+      "seconds": 2.2,
+      "sourceKeys": [
+        "47ffd240edae4e6397f12e168d96e0ae7162e9fcb0102c95e7272b7f0a37d314"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-10",
+      "start": 66.933,
+      "end": 68.733,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-11",
+      "start": 68.733,
+      "end": 70.533,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-12",
+      "start": 70.533,
+      "end": 72.367,
+      "seconds": 1.833,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-13",
+      "start": 72.367,
+      "end": 74.6,
+      "seconds": 2.233,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "direction-14",
+      "start": 74.6,
+      "end": 78.233,
+      "seconds": 3.633,
+      "sourceKeys": [
+        "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-01",
+      "start": 78.233,
+      "end": 80.033,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-02",
+      "start": 80.033,
+      "end": 80.933,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-03",
+      "start": 80.933,
+      "end": 81.833,
+      "seconds": 0.9,
+      "sourceKeys": [
+        "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-04",
+      "start": 81.833,
+      "end": 82.733,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-05",
+      "start": 82.733,
+      "end": 84.533,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "6b33984da044b7e68ba02ae50b531b6d6cce8a0a387721ccd5164abea43c3f05"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-06",
+      "start": 84.533,
+      "end": 86.333,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-07",
+      "start": 86.333,
+      "end": 87.233,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-08",
+      "start": 87.233,
+      "end": 88.133,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-09",
+      "start": 88.133,
+      "end": 89.5,
+      "seconds": 1.367,
+      "sourceKeys": [
+        "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-10",
+      "start": 89.5,
+      "end": 90.4,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-11",
+      "start": 90.4,
+      "end": 91.3,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-12",
+      "start": 91.3,
+      "end": 92.2,
+      "seconds": 0.9,
+      "sourceKeys": [
+        "47ffd240edae4e6397f12e168d96e0ae7162e9fcb0102c95e7272b7f0a37d314"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-13",
+      "start": 92.2,
+      "end": 94,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-14",
+      "start": 94,
+      "end": 95.8,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-15",
+      "start": 95.8,
+      "end": 97.633,
+      "seconds": 1.833,
+      "sourceKeys": [
+        "bc3a248e152f56d5eab16df54fc92bbc2332b2ebdc965cf5e2b9aa0e00cf0e12"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "build-16",
+      "start": 97.633,
+      "end": 100.767,
+      "seconds": 3.133,
+      "sourceKeys": [
+        "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "breath-1",
+      "start": 100.767,
+      "end": 105,
+      "seconds": 4.233,
+      "sourceKeys": [],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "breath-2",
+      "start": 105,
+      "end": 109,
+      "seconds": 4,
+      "sourceKeys": [
+        "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38"
+      ],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "breath-3",
+      "start": 109,
+      "end": 113,
+      "seconds": 4,
+      "sourceKeys": [],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "breath-4",
+      "start": 113,
+      "end": 117,
+      "seconds": 4,
+      "sourceKeys": [
+        "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb"
+      ],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "breath-5",
+      "start": 117,
+      "end": 120.167,
+      "seconds": 3.167,
+      "sourceKeys": [],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "return-grip",
+      "start": 120.167,
+      "end": 121.967,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-press",
+      "start": 121.967,
+      "end": 122.733,
+      "seconds": 0.767,
+      "sourceKeys": [
+        "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-crank",
+      "start": 122.733,
+      "end": 124.7,
+      "seconds": 1.967,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": "wipe-x"
+    },
+    {
+      "id": "return-tooth",
+      "start": 124.7,
+      "end": 125.6,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-links",
+      "start": 125.6,
+      "end": 126.5,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-low-ride",
+      "start": 126.5,
+      "end": 128.3,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-cassette",
+      "start": 128.3,
+      "end": 129.2,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-hub",
+      "start": 129.2,
+      "end": 129.633,
+      "seconds": 0.433,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-contact",
+      "start": 129.633,
+      "end": 131.333,
+      "seconds": 1.7,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-contact-real",
+      "start": 131.333,
+      "end": 132.8,
+      "seconds": 1.467,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": "wipe-y"
+    },
+    {
+      "id": "return-side-result",
+      "start": 132.8,
+      "end": 134.6,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-top-curve",
+      "start": 134.6,
+      "end": 136.4,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-hand-control",
+      "start": 136.4,
+      "end": 137.3,
+      "seconds": 0.9,
+      "sourceKeys": [
+        "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-lean",
+      "start": 137.3,
+      "end": 138.667,
+      "seconds": 1.367,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-forest-exit",
+      "start": 138.667,
+      "end": 140.467,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-road-speed",
+      "start": 140.467,
+      "end": 141.833,
+      "seconds": 1.367,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-speed-type",
+      "start": 141.833,
+      "end": 142.733,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-whole-transfer",
+      "start": 142.733,
+      "end": 144.533,
+      "seconds": 1.8,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-wheel-return",
+      "start": 144.533,
+      "end": 145.433,
+      "seconds": 0.9,
+      "sourceKeys": [
+        "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-front-result",
+      "start": 145.433,
+      "end": 147.1,
+      "seconds": 1.667,
+      "sourceKeys": [
+        "47ffd240edae4e6397f12e168d96e0ae7162e9fcb0102c95e7272b7f0a37d314"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "return-open-road",
+      "start": 147.1,
+      "end": 149.033,
+      "seconds": 1.933,
+      "sourceKeys": [
+        "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38"
+      ],
+      "cutBound": true,
+      "transition": "iris"
+    },
+    {
+      "id": "return-phrase-handoff",
+      "start": 149.033,
+      "end": 149.933,
+      "seconds": 0.9,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-01",
+      "start": 149.933,
+      "end": 152.667,
+      "seconds": 2.733,
+      "sourceKeys": [
+        "bc3a248e152f56d5eab16df54fc92bbc2332b2ebdc965cf5e2b9aa0e00cf0e12"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-02",
+      "start": 152.667,
+      "end": 155.367,
+      "seconds": 2.7,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-03",
+      "start": 155.367,
+      "end": 158.1,
+      "seconds": 2.733,
+      "sourceKeys": [
+        "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-04",
+      "start": 158.1,
+      "end": 159.867,
+      "seconds": 1.767,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-05",
+      "start": 159.867,
+      "end": 161.667,
+      "seconds": 1.8,
+      "sourceKeys": [
+        "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-06",
+      "start": 161.667,
+      "end": 164.367,
+      "seconds": 2.7,
+      "sourceKeys": [],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "distance-07",
+      "start": 164.367,
+      "end": 168,
+      "seconds": 3.633,
+      "sourceKeys": [
+        "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb"
+      ],
+      "cutBound": true,
+      "transition": null
+    },
+    {
+      "id": "closing-event",
+      "start": 168,
+      "end": 173.2,
+      "seconds": 5.2,
+      "sourceKeys": [],
+      "cutBound": false,
+      "transition": null
+    },
+    {
+      "id": "final-title",
+      "start": 173.2,
+      "end": 180,
+      "seconds": 6.8,
+      "sourceKeys": [],
+      "cutBound": false,
+      "transition": null
+    }
+  ],
+  "limitations": [
+    "Shot count is not visual variety: splitting one image or changing copy cannot establish new coverage.",
+    "An absent explicit cut binding does not prove a cut is off beat; a binding does not prove an audible onset.",
+    "Duration bins describe this edit, not universal minimum/maximum shot lengths.",
+    "Source identity and repeated intervals do not measure composition, camera continuity or meaning."
+  ],
+  "qualityDecision": "not assessed: inspect actual sequence flow and heard musical phrasing",
+  "listeningDecision": "not assessed"
+}
