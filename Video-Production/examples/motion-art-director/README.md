@@ -68,3 +68,14 @@ Technical verification does not imply full human listening/aesthetic approval, b
 ## 페달 — 리듬이 속도가 되는 순간
 
 [180초 본편](pedal-180-v2.mp4) · [음악만 비교](pedal-180-v2-music-only.mp4) · [모바일 감상·박자 진단](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/) · [검증 기록](pedal-180-v2-verification.json) · [개발 패키지](motion-art-director-development-5f5cef5.zip). 새 실사6개와 정밀SVG,39컷,14개 지속 구간으로 박자와 서사를 함께 시험합니다. 전체 청취·사용자 미감과 실제16GB노트북은 미확정입니다. The Lift / Kevin MacLeod, CC BY4.0, 편집·믹스. Pexels 원본은 동봉하지 않고 프로젝트에 출처·해시·재연결 정보를 제공합니다.
+
+
+## 페달 — 편집 재설계 대표 구간
+
+[29.8초·22컷 감상/진단/음악 비교](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/rebuild/) · [MP4](pedal-editorial-proof-v7.mp4) · [프로젝트](pedal-editorial-proof-v7.project.json) · [검증 기록](pedal-editorial-proof-v7-verification.json) · [개발 설치 ZIP](motion-art-director-development-5ca05fe.zip) · [SHA-256](motion-art-director-development-5ca05fe.zip.sha256).
+
+손의 힘 → 구동계 → 방향 → 전진의 네 흐름을 연속 편집했습니다. 21개 컷과 실사 접촉 사건 1개를 PCM 타격 후보에 연결합니다. 세 전환은 도착 시점을 음악에 맞춥니다. 박자 후보의 인간 청취 교정과 미감 평가는 아직 대기 중이며, 이전 180초의 편집 방향은 검토에서 채택되지 않았습니다. 이 대표 구간 검토 후 본편을 확장합니다.
+
+음악: “The Lift” Kevin MacLeod ([원곡](https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1500066)), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 기존 편집 일부와 볼륨 흐름·상수 마스터 게인을 보존하고, 새 합성 효과음을 추가했습니다. 영상: Pexels 개별 출처/저자/해시/이용 조건은 프로젝트에 기재합니다. 원본 촬영 파일은 동봉하지 않습니다. 서로 다른 인물·자전거의 시각적 비유이며 한 선수의 경기 기록이 아닙니다.
+
+개발 ZIP은 커밋 5ca05fe 기준으로 새 리듬 교정·시퀀스 검사·전환 도착 시점 기능을 포함합니다. 기존 패키지 버전을 유지한 개발 빌드이며 3.1 정식판/시험판 Release 완료를 의미하지 않습니다. 공통 코드의 MIT 및 외부 구성요소별 고지는 ZIP에 포함됩니다.
