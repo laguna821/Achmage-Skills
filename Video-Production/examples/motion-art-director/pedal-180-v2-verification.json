@@ -1,0 +1,207 @@
+{
+  "sha256": "572bbb264d528f6f094f288cd675bb7f53d4547a30eb871a6666b01854f6d6a6",
+  "bytes": 197769954,
+  "frames": 5400,
+  "seconds": 180,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "decodeErrors": [],
+  "integratedLUFS": -16,
+  "truePeakDBTP": -1.7,
+  "silence": [
+    {
+      "start": 173.2,
+      "end": 175,
+      "pcmPeak": 0
+    },
+    {
+      "start": 178.5,
+      "end": 180,
+      "pcmPeak": 0
+    }
+  ],
+  "musicStemIdenticalToDraft": true,
+  "renderStarted": "2026-10-07T09:36:23.265Z",
+  "renderFinished": "2026-10-07T09:55:02.355Z",
+  "perceptualListening": "pending",
+  "userAesthetic": "pending",
+  "notebookHardware": "not_measured",
+  "encodedControls": [
+    {
+      "offsetFrames": 0,
+      "observedLandingFrame": 15,
+      "normalExpectedFrame": 15,
+      "accepted": true,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    },
+    {
+      "offsetFrames": -4,
+      "observedLandingFrame": 11,
+      "normalExpectedFrame": 15,
+      "accepted": false,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    },
+    {
+      "offsetFrames": -2,
+      "observedLandingFrame": 13,
+      "normalExpectedFrame": 15,
+      "accepted": false,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    },
+    {
+      "offsetFrames": -1,
+      "observedLandingFrame": 14,
+      "normalExpectedFrame": 15,
+      "accepted": false,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    },
+    {
+      "offsetFrames": 1,
+      "observedLandingFrame": 16,
+      "normalExpectedFrame": 15,
+      "accepted": false,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    },
+    {
+      "offsetFrames": 2,
+      "observedLandingFrame": 17,
+      "normalExpectedFrame": 15,
+      "accepted": false,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    },
+    {
+      "offsetFrames": 4,
+      "observedLandingFrame": 19,
+      "normalExpectedFrame": 15,
+      "accepted": false,
+      "audioSha256": "159e1237b13ac57686317fd992f9f6d31ef6275e6439173a5ad3013525bf05d5"
+    }
+  ],
+  "delivery": [
+    {
+      "file": "pedal-180-v2.mp4",
+      "bytes": 73080335,
+      "sha256": "b68fbb89c699145c35ad0831dd3b3bec9d7ad6e7a9573fa6cfb9412faf3b5357",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "180.000000",
+      "nb_read_frames": "5400"
+    },
+    {
+      "file": "pedal-180-v2-music-only.mp4",
+      "bytes": 73062397,
+      "sha256": "125004fc48fe191995c005158aa71441b034b1656de4bda5a68ceda13cd36d79",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "180.000000",
+      "nb_read_frames": "5400"
+    }
+  ],
+  "diagnosticClips": [
+    {
+      "name": "regular",
+      "file": "pedal-regular-diagnostic.mp4",
+      "start": 78,
+      "duration": 23
+    },
+    {
+      "name": "rest-return",
+      "file": "pedal-rest-return-diagnostic.mp4",
+      "start": 111,
+      "duration": 21
+    }
+  ],
+  "editTrials": {
+    "interrupted": true,
+    "resumedFirstSceneReuse": true,
+    "rows": [
+      {
+        "name": "copy",
+        "clips": [
+          {
+            "id": "first-contact",
+            "reused": true
+          },
+          {
+            "id": "power-transfer",
+            "reused": false
+          }
+        ],
+        "audioReused": true
+      },
+      {
+        "name": "event",
+        "clips": [
+          {
+            "id": "first-contact",
+            "reused": true
+          },
+          {
+            "id": "power-transfer",
+            "reused": false
+          }
+        ],
+        "audioReused": true
+      },
+      {
+        "name": "source",
+        "clips": [
+          {
+            "id": "first-contact",
+            "reused": false
+          },
+          {
+            "id": "power-transfer",
+            "reused": true
+          }
+        ],
+        "audioReused": true
+      },
+      {
+        "name": "gain",
+        "clips": [
+          {
+            "id": "first-contact",
+            "reused": true
+          },
+          {
+            "id": "power-transfer",
+            "reused": true
+          }
+        ],
+        "audioReused": false
+      }
+    ],
+    "priorFinalAndAudioPreserved": true,
+    "scope": "Actual six-second fixture using the new footage, transmission and music clock; not five full180second rerenders"
+  },
+  "performance": {
+    "scope": "Observed render PID and recursive descendants; sampled every5s after rendering began; summed working sets may double count shared pages; not a physical16GB notebook measurement",
+    "peakWorkingSetBytes": 1235001344,
+    "peakPrivateBytes": 1491189760,
+    "renderSeconds": 1119.09,
+    "frames": 5400,
+    "gpu": false,
+    "jobs": 1,
+    "masterBytes": 197769954
+  },
+  "codeCommit": "5f5cef5",
+  "developmentPR": "https://github.com/laguna821/Achmage-Skills/pull/5",
+  "package": {
+    "file": "motion-art-director-development-5f5cef5.zip",
+    "bytes": 84503203,
+    "sha256": "1015fbfb1704db28c6c8e3451d29dc4cff7aa040d33eb363cc0baa08bbe45a8e",
+    "sourceCommit": "5f5cef5",
+    "status": "development package; not3.1Release"
+  },
+  "review": {
+    "technical": "passed checks listed here",
+    "fullPerceptualListening": "pending",
+    "userAesthetic": "pending",
+    "actual16GBNotebook": "not measured",
+    "release31": "open"
+  }
+}
