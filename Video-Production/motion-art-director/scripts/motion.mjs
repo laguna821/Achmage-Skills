@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
+import {sourceActionAudit} from '../lib/source-action.mjs';
 import {analyzeStructure,compileStructure,checkStructure} from '../lib/music-structure.mjs';
 import {createStructureReview} from '../lib/structure-review.mjs';
 import {remix} from '../lib/remix.mjs';
@@ -36,6 +38,9 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
  checks.ok=typeof checks.ffmpeg==='string'&&typeof checks.ffprobe==='string'&&typeof checks.browser==='string';return checks;}
 async function main(){
  switch(command){
+ case 'source-action-audit':{const r=sourceActionAudit(project());if(flags.out)write(path.resolve(flags.out),r);return r;}
+ case 'cache-plan':{const p=cachePlan(path.resolve(positional[0]));if(flags.out)write(path.resolve(flags.out),p);return p;}
+ case 'cache-prune':{const r=cachePrune(read(positional[0]),{apply:flags.apply===true});if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'pacing-review':{const r=pacingInventory(project(),{windowSeconds:Number(flags['window-seconds']||15)});write(path.join(out(),'pacing-review.json'),r);return r;}
  case 'rhythm-review':if(flags.structure)return createStructureReview(project(),read(flags.structure),out(),{audio:flags.audio,analysis:flags.analysis?read(flags.analysis):undefined});return createRhythmReview(project(),out(),{movie:flags.movie,analysis:flags.analysis?read(flags.analysis):undefined});
  case 'rhythm-analyze':if(flags['structure-only'])return analyzeStructure(project(),path.resolve(flags['structure-only']));{const r=await analyzeRhythm(project(),out());r.structure=await analyzeStructure(project(),out());return r;}
@@ -65,6 +70,6 @@ async function main(){
  case 'effect':{const p=project();if(TECHNIQUES[flags.id]){if(!flags.spec||!flags.scene)throw Error('Reusable adapter requires --spec adapter-input.json --scene scene-id');const input=read(flags.spec),s=p.scenes.find(s=>s.id===flags.scene);if(!s?.composition)throw Error('Target scene composition required');const result=technique({...input,id:flags.id});s.composition.layers.push(...result.layers);if(result.transition)s.transition_in=result.transition;(p.techniques??=[]).push({...result.receipt,scene_id:s.id});}else{const mode=ADAPTERS[flags.id];if(!mode)throw new Error('카드/기존 클립 상태: 실행 어댑터 없음');p.scenes[0].mode=mode;}p.approval=undefined;const v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(path.join(out(),'adapted.project.json'),p);return plan(p,path.join(out(),'direction.html'));}
  case 'serve':{const s=await serve(path.resolve(positional[0]||out()),Number(flags.port||0));console.log(JSON.stringify({url:s.url}));await new Promise(()=>{});return;}
  case 'package':return pack(path.join(out(),'motion-art-director'));
- default:return {usage:'node scripts/motion.mjs <doctor|status|resume|catalog|techniques|assets|plan|direction-review|pacing-review|rhythm-review|rhythm-analyze|rhythm-compile|rhythm-audit|sync-compile|sync-audit|validate|approve|styleframe|roughcut|soundbed|audio|render|export|audit|revise|effect|serve|package> [project.json] --out PATH',help:'references/cli.md'};
+ default:return {usage:'node scripts/motion.mjs <cache-plan|cache-prune|source-action-audit|doctor|status|resume|catalog|techniques|assets|plan|direction-review|pacing-review|rhythm-review|rhythm-analyze|rhythm-compile|rhythm-audit|sync-compile|sync-audit|validate|approve|styleframe|roughcut|soundbed|audio|render|export|audit|revise|effect|serve|package> [project.json] --out PATH',help:'references/cli.md'};
  }}
 try{const r=await main();if(positional[0]&&['plan','styleframe','approve','render','roughcut','export','audit'].includes(command))record(project(),out(),command,r);console.log(JSON.stringify(r,null,2));if(r?.ok===false)process.exitCode=1;}catch(e){console.error(JSON.stringify({error:e.message}));process.exitCode=1;}

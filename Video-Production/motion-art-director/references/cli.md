@@ -1,5 +1,13 @@
 # CLI
 
+## Verified cache cleanup
+
+`cache-plan RUN_ROOT --out PLAN.json` inventories only complete, runtime-owned hybrid-cache files. Finals, source assets, metadata and unowned files are protected. `cache-prune PLAN.json` is a dry run; `--apply` deletes unchanged listed files. Active leases, replaced identities, stale manifests and modified bytes are rejected. Preserve the latest revision-trial cache when selecting older runs. Store plans and removal reports outside the cleaned cache.
+
+## Live-action contact timing
+
+`source-action-audit PROJECT --out REPORT.json` checks optional video-layer `source_action`: version `source-action-v1`, source_sha256, evidence, before/contact/after in source seconds, landing_frame in shot-local output frames, optional entity_id. Preparation and result must fit the shot. Contact maps through source_in/speed to the exact output frame. This verifies timing metadata, not recognition of visible actions or vehicle identity.
+
 ## Music event review and corrections
 
 Create a new review folder with `rhythm-review PROJECT --movie HTTPS_MP4 --analysis ANALYSIS_JSON --out NEW_FOLDER`. Open its index.html, compare music and image, adjust source_seconds, and export corrected-events.json. No file is uploaded when selecting a local comparison movie.

@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {sourceActionAudit} from './source-action.mjs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {ROOT,run,tool,write,read,mkdir} from './io.mjs';
@@ -62,7 +63,7 @@ export function mediaErrors(p){
   }
   if(s.transition_in){check(i>0&&Number.isInteger(s.transition_in.duration*30)&&s.transition_in.duration*30>=1&&s.transition_in.duration*30<=s.end-s.start,'transition must use whole frames within incoming scene');check(['fade','wipeleft','wiperight','circleopen','wipe-x','wipe-y','iris'].includes(s.transition_in.kind)&&s.transition_in.duration>0&&s.transition_in.duration<=2,'hybrid transition invalid');}
  }
- return errors;
+ return [...errors,...sourceActionAudit(p).errors];
 }
 export async function verifyMedia(p){for(const a of p.assets||[])if(a.kind==='video'){const file=assetPath(p,a);const probe=await inspectMedia(file);if(probe.sha256!==a.sha256)throw Error('Video hash mismatch '+a.asset_id);if(Math.abs(probe.duration-a.duration)>.05||probe.width!==a.width||probe.height!==a.height)throw Error('Video metadata mismatch '+a.asset_id);}}
 export async function selectRange(receipt,out,{start,duration}){
