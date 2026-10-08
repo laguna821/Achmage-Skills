@@ -1,0 +1,31 @@
+{
+  "title": "남는 것 · Achmage OS 브랜드 필름",
+  "productionClient": "Claude Code",
+  "productionClientEvidence": "Creator identified by project owner; associated production and publication records checked.",
+  "duration": 60,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "method": "Motion Art Director3.0.0-rc.1 contracts reused with project-specific ink-gl WebGL2/SwiftShader CPU renderer. Not a claim that this renderer is bundled as a general4.0.0 adapter.",
+  "media": "All authored code graphics; no footage or generated images. Music and effects synthesized with Node DSP.",
+  "music": "Felt piano/string pad into FM bell/drum/pulse; original procedural score.",
+  "rights": "Gallery streams the already-public final works. Private graph data, source project and approval records are not redistributed.",
+  "website": "https://achmage-os-film.achmage2.chatgpt.site/",
+  "web": "https://achmage-os-film.achmage2.chatgpt.site/media/film-web-11334b0f.mp4",
+  "original": "https://achmage-os-film.achmage2.chatgpt.site/media/film-original-11334b0f.mp4",
+  "verification": [
+    {
+      "url": "https://achmage-os-film.achmage2.chatgpt.site/media/film-web-11334b0f.mp4",
+      "bytes": 100112612,
+      "head": 200,
+      "firstMiddleLastRanges": "206 and exact bytes"
+    },
+    {
+      "url": "https://achmage-os-film.achmage2.chatgpt.site/media/film-original-11334b0f.mp4",
+      "bytes": 500387689,
+      "head": 200,
+      "firstMiddleLastRanges": "206 and exact bytes"
+    }
+  ],
+  "scope": "Public accessibility and byte-range verification; human listening/aesthetic approval and actual laptop speed remain separate."
+}
