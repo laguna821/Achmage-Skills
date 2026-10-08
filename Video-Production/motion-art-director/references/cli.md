@@ -46,6 +46,8 @@ install.mjs --agent codex|claude [--dest <skills-directory>] copies the complete
 
 Package publication is a separate user-authorized action. This CLI does not upload user projects.
 
+Recorded representative selection: `audition-choice-audit project.json --choice local-choice.json --out choice-audit.json`. Validates song/project scope, exact reference movie hashes and applied frame offsets. User choice records stay local; the command does not approve whole-film musical boundaries or actual listening.
+
 In 3.1, `roughcut project.json --out work` renders the complete timeline at720p. A completed identical run is reused after validating the final film and all five WAV hashes. A changed project uses a new output identity; prior verified outputs are preserved.
 
 `soundbed` accepts `{"kind":"river","duration":24,"seed":79,"gain_db":-8}`. Kinds are river, wind, street and room. This is deterministic procedural ambience, not a field recording. Output is streamed stereo48kHzPCM and includes a source/hash receipt. Register it as an audio asset with that provenance before using it. Durations are bounded to600seconds. An existing matching receipt is reused; unrelated files and previous different outputs are preserved.

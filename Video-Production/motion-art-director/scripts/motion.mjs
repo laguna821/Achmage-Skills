@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
 import {sourceActionAudit} from '../lib/source-action.mjs';
+import {auditionChoiceAudit} from '../lib/audition-choice.mjs';
 import {analyzeStructure,compileStructure,checkStructure} from '../lib/music-structure.mjs';
 import {createStructureReview} from '../lib/structure-review.mjs';
 import {remix} from '../lib/remix.mjs';
@@ -38,6 +39,7 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
  checks.ok=typeof checks.ffmpeg==='string'&&typeof checks.ffprobe==='string'&&typeof checks.browser==='string';return checks;}
 async function main(){
  switch(command){
+ case 'audition-choice-audit':{if(!flags.choice)throw Error('--choice requires the recorded representative selection file');const r=auditionChoiceAudit(project(),read(flags.choice));if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'source-action-audit':{const r=sourceActionAudit(project());if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'cache-plan':{const p=cachePlan(path.resolve(positional[0]));if(flags.out)write(path.resolve(flags.out),p);return p;}
  case 'cache-prune':{const r=cachePrune(read(positional[0]),{apply:flags.apply===true});if(flags.out)write(path.resolve(flags.out),r);return r;}

@@ -1,5 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';import {ROOT,run} from '../lib/io.mjs';
 process.stdout.write((await run(process.execPath,[path.join(ROOT,fs.existsSync(path.join(ROOT,'tests-public'))?'tests-public':'tests','remix.mjs')])).out);
 const folder=fs.existsSync(path.join(ROOT,'tests-public'))?'tests-public':'tests';
-for(const name of ['cache-cleanup','source-action','hybrid-runtime-dependencies'])process.stdout.write((await run(process.execPath,[path.join(ROOT,folder,name+'.mjs')])).out);
+for(const name of ['cache-cleanup','source-action','hybrid-runtime-dependencies','audition-choice'])process.stdout.write((await run(process.execPath,[path.join(ROOT,folder,name+'.mjs')])).out);
 for(const test of ['music-structure','music-recurrence','release','direction','spatial','automotive','music-direction','ending','publication','hybrid-contract','techniques','hybrid-delivery','camera31','storage','soundbed','hybrid-geometry','editorial','foley','sync-score','rhythm-score','mechanism','pacing','rhythm-review','rhythm-features','rhythm-refine','rhythm-landings','audio-clock']){const r=await run(process.execPath,[path.join(ROOT,folder,test+'.mjs')]);process.stdout.write(r.out);}
