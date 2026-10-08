@@ -1,0 +1,4943 @@
+{
+  "title": "생각이 맛이 되다",
+  "seconds": 180,
+  "frames": 5400,
+  "width": 1920,
+  "height": 1080,
+  "shots": 89,
+  "chapters": [
+    {
+      "title": "손보다 먼저",
+      "start": 0,
+      "end": 13.1,
+      "shots": 9
+    },
+    {
+      "title": "고르는 눈",
+      "start": 13.1,
+      "end": 30.566666666666666,
+      "shots": 8
+    },
+    {
+      "title": "내 조건으로 다시",
+      "start": 30.566666666666666,
+      "end": 52.36666666666667,
+      "shots": 9
+    },
+    {
+      "title": "준비가 속도가 되다",
+      "start": 52.36666666666667,
+      "end": 74.16666666666667,
+      "shots": 13
+    },
+    {
+      "title": "변화를 읽다",
+      "start": 74.16666666666667,
+      "end": 96,
+      "shots": 10
+    },
+    {
+      "title": "때를 고르다",
+      "start": 96,
+      "end": 117.83333333333333,
+      "shots": 12
+    },
+    {
+      "title": "강약을 설계하다",
+      "start": 117.83333333333333,
+      "end": 135.3,
+      "shots": 9
+    },
+    {
+      "title": "마지막 한 번의 조절",
+      "start": 135.3,
+      "end": 157.1,
+      "shots": 9
+    },
+    {
+      "title": "생각이 맛이 되다",
+      "start": 157.1,
+      "end": 180,
+      "shots": 10
+    }
+  ],
+  "music": "Pop04 — Grigoriy Nuzhny / Mixkit",
+  "audio": "Licensed B music; no narration or synthesized ambience/effects. Authored ending fade followed by3.3s silence.",
+  "wholeDecode": "master and web passed",
+  "sha256": "e3a392e6224f56a34e0bd5eacd5426651251ba6d6c212ba07241e6d12c4b8db3",
+  "bytes": 45260482,
+  "loudness": {
+    "input_i": "-16.07",
+    "input_tp": "-3.50",
+    "input_lra": "3.60",
+    "input_thresh": "-26.25",
+    "output_i": "-16.08",
+    "output_tp": "-1.50",
+    "output_lra": "3.30",
+    "output_thresh": "-26.13",
+    "normalization_type": "dynamic",
+    "target_offset": "0.08"
+  },
+  "tailPeakDb": -91,
+  "renderElapsedSeconds": 168.152,
+  "performance": {
+    "gpu": false,
+    "jobs": 1,
+    "measurement": "CPU render on current PC; actual16GB notebook not measured. Process tree sampled after start, sum of working sets can include shared pages.",
+    "peakSampledWorkingSetBytes": 933404672
+  },
+  "technicalTests": {
+    "results": [
+      {
+        "name": "valid180 and complete message baseline",
+        "status": "passed"
+      },
+      {
+        "name": "cut shifted -4frames rejected with unchanged music",
+        "status": "passed"
+      },
+      {
+        "name": "cut shifted -2frames rejected with unchanged music",
+        "status": "passed"
+      },
+      {
+        "name": "cut shifted -1frames rejected with unchanged music",
+        "status": "passed"
+      },
+      {
+        "name": "cut shifted 1frames rejected with unchanged music",
+        "status": "passed"
+      },
+      {
+        "name": "cut shifted 2frames rejected with unchanged music",
+        "status": "passed"
+      },
+      {
+        "name": "cut shifted 4frames rejected with unchanged music",
+        "status": "passed"
+      },
+      {
+        "name": "truncated overlay rejected",
+        "status": "passed"
+      },
+      {
+        "name": "out-of-range original footage rejected",
+        "status": "passed"
+      },
+      {
+        "name": "all footage is forward at normal speed and retains selected-source range",
+        "status": "passed"
+      },
+      {
+        "name": "final caption survives final frame and random seek is deterministic",
+        "status": "passed"
+      }
+    ],
+    "scope": "Actual project and deterministic SVG tests; no listening or artistic inference"
+  },
+  "review": {
+    "representativeDirection": "accepted",
+    "wholeFilmVisual": "pending",
+    "wholeFilmListening": "pending",
+    "userAesthetic": "pending",
+    "encodedFrameInspection": "All89v1shot frames and2corrected v2shots plus final title inspected; no whole-film listening inferred.",
+    "mutedDefault": true
+  },
+  "sources": [
+    {
+      "id": "chef-43055",
+      "sha256": "6a4ec73ebbca25bda9c09c3879f495c08e49972a078af9b5f407eb01f75c2414",
+      "source": "https://mixkit.co/free-stock-video/chef-skillfully-chopping-garlic-43055/",
+      "license": "https://mixkit.co/license/#videoFree",
+      "credit": "Mixkit contributor",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-43059",
+      "sha256": "0e47247f510eb154cdcade898883f59953c60bc7f92ff1f89a5e2e59882807c6",
+      "source": "https://mixkit.co/free-stock-video/cook-preparing-something-in-a-pan-43059/",
+      "license": "https://mixkit.co/license/#videoFree",
+      "credit": "Mixkit contributor",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-7008581",
+      "sha256": "7962325dc4a3d375d2d5633c06cee6d224df3600323f6d4f27e616cc4d428515",
+      "source": "https://www.pexels.com/video/person-doing-food-plating-7008581/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Anna Tarazevich",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-7008570",
+      "sha256": "5fcf354d9ddad58bf69270c7ecb8faf9299519fe7d4a3cccbd19a96d47558a4b",
+      "source": "https://www.pexels.com/video/person-adding-garnish-to-the-food-7008570/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Anna Tarazevich",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-4003980",
+      "sha256": "62e0c023587e105d34b9af29e4738bd23301b792b34a6474ba6a78f808b5b6c3",
+      "source": "https://www.pexels.com/video/a-chef-cooling-with-a-frying-pan-4003980/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Jamie Roach",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-7818015",
+      "sha256": "07690a2d034157c71d574f6491f0825037e48790f2149c1559e13483cbd215fd",
+      "source": "https://www.pexels.com/video/chef-cooking-a-recipe-7818015/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Mario Schafer",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-3298231",
+      "sha256": "4ceb6e2af0db68a406c8e8ec93169f0069a2feb7c048f93422a48ae1593ccbf5",
+      "source": "https://www.pexels.com/video/a-chef-preparing-then-tasting-the-hot-broth-for-a-dish-3298231/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "cottonbro studio",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-5657590",
+      "sha256": "2fd62bc1df2a12806bdd0f158837d86c6bee26e4323e8cc96cbb08f942a4a155",
+      "source": "https://www.pexels.com/video/close-up-view-of-a-person-cutting-an-onion-into-slices-5657590/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "ROMAN ODINTSOV",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-8901942",
+      "sha256": "4335814be6de614f42e07fe81aacf8d4aa210b37886f773858632e81cabccab1",
+      "source": "https://www.pexels.com/video/a-chef-preparing-sushi-8901942/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Ivan S",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-7405920",
+      "sha256": "34e4ad5e396b86465d6ad4d411b805f5bc132d93328444a17e452bd887200bb1",
+      "source": "https://www.pexels.com/video/person-measuring-ingredients-7405920/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "K",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-6602846",
+      "sha256": "855c7343b18cf96e2c88629a7c1dd7ea61d8368f91bfecba79252e304c236b73",
+      "source": "https://www.pexels.com/video/a-chef-preparing-the-ingredients-6602846/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Kampus Production",
+      "rawRedistribution": false
+    },
+    {
+      "id": "chef-11025688",
+      "sha256": "e6a6d56bcb1cd61c0fc505900b2dcb7c2709b1c3ddf48fec537723a0c4779014",
+      "source": "https://www.pexels.com/video/chef-with-vegetables-in-kitchen-11025688/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "ROMAN ODINTSOV",
+      "rawRedistribution": false
+    },
+    {
+      "id": "mixkit-696",
+      "sha256": "c5c25c6ae59ca4fcafb7ec9d267f871af1017b91ccbe6ae2cc0bde642db212b9",
+      "source": "https://mixkit.co/free-stock-music/funk/",
+      "license": "https://mixkit.co/license/#musicFree",
+      "credit": "Pop 04 — Grigoriy Nuzhny / Mixkit",
+      "rawRedistribution": false
+    }
+  ],
+  "scope": "Montage of different chefs and dishes; conceptual graphics are not a measured recipe.",
+  "corrections": [
+    {
+      "scene": "meal-017",
+      "issue": "Identical recipe artwork restarted in adjacent chapters",
+      "fix": "Close ingredient sequence with botanical selection before opening recipe study"
+    },
+    {
+      "scene": "meal-063",
+      "issue": "Automatic parity selected decreasing dial under increase copy",
+      "fix": "Explicitly authored increasing rotation and matching headline"
+    }
+  ],
+  "revisionTests": {
+    "text": "passed",
+    "volume": "passed",
+    "source": "passed",
+    "interruptResume": "passed",
+    "originalAndProofPreserved": true,
+    "measured": {
+      "text": {
+        "newTracks": 105,
+        "audioReused": true
+      },
+      "volume": {
+        "newTracks": 0,
+        "audioReused": false
+      },
+      "source": {
+        "newTracks": 1,
+        "audioReused": true
+      }
+    },
+    "cacheNote": "Text trial regenerated105tracks including103previously evicted cold tracks and2changed graphics. Warm volume/source trials regenerated0/1picture tracks. Working-film file allowance now scales with track groups; explicit limits and byte/free-space guards preserved."
+  },
+  "editorialRerender": {
+    "newTracks": [
+      {
+        "scene": "meal-017",
+        "kind": "graphics"
+      },
+      {
+        "scene": "meal-063",
+        "kind": "graphics"
+      }
+    ],
+    "audioReused": true
+  },
+  "techniques": {
+    "catalog": {
+      "cards": 637,
+      "source": "https://github.com/gongnyang/awesome-ai-motion"
+    },
+    "techniques": [
+      {
+        "card_id": "stagger",
+        "card_name": "스태거",
+        "selection_reason": "재료와 잎의 작은 시간차로 준비 순서를 보여준다",
+        "implementation": "Authored parameters using common vector layer renderer; not claiming original example code reuse",
+        "instances": [
+          {
+            "scene": "meal-004",
+            "layer": "bowl-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "ingredients-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.35,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "bowl-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "ingredients-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.43,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "bowl-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 40,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "ingredients-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.51,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.18,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.235,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.29,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.345,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.455,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.51,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.41000000000000003,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.01,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.48000000000000004,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.08,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.41000000000000003,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.01,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-9",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.48000000000000004,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.08,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-10",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-11",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-12",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-13",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.41000000000000003,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.01,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-14",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.48000000000000004,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.08,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-15",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-16",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-016",
+            "layer": "grain-17",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.18,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.235,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.29,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.345,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.455,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.51,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "bowl-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "ingredients-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.35,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "bowl-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "ingredients-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.43,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "bowl-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 40,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "ingredients-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.51,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "bowl-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "ingredients-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.35,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "bowl-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "ingredients-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.43,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "bowl-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 40,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "ingredients-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.51,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.41000000000000003,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.01,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.48000000000000004,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.08,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.41000000000000003,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.01,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-9",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.48000000000000004,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.08,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-10",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-11",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-12",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-13",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.41000000000000003,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.01,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-14",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.48000000000000004,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 1.08,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-15",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.2,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-16",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.27,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.8700000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-054",
+            "layer": "grain-17",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -100,
+                "opacity": 0
+              },
+              {
+                "at": 0.34,
+                "y": 170,
+                "opacity": 1
+              },
+              {
+                "at": 0.9400000000000001,
+                "y": 220,
+                "opacity": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-074",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.22,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-074",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.29000000000000004,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-074",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.36,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-074",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.43000000000000005,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-074",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.5,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-076",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.16,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-076",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.24,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-076",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.32,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-076",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-076",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.48,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-078",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.22,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-078",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.29000000000000004,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-078",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.36,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-078",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.43000000000000005,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-078",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.5,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-081",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.16,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-081",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.24,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-081",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.32,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-081",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-081",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.48,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-084",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.22,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-084",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.29000000000000004,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-084",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.36,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-084",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.43000000000000005,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-084",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -150,
+                "opacity": 0
+              },
+              {
+                "at": 0.5,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-087",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.16,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-087",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.24,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-087",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.32,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-087",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-087",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -260,
+                "opacity": 0
+              },
+              {
+                "at": 0.48,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "review": "Representative direction accepted; full-film encoded inspection pending. Card rules adapted to subject, not universal aesthetics."
+      },
+      {
+        "card_id": "rotate",
+        "card_name": "회전",
+        "selection_reason": "칼·팬·조절 방향의 실제 의미에 맞춰 피벗을 둔다",
+        "implementation": "Authored parameters using common vector layer renderer; not claiming original example code reuse",
+        "instances": [
+          {
+            "scene": "meal-002",
+            "layer": "knife",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -170,
+                "rotation": -11
+              },
+              {
+                "at": 0.19,
+                "y": 45,
+                "rotation": 0
+              },
+              {
+                "at": 1.0666666666666667,
+                "y": 20,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": 0,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 0,
+                "opacity": 1,
+                "rotation": -16
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -21,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 16,
+                "opacity": 1,
+                "rotation": -12
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -42,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 32,
+                "opacity": 1,
+                "rotation": -8
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -63,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 48,
+                "opacity": 1,
+                "rotation": -4
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -84,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 64,
+                "opacity": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -105,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 80,
+                "opacity": 1,
+                "rotation": 4
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -126,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 96,
+                "opacity": 1,
+                "rotation": 8
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -147,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 112,
+                "opacity": 1,
+                "rotation": 12
+              }
+            ]
+          },
+          {
+            "scene": "meal-002",
+            "layer": "slice-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -168,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 128,
+                "opacity": 1,
+                "rotation": 16
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "ingredients-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.35,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "ingredients-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.43,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-004",
+            "layer": "ingredients-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.51,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.18,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.235,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.29,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.345,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.455,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-011",
+            "layer": "leaf-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.51,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.18,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.235,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.29,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.345,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.4,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.455,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-017",
+            "layer": "leaf-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 160,
+                "rotation": -15,
+                "opacity": 0
+              },
+              {
+                "at": 0.51,
+                "y": 0,
+                "rotation": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "knife",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": -170,
+                "rotation": -11
+              },
+              {
+                "at": 0.19,
+                "y": 45,
+                "rotation": 0
+              },
+              {
+                "at": 1.0666666666666667,
+                "y": 20,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": 0,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 0,
+                "opacity": 1,
+                "rotation": -16
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -21,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 16,
+                "opacity": 1,
+                "rotation": -12
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -42,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 32,
+                "opacity": 1,
+                "rotation": -8
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -63,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 48,
+                "opacity": 1,
+                "rotation": -4
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -84,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 64,
+                "opacity": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -105,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 80,
+                "opacity": 1,
+                "rotation": 4
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -126,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 96,
+                "opacity": 1,
+                "rotation": 8
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -147,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 112,
+                "opacity": 1,
+                "rotation": 12
+              }
+            ]
+          },
+          {
+            "scene": "meal-028",
+            "layer": "slice-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -168,
+                "opacity": 0.3
+              },
+              {
+                "at": 0.7253333333333334,
+                "x": 128,
+                "opacity": 1,
+                "rotation": 16
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "ingredients-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.35,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "ingredients-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.43,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-032",
+            "layer": "ingredients-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.51,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "ingredients-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.35,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "ingredients-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.43,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-036",
+            "layer": "ingredients-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "scale": 0.6,
+                "rotation": -30
+              },
+              {
+                "at": 0.51,
+                "scale": 1,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "pan",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -24,
+                "scale": 0.88
+              },
+              {
+                "at": 0.24,
+                "rotation": 0,
+                "scale": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-9",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-10",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-11",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-12",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-13",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-041",
+            "layer": "food-14",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.2999999999999998,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.1666666666666665,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-049",
+            "layer": "spoon",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 100,
+                "x": -190,
+                "rotation": -7
+              },
+              {
+                "at": 1.1916666666666667,
+                "y": 0,
+                "x": 0,
+                "rotation": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "pan",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -24,
+                "scale": 0.88
+              },
+              {
+                "at": 0.24,
+                "rotation": 0,
+                "scale": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-9",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-10",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-11",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-12",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-13",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-052",
+            "layer": "food-14",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "pan",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -24,
+                "scale": 0.88
+              },
+              {
+                "at": 0.24,
+                "rotation": 0,
+                "scale": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-9",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-10",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-11",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-12",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-13",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-058",
+            "layer": "food-14",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 1.32,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 2.2,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-061",
+            "layer": "pointer",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": 60
+              },
+              {
+                "at": 1.4960000000000002,
+                "rotation": -55
+              },
+              {
+                "at": 2.2,
+                "rotation": -55
+              }
+            ]
+          },
+          {
+            "scene": "meal-063",
+            "layer": "pointer",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -110
+              },
+              {
+                "at": 1.4960000000000002,
+                "rotation": 65
+              },
+              {
+                "at": 2.2,
+                "rotation": 65
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "pan",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -24,
+                "scale": 0.88
+              },
+              {
+                "at": 0.24,
+                "rotation": 0,
+                "scale": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-4",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-5",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-6",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-7",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-8",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-9",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-10",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-11",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-12",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-13",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-065",
+            "layer": "food-14",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": -18,
+                "y": 20
+              },
+              {
+                "at": 0.66,
+                "rotation": 12,
+                "y": -25
+              },
+              {
+                "at": 1.1,
+                "rotation": 20,
+                "y": 0
+              }
+            ]
+          },
+          {
+            "scene": "meal-067",
+            "layer": "pointer",
+            "keyframes": [
+              {
+                "at": 0,
+                "rotation": 60
+              },
+              {
+                "at": 1.4960000000000002,
+                "rotation": -55
+              },
+              {
+                "at": 2.2,
+                "rotation": -55
+              }
+            ]
+          },
+          {
+            "scene": "meal-072",
+            "layer": "spoon",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 100,
+                "x": -190,
+                "rotation": -7
+              },
+              {
+                "at": 1.1916666666666667,
+                "y": 0,
+                "x": 0,
+                "rotation": 0
+              }
+            ]
+          }
+        ],
+        "review": "Representative direction accepted; full-film encoded inspection pending. Card rules adapted to subject, not universal aesthetics."
+      },
+      {
+        "card_id": "line-draw",
+        "card_name": "선 그리기",
+        "selection_reason": "실사의 소스 원과 칼의 이동을 새 선의 완성으로 잇는다",
+        "implementation": "Authored parameters using common vector layer renderer; not claiming original example code reuse",
+        "instances": [
+          {
+            "scene": "meal-001",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-003",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-005",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-007",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-012",
+            "layer": "inspect",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 1.5166666666666664,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-013",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-018",
+            "layer": "line-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-018",
+            "layer": "line-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.30000000000000004,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-018",
+            "layer": "line-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.4,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-018",
+            "layer": "line-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.5,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-018",
+            "layer": "revision",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 1.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-020",
+            "layer": "line-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-020",
+            "layer": "line-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.30000000000000004,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-020",
+            "layer": "line-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.4,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-020",
+            "layer": "line-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.5,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-020",
+            "layer": "revision",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 1.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-021",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-023",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-024",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-026",
+            "layer": "line-0",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-026",
+            "layer": "line-1",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.30000000000000004,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-026",
+            "layer": "line-2",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.4,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-026",
+            "layer": "line-3",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.5,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-026",
+            "layer": "revision",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 1.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-027",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-029",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-034",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-035",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-037",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-039",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-040",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-042",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-045",
+            "layer": "inspect",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.7466666666666666,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-046",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-051",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-055",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-076",
+            "layer": "sauce",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.85,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-081",
+            "layer": "sauce",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.85,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-083",
+            "layer": "gesture-line",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.2,
+                "draw": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-087",
+            "layer": "sauce",
+            "keyframes": [
+              {
+                "at": 0,
+                "draw": 0
+              },
+              {
+                "at": 0.85,
+                "draw": 1
+              }
+            ]
+          }
+        ],
+        "review": "Representative direction accepted; full-film encoded inspection pending. Card rules adapted to subject, not universal aesthetics."
+      },
+      {
+        "card_id": "fade-slide",
+        "card_name": "페이드 슬라이드",
+        "selection_reason": "타격용 제목의 진입과 완전한 문장의 읽기 시간을 분리한다",
+        "implementation": "Authored parameters using common vector layer renderer; not claiming original example code reuse",
+        "instances": [
+          {
+            "scene": "meal-006",
+            "layer": "title-a",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 65,
+                "opacity": 0
+              },
+              {
+                "at": 0.32,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-006",
+            "layer": "title-b",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": 180,
+                "opacity": 0
+              },
+              {
+                "at": 0.5,
+                "x": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-062",
+            "layer": "impact",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": -90,
+                "opacity": 0
+              },
+              {
+                "at": 0.14,
+                "x": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-089",
+            "layer": "title-a",
+            "keyframes": [
+              {
+                "at": 0,
+                "y": 65,
+                "opacity": 0
+              },
+              {
+                "at": 0.32,
+                "y": 0,
+                "opacity": 1
+              }
+            ]
+          },
+          {
+            "scene": "meal-089",
+            "layer": "title-b",
+            "keyframes": [
+              {
+                "at": 0,
+                "x": 180,
+                "opacity": 0
+              },
+              {
+                "at": 0.5,
+                "x": 0,
+                "opacity": 1
+              }
+            ]
+          }
+        ],
+        "review": "Representative direction accepted; full-film encoded inspection pending. Card rules adapted to subject, not universal aesthetics."
+      },
+      {
+        "card_id": "match-cut",
+        "selection_reason": "선과 원이 매체 사이의 관계를 잇는다",
+        "implementation": "Conceptual shape/direction cuts; exact same-position/same-scale match not measured, so not credited as a verified exact match-cut adapter",
+        "instances": [],
+        "review": "not-certified"
+      }
+    ],
+    "not_used": [
+      "particle spectacle",
+      "camera shake",
+      "voice sync",
+      "glitch"
+    ],
+    "reason": "이번 주제의 정교함과 문장 전달에 필요하지 않아 장식으로 추가하지 않음"
+  },
+  "initialRenderSeconds": 934.246,
+  "cacheRetention": {
+    "status": "passed",
+    "package": "package-full-final",
+    "outsideInstallation": true,
+    "actualWorkingTracksRetained": 136,
+    "keepCacheFiles": 530,
+    "byteBudget": "unchanged default8GiB",
+    "explicitLimits": "covered by StorageSession integration tests"
+  },
+  "pipelineCommit": "e98e6de"
+}
