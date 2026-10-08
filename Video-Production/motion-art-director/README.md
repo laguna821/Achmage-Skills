@@ -4,6 +4,8 @@
 
 **기획 질문부터 스타일프레임, 대표 컷, 영상·음악·효과음, 수정과 검수까지 이어지는 Codex·Claude Code 공통 제작 스킬입니다.**
 
+3.1 개발판에는 [제작 전 기획 시청](references/preproduction.md)을 추가했습니다. 여러 제공처에서 음악·영상·효과음을 조사하고, 실제 음악 후보와 전체 이야기 지도를 먼저 비교한 뒤 대표 컷을 제작합니다. `source-search`는 검색 계획을 만들며 실제 검색·청취를 수행했다고 표시하지 않습니다. 빠른 컷 위에 완결된 문장을 유지하는 선택적 `message-track-v1`도 제공합니다. [새 기획 비교본](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31)은 음악과 주제를 고르는 단계이며 본편 완성·미감 승인 기록이 아닙니다.
+
 [공개 영상 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [정지·무음·로고 엔딩](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) · [다운로드와 설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)
 
 ## 무엇이 들어 있나요?

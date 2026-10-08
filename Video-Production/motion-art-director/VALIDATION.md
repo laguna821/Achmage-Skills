@@ -99,3 +99,12 @@ The early hybrid reuse key omitted automotive synthesis while the later audio ke
 -18boundary metadata mutations rejected with a passing baseline. Nine final web-encode boundaries match newly rendered snapshots generated in nonsequential order, after normalizing both paths to RGB. Disposable cache eviction and protected snapshot outputs are accounted for in the review procedure.
 -Final encoded loudness measured−16.11LUFS/−3.33dBTP. Ending quiet windows verified separately from the title cue. Whole-film human listening/aesthetic review and physical16GBnotebook testing remain open.
 -[Racing full-film report](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/racing-full180-v1-report.json). Overall3.1Release andOS promotion remain separate gates.
+
+## Early concept audition and cross-cut copy — development validation
+
+- New preproduction suite: 19 passing checks, including actual vector renderer states across a cut, source-use restrictions, omitted/shortened copy and moving-frame rejection. Existing music-direction, rhythm, direction, hybrid-contract, hybrid-runtime dependency and audition-choice suites also pass.
+- Fresh package run from outside its installation directory: three 45-second previews generated in 6.658 seconds after music/stills were prepared. No Chromium captures or PCM WAV files; each MP4 approximately 2.4 MB. This timing excludes search, planning, implementation and review.
+- Public preview files match local hashes, fully decode and contain 45 seconds. Current Sites hosting returns the complete small file with HTTP 200 to Range requests; it is not claimed to support HTTP 206 streaming.
+- Seven provider routes are registered. This trial downloaded music from Mixkit; Pixabay access, YouTube Studio login and purpose-specific Mewpot restrictions remain explicitly recorded. Search plans are not completed searches.
+- Message retention currently supports fixed-composition cuts in vector/hybrid scenes. Active camera and overlapping transition cases fail explicitly until an independent composition track exists. Reading quality and artistic approval require review.
+- [Meal concept audition](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31): concept/music selection pending; full 180-second production has not started. Overall 3.1 Release and OS gates remain open.

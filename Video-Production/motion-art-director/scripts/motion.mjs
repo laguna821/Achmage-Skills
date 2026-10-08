@@ -2,6 +2,9 @@
 import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
 import {sourceActionAudit} from '../lib/source-action.mjs';
 import {auditionChoiceAudit} from '../lib/audition-choice.mjs';
+import {sourceSearchPlan,sourceCandidateAudit} from '../lib/source-discovery.mjs';
+import {conceptAudit,createConceptAudition} from '../lib/concept-audition.mjs';
+import {messageTrackAudit,compileMessageTrack} from '../lib/message-track.mjs';
 import {analyzeStructure,compileStructure,checkStructure} from '../lib/music-structure.mjs';
 import {createStructureReview} from '../lib/structure-review.mjs';
 import {remix} from '../lib/remix.mjs';
@@ -39,6 +42,12 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
  checks.ok=typeof checks.ffmpeg==='string'&&typeof checks.ffprobe==='string'&&typeof checks.browser==='string';return checks;}
 async function main(){
  switch(command){
+ case 'source-search':{const r=sourceSearchPlan(read(positional[0]));if(flags.out)write(path.resolve(flags.out),r);return r;}
+ case 'source-review':{const r=sourceCandidateAudit(read(positional[0]),{use:flags.use||'web-video'});if(flags.out)write(path.resolve(flags.out),r);return r;}
+ case 'concept-audit':return conceptAudit(read(positional[0]));
+ case 'concept-audition':return createConceptAudition(path.resolve(positional[0]),out());
+ case 'message-audit':return messageTrackAudit(read(positional[0]),{duration:Number(flags.duration),cuts:flags.cuts?String(flags.cuts).split(',').map(Number):[]});
+ case 'message-compile':{const file=path.resolve(positional[0]),target=path.resolve(flags.out||'message.project.json');if(!flags.track||fs.existsSync(target)||path.dirname(file)!==path.dirname(target))throw Error('Use --track and a new --out file beside original project');const p=compileMessageTrack(project(),read(flags.track)),v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(target,p);return {ok:true,file:target,approval:'requires current direction review'};}
  case 'audition-choice-audit':{if(!flags.choice)throw Error('--choice requires the recorded representative selection file');const r=auditionChoiceAudit(project(),read(flags.choice));if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'source-action-audit':{const r=sourceActionAudit(project());if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'cache-plan':{const p=cachePlan(path.resolve(positional[0]));if(flags.out)write(path.resolve(flags.out),p);return p;}

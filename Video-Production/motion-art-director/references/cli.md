@@ -67,3 +67,15 @@ For an independent encoder-clock witness, decode the final audio to48kHzPCM16 us
 `node scripts/motion.mjs remix revised.project.json --from prior-completed-run --out new-remix-folder`
 
 For homogeneous hybrid-composite projects, `remix` verifies the completed final hash, project receipt, unchanged picture inputs, source files, exact renderer version and encoded frame count. It copies the encoded video stream and rebuilds the audio. The output must be a new directory. It refuses picture or runtime changes; use normal render for those revisions. This keeps long-film audio revisions independent of bounded intermediate cache retention. The resulting receipt records zero rendered picture frames and the identical video bitstream hash. Listening remains a separate review.
+# 제작 전 기획 시청
+
+```sh
+node scripts/motion.mjs source-search music-search.json --out search-plan.json
+node scripts/motion.mjs source-review candidate.json --use web-video
+node scripts/motion.mjs concept-audit concept.json
+node scripts/motion.mjs concept-audition concept.json --out new-audition
+node scripts/motion.mjs message-audit message-track.json --duration 180 --cuts 2,4,6,8
+node scripts/motion.mjs message-compile project.json --track message-track.json --out new-project.json
+```
+
+source-search는 실제 검색 결과 대신 제공처별 검색 요청을 만든다. 에이전트가 공식 사이트를 탐색하고 증거를 채운다. concept-audition은 카드와 실제 음악을 합친 960px/5fps 압축 MP4, 전체 구성 HTML, 소요·용량 영수증을 만든다. 원본과 출력 폴더는 분리하며 이전 시청본은 덮어쓰지 않는다. message-compile의 출력은 원본 프로젝트 옆 새 파일이어야 하며 기존 미감 승인을 승계하지 않는다. 상세 계약과 한계는 references/preproduction.md를 따른다.

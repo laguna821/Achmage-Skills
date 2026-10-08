@@ -11,6 +11,7 @@ import {directionCheck} from './direction.mjs';
 import {editorialCheck} from './editorial.mjs';
 import {audioErrors} from './audio.mjs';
 import {musicDirectionAudit} from './music-direction.mjs';
+import {compiledMessageAudit} from './message-track.mjs';
 export const ROUTES=['video-editing','promo','shorts','newsletter','infographic','thumbnail','deck-and-site'];
 export const MODES=['crystal','liquid','smoke','star','flight','network','board','route','door','proposal','rebuke','path','data','composite'];
 const safeSvg=x=>typeof x==='string'&&!/<(?:script|image|feImage|foreignObject|iframe|style)\b|\bon\w+\s*=|(?:href|src)\s*=\s*["'](?!#)|url\(\s*["']?(?!#)/i.test(x);
@@ -106,6 +107,7 @@ export function validate(p){
  check(p.audio?.master_gain_db===undefined||Number.isFinite(p.audio.master_gain_db)&&p.audio.master_gain_db>=-12&&p.audio.master_gain_db<=18,'master gain outside -12..18 dB');
  if(p.schema_version==='3.1.0')errors.push(...mediaErrors(p));
  errors.push(...audioErrors(p),...spatialErrors(p));
+ errors.push(...compiledMessageAudit(p).errors);
  const sync=syncScoreCheck(p);errors.push(...sync.errors);warn.push(...sync.warnings);
  const rhythm=rhythmCheck(p);errors.push(...rhythm.errors);warn.push(...rhythm.warnings);
  if(p.musical_structure){try{const r=checkStructure(p,p.musical_structure);errors.push(...r.errors);if(!r.calibrated)warn.push('Musical structure listening calibration pending');}catch(e){errors.push(e.message);}}

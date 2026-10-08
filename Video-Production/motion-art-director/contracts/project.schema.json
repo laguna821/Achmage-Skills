@@ -1156,6 +1156,75 @@
     },
     "editorial_plan": {
       "$ref": "#/$defs/editorial"
+    },
+    "message_track": {
+      "type": "object",
+      "required": [
+        "version",
+        "units"
+      ],
+      "properties": {
+        "version": {
+          "const": "message-track-v1"
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "text",
+              "start",
+              "end",
+              "phrases"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "end": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "phrases": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "text",
+                    "start",
+                    "end"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "start": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "additionalProperties": true,

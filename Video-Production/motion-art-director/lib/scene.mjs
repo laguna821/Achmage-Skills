@@ -26,7 +26,7 @@ export function sceneKey(p,s,profile,portrait){
  const engine=['spatial.js','spatial-v2.js','stage.js','vector.js','composite.js','flow.js','cinema.js','gsap.min.js'].map(f=>hash(fs.readFileSync(path.join(ROOT,'assets',f))));
  engine.push(hash(fs.readFileSync(path.join(ROOT,'scripts/skia_frames.py'))));
  if(p.renderer==='spatial-three')for(const f of ['vendor/three/three.module.min.js','vendor/three/three.core.min.js','lib/spatial.mjs'])engine.push(hash(fs.readFileSync(path.join(ROOT,f))));
- for(const f of ['lib/automotive-audio.mjs','lib/render.mjs','lib/browser.mjs','lib/assets.mjs','lib/io.mjs'])engine.push(hash(fs.readFileSync(path.join(ROOT,f))));
+ for(const f of ['lib/message-track.mjs','lib/automotive-audio.mjs','lib/render.mjs','lib/browser.mjs','lib/assets.mjs','lib/io.mjs'])engine.push(hash(fs.readFileSync(path.join(ROOT,f))));
  const fonts=['assets/fonts/PretendardVariable.woff2','assets/fonts/PretendardVariable.ttf','vendor/awesome-ai-motion/lib/fonts/BodoniModa.ttf','requirements-skia.txt'].map(f=>hash(fs.readFileSync(path.join(ROOT,f))));
  return hash({engine,fonts,visual,scene:s,transitionSource:prior?{scene:prior,content:p.content_units.filter(c=>prior.content_ids.includes(c.content_id))}:undefined,index:p.scenes.indexOf(s),count:p.scenes.length,content:p.content_units.filter(c=>s.content_ids.includes(c.content_id)),assets:(assets||[]).filter(a=>ids.has(a.asset_id)),profile,portrait});
 }
