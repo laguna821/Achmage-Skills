@@ -1,0 +1,614 @@
+{
+  "title": "속도를 지배하는 순간",
+  "brand": "ACH / RACING LAB · FICTIONAL CONCEPT",
+  "output": {
+    "duration": 180,
+    "frames": 5400,
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "cuts": 116,
+    "sequences": 11
+  },
+  "music": {
+    "title": "Blown Away",
+    "artist": "Kevin MacLeod (incompetech.com)",
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200100",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Excerpted, level adjusted, synchronized. Quiet passage and ending use authored volume automation."
+  },
+  "footage": [
+    {
+      "id": "race-31985089",
+      "source": "https://www.pexels.com/video/exciting-race-cars-on-professional-track-31985089/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Vanessa V.",
+      "sha256": "1374a4dc2a319fc32c20aa0b85cb6e08943fed01c39181d7d9566dbb6e66cec7",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-10825392",
+      "source": "https://www.pexels.com/video/a-racing-car-drifting-on-a-track-10825392/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec",
+      "sha256": "2e5d53f5cb19c4d384d1a10eeb6310f4332bbe07605e04a4b9d12be8441b3b75",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-10825298",
+      "source": "https://www.pexels.com/video/cars-competing-on-a-racing-track-10825298/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec",
+      "sha256": "3732eb5e0c4c5bb643cb644b47877394139d51ab12641886e9872e45dc7cd20c",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-5991156",
+      "source": "https://www.pexels.com/video/a-race-car-in-motion-5991156/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Тасев Теодор",
+      "sha256": "f8771ea1a79fb5a88c1876359ab62b7ceedc0a4ad2d48a7999fdce6d881ec885",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-30391335",
+      "source": "https://www.pexels.com/video/dynamic-car-close-up-on-industrial-track-30391335/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Gaurav Kumar",
+      "sha256": "b01d95d50494907a2864fb5668b5e37f157cce143ec8cd6dd287418234c817fc",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-5673623",
+      "source": "https://www.pexels.com/video/sports-car-on-the-desert-5673623/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec",
+      "sha256": "f8ec317e73498bf46f766d6484538bb5a878afcbe6db4d5723ba762d1313f1fd",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-36223788",
+      "source": "https://www.pexels.com/video/sports-car-driving-on-curvy-mountain-road-36223788/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Harvey Tan Villarino",
+      "sha256": "d2a89c8e90f7e16a7b16ce3944dbe020a8646467775ba26d8a05ec2ed9148f14",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-18437016",
+      "source": "https://www.pexels.com/video/race-day-vlog-18437016/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Jaxon Matthew Willis",
+      "sha256": "68535e9bd871083a4b507e02fdf725abaaf651bbc20736f0f1fcc0442fb57152",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-3774642",
+      "source": "https://www.pexels.com/video/racing-cars-running-on-a-race-track-3774642/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Taryn Elliott",
+      "sha256": "ca145720b74c30d4a96eeafa089b8269a9139fea91e86782868d5c0aa07412b2",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-9737833",
+      "source": "https://www.pexels.com/video/drone-shot-of-race-cars-racing-on-track-9737833/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "8 K",
+      "sha256": "aec13b17c3132f2f5a2393ceb60635e41e1365b4e65d4c662452f07663c6cd10",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-9330847",
+      "source": "https://www.pexels.com/video/cars-drifting-on-a-race-track-9330847/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec",
+      "sha256": "89ec4b46d13a3e079231dc6853f6523c50339704af8c510140629f4b22b63c04",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-10738994",
+      "source": "https://www.pexels.com/video/a-drift-car-spinning-out-at-a-racetrack-10738994/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec",
+      "sha256": "3822d97203b4d8e6df57f0153a3bb70ed854a37b0d44fe6e84131e9f3dc7d13e",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-16685623",
+      "source": "https://www.pexels.com/video/a-man-is-driving-a-car-with-his-hand-on-the-steering-wheel-16685623/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Erik Mclean",
+      "sha256": "5fcd0e74564c2bbbb1ad62b90837ec6b607411015a25c4863a847e69b9b87592",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-13866489",
+      "source": "https://www.pexels.com/video/racing-on-track-at-night-13866489/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Jaxon Matthew Willis",
+      "sha256": "7c7fc127a318806cbb4e831a06dbc737893421cdbfaf7e36ce77c9efabb6f2d5",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-9737948",
+      "source": "https://www.pexels.com/video/crew-replacing-tires-of-race-car-9737948/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "8 K",
+      "sha256": "c3099aa1577e28c75223fef150cbbe98b22887253eb201d09dd804761e0c4166",
+      "rawRedistribution": false
+    },
+    {
+      "id": "race-28850619",
+      "source": "https://www.pexels.com/video/fast-paced-car-racing-action-on-track-28850619/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Sean P. Twomey",
+      "sha256": "8f4666df88fcf5fc3b01f7b5c7d5fb07eb004b6ed588ace29b1eb2233b01842a",
+      "rawRedistribution": false
+    }
+  ],
+  "chapters": [
+    {
+      "id": "focus",
+      "title": "출발 이전의 집중",
+      "start": 0,
+      "end": 5.633333333333334,
+      "cuts": 4,
+      "question": "힘은 어디에서 시작되는가?",
+      "consequence": "눈과 손이 먼저 준비된다"
+    },
+    {
+      "id": "launch",
+      "title": "트랙이 열리다",
+      "start": 5.633333333333334,
+      "end": 22.6,
+      "cuts": 9,
+      "question": "준비가 어떻게 움직임으로 이어지는가?",
+      "consequence": "닫힌 차체에서 열린 트랙으로 시야가 확장된다"
+    },
+    {
+      "id": "space",
+      "title": "속도가 공간을 바꾼다",
+      "start": 22.6,
+      "end": 45.166666666666664,
+      "cuts": 12,
+      "question": "근접한 속도는 넓은 공간에서 어떻게 보이는가?",
+      "consequence": "바퀴·차체·트랙의 크기가 교차한다"
+    },
+    {
+      "id": "corner",
+      "title": "집중과 돌파",
+      "start": 45.166666666666664,
+      "end": 73.4,
+      "cuts": 26,
+      "question": "불안정한 코너를 어떻게 견디는가?",
+      "consequence": "짧은 시점 변화 속에서도 힘의 방향을 이어간다"
+    },
+    {
+      "id": "precision",
+      "title": "정밀한 선택",
+      "start": 73.4,
+      "end": 96,
+      "cuts": 12,
+      "question": "빠르기만 하면 충분한가?",
+      "consequence": "손과 접점과 궤적의 선택이 보인다"
+    },
+    {
+      "id": "pressure",
+      "title": "압력이 쌓인다",
+      "start": 96,
+      "end": 112.93333333333334,
+      "cuts": 12,
+      "question": "같은 반복을 어떻게 더 밀도 있게 만드는가?",
+      "consequence": "방향·빛·접점이 빠르게 교차한다"
+    },
+    {
+      "id": "release",
+      "title": "힘을 거두는 과정",
+      "start": 112.93333333333334,
+      "end": 124.26666666666667,
+      "cuts": 4,
+      "question": "다시 밟기 위해 무엇을 놓는가?",
+      "consequence": "손과 공간에 여유가 생긴다"
+    },
+    {
+      "id": "reentry",
+      "title": "숨 고르고 다시",
+      "start": 124.26666666666667,
+      "end": 151.06666666666666,
+      "cuts": 19,
+      "question": "쉼이 어떻게 다시 힘이 되는가?",
+      "consequence": "작은 손동작에서 트랙 전체로 재가속한다"
+    },
+    {
+      "id": "sprint",
+      "title": "속도의 교차",
+      "start": 151.06666666666666,
+      "end": 168,
+      "cuts": 14,
+      "question": "재가속의 힘을 어디까지 이어갈 것인가?",
+      "consequence": "단어와 차체의 방향이 짧은 간격으로 결합한다"
+    },
+    {
+      "id": "control",
+      "title": "통제된 여운",
+      "start": 168,
+      "end": 174.36666666666667,
+      "cuts": 3,
+      "question": "질주 이후 무엇이 남는가?",
+      "consequence": "속도의 크기에서 시선과 정지한 형태로 돌아온다"
+    },
+    {
+      "id": "title",
+      "title": "제목과 정적",
+      "start": 174.36666666666667,
+      "end": 180,
+      "cuts": 1,
+      "question": "어떤 문장으로 남길 것인가?",
+      "consequence": "속도를 지배하는 순간이라는 제목이 남는다"
+    }
+  ],
+  "technical": {
+    "profile": "final",
+    "frames": 5400,
+    "seconds": 180,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 166056072,
+    "wholeDecode": "passed",
+    "encodedLoudness": {
+      "input_i": "-16.11",
+      "input_tp": "-3.33",
+      "input_lra": "3.30",
+      "input_thresh": "-26.18",
+      "output_i": "-15.82",
+      "output_tp": "-2.59",
+      "output_lra": "3.20",
+      "output_thresh": "-25.87",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.18"
+    },
+    "ending": [
+      {
+        "from": 175.05,
+        "to": 175.85,
+        "peak_dbfs": -240,
+        "rms_dbfs": -240
+      },
+      {
+        "from": 176.05,
+        "to": 177,
+        "peak_dbfs": -37.98999766606634,
+        "rms_dbfs": -51.5211245113243
+      },
+      {
+        "from": 179,
+        "to": 179.9,
+        "peak_dbfs": -240,
+        "rms_dbfs": -240
+      }
+    ],
+    "renderElapsedSeconds": 724.617,
+    "renderedTracks": 141,
+    "reusedTracks": 3,
+    "review": "Representative effects-on/current-picture choice confirmed; whole-film human review pending"
+  },
+  "adversarial": {
+    "boundaryMutations": [
+      {
+        "scene": "shot-02",
+        "shift": -4,
+        "rejected": true
+      },
+      {
+        "scene": "shot-02",
+        "shift": -2,
+        "rejected": true
+      },
+      {
+        "scene": "shot-02",
+        "shift": -1,
+        "rejected": true
+      },
+      {
+        "scene": "shot-02",
+        "shift": 1,
+        "rejected": true
+      },
+      {
+        "scene": "shot-02",
+        "shift": 2,
+        "rejected": true
+      },
+      {
+        "scene": "shot-02",
+        "shift": 4,
+        "rejected": true
+      },
+      {
+        "scene": "shot-61",
+        "shift": -4,
+        "rejected": true
+      },
+      {
+        "scene": "shot-61",
+        "shift": -2,
+        "rejected": true
+      },
+      {
+        "scene": "shot-61",
+        "shift": -1,
+        "rejected": true
+      },
+      {
+        "scene": "shot-61",
+        "shift": 1,
+        "rejected": true
+      },
+      {
+        "scene": "shot-61",
+        "shift": 2,
+        "rejected": true
+      },
+      {
+        "scene": "shot-61",
+        "shift": 4,
+        "rejected": true
+      },
+      {
+        "scene": "shot-110",
+        "shift": -4,
+        "rejected": true
+      },
+      {
+        "scene": "shot-110",
+        "shift": -2,
+        "rejected": true
+      },
+      {
+        "scene": "shot-110",
+        "shift": -1,
+        "rejected": true
+      },
+      {
+        "scene": "shot-110",
+        "shift": 1,
+        "rejected": true
+      },
+      {
+        "scene": "shot-110",
+        "shift": 2,
+        "rejected": true
+      },
+      {
+        "scene": "shot-110",
+        "shift": 4,
+        "rejected": true
+      }
+    ],
+    "cacheKeyChanges": {
+      "text": {
+        "graphics": [
+          "shot-03"
+        ],
+        "video": []
+      },
+      "volume": {
+        "graphics": [],
+        "video": []
+      },
+      "source": {
+        "graphics": [],
+        "video": [
+          "shot-01"
+        ]
+      }
+    }
+  },
+  "revision": {
+    "ok": true,
+    "text": [
+      {
+        "scene": "shot-01",
+        "kind": "video",
+        "reused": true
+      },
+      {
+        "scene": "shot-02",
+        "kind": "video",
+        "reused": true
+      },
+      {
+        "scene": "shot-03",
+        "kind": "video",
+        "reused": true
+      },
+      {
+        "scene": "shot-03",
+        "kind": "graphics",
+        "reused": false
+      }
+    ],
+    "source": [
+      {
+        "scene": "shot-01",
+        "kind": "video",
+        "reused": false
+      },
+      {
+        "scene": "shot-02",
+        "kind": "video",
+        "reused": true
+      },
+      {
+        "scene": "shot-03",
+        "kind": "video",
+        "reused": true
+      },
+      {
+        "scene": "shot-03",
+        "kind": "graphics",
+        "reused": true
+      }
+    ],
+    "musicEvent": [
+      {
+        "scene": "shot-01",
+        "kind": "video",
+        "reused": false
+      },
+      {
+        "scene": "shot-02",
+        "kind": "video",
+        "reused": false
+      },
+      {
+        "scene": "shot-03",
+        "kind": "video",
+        "reused": true
+      },
+      {
+        "scene": "shot-03",
+        "kind": "graphics",
+        "reused": true
+      }
+    ],
+    "interruption": {
+      "intentional": true,
+      "detected": true,
+      "resumed": [
+        {
+          "scene": "shot-01",
+          "kind": "video",
+          "reused": true
+        },
+        {
+          "scene": "shot-02",
+          "kind": "video",
+          "reused": false
+        },
+        {
+          "scene": "shot-03",
+          "kind": "video",
+          "reused": true
+        },
+        {
+          "scene": "shot-03",
+          "kind": "graphics",
+          "reused": true
+        }
+      ],
+      "repeat": [
+        {
+          "scene": "shot-01",
+          "kind": "video",
+          "reused": true
+        },
+        {
+          "scene": "shot-02",
+          "kind": "video",
+          "reused": true
+        },
+        {
+          "scene": "shot-03",
+          "kind": "video",
+          "reused": true
+        },
+        {
+          "scene": "shot-03",
+          "kind": "graphics",
+          "reused": true
+        }
+      ]
+    },
+    "volume": {
+      "mode": "verified-final-stream-copy",
+      "renderedFrames": 0,
+      "encodedVideoHash": "SHA256=06252aa4f1f606a499aa621eb2124600399b5d4738eeffaabb9ab4263315ad81"
+    },
+    "originalProjectUnchanged": true,
+    "originalFinalUnchanged": true
+  },
+  "performance": {
+    "peakWorkingSetBytes": 938856448,
+    "samples": 137,
+    "note": "Five-second process-tree working-set samples. Shared pages may be counted more than once; unsampled peaks can be missed. CPU render; dedicated GPU disabled."
+  },
+  "sourceCommit": "e348b1ba620157eca336de2ea78d16578c668641",
+  "review": {
+    "representatives": "Effects-on existing picture timing selected",
+    "fullFilmListening": "Pending human review; not inferred from waveform or browser playback",
+    "aesthetic": "Pending whole-film user review",
+    "notebook16GB": "Not measured on physical target laptop"
+  },
+  "note": "Several vehicles, drivers and locations form a montage, not one actual race. Designed engine/tire effects. No source footage redistribution. Existing works preserved.",
+  "encodedCutValidation": {
+    "ok": true,
+    "kind": "Actual web encode compared with freshly regenerated1080snapshots in nonsequentialorder; independent of disposablecache",
+    "resolution": [
+      64,
+      36
+    ],
+    "rows": [
+      {
+        "scene": "shot-110",
+        "frame": 4871,
+        "meanAbsolutePixelError": 1.736400462962963,
+        "priorFrameError": 52.109230324074076
+      },
+      {
+        "scene": "shot-02",
+        "frame": 43,
+        "meanAbsolutePixelError": 1.162181712962963,
+        "priorFrameError": 71.56698495370371
+      },
+      {
+        "scene": "shot-80",
+        "frame": 3728,
+        "meanAbsolutePixelError": 1.244068287037037,
+        "priorFrameError": 51.4458912037037
+      },
+      {
+        "scene": "shot-13",
+        "frame": 635,
+        "meanAbsolutePixelError": 1.5299479166666667,
+        "priorFrameError": 103.85011574074075
+      },
+      {
+        "scene": "shot-116",
+        "frame": 5231,
+        "meanAbsolutePixelError": 1.3070023148148149,
+        "priorFrameError": 130.67954282407408
+      },
+      {
+        "scene": "shot-26",
+        "frame": 1355,
+        "meanAbsolutePixelError": 2.4416956018518516,
+        "priorFrameError": 16.872685185185187
+      },
+      {
+        "scene": "shot-92",
+        "frame": 4236,
+        "meanAbsolutePixelError": 1.5872395833333333,
+        "priorFrameError": 68.5128761574074
+      },
+      {
+        "scene": "shot-61",
+        "frame": 2711,
+        "meanAbsolutePixelError": 1.2581018518518519,
+        "priorFrameError": 45.171585648148145
+      },
+      {
+        "scene": "shot-115",
+        "frame": 5146,
+        "meanAbsolutePixelError": 1.2809606481481481,
+        "priorFrameError": 72.58796296296296
+      }
+    ]
+  },
+  "delivery": {
+    "bytes": 82862134,
+    "format": "1080p30 H264/AAC",
+    "note": "Web encode capped at3.6Mbps; whole decode passed"
+  }
+}
