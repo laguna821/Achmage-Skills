@@ -49,7 +49,9 @@ export function compileMessageTrack(project,track){
     lines.forEach((line,i)=>{
      const keyframes=[];
      if(f.start>start)keyframes.push({at:f.start-start,opacity:1,ease:'hold'});
-     if(f.end<=end)keyframes.push({at:f.end-start,opacity:0,ease:'hold'});
+     // Absolute-second subtraction may overshoot a frame-derived shot end by
+     // a few ulps. Keep the local endpoint inside the exact render interval.
+     if(f.end<=end)keyframes.push({at:Math.min(f.end-start,(s.end-s.start)/30),opacity:0,ease:'hold'});
      c.layers.push({id:'message-track-'+f.id+'-'+i,kind:'text',text:line,position:[w*.07,h*.81+i*size*1.3],size,weight:600,color:'#ffffff',align:'start',opacity:f.start<=start?1:0,keyframes});
     });
    }

@@ -26,4 +26,11 @@ const c={id:'licensed',title:'Fixture',provider:'mixkit',source_url:'https://mix
 test('verified web-use baseline can proceed',()=>assert(sourceCandidateAudit(c).public_ready));
 for(const [name,change]of [['paid trial',q=>q.availability='trial'],['wrong destination',q=>q.rights.allowed_uses=['youtube']],['no evidence',q=>delete q.rights.evidence],['attribution omitted',q=>q.rights.attribution_required=true],['registered without receipt',q=>q.content_id='registered']])test(name,()=>{const q=structuredClone(c);change(q);assert(!sourceCandidateAudit(q).public_ready);});
 test('loudnorm trailing console output accepted',()=>assert.equal(loudnormMeasurement('log\n{\n"input_i": "-18.0", "input_tp":"-2.0"\n}\nframe=225 time=45.00').input_i,'-18.0'));
+test('fractional-second shot endpoint keeps caption through final decoded frame',()=>{
+ const q=structuredClone(p);q.output.total_frames=785;q.scenes=[{id:'long',start:0,end:720,composition:{layers:[]}},{id:'tail',start:720,end:785,composition:{layers:[]}}];
+ const t={version:'message-track-v1',units:[{id:'tail',text:'끝까지 이어집니다.',start:20,end:785/30,phrases:[{text:'끝까지 이어집니다.',start:20,end:785/30}]}]};
+ const c=compileMessageTrack(q,t),s=c.scenes[1],l=s.composition.layers[0];assert.equal(l.keyframes.at(-1).at,65/30);assert(compiledMessageAudit(c).ok);
+ const sandbox={window:{PROJECT:c,PORTRAIT:false},document:{getElementById:()=>({})}};vm.createContext(sandbox);vm.runInContext(fs.readFileSync(path.join(ROOT,'assets/vector.js'),'utf8'),sandbox);assert.match(sandbox.window.__vectorScene(s,784,true),/opacity="1"/);
+ const bad=structuredClone(t);bad.units[0].end+=1/30;bad.units[0].phrases[0].end+=1/30;assert.throws(()=>compileMessageTrack(q,bad),/interval/);
+});
 console.log(JSON.stringify({passed:count,scope:'Contracts and real SVG state; no listening or aesthetic claim'}));
