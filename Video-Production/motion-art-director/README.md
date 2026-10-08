@@ -1,12 +1,14 @@
-# Motion Art Director · 3.0.0-rc.1
+# Motion Art Director · 4.0.0
 
-3.1 개발판에 악기 음악의 사건 시간표와 편집 밀도 검토를 추가했습니다. [리듬 연출 안내](references/rhythm-direction.md)는 시퀀스·컷·동작을 나누어 음악 프레이즈와 함께 설계합니다. 긴 이야기 흐름을 긴 컷으로 자동 번역하지 않습니다. 음성과 유료 AI API는 필수가 아닙니다. [페달 시험본](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/)은 기술 검사를 통과했지만, 사용자가 긴 컷 과잉·편집 리듬과 다양성 부족으로 반려한 연구작이며 미감 기준작이 아닙니다.
+기획 앞단에서 실제 음악과 전체 콘티를 먼저 보고, 실사·정밀 그래픽·완전한 문장·음악 묶음을 연결해 제작하는 통합 워크플로우입니다. [180초 요리 작품](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/film/?v=35) · [180초 레이싱](https://motion-art-director-review-oct05.achmage2.chatgpt.site/racing/film/?v=30) · [4.0 변경과 제한](references/release-4.md).
+
+4.0.0에는 악기 음악의 사건 시간표와 편집 밀도 검토를 추가했습니다. [리듬 연출 안내](references/rhythm-direction.md)는 시퀀스·컷·동작을 나누어 음악 프레이즈와 함께 설계합니다. 긴 이야기 흐름을 긴 컷으로 자동 번역하지 않습니다. 음성과 유료 AI API는 필수가 아닙니다. [페달 시험본](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/)은 기술 검사를 통과했지만, 초기 긴 컷 편집을 수정하기 전의 보존본입니다. [음악 묶음 교정 최종판](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/musical/full/)과 구분합니다.
 
 **기획 질문부터 스타일프레임, 대표 컷, 영상·음악·효과음, 수정과 검수까지 이어지는 Codex·Claude Code 공통 제작 스킬입니다.**
 
-3.1 개발판에는 [제작 전 기획 시청](references/preproduction.md)을 추가했습니다. 여러 제공처에서 음악·영상·효과음을 조사하고, 실제 음악 후보와 전체 이야기 지도를 먼저 비교한 뒤 대표 컷을 제작합니다. `source-search`는 검색 계획을 만들며 실제 검색·청취를 수행했다고 표시하지 않습니다. 빠른 컷 위에 완결된 문장을 유지하는 선택적 `message-track-v1`도 제공합니다. [새 기획 비교본](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31)은 음악과 주제를 고르는 단계이며 본편 완성·미감 승인 기록이 아닙니다.
+4.0.0에는 [제작 전 기획 시청](references/preproduction.md)을 추가했습니다. 여러 제공처에서 음악·영상·효과음을 조사하고, 실제 음악 후보와 전체 이야기 지도를 먼저 비교한 뒤 대표 컷을 제작합니다. `source-search`는 검색 계획을 만들며 실제 검색·청취를 수행했다고 표시하지 않습니다. 빠른 컷 위에 완결된 문장을 유지하는 선택적 `message-track-v1`도 제공합니다. [새 기획 비교본](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31)은 음악과 주제를 고르는 단계이며 본편 완성·미감 승인 기록이 아닙니다.
 
-[공개 영상 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [정지·무음·로고 엔딩](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) · [다운로드와 설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)
+[공개 영상 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [정지·무음·로고 엔딩](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) · [다운로드와 설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)
 
 ## 무엇이 들어 있나요?
 
@@ -28,7 +30,7 @@ awesome-ai-motion은 표현을 찾는 도감입니다. 이 패키지는 그 도�
 
 ## 설치
 
-Node.js 20 이상, FFmpeg와 ffprobe가 필요합니다. [시험판 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)을 풀거나 저장소의 이 폴더 전체를 받습니다. SKILL.md만 복사하면 실행되지 않습니다.
+Node.js 20 이상, FFmpeg와 ffprobe가 필요합니다. [설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)을 풀거나 저장소의 이 폴더 전체를 받습니다. SKILL.md만 복사하면 실행되지 않습니다.
 
 ```sh
 # 압축을 푼 motion-art-director 폴더에서, 사용할 클라이언트 하나를 선택
@@ -93,11 +95,11 @@ node scripts/motion.mjs styleframe examples/object-flight.project.json --time 5 
 - 덱/PDF: 같은 저장소의 [achmage-presentation 1.0.0](../../Presentation/achmage-presentation)을 scripts/connect-presentation.mjs로 연결합니다. 엔진 해시를 확인하며 Python 및 PDF 변환기가 추가로 필요합니다.
 - Claude Code 기본 경로는 이미지 생성 서비스를 요구하지 않습니다. Codex 이미지 생성은 해당 도구 사용이 가능한 환경에서만 제공합니다.
 
-## 시험판 범위
+## 지원 범위와 남은 검증
 
-3.1 개발 경로에는 촬영 영상과 투명 그래픽의 합성, 장면별 엔진 선택, 네 음원 버스, 일반화된 사건 엔딩, 실제 소스 구간 검사, 결정론적 환경음 생성과 도감 기법 어댑터가 추가되어 있습니다. [도시의 맥박 제작·검수 페이지](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city)에서 장편 실험과 남은 제한을 구분합니다. 기존3.0 프로젝트의 스키마를 자동 변환하지 않습니다.
+프로젝트 형식3.1 경로에는 촬영 영상과 투명 그래픽의 합성, 장면별 엔진 선택, 네 음원 버스, 일반화된 사건 엔딩, 실제 소스 구간 검사, 결정론적 환경음 생성과 도감 기법 어댑터가 추가되어 있습니다. [도시의 맥박 제작·검수 페이지](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city)에서 장편 실험과 남은 제한을 구분합니다. 기존3.0 프로젝트의 스키마를 자동 변환하지 않습니다.
 
-이 개발 변경이 설치판3.1 전체의 배포 검증 완료를 뜻하지는 않습니다. 새 혼합 영상의 일곱 출력 루트, 독립 전이 작품, 깨끗한 설치 및 배포 ZIP 재검증은 별도로 완료해야 합니다. [혼합 제작 계약](references/hybrid-production.md)과 [CLI](references/cli.md)를 참고하세요.
+4.0.0은 공개 패키지와 설치·회귀 검사를 기준으로 배포합니다. 이전3.1 연구 계획의 모든 미감·전이 조건을 완료했다고 소급하지 않습니다. 새 혼합 영상의 일곱 출력 종합 재검수, 독립 에이전트 전이 및 실제16GB 노트북 측정은 별도 조건입니다. [혼합 제작 계약](references/hybrid-production.md)과 [CLI](references/cli.md)를 참고하세요.
 
 [검증표](VALIDATION.md)에서 자동 검사, 프레임 관찰, 전체 청취, 미감 검토를 구분합니다. 현재 PC에서 GPU를 비활성화한 실행을 확인했으며 **실제 내장 그래픽·RAM 16GB 노트북 실측은 아직 없습니다.** 새로운 주제의 완성도는 연출과 대표 컷 검토로 판단해야 합니다.
 

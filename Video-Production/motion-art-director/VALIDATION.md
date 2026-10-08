@@ -1,4 +1,6 @@
-# 3.0.0-rc.1 검증 기록
+# Motion Art Director 4.0.0 검증 기록
+
+4.0.0은 아래 개발 검증을 모은 공개 버전이다. 이전 날짜의 pending 기록은 당시 상태이며, 실제 노트북 실측·모든 클라이언트의 자연어 호출·작품별 청취를 버전 번호로 통과 처리하지 않는다. 현재 범위는 references/release-4.md와 Release 첨부 검증표를 따른다.
 
 ## Racing transfer: completed-run audio dependencies
 

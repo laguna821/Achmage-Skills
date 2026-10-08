@@ -1,0 +1,52 @@
+{
+  "version": "4.0.0",
+  "primaryWorks": [
+    {
+      "id": "meal",
+      "title": "생각이 맛이 되다",
+      "file": "meal-chef-full180-v2.mp4",
+      "detail": "https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/film/?v=35"
+    },
+    {
+      "id": "racing",
+      "title": "RACING LAB · 속도를 지배하는 순간",
+      "file": "racing-full180-v1.mp4",
+      "detail": "https://motion-art-director-review-oct05.achmage2.chatgpt.site/racing/film/?v=30"
+    },
+    {
+      "id": "pedal",
+      "title": "페달 · 리듬이 속도가 되는 순간",
+      "file": "pedal-musical-full-v6.mp4",
+      "detail": "https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/musical/full/"
+    },
+    {
+      "id": "city",
+      "title": "도시의 맥박",
+      "file": "city-pulse-180-v4.mp4",
+      "detail": "https://motion-art-director-review-oct05.achmage2.chatgpt.site/city?v=16#film"
+    },
+    {
+      "id": "coffee",
+      "title": "한 잔이 완성되는 순간",
+      "file": "coffee-transfer-30-v1.mp4",
+      "detail": "https://motion-art-director-review-oct05.achmage2.chatgpt.site/coffee.html"
+    },
+    {
+      "id": "car",
+      "file": "grandeur-150.mp4"
+    },
+    {
+      "id": "book",
+      "file": "book.mp4"
+    },
+    {
+      "id": "flight",
+      "file": "flight.mp4"
+    },
+    {
+      "id": "water",
+      "file": "water.mp4"
+    }
+  ],
+  "policy": "Main gallery uses latest completed edition; diagnostic/counterexample clips remain in process links. No stock originals or private notes republished."
+}

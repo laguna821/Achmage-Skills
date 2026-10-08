@@ -1,10 +1,10 @@
 # Video-Production
 
-## Motion Art Director · 3.0.0-rc.1
+## Motion Art Director · 4.0.0
 
 기획 질문 → 연출안·스타일프레임·사운드 계획 → 검토 → 대표 컷 → 전체 제작 → 수정·검수까지 연결하는 Codex·Claude Code 공통 스킬입니다. 기본 SVG CPU 제작과 선택 Skia·공간 카메라·이미지 흐름을 지원합니다.
 
-[스킬·설치 안내](motion-art-director) · [공개 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [영상 파일과 출처](examples/motion-art-director) · [Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v3.0.0-rc.1)
+[스킬·설치 안내](motion-art-director) · [공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [영상 파일과 출처](examples/motion-art-director) · [Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)
 
 | 작품 | 보기 |
 |---|---|
