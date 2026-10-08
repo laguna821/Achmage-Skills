@@ -1,0 +1,406 @@
+{
+  "schemaVersion": 1,
+  "name": "hallym-kordoc",
+  "version": "1.0.0-rc.1",
+  "engine": {
+    "name": "kordoc",
+    "version": "4.18.13",
+    "commit": "969526345dde7d6acd2f2bfd3c8e592069333355"
+  },
+  "research": "research:rr-d6b4ac8b9f4584f41514e9fae7c70d2d:809a0e35ac5041d47e55f9d24b23f28bfa19b6db16bee53eaec214e3607dd22c",
+  "profile": "local-core",
+  "networkRequiredAtUse": false,
+  "certification": {
+    "contractTests": "see external validation report",
+    "hancom": "unverified",
+    "freshSessions": "see external validation report",
+    "web": "deferred"
+  },
+  "files": [
+    {
+      "path": "ASSETS.json",
+      "bytes": 1243,
+      "sha256": "d2c16095fb89ae008589ee06d0b33e9d6d386dd7f3e56cac42ce65168e289c7a"
+    },
+    {
+      "path": "assets/templates.zip",
+      "bytes": 437089,
+      "sha256": "53e61d3543769f1887ebcb876a28760d174141b2f6d5c81fd36867c083b01e20"
+    },
+    {
+      "path": "catalog.json",
+      "bytes": 90829,
+      "sha256": "5977a55b4b236c4e805a0d9ded38edb3fb01af62939b1759502303906b39024a"
+    },
+    {
+      "path": "core/ASSETS.json",
+      "bytes": 1243,
+      "sha256": "d2c16095fb89ae008589ee06d0b33e9d6d386dd7f3e56cac42ce65168e289c7a"
+    },
+    {
+      "path": "core/extensions/formula/package-lock.json",
+      "bytes": 36034,
+      "sha256": "54983b56a5ee021a88c04da7e417e0316133e3be14e441ada42c2ea6f619fd0e"
+    },
+    {
+      "path": "core/extensions/formula/package.json",
+      "bytes": 147,
+      "sha256": "8a02235a8b7b34fad551fde8d05f2edf20a21293ac991535b5cf7d6cfd0a8e4c"
+    },
+    {
+      "path": "core/extensions/ocr/package-lock.json",
+      "bytes": 8229,
+      "sha256": "b9a2f5e2c6bded6e6f1ae2ab75bda1d1ae861feee958ae0a0d77c2d53ac7fa94"
+    },
+    {
+      "path": "core/extensions/ocr/package.json",
+      "bytes": 135,
+      "sha256": "0e648214e7b5e713fc31e0595732df1a0a9f94ae62d8bc3e762f0acd14e4fb93"
+    },
+    {
+      "path": "core/extensions/pdf/package-lock.json",
+      "bytes": 9195,
+      "sha256": "8320f80995ede06614b9a018c2e632b39c414acd668cf0b16f81ea3a75a69959"
+    },
+    {
+      "path": "core/extensions/pdf/package.json",
+      "bytes": 162,
+      "sha256": "11da233047b3e7317145e9116eb1dcbcecba115a1f9f2467a1921778445900c3"
+    },
+    {
+      "path": "core/extensions/print/package-lock.json",
+      "bytes": 33230,
+      "sha256": "0d43c27beb6e5cd77b9344e72fe28259de1ca4c095dea49ac9035e1d331a858e"
+    },
+    {
+      "path": "core/extensions/print/package.json",
+      "bytes": 136,
+      "sha256": "6005cbbb7254f5d5c0c12ebd1f8e7830eb4939a0616484c8f89aa3718ba28a3b"
+    },
+    {
+      "path": "core/extensions/raster/package-lock.json",
+      "bytes": 20190,
+      "sha256": "dd1ff108e12c895f22986b665aa2d4f09f3be34dd6f70c5c7e30e0f7ebe26ed9"
+    },
+    {
+      "path": "core/extensions/raster/package.json",
+      "bytes": 127,
+      "sha256": "b5105428ba25b52dd0fe193c76651ed23f8c4e79160915b736cff785e7c20dc0"
+    },
+    {
+      "path": "core/LICENSE-WORKBENCH",
+      "bytes": 1086,
+      "sha256": "573c682d7b9a3640305cbe2dd62f2d30d2cffbb005c84d29de68d70b931d8cf4"
+    },
+    {
+      "path": "core/NOTICE-KORDOC",
+      "bytes": 6708,
+      "sha256": "75bb97bd32e3ae1fba5c6a7d204bdf926e5db408369e926ac637b480db6ec607"
+    },
+    {
+      "path": "core/PACKAGE-MANIFEST.json",
+      "bytes": 9225,
+      "sha256": "3cc899c2cdbf1d353bbec93d94d2009b6431f6801102e8bad66e719727789b19"
+    },
+    {
+      "path": "core/references/engine-api.d.ts",
+      "bytes": 121514,
+      "sha256": "99254e08f49934a4ca37f8e6fdcea5675f3c6dba8976177ac4798c3a57956a89"
+    },
+    {
+      "path": "core/references/gongmunseo.md",
+      "bytes": 2027,
+      "sha256": "769b97a8a02aaed77202fe27f595aee7b18d00a56cf50fc53e13a9654d5ca8f3"
+    },
+    {
+      "path": "core/references/hanmark.md",
+      "bytes": 1351,
+      "sha256": "25682f1ce3f0388939e02c06c07d226ae41dd91a2c4a2ca07684b18924f47b0b"
+    },
+    {
+      "path": "core/references/operations.md",
+      "bytes": 4122,
+      "sha256": "21a3bf91de60aa2668b9180be80745ec6c564774f29aa845fc2124e9aa0e33f1"
+    },
+    {
+      "path": "core/references/template-pack-v1.schema.json",
+      "bytes": 3416,
+      "sha256": "dbaff72594520a756a53cc18dc6eafed6f5cbdc2b42985dbfb63e235699e568b"
+    },
+    {
+      "path": "core/references/templates.md",
+      "bytes": 2270,
+      "sha256": "8a13f5024b13b7f8ab866b9412fb51ee0fd69e914e04964e7ab5f99d56ea6568"
+    },
+    {
+      "path": "core/scripts/chunk-3T6O35FL.mjs",
+      "bytes": 2092,
+      "sha256": "31c53fcbf0b4fe4b486bfbaa8dfd72c2ee679c1bc3114a3bcf1874fb0a54e9fb"
+    },
+    {
+      "path": "core/scripts/chunk-4KEIBFBR.mjs",
+      "bytes": 375774,
+      "sha256": "67e95ed71e1b3fc4bff1e48ad0843c83b760f100c75fb57920be88f720b0b733"
+    },
+    {
+      "path": "core/scripts/chunk-ACW76YWF.mjs",
+      "bytes": 84857,
+      "sha256": "066f3c6b7fe0f6336e5578d5c52da7d50e6a966bc575d32f3e8e3644e596a790"
+    },
+    {
+      "path": "core/scripts/chunk-AN7BM5RT.mjs",
+      "bytes": 427,
+      "sha256": "764fbebcb55f713fd71072c61f76dec93459ff617a342e5bb3505a0c213b7415"
+    },
+    {
+      "path": "core/scripts/chunk-HW7SKSEC.mjs",
+      "bytes": 40128,
+      "sha256": "47ebe8c5ce494b464d3a62c6280853bdf1c33937e37461c585655724f07f529e"
+    },
+    {
+      "path": "core/scripts/chunk-IF2FUB7X.mjs",
+      "bytes": 9776,
+      "sha256": "1bad58282b74b993b1e21b393b22381b6f72056c1c38615c2ffe0fe76f6bf581"
+    },
+    {
+      "path": "core/scripts/chunk-NVQKGGHQ.mjs",
+      "bytes": 2163826,
+      "sha256": "dfdc96506bc8b6c14aed84f60c50f7dab4561ab1f31741596255833a03a23e95"
+    },
+    {
+      "path": "core/scripts/chunk-PZTNOUTU.mjs",
+      "bytes": 8027,
+      "sha256": "8d7903ec77d45edf16cc9aae97ff41fae42ba09aedcb7595688b7ff52e2d046e"
+    },
+    {
+      "path": "core/scripts/chunk-VJBJ2GTC.mjs",
+      "bytes": 5790,
+      "sha256": "ffe4d498d812ecab2c7cacf694d3eb7b9f8055065a343da07e178de0de4b3341"
+    },
+    {
+      "path": "core/scripts/chunk-WT3MK4B4.mjs",
+      "bytes": 2025,
+      "sha256": "7aa782ed6489af105a016fb762d0ce1420bf9ff264ef11396c198d8903e2e311"
+    },
+    {
+      "path": "core/scripts/extensions.mjs",
+      "bytes": 343124,
+      "sha256": "5df956bc3be7979d4c7448c8c0777aa22860c83516c4cb1f8416fc08881e1a46"
+    },
+    {
+      "path": "core/scripts/formula-DAMFHLQO-LDM2NI7S.mjs",
+      "bytes": 26065,
+      "sha256": "5f8b0f379116689acacf5f384e7a7f366b0f2761bb8ab9e3676fdba9cc4024a7"
+    },
+    {
+      "path": "core/scripts/hanmark-FAJO3LAV.mjs",
+      "bytes": 5207,
+      "sha256": "a4a2d4a330c4e8fad206d4bdcf84041c7fcee6597e5926ad014b0ecd9ecf1b9d"
+    },
+    {
+      "path": "core/scripts/image-ocr-VH54SDZ7-F4MAU2QI.mjs",
+      "bytes": 5105,
+      "sha256": "a0d77cb150e432893b175fd027c998e7e35f75cec6965c51acce63770c915d78"
+    },
+    {
+      "path": "core/scripts/install.mjs",
+      "bytes": 3384,
+      "sha256": "ae771a4a7f88fa9f2aa3ec3a073b9fe41431efc10b3fb664bcfa0d5a8a44b29c"
+    },
+    {
+      "path": "core/scripts/launch.py",
+      "bytes": 2699,
+      "sha256": "133ae67f5851c8db1ac5ec4a303dcbeb8c4500d0ce0e0f8a1666f5158b4f9691"
+    },
+    {
+      "path": "core/scripts/model-prepare.mjs",
+      "bytes": 15075,
+      "sha256": "02ce88a80c0590e13d12ab9ce28a3185a7157dcffe2593769f0971ef7a19268b"
+    },
+    {
+      "path": "core/scripts/page-range-M5SRB2WK-P7SYKK4R.mjs",
+      "bytes": 385,
+      "sha256": "a78ccaac53099fa5c26a398ac5581d57bdd5d504e0d0f23b3adbc2f7db164053"
+    },
+    {
+      "path": "core/scripts/parser-Z6PHB54O-PKRA3MAX.mjs",
+      "bytes": 155335,
+      "sha256": "acb7e18a3126597c0d3253a5f6299b611980df016d81d63818be65821001a709"
+    },
+    {
+      "path": "core/scripts/pdf-ocr-JI3K7JIN-FFRWHHTW.mjs",
+      "bytes": 554,
+      "sha256": "c4bb59ff5e2a31f8f9b251e6ad0d5cb3b95c91e2e7094614546e42dec9f1905b"
+    },
+    {
+      "path": "core/scripts/run.mjs",
+      "bytes": 23000,
+      "sha256": "fe02a8815eb46d2d174870f4e24f4245b23578f961a4623e4edd6e043c5e9425"
+    },
+    {
+      "path": "core/setup.ps1",
+      "bytes": 1533,
+      "sha256": "6ab9fb18761e8f4c8134a5f8932144dee0e16d36c8d8c1afb0a7686c42166e8a"
+    },
+    {
+      "path": "core/setup.sh",
+      "bytes": 1825,
+      "sha256": "bbdd04bb84dc74d5a6eba070c6dad423b82d9a7bae1bd9d494462f05f5491163"
+    },
+    {
+      "path": "core/SKILL.md",
+      "bytes": 3023,
+      "sha256": "109952f0a1bb941c08a1106ca3b6e93cee96fdf62ff0dba0abe81fda7419e9a1"
+    },
+    {
+      "path": "core/templates/간이기안문_서식.hwpx",
+      "bytes": 7261,
+      "sha256": "2b58ef61f74a58126e125841d3850c5769bb642e29d3a2e9e3fb67cf5c58ee29"
+    },
+    {
+      "path": "core/templates/간이기안문_예시값.json",
+      "bytes": 542,
+      "sha256": "8313e3a59c03ceaa1815313e992b0f2005abadb27e321fae7c43724e98971a61"
+    },
+    {
+      "path": "core/templates/일반기안문_서식.hwpx",
+      "bytes": 6871,
+      "sha256": "7d40e770a018ae571ab10b5745376b03fd5ffa65fceaf5cce0d87cd0e4d4f437"
+    },
+    {
+      "path": "core/templates/일반기안문_예시값.json",
+      "bytes": 1149,
+      "sha256": "883afe5af8d134731dbb5a276e0d263e6a511d6165d608c9faee8f5538d1f55f"
+    },
+    {
+      "path": "core/THIRD_PARTY/apache-2.0.LICENSE",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "path": "core/THIRD_PARTY/claw-hwp.LICENSE",
+      "bytes": 1066,
+      "sha256": "479bb036c12f061ebba4ce47ca19ad1e23deffbac6dee534c8afeb6691b670e7"
+    },
+    {
+      "path": "core/THIRD_PARTY/hml-equation-parser.LICENSE",
+      "bytes": 11357,
+      "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+    },
+    {
+      "path": "core/THIRD_PARTY/hml-equation-parser.txt",
+      "bytes": 1536,
+      "sha256": "0c461b7f454f62b215e95cdea38ef39713a3c7b6dafe2abd008afbdce0605c71"
+    },
+    {
+      "path": "core/THIRD_PARTY/opendataloader-pdf.txt",
+      "bytes": 1258,
+      "sha256": "ab7eb9a62db6aa7164eadace902eed97eceb0103ee6a6638720042b286df2d0b"
+    },
+    {
+      "path": "core/THIRD_PARTY/pix2text.txt",
+      "bytes": 814,
+      "sha256": "bfb54ee17d23a5429fabbf568d5e12767b96c4428df8c11b250a4384ada217e4"
+    },
+    {
+      "path": "core/THIRD_PARTY/rhwp-forms.txt",
+      "bytes": 1841,
+      "sha256": "1d7d83b98004a56ced6d8518f70785fa58066e7ca36b56c93384da636fb04395"
+    },
+    {
+      "path": "core/THIRD-PARTY-LICENSES.txt",
+      "bytes": 543446,
+      "sha256": "ace64aed355d2d39aa50cbde7194f613782acc836b8923402cbf76854e77cd1b"
+    },
+    {
+      "path": "core/THIRD-PARTY-PACKAGES.json",
+      "bytes": 60144,
+      "sha256": "df6b69d6466290edf1d666e8c3bbff7da632e52e3ee0b20e983efdb8002186d2"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1086,
+      "sha256": "573c682d7b9a3640305cbe2dd62f2d30d2cffbb005c84d29de68d70b931d8cf4"
+    },
+    {
+      "path": "LICENSE-HANMARK",
+      "bytes": 1087,
+      "sha256": "f19a76e7904e71b96de3ed03e36184489c58eb6437c8e2ea8d8beb7ea16ee627"
+    },
+    {
+      "path": "references/optional.md",
+      "bytes": 1169,
+      "sha256": "8d6e97b3fd138b66aa87af5ac4b9e815b60410410d005e2b6eae07054ed951ce"
+    },
+    {
+      "path": "references/private-templates.md",
+      "bytes": 2347,
+      "sha256": "7bf1043242e745807adec1b890022204c170ba991528d96422175980e46c6ba1"
+    },
+    {
+      "path": "references/requests.md",
+      "bytes": 2963,
+      "sha256": "391ef17a3991b425b205154a29c5e8c381d261b297278194823e0121afc152cc"
+    },
+    {
+      "path": "scripts/catalog.mjs",
+      "bytes": 4953,
+      "sha256": "ef4876231e2a001d53ec98992d99eab1ba90ac221a5a2ae038543da18063d4d7"
+    },
+    {
+      "path": "scripts/common.mjs",
+      "bytes": 1515,
+      "sha256": "352f0e68660187c24aa9914a291ace3888c082ee54234b8f7341cfc311615a67"
+    },
+    {
+      "path": "scripts/engine.mjs",
+      "bytes": 200,
+      "sha256": "9b063bedc6c5014a92016add1d9b85ac0409608479ce9947c37cdc7db736460f"
+    },
+    {
+      "path": "scripts/hallym-helpers.mjs",
+      "bytes": 163054,
+      "sha256": "67b535018ab6da405f63ca54c7523a6639333c78d42de3488e81bd21535c68ca"
+    },
+    {
+      "path": "scripts/install.mjs",
+      "bytes": 3013,
+      "sha256": "a1a4a7f35d6d90ec57c6e3d2d1390aa1a57354ccb8bead647da14f3c64f9e307"
+    },
+    {
+      "path": "scripts/layout.mjs",
+      "bytes": 7575,
+      "sha256": "9e9b667fc46d0f3bb9f11b613a297764ab3c4807585f55269a2d1c20a52adc2a"
+    },
+    {
+      "path": "scripts/library.mjs",
+      "bytes": 6469,
+      "sha256": "ac8ba806cdbe708b04f984a40a050d6c97603bdb0daf47849b2103d6bfcad969"
+    },
+    {
+      "path": "scripts/run.mjs",
+      "bytes": 13117,
+      "sha256": "e59d9f6ed5b22199906d48a5e83cea0eab73d5be4b81d328032de4b868569a24"
+    },
+    {
+      "path": "scripts/style-provenance.json",
+      "bytes": 3578,
+      "sha256": "2a9fc36adfda8ec6200aeefb58815371689ece8f58628962b66aa42ab8246a99"
+    },
+    {
+      "path": "scripts/xml.mjs",
+      "bytes": 542562,
+      "sha256": "3913a453b420927267610a8210448a685a5421f4ce54a1d938240ffbdd23cfd8"
+    },
+    {
+      "path": "setup.ps1",
+      "bytes": 1533,
+      "sha256": "6ab9fb18761e8f4c8134a5f8932144dee0e16d36c8d8c1afb0a7686c42166e8a"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 3573,
+      "sha256": "2b53ad4061ef3236426ba06a5425090859c6827ac19b10d3817498465d9b4968"
+    }
+  ]
+}

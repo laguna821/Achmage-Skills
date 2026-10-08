@@ -1,0 +1,91 @@
+{
+  "music": [
+    {
+      "letter": "a",
+      "title": "Blown Away",
+      "bpm": 170,
+      "sourceIn": 45,
+      "movie": "racing-music-a-v1.mp4",
+      "rights": "Blown Away — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "source_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200100",
+      "listening": "pending",
+      "picture": "identical copied stream",
+      "sfx": "none — music selection comparison"
+    },
+    {
+      "letter": "b",
+      "title": "Furious Freak",
+      "bpm": 160,
+      "sourceIn": 46,
+      "movie": "racing-music-b-v1.mp4",
+      "rights": "Furious Freak — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "source_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1600021",
+      "listening": "pending",
+      "picture": "identical copied stream",
+      "sfx": "none — music selection comparison"
+    },
+    {
+      "letter": "c",
+      "title": "Neon Laser Horizon",
+      "bpm": 160,
+      "sourceIn": 36,
+      "movie": "racing-music-c-v1.mp4",
+      "rights": "Neon Laser Horizon — Kevin MacLeod (incompetech.com), CC BY 4.0",
+      "source_url": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN2000023",
+      "listening": "pending",
+      "picture": "identical copied stream",
+      "sfx": "none — music selection comparison"
+    }
+  ],
+  "footage": [
+    {
+      "id": "race-31985089",
+      "source": "https://www.pexels.com/video/exciting-race-cars-on-professional-track-31985089/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Vanessa V."
+    },
+    {
+      "id": "race-10825392",
+      "source": "https://www.pexels.com/video/a-racing-car-drifting-on-a-track-10825392/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-10825298",
+      "source": "https://www.pexels.com/video/cars-competing-on-a-racing-track-10825298/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-5991156",
+      "source": "https://www.pexels.com/video/a-race-car-in-motion-5991156/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Тасев Теодор"
+    },
+    {
+      "id": "race-30391335",
+      "source": "https://www.pexels.com/video/dynamic-car-close-up-on-industrial-track-30391335/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Gaurav Kumar"
+    },
+    {
+      "id": "race-5673623",
+      "source": "https://www.pexels.com/video/sports-car-on-the-desert-5673623/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-36223788",
+      "source": "https://www.pexels.com/video/sports-car-driving-on-curvy-mountain-road-36223788/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Pexels contributor; credit pending"
+    },
+    {
+      "id": "race-18437016",
+      "source": "https://www.pexels.com/video/race-day-vlog-18437016/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Jaxon Matthew Willis"
+    }
+  ],
+  "note": "Fictional concept montage; music selection comparisons, no aesthetic or sync approval."
+}

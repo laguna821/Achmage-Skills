@@ -1,0 +1,75 @@
+{
+  "scope": "29.8-second representative remake; full180expansion awaits direction review",
+  "frames": 894,
+  "shots": 22,
+  "sequenceGroups": 4,
+  "deliveries": [
+    {
+      "file": "pedal-editorial-proof-v7.mp4",
+      "bytes": 20215759,
+      "sha256": "7166d763f7755d489c371c5f551def96baad64579075fdeb85aecbae8f447dd4",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "29.800000",
+      "nb_read_frames": "894"
+    },
+    {
+      "file": "pedal-editorial-proof-v7-music-only.mp4",
+      "bytes": 20216849,
+      "sha256": "28191ecbfae9543911335165275bad617b9c5e5ca43fbb06f94febda0a000ba6",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "29.800000",
+      "nb_read_frames": "894"
+    },
+    {
+      "file": "pedal-editorial-proof-v7-diagnostic.mp4",
+      "bytes": 16678098,
+      "sha256": "723148f18665855c237ae89636fcd409dc52dbe3c3be09946206bcde6c1c4d47",
+      "width": 1920,
+      "height": 1080,
+      "r_frame_rate": "30/1",
+      "duration": "29.800000",
+      "nb_read_frames": "894"
+    }
+  ],
+  "technical": {
+    "decode": "passed",
+    "measuredPCMEvents": 22,
+    "arrivalTransitions": 3,
+    "maxQuantizationMs": 16.598333333333493,
+    "commonRegression": "targeted rhythm/review/bands/pacing/word-sync/mechanism/editorial/hybrid/ending"
+  },
+  "audio": {
+    "sourceStart": 220.163265,
+    "sourceSHA": "ea72d7433ffcc50b3e6d52ede277f96f553697b6ffae86dce10e0bbfdc809048",
+    "inheritedMasterGainDB": 6.610000000000002,
+    "duck": false,
+    "voice": false
+  },
+  "render": {
+    "started": "2026-10-07T11:58:26.713Z",
+    "finished": "2026-10-07T12:00:41.898Z",
+    "runtime": "48f4358235ab1f4d",
+    "gpu": false,
+    "jobs": 1
+  },
+  "review": {
+    "encodedVisual": "contactsheet + selected event frames; full-motion review pending",
+    "listening": "pending; not certified by numeric analysis",
+    "userAesthetic": "pending",
+    "physical16GBNotebook": "not measured"
+  },
+  "fixed": [
+    "Tire/ground gap eliminated using tire outer edge",
+    "Front view wheel and fork lean together around ground contact",
+    "Hub redrawn as stepped metal axle rather than oval",
+    "Path drawing uses normalized length",
+    "Three four-frame object/space transitions",
+    "Object-bounding-box gradient on zero-height spoke paths replaced with visible metal stroke",
+    "Three transitions anticipate music by four frames and arrive on selected onset; start versus arrival is a common rhythm target property"
+  ],
+  "research": "research:rr-3397c15e1edc811c64a3ad33fcad1780:5bd5b1bc4e70da4ebae291bfd4fd75611a8a726851e0333d81e20e4364ef9450"
+}

@@ -4,6 +4,11 @@
 
 ## 📦 수록 스킬
 
+### [Hallym-Documents/hallym-kordoc](Hallym-Documents) — 한림대 문서 작성·HWPX 양식 자동화 (1.0.0-rc.1)
+
+34개 문서군의 양식 선택부터 Markdown 작성·HWPX 생성·검사까지 연결합니다. 공개 원문 참고 재구성 13개와 공통 초안 21개, 개인 양식 등록·재사용을 포함한 **독립 설치 ZIP 약 1.66MB**입니다. Windows Codex·Claude Code의 새 세션 재사용을 확인했으며 한컴 직접 열기·편집·저장은 미검증입니다.
+→ [설치·사용 안내](Hallym-Documents/README.md) · [설치 ZIP](Hallym-Documents/downloads/hallym-kordoc-1.0.0-rc.1.zip) · [검증 범위](Hallym-Documents/VALIDATION.md)
+
 ### [Document-Processing/kordoc-workbench](Document-Processing) — 한글 양식 분석·HWPX 보고서 (0.2.0)
 
 참조 HWP/HWPX 양식을 분석하고 Markdown을 같은 스타일의 보고서로 조판합니다. **기본 ZIP 1.04MB**에 공식 kordoc 4.18.13 엔진과 공문서·양식·검증 기능을 포함하며 OCR·PDF 확장은 필요할 때 준비합니다. Codex·Claude Code·코드 실행 가능한 Claude/ChatGPT 웹에서 사용합니다.
@@ -64,6 +69,7 @@ npx skills add laguna821/Achmage-Skills
 /plugin install render-audit@achmage-skills
 /plugin install insta-cardnews@achmage-skills
 /plugin install kordoc-workbench@achmage-skills
+/plugin install hallym-kordoc@achmage-skills
 /plugin install motion-art-director@achmage-skills
 ```
 

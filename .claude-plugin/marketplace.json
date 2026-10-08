@@ -130,6 +130,24 @@
         "codex",
         "claude-code"
       ]
+    },
+    {
+      "name": "hallym-kordoc",
+      "source": "./Hallym-Documents",
+      "version": "1.0.0-rc.1",
+      "description": "Hallym University reports and forms: select a document family, write Markdown, produce editable HWPX, and reuse personal templates.",
+      "author": {
+        "name": "laguna821"
+      },
+      "license": "MIT",
+      "category": "productivity",
+      "tags": [
+        "hallym",
+        "hwpx",
+        "reports",
+        "korean",
+        "forms"
+      ]
     }
   ]
 }

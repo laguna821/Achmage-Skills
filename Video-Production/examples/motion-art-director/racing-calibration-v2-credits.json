@@ -1,0 +1,232 @@
+{
+  "music": {
+    "title": "Blown Away",
+    "artist": "Kevin MacLeod (incompetech.com)",
+    "source": "https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200100",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "changes": "Excerpted, level adjusted, synchronized to new footage. Reentry opening uses an authored volume envelope."
+  },
+  "footage": [
+    {
+      "id": "race-31985089",
+      "source": "https://www.pexels.com/video/exciting-race-cars-on-professional-track-31985089/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Vanessa V."
+    },
+    {
+      "id": "race-10825392",
+      "source": "https://www.pexels.com/video/a-racing-car-drifting-on-a-track-10825392/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-10825298",
+      "source": "https://www.pexels.com/video/cars-competing-on-a-racing-track-10825298/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-5991156",
+      "source": "https://www.pexels.com/video/a-race-car-in-motion-5991156/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Тасев Теодор"
+    },
+    {
+      "id": "race-30391335",
+      "source": "https://www.pexels.com/video/dynamic-car-close-up-on-industrial-track-30391335/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Gaurav Kumar"
+    },
+    {
+      "id": "race-5673623",
+      "source": "https://www.pexels.com/video/sports-car-on-the-desert-5673623/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-36223788",
+      "source": "https://www.pexels.com/video/sports-car-driving-on-curvy-mountain-road-36223788/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Pexels contributor; credit pending"
+    },
+    {
+      "id": "race-18437016",
+      "source": "https://www.pexels.com/video/race-day-vlog-18437016/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Jaxon Matthew Willis"
+    },
+    {
+      "id": "race-3774642",
+      "source": "https://www.pexels.com/video/racing-cars-running-on-a-race-track-3774642/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Taryn Elliott"
+    },
+    {
+      "id": "race-9737833",
+      "source": "https://www.pexels.com/video/drone-shot-of-race-cars-racing-on-track-9737833/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "8 K"
+    },
+    {
+      "id": "race-9330847",
+      "source": "https://www.pexels.com/video/cars-drifting-on-a-race-track-9330847/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-10738994",
+      "source": "https://www.pexels.com/video/a-drift-car-spinning-out-at-a-racetrack-10738994/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "WeStarMoney Rec"
+    },
+    {
+      "id": "race-16685623",
+      "source": "https://www.pexels.com/video/a-man-is-driving-a-car-with-his-hand-on-the-steering-wheel-16685623/",
+      "license": "https://www.pexels.com/license/",
+      "credit": "Erik Mclean"
+    }
+  ],
+  "review": [
+    {
+      "name": "fast",
+      "frames": 847,
+      "seconds": 28.233333333333334,
+      "shots": 26,
+      "mixed": "racing-fast-v2.mp4",
+      "source_action": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "rows": [
+          {
+            "scene": "shot-03",
+            "layer": "footage",
+            "source_seconds": 1.5,
+            "output_frame": 73,
+            "target_frame": 73,
+            "error_frames": 0,
+            "entity": "shift-example",
+            "visual_review": "not inferred"
+          }
+        ],
+        "review": "metadata/timing contract only"
+      },
+      "timing_mutants": [
+        {
+          "shift_frames": -4,
+          "rejected": true
+        },
+        {
+          "shift_frames": -2,
+          "rejected": true
+        },
+        {
+          "shift_frames": -1,
+          "rejected": true
+        },
+        {
+          "shift_frames": 1,
+          "rejected": true
+        },
+        {
+          "shift_frames": 2,
+          "rejected": true
+        },
+        {
+          "shift_frames": 4,
+          "rejected": true
+        }
+      ],
+      "encoded_loudness": {
+        "input_i": "-16.12",
+        "input_tp": "-4.46",
+        "input_lra": "1.70",
+        "input_thresh": "-26.12",
+        "output_i": "-15.66",
+        "output_tp": "-4.04",
+        "output_lra": "1.30",
+        "output_thresh": "-25.66",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.34"
+      },
+      "music": {
+        "title": "Blown Away",
+        "source_in": 45.1944705882353,
+        "sha256": "cfcc26a555a993fb671dd3b469f7045511d29f581c61f127be692fc935dda04b"
+      },
+      "listening": "pending",
+      "variants": "Same fixed music; picture delayed0/2/4frames. SFX omitted in timing comparisons to avoid confounding the listening test. Mixed version retains designed engine/tire sounds."
+    },
+    {
+      "name": "reentry",
+      "frames": 804,
+      "seconds": 26.8,
+      "shots": 19,
+      "mixed": "racing-reentry-v2.mp4",
+      "source_action": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "rows": [
+          {
+            "scene": "shot-04",
+            "layer": "footage",
+            "source_seconds": 1.5,
+            "output_frame": 222,
+            "target_frame": 222,
+            "error_frames": 0,
+            "entity": "shift-example",
+            "visual_review": "not inferred"
+          }
+        ],
+        "review": "metadata/timing contract only"
+      },
+      "timing_mutants": [
+        {
+          "shift_frames": -4,
+          "rejected": true
+        },
+        {
+          "shift_frames": -2,
+          "rejected": true
+        },
+        {
+          "shift_frames": -1,
+          "rejected": true
+        },
+        {
+          "shift_frames": 1,
+          "rejected": true
+        },
+        {
+          "shift_frames": 2,
+          "rejected": true
+        },
+        {
+          "shift_frames": 4,
+          "rejected": true
+        }
+      ],
+      "encoded_loudness": {
+        "input_i": "-16.10",
+        "input_tp": "-3.33",
+        "input_lra": "4.60",
+        "input_thresh": "-26.10",
+        "output_i": "-14.58",
+        "output_tp": "-1.73",
+        "output_lra": "2.80",
+        "output_thresh": "-24.58",
+        "normalization_type": "dynamic",
+        "target_offset": "-1.42"
+      },
+      "music": {
+        "title": "Blown Away",
+        "source_in": 124.279002,
+        "sha256": "cfcc26a555a993fb671dd3b469f7045511d29f581c61f127be692fc935dda04b"
+      },
+      "listening": "pending",
+      "variants": "Same fixed music; picture delayed0/2/4frames. SFX omitted in timing comparisons to avoid confounding the listening test. Mixed version retains designed engine/tire sounds."
+    }
+  ],
+  "note": "ACH / RACING LAB is a fictional editing study. Different cars and drivers are a montage, not one race record. Designed engine and tire effects. Human sync/listening review pending. Source footage is not redistributed."
+}

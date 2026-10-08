@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TemplatePack v1",
+  "type": "object",
+  "required": [
+    "kind",
+    "schemaVersion",
+    "id",
+    "version",
+    "name",
+    "contentHash",
+    "source",
+    "engine",
+    "markdownSkeleton",
+    "fields",
+    "tableRules",
+    "assets",
+    "evidence",
+    "limitations"
+  ],
+  "properties": {
+    "kind": {
+      "const": "kordoc-template-pack"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_.-]{1,100}$"
+    },
+    "version": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contentHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "sha256"
+      ],
+      "properties": {
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        }
+      }
+    },
+    "engine": {
+      "type": "object",
+      "required": [
+        "version"
+      ],
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "commit": {
+          "type": "string"
+        }
+      }
+    },
+    "markdownSkeleton": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "documentStyle": {
+      "type": "object",
+      "description": "HanMark DocumentStyleProfile schemaVersion 3; runtime validation uses its normalizer."
+    },
+    "tableProfile": {
+      "type": "object",
+      "description": "Official kordoc FormatProfile, schema_version 0.3.0."
+    },
+    "gongmun": {
+      "type": "object",
+      "properties": {
+        "preset": {
+          "enum": [
+            "official",
+            "report",
+            "plan",
+            "notice",
+            "minutes",
+            "gaejosik",
+            "ministry",
+            "bangchim",
+            "press"
+          ]
+        }
+      }
+    },
+    "tableRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "tableIndex"
+        ],
+        "properties": {
+          "tableIndex": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "headerRows": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "dataRow": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "sha256",
+          "base64"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "base64": {
+            "type": "string"
+          },
+          "mimeType": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validation": {
+      "type": "object"
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  }
+}

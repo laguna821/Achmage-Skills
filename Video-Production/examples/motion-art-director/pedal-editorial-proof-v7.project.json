@@ -1,0 +1,4023 @@
+{
+  "schema_version": "3.1.0",
+  "project_id": "pedal-editorial-proof-v7",
+  "title": "페달 — 힘이 속도가 되는 30초",
+  "direction": "손과 발에서 시작한 힘이 크랭크·체인·기어·지면을 거쳐 전진한다. 여러 짧은 시점이 하나의 인과를 유지한다. 여러 라이더와 설명용 그래픽의 시각적 비유이며 특정 선수의 연속 기록이 아니다.",
+  "renderer": "hybrid-composite",
+  "timeline_semantics": "segments-v1",
+  "editing_contract": "shot-rhythm-v1",
+  "direction_contract": "object-first-v1",
+  "visual_policy": "licensed_media",
+  "render_network": "local_only",
+  "seed": 10272026,
+  "profile": {
+    "jobs": 1,
+    "gpu": false
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "total_frames": 894
+  },
+  "routes": [
+    "video-editing"
+  ],
+  "sources": [
+    {
+      "source_id": "author",
+      "title": "새 30초 구동계 편집 기획·그래픽·카피",
+      "retrieval_state": "authored"
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "cycle-5790076",
+      "kind": "video",
+      "path": "reconnect/5790076.mp4",
+      "sha256": "47ffd240edae4e6397f12e168d96e0ae7162e9fcb0102c95e7272b7f0a37d314",
+      "bytes": 8871748,
+      "width": 1920,
+      "height": 1080,
+      "duration": 14.147467,
+      "time_base": "1/30000",
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": null,
+      "provenance": "Official Pexels media URL observed in source-page DOM; source selection review pending. Curated as multiple riders; no same-person continuity claim.",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/three-cyclists-on-road-5790076/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "Pexels / source contributor linked on original detail page",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      },
+      "candidate_reason": "Group front tracking"
+    },
+    {
+      "asset_id": "cycle-5790147",
+      "kind": "video",
+      "path": "reconnect/5790147.mp4",
+      "sha256": "9f74fe4cb243691b5b255e4eab2ab0b9eef893fa087bbe48f18bb5fd38fb1743",
+      "bytes": 8707630,
+      "width": 1920,
+      "height": 1080,
+      "duration": 14.147467,
+      "time_base": "1/30000",
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": null,
+      "provenance": "Official Pexels media URL observed in source-page DOM; source selection review pending. Curated as multiple riders; no same-person continuity claim.",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/three-cyclists-on-road-5790147/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "Pexels / source contributor linked on original detail page",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      },
+      "candidate_reason": "Forest side tracking"
+    },
+    {
+      "asset_id": "cycle-5790152",
+      "kind": "video",
+      "path": "reconnect/5790152.mp4",
+      "sha256": "e784ac9877a7cc34e8054bf787720e5f7200911cfcf79a0cfb74532c4bf352bb",
+      "bytes": 7873829,
+      "width": 1920,
+      "height": 1080,
+      "duration": 12.846167,
+      "time_base": "1/30000",
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": null,
+      "provenance": "Official Pexels media URL observed in source-page DOM; source selection review pending. Curated as multiple riders; no same-person continuity claim.",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/three-cyclists-on-road-5790152/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "Pexels / source contributor linked on original detail page",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      },
+      "candidate_reason": "Forest group"
+    },
+    {
+      "asset_id": "cycle-5837698",
+      "kind": "video",
+      "path": "reconnect/5837698.mp4",
+      "sha256": "e51ebcb775ac873400f00e9fbdcad1f99bb3aadec3b55258a183f4aba3c04dad",
+      "bytes": 12423325,
+      "width": 2560,
+      "height": 1440,
+      "duration": 8.299958,
+      "time_base": "1/24000",
+      "avg_frame_rate": "24000/1001",
+      "r_frame_rate": "24000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": null,
+      "provenance": "Official Pexels media URL observed in source-page DOM; source selection review pending. Curated as multiple riders; no same-person continuity claim.",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/man-using-a-bike-5837698/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "Pexels / source contributor linked on original detail page",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      },
+      "candidate_reason": "Foot and crank close-up"
+    },
+    {
+      "asset_id": "the-lift",
+      "kind": "audio",
+      "path": "reconnect/the-lift.mp3",
+      "sha256": "ea72d7433ffcc50b3e6d52ede277f96f553697b6ffae86dce10e0bbfdc809048",
+      "provenance": "Downloaded from the composer official track page using its Download control",
+      "rights": {
+        "source_url": "https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1500066",
+        "license_url": "https://creativecommons.org/licenses/by/4.0/",
+        "attribution": "The Lift by Kevin MacLeod (incompetech.com), licensed CC BY 4.0. Excerpted, edited, normalized and mixed with original sound effects.",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      },
+      "bpm": 133,
+      "excerpt": 100,
+      "selection": "pending same-screen listening comparison"
+    },
+    {
+      "sha256": "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396",
+      "bytes": 10346300,
+      "width": 2560,
+      "height": 1440,
+      "duration": 13.638625,
+      "time_base": "1/24000",
+      "avg_frame_rate": "24000/1001",
+      "r_frame_rate": "24000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": null,
+      "asset_id": "cycle-5837706",
+      "kind": "video",
+      "path": "reconnect/5837706.mp4",
+      "provenance": "Official public media URL from Pexels detail-page link; selection pending",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/close-up-video-of-a-road-bike-handle-5837706/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "RDNE Stock project / Pexels",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      }
+    },
+    {
+      "sha256": "630bf10a2fc213504ab9ad4106ab3778aa803191fcc0aaa6f546d3b99a62ae89",
+      "bytes": 8574313,
+      "width": 1920,
+      "height": 1080,
+      "duration": 13.747067,
+      "time_base": "1/30000",
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": null,
+      "asset_id": "cycle-5789979",
+      "kind": "video",
+      "path": "reconnect/5789979.mp4",
+      "provenance": "Official public media URL from Pexels detail-page link; selection pending",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/cycling-closeup-5789979/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "Pavel Danilyuk / Pexels",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      }
+    },
+    {
+      "sha256": "38271a13dc055dcae8c01adab2d6a51c318e1bfeae196d6b9cce0a20548cbd38",
+      "bytes": 30801010,
+      "width": 2560,
+      "height": 1440,
+      "duration": 17.816667,
+      "time_base": "1/30000",
+      "avg_frame_rate": "30000/1001",
+      "r_frame_rate": "30000/1001",
+      "sample_aspect_ratio": "1:1",
+      "rotation": 0,
+      "color_space": "bt709",
+      "color_transfer": "bt709",
+      "color_primaries": "bt709",
+      "audio": {
+        "index": 1,
+        "sample_rate": 48000,
+        "channels": 2
+      },
+      "asset_id": "cycle-9758409",
+      "kind": "video",
+      "path": "reconnect/9758409.mp4",
+      "provenance": "Official public media URL from Pexels detail-page link; selection pending",
+      "rights": {
+        "source_url": "https://www.pexels.com/video/drone-following-cyclist-riding-along-straight-road-9758409/",
+        "license_url": "https://www.pexels.com/license/",
+        "attribution": "Stephen Pierce / Pexels",
+        "commercial": true,
+        "adaptation": true,
+        "raw_redistribution": false,
+        "accessed_at": "2026-10-07"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "grip",
+      "start": 0,
+      "end": 54,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5837706",
+            "source_in": 2.2,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          },
+          {
+            "id": "shade",
+            "kind": "svg",
+            "svg": "<rect width=\"1920\" height=\"1080\" fill=\"url(#shade)\"/>"
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "쥐고",
+            "position": [
+              100,
+              930
+            ],
+            "size": 160,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start",
+            "x": -110,
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.16,
+                "x": 0,
+                "opacity": 1,
+                "ease": "out"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "손이 핸들 위에 닿아 힘의 시작점을 만든다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "손이 핸들 위에 닿아 힘의 시작점을 만든다",
+            "features": [
+              "손가락이 후드 앞에 열린다",
+              "손가락이 후드를 감싼다"
+            ],
+            "bindings": [
+              "footage",
+              "shade"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.8
+            ],
+            "action": "손이 핸들 위에 닿아 힘의 시작점을 만든다",
+            "before": "손가락이 후드 앞에 열린다",
+            "after": "손가락이 후드를 감싼다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 손가락이 후드를 감싼다"
+        ]
+      }
+    },
+    {
+      "id": "press",
+      "start": 54,
+      "end": 78,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5837698",
+            "source_in": 3.65,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "손에서 발로 시선을 내려 신발이 페달과 수평을 이룬다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "손에서 발로 시선을 내려 신발이 페달과 수평을 이룬다",
+            "features": [
+              "신발 앞코가 아래를 향한다",
+              "앞코가 수평으로 올라온다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.8
+            ],
+            "action": "손에서 발로 시선을 내려 신발이 페달과 수평을 이룬다",
+            "before": "신발 앞코가 아래를 향한다",
+            "after": "앞코가 수평으로 올라온다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 앞코가 수평으로 올라온다"
+        ]
+      }
+    },
+    {
+      "id": "crank",
+      "start": 78,
+      "end": 135,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "crank",
+            "kind": "svg",
+            "svg": "<polygon points=\"1602.000,555.000 1608.760,569.691 1608.039,584.366 1599.872,598.324 1598.219,612.693 1603.003,628.140 1600.373,642.596 1590.454,655.368 1586.939,669.398 1589.666,685.338 1585.172,699.326 1573.670,710.695 1568.355,724.146 1568.978,740.305 1562.696,753.588 1549.809,763.357 1542.783,776.000 1541.292,792.102 1533.330,804.451 1519.278,812.455 1510.662,824.073 1507.082,839.843 1497.576,851.046 1482.600,857.148 1472.541,867.541 1466.933,882.709 1456.046,892.576 1440.402,896.671 1429.073,905.662 1421.532,919.968 1409.451,928.330 1393.406,930.347 1381.000,937.783 1371.657,950.983 1358.588,957.696 1342.417,957.602 1329.146,963.355 1318.160,975.222 1304.326,980.172 1288.306,977.968 1274.398,981.939 1261.957,992.271 1247.596,995.373 1232.000,991.096 1217.693,993.219 1204.010,1001.838 1189.366,1003.039 1174.462,996.763 1160.000,997.000 1145.309,1003.760 1130.634,1003.039 1116.676,994.872 1102.307,993.219 1086.860,998.003 1072.404,995.373 1059.632,985.454 1045.602,981.939 1029.662,984.666 1015.674,980.172 1004.305,968.670 990.854,963.355 974.695,963.978 961.412,957.696 951.643,944.809 939.000,937.783 922.898,936.292 910.549,928.330 902.545,914.278 890.927,905.662 875.157,902.082 863.954,892.576 857.852,877.600 847.459,867.541 832.291,861.933 822.424,851.046 818.329,835.402 809.338,824.073 795.032,816.532 786.670,804.451 784.653,788.406 777.217,776.000 764.017,766.657 757.304,753.588 757.398,737.417 751.645,724.146 739.778,713.160 734.828,699.326 737.032,683.306 733.061,669.398 722.729,656.957 719.627,642.596 723.904,627.000 721.781,612.693 713.162,599.010 711.961,584.366 718.237,569.462 718.000,555.000 711.240,540.309 711.961,525.634 720.128,511.676 721.781,497.307 716.997,481.860 719.627,467.404 729.546,454.632 733.061,440.602 730.334,424.662 734.828,410.674 746.330,399.305 751.645,385.854 751.022,369.695 757.304,356.412 770.191,346.643 777.217,334.000 778.708,317.898 786.670,305.549 800.722,297.545 809.338,285.927 812.918,270.157 822.424,258.954 837.400,252.852 847.459,242.459 853.067,227.291 863.954,217.424 879.598,213.329 890.927,204.338 898.468,190.032 910.549,181.670 926.594,179.653 939.000,172.217 948.343,159.017 961.412,152.304 977.583,152.398 990.854,146.645 1001.840,134.778 1015.674,129.828 1031.694,132.032 1045.602,128.061 1058.043,117.729 1072.404,114.627 1088.000,118.904 1102.307,116.781 1115.990,108.162 1130.634,106.961 1145.538,113.237 1160.000,113.000 1174.691,106.240 1189.366,106.961 1203.324,115.128 1217.693,116.781 1233.140,111.997 1247.596,114.627 1260.368,124.546 1274.398,128.061 1290.338,125.334 1304.326,129.828 1315.695,141.330 1329.146,146.645 1345.305,146.022 1358.588,152.304 1368.357,165.191 1381.000,172.217 1397.102,173.708 1409.451,181.670 1417.455,195.722 1429.073,204.338 1444.843,207.918 1456.046,217.424 1462.148,232.400 1472.541,242.459 1487.709,248.067 1497.576,258.954 1501.671,274.598 1510.662,285.927 1524.968,293.468 1533.330,305.549 1535.347,321.594 1542.783,334.000 1555.983,343.343 1562.696,356.412 1562.602,372.583 1568.355,385.854 1580.222,396.840 1585.172,410.674 1582.968,426.694 1586.939,440.602 1597.271,453.043 1600.373,467.404 1596.096,483.000 1598.219,497.307 1606.838,510.990 1608.039,525.634 1601.763,540.538\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"1160\" cy=\"555\" r=\"342.65000000000003\" fill=\"#171b1b\"/><path d=\"M1160 555L1529.35 555\" stroke=\"#b9c3b3\" stroke-width=\"71.2\" transform=\"rotate(0 1160 555)\"/><path d=\"M1160 555L1529.35 555\" stroke=\"#b9c3b3\" stroke-width=\"71.2\" transform=\"rotate(72 1160 555)\"/><path d=\"M1160 555L1529.35 555\" stroke=\"#b9c3b3\" stroke-width=\"71.2\" transform=\"rotate(144 1160 555)\"/><path d=\"M1160 555L1529.35 555\" stroke=\"#b9c3b3\" stroke-width=\"71.2\" transform=\"rotate(216 1160 555)\"/><path d=\"M1160 555L1529.35 555\" stroke=\"#b9c3b3\" stroke-width=\"71.2\" transform=\"rotate(288 1160 555)\"/><circle cx=\"1160\" cy=\"555\" r=\"62.300000000000004\" fill=\"#edf0e6\"/><circle cx=\"1160\" cy=\"555\" r=\"33.375\" fill=\"#111718\"/><circle cx=\"1160\" cy=\"555\" r=\"391.6\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"1160\" cy=\"555\" r=\"369.34999999999997\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"1360.25\" cy=\"555\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"1221.8806531235832\" cy=\"745.4490673881045\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"997.9943468764168\" cy=\"672.7039967715677\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"997.9943468764168\" cy=\"437.29600322843226\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"1221.8806531235832\" cy=\"364.5509326118955\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><path d=\"M1160 555L985 835\" fill=\"none\" stroke=\"#b9c3b3\" stroke-width=\"58\" stroke-linecap=\"round\"/><rect x=\"898\" y=\"804\" width=\"175\" height=\"40\" rx=\"8\" fill=\"#d5ff56\"/>",
+            "pivot": [
+              1160,
+              555
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 1.7666666666666666,
+                "rotation": 110,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "verb",
+            "kind": "text",
+            "text": "밟아",
+            "position": [
+              90,
+              540
+            ],
+            "size": 230,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start",
+            "x": -120,
+            "keyframes": [
+              {
+                "at": 0.12,
+                "x": 0,
+                "ease": "out"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "발의 압력이 크랭크의 큰 회전으로 바뀐다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "발의 압력이 크랭크의 큰 회전으로 바뀐다",
+            "features": [
+              "페달이 오른쪽 아래에 놓인다",
+              "크랭크가 전진 방향으로 돌아 다음 이빨을 당긴다"
+            ],
+            "bindings": [
+              "crank"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.9
+            ],
+            "action": "발의 압력이 크랭크의 큰 회전으로 바뀐다",
+            "before": "페달이 오른쪽 아래에 놓인다",
+            "after": "크랭크가 전진 방향으로 돌아 다음 이빨을 당긴다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 크랭크가 전진 방향으로 돌아 다음 이빨을 당긴다"
+        ]
+      },
+      "transition_in": {
+        "kind": "circleopen",
+        "duration": 0.13333333333333333
+      }
+    },
+    {
+      "id": "tooth",
+      "start": 135,
+      "end": 163,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "gear",
+            "kind": "svg",
+            "svg": "<polygon points=\"1907.000,1250.000 1913.755,1271.855 1913.019,1293.698 1904.810,1315.049 1903.107,1336.681 1907.876,1359.053 1905.185,1380.743 1895.095,1401.272 1891.460,1422.665 1894.204,1445.374 1889.580,1466.735 1877.690,1486.277 1872.152,1507.258 1872.849,1530.122 1866.329,1550.983 1852.735,1569.380 1845.339,1589.779 1843.984,1612.614 1835.620,1632.806 1820.432,1649.911 1811.237,1669.566 1807.840,1692.187 1797.700,1711.548 1781.040,1727.222 1770.120,1745.974 1764.709,1768.199 1752.874,1786.574 1734.876,1800.692 1722.319,1818.388 1714.938,1840.040 1701.504,1857.279 1682.312,1869.727 1668.220,1886.227 1658.928,1907.129 1644.002,1923.095 1623.772,1933.772 1608.258,1948.943 1597.129,1968.928 1580.832,1983.492 1559.727,1992.312 1542.915,2006.031 1530.040,2024.938 1512.503,2037.983 1490.692,2044.876 1472.717,2057.032 1458.199,2074.709 1439.564,2086.129 1417.222,2091.040 1398.231,2101.536 1382.187,2117.840 1362.603,2127.544 1339.911,2130.432 1320.055,2139.183 1302.614,2153.984 1282.239,2161.893 1259.380,2162.735 1238.819,2169.672 1220.122,2182.849 1199.120,2188.900 1176.277,2187.690 1155.178,2192.755 1135.374,2204.204 1113.914,2208.347 1091.272,2205.095 1069.804,2208.248 1049.053,2217.876 1027.309,2220.079 1005.049,2214.810 983.384,2216.026 961.855,2223.755 940.000,2224.000 918.302,2216.757 896.616,2216.026 874.480,2221.794 852.691,2220.079 831.730,2210.920 810.196,2208.248 787.633,2212.008 766.086,2208.347 746.030,2197.346 724.822,2192.755 702.012,2194.478 680.880,2188.900 661.891,2176.145 641.181,2169.672 618.308,2169.342 597.761,2161.893 579.992,2147.487 559.945,2139.183 537.194,2136.805 517.397,2127.544 500.991,2111.603 481.769,2101.536 459.323,2097.128 440.436,2086.129 425.525,2068.782 407.283,2057.032 385.322,2050.630 367.497,2037.983 354.201,2019.369 337.085,2006.031 315.787,1997.686 299.168,1983.492 287.594,1963.761 271.742,1948.943 251.278,1938.722 235.998,1923.095 226.239,1902.406 211.780,1886.227 192.314,1874.213 178.496,1857.279 170.631,1835.799 157.681,1818.388 139.370,1804.678 127.126,1786.574 121.218,1764.475 109.880,1745.974 92.872,1730.677 82.300,1711.548 78.397,1689.009 68.763,1669.566 53.195,1652.806 44.380,1632.806 42.513,1610.008 34.661,1589.779 20.658,1571.692 13.671,1550.983 13.855,1528.109 7.848,1507.258 -4.478,1487.988 -9.580,1466.735 -7.346,1443.970 -11.460,1422.665 -22.008,1402.367 -25.185,1380.743 -20.920,1358.270 -23.107,1336.681 -31.794,1315.520 -33.019,1293.698 -26.757,1271.698 -27.000,1250.000 -33.755,1228.145 -33.019,1206.302 -24.810,1184.951 -23.107,1163.319 -27.876,1140.947 -25.185,1119.257 -15.095,1098.728 -11.460,1077.335 -14.204,1054.626 -9.580,1033.265 2.310,1013.723 7.848,992.742 7.151,969.878 13.671,949.017 27.265,930.620 34.661,910.221 36.016,887.386 44.380,867.194 59.568,850.089 68.763,830.434 72.160,807.813 82.300,788.452 98.960,772.778 109.880,754.026 115.291,731.801 127.126,713.426 145.124,699.308 157.681,681.612 165.062,659.960 178.496,642.721 197.688,630.273 211.780,613.773 221.072,592.871 235.998,576.905 256.228,566.228 271.742,551.057 282.871,531.072 299.168,516.508 320.273,507.688 337.085,493.969 349.960,475.062 367.497,462.017 389.308,455.124 407.283,442.968 421.801,425.291 440.436,413.871 462.778,408.960 481.769,398.464 497.813,382.160 517.397,372.456 540.089,369.568 559.945,360.817 577.386,346.016 597.761,338.107 620.620,337.265 641.181,330.328 659.878,317.151 680.880,311.100 703.723,312.310 724.822,307.245 744.626,295.796 766.086,291.653 788.728,294.905 810.196,291.752 830.947,282.124 852.691,279.921 874.951,285.190 896.616,283.974 918.145,276.245 940.000,276.000 961.698,283.243 983.384,283.974 1005.520,278.206 1027.309,279.921 1048.270,289.080 1069.804,291.752 1092.367,287.992 1113.914,291.653 1133.970,302.654 1155.178,307.245 1177.988,305.522 1199.120,311.100 1218.109,323.855 1238.819,330.328 1261.692,330.658 1282.239,338.107 1300.008,352.513 1320.055,360.817 1342.806,363.195 1362.603,372.456 1379.009,388.397 1398.231,398.464 1420.677,402.872 1439.564,413.871 1454.475,431.218 1472.717,442.968 1494.678,449.370 1512.503,462.017 1525.799,480.631 1542.915,493.969 1564.213,502.314 1580.832,516.508 1592.406,536.239 1608.258,551.057 1628.722,561.278 1644.002,576.905 1653.761,597.594 1668.220,613.773 1687.686,625.787 1701.504,642.721 1709.369,664.201 1722.319,681.612 1740.630,695.322 1752.874,713.426 1758.782,735.525 1770.120,754.026 1787.128,769.323 1797.700,788.452 1801.603,810.991 1811.237,830.434 1826.805,847.194 1835.620,867.194 1837.487,889.992 1845.339,910.221 1859.342,928.308 1866.329,949.017 1866.145,971.891 1872.152,992.742 1884.478,1012.012 1889.580,1033.265 1887.346,1056.030 1891.460,1077.335 1902.008,1097.633 1905.185,1119.257 1900.920,1141.730 1903.107,1163.319 1911.794,1184.480 1913.019,1206.302 1906.757,1228.302\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"940\" cy=\"1250\" r=\"746.9\" fill=\"#171b1b\"/><path d=\"M940 1250L1745.1 1250\" stroke=\"#b9c3b3\" stroke-width=\"155.20000000000002\" transform=\"rotate(0 940 1250)\"/><path d=\"M940 1250L1745.1 1250\" stroke=\"#b9c3b3\" stroke-width=\"155.20000000000002\" transform=\"rotate(72 940 1250)\"/><path d=\"M940 1250L1745.1 1250\" stroke=\"#b9c3b3\" stroke-width=\"155.20000000000002\" transform=\"rotate(144 940 1250)\"/><path d=\"M940 1250L1745.1 1250\" stroke=\"#b9c3b3\" stroke-width=\"155.20000000000002\" transform=\"rotate(216 940 1250)\"/><path d=\"M940 1250L1745.1 1250\" stroke=\"#b9c3b3\" stroke-width=\"155.20000000000002\" transform=\"rotate(288 940 1250)\"/><circle cx=\"940\" cy=\"1250\" r=\"135.8\" fill=\"#edf0e6\"/><circle cx=\"940\" cy=\"1250\" r=\"72.75\" fill=\"#111718\"/><circle cx=\"940\" cy=\"1250\" r=\"853.6\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"940\" cy=\"1250\" r=\"805.0999999999999\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"1376.5\" cy=\"1250\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"1074.8859180446645\" cy=\"1665.1361693628346\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"586.8640819553355\" cy=\"1506.5682626256646\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"586.8640819553355\" cy=\"993.4317373743355\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"1074.8859180446645\" cy=\"834.8638306371654\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/>",
+            "pivot": [
+              940,
+              1250
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 0.9333333333333333,
+                "rotation": 25,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "chain",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(-200 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(-52.400000000000006 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(95.19999999999999 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(242.8 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(390.4 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(538 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(685.6 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(833.2 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(980.8 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1128.4 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1276 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1423.6000000000001 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1571.2 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1718.8 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1866.4 308) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g>",
+            "x": 0,
+            "keyframes": [
+              {
+                "at": 0.9333333333333333,
+                "x": 270,
+                "ease": "linear"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다",
+            "features": [
+              "링의 윗부분에 체인이 걸려 있다",
+              "체인이 옆으로 이동하며 다음 이빨과 접촉한다"
+            ],
+            "bindings": [
+              "gear",
+              "chain"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.9333333333333333
+            ],
+            "action": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다",
+            "before": "링의 윗부분에 체인이 걸려 있다",
+            "after": "체인이 옆으로 이동하며 다음 이빨과 접촉한다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 체인이 옆으로 이동하며 다음 이빨과 접촉한다"
+        ]
+      }
+    },
+    {
+      "id": "links",
+      "start": 163,
+      "end": 189,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "chain",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(-300 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(-152.4 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(-4.800000000000011 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(142.8 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(290.4 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(438 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(585.6 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(733.2 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(880.8 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1028.4 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1176 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1323.6000000000001 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1471.2 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1618.8 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1766.4 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(1914 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(2061.6 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(2209.2000000000003 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g><g transform=\"translate(2356.8 530) scale(1.8)\"><path d=\"M0 -23Q-27 -23 -27 0T0 23L82 23Q109 23 109 0T82 -23Z\" fill=\"url(#steel)\" stroke=\"#e6ecdf\" stroke-width=\"2\"/><circle r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/><circle cx=\"82\" r=\"10\" fill=\"#202a24\" stroke=\"#b6c0b4\" stroke-width=\"5\"/></g>",
+            "x": 0,
+            "keyframes": [
+              {
+                "at": 0.8666666666666667,
+                "x": 310,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "힘이",
+            "position": [
+              112,
+              278
+            ],
+            "size": 130,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start"
+          },
+          {
+            "id": "direction",
+            "kind": "svg",
+            "svg": "<path pathLength=\"1\" d=\"M240 790H1630L1560 744M1630 790L1560 836\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"3\" stroke-linecap=\"round\"/>",
+            "draw": 0,
+            "keyframes": [
+              {
+                "at": 0.6933333333333334,
+                "draw": 1,
+                "ease": "linear"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "체인 링크의 수평 이동으로 힘의 전달 방향을 읽는다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "체인 링크의 수평 이동으로 힘의 전달 방향을 읽는다",
+            "features": [
+              "연결 핀이 좌측에서 들어온다",
+              "핀과 밝은 화살표가 우측으로 이어진다"
+            ],
+            "bindings": [
+              "chain",
+              "direction"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.8666666666666667
+            ],
+            "action": "체인 링크의 수평 이동으로 힘의 전달 방향을 읽는다",
+            "before": "연결 핀이 좌측에서 들어온다",
+            "after": "핀과 밝은 화살표가 우측으로 이어진다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 핀과 밝은 화살표가 우측으로 이어진다"
+        ]
+      }
+    },
+    {
+      "id": "low-ride",
+      "start": 189,
+      "end": 244,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5789979",
+            "source_in": 1.1,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "크랭크에서 실제 달리는 바퀴로 크기를 바꾼다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "크랭크에서 실제 달리는 바퀴로 크기를 바꾼다",
+            "features": [
+              "앞바퀴와 무릎이 화면을 채운다",
+              "노면이 바퀴 아래로 흐른다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.8333333333333333
+            ],
+            "action": "크랭크에서 실제 달리는 바퀴로 크기를 바꾼다",
+            "before": "앞바퀴와 무릎이 화면을 채운다",
+            "after": "노면이 바퀴 아래로 흐른다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 노면이 바퀴 아래로 흐른다"
+        ]
+      }
+    },
+    {
+      "id": "cassette",
+      "start": 244,
+      "end": 271,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "sprocket-0",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(0 0) scale(1 .8)\"><polygon points=\"1102.000,750.000 1108.542,769.813 1107.170,789.583 1097.953,808.302 1094.815,827.542 1097.605,848.220 1092.623,867.401 1080.124,884.108 1073.503,902.444 1072.447,923.282 1064.025,941.222 1048.669,955.347 1038.792,972.154 1033.924,992.444 1022.349,1008.530 1004.659,1019.593 991.862,1034.300 983.349,1053.349 969.015,1067.035 949.593,1074.659 934.312,1086.763 922.444,1103.924 905.839,1114.743 885.347,1118.669 868.102,1127.759 853.282,1142.447 834.973,1150.031 814.108,1150.124 795.486,1155.890 778.220,1167.605 758.829,1171.695 738.302,1167.953 718.937,1170.200 699.813,1178.542 680.000,1179.000 660.511,1171.550 641.063,1170.200 620.731,1174.886 601.171,1171.695 583.383,1160.791 564.514,1155.890 543.667,1156.761 525.027,1150.031 509.545,1136.043 491.898,1127.759 471.247,1124.784 454.161,1114.743 441.512,1098.149 425.688,1086.763 405.935,1080.044 390.985,1067.035 381.601,1048.399 368.138,1034.300 349.956,1024.065 337.651,1008.530 331.851,988.488 321.208,972.154 305.216,958.753 295.975,941.222 293.957,920.455 286.497,902.444 273.239,886.333 267.377,867.401 269.209,846.617 265.185,827.542 255.114,809.269 252.830,789.583 258.450,769.489 258.000,750.000 251.458,730.187 252.830,710.417 262.047,691.698 265.185,672.458 262.395,651.780 267.377,632.599 279.876,615.892 286.497,597.556 287.553,576.718 295.975,558.778 311.331,544.653 321.208,527.846 326.076,507.556 337.651,491.470 355.341,480.407 368.138,465.700 376.651,446.651 390.985,432.965 410.407,425.341 425.688,413.237 437.556,396.076 454.161,385.257 474.653,381.331 491.898,372.241 506.718,357.553 525.027,349.969 545.892,349.876 564.514,344.110 581.780,332.395 601.171,328.305 621.698,332.047 641.063,329.800 660.187,321.458 680.000,321.000 699.489,328.450 718.937,329.800 739.269,325.114 758.829,328.305 776.617,339.209 795.486,344.110 816.333,343.239 834.973,349.969 850.455,363.957 868.102,372.241 888.753,375.216 905.839,385.257 918.488,401.851 934.312,413.237 954.065,419.956 969.015,432.965 978.399,451.601 991.862,465.700 1010.044,475.935 1022.349,491.470 1028.149,511.512 1038.792,527.846 1054.784,541.247 1064.025,558.778 1066.043,579.545 1073.503,597.556 1086.761,613.667 1092.623,632.599 1090.791,653.383 1094.815,672.458 1104.886,690.731 1107.170,710.417 1101.550,730.511\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"680\" cy=\"750\" r=\"327.25\" fill=\"#171b1b\"/><path d=\"M680 750L1032.75 750\" stroke=\"#b9c3b3\" stroke-width=\"68\" transform=\"rotate(0 680 750)\"/><path d=\"M680 750L1032.75 750\" stroke=\"#b9c3b3\" stroke-width=\"68\" transform=\"rotate(72 680 750)\"/><path d=\"M680 750L1032.75 750\" stroke=\"#b9c3b3\" stroke-width=\"68\" transform=\"rotate(144 680 750)\"/><path d=\"M680 750L1032.75 750\" stroke=\"#b9c3b3\" stroke-width=\"68\" transform=\"rotate(216 680 750)\"/><path d=\"M680 750L1032.75 750\" stroke=\"#b9c3b3\" stroke-width=\"68\" transform=\"rotate(288 680 750)\"/><circle cx=\"680\" cy=\"750\" r=\"59.50000000000001\" fill=\"#edf0e6\"/><circle cx=\"680\" cy=\"750\" r=\"31.875\" fill=\"#111718\"/><circle cx=\"680\" cy=\"750\" r=\"374\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"750\" r=\"352.75\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"871.25\" cy=\"750\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"739.0995001742087\" cy=\"931.8895587414481\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"525.2754998257913\" cy=\"862.4139295009355\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"525.2754998257913\" cy=\"637.5860704990646\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"739.0995001742086\" cy=\"568.1104412585519\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/></g>",
+            "pivot": [
+              680,
+              600
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 0.9,
+                "rotation": 160,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "sprocket-1",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(65 -27) scale(1 .8)\"><polygon points=\"1051.000,750.000 1057.515,769.145 1056.061,788.242 1046.722,806.180 1043.406,824.682 1045.933,844.747 1040.665,863.159 1027.906,878.850 1020.933,896.306 1019.370,916.469 1010.503,933.444 994.847,946.246 984.503,961.941 978.913,981.376 966.811,996.219 948.898,1005.607 935.607,1018.898 926.219,1036.811 911.376,1048.913 891.941,1054.503 876.246,1064.847 863.444,1080.503 846.469,1089.370 826.306,1090.933 808.850,1097.906 793.159,1110.665 774.747,1115.933 754.682,1113.406 736.180,1116.722 718.242,1126.061 699.145,1127.515 680.000,1121.000 661.209,1120.524 641.758,1126.061 622.760,1123.641 605.318,1113.406 587.008,1109.157 566.841,1110.665 548.719,1104.470 533.694,1090.933 516.614,1083.085 496.556,1080.503 480.052,1070.788 468.059,1054.503 452.909,1043.378 433.781,1036.811 419.571,1023.972 411.102,1005.607 398.501,991.659 381.087,981.376 369.751,965.939 365.153,946.246 355.617,930.047 340.630,916.469 332.634,899.067 332.094,878.850 326.014,861.064 314.067,844.747 309.738,826.091 313.278,806.180 310.903,787.533 302.485,769.145 302.000,750.000 309.476,731.209 310.903,712.467 306.359,692.760 309.738,673.909 320.843,657.008 326.014,638.936 325.530,618.719 332.634,600.933 346.915,586.614 355.617,569.953 359.212,550.052 369.751,534.061 386.622,522.909 398.501,508.341 406.028,489.571 419.571,476.028 438.341,468.501 452.909,456.622 464.061,439.751 480.052,429.212 499.953,425.617 516.614,416.915 530.933,402.634 548.719,395.530 568.936,396.014 587.008,390.843 603.909,379.738 622.760,376.359 642.467,380.903 661.209,379.476 680.000,372.000 699.145,372.485 717.533,380.903 736.180,383.278 756.091,379.738 774.747,384.067 791.064,396.014 808.850,402.094 829.067,402.634 846.469,410.630 860.047,425.617 876.246,435.153 895.939,439.751 911.376,451.087 921.659,468.501 935.607,481.102 953.972,489.571 966.811,503.781 973.378,522.909 984.503,538.059 1000.788,550.052 1010.503,566.556 1013.085,586.614 1020.933,603.694 1034.470,618.719 1040.665,636.841 1039.157,657.008 1043.406,675.318 1053.641,692.760 1056.061,711.758 1050.524,731.209\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"680\" cy=\"750\" r=\"287.98\" fill=\"#171b1b\"/><path d=\"M680 750L990.42 750\" stroke=\"#b9c3b3\" stroke-width=\"59.84\" transform=\"rotate(0 680 750)\"/><path d=\"M680 750L990.42 750\" stroke=\"#b9c3b3\" stroke-width=\"59.84\" transform=\"rotate(72 680 750)\"/><path d=\"M680 750L990.42 750\" stroke=\"#b9c3b3\" stroke-width=\"59.84\" transform=\"rotate(144 680 750)\"/><path d=\"M680 750L990.42 750\" stroke=\"#b9c3b3\" stroke-width=\"59.84\" transform=\"rotate(216 680 750)\"/><path d=\"M680 750L990.42 750\" stroke=\"#b9c3b3\" stroke-width=\"59.84\" transform=\"rotate(288 680 750)\"/><circle cx=\"680\" cy=\"750\" r=\"52.36000000000001\" fill=\"#edf0e6\"/><circle cx=\"680\" cy=\"750\" r=\"28.05\" fill=\"#111718\"/><circle cx=\"680\" cy=\"750\" r=\"329.12\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"750\" r=\"310.41999999999996\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"848.3\" cy=\"750\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"732.0075601533036\" cy=\"910.0628116924743\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"543.8424398466964\" cy=\"848.9242579608233\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"543.8424398466964\" cy=\"651.0757420391768\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"732.0075601533036\" cy=\"589.9371883075256\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/></g>",
+            "pivot": [
+              745,
+              573
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 0.9,
+                "rotation": 160,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "sprocket-2",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(130 -54) scale(1 .8)\"><polygon points=\"1000.000,750.000 1006.486,768.335 1004.944,786.612 995.479,803.602 991.977,821.207 994.220,840.525 988.650,858.001 975.641,872.459 968.310,888.843 966.198,908.176 956.879,923.974 940.979,935.175 930.186,949.517 923.825,967.895 911.224,981.224 893.231,988.605 879.517,1000.186 869.226,1016.688 853.974,1026.879 834.790,1030.071 818.843,1038.310 805.137,1052.109 788.001,1058.650 768.587,1057.494 751.207,1061.977 734.775,1072.380 716.612,1074.944 697.943,1069.497 680.000,1070.000 661.665,1076.486 643.388,1074.944 626.398,1065.479 608.793,1061.977 589.475,1064.220 571.999,1058.650 557.541,1045.641 541.157,1038.310 521.824,1036.198 506.026,1026.879 494.825,1010.979 480.483,1000.186 462.105,993.825 448.776,981.224 441.395,963.231 429.814,949.517 413.312,939.226 403.121,923.974 399.929,904.790 391.690,888.843 377.891,875.137 371.350,858.001 372.506,838.587 368.023,821.207 357.620,804.775 355.056,786.612 360.503,767.943 360.000,750.000 353.514,731.665 355.056,713.388 364.521,696.398 368.023,678.793 365.780,659.475 371.350,641.999 384.359,627.541 391.690,611.157 393.802,591.824 403.121,576.026 419.021,564.825 429.814,550.483 436.175,532.105 448.776,518.776 466.769,511.395 480.483,499.814 490.774,483.312 506.026,473.121 525.210,469.929 541.157,461.690 554.863,447.891 571.999,441.350 591.413,442.506 608.793,438.023 625.225,427.620 643.388,425.056 662.057,430.503 680.000,430.000 698.335,423.514 716.612,425.056 733.602,434.521 751.207,438.023 770.525,435.780 788.001,441.350 802.459,454.359 818.843,461.690 838.176,463.802 853.974,473.121 865.175,489.021 879.517,499.814 897.895,506.175 911.224,518.776 918.605,536.769 930.186,550.483 946.688,560.774 956.879,576.026 960.071,595.210 968.310,611.157 982.109,624.863 988.650,641.999 987.494,661.413 991.977,678.793 1002.380,695.225 1004.944,713.388 999.497,732.057\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"680\" cy=\"750\" r=\"248.71\" fill=\"#171b1b\"/><path d=\"M680 750L948.0899999999999 750\" stroke=\"#b9c3b3\" stroke-width=\"51.68\" transform=\"rotate(0 680 750)\"/><path d=\"M680 750L948.0899999999999 750\" stroke=\"#b9c3b3\" stroke-width=\"51.68\" transform=\"rotate(72 680 750)\"/><path d=\"M680 750L948.0899999999999 750\" stroke=\"#b9c3b3\" stroke-width=\"51.68\" transform=\"rotate(144 680 750)\"/><path d=\"M680 750L948.0899999999999 750\" stroke=\"#b9c3b3\" stroke-width=\"51.68\" transform=\"rotate(216 680 750)\"/><path d=\"M680 750L948.0899999999999 750\" stroke=\"#b9c3b3\" stroke-width=\"51.68\" transform=\"rotate(288 680 750)\"/><circle cx=\"680\" cy=\"750\" r=\"45.220000000000006\" fill=\"#edf0e6\"/><circle cx=\"680\" cy=\"750\" r=\"24.224999999999998\" fill=\"#111718\"/><circle cx=\"680\" cy=\"750\" r=\"284.24\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"750\" r=\"268.09\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"825.35\" cy=\"750\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"724.9156201323987\" cy=\"888.2360646435006\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"562.4093798676014\" cy=\"835.434586420711\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"562.4093798676014\" cy=\"664.565413579289\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"724.9156201323985\" cy=\"611.7639353564994\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/></g>",
+            "pivot": [
+              810,
+              546
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 0.9,
+                "rotation": 160,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "sprocket-3",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(195 -81) scale(1 .8)\"><polygon points=\"949.000,750.000 955.455,767.330 953.824,784.592 944.235,800.406 940.549,816.898 942.492,835.289 936.618,851.602 923.398,864.535 915.726,879.592 913.035,897.888 903.289,912.229 887.268,921.467 876.093,934.143 868.935,951.195 855.929,962.662 838.114,967.626 824.137,977.124 812.964,991.861 797.515,999.732 779.026,1000.110 763.126,1005.834 748.638,1017.329 731.717,1021.111 713.715,1016.879 696.891,1018.469 680.000,1026.000 662.670,1025.455 646.285,1016.879 629.594,1014.235 611.362,1017.329 594.711,1012.492 580.974,1000.110 565.465,993.398 547.036,991.861 532.112,983.035 521.886,967.626 508.533,957.268 491.065,951.195 478.805,938.935 472.732,921.467 462.374,908.114 446.965,897.888 438.139,882.964 436.602,864.535 429.890,849.026 417.508,835.289 412.671,818.638 415.765,800.406 413.121,783.715 404.545,767.330 404.000,750.000 411.531,733.109 413.121,716.285 408.889,698.283 412.671,681.362 424.166,666.874 429.890,650.974 430.268,632.485 438.139,617.036 452.876,605.863 462.374,591.886 467.338,574.071 478.805,561.065 495.857,553.907 508.533,542.732 517.771,526.711 532.112,516.965 550.408,514.274 565.465,506.602 578.398,493.382 594.711,487.508 613.102,489.451 629.594,485.765 645.408,476.176 662.670,474.545 680.000,481.000 696.891,481.531 714.592,476.176 731.717,478.889 746.898,489.451 763.126,494.166 781.602,493.382 797.515,500.268 809.592,514.274 824.137,522.876 842.229,526.711 855.929,537.338 864.143,553.907 876.093,565.857 892.662,574.071 903.289,587.771 907.124,605.863 915.726,620.408 929.732,632.485 936.618,648.398 935.834,666.874 940.549,683.102 951.111,698.283 953.824,715.408 948.469,733.109\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"680\" cy=\"750\" r=\"209.44\" fill=\"#171b1b\"/><path d=\"M680 750L905.76 750\" stroke=\"#b9c3b3\" stroke-width=\"43.52\" transform=\"rotate(0 680 750)\"/><path d=\"M680 750L905.76 750\" stroke=\"#b9c3b3\" stroke-width=\"43.52\" transform=\"rotate(72 680 750)\"/><path d=\"M680 750L905.76 750\" stroke=\"#b9c3b3\" stroke-width=\"43.52\" transform=\"rotate(144 680 750)\"/><path d=\"M680 750L905.76 750\" stroke=\"#b9c3b3\" stroke-width=\"43.52\" transform=\"rotate(216 680 750)\"/><path d=\"M680 750L905.76 750\" stroke=\"#b9c3b3\" stroke-width=\"43.52\" transform=\"rotate(288 680 750)\"/><circle cx=\"680\" cy=\"750\" r=\"38.080000000000005\" fill=\"#edf0e6\"/><circle cx=\"680\" cy=\"750\" r=\"20.4\" fill=\"#111718\"/><circle cx=\"680\" cy=\"750\" r=\"239.36\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"750\" r=\"225.76\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"802.4\" cy=\"750\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"717.8236801114936\" cy=\"866.4093175945268\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"580.9763198885064\" cy=\"821.9449148805987\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"580.9763198885064\" cy=\"678.0550851194013\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"717.8236801114936\" cy=\"633.5906824054732\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/></g>",
+            "pivot": [
+              875,
+              519
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 0.9,
+                "rotation": 160,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "sprocket-4",
+            "kind": "svg",
+            "svg": "<g transform=\"translate(260 -108) scale(1 .8)\"><polygon points=\"898.000,750.000 904.427,766.051 902.710,782.021 893.018,796.339 889.169,811.418 890.814,828.629 884.667,843.468 871.334,854.476 863.393,867.860 860.122,884.837 850.044,897.344 834.149,904.149 822.760,914.753 814.837,930.122 801.644,939.282 784.476,941.334 770.560,948.300 758.629,960.814 743.390,965.886 726.339,963.018 711.025,965.781 696.051,974.427 680.000,975.000 664.448,967.445 648.975,965.781 632.173,969.858 616.610,965.886 603.817,954.255 589.440,948.300 572.169,947.478 558.356,939.282 549.357,924.518 537.240,914.753 520.901,909.099 509.956,897.344 505.482,880.643 496.607,867.860 482.522,857.831 475.333,843.468 475.745,826.183 470.831,811.418 460.142,797.827 457.290,782.021 462.555,765.552 462.000,750.000 455.573,733.949 457.290,717.979 466.982,703.661 470.831,688.582 469.186,671.371 475.333,656.532 488.666,645.524 496.607,632.140 499.878,615.163 509.956,602.656 525.851,595.851 537.240,585.247 545.163,569.878 558.356,560.718 575.524,558.666 589.440,551.700 601.371,539.186 616.610,534.114 633.661,536.982 648.975,534.219 663.949,525.573 680.000,525.000 695.552,532.555 711.025,534.219 727.827,530.142 743.390,534.114 756.183,545.745 770.560,551.700 787.831,552.522 801.644,560.718 810.643,575.482 822.760,585.247 839.099,590.901 850.044,602.656 854.518,619.357 863.393,632.140 877.478,642.169 884.667,656.532 884.255,673.817 889.169,688.582 899.858,702.173 902.710,717.979 897.445,734.448\" fill=\"url(#steel)\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"680\" cy=\"750\" r=\"170.17000000000002\" fill=\"#171b1b\"/><path d=\"M680 750L863.43 750\" stroke=\"#b9c3b3\" stroke-width=\"35.36\" transform=\"rotate(0 680 750)\"/><path d=\"M680 750L863.43 750\" stroke=\"#b9c3b3\" stroke-width=\"35.36\" transform=\"rotate(72 680 750)\"/><path d=\"M680 750L863.43 750\" stroke=\"#b9c3b3\" stroke-width=\"35.36\" transform=\"rotate(144 680 750)\"/><path d=\"M680 750L863.43 750\" stroke=\"#b9c3b3\" stroke-width=\"35.36\" transform=\"rotate(216 680 750)\"/><path d=\"M680 750L863.43 750\" stroke=\"#b9c3b3\" stroke-width=\"35.36\" transform=\"rotate(288 680 750)\"/><circle cx=\"680\" cy=\"750\" r=\"30.94\" fill=\"#edf0e6\"/><circle cx=\"680\" cy=\"750\" r=\"16.575\" fill=\"#111718\"/><circle cx=\"680\" cy=\"750\" r=\"194.48\" fill=\"none\" stroke=\"#26332c\" stroke-width=\"2\"/><circle cx=\"680\" cy=\"750\" r=\"183.42999999999998\" fill=\"none\" stroke=\"#e2e9da\" stroke-width=\"1\"/><circle cx=\"779.45\" cy=\"750\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"710.7317400905886\" cy=\"844.582570545553\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"599.5432599094115\" cy=\"808.4552433404865\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"599.5432599094115\" cy=\"691.5447566595136\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/><circle cx=\"710.7317400905885\" cy=\"655.417429454447\" r=\"8\" fill=\"none\" stroke=\"#131b17\" stroke-width=\"4\"/></g>",
+            "pivot": [
+              940,
+              492
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 0.9,
+                "rotation": 160,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "전해",
+            "position": [
+              1290,
+              770
+            ],
+            "size": 170,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다",
+            "features": [
+              "가장 큰 기어의 외곽이 보인다",
+              "겹친 기어의 면과 회전 중심이 함께 읽힌다"
+            ],
+            "bindings": [
+              "sprocket-0",
+              "sprocket-1",
+              "sprocket-2",
+              "sprocket-3",
+              "sprocket-4"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.9
+            ],
+            "action": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다",
+            "before": "가장 큰 기어의 외곽이 보인다",
+            "after": "겹친 기어의 면과 회전 중심이 함께 읽힌다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 겹친 기어의 면과 회전 중심이 함께 읽힌다"
+        ]
+      }
+    },
+    {
+      "id": "hub",
+      "start": 271,
+      "end": 284,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "hub",
+            "kind": "svg",
+            "svg": "<path d=\"M520 402H1390V696H520Z\" fill=\"url(#steel)\" stroke=\"#aab5a2\" stroke-width=\"3\"/><ellipse cx=\"1390\" cy=\"549\" rx=\"82\" ry=\"147\" fill=\"#28372e\" stroke=\"#dfe5d5\" stroke-width=\"5\"/><ellipse cx=\"520\" cy=\"549\" rx=\"92\" ry=\"147\" fill=\"url(#metal)\" stroke=\"#dfe5d5\" stroke-width=\"6\"/><path d=\"M475 484H1440V614H475Z\" fill=\"url(#steel)\"/><ellipse cx=\"475\" cy=\"549\" rx=\"45\" ry=\"65\" fill=\"#101b13\" stroke=\"#d5ff56\" stroke-width=\"6\"/><path d=\"M650 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M712 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M774 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M836 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M898 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M960 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M1022 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M1084 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/><path d=\"M1146 410V688\" stroke=\"#263d2a\" stroke-width=\"4\"/>",
+            "scale": 0.82,
+            "keyframes": [
+              {
+                "at": 0.26,
+                "scale": 1,
+                "ease": "out"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "기어에서 축으로 들어가 회전 중심을 타격처럼 강조한다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "기어에서 축으로 들어가 회전 중심을 타격처럼 강조한다",
+            "features": [
+              "허브가 작은 타원으로 보인다",
+              "축의 금속 면이 화면을 채운다"
+            ],
+            "bindings": [
+              "hub"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.43333333333333335
+            ],
+            "action": "기어에서 축으로 들어가 회전 중심을 타격처럼 강조한다",
+            "before": "허브가 작은 타원으로 보인다",
+            "after": "축의 금속 면이 화면을 채운다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 축의 금속 면이 화면을 채운다"
+        ]
+      }
+    },
+    {
+      "id": "contact",
+      "start": 284,
+      "end": 335,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "wheel",
+            "kind": "svg",
+            "svg": "<circle cx=\"1000\" cy=\"55\" r=\"889\" fill=\"none\" stroke=\"#090b0b\" stroke-width=\"28\"/><circle cx=\"1000\" cy=\"55\" r=\"876\" fill=\"none\" stroke=\"#808985\" stroke-width=\"5\"/><path d=\"M1011.7607989340949 57.384031969540736L1869 55\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1010.7430265503848 60.34671679984338L1839.3895430452003 279.91375019409054\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1008.9931346609568 62.945031716103976L1752.5760758886772 489.49999999999994\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1006.6303755062422 65.0019058506978L1614.4757928511099 669.4757928511098\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1003.8157672179909 66.3771666304975L1434.5 807.5760758886771\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1000.741120699687 66.97709230608562L1224.9137501940904 894.3895430452004\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M997.6159680304593 66.76079893409491L1000 924\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M994.6532832001566 65.7430265503848L775.0862498059096 894.3895430452004\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M992.0549682838961 63.99313466095676L565.5000000000002 807.5760758886772\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M989.9980941493022 61.630375506242245L385.52420714889024 669.4757928511099\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M988.6228333695025 58.815767217990924L247.42392411132278 489.49999999999994\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M988.0229076939144 55.741120699686995L160.6104569547997 279.91375019409077\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M988.2392010659051 52.615968030459264L131 55.00000000000011\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M989.2569734496152 49.65328320015662L160.6104569547996 -169.91375019409057\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M991.0068653390432 47.054968283896024L247.42392411132266 -379.4999999999998\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M993.3696244937578 44.998094149302204L385.5242071488899 -559.4757928511094\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M996.1842327820091 43.6228333695025L565.4999999999995 -697.576075888677\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M999.258879300313 43.02290769391438L775.0862498059096 -784.3895430452004\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1002.3840319695407 43.2392010659051L999.9999999999999 -814\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1005.3467167998434 44.2569734496152L1224.9137501940902 -784.3895430452004\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1007.9450317161039 46.00686533904324L1434.5 -697.5760758886771\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1010.0019058506978 48.36962449375775L1614.4757928511096 -559.47579285111\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1011.3771666304975 51.18423278200907L1752.576075888677 -379.5000000000004\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><path d=\"M1011.9770923060856 54.258879300313L1839.3895430452003 -169.91375019409125\" stroke=\"#a7afab\" opacity=\".68\" stroke-width=\"1.7\"/><circle cx=\"1000\" cy=\"55\" r=\"18\" fill=\"#8f9692\"/><path d=\"M1000 -834a889 889 0 0 1 311.15 56.896\" stroke=\"#d5ff56\" stroke-width=\"7\" fill=\"none\"/>",
+            "pivot": [
+              1000,
+              55
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 1.7,
+                "rotation": 213.27272727272728,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "floor",
+            "kind": "svg",
+            "svg": "<path d=\"M0 958H1920\" fill=\"none\" stroke=\"#819083\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
+          },
+          {
+            "id": "contact-patch",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"1000\" cy=\"956\" rx=\"106\" ry=\"4\" fill=\"#d5ff56\" opacity=\".7\"/>"
+          },
+          {
+            "id": "roadmarks",
+            "kind": "svg",
+            "svg": "<path d=\"M-300 1010H240M540 1010H1080M1380 1010H1920\" fill=\"none\" stroke=\"#707c70\" stroke-width=\"8\" stroke-linecap=\"round\"/>",
+            "x": 0,
+            "keyframes": [
+              {
+                "at": 1.7,
+                "x": -278.1818181818182,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "땅을 밀면",
+            "position": [
+              110,
+              465
+            ],
+            "size": 110,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "바퀴의 회전이 지면을 밀어내는 접점으로 내려온다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "바퀴의 회전이 지면을 밀어내는 접점으로 내려온다",
+            "features": [
+              "타이어 아래에 접촉면이 놓인다",
+              "바퀴 기준점이 돌고 노면 표시가 뒤로 흐른다"
+            ],
+            "bindings": [
+              "wheel",
+              "floor",
+              "contact-patch",
+              "roadmarks"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.7
+            ],
+            "action": "바퀴의 회전이 지면을 밀어내는 접점으로 내려온다",
+            "before": "타이어 아래에 접촉면이 놓인다",
+            "after": "바퀴 기준점이 돌고 노면 표시가 뒤로 흐른다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 바퀴 기준점이 돌고 노면 표시가 뒤로 흐른다"
+        ]
+      }
+    },
+    {
+      "id": "contact-real",
+      "start": 335,
+      "end": 379,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5789979",
+            "source_in": 8.1,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "그림의 접촉면을 실제 타이어와 도로로 이어준다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "그림의 접촉면을 실제 타이어와 도로로 이어준다",
+            "features": [
+              "타이어 아래 흰 차선이 보인다",
+              "차선이 뒤로 지나간다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.4666666666666666
+            ],
+            "action": "그림의 접촉면을 실제 타이어와 도로로 이어준다",
+            "before": "타이어 아래 흰 차선이 보인다",
+            "after": "차선이 뒤로 지나간다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 차선이 뒤로 지나간다"
+        ]
+      },
+      "transition_in": {
+        "kind": "circleopen",
+        "duration": 0.13333333333333333
+      }
+    },
+    {
+      "id": "side-result",
+      "start": 379,
+      "end": 433,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5790147",
+            "source_in": 1.8,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "힘의 결과를 몸 전체와 움직이는 프레임으로 보여준다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "힘의 결과를 몸 전체와 움직이는 프레임으로 보여준다",
+            "features": [
+              "몸과 바퀴가 측면에 놓인다",
+              "나무의 수직선이 뒤로 빠져나간다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.8
+            ],
+            "action": "힘의 결과를 몸 전체와 움직이는 프레임으로 보여준다",
+            "before": "몸과 바퀴가 측면에 놓인다",
+            "after": "나무의 수직선이 뒤로 빠져나간다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 나무의 수직선이 뒤로 빠져나간다"
+        ]
+      }
+    },
+    {
+      "id": "top-curve",
+      "start": 433,
+      "end": 487,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "road",
+            "kind": "svg",
+            "svg": "<path d=\"M-220 950C500 950 380 320 940 360S1610 1010 2140 50\" fill=\"none\" stroke=\"#25362c\" stroke-width=\"430\"/><path d=\"M-220 950C500 950 380 320 940 360S1610 1010 2140 50\" fill=\"none\" stroke=\"#a4b494\" stroke-width=\"4\" stroke-linecap=\"round\"/>"
+          },
+          {
+            "id": "rider",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"0\" cy=\"-48\" rx=\"15\" ry=\"66\" fill=\"#151c17\" stroke=\"#ccd5c4\" stroke-width=\"4\"/><ellipse cx=\"0\" cy=\"100\" rx=\"15\" ry=\"66\" fill=\"#151c17\" stroke=\"#ccd5c4\" stroke-width=\"4\"/><path d=\"M0 -48L0 100\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"18\" stroke-linecap=\"round\"/><path d=\"M-64 -18Q0 -62 64 -18L40 55Q0 85 -40 55Z\" fill=\"#dde3d3\"/><circle cy=\"-27\" r=\"27\" fill=\"#d5ff56\"/><path d=\"M-64 -18H64\" fill=\"none\" stroke=\"#e6efdd\" stroke-width=\"8\" stroke-linecap=\"round\"/>",
+            "pivot": [
+              0,
+              0
+            ],
+            "x": 320,
+            "y": 740,
+            "rotation": 28,
+            "keyframes": [
+              {
+                "at": 0.5,
+                "x": 500,
+                "y": 520,
+                "rotation": 45,
+                "ease": "linear"
+              },
+              {
+                "at": 1,
+                "x": 740,
+                "y": 375,
+                "rotation": 75,
+                "ease": "linear"
+              },
+              {
+                "at": 1.8,
+                "x": 1160,
+                "y": 440,
+                "rotation": 120,
+                "ease": "linear"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "수평의 전달 방향이 위에서 본 코너의 진행 방향으로 바뀐다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "수평의 전달 방향이 위에서 본 코너의 진행 방향으로 바뀐다",
+            "features": [
+              "라이더가 굽은 길 아래에서 진입한다",
+              "동일 라이더 도형이 굽이를 따라 우측으로 나간다"
+            ],
+            "bindings": [
+              "road",
+              "rider"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.8
+            ],
+            "action": "수평의 전달 방향이 위에서 본 코너의 진행 방향으로 바뀐다",
+            "before": "라이더가 굽은 길 아래에서 진입한다",
+            "after": "동일 라이더 도형이 굽이를 따라 우측으로 나간다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 동일 라이더 도형이 굽이를 따라 우측으로 나간다"
+        ]
+      }
+    },
+    {
+      "id": "hand-control",
+      "start": 487,
+      "end": 514,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5837706",
+            "source_in": 7.6,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "손의 제어로 방향을 정한다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "손의 제어로 방향을 정한다",
+            "features": [
+              "손가락이 후드 옆에 놓인다",
+              "손이 후드를 감싼 채 차체를 지지한다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.9
+            ],
+            "action": "손의 제어로 방향을 정한다",
+            "before": "손가락이 후드 옆에 놓인다",
+            "after": "손이 후드를 감싼 채 차체를 지지한다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 손이 후드를 감싼 채 차체를 지지한다"
+        ]
+      }
+    },
+    {
+      "id": "lean",
+      "start": 514,
+      "end": 555,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "front",
+            "kind": "svg",
+            "svg": "<ellipse cx=\"960\" cy=\"550\" rx=\"62\" ry=\"394\" fill=\"#111914\" stroke=\"#83917f\" stroke-width=\"28\"/><ellipse cx=\"960\" cy=\"550\" rx=\"46\" ry=\"376\" fill=\"none\" stroke=\"#dbe4d1\" stroke-width=\"2\"/><path d=\"M916 200Q960 215 1004 200\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 232Q960 247 1004 232\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 264Q960 279 1004 264\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 296Q960 311 1004 296\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 328Q960 343 1004 328\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 360Q960 375 1004 360\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 392Q960 407 1004 392\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 424Q960 439 1004 424\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 456Q960 471 1004 456\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 488Q960 503 1004 488\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 520Q960 535 1004 520\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 552Q960 567 1004 552\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 584Q960 599 1004 584\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 616Q960 631 1004 616\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 648Q960 663 1004 648\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 680Q960 695 1004 680\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 712Q960 727 1004 712\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 744Q960 759 1004 744\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 776Q960 791 1004 776\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 808Q960 823 1004 808\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 840Q960 855 1004 840\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/><path d=\"M916 872Q960 887 1004 872\" fill=\"none\" stroke=\"#293b2c\" stroke-width=\"3\"/>",
+            "pivot": [
+              960,
+              958
+            ],
+            "rotation": -13,
+            "keyframes": [
+              {
+                "at": 1.3666666666666667,
+                "rotation": 15,
+                "ease": "smooth"
+              }
+            ]
+          },
+          {
+            "id": "fork",
+            "kind": "svg",
+            "svg": "<path d=\"M905 65L913 540 960 550 1008 540 1015 65\" fill=\"none\" stroke=\"#b9c3b3\" stroke-width=\"26\"/><circle cx=\"960\" cy=\"550\" r=\"14\" fill=\"#d5ff56\"/>",
+            "pivot": [
+              960,
+              958
+            ],
+            "rotation": -13,
+            "keyframes": [
+              {
+                "at": 1.3666666666666667,
+                "rotation": 15,
+                "ease": "smooth"
+              }
+            ]
+          },
+          {
+            "id": "floor",
+            "kind": "svg",
+            "svg": "<path d=\"M0 958H1920\" fill=\"none\" stroke=\"#819083\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "방향을",
+            "position": [
+              120,
+              860
+            ],
+            "size": 115,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "바퀴와 포크가 한 몸으로 기울며 방향을 얻는다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "바퀴와 포크가 한 몸으로 기울며 방향을 얻는다",
+            "features": [
+              "바퀴가 세로 축을 유지한다",
+              "바퀴와 포크의 축이 함께 기운다"
+            ],
+            "bindings": [
+              "front",
+              "fork",
+              "floor"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.3666666666666667
+            ],
+            "action": "바퀴와 포크가 한 몸으로 기울며 방향을 얻는다",
+            "before": "바퀴가 세로 축을 유지한다",
+            "after": "바퀴와 포크의 축이 함께 기운다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 바퀴와 포크의 축이 함께 기운다"
+        ]
+      }
+    },
+    {
+      "id": "forest-exit",
+      "start": 555,
+      "end": 609,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5790152",
+            "source_in": 3,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "도로가 화면 오른쪽으로 열리는 실제 진행을 이어간다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "도로가 화면 오른쪽으로 열리는 실제 진행을 이어간다",
+            "features": [
+              "나란한 바퀴와 숲이 보인다",
+              "세 라이더가 도로의 열린 쪽으로 나간다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.8
+            ],
+            "action": "도로가 화면 오른쪽으로 열리는 실제 진행을 이어간다",
+            "before": "나란한 바퀴와 숲이 보인다",
+            "after": "세 라이더가 도로의 열린 쪽으로 나간다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 세 라이더가 도로의 열린 쪽으로 나간다"
+        ]
+      }
+    },
+    {
+      "id": "road-speed",
+      "start": 609,
+      "end": 650,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "road",
+            "kind": "svg",
+            "svg": "<path d=\"M245 80L-1350 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M310 80L-1140 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M375 80L-930 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M440 80L-720 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M505 80L-510 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M570 80L-300 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M635 80L-90 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M700 80L120 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M765 80L330 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M830 80L540 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M895 80L750 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M960 80L960 1200\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"14\" stroke-linecap=\"round\"/><path d=\"M1025 80L1170 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1090 80L1380 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1155 80L1590 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1220 80L1800 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1285 80L2010 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1350 80L2220 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1415 80L2430 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1480 80L2640 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1545 80L2850 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M1610 80L3060 1200\" fill=\"none\" stroke=\"#344239\" stroke-width=\"2\" stroke-linecap=\"round\"/>"
+          },
+          {
+            "id": "lanes",
+            "kind": "svg",
+            "svg": "<path d=\"M925 200H995L1080 500H840Z M780 730H1140L1230 1080H690Z\" fill=\"#eef4e6\"/>",
+            "y": -160,
+            "keyframes": [
+              {
+                "at": 1.3666666666666667,
+                "y": 250,
+                "ease": "linear"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "차선의 원근으로 몸의 전진을 안쪽에서 느낀다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "차선의 원근으로 몸의 전진을 안쪽에서 느낀다",
+            "features": [
+              "가까운 차선이 작은 사다리꼴이다",
+              "차선이 아래로 크게 지나간다"
+            ],
+            "bindings": [
+              "road",
+              "lanes"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.3666666666666667
+            ],
+            "action": "차선의 원근으로 몸의 전진을 안쪽에서 느낀다",
+            "before": "가까운 차선이 작은 사다리꼴이다",
+            "after": "차선이 아래로 크게 지나간다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 차선이 아래로 크게 지나간다"
+        ]
+      }
+    },
+    {
+      "id": "speed-type",
+      "start": 650,
+      "end": 677,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "속도로",
+            "position": [
+              90,
+              790
+            ],
+            "size": 390,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start",
+            "x": -370,
+            "keyframes": [
+              {
+                "at": 0.14,
+                "x": 0,
+                "ease": "out"
+              }
+            ]
+          },
+          {
+            "id": "under",
+            "kind": "svg",
+            "svg": "<path d=\"M100 858H1810\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"8\" stroke-linecap=\"round\"/>",
+            "scaleX": 0.1,
+            "pivot": [
+              100,
+              858
+            ],
+            "keyframes": [
+              {
+                "at": 0.25,
+                "scaleX": 1,
+                "ease": "out"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "앞의 전달 과정을 하나의 결과 단어로 묶는다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "앞의 전달 과정을 하나의 결과 단어로 묶는다",
+            "features": [
+              "활자가 좌측에 모여 있다",
+              "속도로가 화면 너비를 채운다"
+            ],
+            "bindings": [
+              "under"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.9
+            ],
+            "action": "앞의 전달 과정을 하나의 결과 단어로 묶는다",
+            "before": "활자가 좌측에 모여 있다",
+            "after": "속도로가 화면 너비를 채운다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 속도로가 화면 너비를 채운다"
+        ]
+      }
+    },
+    {
+      "id": "whole-transfer",
+      "start": 677,
+      "end": 731,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "drive-rear",
+            "kind": "svg",
+            "svg": "<polygon points=\"592.000,540.000 598.722,547.776 597.891,555.512 589.669,561.682 587.868,568.737 592.128,578.092 589.150,585.280 579.523,588.883 575.808,595.145 577.259,605.321 572.377,611.380 562.125,612.125 556.796,617.086 555.321,627.259 548.930,631.697 538.883,629.523 532.372,632.782 528.092,642.128 520.709,644.585 511.682,639.669 504.516,640.962 497.776,648.722 490.000,649.000 482.723,641.740 475.484,640.962 466.830,646.509 459.291,644.585 454.355,635.569 447.628,632.782 437.762,635.667 431.070,631.697 428.874,621.655 423.204,617.086 412.925,617.075 407.623,611.380 408.345,601.126 404.192,595.145 394.333,592.238 390.850,585.280 394.431,575.645 392.132,568.737 383.491,563.170 382.109,555.512 388.260,547.277 388.000,540.000 381.278,532.224 382.109,524.488 390.331,518.318 392.132,511.263 387.872,501.908 390.850,494.720 400.477,491.117 404.192,484.855 402.741,474.679 407.623,468.620 417.875,467.875 423.204,462.914 424.679,452.741 431.070,448.303 441.117,450.477 447.628,447.218 451.908,437.872 459.291,435.415 468.318,440.331 475.484,439.038 482.224,431.278 490.000,431.000 497.277,438.260 504.516,439.038 513.170,433.491 520.709,435.415 525.645,444.431 532.372,447.218 542.238,444.333 548.930,448.303 551.126,458.345 556.796,462.914 567.075,462.925 572.377,468.620 571.655,478.874 575.808,484.855 585.667,487.762 589.150,494.720 585.569,504.355 587.868,511.263 596.509,516.830 597.891,524.488 591.740,532.723\" fill=\"#cbd0cc\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"490\" cy=\"540\" r=\"80.85000000000001\" fill=\"#171b1b\"/><path d=\"M490 540L577.15 540\" stroke=\"#cbd0cc\" stroke-width=\"16.8\" transform=\"rotate(0 490 540)\"/><path d=\"M490 540L577.15 540\" stroke=\"#cbd0cc\" stroke-width=\"16.8\" transform=\"rotate(72 490 540)\"/><path d=\"M490 540L577.15 540\" stroke=\"#cbd0cc\" stroke-width=\"16.8\" transform=\"rotate(144 490 540)\"/><path d=\"M490 540L577.15 540\" stroke=\"#cbd0cc\" stroke-width=\"16.8\" transform=\"rotate(216 490 540)\"/><path d=\"M490 540L577.15 540\" stroke=\"#cbd0cc\" stroke-width=\"16.8\" transform=\"rotate(288 490 540)\"/><circle cx=\"490\" cy=\"540\" r=\"14.700000000000001\" fill=\"#edf0e6\"/><circle cx=\"490\" cy=\"540\" r=\"7.875\" fill=\"#111718\"/>",
+            "pivot": [
+              490,
+              540
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 1.8,
+                "rotation": 658.2857142857142,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "drive-front",
+            "kind": "svg",
+            "svg": "<polygon points=\"1547.000,540.000 1553.880,547.664 1553.519,555.321 1545.948,562.304 1545.131,569.704 1550.996,578.170 1549.678,585.721 1541.292,591.700 1539.554,598.940 1544.312,608.074 1542.058,615.400 1532.989,620.281 1530.357,627.246 1533.932,636.904 1530.778,643.890 1521.169,647.596 1517.685,654.176 1520.021,664.206 1516.016,670.742 1506.018,673.214 1501.737,679.305 1502.798,689.549 1498.005,695.531 1487.776,696.731 1482.766,702.238 1482.534,712.534 1477.029,717.868 1466.731,717.776 1461.069,722.612 1459.549,732.798 1453.420,737.400 1443.214,736.018 1436.991,740.106 1434.206,750.021 1427.548,753.819 1417.596,751.169 1410.910,754.444 1406.904,763.932 1399.822,766.865 1390.281,762.989 1383.237,765.400 1378.074,774.312 1370.680,776.334 1361.700,771.292 1354.409,772.802 1348.170,780.996 1340.581,782.076 1332.304,775.948 1324.881,776.532 1317.664,783.880 1310.000,784.000 1302.556,776.883 1295.119,776.532 1287.038,782.917 1279.419,782.076 1272.925,774.082 1265.591,772.802 1256.773,778.124 1249.320,776.334 1243.879,767.590 1236.763,765.400 1227.348,769.575 1220.178,766.865 1215.876,757.508 1209.090,754.444 1199.226,757.406 1192.452,753.819 1189.357,743.996 1183.009,740.106 1172.852,741.808 1166.580,737.400 1164.741,727.267 1158.931,722.612 1148.640,723.027 1142.971,717.868 1142.416,707.584 1137.234,702.238 1126.973,701.360 1121.995,695.531 1122.733,685.259 1118.263,679.305 1108.192,677.148 1103.984,670.742 1106.004,660.643 1102.315,654.176 1092.594,650.774 1089.222,643.890 1092.492,634.124 1089.643,627.246 1080.425,622.652 1077.942,615.400 1082.410,606.121 1080.446,598.940 1071.876,593.227 1070.322,585.721 1075.918,577.075 1074.869,569.704 1067.083,562.962 1066.481,555.321 1073.117,547.444 1073.000,540.000 1066.120,532.336 1066.481,524.679 1074.052,517.696 1074.869,510.296 1069.004,501.830 1070.322,494.279 1078.708,488.300 1080.446,481.060 1075.688,471.926 1077.942,464.600 1087.011,459.719 1089.643,452.754 1086.068,443.096 1089.222,436.110 1098.831,432.404 1102.315,425.824 1099.979,415.794 1103.984,409.258 1113.982,406.786 1118.263,400.695 1117.202,390.451 1121.995,384.469 1132.224,383.269 1137.234,377.762 1137.466,367.466 1142.971,362.132 1153.269,362.224 1158.931,357.388 1160.451,347.202 1166.580,342.600 1176.786,343.982 1183.009,339.894 1185.794,329.979 1192.452,326.181 1202.404,328.831 1209.090,325.556 1213.096,316.068 1220.178,313.135 1229.719,317.011 1236.763,314.600 1241.926,305.688 1249.320,303.666 1258.300,308.708 1265.591,307.198 1271.830,299.004 1279.419,297.924 1287.696,304.052 1295.119,303.468 1302.336,296.120 1310.000,296.000 1317.444,303.117 1324.881,303.468 1332.962,297.083 1340.581,297.924 1347.075,305.918 1354.409,307.198 1363.227,301.876 1370.680,303.666 1376.121,312.410 1383.237,314.600 1392.652,310.425 1399.822,313.135 1404.124,322.492 1410.910,325.556 1420.774,322.594 1427.548,326.181 1430.643,336.004 1436.991,339.894 1447.148,338.192 1453.420,342.600 1455.259,352.733 1461.069,357.388 1471.360,356.973 1477.029,362.132 1477.584,372.416 1482.766,377.762 1493.027,378.640 1498.005,384.469 1497.267,394.741 1501.737,400.695 1511.808,402.852 1516.016,409.258 1513.996,419.357 1517.685,425.824 1527.406,429.226 1530.778,436.110 1527.508,445.876 1530.357,452.754 1539.575,457.348 1542.058,464.600 1537.590,473.879 1539.554,481.060 1548.124,486.773 1549.678,494.279 1544.082,502.925 1545.131,510.296 1552.917,517.038 1553.519,524.679 1546.883,532.556\" fill=\"#cbd0cc\" stroke=\"#eef1e9\" stroke-width=\"1\"/><circle cx=\"1310\" cy=\"540\" r=\"184.8\" fill=\"#171b1b\"/><path d=\"M1310 540L1509.2 540\" stroke=\"#cbd0cc\" stroke-width=\"38.4\" transform=\"rotate(0 1310 540)\"/><path d=\"M1310 540L1509.2 540\" stroke=\"#cbd0cc\" stroke-width=\"38.4\" transform=\"rotate(72 1310 540)\"/><path d=\"M1310 540L1509.2 540\" stroke=\"#cbd0cc\" stroke-width=\"38.4\" transform=\"rotate(144 1310 540)\"/><path d=\"M1310 540L1509.2 540\" stroke=\"#cbd0cc\" stroke-width=\"38.4\" transform=\"rotate(216 1310 540)\"/><path d=\"M1310 540L1509.2 540\" stroke=\"#cbd0cc\" stroke-width=\"38.4\" transform=\"rotate(288 1310 540)\"/><circle cx=\"1310\" cy=\"540\" r=\"33.6\" fill=\"#edf0e6\"/><circle cx=\"1310\" cy=\"540\" r=\"18\" fill=\"#111718\"/>",
+            "pivot": [
+              1310,
+              540
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 1.8,
+                "rotation": 288,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "drive-chain-bed",
+            "kind": "svg",
+            "svg": "<path d=\"M1270.4878 303.27487A240 240 0 1 1 1270.4878 776.72513L472.71341 643.56724A105 105 0 0 1 472.71341 436.43276Z\" fill=\"none\" stroke=\"#404b45\" stroke-width=\"12\"/>"
+          },
+          {
+            "id": "drive-chain",
+            "kind": "svg",
+            "svg": "<path d=\"M1270.4878 303.27487A240 240 0 1 1 1270.4878 776.72513L472.71341 643.56724A105 105 0 0 1 472.71341 436.43276Z\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"7\" stroke-linecap=\"round\" stroke-dasharray=\"7 7\"/>",
+            "dash_offset": 0,
+            "keyframes": [
+              {
+                "at": 1.8,
+                "dash_offset": -1206.3715789784806,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "drive-crank",
+            "kind": "svg",
+            "svg": "<path d=\"M1310 540l0 110\" stroke=\"#e3e8dc\" stroke-width=\"23\" stroke-linecap=\"round\"/><path d=\"M1274 650h72\" stroke=\"#717b74\" stroke-width=\"15\" stroke-linecap=\"round\"/>",
+            "pivot": [
+              1310,
+              540
+            ],
+            "rotation": 0,
+            "keyframes": [
+              {
+                "at": 1.8,
+                "rotation": 288,
+                "ease": "linear"
+              }
+            ]
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "이어진다",
+            "position": [
+              100,
+              980
+            ],
+            "size": 145,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start"
+          },
+          {
+            "id": "force-trace-0",
+            "kind": "svg",
+            "svg": "<path d=\"M510 280H1300\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"4\"/>",
+            "reveal_rect": [
+              500,
+              265,
+              820,
+              30
+            ],
+            "reveal": 0,
+            "keyframes": [
+              {
+                "at": 0.65,
+                "reveal": 1,
+                "ease": "linear"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "발과 체인과 기어의 관계를 짧게 한 화면에서 회수한다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "발과 체인과 기어의 관계를 짧게 한 화면에서 회수한다",
+            "features": [
+              "앞뒤 기어가 체인으로 연결된다",
+              "하나의 이동량이 모든 회전을 함께 만든다"
+            ],
+            "bindings": [
+              "drive-rear",
+              "drive-front",
+              "drive-chain-bed",
+              "drive-chain",
+              "drive-crank"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.8
+            ],
+            "action": "발과 체인과 기어의 관계를 짧게 한 화면에서 회수한다",
+            "before": "앞뒤 기어가 체인으로 연결된다",
+            "after": "하나의 이동량이 모든 회전을 함께 만든다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 하나의 이동량이 모든 회전을 함께 만든다"
+        ]
+      }
+    },
+    {
+      "id": "wheel-return",
+      "start": 731,
+      "end": 758,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5789979",
+            "source_in": 10.8,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "전체 도해의 결과를 실제 굴러가는 바퀴로 돌려준다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "전체 도해의 결과를 실제 굴러가는 바퀴로 돌려준다",
+            "features": [
+              "림이 화면 앞에 크게 놓인다",
+              "페달이 내려가며 노면이 빠져나간다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.9
+            ],
+            "action": "전체 도해의 결과를 실제 굴러가는 바퀴로 돌려준다",
+            "before": "림이 화면 앞에 크게 놓인다",
+            "after": "페달이 내려가며 노면이 빠져나간다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 페달이 내려가며 노면이 빠져나간다"
+        ]
+      }
+    },
+    {
+      "id": "front-result",
+      "start": 758,
+      "end": 808,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-5790076",
+            "source_in": 4.5,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          },
+          {
+            "id": "shade",
+            "kind": "svg",
+            "svg": "<rect width=\"1920\" height=\"1080\" fill=\"url(#shade)\"/>"
+          },
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "앞으로",
+            "position": [
+              100,
+              930
+            ],
+            "size": 160,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start",
+            "x": -110,
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.16,
+                "x": 0,
+                "opacity": 1,
+                "ease": "out"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "여러 힘이 모인 전진을 정면의 몸으로 보여준다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "여러 힘이 모인 전진을 정면의 몸으로 보여준다",
+            "features": [
+              "라이더가 화면 중심으로 다가온다",
+              "어깨와 앞바퀴가 같은 축으로 유지된다"
+            ],
+            "bindings": [
+              "footage",
+              "shade"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.6666666666666667
+            ],
+            "action": "여러 힘이 모인 전진을 정면의 몸으로 보여준다",
+            "before": "라이더가 화면 중심으로 다가온다",
+            "after": "어깨와 앞바퀴가 같은 축으로 유지된다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 어깨와 앞바퀴가 같은 축으로 유지된다"
+        ]
+      }
+    },
+    {
+      "id": "open-road",
+      "start": 808,
+      "end": 866,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "footage",
+            "kind": "video",
+            "asset_id": "cycle-9758409",
+            "source_in": 7,
+            "rect": [
+              0,
+              0,
+              1920,
+              1080
+            ],
+            "fit": "cover",
+            "sound": "mute"
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "구동계의 작은 접촉에서 넓은 길의 거리로 의미를 확장한다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "구동계의 작은 접촉에서 넓은 길의 거리로 의미를 확장한다",
+            "features": [
+              "위에서 본 작은 라이더가 길에 놓인다",
+              "긴 그림자와 함께 길 위의 위치가 앞으로 이동한다"
+            ],
+            "bindings": [
+              "footage"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              1.9333333333333333
+            ],
+            "action": "구동계의 작은 접촉에서 넓은 길의 거리로 의미를 확장한다",
+            "before": "위에서 본 작은 라이더가 길에 놓인다",
+            "after": "긴 그림자와 함께 길 위의 위치가 앞으로 이동한다"
+          }
+        ],
+        "continuity": [
+          "인과를 다음 대상에 넘긴다: 긴 그림자와 함께 길 위의 위치가 앞으로 이동한다"
+        ]
+      },
+      "transition_in": {
+        "kind": "wipeleft",
+        "duration": 0.13333333333333333
+      }
+    },
+    {
+      "id": "phrase-handoff",
+      "start": 866,
+      "end": 894,
+      "mode": "composite",
+      "shot_role": "action",
+      "content_ids": [],
+      "reading_windows": [],
+      "composition": {
+        "width": 1920,
+        "height": 1080,
+        "background": "#0b100f",
+        "defs": "<linearGradient id=\"steel\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop stop-color=\"#f9faf4\"/><stop offset=\".2\" stop-color=\"#9ba5a0\"/><stop offset=\".45\" stop-color=\"#25302d\"/><stop offset=\".51\" stop-color=\"#f5f8f0\"/><stop offset=\".7\" stop-color=\"#77857e\"/><stop offset=\"1\" stop-color=\"#18201e\"/></linearGradient><radialGradient id=\"metal\"><stop stop-color=\"#e5eadd\"/><stop offset=\".42\" stop-color=\"#43504b\"/><stop offset=\".68\" stop-color=\"#bac2b6\"/><stop offset=\"1\" stop-color=\"#212d26\"/></radialGradient><linearGradient id=\"shade\" x2=\"0\" y2=\"1\"><stop stop-color=\"#000\" stop-opacity=\"0\"/><stop offset=\"1\" stop-color=\"#000\" stop-opacity=\".55\"/></linearGradient>",
+        "layers": [
+          {
+            "id": "word",
+            "kind": "text",
+            "text": "페달",
+            "position": [
+              140,
+              720
+            ],
+            "size": 430,
+            "color": "#edf0e6",
+            "font": "Pretendard",
+            "weight": 900,
+            "align": "start",
+            "y": 55,
+            "opacity": 0,
+            "keyframes": [
+              {
+                "at": 0.15,
+                "y": 0,
+                "opacity": 1,
+                "ease": "out"
+              }
+            ]
+          },
+          {
+            "id": "trace",
+            "kind": "svg",
+            "svg": "<path d=\"M1300 80V1080\" fill=\"none\" stroke=\"#d5ff56\" stroke-width=\"4\" stroke-linecap=\"round\"/>",
+            "x": 250,
+            "keyframes": [
+              {
+                "at": 0.9333333333333333,
+                "x": 0,
+                "ease": "out"
+              }
+            ]
+          }
+        ]
+      },
+      "visual_plan": {
+        "viewer_takeaway": "길의 세로 선을 제목 옆에 남겨 다음 시퀀스로 넘긴다",
+        "objects": [
+          {
+            "id": "subject",
+            "kind": "precision-object",
+            "depicts": "길의 세로 선을 제목 옆에 남겨 다음 시퀀스로 넘긴다",
+            "features": [
+              "선이 우측에 놓인다",
+              "작품 이름과 길의 선이 함께 남는다"
+            ],
+            "bindings": [
+              "trace"
+            ]
+          }
+        ],
+        "content_links": [],
+        "beats": [
+          {
+            "object_ids": [
+              "subject"
+            ],
+            "window": [
+              0,
+              0.9333333333333333
+            ],
+            "action": "길의 세로 선을 제목 옆에 남겨 다음 시퀀스로 넘긴다",
+            "before": "선이 우측에 놓인다",
+            "after": "작품 이름과 길의 선이 함께 남는다"
+          }
+        ],
+        "continuity": [
+          "길의 선을 남겨 프레이즈를 맺는다"
+        ]
+      }
+    }
+  ],
+  "events": [],
+  "content_units": [],
+  "required_content_ids": [],
+  "techniques": [
+    {
+      "instance": "force-trace",
+      "card_id": "progressive-disclosure",
+      "family": "explainer",
+      "parameters": {
+        "duration": 0.65,
+        "amount": 120,
+        "color": "#d5ff56"
+      },
+      "input_hash": "0f37d4442755d1e2d756e2394492f2d173eaf76a373d2f37a2cc416c91ddadad",
+      "layer_ids": [
+        "force-trace-0"
+      ],
+      "selection_reason": "A single line connects the already visible front and rear power path",
+      "review": {
+        "automated": "pending",
+        "aesthetic": "pending"
+      },
+      "scene_id": "whole-transfer"
+    }
+  ],
+  "mechanisms": [
+    {
+      "adapter": "transmission-v1",
+      "model": "single ratio at pitch radii; illustrative geometry",
+      "parameters": {
+        "duration": 1.8,
+        "turns": 0.8,
+        "phase": 0,
+        "front": [
+          1310,
+          540
+        ],
+        "rear": [
+          490,
+          540
+        ],
+        "frontRadius": 240,
+        "rearRadius": 105,
+        "accent": "#d5ff56",
+        "wheel": false
+      },
+      "chain_travel": 1206.3715789784806,
+      "rear_turns": 1.8285714285714285,
+      "layer_ids": [
+        "drive-rear",
+        "drive-front",
+        "drive-chain-bed",
+        "drive-chain",
+        "drive-crank"
+      ],
+      "engines": [
+        "chromium"
+      ],
+      "outputs": [
+        "time",
+        "scroll",
+        "still"
+      ],
+      "aesthetic_review": "pending",
+      "scene_id": "whole-transfer"
+    }
+  ],
+  "rhythm_score": {
+    "version": "music-impact-v1",
+    "music": {
+      "asset_id": "the-lift",
+      "clip_index": 0,
+      "sha256": "ea72d7433ffcc50b3e6d52ede277f96f553697b6ffae86dce10e0bbfdc809048"
+    },
+    "tolerance_frames": 0,
+    "events": [
+      {
+        "id": "cut-press",
+        "source_seconds": 221.974422,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-crank",
+        "source_seconds": 222.88,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-tooth",
+        "source_seconds": 224.67954600000002,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-links",
+        "source_seconds": 225.585125,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-low-ride",
+        "source_seconds": 226.479093,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-cassette",
+        "source_seconds": 228.290249,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-hub",
+        "source_seconds": 229.184218,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-contact",
+        "source_seconds": 229.637007,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-contact-real",
+        "source_seconds": 231.448163,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-side-result",
+        "source_seconds": 232.794921,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-top-curve",
+        "source_seconds": 234.606077,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-hand-control",
+        "source_seconds": 236.405624,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-lean",
+        "source_seconds": 237.311202,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-forest-exit",
+        "source_seconds": 238.669569,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-road-speed",
+        "source_seconds": 240.469116,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-speed-type",
+        "source_seconds": 241.827483,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-whole-transfer",
+        "source_seconds": 242.721451,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-wheel-return",
+        "source_seconds": 244.532608,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-front-result",
+        "source_seconds": 245.426576,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-open-road",
+        "source_seconds": 247.237732,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "cut-phrase-handoff",
+        "source_seconds": 249.037279,
+        "role": "onset",
+        "method": "measured-onset",
+        "confidence": 0.75,
+        "evidence": "Nearest bounded spectral-flux onset in source PCM; listening pending"
+      },
+      {
+        "id": "hand-contact",
+        "source_seconds": 221.068844,
+        "role": "accent",
+        "method": "measured-onset",
+        "confidence": 0.7,
+        "evidence": "Source PCM transient candidate; no heard-instrument claim"
+      }
+    ],
+    "bindings": [
+      {
+        "id": "cut-press",
+        "event_id": "cut-press",
+        "scene_id": "press",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-crank",
+        "event_id": "cut-crank",
+        "scene_id": "crank",
+        "target": {
+          "kind": "cut",
+          "phase": "arrival"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-tooth",
+        "event_id": "cut-tooth",
+        "scene_id": "tooth",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-links",
+        "event_id": "cut-links",
+        "scene_id": "links",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-low-ride",
+        "event_id": "cut-low-ride",
+        "scene_id": "low-ride",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-cassette",
+        "event_id": "cut-cassette",
+        "scene_id": "cassette",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-hub",
+        "event_id": "cut-hub",
+        "scene_id": "hub",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-contact",
+        "event_id": "cut-contact",
+        "scene_id": "contact",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-contact-real",
+        "event_id": "cut-contact-real",
+        "scene_id": "contact-real",
+        "target": {
+          "kind": "cut",
+          "phase": "arrival"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-side-result",
+        "event_id": "cut-side-result",
+        "scene_id": "side-result",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-top-curve",
+        "event_id": "cut-top-curve",
+        "scene_id": "top-curve",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-hand-control",
+        "event_id": "cut-hand-control",
+        "scene_id": "hand-control",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-lean",
+        "event_id": "cut-lean",
+        "scene_id": "lean",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-forest-exit",
+        "event_id": "cut-forest-exit",
+        "scene_id": "forest-exit",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-road-speed",
+        "event_id": "cut-road-speed",
+        "scene_id": "road-speed",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-speed-type",
+        "event_id": "cut-speed-type",
+        "scene_id": "speed-type",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-whole-transfer",
+        "event_id": "cut-whole-transfer",
+        "scene_id": "whole-transfer",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-wheel-return",
+        "event_id": "cut-wheel-return",
+        "scene_id": "wheel-return",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-front-result",
+        "event_id": "cut-front-result",
+        "scene_id": "front-result",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-open-road",
+        "event_id": "cut-open-road",
+        "scene_id": "open-road",
+        "target": {
+          "kind": "cut",
+          "phase": "arrival"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "cut-phrase-handoff",
+        "event_id": "cut-phrase-handoff",
+        "scene_id": "phrase-handoff",
+        "target": {
+          "kind": "cut"
+        },
+        "reason": "다음 시점이 힘의 경로를 이어받는 컷을 해당 음악 타격 후보에 연결한다"
+      },
+      {
+        "id": "hand-contact",
+        "event_id": "hand-contact",
+        "scene_id": "grip",
+        "target": {
+          "kind": "video",
+          "layer_id": "footage"
+        },
+        "source_sha256": "89d23c0943427481e657ec1dafd6bb89e3aace3b431146e729a33abc23755396",
+        "source_event_seconds": 3.1,
+        "reason": "손가락이 후드에 닿는 원본 동작을 음악 타격 후보에 맞춰 구간을 선택한다"
+      }
+    ],
+    "holds": [],
+    "materialized": {
+      "signature": "a62cff5c86db13be6ebe2872b126fe49df3c295b91d13ab205fd2d5bd7bd1b44",
+      "status": "compiled; perceptual review pending"
+    }
+  },
+  "audio": {
+    "bpm": 133,
+    "motif": [
+      38
+    ],
+    "sections": [
+      {
+        "start": 0,
+        "end": 29.8,
+        "energy": 0
+      }
+    ],
+    "notes": [
+      {
+        "start": 0,
+        "duration": 0.01,
+        "note": 60,
+        "amp": 0,
+        "instrument": "felt"
+      }
+    ],
+    "composition": "The Lift source interval and authored envelope preserved. New local bicycle contact/ratchet sounds. No voice, no new music ducking.",
+    "clips": [
+      {
+        "asset_id": "the-lift",
+        "bus": "music",
+        "start": 0,
+        "source_in": 220.163265,
+        "duration": 29.8,
+        "gain_db": -8,
+        "fade_in": 0,
+        "fade_out": 0
+      }
+    ],
+    "bus_envelopes": {
+      "music": [
+        [
+          0,
+          1
+        ],
+        [
+          21.836735000000004,
+          1
+        ],
+        [
+          24.836735000000004,
+          0.6
+        ],
+        [
+          29.8,
+          0.5708043235294117
+        ]
+      ],
+      "sfx": [
+        [
+          0,
+          1
+        ],
+        [
+          29.8,
+          1
+        ]
+      ],
+      "ambience": [
+        [
+          0,
+          0
+        ],
+        [
+          29.8,
+          0
+        ]
+      ],
+      "voice": [
+        [
+          0,
+          0
+        ],
+        [
+          29.8,
+          0
+        ]
+      ]
+    },
+    "mix": {
+      "duck_voice": false,
+      "duck_sfx": false,
+      "music_gain_db": 6.610000000000002,
+      "sfx_gain_db": 6.610000000000002
+    },
+    "master_gain_db": 0,
+    "cues": [
+      {
+        "id": "grip-contact",
+        "kind": "pedal-click",
+        "time": 0.9,
+        "duration": 0.09,
+        "amp": 0.12
+      },
+      {
+        "id": "crank-tick",
+        "kind": "ratchet",
+        "time": 2.7533333333333334,
+        "duration": 0.3,
+        "amp": 0.08
+      },
+      {
+        "id": "tooth-tick",
+        "kind": "ratchet",
+        "time": 4.52,
+        "duration": 0.3,
+        "amp": 0.08
+      },
+      {
+        "id": "cassette-tick",
+        "kind": "ratchet",
+        "time": 8.153333333333332,
+        "duration": 0.3,
+        "amp": 0.08
+      }
+    ]
+  },
+  "editorial_plan": {
+    "version": "shot-intent-v1",
+    "sequences": [
+      {
+        "id": "pressure",
+        "question": "몸의 힘이 어디서 시작되는가",
+        "consequence": "손과 발의 접촉이 체인링의 회전으로 이어진다",
+        "musical_role": "짧은 준비와 반복 타격",
+        "shot_ids": [
+          "grip",
+          "press",
+          "crank",
+          "tooth",
+          "links"
+        ]
+      },
+      {
+        "id": "transfer",
+        "question": "회전은 어떻게 지면까지 가는가",
+        "consequence": "체인·기어·허브가 바퀴의 전진으로 바뀐다",
+        "musical_role": "짧은 삽입과 큰 결과 컷",
+        "shot_ids": [
+          "low-ride",
+          "cassette",
+          "hub",
+          "contact",
+          "contact-real",
+          "side-result"
+        ]
+      },
+      {
+        "id": "direction",
+        "question": "앞으로 가는 힘은 어떻게 방향을 얻는가",
+        "consequence": "손과 기울기가 길의 굽이를 통과한다",
+        "musical_role": "같은 프레이즈 안에서 시점과 방향을 변주",
+        "shot_ids": [
+          "top-curve",
+          "hand-control",
+          "lean",
+          "forest-exit",
+          "road-speed",
+          "speed-type"
+        ]
+      },
+      {
+        "id": "forward",
+        "question": "부분들이 합쳐져 무엇이 남는가",
+        "consequence": "구동계가 몸과 길의 질주로 회수된다",
+        "musical_role": "밀집한 회수 뒤 넓은 길과 제목",
+        "shot_ids": [
+          "whole-transfer",
+          "wheel-return",
+          "front-result",
+          "open-road",
+          "phrase-handoff"
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "scene_id": "grip",
+        "role": "action",
+        "framing": "grip",
+        "layout": "grip",
+        "purpose": "손이 핸들 위에 닿아 힘의 시작점을 만든다",
+        "subject_layers": [
+          "footage",
+          "shade"
+        ],
+        "action": {
+          "verb": "손이 핸들 위에 닿아 힘의 시작점을 만든다",
+          "before": {
+            "at": 0,
+            "state": "손가락이 후드 앞에 열린다"
+          },
+          "contact": {
+            "at": 0.9,
+            "state": "손이 핸들 위에 닿아 힘의 시작점을 만든다"
+          },
+          "after": {
+            "at": 1.7666666666666666,
+            "state": "손가락이 후드를 감싼다"
+          },
+          "changed_layers": [
+            "footage",
+            "shade",
+            "word"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [
+            {
+              "cue_id": "grip-contact",
+              "visible_event": "손이 핸들 위에 닿아 힘의 시작점을 만든다",
+              "at": 0.9,
+              "tolerance": 0.08
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "press",
+          "reason": "손가락이 후드를 감싼다 → press"
+        }
+      },
+      {
+        "scene_id": "press",
+        "role": "action",
+        "framing": "press",
+        "layout": "press",
+        "purpose": "손에서 발로 시선을 내려 신발이 페달과 수평을 이룬다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "손에서 발로 시선을 내려 신발이 페달과 수평을 이룬다",
+          "before": {
+            "at": 0,
+            "state": "신발 앞코가 아래를 향한다"
+          },
+          "contact": {
+            "at": 0.4,
+            "state": "손에서 발로 시선을 내려 신발이 페달과 수평을 이룬다"
+          },
+          "after": {
+            "at": 0.7666666666666667,
+            "state": "앞코가 수평으로 올라온다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "crank",
+          "reason": "앞코가 수평으로 올라온다 → crank"
+        }
+      },
+      {
+        "scene_id": "crank",
+        "role": "action",
+        "framing": "crank",
+        "layout": "crank",
+        "purpose": "발의 압력이 크랭크의 큰 회전으로 바뀐다",
+        "subject_layers": [
+          "crank"
+        ],
+        "action": {
+          "verb": "발의 압력이 크랭크의 큰 회전으로 바뀐다",
+          "before": {
+            "at": 0,
+            "state": "페달이 오른쪽 아래에 놓인다"
+          },
+          "contact": {
+            "at": 0.95,
+            "state": "발의 압력이 크랭크의 큰 회전으로 바뀐다"
+          },
+          "after": {
+            "at": 1.8666666666666665,
+            "state": "크랭크가 전진 방향으로 돌아 다음 이빨을 당긴다"
+          },
+          "changed_layers": [
+            "crank",
+            "verb"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "verb"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [
+            {
+              "cue_id": "crank-tick",
+              "visible_event": "발의 압력이 크랭크의 큰 회전으로 바뀐다",
+              "at": 0.15333333333333332,
+              "tolerance": 0.08
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "tooth",
+          "reason": "크랭크가 전진 방향으로 돌아 다음 이빨을 당긴다 → tooth"
+        }
+      },
+      {
+        "scene_id": "tooth",
+        "role": "action",
+        "framing": "tooth",
+        "layout": "tooth",
+        "purpose": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다",
+        "subject_layers": [
+          "gear",
+          "chain"
+        ],
+        "action": {
+          "verb": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다",
+          "before": {
+            "at": 0,
+            "state": "링의 윗부분에 체인이 걸려 있다"
+          },
+          "contact": {
+            "at": 0.4666666666666667,
+            "state": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다"
+          },
+          "after": {
+            "at": 0.9,
+            "state": "체인이 옆으로 이동하며 다음 이빨과 접촉한다"
+          },
+          "changed_layers": [
+            "gear",
+            "chain"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [
+            {
+              "cue_id": "tooth-tick",
+              "visible_event": "맞물리는 체인의 핀과 체인링 이빨을 크게 본다",
+              "at": 0.019999999999999574,
+              "tolerance": 0.08
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "links",
+          "reason": "체인이 옆으로 이동하며 다음 이빨과 접촉한다 → links"
+        }
+      },
+      {
+        "scene_id": "links",
+        "role": "action",
+        "framing": "links",
+        "layout": "links",
+        "purpose": "체인 링크의 수평 이동으로 힘의 전달 방향을 읽는다",
+        "subject_layers": [
+          "chain",
+          "direction"
+        ],
+        "action": {
+          "verb": "체인 링크의 수평 이동으로 힘의 전달 방향을 읽는다",
+          "before": {
+            "at": 0,
+            "state": "연결 핀이 좌측에서 들어온다"
+          },
+          "contact": {
+            "at": 0.43333333333333335,
+            "state": "체인 링크의 수평 이동으로 힘의 전달 방향을 읽는다"
+          },
+          "after": {
+            "at": 0.8333333333333334,
+            "state": "핀과 밝은 화살표가 우측으로 이어진다"
+          },
+          "changed_layers": [
+            "chain",
+            "word",
+            "direction"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "low-ride",
+          "reason": "핀과 밝은 화살표가 우측으로 이어진다 → low-ride"
+        }
+      },
+      {
+        "scene_id": "low-ride",
+        "role": "action",
+        "framing": "low-ride",
+        "layout": "low-ride",
+        "purpose": "크랭크에서 실제 달리는 바퀴로 크기를 바꾼다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "크랭크에서 실제 달리는 바퀴로 크기를 바꾼다",
+          "before": {
+            "at": 0,
+            "state": "앞바퀴와 무릎이 화면을 채운다"
+          },
+          "contact": {
+            "at": 0.9166666666666666,
+            "state": "크랭크에서 실제 달리는 바퀴로 크기를 바꾼다"
+          },
+          "after": {
+            "at": 1.7999999999999998,
+            "state": "노면이 바퀴 아래로 흐른다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "cassette",
+          "reason": "노면이 바퀴 아래로 흐른다 → cassette"
+        }
+      },
+      {
+        "scene_id": "cassette",
+        "role": "action",
+        "framing": "cassette",
+        "layout": "cassette",
+        "purpose": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다",
+        "subject_layers": [
+          "sprocket-0",
+          "sprocket-1",
+          "sprocket-2",
+          "sprocket-3",
+          "sprocket-4"
+        ],
+        "action": {
+          "verb": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다",
+          "before": {
+            "at": 0,
+            "state": "가장 큰 기어의 외곽이 보인다"
+          },
+          "contact": {
+            "at": 0.45,
+            "state": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다"
+          },
+          "after": {
+            "at": 0.8666666666666667,
+            "state": "겹친 기어의 면과 회전 중심이 함께 읽힌다"
+          },
+          "changed_layers": [
+            "sprocket-0",
+            "sprocket-1",
+            "sprocket-2",
+            "sprocket-3",
+            "sprocket-4",
+            "word"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [
+            {
+              "cue_id": "cassette-tick",
+              "visible_event": "계단처럼 겹친 뒤 기어가 체인의 힘을 이어받는다",
+              "at": 0.019999999999999574,
+              "tolerance": 0.08
+            }
+          ]
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "hub",
+          "reason": "겹친 기어의 면과 회전 중심이 함께 읽힌다 → hub"
+        }
+      },
+      {
+        "scene_id": "hub",
+        "role": "action",
+        "framing": "hub",
+        "layout": "hub",
+        "purpose": "기어에서 축으로 들어가 회전 중심을 타격처럼 강조한다",
+        "subject_layers": [
+          "hub"
+        ],
+        "action": {
+          "verb": "기어에서 축으로 들어가 회전 중심을 타격처럼 강조한다",
+          "before": {
+            "at": 0,
+            "state": "허브가 작은 타원으로 보인다"
+          },
+          "contact": {
+            "at": 0.21666666666666667,
+            "state": "기어에서 축으로 들어가 회전 중심을 타격처럼 강조한다"
+          },
+          "after": {
+            "at": 0.4,
+            "state": "축의 금속 면이 화면을 채운다"
+          },
+          "changed_layers": [
+            "hub"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "contact",
+          "reason": "축의 금속 면이 화면을 채운다 → contact"
+        }
+      },
+      {
+        "scene_id": "contact",
+        "role": "action",
+        "framing": "contact",
+        "layout": "contact",
+        "purpose": "바퀴의 회전이 지면을 밀어내는 접점으로 내려온다",
+        "subject_layers": [
+          "wheel",
+          "floor",
+          "contact-patch",
+          "roadmarks"
+        ],
+        "action": {
+          "verb": "바퀴의 회전이 지면을 밀어내는 접점으로 내려온다",
+          "before": {
+            "at": 0,
+            "state": "타이어 아래에 접촉면이 놓인다"
+          },
+          "contact": {
+            "at": 0.85,
+            "state": "바퀴의 회전이 지면을 밀어내는 접점으로 내려온다"
+          },
+          "after": {
+            "at": 1.6666666666666665,
+            "state": "바퀴 기준점이 돌고 노면 표시가 뒤로 흐른다"
+          },
+          "changed_layers": [
+            "wheel",
+            "floor",
+            "contact-patch",
+            "roadmarks",
+            "word"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "contact-real",
+          "reason": "바퀴 기준점이 돌고 노면 표시가 뒤로 흐른다 → contact-real"
+        }
+      },
+      {
+        "scene_id": "contact-real",
+        "role": "action",
+        "framing": "contact-real",
+        "layout": "contact-real",
+        "purpose": "그림의 접촉면을 실제 타이어와 도로로 이어준다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "그림의 접촉면을 실제 타이어와 도로로 이어준다",
+          "before": {
+            "at": 0,
+            "state": "타이어 아래 흰 차선이 보인다"
+          },
+          "contact": {
+            "at": 0.7333333333333333,
+            "state": "그림의 접촉면을 실제 타이어와 도로로 이어준다"
+          },
+          "after": {
+            "at": 1.4333333333333331,
+            "state": "차선이 뒤로 지나간다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "side-result",
+          "reason": "차선이 뒤로 지나간다 → side-result"
+        }
+      },
+      {
+        "scene_id": "side-result",
+        "role": "action",
+        "framing": "side-result",
+        "layout": "side-result",
+        "purpose": "힘의 결과를 몸 전체와 움직이는 프레임으로 보여준다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "힘의 결과를 몸 전체와 움직이는 프레임으로 보여준다",
+          "before": {
+            "at": 0,
+            "state": "몸과 바퀴가 측면에 놓인다"
+          },
+          "contact": {
+            "at": 0.9,
+            "state": "힘의 결과를 몸 전체와 움직이는 프레임으로 보여준다"
+          },
+          "after": {
+            "at": 1.7666666666666666,
+            "state": "나무의 수직선이 뒤로 빠져나간다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "top-curve",
+          "reason": "나무의 수직선이 뒤로 빠져나간다 → top-curve"
+        }
+      },
+      {
+        "scene_id": "top-curve",
+        "role": "action",
+        "framing": "top-curve",
+        "layout": "top-curve",
+        "purpose": "수평의 전달 방향이 위에서 본 코너의 진행 방향으로 바뀐다",
+        "subject_layers": [
+          "road",
+          "rider"
+        ],
+        "action": {
+          "verb": "수평의 전달 방향이 위에서 본 코너의 진행 방향으로 바뀐다",
+          "before": {
+            "at": 0,
+            "state": "라이더가 굽은 길 아래에서 진입한다"
+          },
+          "contact": {
+            "at": 0.9,
+            "state": "수평의 전달 방향이 위에서 본 코너의 진행 방향으로 바뀐다"
+          },
+          "after": {
+            "at": 1.7666666666666666,
+            "state": "동일 라이더 도형이 굽이를 따라 우측으로 나간다"
+          },
+          "changed_layers": [
+            "road",
+            "rider"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "hand-control",
+          "reason": "동일 라이더 도형이 굽이를 따라 우측으로 나간다 → hand-control"
+        }
+      },
+      {
+        "scene_id": "hand-control",
+        "role": "action",
+        "framing": "hand-control",
+        "layout": "hand-control",
+        "purpose": "손의 제어로 방향을 정한다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "손의 제어로 방향을 정한다",
+          "before": {
+            "at": 0,
+            "state": "손가락이 후드 옆에 놓인다"
+          },
+          "contact": {
+            "at": 0.45,
+            "state": "손의 제어로 방향을 정한다"
+          },
+          "after": {
+            "at": 0.8666666666666667,
+            "state": "손이 후드를 감싼 채 차체를 지지한다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "lean",
+          "reason": "손이 후드를 감싼 채 차체를 지지한다 → lean"
+        }
+      },
+      {
+        "scene_id": "lean",
+        "role": "action",
+        "framing": "lean",
+        "layout": "lean",
+        "purpose": "바퀴와 포크가 한 몸으로 기울며 방향을 얻는다",
+        "subject_layers": [
+          "front",
+          "fork",
+          "floor"
+        ],
+        "action": {
+          "verb": "바퀴와 포크가 한 몸으로 기울며 방향을 얻는다",
+          "before": {
+            "at": 0,
+            "state": "바퀴가 세로 축을 유지한다"
+          },
+          "contact": {
+            "at": 0.6833333333333333,
+            "state": "바퀴와 포크가 한 몸으로 기울며 방향을 얻는다"
+          },
+          "after": {
+            "at": 1.3333333333333333,
+            "state": "바퀴와 포크의 축이 함께 기운다"
+          },
+          "changed_layers": [
+            "front",
+            "fork",
+            "floor",
+            "word"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "forest-exit",
+          "reason": "바퀴와 포크의 축이 함께 기운다 → forest-exit"
+        }
+      },
+      {
+        "scene_id": "forest-exit",
+        "role": "action",
+        "framing": "forest-exit",
+        "layout": "forest-exit",
+        "purpose": "도로가 화면 오른쪽으로 열리는 실제 진행을 이어간다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "도로가 화면 오른쪽으로 열리는 실제 진행을 이어간다",
+          "before": {
+            "at": 0,
+            "state": "나란한 바퀴와 숲이 보인다"
+          },
+          "contact": {
+            "at": 0.9,
+            "state": "도로가 화면 오른쪽으로 열리는 실제 진행을 이어간다"
+          },
+          "after": {
+            "at": 1.7666666666666666,
+            "state": "세 라이더가 도로의 열린 쪽으로 나간다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "road-speed",
+          "reason": "세 라이더가 도로의 열린 쪽으로 나간다 → road-speed"
+        }
+      },
+      {
+        "scene_id": "road-speed",
+        "role": "action",
+        "framing": "road-speed",
+        "layout": "road-speed",
+        "purpose": "차선의 원근으로 몸의 전진을 안쪽에서 느낀다",
+        "subject_layers": [
+          "road",
+          "lanes"
+        ],
+        "action": {
+          "verb": "차선의 원근으로 몸의 전진을 안쪽에서 느낀다",
+          "before": {
+            "at": 0,
+            "state": "가까운 차선이 작은 사다리꼴이다"
+          },
+          "contact": {
+            "at": 0.6833333333333333,
+            "state": "차선의 원근으로 몸의 전진을 안쪽에서 느낀다"
+          },
+          "after": {
+            "at": 1.3333333333333333,
+            "state": "차선이 아래로 크게 지나간다"
+          },
+          "changed_layers": [
+            "road",
+            "lanes"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "speed-type",
+          "reason": "차선이 아래로 크게 지나간다 → speed-type"
+        }
+      },
+      {
+        "scene_id": "speed-type",
+        "role": "action",
+        "framing": "speed-type",
+        "layout": "speed-type",
+        "purpose": "앞의 전달 과정을 하나의 결과 단어로 묶는다",
+        "subject_layers": [
+          "under"
+        ],
+        "action": {
+          "verb": "앞의 전달 과정을 하나의 결과 단어로 묶는다",
+          "before": {
+            "at": 0,
+            "state": "활자가 좌측에 모여 있다"
+          },
+          "contact": {
+            "at": 0.45,
+            "state": "앞의 전달 과정을 하나의 결과 단어로 묶는다"
+          },
+          "after": {
+            "at": 0.8666666666666667,
+            "state": "속도로가 화면 너비를 채운다"
+          },
+          "changed_layers": [
+            "word",
+            "under"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "whole-transfer",
+          "reason": "속도로가 화면 너비를 채운다 → whole-transfer"
+        }
+      },
+      {
+        "scene_id": "whole-transfer",
+        "role": "action",
+        "framing": "whole-transfer",
+        "layout": "whole-transfer",
+        "purpose": "발과 체인과 기어의 관계를 짧게 한 화면에서 회수한다",
+        "subject_layers": [
+          "drive-rear",
+          "drive-front",
+          "drive-chain-bed",
+          "drive-chain",
+          "drive-crank"
+        ],
+        "action": {
+          "verb": "발과 체인과 기어의 관계를 짧게 한 화면에서 회수한다",
+          "before": {
+            "at": 0,
+            "state": "앞뒤 기어가 체인으로 연결된다"
+          },
+          "contact": {
+            "at": 0.9,
+            "state": "발과 체인과 기어의 관계를 짧게 한 화면에서 회수한다"
+          },
+          "after": {
+            "at": 1.7666666666666666,
+            "state": "하나의 이동량이 모든 회전을 함께 만든다"
+          },
+          "changed_layers": [
+            "drive-rear",
+            "drive-front",
+            "drive-chain-bed",
+            "drive-chain",
+            "drive-crank",
+            "word"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "wheel-return",
+          "reason": "하나의 이동량이 모든 회전을 함께 만든다 → wheel-return"
+        }
+      },
+      {
+        "scene_id": "wheel-return",
+        "role": "action",
+        "framing": "wheel-return",
+        "layout": "wheel-return",
+        "purpose": "전체 도해의 결과를 실제 굴러가는 바퀴로 돌려준다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "전체 도해의 결과를 실제 굴러가는 바퀴로 돌려준다",
+          "before": {
+            "at": 0,
+            "state": "림이 화면 앞에 크게 놓인다"
+          },
+          "contact": {
+            "at": 0.45,
+            "state": "전체 도해의 결과를 실제 굴러가는 바퀴로 돌려준다"
+          },
+          "after": {
+            "at": 0.8666666666666667,
+            "state": "페달이 내려가며 노면이 빠져나간다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "front-result",
+          "reason": "페달이 내려가며 노면이 빠져나간다 → front-result"
+        }
+      },
+      {
+        "scene_id": "front-result",
+        "role": "action",
+        "framing": "front-result",
+        "layout": "front-result",
+        "purpose": "여러 힘이 모인 전진을 정면의 몸으로 보여준다",
+        "subject_layers": [
+          "footage",
+          "shade"
+        ],
+        "action": {
+          "verb": "여러 힘이 모인 전진을 정면의 몸으로 보여준다",
+          "before": {
+            "at": 0,
+            "state": "라이더가 화면 중심으로 다가온다"
+          },
+          "contact": {
+            "at": 0.8333333333333334,
+            "state": "여러 힘이 모인 전진을 정면의 몸으로 보여준다"
+          },
+          "after": {
+            "at": 1.6333333333333333,
+            "state": "어깨와 앞바퀴가 같은 축으로 유지된다"
+          },
+          "changed_layers": [
+            "footage",
+            "shade",
+            "word"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "open-road",
+          "reason": "어깨와 앞바퀴가 같은 축으로 유지된다 → open-road"
+        }
+      },
+      {
+        "scene_id": "open-road",
+        "role": "action",
+        "framing": "open-road",
+        "layout": "open-road",
+        "purpose": "구동계의 작은 접촉에서 넓은 길의 거리로 의미를 확장한다",
+        "subject_layers": [
+          "footage"
+        ],
+        "action": {
+          "verb": "구동계의 작은 접촉에서 넓은 길의 거리로 의미를 확장한다",
+          "before": {
+            "at": 0,
+            "state": "위에서 본 작은 라이더가 길에 놓인다"
+          },
+          "contact": {
+            "at": 0.9666666666666667,
+            "state": "구동계의 작은 접촉에서 넓은 길의 거리로 의미를 확장한다"
+          },
+          "after": {
+            "at": 1.9,
+            "state": "긴 그림자와 함께 길 위의 위치가 앞으로 이동한다"
+          },
+          "changed_layers": [
+            "footage"
+          ]
+        },
+        "motion": {
+          "driver": "subject",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "none",
+          "reason": "대상 자체의 변화로 설명한다",
+          "layers": []
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "contrast-cut",
+          "next_scene": "phrase-handoff",
+          "reason": "긴 그림자와 함께 길 위의 위치가 앞으로 이동한다 → phrase-handoff"
+        }
+      },
+      {
+        "scene_id": "phrase-handoff",
+        "role": "action",
+        "framing": "phrase-handoff",
+        "layout": "phrase-handoff",
+        "purpose": "길의 세로 선을 제목 옆에 남겨 다음 시퀀스로 넘긴다",
+        "subject_layers": [
+          "trace"
+        ],
+        "action": {
+          "verb": "길의 세로 선을 제목 옆에 남겨 다음 시퀀스로 넘긴다",
+          "before": {
+            "at": 0,
+            "state": "선이 우측에 놓인다"
+          },
+          "contact": {
+            "at": 0.4666666666666667,
+            "state": "길의 세로 선을 제목 옆에 남겨 다음 시퀀스로 넘긴다"
+          },
+          "after": {
+            "at": 0.9,
+            "state": "작품 이름과 길의 선이 함께 남는다"
+          },
+          "changed_layers": [
+            "word",
+            "trace"
+          ]
+        },
+        "motion": {
+          "driver": "type",
+          "reason": "주체의 동작과 시점 변화로 인과를 전달한다",
+          "steady_windows": []
+        },
+        "typography": {
+          "role": "accent",
+          "reason": "짧은 동사로 물체의 의미를 강조한다",
+          "layers": [
+            "word"
+          ]
+        },
+        "sound": {
+          "music_role": "고정 음악의 실제 PCM 타격 후보; 청취 별도",
+          "ambience_role": "합성 접촉음만 소량 추가; 현장음 없음",
+          "events": [],
+          "no_sync_reason": "음악의 타격을 보존하고 추가 소리를 비운다"
+        },
+        "bridge": {
+          "kind": "end"
+        }
+      }
+    ]
+  },
+  "reconnection": {
+    "instruction": "Obtain each permitted original from rights.source_url, verify SHA256, place in reconnect. Original stock files and private approvals excluded."
+  }
+}
