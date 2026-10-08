@@ -1,6 +1,8 @@
 # Motion Art Director — 자체 제작 데모
 
-[브라우저·모바일 공개 갤러리](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [스킬 설치](../../motion-art-director) · [검증 범위](../../motion-art-director/VALIDATION.md)
+[전체 9작품 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [제작 과정 사이트](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [스킬 설치](../../motion-art-director) · [검증 범위](../../motion-art-director/VALIDATION.md)
+
+최신 작품: [요리](meal-chef-full180-v2.mp4) · [레이싱](racing-full180-v1.mp4) · [페달 음악 교정판](pedal-musical-full-v6.mp4) · [도시 v4](city-pulse-180-v4.mp4) · [커피](coffee-transfer-30-v1.mp4). 아래의 이전 버전과 시험본은 개발 기록으로 보존합니다.
 
 | 파일 | 내용 |
 |---|---|
@@ -86,3 +88,11 @@ Technical verification does not imply full human listening/aesthetic approval, b
 [180초·97컷 본편 / 음악만 비교 / 타격 진단 / 시점 교정](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/film/) · [재제작 및 출처](pedal-180-editorial-v4-REPRODUCE.md) · [검증 기록](pedal-180-editorial-v4-verification.json) · [개발 설치 ZIP](motion-art-director-development-290d166.zip).
 
 짧은 대표 구간의 방향을9개 서사 흐름으로 확장했습니다. 기존 음악 편집을 유지하고 활자의 늦은 도착, 금속 연결선, 회전 관계를 수정했습니다. 공통 스킬에는 세밀한 타격 후보·활자 착지 점검·AAC/PCM 시계 비교를 추가했습니다. 기술 검증과 사람의 청취·최종 미감은 별도로 기록합니다. 이전 영상은 보존하며 전체3.1 Release·Achmage OS 완료를 의미하지 않습니다.
+
+## 4.0.0 추가 공개 작품
+
+- **[생각이 맛이 되다](meal-chef-full180-v2.mp4)** — 180초 / 89컷 / 실사 + 정밀 그래픽. Pop04 — Grigoriy Nuzhny / Mixkit. 발췌·음량·엔딩 편집. Mixkit·Pexels 촬영 자료의 출처와 개별 이용 조건은 보고서에 수록했습니다. [상세](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/film/?v=35) · [기록](meal-chef-full180-v2-report.json).
+- **[RACING LAB · 속도를 지배하는 순간](racing-full180-v1.mp4)** — 180초 / 116컷 / 음악 + 주행 + 효과음. Blown Away — Kevin MacLeod (incompetech.com), CC BY 4.0. 발췌·음량·동기화 편집 및 자체 효과음. 촬영 자료는 Pexels 개별 조건 적용. 공식 팀·브랜드 광고가 아닙니다. [상세](https://motion-art-director-review-oct05.achmage2.chatgpt.site/racing/film/?v=30) · [기록](racing-full180-v1-report.json).
+- **[페달 · 리듬이 속도가 되는 순간](pedal-musical-full-v6.mp4)** — 180초 / 음악 묶음·착지 교정판. The Lift — Kevin MacLeod (incompetech.com), CC BY 4.0. 발췌·페이드·음량 편집, 자체 효과음. 서로 다른 라이더의 시각적 비유이며 한 선수의 경기 기록이 아닙니다. [상세](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/musical/full/) · [기록](pedal-180-editorial-v4-REPRODUCE.md).
+
+요리 음악: [Mixkit Music License](https://mixkit.co/license/#musicFree). 레이싱 음악: [Blown Away 원곡](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200100), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 완성본 공개와 원본 소스 재배포 허용은 다릅니다. 원본 촬영과 독립 음악 파일은 새로 동봉하지 않습니다.

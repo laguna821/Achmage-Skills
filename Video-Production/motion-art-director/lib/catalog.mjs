@@ -1,10 +1,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {ROOT,read,write,escape,mkdir,hash} from './io.mjs';
+import {TECHNIQUES} from './techniques.mjs';
 const CORPUS=path.join(ROOT,'vendor/awesome-ai-motion');
 export const catalog=()=>read(path.join(CORPUS,'index.json'));
 export const ADAPTERS={'shape-morph':'liquid','morph-match-cut':'liquid','infinite-zoom':'star','route-highlight':'route','smoke-plume':'smoke','liquid-metal':'liquid','quote-card-build':'rebuke','spatial-word-composition':'crystal','glass-refraction':'crystal'};
-export function search(q='',limit=30){return catalog().effects.filter(e=>JSON.stringify(e).toLowerCase().includes(q.toLowerCase())).slice(0,limit).map(e=>({...e,availability:{card:true,referenceClip:!!e.files?.mp4&&fs.existsSync(path.join(CORPUS,e.files.mp4)),referenceHTML:!!e.files?.html&&fs.existsSync(path.join(CORPUS,e.files.html)),adapted:!!ADAPTERS[e.slug],baselineQuality:'not-human-approved'}}));}
+export function search(q='',limit=30,filters={}){
+ const allowed=['media','engine','family','status'];for(const key of Object.keys(filters))if(!allowed.includes(key))throw Error('Unknown catalog filter '+key);
+ if(filters.status&&!['card','clip','executable','automated','aesthetic'].includes(filters.status))throw Error('Unknown validation status');
+ return catalog().effects.map(e=>({...e,adapter:TECHNIQUES[e.slug]||null,availability:{card:true,referenceClip:!!e.files?.mp4&&fs.existsSync(path.join(CORPUS,e.files.mp4)),referenceHTML:!!e.files?.html&&fs.existsSync(path.join(CORPUS,e.files.html)),adapted:!!ADAPTERS[e.slug]||!!TECHNIQUES[e.slug],automated:TECHNIQUES[e.slug]?.automated_review==='passed',aesthetic:TECHNIQUES[e.slug]?.aesthetic_review==='approved',baselineQuality:'not-human-approved'}}))
+ .filter(e=>JSON.stringify(e).toLowerCase().includes(q.toLowerCase())&&(!filters.family||e.family===filters.family)&&(!filters.media||(e.media||[]).some(x=>x.toLowerCase().includes(filters.media.toLowerCase())))&&(!filters.engine||[...Object.keys(e.engines||{}),...(e.adapter?.engines||[])].includes(filters.engine))&&(!filters.status||({card:true,clip:e.availability.referenceClip,executable:e.availability.adapted,automated:e.availability.automated,aesthetic:e.availability.aesthetic})[filters.status])).slice(0,Math.max(0,Math.min(637,limit)));
+}
 export function catalogSite(out){
  mkdir(out);const items=catalog().effects.map(e=>({...e,adapted:ADAPTERS[e.slug]||null}));
  const corpus=path.relative(out,CORPUS).replaceAll('\\','/');

@@ -114,8 +114,8 @@
     {
       "name": "motion-art-director",
       "source": "./Video-Production/motion-art-director",
-      "description": "Codex/Claude Code motion graphics: art direction, SVG CPU rendering, optional Skia/spatial cameras, music/SFX, review and revisions.",
-      "version": "3.0.0-rc.1",
+      "description": "Motion graphics from early music/storyboard audition through hybrid footage/vector production, musical editing, complete messages, revisions and delivery. Codex/Claude Code CPU workflow.",
+      "version": "4.0.0",
       "author": {
         "name": "laguna821"
       },

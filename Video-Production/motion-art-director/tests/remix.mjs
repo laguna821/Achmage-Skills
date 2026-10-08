@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';import fs from 'node:fs';import os from 'node:os';import path from 'node:path';
+import {render} from '../lib/render.mjs';import {remix,checkPictureReuse,pictureIdentity} from '../lib/remix.mjs';import {approvalHash} from '../lib/contract.mjs';import {read,write,hash} from '../lib/io.mjs';import {withStorage} from '../lib/storage.mjs';
+const out=fs.mkdtempSync(path.join(os.tmpdir(),'motion-remix-'));
+const p={schema_version:'3.1.0',project_id:'remix-fixture',title:'Fixture',direction:'Cache eviction audio-only regression',renderer:'hybrid-composite',visual_policy:'licensed_media',render_network:'local_only',editing_contract:'shot-rhythm-v1',profile:{jobs:1,gpu:false},output:{width:1920,height:1080,fps:30,total_frames:30},seed:1,sources:[],content_units:[],required_content_ids:[],events:[],routes:['video-editing'],assets:[],scenes:[{id:'cut',start:0,end:30,mode:'composite',content_ids:[],shot_role:'action',composition:{width:1920,height:1080,layers:[{id:'shape',kind:'svg',svg:'<circle cx="960" cy="540" r="100" fill="white"/>'}]}}],audio:{bpm:128,motif:[60],sections:[{start:0,end:1,energy:0}]}};
+const approve=q=>{delete q.approval;q.approval={hash:approvalHash(q),by:'test',note:'Synthetic fixture only'};return q;};approve(p);
+const base=path.join(out,'render'),r=await render(p,base,{draft:true}),old=hash(fs.readFileSync(r.final));
+await withStorage(base,{keepCacheFiles:0},async()=>{});
+assert(!fs.existsSync(r.log.clips[0].path),'intermediate actually evicted');
+const q=approve({...structuredClone(p),audio:{...p.audio,master_gain_db:10},project_id:'remix-audio-change'});
+assert.equal(pictureIdentity(q),pictureIdentity(p));
+const made=await remix(q,r.out,path.join(out,'audio-only'));assert.equal(made.log.pictureReuse.renderedFrames,0);assert.equal(old,hash(fs.readFileSync(r.final)));
+assert.equal(made.log.totalFrames,30);
+const bad=structuredClone(q);bad.scenes[0].composition.layers[0].svg='<rect width="300" height="300" fill="red"/>';approve(bad);
+assert.throws(()=>checkPictureReuse(bad,p,r.log,r.out),/Picture inputs/);
+assert.throws(()=>checkPictureReuse(q,p,{...r.log,runtime:'changed'},r.out),/runtime/);
+assert.throws(()=>checkPictureReuse(q,p,r.log,path.join(out,'wrong')),/identity/);
+await assert.rejects(()=>remix(q,r.out,made.out),/new directory/);
+const tampered=path.join(out,'tampered');fs.mkdirSync(tampered);fs.copyFileSync(r.final,path.join(tampered,'final.mp4'));fs.appendFileSync(path.join(tampered,'final.mp4'),'changed');
+write(path.join(tampered,'project.json'),p);write(path.join(tampered,'render-state.json'),{...r.log,projectHash:approvalHash(p)});
+await assert.rejects(()=>remix(q,tampered,path.join(out,'must-not-render')),/hash mismatch/);
+console.log('remix: real evicted cache, identical encoded picture, old final preserved; picture/runtime/receipt/tamper/existing output rejected');
+

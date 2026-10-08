@@ -30,10 +30,10 @@ window.__artReady=(async function(){
   const frame=Math.max(0,Math.min(p.output.total_frames-1,Math.floor(sec*30+1e-5))),s=p.scenes.find(s=>frame>=s.start&&frame<s.end),t=(frame-s.start)/30,c=s.spatial;
   const travel=c.travel||{},speed=travel.speed??0,acc=travel.acceleration??0,dist=(travel.offset??0)+speed*t+.5*acc*t*t;
   for(const {object:o,source:n} of registry.values()){
-   const tr=sample(n.keyframes,frame/30,{position:n.position||[0,0,0],rotation:n.rotation||[0,0,0],scale:n.scale||[1,1,1]});o.position.fromArray(tr.position);o.rotation.set(...tr.rotation);o.scale.fromArray(tr.scale);o.visible=!(n.tags||[]).some(tag=>(c.hide||[]).includes(tag));
+   const tr=sample(n.keyframes,frame/30+(p.spatial.clock_origin||0),{position:n.position||[0,0,0],rotation:n.rotation||[0,0,0],scale:n.scale||[1,1,1]});o.position.fromArray(tr.position);o.rotation.set(...tr.rotation);o.scale.fromArray(tr.scale);o.visible=!(n.tags||[]).some(tag=>(c.hide||[]).includes(tag));
    if(n.motion?.kind==='wheel')o.rotation[n.motion.axis||'x']+=(dist/(n.motion.radius||.36))*(n.motion.sign??1);
    if(n.motion?.kind==='repeat'){const axis=n.motion.axis||'z',a=n.motion.min,b=n.motion.max;o.position[axis]=a+((o.position[axis]-a+dist)%(b-a)+(b-a))%(b-a);}
-   if(n.motion?.kind==='oscillate')o.position[n.motion.axis||'y']+=Math.sin(frame/30*(n.motion.frequency||1)+p.seed)*n.motion.amplitude;
+   if(n.motion?.kind==='oscillate')o.position[n.motion.axis||'y']+=Math.sin((frame/30+(p.spatial.clock_origin||0))*(n.motion.frequency||1)+p.seed)*n.motion.amplitude;
   }
   const v=sample(c.camera.keyframes,t,{position:c.camera.position,target:c.camera.target,fov:c.camera.fov??45,roll:c.camera.roll??0});camera.position.fromArray(v.position);camera.fov=v.fov;camera.up.set(Math.sin(v.roll),Math.cos(v.roll),0);camera.lookAt(...v.target);camera.updateProjectionMatrix();
   scene.background=new THREE.Color(c.background||'#080d16');scene.fog=new THREE.Fog(c.fog?.color||c.background||'#080d16',c.fog?.near??35,c.fog?.far??160);renderer.toneMappingExposure=c.exposure??1.2;hemi.intensity=c.ambient??2.3;key.intensity=c.key??3.8;rim.intensity=c.rim??2;

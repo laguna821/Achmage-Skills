@@ -1,0 +1,2982 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:motion-art-director:project:3.1.0",
+  "title": "Motion Art Director 3.1 project",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "project_id",
+    "title",
+    "direction",
+    "visual_policy",
+    "render_network",
+    "seed",
+    "routes",
+    "profile",
+    "output",
+    "sources",
+    "content_units",
+    "required_content_ids",
+    "scenes",
+    "events",
+    "audio"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "3.1.0"
+    },
+    "project_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "direction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visual_policy": {
+      "enum": [
+        "strict_svg",
+        "procedural_only",
+        "licensed_media"
+      ]
+    },
+    "render_network": {
+      "const": "local_only"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "video-editing",
+          "promo",
+          "shorts",
+          "newsletter",
+          "infographic",
+          "thumbnail",
+          "deck-and-site"
+        ]
+      }
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "jobs",
+        "gpu"
+      ],
+      "properties": {
+        "jobs": {
+          "const": 1
+        },
+        "gpu": {
+          "const": false
+        },
+        "rasterizer": {
+          "enum": [
+            "chromium",
+            "skia"
+          ]
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": [
+        "width",
+        "height",
+        "fps",
+        "total_frames"
+      ],
+      "properties": {
+        "width": {
+          "const": 1920
+        },
+        "height": {
+          "const": 1080
+        },
+        "fps": {
+          "const": 30
+        },
+        "total_frames": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "title",
+          "retrieval_state"
+        ]
+      }
+    },
+    "content_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "content_id",
+          "source_ref",
+          "source_text",
+          "display_text",
+          "copy_lock"
+        ],
+        "properties": {
+          "copy_lock": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "required_content_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "kind",
+          "content_id"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "actual",
+              "proposed",
+              "hypothetical",
+              "symbolic"
+            ]
+          }
+        }
+      }
+    },
+    "scenes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "start",
+          "end",
+          "content_ids"
+        ],
+        "properties": {
+          "start": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "content_ids": {
+            "type": "array",
+            "minItems": 0
+          },
+          "mode": {
+            "type": "string"
+          },
+          "custom_svg": {
+            "type": "string"
+          },
+          "layout": {
+            "type": "object"
+          },
+          "portrait_layout": {
+            "type": "object"
+          },
+          "composition": {
+            "type": "object",
+            "required": [
+              "layers"
+            ],
+            "properties": {
+              "layers": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "$ref": "#/$defs/hybrid_layer"
+                }
+              },
+              "width": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          },
+          "visual_plan": {
+            "$ref": "#/$defs/visual_plan"
+          },
+          "transition_in": {
+            "type": "object",
+            "required": [
+              "kind",
+              "duration"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "fade",
+                  "wipeleft",
+                  "wiperight",
+                  "circleopen",
+                  "wipe-x",
+                  "wipe-y",
+                  "iris"
+                ]
+              },
+              "duration": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 2
+              },
+              "origin": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "spatial": {
+            "type": "object",
+            "required": [
+              "camera"
+            ],
+            "properties": {
+              "camera": {
+                "$ref": "#/$defs/spatial_camera"
+              },
+              "travel": {
+                "type": "object",
+                "properties": {
+                  "offset": {
+                    "type": "number"
+                  },
+                  "speed": {
+                    "type": "number"
+                  },
+                  "acceleration": {
+                    "type": "number"
+                  }
+                }
+              },
+              "hide": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "plates": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "asset_id",
+                    "rect"
+                  ],
+                  "properties": {
+                    "asset_id": {
+                      "type": "string"
+                    },
+                    "rect": {
+                      "type": "array",
+                      "minItems": 4,
+                      "maxItems": 4,
+                      "items": {
+                        "type": "number"
+                      },
+                      "description": "x,y,width,height; runtime enforces positive dimensions and asset bounds"
+                    },
+                    "source_rect": {
+                      "type": "array",
+                      "minItems": 4,
+                      "maxItems": 4,
+                      "items": {
+                        "type": "number"
+                      },
+                      "description": "x,y,width,height; runtime enforces positive dimensions and asset bounds"
+                    },
+                    "source_clip": {
+                      "type": "array",
+                      "minItems": 3,
+                      "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "opacity": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "roll": {
+                      "type": "number"
+                    },
+                    "wheels": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "minItems": 4,
+                        "maxItems": 4,
+                        "items": {
+                          "type": "number"
+                        },
+                        "description": "x,y,width,height; runtime enforces positive dimensions and asset bounds"
+                      }
+                    },
+                    "wheel_shutter": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ground_anchors": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "source",
+                          "world"
+                        ],
+                        "properties": {
+                          "source": {
+                            "type": "array",
+                            "minItems": 2,
+                            "maxItems": 2,
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "world": {
+                            "type": "array",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "mirrors": {
+                      "type": "array",
+                      "maxItems": 3,
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "polygon",
+                          "camera"
+                        ],
+                        "properties": {
+                          "polygon": {
+                            "type": "array",
+                            "minItems": 3,
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "maxItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "camera": {
+                            "$ref": "#/$defs/spatial_camera"
+                          }
+                        }
+                      }
+                    },
+                    "keyframes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "at"
+                        ],
+                        "properties": {
+                          "at": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "rect": {
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": {
+                              "type": "number"
+                            },
+                            "description": "x,y,width,height; runtime enforces positive dimensions and asset bounds"
+                          },
+                          "opacity": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          },
+                          "roll": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "show": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "transforms": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object",
+                  "properties": {
+                    "position": {
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "rotation": {
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "scale": {
+                      "type": "array",
+                      "minItems": 3,
+                      "maxItems": 3,
+                      "items": {
+                        "type": "number"
+                      }
+                    },
+                    "keyframes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": [
+                          "at"
+                        ],
+                        "properties": {
+                          "at": {
+                            "type": "number",
+                            "minimum": 0
+                          },
+                          "position": {
+                            "type": "array",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "rotation": {
+                            "type": "array",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "scale": {
+                            "type": "array",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "ease": {
+                            "enum": [
+                              "linear",
+                              "smooth",
+                              "out",
+                              "hold"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "tyre_smoke": {
+                "type": "object",
+                "properties": {
+                  "drift": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "shot_role": {
+            "enum": [
+              "reading",
+              "action"
+            ]
+          },
+          "reading_windows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "content_id",
+                "start",
+                "end"
+              ],
+              "properties": {
+                "content_id": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          },
+          "driving": {
+            "type": "object",
+            "required": [
+              "speed",
+              "rpm",
+              "throttle",
+              "slip",
+              "pan"
+            ],
+            "properties": {
+              "speed": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 100
+                    }
+                  ],
+                  "items": false
+                },
+                "description": "Runtime checks strictly increasing times and full scene coverage."
+              },
+              "rpm": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "number",
+                      "minimum": 400,
+                      "maximum": 9000
+                    }
+                  ],
+                  "items": false
+                },
+                "description": "Runtime checks strictly increasing times and full scene coverage."
+              },
+              "throttle": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  ],
+                  "items": false
+                },
+                "description": "Runtime checks strictly increasing times and full scene coverage."
+              },
+              "slip": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  ],
+                  "items": false
+                },
+                "description": "Runtime checks strictly increasing times and full scene coverage."
+              },
+              "pan": {
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "prefixItems": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "number",
+                      "minimum": -1,
+                      "maximum": 1
+                    }
+                  ],
+                  "items": false
+                },
+                "description": "Runtime checks strictly increasing times and full scene coverage."
+              },
+              "sound_gain_db": {
+                "type": "number",
+                "minimum": -30,
+                "maximum": 6
+              },
+              "passby": {
+                "type": "number",
+                "minimum": 0
+              }
+            }
+          },
+          "spatial_transition": {
+            "type": "object",
+            "required": [
+              "kind",
+              "duration"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "shutter"
+                ]
+              },
+              "duration": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 0.6
+              },
+              "color": {
+                "type": "string"
+              }
+            }
+          },
+          "renderer": {
+            "enum": [
+              "vector-composite",
+              "image-composite",
+              "cinematic",
+              "spatial-three",
+              "hybrid-composite"
+            ]
+          },
+          "rasterizer": {
+            "enum": [
+              "chromium",
+              "skia"
+            ]
+          },
+          "portrait_composition": {
+            "type": "object",
+            "required": [
+              "layers"
+            ],
+            "properties": {
+              "layers": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 64,
+                "items": {
+                  "$ref": "#/$defs/hybrid_layer"
+                }
+              },
+              "width": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "audio": {
+      "type": "object",
+      "required": [
+        "bpm",
+        "motif",
+        "sections",
+        "cues"
+      ],
+      "properties": {
+        "bpm": {
+          "type": "number",
+          "minimum": 30,
+          "maximum": 200
+        },
+        "motif": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 127
+          }
+        },
+        "sections": {
+          "type": "array",
+          "minItems": 1
+        },
+        "cues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "time",
+              "kind"
+            ],
+            "properties": {
+              "time": {
+                "type": "number",
+                "minimum": 0
+              },
+              "kind": {
+                "enum": [
+                  "impact",
+                  "chime",
+                  "whoosh",
+                  "tick",
+                  "paper",
+                  "pencil",
+                  "press",
+                  "thread",
+                  "shear",
+                  "key",
+                  "drive",
+                  "wind",
+                  "passby",
+                  "footstep",
+                  "pour",
+                  "grind",
+                  "pedal-click",
+                  "ratchet",
+                  "tire-roll"
+                ]
+              },
+              "duration": {
+                "type": "number",
+                "minimum": 0.005
+              },
+              "amp": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 2
+              },
+              "pan": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              },
+              "scene_id": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "master_gain_db": {
+          "maximum": 18,
+          "type": "number",
+          "minimum": -12
+        },
+        "notes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "start",
+              "duration",
+              "note",
+              "amp",
+              "instrument"
+            ],
+            "properties": {
+              "start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "duration": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "note": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 127
+              },
+              "amp": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 0.5
+              },
+              "instrument": {
+                "enum": [
+                  "bell",
+                  "pad",
+                  "felt",
+                  "marimba",
+                  "bass",
+                  "pluck",
+                  "air"
+                ]
+              },
+              "pan": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1
+              }
+            }
+          }
+        },
+        "loudness": {
+          "type": "object",
+          "required": [
+            "integrated",
+            "true_peak"
+          ],
+          "properties": {
+            "integrated": {
+              "type": "number",
+              "minimum": -24,
+              "maximum": -14
+            },
+            "true_peak": {
+              "type": "number",
+              "minimum": -6,
+              "maximum": -1
+            }
+          }
+        },
+        "clips": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "asset_id",
+              "bus",
+              "start",
+              "source_in",
+              "duration"
+            ],
+            "properties": {
+              "asset_id": {
+                "type": "string"
+              },
+              "bus": {
+                "enum": [
+                  "music",
+                  "sfx",
+                  "ambience",
+                  "voice"
+                ]
+              },
+              "start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "source_in": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 86400
+              },
+              "duration": {
+                "type": "number",
+                "minimum": 0.01
+              },
+              "gain_db": {
+                "type": "number",
+                "minimum": -60,
+                "maximum": 12
+              },
+              "fade_in": {
+                "type": "number",
+                "minimum": 0
+              },
+              "fade_out": {
+                "type": "number",
+                "minimum": 0
+              },
+              "speed": {
+                "type": "number",
+                "minimum": 0.25,
+                "maximum": 4
+              }
+            }
+          }
+        },
+        "mix": {
+          "type": "object",
+          "properties": {
+            "music_gain_db": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": 18
+            },
+            "sfx_gain_db": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": 18
+            },
+            "duck_sfx": {
+              "type": "boolean"
+            },
+            "ambience_gain_db": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": 18
+            },
+            "voice_gain_db": {
+              "type": "number",
+              "minimum": -40,
+              "maximum": 18
+            },
+            "duck_voice": {
+              "type": "boolean"
+            }
+          },
+          "description": "Separate synthesis gain and delivered four-bus mix. Bus envelopes apply after clip mixing and tails."
+        },
+        "bus_envelopes": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "music": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "sfx": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "ambience": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
+            "voice": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        },
+        "ending": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": [
+                "version",
+                "stop_time",
+                "stop_scene",
+                "subject_id",
+                "mechanical_quiet",
+                "logo_time",
+                "logo_scene",
+                "logo_layer",
+                "logo_cue_ids",
+                "tail_silence"
+              ],
+              "properties": {
+                "version": {
+                  "const": "event-ending-v1"
+                },
+                "stop_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "mechanical_quiet": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "logo_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tail_silence": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "stop_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "subject_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "logo_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "logo_layer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "logo_cue_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "required": [
+                "version",
+                "event_time",
+                "music_stop",
+                "quiet_time",
+                "title_time",
+                "tail_silence",
+                "event_scene",
+                "event_layer",
+                "event_property",
+                "event_value",
+                "title_scene",
+                "title_layer",
+                "title_cue_ids"
+              ],
+              "properties": {
+                "version": {
+                  "const": "event-ending-v2"
+                },
+                "event_value": {
+                  "type": "number"
+                },
+                "title_cue_ids": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "event_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "music_stop": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "quiet_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "title_time": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tail_silence": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "event_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_layer": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "event_property": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title_scene": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "title_layer": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          ]
+        },
+        "narration": false
+      }
+    },
+    "approval": {
+      "type": "object",
+      "required": [
+        "hash",
+        "by",
+        "note",
+        "at"
+      ],
+      "properties": {
+        "hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "renderer": {
+      "enum": [
+        "vector-composite",
+        "image-composite",
+        "cinematic",
+        "spatial-three",
+        "hybrid-composite"
+      ]
+    },
+    "direction_contract": {
+      "const": "object-first-v1"
+    },
+    "timeline_semantics": {
+      "enum": [
+        "segments-v1"
+      ]
+    },
+    "spatial": {
+      "type": "object",
+      "required": [
+        "nodes"
+      ],
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2500,
+          "items": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "geometry": {
+                "type": "object"
+              },
+              "motion": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "version": {
+          "enum": [
+            "precision-1"
+          ]
+        },
+        "subject": {
+          "type": "string"
+        },
+        "textures": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "svg",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "svg": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2048
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 2048
+              },
+              "repeat": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "editing_contract": {
+      "enum": [
+        "shot-rhythm-v1"
+      ]
+    },
+    "editorial_plan": {
+      "$ref": "#/$defs/editorial"
+    },
+    "sync_score": {
+      "$ref": "#/$defs/sync_score"
+    },
+    "rhythm_score": {
+      "type": "object",
+      "required": [
+        "version",
+        "music",
+        "tolerance_frames",
+        "events",
+        "bindings"
+      ],
+      "properties": {
+        "version": {
+          "const": "music-impact-v1"
+        },
+        "tolerance_frames": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "music": {
+          "type": "object",
+          "required": [
+            "asset_id",
+            "clip_index",
+            "sha256"
+          ],
+          "properties": {
+            "asset_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "clip_index": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "events": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "source_seconds",
+              "role",
+              "method",
+              "confidence",
+              "evidence"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_seconds": {
+                "type": "number",
+                "minimum": 0
+              },
+              "role": {
+                "enum": [
+                  "pulse",
+                  "onset",
+                  "accent",
+                  "phrase",
+                  "release"
+                ]
+              },
+              "method": {
+                "enum": [
+                  "measured-onset",
+                  "estimated-grid",
+                  "authored",
+                  "listening-corrected"
+                ]
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "evidence": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "event_id",
+              "scene_id",
+              "target",
+              "reason"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "event_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scene_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 8
+              },
+              "target": {
+                "type": "object",
+                "required": [
+                  "kind"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "cut",
+                      "layer",
+                      "camera",
+                      "video"
+                    ]
+                  },
+                  "layer_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "phase": {
+                    "enum": [
+                      "start",
+                      "arrival"
+                    ]
+                  }
+                }
+              },
+              "prepare_frames": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "hold_frames": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "impact_offset_frames": {
+                "type": "integer",
+                "minimum": -30,
+                "maximum": 30
+              },
+              "before": {
+                "type": "object"
+              },
+              "after": {
+                "type": "object"
+              },
+              "source_sha256": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_event_seconds": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "holds": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "scene_id",
+              "start_frame",
+              "end_frame",
+              "reason"
+            ],
+            "properties": {
+              "scene_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 8
+              }
+            }
+          }
+        },
+        "materialized": {
+          "type": "object",
+          "required": [
+            "signature",
+            "status"
+          ],
+          "properties": {
+            "signature": {
+              "type": "string",
+              "minLength": 1
+            },
+            "status": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      }
+    },
+    "musical_structure": {
+      "$ref": "musical-structure.schema.json"
+    },
+    "message_track": {
+      "type": "object",
+      "required": [
+        "version",
+        "units"
+      ],
+      "properties": {
+        "version": {
+          "const": "message-track-v1"
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "text",
+              "start",
+              "end",
+              "phrases"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "start": {
+                "type": "number",
+                "minimum": 0
+              },
+              "end": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "phrases": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "text",
+                    "start",
+                    "end"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "start": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true,
+  "$comment": "JSON Schema checks structural shape. scripts/motion.mjs validate is also required for cross-field time, source duration, source rights, renderer compatibility, object bindings and reading windows. Schema3.0 original is preserved.",
+  "$defs": {
+    "visual_plan": {
+      "type": "object",
+      "required": [
+        "viewer_takeaway",
+        "objects",
+        "content_links",
+        "beats",
+        "continuity"
+      ],
+      "properties": {
+        "viewer_takeaway": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "kind",
+              "depicts",
+              "features",
+              "bindings"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kind": {
+                "type": "string",
+                "minLength": 1
+              },
+              "depicts": {
+                "type": "string",
+                "minLength": 1
+              },
+              "features": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "bindings": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "information": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "value",
+                    "basis",
+                    "layer_id"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "value": {},
+                    "basis": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "layer_id": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "content_links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "content_id",
+              "shown_by",
+              "reason"
+            ],
+            "properties": {
+              "content_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shown_by": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "beats": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "window",
+              "object_ids",
+              "action",
+              "before",
+              "after"
+            ],
+            "properties": {
+              "window": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "object_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "action": {
+                "type": "string",
+                "minLength": 1
+              },
+              "before": {
+                "type": "string",
+                "minLength": 1
+              },
+              "after": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "continuity": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "spatial_camera": {
+      "type": "object",
+      "required": [
+        "position",
+        "target"
+      ],
+      "properties": {
+        "position": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        },
+        "target": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          }
+        },
+        "fov": {
+          "type": "number",
+          "exclusiveMinimum": 5,
+          "exclusiveMaximum": 140
+        },
+        "roll": {
+          "type": "number"
+        },
+        "keyframes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "at",
+              "position",
+              "target"
+            ],
+            "properties": {
+              "at": {
+                "type": "number",
+                "minimum": 0
+              },
+              "position": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "target": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "fov": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "relative_to": {
+          "type": "string"
+        }
+      }
+    },
+    "video_layer": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "asset_id",
+        "source_in",
+        "rect"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "video"
+        },
+        "asset_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "rect": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "fit": {
+          "enum": [
+            "cover",
+            "contain"
+          ]
+        },
+        "speed": {
+          "type": "number",
+          "minimum": 0.25,
+          "maximum": 4
+        },
+        "sound": {
+          "enum": [
+            "mute",
+            "source"
+          ]
+        },
+        "sound_gain_db": {
+          "type": "number",
+          "minimum": -60,
+          "maximum": 12
+        },
+        "sound_fade_in": {
+          "type": "number",
+          "minimum": 0
+        },
+        "sound_fade_out": {
+          "type": "number",
+          "minimum": 0
+        },
+        "crop": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "number"
+          }
+        },
+        "mask": {
+          "type": "object",
+          "required": [
+            "kind"
+          ],
+          "properties": {
+            "kind": {
+              "enum": [
+                "ellipse",
+                "roundrect",
+                "path"
+              ]
+            },
+            "radius": {
+              "type": "number",
+              "minimum": 0
+            },
+            "d": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "opacity": {
+          "const": 1
+        },
+        "source_action": {
+          "type": "object",
+          "required": [
+            "version",
+            "source_sha256",
+            "evidence",
+            "before",
+            "contact",
+            "after",
+            "landing_frame"
+          ],
+          "properties": {
+            "version": {
+              "const": "source-action-v1"
+            },
+            "source_sha256": {
+              "type": "string"
+            },
+            "evidence": {
+              "type": "string",
+              "minLength": 1
+            },
+            "before": {
+              "type": "number",
+              "minimum": 0
+            },
+            "contact": {
+              "type": "number",
+              "minimum": 0
+            },
+            "after": {
+              "type": "number",
+              "minimum": 0
+            },
+            "landing_frame": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "entity_id": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "x"
+                ]
+              },
+              {
+                "required": [
+                  "y"
+                ]
+              },
+              {
+                "required": [
+                  "scale"
+                ]
+              },
+              {
+                "required": [
+                  "scaleX"
+                ]
+              },
+              {
+                "required": [
+                  "scaleY"
+                ]
+              },
+              {
+                "required": [
+                  "rotation"
+                ]
+              },
+              {
+                "required": [
+                  "draw"
+                ]
+              },
+              {
+                "required": [
+                  "reveal"
+                ]
+              },
+              {
+                "required": [
+                  "reveal_rect"
+                ]
+              },
+              {
+                "required": [
+                  "clip"
+                ]
+              },
+              {
+                "required": [
+                  "pivot"
+                ]
+              },
+              {
+                "required": [
+                  "position"
+                ]
+              },
+              {
+                "required": [
+                  "keyframes"
+                ]
+              },
+              {
+                "required": [
+                  "motion"
+                ]
+              },
+              {
+                "required": [
+                  "morph"
+                ]
+              },
+              {
+                "required": [
+                  "clip_path"
+                ]
+              },
+              {
+                "required": [
+                  "blend"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "hybrid_layer": {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "video"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "$ref": "#/$defs/video_layer"
+      }
+    },
+    "editorial": {
+      "type": "object",
+      "required": [
+        "version",
+        "shots"
+      ],
+      "properties": {
+        "version": {
+          "const": "shot-intent-v1"
+        },
+        "shots": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "scene_id",
+              "role",
+              "framing",
+              "layout",
+              "purpose",
+              "subject_layers",
+              "action",
+              "motion",
+              "typography",
+              "sound",
+              "bridge"
+            ],
+            "properties": {
+              "scene_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "role": {
+                "enum": [
+                  "action",
+                  "observation",
+                  "type",
+                  "pause"
+                ]
+              },
+              "framing": {
+                "type": "string",
+                "minLength": 1
+              },
+              "layout": {
+                "type": "string",
+                "minLength": 1
+              },
+              "purpose": {
+                "type": "string",
+                "minLength": 1
+              },
+              "subject_layers": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "minItems": 1
+              },
+              "action": {
+                "type": "object",
+                "required": [
+                  "verb",
+                  "before",
+                  "contact",
+                  "after"
+                ],
+                "properties": {
+                  "verb": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "before": {
+                    "type": "object",
+                    "required": [
+                      "at",
+                      "state"
+                    ],
+                    "properties": {
+                      "at": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "state": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "contact": {
+                    "type": "object",
+                    "required": [
+                      "at",
+                      "state"
+                    ],
+                    "properties": {
+                      "at": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "state": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "after": {
+                    "type": "object",
+                    "required": [
+                      "at",
+                      "state"
+                    ],
+                    "properties": {
+                      "at": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "state": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "changed_layers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  },
+                  "hold_reason": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              },
+              "motion": {
+                "type": "object",
+                "required": [
+                  "driver",
+                  "reason",
+                  "steady_windows"
+                ],
+                "properties": {
+                  "driver": {
+                    "enum": [
+                      "subject",
+                      "type",
+                      "camera",
+                      "none"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "steady_windows": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "minItems": 2,
+                      "maxItems": 2,
+                      "items": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "subject_layer": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "end_framing": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              },
+              "typography": {
+                "type": "object",
+                "required": [
+                  "role",
+                  "reason",
+                  "layers"
+                ],
+                "properties": {
+                  "role": {
+                    "enum": [
+                      "meaning",
+                      "information",
+                      "accent",
+                      "none"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "layers": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                },
+                "additionalProperties": false
+              },
+              "sound": {
+                "type": "object",
+                "required": [
+                  "music_role",
+                  "ambience_role",
+                  "events"
+                ],
+                "properties": {
+                  "music_role": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "ambience_role": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "events": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": [
+                        "cue_id",
+                        "visible_event",
+                        "at"
+                      ],
+                      "properties": {
+                        "cue_id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "visible_event": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "at": {
+                          "type": "number"
+                        },
+                        "tolerance": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 0.25
+                        }
+                      },
+                      "additionalProperties": false
+                    }
+                  },
+                  "no_sync_reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "texture": {
+                    "type": "object",
+                    "required": [
+                      "intended",
+                      "avoid",
+                      "source_kind",
+                      "asset_ids",
+                      "status"
+                    ],
+                    "properties": {
+                      "intended": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "avoid": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "source_kind": {
+                        "enum": [
+                          "synthetic",
+                          "recording",
+                          "mixed"
+                        ]
+                      },
+                      "asset_ids": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "minItems": 1
+                      },
+                      "status": {
+                        "enum": [
+                          "pending",
+                          "accepted",
+                          "rejected"
+                        ]
+                      },
+                      "evidence": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "signature": {
+                        "type": "string",
+                        "pattern": "^[a-f0-9]{64}$"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              },
+              "bridge": {
+                "type": "object",
+                "required": [
+                  "kind"
+                ],
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "end",
+                      "match-action",
+                      "match-shape",
+                      "sound-bridge",
+                      "contrast-cut",
+                      "hold-cut"
+                    ]
+                  },
+                  "next_scene": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "outgoing": {
+                    "type": "object",
+                    "required": [
+                      "layer_id",
+                      "at",
+                      "anchor",
+                      "velocity"
+                    ],
+                    "properties": {
+                      "layer_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "anchor": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "velocity": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "incoming": {
+                    "type": "object",
+                    "required": [
+                      "layer_id",
+                      "at",
+                      "anchor",
+                      "velocity"
+                    ],
+                    "properties": {
+                      "layer_id": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "at": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "anchor": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
+                        }
+                      },
+                      "velocity": {
+                        "type": "array",
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "relationship": {
+                    "enum": [
+                      "same-object",
+                      "visual-analogy"
+                    ]
+                  },
+                  "reversal_reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "cue_id": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              },
+              "repetition_reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "sequences": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "question",
+              "consequence",
+              "musical_role",
+              "shot_ids"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "question": {
+                "type": "string",
+                "minLength": 1
+              },
+              "consequence": {
+                "type": "string",
+                "minLength": 1
+              },
+              "musical_role": {
+                "type": "string",
+                "minLength": 1
+              },
+              "shot_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sync_score": {
+      "type": "object",
+      "required": [
+        "version",
+        "tolerance_frames",
+        "cues",
+        "phrases"
+      ],
+      "properties": {
+        "version": {
+          "const": "word-impact-v1"
+        },
+        "tolerance_frames": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "cues": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "text",
+              "scene_id",
+              "layer_id",
+              "clip_index",
+              "source",
+              "prepare_frames",
+              "exit_frames",
+              "hold_until_frame",
+              "anticipation",
+              "landing"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "scene_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "layer_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "clip_index": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "source": {
+                "type": "object",
+                "required": [
+                  "asset_id",
+                  "sha256",
+                  "sample_rate",
+                  "onset_sample",
+                  "anchor_sample",
+                  "release_sample",
+                  "method",
+                  "confidence",
+                  "evidence"
+                ],
+                "properties": {
+                  "asset_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "sample_rate": {
+                    "type": "integer",
+                    "minimum": 8000,
+                    "maximum": 192000
+                  },
+                  "onset_sample": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "anchor_sample": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "release_sample": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "method": {
+                    "enum": [
+                      "isolated-speech",
+                      "manual-listening",
+                      "forced-alignment"
+                    ]
+                  },
+                  "confidence": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "evidence": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "additionalProperties": false
+              },
+              "prepare_frames": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 30
+              },
+              "exit_frames": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 30
+              },
+              "hold_until_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "impact_offset_frames": {
+                "type": "integer",
+                "minimum": -30,
+                "maximum": 30
+              },
+              "anticipation": {
+                "type": "object",
+                "required": [
+                  "x",
+                  "y",
+                  "scale",
+                  "opacity"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "scale": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "opacity": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                },
+                "additionalProperties": false
+              },
+              "landing": {
+                "type": "object",
+                "required": [
+                  "x",
+                  "y",
+                  "scale",
+                  "opacity"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "scale": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "opacity": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "phrases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "cue_ids",
+              "release_frame"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "cue_ids": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "release_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "next_scene_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "transition_start_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "arrival_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "bridge": {
+                "type": "object",
+                "required": [
+                  "out_layer",
+                  "in_layer",
+                  "relation",
+                  "reason",
+                  "out_anchor",
+                  "in_anchor"
+                ],
+                "properties": {
+                  "out_layer": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "in_layer": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "relation": {
+                    "enum": [
+                      "same-object",
+                      "visual-analogy"
+                    ]
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "out_anchor": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "in_anchor": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "materialized": {
+          "type": "object",
+          "required": [
+            "version",
+            "signature"
+          ],
+          "properties": {
+            "version": {
+              "const": "word-impact-v1"
+            },
+            "signature": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "direction_contract"
+        ],
+        "properties": {
+          "direction_contract": {
+            "const": "object-first-v1"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "scenes": {
+            "items": {
+              "required": [
+                "visual_plan"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "renderer"
+        ],
+        "properties": {
+          "renderer": {
+            "const": "spatial-three"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "spatial"
+        ],
+        "properties": {
+          "scenes": {
+            "items": {
+              "required": [
+                "spatial"
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Musical structure before the edit
+
+Listen, locate recurring motifs and their actual phase, correct source-time boundaries, then plan shots and actions. A recurrence lag is not a downbeat, and a high spectral peak is not automatically a musically satisfying edit point. Never turn a user's approximate loop duration into a repeated rounded grid.
+
+`rhythm-analyze PROJECT --out NEW_FOLDER` now produces local recurrence/phase **candidates** and an empty `musical-structure.json`. Use `--structure-only EXISTING_ANALYSIS_FOLDER` to add structure candidates to an existing mono analysis without rerunning the flux analysis. Outputs are create-only. The CPU analyzer uses 24-second local windows at 12-second intervals. Short, changing or nonperiodic passages need explicit review; frequency features do not identify instruments.
+
+`rhythm-review PROJECT --structure MAP --audio SELECTED_INTERVAL_MONO_WAV --analysis CANDIDATES --out NEW_FOLDER` creates a local audio audition/editor. The audio must start at the map's source_in and run in original source time. It is a mono original-source audition, not the final edited-volume mix. Full groups can loop; JSON allows boundary insertion/deletion, group split/merge and free source-time correction. Only actual human review may set reviewed, with a note and exact structure digest. Browser review export is an attestation, not proof of hearing.
+
+`rhythm-compile PROJECT --structure MAP --edit-plan EDIT --out NEW_PROJECT [--draft]` converts explicit boundary references into the existing music-impact-v1 bindings. Without --draft, a current review is required. --draft is for a provisional audition, never an aesthetic approval. Reauthor shot content, local action timing, reading and footage handles when lengths change. The compiler deliberately does not invent a new story or stretch footage.
+
+Map version is musical-structure-v1, with exact music identity/clock, ordered boundaries `{id,source_seconds,method,evidence}`, groups and sections `{id,start,end,reason}`. Method is candidate, authored or listening-corrected. Groups may have unequal durations; nesting is represented by explicit endpoints. No universal beat count is imposed. Review has status pending/reviewed, note, and structure_digest. Edit plan version is musical-edit-plan-v1; each existing binding uses boundary_id instead of event_id. Existing flat scores remain supported.
+
+Separate true tempo change, syncopation, halftime feel, instrumentation density and volume automation. Offbeats do not automatically demand long takes. A story sequence can span many fast shots; an important physical process can remain uncut while internal actions follow the groove. Choose cut start, transition arrival or object contact deliberately. Compare music alone, picture without music, and the final mix.
+
+Validation distinguishes source/clock consistency, correct frame execution, human-attested phase, and aesthetic judgment. Moving every boundary by half a beat keeps recurrence intact but invalidates its prior review. The software cannot infer that an arbitrary newly-attested phase is musically wrong. Audition it against alternatives. Keep unreviewed regions pending.
+
+No mandatory paid model, generated voice, GPU or new audio API. User calibration is a bounded review of prepared examples, not a request to annotate the entire film manually. Preserve previous films and maps. After rejection, do not produce another full film until the agreed representative calibration checkpoint.
+
+## Perceived impact versus measured onset
+
+Separate the measured source attack, interpreted motif boundary, intended visual impact and actual decoded frame. A listener can prefer an offset to an initially measured candidate; it is not automatically playback error or an incorrect preference. Record the device path and clip identity. A single-device preference supports that audition, not a universal correction for other songs or every section.
+
+An edit plan may explicitly set `tolerance_frames: 4` and binding `impact_offset_frames: 4` (or a negative value) to place an intended picture event after (or before) the source anchor. Default is zero; the allowed magnitude is currently 0..4 frames, inherited from music-impact-v1. Despite the legacy field name, this allows an authored offset, not imprecise output: the compiled event must still execute at its exact revised frame. The measured source timestamp and musical-structure review remain unchanged. Listening preference for a whole preview does not automatically attest every boundary or group.
+
+Picture-only padding/trimming is a comparison method, not a complete production correction. Retime source contacts, local graphic actions, transitions and event SFX together; preserve handles, the final title and intentional silence. Recheck neighboring cuts. Keep original files and observations. Audition choices use neutral labels until the listener chooses; an implementation mutant is not a proven perceptual counterexample.
+
+Preserve a representative choice in a separate local audition-choice-v1 record: project_id, music_asset_id/music_sha256, exact source_quote, selected_mix (effects-on/off), picture_offset_frames and references [{file,sha256}]. Reference files are relative to the project directory. audition-choice-audit checks exact movie bytes, song/project scope, explicit offsets and the presence of selected effects. It does not mark the whole musical map reviewed or attest perceptual acceptance. Keep actual user selection records outside public installation packages.

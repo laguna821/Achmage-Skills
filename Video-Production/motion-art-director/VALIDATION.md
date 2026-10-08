@@ -1,4 +1,18 @@
-# 3.0.0-rc.1 검증 기록
+# Motion Art Director 4.0.0 검증 기록
+
+4.0.0은 아래 개발 검증을 모은 공개 버전이다. 이전 날짜의 pending 기록은 당시 상태이며, 실제 노트북 실측·모든 클라이언트의 자연어 호출·작품별 청취를 버전 번호로 통과 처리하지 않는다. 현재 범위는 references/release-4.md와 Release 첨부 검증표를 따른다.
+
+## Racing transfer: completed-run audio dependencies
+
+The early hybrid reuse key omitted automotive synthesis while the later audio key included it. The runtime key now includes it, preventing an older final from being returned after an engine/tire synthesis change. Seven injected audio dependency mutations invalidate that key; an unchanged runtime is stable and no engine files are modified by the test. Source-action, hybrid-contract (31 checks) and automotive (13 checks) regressions passed. Two newly authored 720p racing representatives contain 26 and 19 cuts; source-action timing contracts and six timing mutations per film pass. Whole playback and listening acceptance are separate work records.
+
+## 개발판: 시퀀스와 음악 사건 교정
+
+선택적 시퀀스 소속 검사, 로컬 교정 화면, 음악·시간표 서명 검사를 추가했습니다. 컷의 시작과 전환 도착을 구별하며, 도착 기준 전환은 먼저 시작해 선택한 타격 프레임에 완성됩니다. 기존 시작 기준은 유지됩니다.
+
+음악·구간·사건 서명 변경, ID 중복, 근거 없는 청취 교정 표시, 기존 컴파일 소유권, 시퀀스 누락·순서 변경, 전환 길이 변경, ±1·2·4프레임 변이, 기존 단어 동기화, 합성 주파수대 타격을 검사합니다. 주파수대는 악기 이름이 아닙니다.
+
+새 PEDAL 단편은 미감 확인용 대표 구간이며, 180초 전체 수정이나 미감 승인 완료를 뜻하지 않습니다. 실제 청취와 16GB 내장 그래픽 노트북 실측은 별도입니다. 렌더 도중 런타임이 변경되면 최종화를 중단하고, 코드를 고정한 뒤 캐시를 보존해 다시 실행합니다.
 
 2026-10-06 공개 시험판. 자동 구현 검사와 작품의 미감 승인을 구분합니다.
 
@@ -32,3 +46,81 @@
 - CPU 렌더는 실시간 재생 속도를 보장하지 않습니다. 전체 프로세스 최고 메모리와 일반 노트북 성능은 정식판 전 추가 측정 대상입니다.
 
 실제 공개 ZIP 설치 재시험 결과는 Release의 release-verification.json에 기록합니다.
+
+## 3.1 개발 회귀 추가
+
+3.0 공개판 기록은 위에 보존합니다. 새 개발 경로는 아직3.1 설치 Release가 아닙니다.
+
+| 추가 영역 | 실행한 검증 | 판정 범위 |
+|---|---|---|
+| 영상 구간·레이어 | 실제 소스 길이, 전환 여분,29.97fps, 투명 트랙, 소스 오디오 | 자동 계약과 기술 렌더 |
+| 엔딩 |4버스, 마스터링 후 정확한 PCM 무음, 제목 효과음 보존, 부동소수점 경계 | 실제3초 반례 재검증 |
+| 브라우저 전달 | 전환 후 H.264 픽셀 형식 통일 및 연속 인코딩 | 기존28초 처음→끝 재생 확인, 장편은 별도 검토 |
+| 반복 실행 | 완성 MP4·5스템 해시를 확인한 재사용, 원본·이전 출력 보호 | 독립 반례 통과 |
+| 저장소 | 활성 작업·원본·검증된 출력 보호, 취소·제한·임시 파일 정리, 캐시 sidecar 예산 | 보존·실패·재개 검사; 물리 디스크 고갈 시험은 아님 |
+| 분할 화면 |1080p좌표→720p 경계 공동 반올림 | 실제3패널·마스크·마지막 열 픽셀 확인 |
+| 환경 질감 |river/wind/street/room, 고정 시드·정확한 길이·재사용 | 합성 음향이며 현장 녹음 아님 |
+| 기법 |15계열의 실제 장면·레이어 대응 및 어댑터 결정론 | 모든637카드의 자체 구현·미감 승인 아님 |
+
+기계 검사·컨택트시트·브라우저 재생 성공으로 사람의 전체 청취나 사용자 미감 승인을 대신하지 않습니다. 새 일곱 루트, 커피 전이 작품, 깨끗한 설치와 게시 ZIP 재검증은 계속 진행할 항목입니다.
+
+### 2026-10-07: 180초 실제 출력
+
+- 「도시의 맥박」45컷,1920×1080/30fps,5,400프레임 전체 디코딩 통과.
+- 최종 AAC: −16.07 LUFS / −1.75 dBTP. PCM173.2–175초와178.5–180초는 정확한0; AAC 제목 직전 경계 최대−72.25dBFS, 마지막 정적0.
+- CPU/jobs1,964.298초. 렌더 프로세스·자식의 관측 working set 합산 최대983,465,984bytes (5초 표본, 공유 메모리 중복 가능, 물리16GB 노트북 시험 아님).
+- 기본 테스트 실행 목록14개 모음 전부 exit0: 기존 SVG·Skia·이미지 흐름·공간·자동차 엔딩과 신규 혼합 합성·저장소·음원·720p마스크 경계 포함.
+- [본편과 검수 기록](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city?v=13#film). 새 배포판 설치/전체 청취/사용자 미감 승인은 별도 상태를 유지한다.
+
+### 2026-10-07: 적대적 연출 검수와 청취 피드백 반영
+
+- 45컷의 범용 행동 문구가 기존 구조 검사를 통과하는 공백을 확인. 선택적 shot-intent-v1을 추가하고 새 작품 제작 지침에 적용. 이전 프로젝트는 원래 실행 경로 보존.
+- 실제 레이어 변화, 전후 시점, 전환 방향, 사건 큐 결속, 정지·관찰 목적, 분위기음 질감과 청취 근거를 검사. 구조 통과는 미감·청취 승인이 아님.
+- direction-review는 최종 CFR 영상에서 정확한 프레임 번호로 순차 추출. 빠른 입력 탐색으로 잘못된 국자 퇴장 결함을 의심했던 판단을 철회했고 실제 최종 프레임 정상 확인.
+- 기존14개 모음 + 신규 editorial 모음을 포함한 기본15개 모음 exit0. 최종 보완 후 editorial32개 반례/통합 검사, 기존 direction11개, 그림 캐시 격리 검사 재실행.
+- 효과 개수를 품질 점수로 사용하지 않음. 원본 도감637개 카드/128개 클립/11개 레시피는 보존.
+- ‘숨’ 구간 합성 river는 청취 피드백에서 잡음 질감 부적합 판정. 해당 음원 제거22초 비교본 제작, 그림45컷·실사23트랙 키 불변 확인. 새 비교본의 청취 승인은 pending.
+- [검수 보고서와 소리 비교](https://motion-art-director-review-oct05.achmage2.chatgpt.site/city/editorial-review.html#sound). 열차 방향·상태 변화·구도·사건음의 작품 수정안은 본편에 아직 미적용.
+
+## Word-impact prototype (3.1 work in progress)
+13 structural unit checks cover source sample clocks, retiming, stale materialization, portrait timing, ±1/2/4 frame drift, clipped release and delayed handoff. An original 12-second Korean spoken-word prototype is being checked separately. This does not claim singing alignment, whole listening or artistic acceptance. The 3.1 release gate remains open.
+
+## Instrumental rhythm and sustained narrative (3.1 work in progress)
+
+- Optional music-impact-v1, rhythm-analyze/compile/audit, source-hash clocks, selected cut/layer/camera/video bindings and explicit sustained windows.
+-13 rhythm tests cover absolute time without repeated-frame rounding,±1/2/4frame visual mutations, source trim/speed/hash changes, conflicting word ownership, clipped video handles, camera and protected holds. Mechanism tests cover pitch-distance/rotor ratios and deterministic bicycle effects.
+-19 regression suites passed before the final two targeted guard additions; the complete13-test rhythm suite passed after those additions.
+- Full39-shot PEDAL project:14 deliberately invalid variants rejected, three positive controls retained. A perfectly pulse-aligned cut that breaks a declared sustained window is still invalid.
+- First720p180s draft completed5400frames and reached the end in a native browser without decoder error. Final1080p output, actual edit trials and public playback are recorded with the work's delivery report.
+- Physical16GB notebook measurement, whole perceptual listening and aesthetic acceptance are not inferred from these checks. This is development work within PR5, not completion of all3.1 Release/OS gates.
+
+## Racing transfer — 180 seconds
+
+-116cuts/11sequences/5400frames rendered at1080p30 through CPU Chromium/FFmpeg. Selected effects-on representative timing is scoped through audition-choice-v1; it does not reuse another film's offset by default.
+-Standalone package actual trials: text changes regenerate one graphics track, source changes one video track, moving one music event by one frame changes the two adjacent cuts. Volume-only remix copies the verified picture bitstream with zero rendered frames. Interrupted runs retain completed cuts; originals remain unchanged.
+-18boundary metadata mutations rejected with a passing baseline. Nine final web-encode boundaries match newly rendered snapshots generated in nonsequential order, after normalizing both paths to RGB. Disposable cache eviction and protected snapshot outputs are accounted for in the review procedure.
+-Final encoded loudness measured−16.11LUFS/−3.33dBTP. Ending quiet windows verified separately from the title cue. Whole-film human listening/aesthetic review and physical16GBnotebook testing remain open.
+-[Racing full-film report](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/racing-full180-v1-report.json). Overall3.1Release andOS promotion remain separate gates.
+
+## Early concept audition and cross-cut copy — development validation
+
+- Subject-model extension: 11 checks cover legacy compatibility, missing/contradictory scene links, stale preferred music, unsupported review claims and initial preferred-player selection. Generic prose remains explicitly subject to editorial review instead of receiving an automatic quality score.
+- The revised meal storyboard uses original planning diagrams, with missing live-action coverage labelled. B is a scoped user preference; the new premise and full-film output are not automatically approved.
+
+- New preproduction suite: 19 passing checks, including actual vector renderer states across a cut, source-use restrictions, omitted/shortened copy and moving-frame rejection. Existing music-direction, rhythm, direction, hybrid-contract, hybrid-runtime dependency and audition-choice suites also pass.
+- Fresh package run from outside its installation directory: three 45-second previews generated in 6.658 seconds after music/stills were prepared. No Chromium captures or PCM WAV files; each MP4 approximately 2.4 MB. This timing excludes search, planning, implementation and review.
+- Public preview files match local hashes, fully decode and contain 45 seconds. Current Sites hosting returns the complete small file with HTTP 200 to Range requests; it is not claimed to support HTTP 206 streaming.
+- Native seeking against that host returned to the start despite complete buffers. The concept player now downloads bounded small proxies before playback and uses local Blob URLs for seeking. The original MP4 files are unchanged; streaming support for long films remains separate.
+- Seven provider routes are registered. This trial downloaded music from Mixkit; Pixabay access, YouTube Studio login and purpose-specific Mewpot restrictions remain explicitly recorded. Search plans are not completed searches.
+- Message retention currently supports fixed-composition cuts in vector/hybrid scenes. Active camera and overlapping transition cases fail explicitly until an independent composition track exists. Reading quality and artistic approval require review.
+- [Meal concept audition](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31) preserves the earlier planning comparison. The subsequent B-music chef representative was accepted; full-film status follows below. Overall 3.1 Release and OS gates remain open.
+
+## Thinking Kitchen — 180-second production and revision checks
+
+- Nine subject stages and 89 shots combine twelve licensed footage sources with original graphics. Complete sentences continue across cuts instead of shrinking into disconnected impact words. The montage does not imply one chef, one dish or a measured recipe.
+- 1080p30 / 5400 frames rendered on CPU with one render worker. Full master and web decode passed. Whole-film listening and final aesthetic acceptance remain pending; browser QA stays muted when requested.
+- Eleven actual-project adversarial checks include positive controls, ±1/2/4-frame event mutations, truncated cross-cut copy, out-of-range source selection and nonsequential SVG state reproducibility.
+- Actual text, volume and source revisions preserve the earlier proof and project. Text interruption/resume passed. Volume changes reuse every picture track; one source trim changes one video track and reuses audio.
+- The text trial exposed a cache defect: a default 120-file cap evicted much of the working film below the byte budget. Cold-track regeneration is reported separately from semantic invalidation. The renderer now estimates a working-film file allowance while retaining explicit overrides, byte budgets, free-space guards and ownership protections.
+- StorageSession integration retains 534 simulated working entries below budget and still trims under explicit file/byte limits. Existing 22 storage checks and cache-cleanup checks pass. Perception and a physical 16GB notebook are not inferred from these tests.
+- Editorial review corrected an adjacent repeated recipe illustration and a decreasing heat dial under copy describing an increase. Directional variants must follow the scene's meaning, not a scene-index alternation.

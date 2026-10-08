@@ -17,7 +17,7 @@ export function html(p,{portrait=false,inline=true,audio='mix.wav',controls=true
  return '<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+escape(p.title)+'</title><style>@font-face{font-family:Pretendard;src:url(data:font/woff2;base64,'+font+')}' +bodoni+'*{box-sizing:border-box}body{margin:0;background:#090e17;color:#eef3ef;font-family:Pretendard}#stage{display:block;width:100%;height:auto;max-height:calc(100vh - '+(controls?'64':'0')+'px)}nav{height:64px;display:flex;gap:20px;align-items:center;padding:12px 24px}button{background:#dcebe5;color:#102c27;border:0;border-radius:6px;padding:10px 20px;cursor:pointer}input{flex:1}a{color:#a5d8ca}.scroll{height:500vh}.scroll #stage{position:sticky;top:0}.scroll nav{position:fixed;bottom:0;width:100%;background:#0b1b19}@media print{nav{display:none}}</style><svg id="stage" xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="'+escape(p.title)+'"></svg>'+(controls?'<nav><button id="play" type="button">재생</button><input id="progress" type="range" min="0" max="1" step=".001" value="0" aria-label="장면 진행률"><a href="?scroll">스크롤 보기</a></nav><audio id="music" preload="none" src="'+escape(audio)+'"></audio>':'')+'<script>'+gsap+'</script><script>window.PROJECT='+serial(p)+';window.PORTRAIT='+portrait+';window.__engineReady=new Promise(r=>window.__resolveEngine=r);</script><script>'+stage+'</script>'+cinema+composite+flow+vector+spatial+'</html>';
 }
 export function sceneKey(p,s,profile,portrait){
- const {scenes,content_units,approval,status,revision,assets,sources,audio,...visual}=p;
+ const {scenes,content_units,approval,status,revision,assets,sources,audio,editorial_plan,production_review,sync_score,rhythm_score,...visual}=p;
  const ids=new Set([...(s.composition?.layers||[]),...(s.portrait_composition?.layers||[])].map(l=>l.asset_id));
  for(const l of s.spatial?.plates||[])ids.add(l.asset_id);
  const prior=s.transition_in?p.scenes[p.scenes.indexOf(s)-1]:undefined;
@@ -26,7 +26,7 @@ export function sceneKey(p,s,profile,portrait){
  const engine=['spatial.js','spatial-v2.js','stage.js','vector.js','composite.js','flow.js','cinema.js','gsap.min.js'].map(f=>hash(fs.readFileSync(path.join(ROOT,'assets',f))));
  engine.push(hash(fs.readFileSync(path.join(ROOT,'scripts/skia_frames.py'))));
  if(p.renderer==='spatial-three')for(const f of ['vendor/three/three.module.min.js','vendor/three/three.core.min.js','lib/spatial.mjs'])engine.push(hash(fs.readFileSync(path.join(ROOT,f))));
- for(const f of ['lib/automotive-audio.mjs','lib/render.mjs','lib/browser.mjs','lib/assets.mjs','lib/io.mjs'])engine.push(hash(fs.readFileSync(path.join(ROOT,f))));
+ for(const f of ['lib/message-track.mjs','lib/automotive-audio.mjs','lib/render.mjs','lib/browser.mjs','lib/assets.mjs','lib/io.mjs'])engine.push(hash(fs.readFileSync(path.join(ROOT,f))));
  const fonts=['assets/fonts/PretendardVariable.woff2','assets/fonts/PretendardVariable.ttf','vendor/awesome-ai-motion/lib/fonts/BodoniModa.ttf','requirements-skia.txt'].map(f=>hash(fs.readFileSync(path.join(ROOT,f))));
  return hash({engine,fonts,visual,scene:s,transitionSource:prior?{scene:prior,content:p.content_units.filter(c=>prior.content_ids.includes(c.content_id))}:undefined,index:p.scenes.indexOf(s),count:p.scenes.length,content:p.content_units.filter(c=>s.content_ids.includes(c.content_id)),assets:(assets||[]).filter(a=>ids.has(a.asset_id)),profile,portrait});
 }

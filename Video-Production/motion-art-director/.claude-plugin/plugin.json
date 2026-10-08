@@ -1,1 +1,13 @@
-{"name":"motion-art-director","version":"3.0.0-rc.1","description":"CPU motion-graphics production workflow with art direction, audio, revision, seven outputs and optional image flow.","author":{"name":"laguna821"},"homepage":"https://github.com/laguna821/Achmage-Skills/tree/main/Video-Production/motion-art-director","license":"MIT","skills":["."]}
+{
+  "name": "motion-art-director",
+  "version": "4.0.0",
+  "description": "CPU motion-graphics production workflow with art direction, audio, revision, seven outputs and optional image flow.",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Video-Production/motion-art-director",
+  "license": "MIT",
+  "skills": [
+    "."
+  ]
+}
