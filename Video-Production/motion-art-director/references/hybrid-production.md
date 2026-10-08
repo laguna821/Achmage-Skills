@@ -42,6 +42,8 @@ The final mix is gated again after mastering at sample boundaries for deliberate
 
 Completed hybrid runs verify the final MP4 and all five stems before returning reuse. Cache HTML and project sidecars are temporary; cache receipts count toward retention. Retention budgets are applied at start/finish, not a guarantee of maximum in-flight disk use. A free-space floor and bounded child processes protect active rendering. Preserve previous output and use a new revision directory for new snapshots.
 
+Completed-run runtime identity includes automotive audio synthesis as well as the general audio buses. An engine or tire synthesizer implementation change must invalidate the early completed-run shortcut before it can return an older MP4. Project music/volume-only changes still leave graphics keys unchanged; implementation version changes conservatively invalidate the runtime.
+
 Input → object/action plan → styleframes and music comparison → direction confirmation → representative cut review → complete roughcut → detailed film → seven requested output routes → independent transfer test → clean installation → publication.
 
 `roughcut` uses the same renderer and cache as `render`, at draft resolution. It requires production authorization bound to the current project. Authorization for a requested benchmark is not aesthetic acceptance. Record pending listening and user reviews honestly. Recheck old/source-selected frames after edits and preserve earlier approved output. Never label current-PC CPU tests as physical16GB notebook measurements.

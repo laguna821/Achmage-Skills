@@ -1,5 +1,9 @@
 # 3.0.0-rc.1 검증 기록
 
+## Racing transfer: completed-run audio dependencies
+
+The early hybrid reuse key omitted automotive synthesis while the later audio key included it. The runtime key now includes it, preventing an older final from being returned after an engine/tire synthesis change. Seven injected audio dependency mutations invalidate that key; an unchanged runtime is stable and no engine files are modified by the test. Source-action, hybrid-contract (31 checks) and automotive (13 checks) regressions passed. Two newly authored 720p racing representatives contain 26 and 19 cuts; source-action timing contracts and six timing mutations per film pass. Whole playback and listening acceptance are separate work records.
+
 ## 개발판: 시퀀스와 음악 사건 교정
 
 선택적 시퀀스 소속 검사, 로컬 교정 화면, 음악·시간표 서명 검사를 추가했습니다. 컷의 시작과 전환 도착을 구별하며, 도착 기준 전환은 먼저 시작해 선택한 타격 프레임에 완성됩니다. 기존 시작 기준은 유지됩니다.
