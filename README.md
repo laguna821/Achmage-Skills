@@ -21,7 +21,7 @@
 
 **[공개 영상 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/)** · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [책 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#book) · [항공](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#flight) · [물 거르기](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#water) · [Release·설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)
 
-[요리 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#meal) · [레이싱 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#racing) · [페달 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#pedal) · [도시 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#city) · [커피 30초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#coffee)
+[Claude Code · 남는 것 60초](https://achmage-os-film.achmage2.chatgpt.site/) · [요리 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#meal) · [레이싱 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#racing) · [페달 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#pedal) · [도시 180초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#city) · [커피 30초](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/#coffee)
 
 [<img src="Video-Production/examples/motion-art-director/grandeur-poster.jpg" width="49%" alt="자동차 150초 제작 연구작">](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) [<img src="Video-Production/examples/motion-art-director/book.png" width="49%" alt="책 제작 150초">](https://motion-art-director-review-oct05.achmage2.chatgpt.site/#book)
 
@@ -85,7 +85,7 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 
 ## 🖼 예시
 
-- [Motion Art Director 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) — 요리·레이싱·페달·도시·커피·자동차·책·항공·물, 9작품과 제작 과정. [저장소 영상 파일](Video-Production/examples/motion-art-director).
+- [Motion Art Director 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) — 요리·레이싱·페달·도시·커피·자동차·책·항공·물, 10작품과 제작 과정. [저장소 영상 파일](Video-Production/examples/motion-art-director).
 
 - [`Image-HTML/examples/`](Image-HTML/examples) — 정전 샘플 덱(V7 / V8 / University AX / Street) + 원본 GPTs Raw5 프롬프트 팩 + 검증용 “민주주의” · “행동경제학” 덱
 - [`Design-Consulting/examples/`](Design-Consulting/examples) — **v3 풀 파이프라인 쇼케이스 2종**: [잔광 殘光 — 가상 전시 full exhibition](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/janggwang-exhibition/) (방 8개 × 상이한 감상 장치 + 3D 복도) · [Educational Harness Engineering](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/educational-harness-engineering/) (Mode A 논증형 + 프릭션 로그) — 각각 도록/처방문/DESIGN.md/RAW-PROMPTS 전 과정 동봉. v1 계보: [골목 베이커리](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/golmok-bakery-deck/) · [SURGE EV](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/surge-ev/) · [Skill Landing](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/skill-landing-ach/)

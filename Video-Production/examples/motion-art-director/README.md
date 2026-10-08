@@ -1,6 +1,6 @@
 # Motion Art Director — 자체 제작 데모
 
-[전체 9작품 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [제작 과정 사이트](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [스킬 설치](../../motion-art-director) · [검증 범위](../../motion-art-director/VALIDATION.md)
+[전체 10작품 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [제작 과정 사이트](https://motion-art-director-review-oct05.achmage2.chatgpt.site/) · [스킬 설치](../../motion-art-director) · [검증 범위](../../motion-art-director/VALIDATION.md)
 
 최신 작품: [요리](meal-chef-full180-v2.mp4) · [레이싱](racing-full180-v1.mp4) · [페달 음악 교정판](pedal-musical-full-v6.mp4) · [도시 v4](city-pulse-180-v4.mp4) · [커피](coffee-transfer-30-v1.mp4). 아래의 이전 버전과 시험본은 개발 기록으로 보존합니다.
 
@@ -96,3 +96,7 @@ Technical verification does not imply full human listening/aesthetic approval, b
 - **[페달 · 리듬이 속도가 되는 순간](pedal-musical-full-v6.mp4)** — 180초 / 음악 묶음·착지 교정판. The Lift — Kevin MacLeod (incompetech.com), CC BY 4.0. 발췌·페이드·음량 편집, 자체 효과음. 서로 다른 라이더의 시각적 비유이며 한 선수의 경기 기록이 아닙니다. [상세](https://motion-art-director-review-oct05.achmage2.chatgpt.site/pedal/musical/full/) · [기록](pedal-180-editorial-v4-REPRODUCE.md).
 
 요리 음악: [Mixkit Music License](https://mixkit.co/license/#musicFree). 레이싱 음악: [Blown Away 원곡](https://incompetech.com/music/royalty-free/index.html?isrc=USUAN1200100), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 완성본 공개와 원본 소스 재배포 허용은 다릅니다. 원본 촬영과 독립 음악 파일은 새로 동봉하지 않습니다.
+
+## Claude Code 제작 · 남는 것
+
+[60초 감상·고화질 원본](https://achmage-os-film.achmage2.chatgpt.site/) · [직접 재생](https://achmage-os-film.achmage2.chatgpt.site/media/film-web-11334b0f.mp4) · [제작 방식·공개 검사](achmage-os-film-report.json). 먹·물·지식의 연결·한지의 한 획을 직접 작성한 그래픽과 음악으로 연결합니다. Motion Art Director3.0.0-rc.1의 계약을 재사용하고 작품 전용 ink-gl(WebGL2/SwiftShader, CPU) 렌더러를 작성한 확장 사례입니다. 공통4.0.0 기본 어댑터의 단독 출력과 구별합니다. 기존 Sites의 검증된 영상 스트림을 연결하며 500MB 원본·비공개 그래프·프로젝트 기록을 저장소에 중복 업로드하지 않습니다.
