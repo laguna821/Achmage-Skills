@@ -26,6 +26,7 @@ references/engine-selection.md를 읽는다. 엔진 이름보다 작품의 표�
 ## 제작 순서
 내용 대응 → 음악·소재 탐색 → 로그라인·실제 음악·전체 구성의 가벼운 기획 시청 → 방향 확인 → 상세 연출·스타일프레임·대표 컷 → 전체 제작 → 검수·수정 → 전달.
 - 새 작품은 references/preproduction.md를 먼저 적용한다. 이미 렌더한 대표 컷이 있어야 음악을 고를 수 있게 만들지 않는다. source-search의 검색 계획을 실제 제공처 탐색으로 수행하고 후보·제외·접근 불가를 남긴다. concept-audition은 전체 이야기의 압축 시청본이며 최종 컷 템포나 청취 승인이 아니다. 방향 결정 전 큰 원본 다운로드·PCM 스템·전체 프레임 렌더를 미룬다.
+- 로그라인을 확정하기 전 references/subject-understanding.md를 적용한다. 주제를 익숙한 행동 하나로 축소하지 않았는지, 어떤 사전 조건·판단·조절이 빠졌는지 검토한다. 관련된 면과 제외 이유를 선택하고 핵심 관찰→선택→보이는 결과를 장면으로 연결한다. subject-model-v1의 구조 통과를 의미 전달의 자동 승인으로 사용하지 않는다.
 - 빠른 편집에서도 문장을 자동으로 짧은 단어로 축약하지 않는다. message-track-v1로 음악·컷·문장의 시간을 분리하고, 한 문장을 여러 컷 위에 유지한다. message-compile은 고정 좌표의 vector/hybrid 컷 연결을 지원하며 카메라·중첩 전환 결합의 미지원 범위를 명시적으로 거부한다.
 - references/contract.md에 맞춰 project.json을 작성한다. source_text/display_text/copy_lock, 수치·단위·출처, actual/proposed/hypothetical/symbolic 사건을 구별한다. 사용자 지정 브랜드가 우선이다.
 - 새 작품은 direction_contract=object-first-v1을 사용한다. 각 scene.visual_plan의 objects, content_links, beats, continuity를 실제 그림 레이어 ID에 연결한다. 대상이 필요한 내용을 추상 선·큰 단어만으로 처리하지 않는다. 이전 기술 예제는 기획 계약이 없는 legacy 상태이며 새 작품의 완성 기준으로 복사하지 않는다.

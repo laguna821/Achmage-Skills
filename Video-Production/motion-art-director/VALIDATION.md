@@ -102,6 +102,9 @@ The early hybrid reuse key omitted automotive synthesis while the later audio ke
 
 ## Early concept audition and cross-cut copy — development validation
 
+- Subject-model extension: 11 checks cover legacy compatibility, missing/contradictory scene links, stale preferred music, unsupported review claims and initial preferred-player selection. Generic prose remains explicitly subject to editorial review instead of receiving an automatic quality score.
+- The revised meal storyboard uses original planning diagrams, with missing live-action coverage labelled. B is a scoped user preference; the new premise and full-film output are not automatically approved.
+
 - New preproduction suite: 19 passing checks, including actual vector renderer states across a cut, source-use restrictions, omitted/shortened copy and moving-frame rejection. Existing music-direction, rhythm, direction, hybrid-contract, hybrid-runtime dependency and audition-choice suites also pass.
 - Fresh package run from outside its installation directory: three 45-second previews generated in 6.658 seconds after music/stills were prepared. No Chromium captures or PCM WAV files; each MP4 approximately 2.4 MB. This timing excludes search, planning, implementation and review.
 - Public preview files match local hashes, fully decode and contain 45 seconds. Current Sites hosting returns the complete small file with HTTP 200 to Range requests; it is not claimed to support HTTP 206 streaming.
