@@ -91,3 +91,11 @@ The early hybrid reuse key omitted automotive synthesis while the later audio ke
 - Full39-shot PEDAL project:14 deliberately invalid variants rejected, three positive controls retained. A perfectly pulse-aligned cut that breaks a declared sustained window is still invalid.
 - First720p180s draft completed5400frames and reached the end in a native browser without decoder error. Final1080p output, actual edit trials and public playback are recorded with the work's delivery report.
 - Physical16GB notebook measurement, whole perceptual listening and aesthetic acceptance are not inferred from these checks. This is development work within PR5, not completion of all3.1 Release/OS gates.
+
+## Racing transfer — 180 seconds
+
+-116cuts/11sequences/5400frames rendered at1080p30 through CPU Chromium/FFmpeg. Selected effects-on representative timing is scoped through audition-choice-v1; it does not reuse another film's offset by default.
+-Standalone package actual trials: text changes regenerate one graphics track, source changes one video track, moving one music event by one frame changes the two adjacent cuts. Volume-only remix copies the verified picture bitstream with zero rendered frames. Interrupted runs retain completed cuts; originals remain unchanged.
+-18boundary metadata mutations rejected with a passing baseline. Nine final web-encode boundaries match newly rendered snapshots generated in nonsequential order, after normalizing both paths to RGB. Disposable cache eviction and protected snapshot outputs are accounted for in the review procedure.
+-Final encoded loudness measured−16.11LUFS/−3.33dBTP. Ending quiet windows verified separately from the title cue. Whole-film human listening/aesthetic review and physical16GBnotebook testing remain open.
+-[Racing full-film report](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/racing-full180-v1-report.json). Overall3.1Release andOS promotion remain separate gates.
