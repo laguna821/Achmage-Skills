@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {guardedSpawn as spawn,ownedMove,withStorage,ownedReserve,ownedComplete} from './storage.mjs';
+import {renderStoragePolicy} from './render-storage-policy.mjs';
 import {once} from 'node:events';
 import {html,sceneKey} from './scene.mjs';
 import {browser,pageFor,CPU_ARGS,SPATIAL_CPU_ARGS} from './browser.mjs';
@@ -53,5 +54,5 @@ export async function render(p,base,options={}){
  mkdir(base);const lock=path.join(base,'render.lock');
  if(fs.existsSync(lock)){const prior=read(lock);let alive=true;try{process.kill(prior.pid,0);}catch{alive=false;}if(alive)throw new Error('Another render is active (jobs=1): PID '+prior.pid);fs.unlinkSync(lock);}
  const fd=fs.openSync(lock,'wx');fs.writeFileSync(fd,JSON.stringify({pid:process.pid,started:new Date().toISOString()}));fs.closeSync(fd);
- try{return await withStorage(base,{...settings().storage,duration:p.output.total_frames/30},()=>renderUnlocked(p,base,options));}finally{if(fs.existsSync(lock)&&read(lock).pid===process.pid)fs.unlinkSync(lock);}
+ try{return await withStorage(base,renderStoragePolicy(p,settings().storage),()=>renderUnlocked(p,base,options));}finally{if(fs.existsSync(lock)&&read(lock).pid===process.pid)fs.unlinkSync(lock);}
 }

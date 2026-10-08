@@ -111,4 +111,14 @@ The early hybrid reuse key omitted automotive synthesis while the later audio ke
 - Native seeking against that host returned to the start despite complete buffers. The concept player now downloads bounded small proxies before playback and uses local Blob URLs for seeking. The original MP4 files are unchanged; streaming support for long films remains separate.
 - Seven provider routes are registered. This trial downloaded music from Mixkit; Pixabay access, YouTube Studio login and purpose-specific Mewpot restrictions remain explicitly recorded. Search plans are not completed searches.
 - Message retention currently supports fixed-composition cuts in vector/hybrid scenes. Active camera and overlapping transition cases fail explicitly until an independent composition track exists. Reading quality and artistic approval require review.
-- [Meal concept audition](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31): concept/music selection pending; full 180-second production has not started. Overall 3.1 Release and OS gates remain open.
+- [Meal concept audition](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31) preserves the earlier planning comparison. The subsequent B-music chef representative was accepted; full-film status follows below. Overall 3.1 Release and OS gates remain open.
+
+## Thinking Kitchen — 180-second production and revision checks
+
+- Nine subject stages and 89 shots combine twelve licensed footage sources with original graphics. Complete sentences continue across cuts instead of shrinking into disconnected impact words. The montage does not imply one chef, one dish or a measured recipe.
+- 1080p30 / 5400 frames rendered on CPU with one render worker. Full master and web decode passed. Whole-film listening and final aesthetic acceptance remain pending; browser QA stays muted when requested.
+- Eleven actual-project adversarial checks include positive controls, ±1/2/4-frame event mutations, truncated cross-cut copy, out-of-range source selection and nonsequential SVG state reproducibility.
+- Actual text, volume and source revisions preserve the earlier proof and project. Text interruption/resume passed. Volume changes reuse every picture track; one source trim changes one video track and reuses audio.
+- The text trial exposed a cache defect: a default 120-file cap evicted much of the working film below the byte budget. Cold-track regeneration is reported separately from semantic invalidation. The renderer now estimates a working-film file allowance while retaining explicit overrides, byte budgets, free-space guards and ownership protections.
+- StorageSession integration retains 534 simulated working entries below budget and still trims under explicit file/byte limits. Existing 22 storage checks and cache-cleanup checks pass. Perception and a physical 16GB notebook are not inferred from these tests.
+- Editorial review corrected an adjacent repeated recipe illustration and a decreasing heat dial under copy describing an increase. Directional variants must follow the scene's meaning, not a scene-index alternation.
