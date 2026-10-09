@@ -1,0 +1,206 @@
+{
+  "upstreamSources": [
+    {
+      "source": "achmage-presentation-2.0/bundle/engine/fonts/Pretendard400.woff2",
+      "target": "assets/fonts/Pretendard400.ttf",
+      "sourceSha256": "fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63",
+      "sha256": "b405520c85dd313735cde9da4c6f19ea708e9ff6fe637b9ab23f05047cd86017",
+      "transform": "WOFF2 container decoded to TTF; font outlines/metrics retained"
+    },
+    {
+      "source": "achmage-presentation-2.0/bundle/engine/fonts/Pretendard700.woff2",
+      "target": "assets/fonts/Pretendard700.ttf",
+      "sourceSha256": "4609c3356e536fafe38f4add0daeceb3d8595d3057bce13c428c33ddbd43d362",
+      "sha256": "a9d6a0c25aad84228de15063065068f5a0e52802b16c2bdf0907a82e0a833207",
+      "transform": "WOFF2 container decoded to TTF; font outlines/metrics retained"
+    },
+    {
+      "source": "achmage-presentation-2.0/bundle/engine/fonts/Pretendard800.woff2",
+      "target": "assets/fonts/Pretendard800.ttf",
+      "sourceSha256": "dd7c1e156f508eb962acc7a33a7a1896d1e0b71e11156fad96e731689ceb6dc3",
+      "sha256": "fbf29546dcfda2f13535416518a367de1fd4357ae8c9a941d51cc3ab2122e072",
+      "transform": "WOFF2 container decoded to TTF; font outlines/metrics retained"
+    },
+    {
+      "source": "achmage-presentation-2.0/bundle/engine/fonts/Pretendard-OFL.txt",
+      "target": "assets/fonts/Pretendard-OFL.txt",
+      "sha256": "d31ddd9f2bed32fd7e302a205cf2380ba0de6529152d239ef99cfb6f261bfc04"
+    },
+    {
+      "source": "ui-ux-pro-max/scripts/search.py",
+      "target": "vendor/ui-ux-pro-max/scripts/search.py",
+      "sha256": "3577f4e6b5f96ff2da83ad386c3c41c3d7a0948d7374e15344356990ed83fffb"
+    },
+    {
+      "source": "ui-ux-pro-max/scripts/core.py",
+      "target": "vendor/ui-ux-pro-max/scripts/core.py",
+      "sha256": "f2312caafcae700940644f8cf24439953bdec6a26fe7b9242613062759428b92"
+    },
+    {
+      "source": "ui-ux-pro-max/scripts/design_system.py",
+      "target": "vendor/ui-ux-pro-max/scripts/design_system.py",
+      "sha256": "ba22643868e715b34c8c2b967aeee194178ec9360897339e06ab57cfadcb91ba"
+    },
+    {
+      "source": "ui-ux-pro-max/data/app-interface.csv",
+      "target": "vendor/ui-ux-pro-max/data/app-interface.csv",
+      "sha256": "a276e55817958075a8dffeb5f5d7be16703b1611e9f0a3527525e1a44df25c46"
+    },
+    {
+      "source": "ui-ux-pro-max/data/charts.csv",
+      "target": "vendor/ui-ux-pro-max/data/charts.csv",
+      "sha256": "ebb565308115f955791b0431797a89d9b3587c25d5babb9428d10712c4924817"
+    },
+    {
+      "source": "ui-ux-pro-max/data/colors.csv",
+      "target": "vendor/ui-ux-pro-max/data/colors.csv",
+      "sha256": "d628b178803aee95c2bb8f3cf64d38ea5418948a072ef4feeedf4a69226912e8"
+    },
+    {
+      "source": "ui-ux-pro-max/data/google-fonts.csv",
+      "target": "vendor/ui-ux-pro-max/data/google-fonts.csv",
+      "sha256": "2c03a3cd134d126bd9d6a7dc2a6360dc5272219ad6df3eb9315b031f806e1487"
+    },
+    {
+      "source": "ui-ux-pro-max/data/icons.csv",
+      "target": "vendor/ui-ux-pro-max/data/icons.csv",
+      "sha256": "9da693f818d43e2110e28d949905c85baad1650d383ae9e1568f58c766b0e016"
+    },
+    {
+      "source": "ui-ux-pro-max/data/landing.csv",
+      "target": "vendor/ui-ux-pro-max/data/landing.csv",
+      "sha256": "080cedbcd61ff8ec9520f33929baa76bee9589e783f83b2f8d824a466b6a46d7"
+    },
+    {
+      "source": "ui-ux-pro-max/data/motion.csv",
+      "target": "vendor/ui-ux-pro-max/data/motion.csv",
+      "sha256": "528be03324785eb568c9570f5d60fc1644d5bc7ce2cbdd21b648cb90ce74e76e"
+    },
+    {
+      "source": "ui-ux-pro-max/data/products.csv",
+      "target": "vendor/ui-ux-pro-max/data/products.csv",
+      "sha256": "83579b1fa5078e9607d6799195347506ffdd80ee0cb169693517b376459bc7f1"
+    },
+    {
+      "source": "ui-ux-pro-max/data/react-performance.csv",
+      "target": "vendor/ui-ux-pro-max/data/react-performance.csv",
+      "sha256": "47c0a454cb73bf32378c55eb781dea4c44440ec6a1b52039119afc354315c17e"
+    },
+    {
+      "source": "ui-ux-pro-max/data/styles.csv",
+      "target": "vendor/ui-ux-pro-max/data/styles.csv",
+      "sha256": "baedf4b9681eb7b5a404179e3cd5eb1e8e40b3e2807db5154b72e1431c644b11"
+    },
+    {
+      "source": "ui-ux-pro-max/data/typography.csv",
+      "target": "vendor/ui-ux-pro-max/data/typography.csv",
+      "sha256": "9577e2243d032e226b36fe5037b33299872244f6905b296e16b597a3ed9853c8"
+    },
+    {
+      "source": "ui-ux-pro-max/data/ui-reasoning.csv",
+      "target": "vendor/ui-ux-pro-max/data/ui-reasoning.csv",
+      "sha256": "41976082ecae1100da937c949215dc6694393e03f3c2a7444dd92a9edb43cb11"
+    },
+    {
+      "source": "ui-ux-pro-max/data/ux-guidelines.csv",
+      "target": "vendor/ui-ux-pro-max/data/ux-guidelines.csv",
+      "sha256": "1870ee048f2a2bdd60709f8f7adf7f3b6dcad560bc005c8b2915a8ac8639820d"
+    },
+    {
+      "source": "ui-ux-pro-max/LICENSE",
+      "target": "vendor/ui-ux-pro-max/LICENSE",
+      "sha256": "1b8bd455510cc1f6f9bd510ffe2ec372d1c51fe0e082ddfee8b41825fb7aa055"
+    },
+    {
+      "source": "ui-ux-pro-max/SKILL.md",
+      "target": "references/sources/ui-ux-pro-max.md",
+      "sha256": "9762ef4a1134c1f0e845f30766f05447cf28238fe4eaaa2564b825be2873b4bd"
+    },
+    {
+      "source": "Achmage poster integration profile (authored for this public release)",
+      "target": "references/sources/hallym-DESIGN.md",
+      "sha256": "692aea74893092624ee4e0b9e39ea67c42caf5a8c96f0c352d1699bd505459e4",
+      "originalSourceSha256": "c0ccc5d01f46469d63e6ff7575a7a686631c91908807221046e7b7b6a402ad40",
+      "transform": "Replaced unlicensed local PPT reference with original public integration guidance; renderer unchanged"
+    },
+    {
+      "source": "impeccable/impeccable/SKILL.md",
+      "target": "references/sources/impeccable-impeccable.md",
+      "sha256": "1c3e0fbf40fc72b62f92db3e1a8548a52cc41dabfb1565843cfed64e02003e1f"
+    },
+    {
+      "source": "impeccable/typeset/SKILL.md",
+      "target": "references/sources/impeccable-typeset.md",
+      "sha256": "400eaa312a36e36ea3586414b14df5ae3b4d4a4e6c80b4084d42015b622bb5a3"
+    },
+    {
+      "source": "impeccable/layout/SKILL.md",
+      "target": "references/sources/impeccable-layout.md",
+      "sha256": "dfcdac7203870d9b898de6f65d3168c5455775117ee95a2e96e4d6b75f7ff3eb"
+    },
+    {
+      "source": "impeccable/polish/SKILL.md",
+      "target": "references/sources/impeccable-polish.md",
+      "sha256": "a1b873613695755115c270bc39202e373084dbce82b36cf6ee828fc475811443"
+    },
+    {
+      "source": "achmage-presentation-2.0/bundle/members/frontend-design-impeccable/LICENSE",
+      "target": "references/sources/Impeccable-LICENSE",
+      "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812"
+    }
+  ],
+  "note": "User-authorized poster adaptation. Original source skills unchanged. Upstream instructions are scoped by references/DESIGN.md and references/고밀도-위계.md.",
+  "cmds": {
+    "attribution": "Yohan Koo (CMDSPACE), deck.cmdspace.work",
+    "source": "https://deck.cmdspace.work/cmds-deck-core.zip",
+    "downloadSha256": "97a28ee1a22f73fe7006352d15d3d03097513e216bb6a3fea6e89028ee94acf3",
+    "usage": "original visual vocabulary adapted; no original core code executed",
+    "docs": {
+      "references/sources/cmds/CONTRACT.md": "7912356b91ecd43d8d0ca0196fed8a3638b5a6e124aca6f551f8b0fd178dada3",
+      "references/sources/cmds/blueprint/DESIGN.md": "deb3a3f8c13839c9a0576bb0cfcd8b511f3a8d413b9477e8c9173862c5d5a50c",
+      "references/sources/cmds/broadsheet/DESIGN.md": "a980090a6bd575b6a63df1295c4fcd0e779fc47d5b211aabb76c0515eb833bd3",
+      "references/sources/cmds/control-room/DESIGN.md": "f9187ff336eaaaccf8376cf0130a6e03b98e2657003bf2bfa900bd9556315e16",
+      "references/sources/cmds/datadriven/DESIGN.md": "d18004a8fc98de9507636c13131247ce9104e60e15a752e0c5dc852f0a10a519",
+      "references/sources/cmds/editorial-scroll/DESIGN.md": "fc2d095ae3069c12a4e35f7a9e73884a920547e10a6606655ea177a99a263f5c",
+      "references/sources/cmds/field-notebook/DESIGN.md": "f424bd1f3bc913dde309bd0ed41bbd1bd7dc35fa56fc9914a7384991b3107591",
+      "references/sources/cmds/intertitle/DESIGN.md": "450ad638e41ce41b19af73312711e71c46dc81accfa2844ca87807a8e197c992",
+      "references/sources/cmds/section-drawing/DESIGN.md": "637e6ebe761dc86a41944c1c909237c7521cbda1378c60e9066fa46d35dbc977",
+      "references/sources/cmds/typographic-poster/DESIGN.md": "274728e4cfaa95e4b87518329825f23b7c4114c4fa6ee7c5654d55bb4ce94750"
+    }
+  },
+  "researchRevision": "research:rr-c23be40e88209729007ee46fac45afd6:3947952887479348889a921e43c76c4a8fb80d6beaee050747371e12fe9c1a5f",
+  "webFonts": {
+    "Pretendard400.woff2": "fad853f7f47c6c8b103171e7193fa095708cdcd70850a71d93aa5379e8a61d63",
+    "Pretendard700.woff2": "4609c3356e536fafe38f4add0daeceb3d8595d3057bce13c428c33ddbd43d362",
+    "Pretendard800.woff2": "dd7c1e156f508eb962acc7a33a7a1896d1e0b71e11156fad96e731689ceb6dc3"
+  },
+  "reviewRefs": [
+    {
+      "sha256": "35c73e8951ee07bb5d7200556627f9f278af090285aa0894e497c6fcabf2883b",
+      "record": "private-review-1",
+      "availability": "Internal evidence digest only; see VALIDATION.md for public scope"
+    },
+    {
+      "sha256": "318c9bd317f053e6c2e3490ec25edab60527f74f045c65b310ff7f9fe4c9f871",
+      "record": "private-review-2",
+      "availability": "Internal evidence digest only; see VALIDATION.md for public scope"
+    },
+    {
+      "sha256": "e2e6233ee2ec63f52693ceb470918612ba99bca82199e9f67dc5954a8e1dc766",
+      "record": "private-review-3",
+      "availability": "Internal evidence digest only; see VALIDATION.md for public scope"
+    },
+    {
+      "sha256": "87a858db9d36838c5e8bcd15cd5ae0cb0e6e8bb8064a1a4d4f2d8c2e52d65b17",
+      "record": "private-review-4",
+      "availability": "Internal evidence digest only; see VALIDATION.md for public scope"
+    }
+  ],
+  "publicDistribution": {
+    "version": "1.2.0-rc.5",
+    "rendererChanged": false,
+    "privatePathsRemoved": true,
+    "sourceProfileReplaced": "references/sources/hallym-DESIGN.md",
+    "manifest": "PACKAGE-MANIFEST.json"
+  }
+}

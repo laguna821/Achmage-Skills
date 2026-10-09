@@ -1,0 +1,12 @@
+{
+  "name": "hallym-poster-system",
+  "version": "1.2.0-rc.5",
+  "description": "Complete mobile HTML posters and independently edited A2 print PDFs, with rotating themes and sharing previews.",
+  "author": {
+    "name": "laguna821"
+  },
+  "license": "Apache-2.0",
+  "skills": [
+    "./hallym-poster-system"
+  ]
+}

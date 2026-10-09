@@ -1,0 +1,7 @@
+interface:
+  display_name: "한림 포스터 시스템"
+  short_description: "한 장 벤토 포스터 · HTML/PDF · 카카오 공유"
+  default_prompt: "자료를 읽고 행사·모집 또는 학술 포스터로 구성해 주세요. 한림 색과 Pretendard, CMDS 기반 세로 벤토, 다크·라이트 HTML과 인쇄 PDF를 만들고 실제 검수해 주세요."
+policy:
+  allow_implicit_invocation: true
+

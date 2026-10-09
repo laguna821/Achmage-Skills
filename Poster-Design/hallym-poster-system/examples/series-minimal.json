@@ -1,0 +1,67 @@
+{
+  "mode": "poster-create",
+  "outputDir": "series-example-output",
+  "poster": {
+    "title": "행사 제목",
+    "series": {
+      "schemaVersion": 2,
+      "title": "행사 제목",
+      "eyebrow": "확인된 행사명",
+      "description": "행사 설명",
+      "frame": {
+        "title": "행사명",
+        "date": "확인된 일시",
+        "place": "확인된 장소"
+      },
+      "statusLabel": "제작 예시 · 실제 행사 아님",
+      "autoplay": true,
+      "content": [
+        {
+          "id": "overview",
+          "title": "행사 제목",
+          "body": "검증된 원고를 넣습니다.",
+          "style": "hero"
+        },
+        {
+          "id": "details",
+          "title": "참여 및 조건",
+          "body": "목적과 청중을 설명합니다."
+        }
+      ],
+      "scenes": [
+        {
+          "id": "complete",
+          "label": "행사 전체 안내",
+          "focus": "행사와 참여 조건을 한 장에서 이해",
+          "refs": [
+            "overview",
+            "details"
+          ],
+          "theme": "light",
+          "seconds": 4
+        }
+      ],
+      "print": {
+        "margin": "A",
+        "rows": [
+          [
+            "overview"
+          ],
+          [
+            "details"
+          ]
+        ]
+      },
+      "logos": [],
+      "researchRefs": [],
+      "composition": {
+        "mode": "complete-posters",
+        "sharedRefs": [
+          "overview",
+          "details"
+        ]
+      },
+      "defaultTheme": "alternating"
+    }
+  }
+}
