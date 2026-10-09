@@ -1,3 +1,6 @@
 # Preserve the exact bytes recorded in the motion package's SHA-256 manifest.
 /Video-Production/motion-art-director/** -text
 /Video-Production/examples/motion-art-director/** -text
+
+# Preserve poster package manifests and archive bytes.
+/Poster-Design/** -text

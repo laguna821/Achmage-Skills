@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등. Motion Art Director 모션그래픽 제작 포함.",
-    "version": "1.5.0"
+    "version": "1.6.0"
   },
   "plugins": [
     {
@@ -147,6 +147,27 @@
         "reports",
         "korean",
         "forms"
+      ]
+    },
+    {
+      "name": "hallym-poster-system",
+      "source": "./Poster-Design",
+      "version": "1.2.0-rc.5",
+      "description": "모바일 HTML 완결 포스터와 별도 A2 한 장 편집, 4초 순환·교차 테마·카카오 공유.",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Poster-Design",
+      "license": "Apache-2.0",
+      "category": "productivity",
+      "tags": [
+        "poster",
+        "html",
+        "pdf",
+        "a2",
+        "korean",
+        "codex",
+        "claude-code"
       ]
     }
   ]

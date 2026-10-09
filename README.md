@@ -4,6 +4,11 @@
 
 ## 📦 수록 스킬
 
+### [Poster-Design/hallym-poster-system](Poster-Design) — 모바일 HTML · A2 인쇄 포스터 (1.2.0-rc.5)
+
+각 장이 완결된 **4초 순환·라이트/다크 교차 HTML**과 **별도로 편집하는 A2 한 장 PDF**를 만듭니다. 장 사이 폭·여백 고정, 작은 ⋯ 도구, 카카오 공유 이미지·공개 파일 검사를 포함합니다. OS/MCP 없이 설치하는 전체 ZIP입니다.
+→ [설치·사용 안내](Poster-Design/hallym-poster-system/README.md) · [전체 설치 ZIP](Poster-Design/downloads/hallym-poster-system-1.2.0-rc.5.zip) · [실제 공개 시험본](https://achmage-slides.vercel.app/experiments/pkm-speaker-posters-2026/) · [검증 범위](Poster-Design/hallym-poster-system/VALIDATION.md)
+
 ### [Hallym-Documents/hallym-kordoc](Hallym-Documents) — 한림대 문서 작성·HWPX 양식 자동화 (1.0.0-rc.1)
 
 34개 문서군의 양식 선택부터 Markdown 작성·HWPX 생성·검사까지 연결합니다. 공개 원문 참고 재구성 13개와 공통 초안 21개, 개인 양식 등록·재사용을 포함한 **독립 설치 ZIP 약 1.66MB**입니다. Windows Codex·Claude Code의 새 세션 재사용을 확인했으며 한컴 직접 열기·편집·저장은 미검증입니다.
@@ -66,6 +71,7 @@ npx skills add laguna821/Achmage-Skills
 ```text
 # 방법 B — 플러그인 마켓플레이스 (공식 배포 경로)
 /plugin marketplace add laguna821/Achmage-Skills
+/plugin install hallym-poster-system@achmage-skills
 /plugin install raw-5-html@achmage-skills
 /plugin install component-consulting-v3@achmage-skills
 /plugin install render-audit@achmage-skills
