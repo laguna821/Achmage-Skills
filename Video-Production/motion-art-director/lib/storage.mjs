@@ -1,5 +1,6 @@
 import fs from 'node:fs';import path from 'node:path';import os from 'node:os';import crypto from 'node:crypto';
 import {AsyncLocalStorage} from 'node:async_hooks';import {spawn} from 'node:child_process';
+import {ProjectBudget} from './project-storage.mjs';
 const context=new AsyncLocalStorage(),GiB=1024**3;
 const within=(root,file)=>{const r=path.relative(root,file);return r!==''&&!r.startsWith('..')&&!path.isAbsolute(r);};
 const alive=pid=>{try{process.kill(pid,0);return true;}catch{return false;}};
@@ -12,13 +13,14 @@ export const currentStorage=()=>context.getStore();
 export class StorageSession{
  constructor(root,options={}){
   this.root=path.resolve(root);fs.mkdirSync(this.root,{recursive:true});this.root=fs.realpathSync(this.root);
-  this.options={minFreeBytes:2*GiB,cacheBudgetBytes:8*GiB,keepCacheFiles:120,duration:0,pollMs:250,...options};
+  this.options={minFreeBytes:8*GiB,cacheBudgetBytes:8*GiB,keepCacheFiles:120,duration:0,pollMs:250,...options};
+  this.projectBudget=new ProjectBudget(this.root,this.options);
   this.id=crypto.randomUUID();this.children=new Set();this.error=null;this.dir=path.join(this.root,'.motion-storage');metadataSafe(this.dir);if(otherLease(path.parse(this.root).root,this.root,this.id))throw Error('Storage workspace overlaps an active ancestor');fs.mkdirSync(this.dir,{recursive:true});this.manifest=path.join(this.dir,'owned.json');this.lock=path.join(this.dir,'lease.json');this.events=path.join(this.dir,'events.jsonl');
   if(fs.existsSync(this.lock)){const old=JSON.parse(fs.readFileSync(this.lock));if(old.host!==os.hostname()||alive(old.pid))throw Error('Storage workspace is active in another process');fs.unlinkSync(this.lock);}
   fs.writeFileSync(this.lock,JSON.stringify({pid:process.pid,host:os.hostname(),id:this.id}),{flag:'wx'});
   try{this.entries=fs.existsSync(this.manifest)?JSON.parse(fs.readFileSync(this.manifest)).entries:{};
    if(!this.entries||typeof this.entries!=='object'||Array.isArray(this.entries))throw Error('Invalid storage manifest');
-   this.record('start',{freeBytes:this.free(),ownedBytes:this.total()});
+   this.record('start',{freeBytes:this.free(),ownedBytes:this.total(),project:this.projectBudget.check({force:true})});
   }catch(error){if(fs.existsSync(this.lock)&&JSON.parse(fs.readFileSync(this.lock)).id===this.id)fs.unlinkSync(this.lock);throw error;}
  }
  free(){const s=fs.statfsSync(this.root);return Number(s.bavail)*Number(s.bsize);}
@@ -45,6 +47,7 @@ export class StorageSession{
  move(from,to){const key=this.key(from),next=this.key(to),e=this.entries[key],dest=this.entries[next];if(!e)throw Error('Refusing unowned move: '+key);if([e,dest].some(v=>v?.workerPid&&alive(v.workerPid)))throw Error('Refusing to move output with a live writer');if(otherLease(this.root,from,this.id)||otherLease(this.root,to,this.id))throw Error('Move overlaps active storage workspace');this.capture(from);if(dest?.kind==='final'&&dest.state==='complete')throw Error('Refusing to replace completed final: '+next);if(fs.existsSync(to)&&(!dest||!dest.identity||!this.same(to,dest)))throw Error('Refusing to replace unowned output: '+next);fs.renameSync(from,to);delete this.entries[key];this.entries[next]={...e,path:next,state:'complete',used:Date.now()};this.save();}
  check(){
   if(this.error)throw this.error;
+  this.projectBudget.check();
   if(this.free()<this.options.minFreeBytes)throw Error('Storage reserve reached; render stopped before disk exhaustion');
   let dirty=false;for(const e of Object.values(this.entries)){if(e.session!==this.id||e.state!=='pending')continue;const file=this.resolve(path.join(this.root,e.path));if(!fs.existsSync(file))continue;const had=e.identity;this.capture(file);if(!had)dirty=true;if(e.maxBytes!==null&&e.bytes>e.maxBytes)throw Error('Output exceeded expected size: '+e.path+' ('+e.bytes+' bytes)');}if(dirty)this.save();
  }
@@ -68,7 +71,7 @@ export class StorageSession{
  async run(fn){
   let timer,succeeded=false;try{this.sweep();this.check();timer=setInterval(()=>{try{this.check();}catch(e){this.stop(e);}},this.options.pollMs);const result=await context.run(this,()=>fn(this));this.check();for(const e of Object.values(this.entries))if(e.session===this.id&&e.kind==='final'&&e.state==='complete')e.verified=true;this.save();succeeded=true;return result;}
   catch(error){this.error??=error;this.record('task-failed',{message:error.message});throw error;}
-  finally{clearInterval(timer);await this.stopping;await Promise.all([...this.children].map(killOwnedChild));if(!succeeded)for(const e of Object.values(this.entries))if(e.session===this.id&&e.kind==='final'&&!e.verified)e.kind='temporary';this.sweep();this.record('finish',{freeBytes:this.free(),ownedBytes:this.total(),failed:!succeeded});if(fs.existsSync(this.lock)&&JSON.parse(fs.readFileSync(this.lock)).id===this.id)fs.unlinkSync(this.lock);}
+  finally{clearInterval(timer);await this.stopping;await Promise.all([...this.children].map(killOwnedChild));if(!succeeded)for(const e of Object.values(this.entries))if(e.session===this.id&&e.kind==='final'&&!e.verified)e.kind='temporary';this.sweep();let project;try{project=this.projectBudget.check({force:true});}catch(error){project={root:this.projectBudget.root,overBudget:true,message:error.message};}this.record('finish',{freeBytes:this.free(),ownedBytes:this.total(),project,failed:!succeeded});if(fs.existsSync(this.lock)&&JSON.parse(fs.readFileSync(this.lock)).id===this.id)fs.unlinkSync(this.lock);}
  }
 }
 export function withStorage(root,options,fn){const active=currentStorage();if(active){const resolved=path.resolve(root);if(resolved!==active.root&&!within(active.root,resolved))throw Error('Nested storage root is outside active workspace');return fn(active);}return new StorageSession(root,options).run(fn);}
