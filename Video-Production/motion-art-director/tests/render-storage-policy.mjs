@@ -9,7 +9,9 @@ const interleaved={...p,scenes:[{composition:{layers:[{kind:'video',mask:{}},{ki
 assert.deepEqual(Object.keys(result).sort(),['duration','keepCacheFiles']);console.log('render-storage-policy: working-set retention, explicit limits, byte/free-space preservation, short films and zero-cache override passed');
 const root=fs.mkdtempSync(path.join(os.tmpdir(),'motion-working-cache-'));
 async function populate(name,options,count){const dir=path.join(root,name);await withStorage(dir,renderStoragePolicy(p,{minFreeBytes:0,...options}),async s=>{for(let i=0;i<count;i++){const f=path.join(dir,'cache',i+'.track');fs.mkdirSync(path.dirname(f),{recursive:true});s.reserve(f,{kind:'cache'});fs.writeFileSync(f,Buffer.alloc(100));s.capture(f);s.complete(f);}});return fs.readdirSync(path.join(dir,'cache')).length;}
+try{
 assert.equal(await populate('film',{},534),534,'Retain a full working film below byte budget');
 assert.equal(await populate('explicit',{keepCacheFiles:12},40),12,'Respect explicit user file cap');
 assert.equal(await populate('bytes',{cacheBudgetBytes:1000},40),10,'Byte limit still trims the working film');
 console.log('StorageSession integration: full film retained; explicit file and byte limits enforced');
+}finally{const resolved=fs.realpathSync(root);if(path.dirname(resolved)!==fs.realpathSync(os.tmpdir())||!path.basename(resolved).startsWith('motion-working-cache-'))throw Error('Unexpected test cleanup root');fs.rmSync(resolved,{recursive:true,force:true});}

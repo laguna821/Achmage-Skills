@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
+import {measureProject,storageProjectRoot} from '../lib/project-storage.mjs';
 import {sourceActionAudit} from '../lib/source-action.mjs';
 import {auditionChoiceAudit} from '../lib/audition-choice.mjs';
 import {sourceSearchPlan,sourceCandidateAudit} from '../lib/source-discovery.mjs';
@@ -43,6 +44,7 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
  checks.ok=typeof checks.ffmpeg==='string'&&typeof checks.ffprobe==='string'&&typeof checks.browser==='string';return checks;}
 async function main(){
  switch(command){
+ case 'storage-report':{const r=measureProject(storageProjectRoot(path.resolve(positional[0]||'.'),flags.root));if(flags.out)write(path.resolve(flags.out),r);return {...r,scope:'whole project including all runs, final media, audio and packages; no deletion'};}
  case 'source-search':{const r=sourceSearchPlan(read(positional[0]));if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'source-review':{const r=sourceCandidateAudit(read(positional[0]),{use:flags.use||'web-video'});if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'concept-audit':return conceptAudit(read(positional[0]));

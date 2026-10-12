@@ -81,3 +81,8 @@ node scripts/motion.mjs message-compile project.json --track message-track.json 
 source-search는 실제 검색 결과 대신 제공처별 검색 요청을 만든다. 에이전트가 공식 사이트를 탐색하고 증거를 채운다. concept-audition은 카드와 실제 음악을 합친 960px/5fps 압축 MP4, 전체 구성 HTML, 소요·용량 영수증을 만든다. 원본과 출력 폴더는 분리하며 이전 시청본은 덮어쓰지 않는다. message-compile의 출력은 원본 프로젝트 옆 새 파일이어야 하며 기존 미감 승인을 승계하지 않는다. 상세 계약과 한계는 references/preproduction.md를 따른다.
 
 주제 검토: `node scripts/motion.mjs subject-audit concept.json`. 선택적 subject-model-v1은 포함/제외한 면, 관찰→선택→결과, 선택 음악과의 관계를 기록한다. 구조·근거 연결 검사이며 기획의 의미와 미감을 자동 판정하지 않는다.
+# 프로젝트 저장공간
+
+`node scripts/motion.mjs storage-report WORKSPACE`는 모든 실행 버전·완료 음원·MP4·압축파일을 합산한다. 읽기 전용이며 `--out report.json`으로 남길 수 있다. 기존 `cache-plan ROOT --out cleanup.json` → `cache-prune cleanup.json` 미리보기 → 승인된 범위의 `cache-prune cleanup.json --apply`를 사용한다.
+
+런타임 storage 설정의 `projectRoot`, `projectBudgetBytes`(기본24GiB), `projectScanMs`(기본5000), `plannedBytes`로 범위와 예산을 명시할 수 있다. 기존 per-run8GiB캐시 제한과 별도로 작동한다. 기본 여유공간은8GiB다. 관리 작업은 work/branch 상위 프로젝트를 발견해 형제 실행까지 센다. 프로젝트 경계 밖의 사용자 스크립트나 다운로드를 자동 감시한다고 주장하지 않는다. 고유자료·완성본을 지워서 예산을 맞추지 않고, 출처 검증 또는 재생성 가능한 캐시 정리를 먼저 한다.

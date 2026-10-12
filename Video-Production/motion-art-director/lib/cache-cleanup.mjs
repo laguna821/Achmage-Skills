@@ -12,7 +12,7 @@ if(e.identity?.ino!==String(s.ino)||e.identity?.birth!==s.birthtimeMs)throw Erro
 candidates.push({path:rel,bytes:s.size,sha256:digest(fs.readFileSync(file)),identity:e.identity});}
 const p={version:1,root,manifestSha256:digest(bytes),candidates,protectedFiles,bytes:candidates.reduce((n,x)=>n+x.bytes,0)};return {...p,signature:signature(p)};}
 export function cachePrune(plan,{apply=false}={}){if(plan.signature!==signature(plan))throw Error('Cache plan signature mismatch');const current=cachePlan(plan.root);if(current.signature!==plan.signature)throw Error('Cache plan stale; rebuild before deletion');if(!apply)return {dryRun:true,files:plan.candidates.length,bytes:plan.bytes};
-const session=new StorageSession(plan.root),removed=[];try{if(digest(fs.readFileSync(session.manifest))!==plan.manifestSha256)throw Error('Manifest changed before cleanup');
+const session=new StorageSession(plan.root,{storageOperation:'cleanup'}),removed=[];try{if(digest(fs.readFileSync(session.manifest))!==plan.manifestSha256)throw Error('Manifest changed before cleanup');
 for(const c of plan.candidates){const f=session.resolve(path.join(plan.root,c.path));if(digest(fs.readFileSync(f))!==c.sha256)throw Error('Cache changed before cleanup');}
 for(const c of plan.candidates){const n=session.remove(session.entries[c.path],'explicit verified cache-prune');if(n!==c.bytes||fs.existsSync(path.join(plan.root,c.path)))throw Error('Cache removal incomplete: '+c.path);removed.push(c);}
 session.save();return {dryRun:false,files:removed.length,bytes:removed.reduce((n,x)=>n+x.bytes,0),removed};

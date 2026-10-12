@@ -4,9 +4,9 @@ import {editAudio,editErrors,choreographyErrors} from './audio-edit.mjs';
 import {drivingErrors,drivingCues,vehicleSample,curve,automotiveCoverage} from './automotive-audio.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
-import {mkdir,write,hash,run,tool} from './io.mjs';
+import {mkdir,write,hash,run,tool,settings} from './io.mjs';
 import {withStorage,ownedReserve,ownedComplete,ownedCopy,currentStorage} from './storage.mjs';
-export async function audio(p,out,options={}){return withStorage(out,{duration:p.output.total_frames/30},()=>synthAudio(p,out,options));}
+export async function audio(p,out,options={}){return withStorage(out,{...settings().storage,duration:p.output.total_frames/30},()=>synthAudio(p,out,options));}
 export const RATE=48000,CHANNELS=2;
 export const INSTRUMENTS=['bell','pad','felt','marimba','bass','pluck','air'];
 export const CUE_KINDS=['impact','chime','whoosh','tick','paper','pencil','press','thread','shear','key','drive','wind','passby','footstep','pour','grind','pedal-click','ratchet','tire-roll'];
