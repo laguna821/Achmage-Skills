@@ -308,8 +308,8 @@
     },
     {
       "path": "lib/extensions.mjs",
-      "bytes": 2896,
-      "sha256": "10421546ffbd7b3492d3624022512a7da3c8ccdf39c85b1c83f0b795888304f8"
+      "bytes": 3000,
+      "sha256": "11507e610675f36d856a0607150a4732bafcce1a4969cb88e336948edec62e98"
     },
     {
       "path": "lib/foley.mjs",
@@ -688,8 +688,8 @@
     },
     {
       "path": "scripts/motion.mjs",
-      "bytes": 12843,
-      "sha256": "30c3d6cac120c2510ceca82e7523d2de9620be839d628785bf849ec99cfa0ba1"
+      "bytes": 12882,
+      "sha256": "15d5ffbfda6c2d09ec81374911b39b91c692ba642f5271aabb5cde60e80290f1"
     },
     {
       "path": "scripts/music-audit.mjs",
@@ -793,8 +793,8 @@
     },
     {
       "path": "tests/extensions.mjs",
-      "bytes": 4031,
-      "sha256": "efb78e77bd1900e7f856c235a155cb4c63777304fa79b976877c7de332f45b47"
+      "bytes": 4194,
+      "sha256": "597623b267232117e14d88dc43a41b7d8793b22aac19e3870a2898ae8bcc2c69"
     },
     {
       "path": "tests/foley.mjs",

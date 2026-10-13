@@ -1,7 +1,7 @@
 import '../assets/extensions.js';
 import {hash} from './io.mjs';
 export const EXTENSION_VERSION='showreel-v1';
-export const extensionRegistry=Object.fromEntries(Object.entries(globalThis.MAD_EXT.specs).map(([type,[source,title,family,cost]])=>['showreel:'+type,{id:'showreel:'+type,type,source_id:'showreel:'+source,title,family,cost,version:1,engines:['chromium'],renderers:['vector-composite','hybrid-composite'],outputs:['time','scroll','still'],implementation:'executable',automated_review:'pending',aesthetic_review:'pending'}]));
+export const extensionRegistry=Object.fromEntries(Object.entries(globalThis.MAD_EXT.specs).map(([type,[source,title,family,cost]])=>['showreel:'+type,{id:'showreel:'+type,type,source_id:'showreel:'+source,title,family,cost,version:1,engines:['chromium'],renderers:['vector-composite','hybrid-composite'],outputs:['time','scroll','still'],implementation:'executable',automated_review:'passed',automated_scope:'tests/extensions.mjs deterministic Chromium fixtures; not arbitrary-project acceptance',aesthetic_review:'pending'}]));
 export const drawExtension=globalThis.MAD_EXT.draw;
 export const extensionCheck=globalThis.MAD_EXT.check;
 export function extensionTechnique({id,instance,inputs={},parameters={}}){
