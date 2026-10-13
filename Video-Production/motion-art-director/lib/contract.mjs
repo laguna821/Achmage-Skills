@@ -1,4 +1,5 @@
 import {syncScoreCheck} from './sync-score.mjs';
+import {extensionProjectErrors} from './extensions.mjs';
 import {rhythmCheck} from './rhythm-score.mjs';
 import {checkStructure} from './music-structure.mjs';
 import {mediaErrors} from './media.mjs';
@@ -22,6 +23,7 @@ export function validate(p){
  for(const name of ['scenes','content_units','sources','events','routes','required_content_ids'])check(Array.isArray(p[name]),name+' must be an array');
  if(p.assets!==undefined)check(Array.isArray(p.assets),'assets must be an array');
  if(errors.length)return {ok:false,errors,warnings:warn};
+ errors.push(...extensionProjectErrors(p));
  check(typeof p.title==='string'&&p.title.length>0&&typeof p.direction==='string'&&p.direction.length>0,'title and direction required');
  check(p.renderer===undefined||['cinematic','vector-composite','image-composite','spatial-three','hybrid-composite'].includes(p.renderer),'unknown renderer');
  check(p.timeline_semantics===undefined||['segments-v1'].includes(p.timeline_semantics),'unknown timeline semantics');

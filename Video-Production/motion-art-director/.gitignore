@@ -1,0 +1,4 @@
+__pycache__/
+*-test-results/
+node_modules/
+local.config.json

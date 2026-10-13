@@ -1,4 +1,6 @@
-# Motion Art Director · 4.0.0
+# Motion Art Director · 4.1.0-rc.1 개발 후보
+
+Showreel 선택 확장을 구현하는 개발 브랜치입니다. 기존 공개 4.0 작품과 설치는 유지됩니다. 원본 도감 637개에 별도 공급원의 실행 어댑터 16개를 연결하고, 외부 22개 항목은 신규 구현·재사용·참고 전용으로 구분합니다. [확장 입력·지원 범위](references/showreel-integration.md)와 [출시 조건](references/release-4.1.md)을 참고하세요. 새 통합 작품·전이 작품의 미감 및 전체 청취가 완료되기 전에는 출시 완료로 표시하지 않습니다.
 
 기획 앞단에서 실제 음악과 전체 콘티를 먼저 보고, 실사·정밀 그래픽·완전한 문장·음악 묶음을 연결해 제작하는 통합 워크플로우입니다. [180초 요리 작품](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/film/?v=35) · [180초 레이싱](https://motion-art-director-review-oct05.achmage2.chatgpt.site/racing/film/?v=30) · [4.0 변경과 제한](references/release-4.md).
 
