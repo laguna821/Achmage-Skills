@@ -14,6 +14,9 @@ description: "모션그래픽·브랜드 영상·키네틱 타이포·쇼츠·�
 2. 현재 대화의 용도·독자·길이·화면 비율·필수 문구·자산 조건을 먼저 읽고, 빠진 핵심 질문만 묶어서 묻는다.
 3. references/show-the-subject.md, references/directing.md, references/production-methods.md를 읽고 **내용 → 보여줄 대상과 정보 → 대상의 행동 → 장면 연결 → 움직임과 소리**를 설계한다. 각 대상의 식별 특징과 실제 표시 내용을 정한다. 엔진이나 효과 목록부터 고르지 않는다.
 
+## 선택 확장 4.1
+Showreel 계열 표현은 references/showreel-integration.md를 읽고 필요한 대상·행동이 있을 때만 선택한다. source 22개 항목과 실제 어댑터 수를 구분한다. showreel-v1 선언, Chromium 지원 범위와 비용 제한을 지킨다. 유료 API·고정 박자·자동 미감 승인은 도입하지 않는다. 배포 상태는 references/release-4.1.md를 확인한다.
+
 ## 연출과 엔진 선택
 references/engine-selection.md를 읽는다. 엔진 이름보다 작품의 표현과 측정한 비용을 우선한다. 현재 공통 런타임은 SVG/GSAP/CPU Chromium/FFmpeg다. Skia CPU 글자 윤곽 제작 도구도 포함한다. SVG/text 장면에는 profile.rasterizer=skia로 실제 CPU 프레임 렌더를 선택할 수 있다. 지원 범위 밖의 이미지/절차적 레이어는 Chromium 경로를 사용한다.
 - SVG는 정밀한 선·로고·도표·편집 가능한 글자·경로 변형에 사용한다.

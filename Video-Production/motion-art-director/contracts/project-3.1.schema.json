@@ -773,6 +773,28 @@
                 "exclusiveMinimum": 0
               }
             }
+          },
+          "motion_blur": {
+            "type": "object",
+            "required": [
+              "samples",
+              "shutter"
+            ],
+            "properties": {
+              "samples": {
+                "enum": [
+                  1,
+                  2,
+                  4
+                ]
+              },
+              "shutter": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            },
+            "additionalProperties": false
           }
         }
       }
@@ -1635,6 +1657,15 @@
           }
         }
       }
+    },
+    "extensions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "showreel-v1"
+        ]
+      }
     }
   },
   "additionalProperties": true,
@@ -2130,6 +2161,11 @@
       },
       "then": {
         "$ref": "#/$defs/video_layer"
+      },
+      "properties": {
+        "extension": {
+          "$ref": "#/$defs/motion_extension"
+        }
       }
     },
     "editorial": {
@@ -2926,6 +2962,57 @@
         }
       },
       "additionalProperties": false
+    },
+    "motion_extension": {
+      "type": "object",
+      "required": [
+        "version",
+        "type",
+        "duration",
+        "seed",
+        "inputs",
+        "parameters"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "type": {
+          "enum": [
+            "odometer",
+            "data-continuity",
+            "device-ui",
+            "particle-transfer",
+            "jamo-assembly",
+            "weight-wave",
+            "chrome-type",
+            "glyph-particles",
+            "day-night",
+            "isometric",
+            "tilt-shift",
+            "prism",
+            "beat-grid",
+            "dither",
+            "audio-reactive",
+            "precomputed-fragments"
+          ]
+        },
+        "duration": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 180
+        },
+        "seed": {
+          "type": "integer"
+        },
+        "inputs": {
+          "type": "object"
+        },
+        "parameters": {
+          "type": "object"
+        }
+      },
+      "description": "Per-technique bounds and cross-field constraints are additionally enforced by assets/extensions.js."
     }
   },
   "allOf": [

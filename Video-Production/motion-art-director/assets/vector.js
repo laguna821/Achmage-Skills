@@ -14,7 +14,8 @@
    const v=Object.fromEntries(Object.keys(defaults).map(k=>[k,value(l,k,t)])),pivot=l.pivot||[bw/2,bh/2];
    out+='<g data-layer-id="'+esc(l.id||'layer-'+i)+'" opacity="'+v.opacity+'" stroke-dashoffset="'+v.dash_offset+'" transform="translate('+v.x+' '+v.y+') rotate('+v.rotation+' '+pivot.join(' ')+') translate('+pivot.join(' ')+') scale('+(v.scale*v.scaleX)+' '+(v.scale*v.scaleY)+') translate('+pivot.map(x=>-x).join(' ')+')"'+(l.clip?' clip-path="url(#'+esc(l.clip)+')"':'')+'>';
    if(l.reveal_rect){const [rx,ry,rw,rh]=l.reveal_rect;out+='<clipPath id="reveal-'+i+'"><rect x="'+rx+'" y="'+ry+'" width="'+(rw*v.reveal)+'" height="'+rh+'"/></clipPath><g clip-path="url(#reveal-'+i+')">';}
-   if(l.kind==='text'){const copy=l.content_id?p.content_units.find(c=>c.content_id===l.content_id)?.display_text:l.text;out+='<text '+(l.content_id?'data-copy="true" ':'')+'x="'+(l.position?.[0]??bw/2)+'" y="'+(l.position?.[1]??bh/2)+'" fill="'+esc(l.color||'#173d48')+'" font-family="'+esc(l.font||'Pretendard')+'" font-size="'+(l.size||48)+'" font-weight="'+v.weight+'" letter-spacing="'+v.tracking+'" text-anchor="'+esc(l.align||'middle')+'">'+esc(copy)+'</text>';}
+   if(l.extension)out+=window.MAD_EXT.draw(l.extension,t,l.id);
+   else if(l.kind==='text'){const copy=l.content_id?p.content_units.find(c=>c.content_id===l.content_id)?.display_text:l.text;out+='<text '+(l.content_id?'data-copy="true" ':'')+'x="'+(l.position?.[0]??bw/2)+'" y="'+(l.position?.[1]??bh/2)+'" fill="'+esc(l.color||'#173d48')+'" font-family="'+esc(l.font||'Pretendard')+'" font-size="'+(l.size||48)+'" font-weight="'+v.weight+'" letter-spacing="'+v.tracking+'" text-anchor="'+esc(l.align||'middle')+'">'+esc(copy)+'</text>';}
    else if(l.kind==='procedural')out+=window.MOTIONART[l.mode]?.(t,p.seed,s)||'';
    else if(l.morph)out+='<path d="'+esc(morph(l,t))+'" fill="'+esc(l.fill||'none')+'" stroke="'+esc(l.stroke||'#173d48')+'" stroke-width="'+(l.stroke_width||3)+'" pathLength="1" stroke-dasharray="1" stroke-dashoffset="'+(1-v.draw)+'"/>';
    else out+='<g'+(l.draw!==undefined||l.keyframes?.some(k=>k.draw!==undefined)?' stroke-dasharray="1" stroke-dashoffset="'+(1-v.draw)+'"':'')+'>'+l.svg+'</g>';
@@ -24,8 +25,8 @@
   return (out+'</g>').replace(/(\s)id="([^"]+)"/g,(_,space,id)=>space+'id="'+s.id+'-'+id+'"').replace(/url\(#([^)]+)\)/g,(_,id)=>'url(#'+s.id+'-'+id+')');
  }
  window.__vectorScene=drawScene;
- window.__vectorRender=sec=>{
-  const frame=Math.max(0,Math.min(p.output.total_frames-1,Math.floor(sec*30+1e-5))),s=p.scenes.find(s=>frame>=s.start&&frame<s.end)||p.scenes.at(-1),i=p.scenes.indexOf(s),t=(frame-s.start)/30,tr=s.transition_in;
+ window.__vectorRender=(sec,subframe=false)=>{
+  const frame=Math.max(0,Math.min(p.output.total_frames-1,(subframe?sec*30:Math.floor(sec*30+1e-5)))),s=p.scenes.find(s=>frame>=s.start&&frame<s.end)||p.scenes.at(-1),i=p.scenes.indexOf(s),t=(frame-s.start)/30,tr=s.transition_in;
   let out=drawScene(s,frame);
   if(i>0&&tr&&t<tr.duration){const u=smooth(t/tr.duration),prev=p.scenes[i-1];let clip;
    if(tr.kind==='iris')clip='<circle cx="'+(tr.origin?.[0]??W/2)+'" cy="'+(tr.origin?.[1]??H/2)+'" r="'+(Math.hypot(W,H)*u)+'"/>';
