@@ -1,5 +1,16 @@
 import {guardedSpawn as spawn} from './storage.mjs';
 import {tool} from './io.mjs';
+// Review visible static text across cuts, instead of treating every shot as a new sentence.
+export function messageContinuityReview(p){
+ const windows=[];for(const s of p.scenes||[])for(const l of s.composition?.layers||[]){
+  if(l.kind!=='text'||!l.text||l.content_id)continue;
+  if((l.keyframes||[]).some(k=>k.opacity!==undefined)||l.opacity!==undefined&&l.opacity!==1){windows.push({scene:s.id,layer:l.id,status:'not-measured',reason:'animated visibility requires an authored reading track'});continue;}
+  const start=s.start/30,end=s.end/30,last=windows.findLast(w=>w.layer===l.id&&w.text===l.text&&Math.abs(w.end-start)<1e-6);
+  if(last)last.end=end;else windows.push({layer:l.id,text:l.text,start,end});
+ }
+ for(const w of windows)if(w.text){w.minimumSeconds=Math.max(1.2,Array.from(w.text.replace(/\s/g,'')).length/7+.5);w.status=w.end-w.start+1e-6<w.minimumSeconds?'review':'pass';}
+ return {windows,needsReview:windows.some(w=>w.status!=='pass'),scope:'Reading-duration heuristic; comprehension and motion typography require visual review'};
+}
 // A bounded heuristic, not a photosensitive-epilepsy or accessibility certification.
 export function frameReviewer({fps=30,holdSeconds=2,intentionalHolds=[]}={}){
  let previous=null,frame=0,stillStart=null,lastSign=0,transitions=[],findings=[];

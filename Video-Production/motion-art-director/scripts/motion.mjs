@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import {reviewMovie,contrastReview} from '../lib/output-review.mjs';
+import {reviewMovie,contrastReview,messageContinuityReview} from '../lib/output-review.mjs';
 import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
 import {sourceActionAudit} from '../lib/source-action.mjs';
 import {auditionChoiceAudit} from '../lib/audition-choice.mjs';
@@ -79,7 +79,7 @@ async function main(){
  case 'render':return render(project(),out(),{draft:!!flags.draft,portrait:!!flags.portrait,limitScenes:Number(flags['representative-scenes']||Infinity),stopAfterFrames:Number(flags['stop-after-frames']||Infinity)});
  case 'styleframe':return snapshot(project(),path.join(out(),'styleframe.'+(flags.type||'png')),{time:Number(flags.time||2),portrait:!!flags.portrait,type:flags.type||'png',width:flags.portrait?1080:1920,height:flags.portrait?1920:1080});
  case 'export':return exports(project(),out(),flags.routes?flags.routes.split(','):project().routes);
- case 'audit':{const p=project(),r=await audit(p,out(),{movie:flags.movie,portrait:!!flags.portrait});r.contrast=contrastReview(p);if(flags.movie&&p.extensions?.includes('showreel-v1')){r.outputReview=await reviewMovie(flags.movie,p);r.ok=r.ok&&r.outputReview.ok;write(path.join(out(),'output-review.json'),r.outputReview);}write(path.join(out(),'audit.json'),r);return r;}
+ case 'audit':{const p=project(),r=await audit(p,out(),{movie:flags.movie,portrait:!!flags.portrait});r.contrast=contrastReview(p);r.reading=messageContinuityReview(p);if(flags.movie&&p.extensions?.includes('showreel-v1')){r.outputReview=await reviewMovie(flags.movie,p);r.ok=r.ok&&r.outputReview.ok;write(path.join(out(),'output-review.json'),r.outputReview);}write(path.join(out(),'audit.json'),r);return r;}
  case 'revise':if(!flags.id||!flags.text||!flags.out)throw new Error('revise needs --id --text --out new-project.json');if(path.resolve(flags.out)===path.resolve(positional[0]))throw new Error('revision output must be a new file');return revise(path.resolve(positional[0]),flags.id,flags.text,path.resolve(flags.out));
  case 'effect':{const p=project();if(TECHNIQUES[flags.id]){if(!flags.spec||!flags.scene)throw Error('Reusable adapter requires --spec adapter-input.json --scene scene-id');const input=read(flags.spec),s=p.scenes.find(s=>s.id===flags.scene);if(!s?.composition)throw Error('Target scene composition required');const result=technique({...input,id:flags.id});s.composition.layers.push(...result.layers);if(flags.id.startsWith('showreel:'))p.extensions=[...new Set([...(p.extensions||[]),'showreel-v1'])];if(result.transition)s.transition_in=result.transition;(p.techniques??=[]).push({...result.receipt,scene_id:s.id});}else{const mode=ADAPTERS[flags.id];if(!mode)throw new Error('카드/기존 클립 상태: 실행 어댑터 없음');p.scenes[0].mode=mode;}p.approval=undefined;const v=validate(p);if(!v.ok)throw Error(v.errors.join('\n'));write(path.join(out(),'adapted.project.json'),p);return plan(p,path.join(out(),'direction.html'));}
  case 'serve':{const s=await serve(path.resolve(positional[0]||out()),Number(flags.port||0));console.log(JSON.stringify({url:s.url}));await new Promise(()=>{});return;}
