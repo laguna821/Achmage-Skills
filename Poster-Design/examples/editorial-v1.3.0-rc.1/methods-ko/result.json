@@ -1,0 +1,41 @@
+{
+  "version": "1.3.0-rc.1",
+  "status": "generated-awaiting-visual-review",
+  "pages": 1,
+  "trimMm": [
+    420,
+    594
+  ],
+  "bodySizePt": 21,
+  "captionFloorPt": 18,
+  "textFields": 33,
+  "pdfTextPreserved": true,
+  "figures": [
+    {
+      "figureSha256": "5208346aadaff38cef973181ea41883e618d240d3aa6666a7561f5d90d711fa9",
+      "widthPt": 1043.1496062992126,
+      "heightPt": 114.34186241053763,
+      "textRuns": 10,
+      "scale": 1.1727370503644885,
+      "minimumLabelPt": 26.386583633200992,
+      "sharedNormalizedGeometry": true
+    }
+  ],
+  "preflight": {
+    "embeddedFonts": [
+      "/AAAAAA+Pretendard-Bold",
+      "/AAAAAA+Pretendard-ExtraBold",
+      "/AAAAAA+Pretendard-Regular"
+    ],
+    "rgbOperators": 62,
+    "cmykOperators": 0
+  },
+  "printStatus": "needs-print-profile",
+  "outputs": {
+    "poster.pdf": "e66f5ef210baa5a0eb8dcdab61725322a7fab55c3a0f6bf65537b10e2db98477",
+    "paper.svg": "a6be12c1c8a96c0f30eb0bf057ff835c5e8690ce5c3f6cd088a0b045e67c0f8b",
+    "poster.html": "3c86247648be88c2162e76f0171618ce7fb9744b1c80fbced02bab99f1f8a052"
+  },
+  "htmlVariant": "v9-long-reference-wrap",
+  "preservedFrom": "poster-final-v8/methods-ko"
+}

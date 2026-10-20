@@ -2,7 +2,7 @@
 name: hallym-poster-system
 description: "Create or revise one-page or circulating multipage HTML event, recruitment and academic posters with independently typeset A2 PDFs as offline interactive HTML and physical-size PDF. Uses CMDS-derived bento layout, Hallym colors, Pretendard, dark/light controls, Kakao preview assets and guided GitHub Pages publishing. Trigger for 포스터, 학술 포스터, 모집 공고, 행사 포스터, HTML 포스터."
 metadata:
-  version: "1.2.0-rc.5"
+  version: "1.3.0-rc.1"
 ---
 # 한림 포스터 시스템
 
@@ -10,6 +10,7 @@ metadata:
 자료에서 목적·청중·필수 내용·규격을 파악하고 “이 내용은 큰 제목 + 일정 두 칸 + 핵심 메시지 + 안내 칸으로 묶겠습니다”처럼 먼저 짧게 설명한다.
 
 ## 출력 모드 먼저 선택
+- 글·표·도식을 함께 조판하는 독립 근거 브리프/학술 포스터는 선택적으로 **editorial-one-sheet**: [편집 포스터](references/EDITORIAL.md)를 읽는다. 기존 legacy/series를 변환하지 않는다. 포트폴리오 A4 예시는 웹·세로 HTML이며 포스터 PDF 제작 요청과 구분한다.
 - 기존 groups/event/research 원고는 **legacy-rc6** 계약과 renderer를 유지한다. 이 버전 번호만 바뀌었다고 기존 포스터를 자동 변환하지 않는다.
 - 순환·여러 장·LCD·디지털 사이니지 요청은 **series-v2**: [순환 포스터 계약](references/SERIES.md)을 먼저 읽는다. 먼저 한 장에 전체 정보를 완결한다. 충분한 추가 원고가 있을 때만 독립적으로 완결된 포스터 여러 장을 구성한다. 제목·연사·일정·참가 안내를 각각 슬라이드로 나누거나 넘친 줄만 다음 장으로 보내지 않는다. SERIES의 공통 핵심 반복과 화면/인쇄 분리 계약을 따른다.
 - 새 행사라도 기존 모드를 사용자가 지정하면 보존한다. 출력별 viewerVersion/packageSha256를 기록한다.
