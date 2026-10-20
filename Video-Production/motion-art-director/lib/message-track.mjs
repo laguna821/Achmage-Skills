@@ -4,6 +4,7 @@ const clean=s=>String(s).replace(/\s+/g,' ').trim();
 export function messageTrackAudit(track,{duration,cuts=[]}={}){
  const errors=[],warnings=[],units=[];
  if(track?.version!=='message-track-v1'||!Array.isArray(track.units))return {ok:false,errors:['message-track-v1 units required'],warnings,units};
+ if(track.render_mode&&!['scene','post-composite'].includes(track.render_mode))errors.push('Unknown message render_mode');
  const seen=new Set();
  for(const u of track.units){
   if(!u||typeof u.id!=='string'||seen.has(u.id)||typeof u.text!=='string'||!u.text.trim()){errors.push('unique message identity and full text required');continue;}seen.add(u.id);
@@ -37,6 +38,11 @@ export function compileMessageTrack(project,track){
  if(!check.ok)throw Error(check.errors.join('\n'));
  if(!['vector-composite','hybrid-composite'].includes(q.renderer))throw Error('Message overlays currently support vector and hybrid compositors');
  if(project.__projectDir)Object.defineProperty(q,'__projectDir',{value:project.__projectDir,enumerable:false});
+ if(track.render_mode==='post-composite'){
+  if(q.schema_version!=='3.1.0'||q.renderer!=='hybrid-composite')throw Error('Post-composite messages require project 3.1 hybrid compositor');
+  for(const s of q.scenes)for(const c of [s.composition,s.portrait_composition])if(c)c.layers=c.layers.filter(l=>!l.id?.startsWith('message-track-'));
+  q.message_track=structuredClone(track);delete q.approval;delete q.production_review;return q;
+ }
  for(const s of q.scenes){
   const start=s.start/30,end=s.end/30,active=track.units.flatMap(u=>u.phrases.map((f,i)=>({...f,id:u.id+'-'+i}))).filter(f=>f.start<end&&f.end>start);
   if(s.transition_in&&track.units.some(u=>u.start<start&&u.end>=start))throw Error('Outgoing cross-cut message needs a separate post-composite title track');

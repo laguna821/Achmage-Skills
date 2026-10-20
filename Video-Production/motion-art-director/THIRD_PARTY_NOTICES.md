@@ -23,3 +23,6 @@ PretendardVariable.ttf는 포함된 WOFF2를 fontTools로 변환한 동일 서�
 공개 자동차 데모: “Exit the Premises” Kevin MacLeod (incompetech.com), CC BY 4.0 https://creativecommons.org/licenses/by/4.0/ . 원곡 https://incompetech.com/music/royalty-free/index.html?Search=Search&isrc=USUAN1500029 . 구간 편집·144 BPM 템포 조정·자체 효과음 합성. 음악 원곡은 스킬 ZIP에 포함하지 않는다. 로고 출처 https://commons.wikimedia.org/wiki/File:Hyundai_Motor_Company_logo.svg . 현대자동차 상표이며 공식 광고/보증이 아닌 비공식 제작 연구작이다. 사이트의 다른 후보 음악은 각 페이지에 곡별 크레딧을 표시한다.
 
 Showreel selective adaptations: vendor/showreel/NOTICE.md (MIT, pinned revision). No upstream demo media or API clients bundled.
+
+## awesome-opus5-5-videos case metadata
+Pinned revision: 92aee2f586ac0715cb3cbcb6384834f98a33383d. Copyright (c) 2026 yihui-dev, MIT; see vendor/awesome-opus5-5-videos/LICENSE. Repository prompt metadata is retained as untrusted reference data. Linked original videos, remakes, music, logos and other assets are not bundled or relicensed. The 16 planning recipes are locally authored interpretations; source tags describe remakes, not verified original engines.

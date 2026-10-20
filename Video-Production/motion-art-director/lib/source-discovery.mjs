@@ -6,6 +6,7 @@ export const PROVIDERS = [
  {id:'mixkit',name:'Mixkit',kinds:['music','video','sfx'],home:'https://mixkit.co/',license:'https://mixkit.co/license/',access:'official-site',note:'Separate media licenses; video Free vs Restricted. Music excludes games and broadcast.'},
  {id:'pexels',name:'Pexels',kinds:['video'],home:'https://www.pexels.com/',license:'https://www.pexels.com/license/',access:'official-site / existing authorized API',note:'Record item provenance, identifiable people/brands and intended context.'},
  {id:'coverr',name:'Coverr',kinds:['video'],home:'https://coverr.co/',license:'https://coverr.co/license',access:'official-site',note:'Confirm current item and free-download conditions; linked paid catalog is separate.'},
+ {id:'videezy',name:'Videezy',kinds:['video'],home:'https://www.videezy.com/',license:'https://support.videezy.com/en_us/videezy-standard-license-and-usage-HylDtxsDK',access:'official-site / permitted item download',note:'Inspect Standard versus Pro and item conditions. Standard attribution is required; do not redistribute original clips as standalone assets. Record actual resolution, not the advertised original resolution of a preview.'},
  {id:'incompetech',name:'Incompetech',kinds:['music'],home:'https://incompetech.com/music/royalty-free/',license:'https://incompetech.com/music/royalty-free/licenses/',access:'official-site',note:'Track-specific attribution/license; retain as one candidate source, not default winner.'}
 ];
 export function sourceSearchPlan(brief){
@@ -28,4 +29,35 @@ export function sourceCandidateAudit(c,{use='web-video'}={}){
  if(c.content_id==='registered'&&!text(r.claim_evidence))pending.push('registered Content ID: keep certificate/receipt');
  if(['trial','paid','blocked'].includes(c.availability))pending.push('candidate unavailable without changed conditions');
  return {ok:errors.length===0,public_ready:errors.length===0&&pending.length===0,errors,pending,scope:'Recorded evidence completeness, not independent legal certification or listening.'};
+}
+
+// This validates an agent's observed search evidence. It does not run a search
+// or turn a provider listing into permission to download/publish an asset.
+export function sourceSearchEvidenceAudit(report){
+ const errors=[],pending=[];
+ if(report?.version!=='source-search-evidence-v1'||!['music','video','sfx'].includes(report.kind)||!Array.isArray(report.searches))return {ok:false,errors:['search evidence version/kind/searches required'],pending};
+ const providers=new Set(),candidates=new Set();
+ for(const s of report.searches){
+  if(!s||typeof s!=='object'||Array.isArray(s)){errors.push('search observation must be an object');continue;}
+  const provider=PROVIDERS.find(p=>p.id===s.provider&&p.kinds.includes(report.kind));
+  if(!provider){errors.push('unknown provider for media');continue;}
+  if(typeof s.query!=='string'||!s.query.trim()||typeof s.checked_at!=='string'||!Number.isFinite(Date.parse(s.checked_at))||!['searched','unavailable'].includes(s.status)){errors.push(s.provider+': observed query/time/status required');continue;}
+  if(s.status==='unavailable'){if(!s.reason)errors.push(s.provider+': unavailable reason required');providers.add(s.provider);continue;}
+  if(!Array.isArray(s.results)||!s.results.length){errors.push(s.provider+': actual result URLs required');continue;}
+  for(const r of s.results){
+   if(!r||typeof r!=='object'||Array.isArray(r)){errors.push('result must be an object');continue;}
+   let url;try{url=new URL(r.url);}catch{errors.push('invalid result URL');continue;}
+   const home=new URL(provider.home).hostname.replace(/^www\./,'');
+   if(url.protocol!=='https:'||!(url.hostname===home||url.hostname.endsWith('.'+home)))errors.push('result must belong to provider');
+   if(!r.title||!['candidate','rejected','deferred','held'].includes(r.disposition)||!r.reason)errors.push('result title/disposition/reason required');
+   if(r.disposition==='candidate')candidates.add(r.url);
+   if(r.listening==='passed'&&!r.listening_evidence)errors.push('listening claim needs evidence');
+  }
+  providers.add(s.provider);
+ }
+ const minimum=report.kind==='music'?3:2;
+ if(providers.size<minimum)pending.push(`inspect ${minimum} providers; unavailable outcomes count only with reasons`);
+ if(!candidates.size)pending.push('no actual candidate result');
+ return {ok:!errors.length,complete:!errors.length&&!pending.length,errors,pending,
+  providers:providers.size,candidates:candidates.size,scope:'Search evidence coverage only; licensing, download, audio and visual reviews are separate.'};
 }

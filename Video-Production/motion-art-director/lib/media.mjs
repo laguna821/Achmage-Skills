@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {sourceActionAudit} from './source-action.mjs';
+import {containerErrors} from './media-container.mjs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {ROOT,run,tool,write,read,mkdir} from './io.mjs';
@@ -44,6 +45,7 @@ export function mediaErrors(p){
   for(const c of [s.composition,s.portrait_composition].filter(Boolean)){
    const ids=new Set();for(const l of c.layers||[]){check(l.id&&!ids.has(l.id),'3.1 layer id required/duplicate');ids.add(l.id);
     if(l.kind!=='video')continue;
+    errors.push(...containerErrors(p,s,l,c,s.end-s.start+Math.round((p.scenes[i+1]?.transition_in?.duration||0)*30)));
     const a=assets.get(l.asset_id);check(a?.kind==='video','video asset missing '+l.asset_id);
     check(Number.isFinite(l.source_in)&&l.source_in>=0,'video source_in required');
     check(l.speed===undefined||Number.isFinite(l.speed)&&l.speed>=.25&&l.speed<=4,'video speed must be .25..4');

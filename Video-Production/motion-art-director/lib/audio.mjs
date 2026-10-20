@@ -6,10 +6,23 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {mkdir,write,hash,run,tool} from './io.mjs';
 import {withStorage,ownedReserve,ownedComplete,ownedCopy,currentStorage} from './storage.mjs';
-export async function audio(p,out,options={}){return withStorage(out,{duration:p.output.total_frames/30},()=>synthAudio(p,out,options));}
+export async function audio(p,out,options={}){const errors=audioErrors(p);if(errors.length)throw Error(errors.join('\n'));return withStorage(out,{duration:p.output.total_frames/30},()=>synthAudio(p,out,options));}
 export const RATE=48000,CHANNELS=2;
 export const INSTRUMENTS=['bell','pad','felt','marimba','bass','pluck','air'];
 export const CUE_KINDS=['impact','chime','whoosh','tick','paper','pencil','press','thread','shear','key','drive','wind','passby','footstep','pour','grind','pedal-click','ratchet','tire-roll'];
+export function musicSourceErrors(p){
+ const a=p.audio||{},mode=a.music_source_policy,errors=[];
+ if(mode===undefined)return errors; // Existing projects retain their pinned behavior.
+ if(mode!=='existing-recordings-only')return ['unknown music_source_policy'];
+ if(a.notes?.length||a.sections?.length)errors.push('existing-recordings-only forbids authored notes and synthesis sections, including zero-gain placeholders');
+ const clips=Array.isArray(a.clips)?a.clips.filter(c=>c?.bus==='music'):[];
+ if(!clips.length)errors.push('existing-recordings-only requires a registered music clip; no synthesis fallback');
+ for(const clip of clips){
+  const asset=(p.assets||[]).find(x=>x?.asset_id===clip.asset_id);
+  if(asset?.kind!=='audio'||asset.origin!=='existing-recording')errors.push('music asset must declare origin: existing-recording');
+ }
+ return errors;
+}
 export function audioErrors(p){
  const a=p.audio||{},end=p.output?.total_frames/30,errors=[],check=(v,s)=>{if(!v)errors.push(s);},finite=(v,lo,hi)=>Number.isFinite(v)&&v>=lo&&v<=hi;
  for(const name of ['sections','notes','cues','silence'])if(a[name]!==undefined&&(!Array.isArray(a[name])||a[name].some(x=>!x||typeof x!=='object'||Array.isArray(x))))errors.push('invalid audio '+name+' array');
@@ -23,7 +36,7 @@ export function audioErrors(p){
  for(const c of a.cues||[]){check(CUE_KINDS.includes(c.kind),'unknown sound cue');check(finite(c.time,0,end)&&finite(c.duration??.7,.005,end)&&c.time+(c.duration??.7)<=end+.0001,'invalid cue time');check(c.amp===undefined||finite(c.amp,0,2),'invalid cue amplitude');check(c.pan===undefined||finite(c.pan,-1,1),'invalid cue pan');}
  for(const s of a.silence||[])check(finite(s.start,0,end)&&finite(s.end,0,end)&&s.end>s.start,'invalid silence interval');
  if(a.notes!==undefined)check(Array.isArray(a.notes)&&a.notes.length>0,'explicit score requires notes');
- return errors.concat(editErrors(p),drivingErrors(p),choreographyErrors(p));
+ return errors.concat(musicSourceErrors(p),editErrors(p),drivingErrors(p),choreographyErrors(p));
 }
 function wavHeader(samples){const b=Buffer.alloc(44);b.write('RIFF');b.writeUInt32LE(36+samples*4,4);b.write('WAVEfmt ',8);b.writeUInt32LE(16,16);b.writeUInt16LE(1,20);b.writeUInt16LE(CHANNELS,22);b.writeUInt32LE(RATE,24);b.writeUInt32LE(RATE*4,28);b.writeUInt16LE(4,32);b.writeUInt16LE(16,34);b.write('data',36);b.writeUInt32LE(samples*4,40);return b;}
 const frequency=n=>440*Math.pow(2,(n-69)/12),TAU=2*Math.PI;
@@ -32,9 +45,9 @@ export function score(p){
  const errors=audioErrors(p);if(errors.length)throw new Error(errors.join('\n'));
  const notes=[],duration=p.output.total_frames/30;
  if(p.audio.notes)notes.push(...p.audio.notes.map(n=>({...n,pan:n.pan??0})));
- else for(const s of p.audio.sections){const step=60/p.audio.bpm;for(let t=s.start;t<s.end;t+=step/2){const i=Math.round((t-s.start)/(step/2));notes.push({start:+t.toFixed(6),duration:Math.min(step*1.25,duration-t),note:p.audio.motif[i%p.audio.motif.length]+(s.transpose||0),amp:.095*(s.energy??.7),instrument:s.instrument||'bell',pan:.3*Math.sin(i)});}
+ else for(const s of p.audio.sections||[]){const step=60/p.audio.bpm;for(let t=s.start;t<s.end;t+=step/2){const i=Math.round((t-s.start)/(step/2));notes.push({start:+t.toFixed(6),duration:Math.min(step*1.25,duration-t),note:p.audio.motif[i%p.audio.motif.length]+(s.transpose||0),amp:.095*(s.energy??.7),instrument:s.instrument||'bell',pan:.3*Math.sin(i)});}
  for(let t=s.start;t<s.end;t+=step*4)for(const n of(s.chord||[48,55,60]))notes.push({start:t,duration:Math.min(step*5,s.end-t),note:n,amp:.035*(s.energy??.7),instrument:'pad',pan:(n%3-1)*.35});}
- return {version:'synthesis-4',master_gain_db:p.audio.master_gain_db??12,seed:p.seed,rate:RATE,duration,bpm:p.audio.bpm,motif:p.audio.motif,sections:p.audio.sections,notes,cues:[...(p.audio.cues||[]),...drivingCues(p)],silence:p.audio.silence||[],composition:p.audio.composition||'section motif'};
+ return {version:'synthesis-4',music_source_policy:p.audio.music_source_policy||'legacy',music_generation:p.audio.music_source_policy==='existing-recordings-only'?'disabled':'available',master_gain_db:p.audio.master_gain_db??12,seed:p.seed,rate:RATE,duration,bpm:p.audio.bpm,motif:p.audio.motif,sections:p.audio.sections,notes,cues:[...(p.audio.cues||[]),...drivingCues(p)],silence:p.audio.silence||[],composition:p.audio.composition||(p.audio.music_source_policy==='existing-recordings-only'?'licensed recording edit':'section motif')};
 }
 function voice(x,dt){
  const f=frequency(x.note),d=x.duration,release=Math.min(1,(d-dt)/Math.min(.15,d*.25));let v=0,env=1;

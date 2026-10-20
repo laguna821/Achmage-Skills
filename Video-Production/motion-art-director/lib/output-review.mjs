@@ -2,7 +2,10 @@ import {guardedSpawn as spawn} from './storage.mjs';
 import {tool} from './io.mjs';
 // Review visible static text across cuts, instead of treating every shot as a new sentence.
 export function messageContinuityReview(p){
- const windows=[];for(const s of p.scenes||[])for(const l of s.composition?.layers||[]){
+ const windows=p.message_track?.render_mode==='post-composite'
+  ?p.message_track.units.flatMap(u=>u.phrases.map(f=>({layer:'post:'+u.id,text:f.text,start:f.start,end:f.end})))
+  :[];
+ for(const s of p.scenes||[])for(const l of s.composition?.layers||[]){
   if(l.kind!=='text'||!l.text||l.content_id)continue;
   if((l.keyframes||[]).some(k=>k.opacity!==undefined)||l.opacity!==undefined&&l.opacity!==1){windows.push({scene:s.id,layer:l.id,status:'not-measured',reason:'animated visibility requires an authored reading track'});continue;}
   const start=s.start/30,end=s.end/30,last=windows.findLast(w=>w.layer===l.id&&w.text===l.text&&Math.abs(w.end-start)<1e-6);

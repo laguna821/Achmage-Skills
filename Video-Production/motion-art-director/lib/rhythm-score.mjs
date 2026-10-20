@@ -5,7 +5,23 @@ const clone=p=>{const q=structuredClone(p);if(p.__projectDir)Object.defineProper
 const finite=Number.isFinite;
 const keys=['x','y','scale','scaleX','scaleY','rotation','opacity','draw','reveal','tracking','weight'];
 const timing=c=>({asset_id:c?.asset_id,start:c?.start,source_in:c?.source_in,duration:c?.duration,speed:c?.speed??1});
-export function rhythmSignature(p){const {materialized,...score}=p.rhythm_score;return hash({score,fps:p.output.fps,music:timing(p.audio.clips[score.music.clip_index]),asset:p.assets.find(a=>a.asset_id===score.music.asset_id)?.sha256,scenes:p.scenes.map(s=>({id:s.id,start:s.start,end:s.end,...(score.bindings?.some(b=>b.scene_id===s.id&&b.target?.phase==='arrival')?{arrival_transition:s.transition_in}:{} )}))});}
+export function musicOccurrence(p,event){
+ const r=p.rhythm_score,index=event?.clip_index??r?.music?.clip_index,c=p.audio?.clips?.[index];
+ if(!Number.isInteger(index)||index<0||c?.bus!=='music'||c.asset_id!==r?.music?.asset_id)throw Error('rhythm music occurrence missing or different source');
+ const speed=c.speed??1;
+ if(![c.start,c.source_in,c.duration,speed].every(finite)||c.start<0||c.source_in<0||c.duration<=0||speed<=0)throw Error('rhythm music occurrence clock invalid');
+ return {clip_index:index,...timing(c),speed};
+}
+export function eventOutputSeconds(p,event){
+ const c=musicOccurrence(p,event);
+ if(!finite(event?.source_seconds)||event.source_seconds<c.source_in||event.source_seconds>=c.source_in+c.duration*c.speed)throw Error('rhythm event outside music occurrence');
+ return c.start+(event.source_seconds-c.source_in)/c.speed;
+}
+export function rhythmSignature(p){
+ const {materialized,...score}=p.rhythm_score,indices=[...new Set((score.events||[]).map(e=>e.clip_index??score.music.clip_index))].filter(i=>i!==score.music.clip_index).sort((a,b)=>a-b);
+ // Preserve the old signature for single-occurrence projects. Gain does not move pictures.
+ return hash({score,fps:p.output.fps,music:timing(p.audio.clips[score.music.clip_index]),...(indices.length?{music_occurrences:indices.map(i=>({clip_index:i,...timing(p.audio.clips[i])}))}:{}),asset:p.assets.find(a=>a.asset_id===score.music.asset_id)?.sha256,scenes:p.scenes.map(s=>({id:s.id,start:s.start,end:s.end,...(score.bindings?.some(b=>b.scene_id===s.id&&b.target?.phase==='arrival')?{arrival_transition:s.transition_in}:{} )}))});
+}
 const leadFrames=(s,t)=>t.phase==='arrival'?Math.round((s.transition_in?.duration||0)*30):0;
 function setup(p){
  const errors=[],warnings=[],events=[],bindings=[],r=p.rhythm_score;
@@ -26,11 +42,14 @@ function setup(p){
  if(errors.length)return {ok:false,errors,warnings,events,bindings};
  const ids=new Set();
  for(const e of r.events){
-  const ok=e&&typeof e.id==='string'&&!ids.has(e.id)&&finite(e.source_seconds)&&e.source_seconds>=c.source_in&&e.source_seconds<c.source_in+c.duration*speed;
+  let sec;
+  try{sec=eventOutputSeconds(p,e);}catch(error){check(false,error.message);continue;}
+  const ok=e&&typeof e.id==='string'&&!ids.has(e.id)&&sec>=0&&sec<p.output.total_frames/30;
   check(ok,'rhythm event missing/duplicate/outside music');if(!ok)continue;ids.add(e.id);
   check(['pulse','onset','accent','phrase','release'].includes(e.role),'rhythm event role invalid');
   check(['measured-onset','estimated-grid','authored','listening-corrected'].includes(e.method)&&finite(e.confidence)&&e.confidence>=0&&e.confidence<=1&&typeof e.evidence==='string'&&e.evidence.length>0,'rhythm evidence required');
-  const sec=c.start+(e.source_seconds-c.source_in)/speed,frame=Math.round(sec*30);
+  const frame=Math.round(sec*30);
+  check(frame<p.output.total_frames,'rhythm event rounds beyond final output frame');
   events.push({...e,output_seconds:sec,frame,quantization_ms:(frame/30-sec)*1000});
  }
  if(events.some(e=>e.method!=='listening-corrected'))warnings.push('Music anchors are not all listening-verified; numerical synchronization is not groove approval');
@@ -97,9 +116,9 @@ export function compileRhythm(p){
  if(!r||!Array.isArray(r.bindings))throw Error('rhythm_score required');
  // Explicit cut ownership changes adjacent boundaries together. Other shot clocks remain authored.
  for(const b of r.bindings.filter(b=>b.target?.kind==='cut')){
-  const e=r.events?.find(e=>e.id===b.event_id),c=q.audio?.clips?.[r.music?.clip_index],i=q.scenes.findIndex(s=>s.id===b.scene_id);
-  if(!e||!c||i<1)throw Error('invalid cut binding');
-  const f=Math.round((c.start+(e.source_seconds-c.source_in)/(c.speed??1))*30)+(b.impact_offset_frames??0)-leadFrames(q.scenes[i],b.target);
+  const e=r.events?.find(e=>e.id===b.event_id),i=q.scenes.findIndex(s=>s.id===b.scene_id);
+  if(!e||i<1)throw Error('invalid cut binding');
+  const f=Math.round(eventOutputSeconds(q,e)*30)+(b.impact_offset_frames??0)-leadFrames(q.scenes[i],b.target);
   q.scenes[i].start=f;q.scenes[i-1].end=f;
  }
  const review=setup(q);if(!review.ok)throw Error(review.errors.join('\n'));

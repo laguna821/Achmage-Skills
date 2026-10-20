@@ -1,6 +1,8 @@
-# Motion Art Director · 4.1.0-rc.1 개발 후보
+# Motion Art Director · 4.1.0-rc.2 개발 후보
 
 Showreel 선택 확장을 구현하는 개발 브랜치입니다. 기존 공개 4.0 작품과 설치는 유지됩니다. 원본 도감 637개에 별도 공급원의 실행 어댑터 16개를 연결하고, 외부 22개 항목은 신규 구현·재사용·참고 전용으로 구분합니다. [확장 입력·지원 범위](references/showreel-integration.md)와 [출시 조건](references/release-4.1.md)을 참고하세요. 새 통합 작품·전이 작품의 미감 및 전체 청취가 완료되기 전에는 출시 완료로 표시하지 않습니다.
+
+rc.2는 awesome-opus5-5-videos의 703개 참조 사례와 자체 기획 레시피 16개를 별도 검색 대상으로 추가합니다. 재생 시간이 이어지는 실사 창, 컷·카메라와 독립된 문장 합성, 반복 음악 구간의 사건 시계, 기존 녹음만 사용하는 음악 정책을 구현합니다. 사례 수를 구현 효과 수로 계산하지 않습니다. [흡수 범위와 실제 실행 계약](references/opus-integration.md)을 확인하세요.
 
 기획 앞단에서 실제 음악과 전체 콘티를 먼저 보고, 실사·정밀 그래픽·완전한 문장·음악 묶음을 연결해 제작하는 통합 워크플로우입니다. [180초 요리 작품](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/film/?v=35) · [180초 레이싱](https://motion-art-director-review-oct05.achmage2.chatgpt.site/racing/film/?v=30) · [4.0 변경과 제한](references/release-4.md).
 
@@ -94,6 +96,7 @@ node scripts/motion.mjs styleframe examples/object-flight.project.json --time 5 
 ## 선택 의존성
 
 - Skia: 별도 Python 환경에 requirements-skia.txt를 설치하고 setup.mjs --python <python>으로 연결합니다. profile.rasterizer=skia는 SVG/text용이며 이미지·일부 변형은 지원하지 않습니다.
+- 재생 중인 영상 창의 이동: 선택적으로 `requirements-media.txt`의 Pillow를 설정한 Python 환경에 설치합니다. 일반 영상 합성에는 추가 Pillow 의존성이 없습니다.
 - 덱/PDF: 같은 저장소의 [achmage-presentation 1.0.0](../../Presentation/achmage-presentation)을 scripts/connect-presentation.mjs로 연결합니다. 엔진 해시를 확인하며 Python 및 PDF 변환기가 추가로 필요합니다.
 - Claude Code 기본 경로는 이미지 생성 서비스를 요구하지 않습니다. Codex 이미지 생성은 해당 도구 사용이 가능한 환경에서만 제공합니다.
 
