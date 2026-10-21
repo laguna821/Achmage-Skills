@@ -1,0 +1,87 @@
+{
+  "poster": {
+    "editorial": {
+      "title": "질문에서 재현까지, 분석의 조건을 남기다",
+      "subtitle": "ANES96 · 관찰 자료의 조건부 연관성 분석",
+      "abstract": "TV 뉴스 이용 횟수와 연령·교육·도시 규모·정당 집단의 관계를 살펴보는 방법론 예시다. 분석 전 표본, 측정 단위, 모형, 불확실성과 해석 한계를 함께 고정한다.",
+      "figure": {
+        "asset": "methods.svg",
+        "caption": "Pele 1.6.0 기본 배치. 화살표는 분석 절차이며 인과관계를 뜻하지 않는다.",
+        "heightMm": 100
+      },
+      "sections": [
+        {
+          "id": "sample",
+          "title": "01 / 표본과 측정",
+          "body": [
+            "944명. 비가중 탐색 분석이며 미국 전체 유권자의 모집단 추정으로 해석하지 않는다. TV 뉴스는 주당 횟수이며 연령 효과는 10년 단위다."
+          ]
+        },
+        {
+          "id": "model",
+          "title": "02 / 분석 계약",
+          "table": {
+            "headers": [
+              "항목",
+              "고정 조건"
+            ],
+            "rows": [
+              [
+                "추정",
+                "조건부 평균 연관성"
+              ],
+              [
+                "불확실성",
+                "계수별 95% 신뢰구간"
+              ],
+              [
+                "검증",
+                "원자료·산식·ID 대응"
+              ]
+            ],
+            "widths": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "title": "03 / 결론의 경계",
+          "body": [
+            "정당 집단은 무작위 배정되지 않았다. 회귀계수와 경로 방향만으로 인과효과를 주장할 수 없다. 자료 선택·측정·누락 요인의 민감도를 별도로 확인해야 한다."
+          ]
+        },
+        {
+          "id": "reuse",
+          "title": "04 / 다음 원고로 옮길 때",
+          "body": [
+            "표본 수만 바꾸지 않는다. 원자료 버전·단위·분모·추정 대상·모형·불확실성 계산을 함께 갱신하고 그림의 각 ID를 원자료와 대조한다."
+          ]
+        }
+      ],
+      "rows": [
+        [
+          "sample",
+          "model"
+        ],
+        [
+          "limits",
+          "reuse"
+        ]
+      ],
+      "size": "A2",
+      "language": "ko",
+      "eyebrow": "ACHMAGE / EDITORIAL EVIDENCE",
+      "metadata": [
+        "Design study · 2026-10-20",
+        "Not an institutional announcement"
+      ],
+      "bodySizePt": 21,
+      "references": [
+        "Data: statsmodels ANES96 · https://www.statsmodels.org/stable/datasets/generated/anes96.html",
+        "Pele 1.6.0 · https://pele.run/ · data and rendering contributions are distinguished."
+      ]
+    }
+  }
+}

@@ -28,3 +28,18 @@ scripts/verify_package.py: 전체 SHA·누락·추가 파일.
 저장소 tools/release.py --check: 소스/ZIP 파일 집합과 바이트 일치.
 tests/: 완결 포스터·공통 정보·A2 한 장·4초·교차 테마·공유 OG·명시 자산 검사.
 배포 CI는 이 검사를 Windows/Linux Python 3.11에서 수행합니다. 실제 실행 결과는 해당 커밋의 Actions를 확인하세요.
+
+
+## 1.3.0-rc.1 editorial 후보 · 2026-10-20
+
+기존 1.2.0-rc.5 검증은 위의 버전과 범위에 한합니다. 이 후보는 선택형 editorial 경로를 추가하며 활성 OS 설치를 변경하지 않았습니다.
+
+- 포스터 회귀 검사 35개와 별도 Pele 상세 설명 계약 검사 4개가 통과했습니다. 후자의 4개는 이 ZIP의 tests/에 포함되지 않는 설계 후보 검사입니다.
+- 한영 방법·결과 예시 4개는 A2 한 장, 본문 21pt, 최소 도식 라벨 18pt 이상, PDF 텍스트·내장 글꼴·Trim/Bleed 검사를 통과했습니다.
+- 실제 브라우저의 동일 출처 iframe에서 375/768/1440 CSS px × 라이트/다크 × paper/reading × 4개 예시 = 48개 경계·구조 검사를 수행했습니다. 페이지 가로 넘침과 paper 비율 오류는 0개였습니다. reading 모드는 각 6개 제목·1개 표·1개 도식을 보존합니다.
+- 좁은 reading 화면의 긴 원문 출처가 넘치는 문제를 HTML 줄바꿈으로 수정했습니다. 수정 전후 PDF·paper.svg·PNG 바이트는 같습니다.
+- 예시와 공개 manifest는 ../examples/editorial-v1.3.0-rc.1/에 있습니다. PACKAGE-MANIFEST와 ZIP은 해당 소스 버전을 별도로 식별합니다.
+
+경계·구조 검사는 모든 화면의 미감 합격, 실제 모바일 터치·스크린리더·실물 인쇄 검증을 뜻하지 않습니다. PDF는 RGB/needs-print-profile 상태입니다. 전체 디자인 검토 대기 상태를 유지하며 CMYK·PDF/X·인쇄소 승인이나 최신 통계 재계산을 주장하지 않습니다. 네이티브 Pele 도식과 별도 작성 SVG 예시는 각 원고에 구분되어 있습니다.
+
+연구 근거: R-026 research:rr-606be5ae96fe05d2dea4e2d1aea6a0df:5e934f8f4364a9bca6e87d0002d30908c5cceebad3d348a29c5ea210d4d6e041.

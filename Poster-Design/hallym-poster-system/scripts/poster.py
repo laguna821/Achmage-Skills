@@ -249,6 +249,9 @@ def export_pdf(p,target):
     canvas.showPage();canvas.save()
 
 def _run(req):
+    if isinstance(req.get('poster'),dict) and req['poster'].get('editorial'):
+        from editorial import run as run_editorial
+        return run_editorial(req)
     if isinstance(req.get('poster'),dict) and req['poster'].get('series'):
         from poster_series import run as run_series
         return run_series(req)

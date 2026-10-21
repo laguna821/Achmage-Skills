@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1201.8897637795276 1695.1181102362207" role="img" aria-label="From question to reproducible evidence"><title>From question to reproducible evidence</title><rect width="100%" height="100%" fill="white"/><text x="79.37007874015748" y="94.49007874015749" font-family="P700" font-size="18" fill="#087F7B">ACHMAGE / EDITORIAL EVIDENCE</text><line x1="79.37007874015748" y1="119.33007874015749" x2="1122.51968503937" y2="119.33007874015749" stroke="#16334A" stroke-width=".8"/><text x="79.37007874015748" y="179.8100787401575" font-family="P800" font-size="52" fill="#16334A">From question to reproducible evidence</text><text x="79.37007874015748" y="227.5820787401575" font-family="P700" font-size="22.05" fill="#087F7B">ANES96 · conditional associations in observational data</text><text x="79.37007874015748" y="267.0410787401575" font-family="P400" font-size="18" fill="#526573">Design study · 2026-10-20  ·  Not an institutional announcement</text><text x="79.37007874015748" y="311.9210787401575" font-family="P400" font-size="21" fill="#16334A">A methods example examining TV-news frequency alongside age, education, urban scale and party group. Fix</text><text x="79.37007874015748" y="341.7410787401575" font-family="P400" font-size="21" fill="#16334A">the sample, measurement units, model, uncertainty and limits of interpretation together.</text><svg width="1043.1496062992126" height="114.34186241053763" preserveAspectRatio="xMinYMin meet" viewBox="0 0 889.5 97.5" version="1.0" fill-rule="evenodd" x="79.37007874015748" y="370.7210787401575">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="figure-0-clip">
+		<rect x="0" y="0" width="889.5" height="97.5" />
+	</clipPath>
+	<g id="figure-0-group" transform="scale(1,-1) translate(0,-97)" style="clip-path: url(#figure-0-clip)">
+		<g transform="">
+			<g transform=" matrix(0.75,0,0,-0.75,0,97.5)">
+				<g transform="">
+					<g transform="">
+						<g transform="">
+							<path d="M 189.92 65 L 230.92 65 " style="stroke: rgb(32%,39%,45%); stroke-linecap: round; stroke-width: 1; fill: none; fill-rule: nonzero;" />
+						</g>
+						<g transform="">
+							<path d="M 237.92 65 L 229.92 68.36 L 229.92 61.64 Z " style="stroke: none; stroke-linecap: round; stroke-width: 1; fill: rgb(32%,39%,45%); fill-rule: nonzero;" />
+						</g>
+					</g>
+					<g transform="">
+						<g transform="">
+							<path d="M 457.31 65 L 498.31 65 " style="stroke: rgb(32%,39%,45%); stroke-linecap: round; stroke-width: 1; fill: none; fill-rule: nonzero;" />
+						</g>
+						<g transform="">
+							<path d="M 505.31 65 L 497.31 68.36 L 497.31 61.64 Z " style="stroke: none; stroke-linecap: round; stroke-width: 1; fill: rgb(32%,39%,45%); fill-rule: nonzero;" />
+						</g>
+					</g>
+					<g transform="">
+						<g transform="">
+							<path d="M 686.36 65 L 727.36 65 " style="stroke: rgb(32%,39%,45%); stroke-linecap: round; stroke-width: 1; fill: none; fill-rule: nonzero;" />
+						</g>
+						<g transform="">
+							<path d="M 734.36 65 L 726.36 68.36 L 726.36 61.64 Z " style="stroke: none; stroke-linecap: round; stroke-width: 1; fill: rgb(32%,39%,45%); fill-rule: nonzero;" />
+						</g>
+					</g>
+					<g transform="">
+						<g transform="">
+							<path d="M 917.09 65 L 958.09 65 " style="stroke: rgb(32%,39%,45%); stroke-linecap: round; stroke-width: 1; fill: none; fill-rule: nonzero;" />
+						</g>
+						<g transform="">
+							<path d="M 965.09 65 L 957.09 68.36 L 957.09 61.64 Z " style="stroke: none; stroke-linecap: round; stroke-width: 1; fill: rgb(32%,39%,45%); fill-rule: nonzero;" />
+						</g>
+					</g>
+				</g>
+				<g transform="">
+					<g transform=" matrix(1,0,0,1,98.96,65)">
+						<rect x="-90.96" y="-57.0" width="181.92" height="114.0" style="stroke: rgb(44%,58%,64%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,96%); fill-rule: nonzero;" />
+						<g transform=" matrix(1,0,0,-1,0,0)">
+							<text x="-73.3154296875" y="12.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,24) scale(1,-1)">Question +</text>
+							<text x="-61.845703125" y="-33.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-66) scale(1,-1)">estimand</text>
+						</g>
+					</g>
+					<g transform=" matrix(1,0,0,1,347.61,65)">
+						<rect x="-109.69" y="-57.0" width="219.39" height="114.0" style="stroke: rgb(44%,58%,64%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,96%); fill-rule: nonzero;" />
+						<g transform=" matrix(1,0,0,-1,0,0)">
+							<text x="-63.0615234375" y="12.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,24) scale(1,-1)">Sample +</text>
+							<text x="-92.34375" y="-33.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-66) scale(1,-1)">measurement</text>
+						</g>
+					</g>
+					<g transform=" matrix(1,0,0,1,595.83,65)">
+						<rect x="-90.52" y="-57.0" width="181.05" height="114.0" style="stroke: rgb(44%,58%,64%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,96%); fill-rule: nonzero;" />
+						<g transform=" matrix(1,0,0,-1,0,0)">
+							<text x="-72.59765625" y="12.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,24) scale(1,-1)">Registered</text>
+							<text x="-41.4404296875" y="-33.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-66) scale(1,-1)">model</text>
+						</g>
+					</g>
+					<g transform=" matrix(1,0,0,1,825.72,65)">
+						<rect x="-91.36" y="-57.0" width="182.73" height="114.0" style="stroke: rgb(44%,58%,64%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,96%); fill-rule: nonzero;" />
+						<g transform=" matrix(1,0,0,-1,0,0)">
+							<text x="-71.4111328125" y="12.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,24) scale(1,-1)">Estimate +</text>
+							<text x="-75.8935546875" y="-33.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-66) scale(1,-1)">uncertainty</text>
+						</g>
+					</g>
+					<g transform=" matrix(1,0,0,1,1071.47,65)">
+						<rect x="-106.38" y="-57.0" width="212.76" height="114.0" style="stroke: rgb(44%,58%,64%); stroke-linecap: butt; stroke-width: 1; fill: rgb(93%,96%,96%); fill-rule: nonzero;" />
+						<g transform=" matrix(1,0,0,-1,0,0)">
+							<text x="-91.2158203125" y="12.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,24) scale(1,-1)">Interpretation</text>
+							<text x="-34.8486328125" y="-33.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-66) scale(1,-1)">limits</text>
+						</g>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg><text x="79.37007874015748" y="509.1829411506951" font-family="P400" font-size="18" fill="#526573">Pele 1.6.0 layout. Arrows indicate the analysis procedure, not causality.</text><line x1="79.37007874015748" y1="533.872941150695" x2="1122.51968503937" y2="533.872941150695" stroke="#BFCED3" stroke-width=".8"/><text x="79.37007874015748" y="567.2797411506951" font-family="P700" font-size="23.520000000000003" fill="#087F7B">01 / Sample and measurement</text><text x="79.37007874015748" y="606.9613411506951" font-family="P400" font-size="21" fill="#16334A">944 respondents. Unweighted exploratory analysis;</text><text x="79.37007874015748" y="636.7813411506952" font-family="P400" font-size="21" fill="#16334A">not a population estimate for US voters. TV news is</text><text x="79.37007874015748" y="666.6013411506951" font-family="P400" font-size="21" fill="#16334A">measured in times/week; the age coefficient is per 10</text><text x="79.37007874015748" y="696.4213411506952" font-family="P400" font-size="21" fill="#16334A">years.</text><text x="613.7007874015749" y="567.2797411506951" font-family="P700" font-size="23.520000000000003" fill="#087F7B">02 / Model contract</text><line x1="613.7007874015749" y1="589.3213411506952" x2="1122.5196850393702" y2="589.3213411506952" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="614.4413411506952" font-family="P700" font-size="18" fill="#16334A">Item</text><text x="793.3070866141733" y="614.4413411506952" font-family="P700" font-size="18" fill="#16334A">Condition</text><line x1="613.7007874015749" y1="634.5213411506952" x2="1122.5196850393702" y2="634.5213411506952" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="659.6413411506952" font-family="P400" font-size="18" fill="#16334A">Target</text><text x="793.3070866141733" y="659.6413411506952" font-family="P400" font-size="18" fill="#16334A">Conditional mean association</text><line x1="613.7007874015749" y1="679.7213411506953" x2="1122.5196850393702" y2="679.7213411506953" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="704.8413411506953" font-family="P400" font-size="18" fill="#16334A">Uncertainty</text><text x="793.3070866141733" y="704.8413411506953" font-family="P400" font-size="18" fill="#16334A">Pointwise 95% coefficient CI</text><line x1="613.7007874015749" y1="724.9213411506953" x2="1122.5196850393702" y2="724.9213411506953" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="750.0413411506953" font-family="P400" font-size="18" fill="#16334A">Checks</text><text x="793.3070866141733" y="750.0413411506953" font-family="P400" font-size="18" fill="#16334A">Raw data, formula, stable IDs</text><line x1="613.7007874015749" y1="770.1213411506953" x2="1122.5196850393702" y2="770.1213411506953" stroke="#BFCED3" stroke-width=".8"/><line x1="79.37007874015748" y1="803.4213411506953" x2="1122.51968503937" y2="803.4213411506953" stroke="#BFCED3" stroke-width=".8"/><text x="79.37007874015748" y="836.8281411506954" font-family="P700" font-size="23.520000000000003" fill="#087F7B">03 / Interpretation boundary</text><text x="79.37007874015748" y="876.5097411506954" font-family="P400" font-size="21" fill="#16334A">Party group was not randomized. Neither regression</text><text x="79.37007874015748" y="906.3297411506954" font-family="P400" font-size="21" fill="#16334A">coefficients nor path directions identify a causal</text><text x="79.37007874015748" y="936.1497411506954" font-family="P400" font-size="21" fill="#16334A">effect. Assess selection, measurement and omitted</text><text x="79.37007874015748" y="965.9697411506954" font-family="P400" font-size="21" fill="#16334A">factors separately.</text><text x="613.7007874015749" y="836.8281411506954" font-family="P700" font-size="23.520000000000003" fill="#087F7B">04 / Reuse with another manuscript</text><text x="613.7007874015749" y="876.5097411506954" font-family="P400" font-size="21" fill="#16334A">Do not replace the sample size alone. Update the</text><text x="613.7007874015749" y="906.3297411506954" font-family="P400" font-size="21" fill="#16334A">data version, units, denominators, estimand, model</text><text x="613.7007874015749" y="936.1497411506954" font-family="P400" font-size="21" fill="#16334A">and uncertainty calculation, then cross-check each</text><text x="613.7007874015749" y="965.9697411506954" font-family="P400" font-size="21" fill="#16334A">figure ID against the source.</text><line x1="79.37007874015748" y1="1534.7480314960633" x2="1122.51968503937" y2="1534.7480314960633" stroke="#16334A" stroke-width=".8"/><text x="79.37007874015748" y="1562.468031496063" font-family="P400" font-size="18" fill="#526573">Data: statsmodels ANES96 · https://www.statsmodels.org/stable/datasets/generated/anes96.html</text><text x="79.37007874015748" y="1589.468031496063" font-family="P400" font-size="18" fill="#526573">Pele 1.6.0 · https://pele.run/ · data and rendering contributions are distinguished.</text></svg>

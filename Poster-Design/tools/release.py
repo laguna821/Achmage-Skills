@@ -6,7 +6,7 @@ BASE=Path(__file__).resolve().parents[1]
 ROOT=BASE/'hallym-poster-system'
 sys.path.insert(0,str(ROOT/'scripts'))
 from verify_package import files, verify
-VERSION='1.2.0-rc.5'
+VERSION='1.3.0-rc.1'
 ZIP=BASE/'downloads'/f'hallym-poster-system-{VERSION}.zip'
 def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def write(p,v):p.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
@@ -20,7 +20,15 @@ def build():
             info.compress_type=zipfile.ZIP_DEFLATED
             info.external_attr=0o100644<<16
             z.writestr(info,p.read_bytes(),compresslevel=9)
-    (ZIP.parent/'SHA256SUMS').write_text(digest(ZIP)+'  '+ZIP.name+'\n',encoding='ascii',newline='\n')
+    sums=ZIP.parent/'SHA256SUMS'
+    previous=sums.read_text().splitlines() if sums.exists() else []
+    previous=[line for line in previous if line.split()[-1:]!=[ZIP.name]]
+    sums.write_text('\n'.join(previous+[digest(ZIP)+'  '+ZIP.name])+'\n',encoding='ascii',newline='\n')
+    old=ZIP.parent/'artifacts.json'
+    if old.exists():
+        metadata=json.loads(old.read_text(encoding='utf-8'))
+        archived=ZIP.parent/('artifacts-'+metadata['version']+'.json')
+        if metadata['version']!=VERSION and not archived.exists():write(archived,metadata)
     write(ZIP.parent/'artifacts.json',{'version':VERSION,'file':ZIP.name,'sha256':digest(ZIP),'bytes':ZIP.stat().st_size,'format':'ZIP; hallym-poster-system root directory','runtime':'Python 3.11; requirements.txt installed separately'})
 def check():
     result=verify()
@@ -34,10 +42,9 @@ def check():
             if hashlib.sha256(z.read(n)).hexdigest()!=h:raise ValueError('ZIP bytes mismatch: '+n)
     meta=json.loads((ZIP.parent/'artifacts.json').read_text(encoding='utf-8'))
     if (meta['sha256'],meta['bytes'])!=(digest(ZIP),ZIP.stat().st_size):raise ValueError('ZIP metadata mismatch')
-    if (ZIP.parent/'SHA256SUMS').read_text().strip()!=digest(ZIP)+'  '+ZIP.name:raise ValueError('SHA256SUMS mismatch')
+    if digest(ZIP)+'  '+ZIP.name not in (ZIP.parent/'SHA256SUMS').read_text().splitlines():raise ValueError('SHA256SUMS mismatch')
     print(json.dumps({**result,'zipFiles':len(expected),'bytes':ZIP.stat().st_size,'sha256':digest(ZIP)}))
 if __name__=='__main__':
     if sys.argv[1:]==['--build']:build()
     elif sys.argv[1:]!=['--check']:raise SystemExit('Use --build or --check')
     check()
-

@@ -1,0 +1,87 @@
+{
+  "poster": {
+    "editorial": {
+      "title": "From question to reproducible evidence",
+      "subtitle": "ANES96 · conditional associations in observational data",
+      "abstract": "A methods example examining TV-news frequency alongside age, education, urban scale and party group. Fix the sample, measurement units, model, uncertainty and limits of interpretation together.",
+      "figure": {
+        "asset": "methods.svg",
+        "caption": "Pele 1.6.0 layout. Arrows indicate the analysis procedure, not causality.",
+        "heightMm": 100
+      },
+      "sections": [
+        {
+          "id": "sample",
+          "title": "01 / Sample and measurement",
+          "body": [
+            "944 respondents. Unweighted exploratory analysis; not a population estimate for US voters. TV news is measured in times/week; the age coefficient is per 10 years."
+          ]
+        },
+        {
+          "id": "model",
+          "title": "02 / Model contract",
+          "table": {
+            "headers": [
+              "Item",
+              "Condition"
+            ],
+            "rows": [
+              [
+                "Target",
+                "Conditional mean association"
+              ],
+              [
+                "Uncertainty",
+                "Pointwise 95% coefficient CI"
+              ],
+              [
+                "Checks",
+                "Raw data, formula, stable IDs"
+              ]
+            ],
+            "widths": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "title": "03 / Interpretation boundary",
+          "body": [
+            "Party group was not randomized. Neither regression coefficients nor path directions identify a causal effect. Assess selection, measurement and omitted factors separately."
+          ]
+        },
+        {
+          "id": "reuse",
+          "title": "04 / Reuse with another manuscript",
+          "body": [
+            "Do not replace the sample size alone. Update the data version, units, denominators, estimand, model and uncertainty calculation, then cross-check each figure ID against the source."
+          ]
+        }
+      ],
+      "rows": [
+        [
+          "sample",
+          "model"
+        ],
+        [
+          "limits",
+          "reuse"
+        ]
+      ],
+      "size": "A2",
+      "language": "en",
+      "eyebrow": "ACHMAGE / EDITORIAL EVIDENCE",
+      "metadata": [
+        "Design study · 2026-10-20",
+        "Not an institutional announcement"
+      ],
+      "bodySizePt": 21,
+      "references": [
+        "Data: statsmodels ANES96 · https://www.statsmodels.org/stable/datasets/generated/anes96.html",
+        "Pele 1.6.0 · https://pele.run/ · data and rendering contributions are distinguished."
+      ]
+    }
+  }
+}
