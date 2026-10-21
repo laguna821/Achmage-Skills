@@ -802,12 +802,68 @@
     "audio": {
       "type": "object",
       "required": [
-        "bpm",
-        "motif",
-        "sections",
         "cues"
       ],
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "music_source_policy"
+            ],
+            "properties": {
+              "music_source_policy": {
+                "const": "existing-recordings-only"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "clips"
+            ],
+            "not": {
+              "required": [
+                "notes"
+              ]
+            },
+            "properties": {
+              "sections": {
+                "maxItems": 0
+              },
+              "clips": {
+                "contains": {
+                  "required": [
+                    "bus"
+                  ],
+                  "properties": {
+                    "bus": {
+                      "const": "music"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "required": [
+              "bpm",
+              "motif",
+              "sections"
+            ],
+            "properties": {
+              "sections": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
       "properties": {
+        "music_source_policy": {
+          "enum": [
+            "existing-recordings-only"
+          ],
+          "description": "Use registered existing recordings only; no procedural music fallback. Music assets declare origin: existing-recording."
+        },
         "bpm": {
           "type": "number",
           "minimum": 30,
@@ -824,7 +880,7 @@
         },
         "sections": {
           "type": "array",
-          "minItems": 1
+          "minItems": 0
         },
         "cues": {
           "type": "array",
@@ -1450,6 +1506,11 @@
               "evidence": {
                 "type": "string",
                 "minLength": 1
+              },
+              "clip_index": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Optional occurrence in audio.clips; defaults to rhythm_score.music.clip_index. Must use the same source asset."
               }
             }
           }
@@ -1665,6 +1726,35 @@
         "enum": [
           "showreel-v1"
         ]
+      }
+    },
+    "director_brief": {
+      "type": "object",
+      "required": [
+        "version",
+        "question",
+        "audience_change",
+        "resolution"
+      ],
+      "properties": {
+        "version": {
+          "const": "director-brief-v1"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "audience_change": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "resolution": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
       }
     }
   },
@@ -2052,6 +2142,9 @@
               "type": "string"
             }
           }
+        },
+        "media_handoff": {
+          "$ref": "#/$defs/media_handoff"
         }
       },
       "allOf": [
@@ -2605,6 +2698,43 @@
               "repetition_reason": {
                 "type": "string",
                 "minLength": 1
+              },
+              "direction": {
+                "type": "object",
+                "required": [
+                  "composition_reason",
+                  "medium_reason",
+                  "attention_from",
+                  "attention_to",
+                  "omission_cost"
+                ],
+                "properties": {
+                  "composition_reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "medium_reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "attention_from": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "attention_to": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "omission_cost": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
               }
             },
             "additionalProperties": false
@@ -3013,6 +3143,173 @@
         }
       },
       "description": "Per-technique bounds and cross-field constraints are additionally enforced by assets/extensions.js."
+    },
+    "media_handoff": {
+      "type": "object",
+      "required": [
+        "version",
+        "segments"
+      ],
+      "properties": {
+        "version": {
+          "const": "media-handoff-v1"
+        },
+        "segments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "start_frame",
+              "end_frame",
+              "asset_id",
+              "source_in",
+              "speed",
+              "from",
+              "to"
+            ],
+            "properties": {
+              "start_frame": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_frame": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "asset_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_in": {
+                "type": "number",
+                "minimum": 0
+              },
+              "speed": {
+                "type": "number",
+                "minimum": 0.25,
+                "maximum": 4
+              },
+              "from": {
+                "type": "object",
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height",
+                  "radius",
+                  "velocity"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "height": {
+                    "type": "number"
+                  },
+                  "radius": {
+                    "type": "number"
+                  },
+                  "velocity": {
+                    "type": "object",
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height",
+                      "radius"
+                    ],
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "width": {
+                        "type": "number"
+                      },
+                      "height": {
+                        "type": "number"
+                      },
+                      "radius": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              },
+              "to": {
+                "type": "object",
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height",
+                  "radius",
+                  "velocity"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "width": {
+                    "type": "number"
+                  },
+                  "height": {
+                    "type": "number"
+                  },
+                  "radius": {
+                    "type": "number"
+                  },
+                  "velocity": {
+                    "type": "object",
+                    "required": [
+                      "x",
+                      "y",
+                      "width",
+                      "height",
+                      "radius"
+                    ],
+                    "properties": {
+                      "x": {
+                        "type": "number"
+                      },
+                      "y": {
+                        "type": "number"
+                      },
+                      "width": {
+                        "type": "number"
+                      },
+                      "height": {
+                        "type": "number"
+                      },
+                      "radius": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "allOf": [

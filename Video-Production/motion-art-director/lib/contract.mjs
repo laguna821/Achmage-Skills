@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import {hash,read,write,ROOT} from './io.mjs';
 import {directionCheck} from './direction.mjs';
 import {editorialCheck} from './editorial.mjs';
+import {directorReview} from './director-review.mjs';
 import {audioErrors} from './audio.mjs';
 import {musicDirectionAudit} from './music-direction.mjs';
 import {compiledMessageAudit} from './message-track.mjs';
@@ -104,8 +105,8 @@ export function validate(p){
  for(const id of p.required_content_ids||[])check(covered.has(id),'required content omitted '+id);
  for(const id of units.keys())check(covered.has(id)||(p.omissions||[]).some(o=>o.content_id===id&&o.reason),'unexplained omission '+id);
  for(const a of p.assets||[]){check(a.provenance&&/^[a-f0-9]{64}$/.test(a.sha256),'asset provenance/hash required');if(a.kind==='raster'){check(/^[a-z0-9-]+$/.test(a.asset_id)&&typeof a.path==='string'&&a.width>0&&a.height>0,'raster identity/geometry required');if(a.origin==='generated')check(a.provider&&a.prompt,'generated asset provider/prompt required');}if(p.visual_policy==='strict_svg'&&a.kind!=='audio')check(a.kind==='svg','non SVG visual source');if(p.visual_policy==='procedural_only'&&a.kind!=='audio')check(['svg','procedural'].includes(a.kind),'raster/media not procedural');}
- check(p.audio?.sections?.length>0&&Array.isArray(p.audio?.motif)&&p.audio.motif.length>0,'authored audio plan required');
- check(Number.isFinite(p.audio?.bpm)&&p.audio.bpm>=30&&p.audio.bpm<=200,'audio bpm outside 30..200');
+ if(p.audio?.music_source_policy!=='existing-recordings-only')check(p.audio?.sections?.length>0&&Array.isArray(p.audio?.motif)&&p.audio.motif.length>0,'authored audio plan required');
+ if(p.audio?.music_source_policy!=='existing-recordings-only'||p.audio?.bpm!==undefined)check(Number.isFinite(p.audio?.bpm)&&p.audio.bpm>=30&&p.audio.bpm<=200,'audio bpm outside 30..200');
  check(p.audio?.master_gain_db===undefined||Number.isFinite(p.audio.master_gain_db)&&p.audio.master_gain_db>=-12&&p.audio.master_gain_db<=18,'master gain outside -12..18 dB');
  if(p.schema_version==='3.1.0')errors.push(...mediaErrors(p));
  errors.push(...audioErrors(p),...spatialErrors(p));
@@ -118,6 +119,7 @@ export function validate(p){
  if((p.sources||[]).some(s=>s.retrieval_state==='web_excerpt'))warn.push('원 웹 본문 스냅샷 없음: 제공된 발췌만 근거로 사용');
  const direction=directionCheck(p);errors.push(...direction.errors);warn.push(...direction.warnings);
  const editorial=editorialCheck(p);errors.push(...editorial.errors);warn.push(...editorial.warnings);
+ if(p.director_brief)errors.push(...directorReview(p).errors);
  return {ok:!errors.length,errors,warnings:warn,direction,editorial};
 }
 export function requireValid(p,approved=false){const v=validate(p);if(!v.ok)throw new Error(v.errors.join('\n'));if(approved&&!p.approval)throw new Error('연출안 사용자 확인이 필요합니다. approve --by --note --expected-hash 사용');return v;}

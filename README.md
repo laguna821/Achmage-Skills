@@ -91,6 +91,7 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 
 ## 🖼 예시
 
+- **Motion Art Director 4.1.0** — [정식 Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.1.0) · [제작·설치·검증 안내](Video-Production/motion-art-director).
 - [Motion Art Director 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) — 요리·레이싱·페달·도시·커피·자동차·책·항공·물, 10작품과 제작 과정. [저장소 영상 파일](Video-Production/examples/motion-art-director).
 
 - [`Image-HTML/examples/`](Image-HTML/examples) — 정전 샘플 덱(V7 / V8 / University AX / Street) + 원본 GPTs Raw5 프롬프트 팩 + 검증용 “민주주의” · “행동경제학” 덱

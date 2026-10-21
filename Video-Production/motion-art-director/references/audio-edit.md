@@ -12,6 +12,20 @@
 
 ## 프로젝트와 실행
 
+기존 완성 음원만 사용하라는 요청에는 `audio.music_source_policy:
+"existing-recordings-only"`를 기록하고, 음악 자산을 `origin:
+"existing-recording"`으로 등록한다. `audio.clips`에 실제 음악 구간을 넣고
+`notes`와 `sections`는 생략한다. BPM은 분석한 경우에만 쓴다.
+이 모드에서는 합성 설정이 남아 있거나, 원곡 클립·출처가 없으면 오류로
+중단한다. 파일이 없다고 MIDI나 절차적 BGM으로 대체하지 않는다.
+효과음의 녹음/합성 선택은 별도이며, 음악 생성 금지를 효과음 금지로
+확대해 해석하지 않는다. 기존 프로젝트는 명시적 변경 없이 이 모드로
+이행하지 않는다.
+
+압축 원곡 MP3는 그대로 보관한다. 편집용 PCM 스템은 선택 후 제작 단계에서
+만들며, WAV 변환이 원곡보다 음질을 높인다고 설명하지 않는다. 공개 패키지에
+원곡 파일을 넣는 것은 영상 합본 공개 허용과 별도로 확인한다.
+
 assets에 kind:audio, path, sha256와 rights:{commercial:true,adaptation:true,source_url,license_url,attribution}를 등록한다. visual_policy의 SVG 제약은 화면 자산에 적용하며 음원은 별도다.
 
 audio.clips는 asset_id, bus(music 또는 sfx), start(영화 초), source_in(원본 초), duration, gain_db, fade_in, fade_out를 담는다. 범위를 벗어난 시간·권리 메타데이터 누락·파일 해시 불일치는 거부한다. 오버랩과 페이드로 크로스페이드할 수 있다. 자동 비트 검출·자동 화성 재편곡은 구현했다고 주장하지 않는다.

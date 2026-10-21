@@ -12,7 +12,9 @@ export function sourceAudioClips(p,{portrait=false}={}){
  for(const s of p.scenes||[])for(const l of (portrait?(s.portrait_composition||s.composition):s.composition)?.layers||[])if(l.kind==='video'&&l.sound==='source')result.push({bus:'ambience',asset_id:l.asset_id,source_in:l.source_in,start:s.start/30,duration:(s.end-s.start)/30,speed:l.speed??1,gain_db:l.sound_gain_db??0,fade_in:l.sound_fade_in??.015,fade_out:l.sound_fade_out??.015,scene:s.id,layer:l.id});
  return result;
 }
-const tempo=s=>s<.5?'atempo=0.5,atempo='+s/.5:s>2?'atempo=2,atempo='+s/2:'atempo='+s;
+// WSOLA atempo=1 is not sample identity: sparse transients can move even at
+// nominal unity. Ordinary-speed recordings must preserve their source clock.
+const tempo=s=>s===1?'anull':s<.5?'atempo=0.5,atempo='+s/.5:s>2?'atempo=2,atempo='+s/2:'atempo='+s;
 export async function editAudio31(p,out,paths,{portrait=false}={}){
  const duration=p.output.total_frames/30,clips=[...(p.audio.clips||[]),...sourceAudioClips(p,{portrait})],records=[];
  const samples=Math.round(duration*48000),timeout=Math.max(30000,duration*2000);

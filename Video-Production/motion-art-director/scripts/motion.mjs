@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+import {directorReview,directorReviewPage} from '../lib/director-review.mjs';
 import {reviewMovie,contrastReview,messageContinuityReview} from '../lib/output-review.mjs';
 import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
 import {sourceActionAudit} from '../lib/source-action.mjs';
 import {auditionChoiceAudit} from '../lib/audition-choice.mjs';
-import {sourceSearchPlan,sourceCandidateAudit} from '../lib/source-discovery.mjs';
+import {sourceSearchPlan,sourceCandidateAudit,sourceSearchEvidenceAudit} from '../lib/source-discovery.mjs';
 import {conceptAudit,createConceptAudition} from '../lib/concept-audition.mjs';
 import {subjectModelAudit} from '../lib/subject-model.mjs';
 import {messageTrackAudit,compileMessageTrack} from '../lib/message-track.mjs';
@@ -19,6 +20,7 @@ import {compileSyncScore,syncScoreCheck,syncReviewFrames} from '../lib/sync-scor
 import {inspectMedia,importMedia,selectRange} from '../lib/media.mjs';
 import {soundbed} from '../lib/soundbed.mjs';
 import {editorialInventory} from '../lib/editorial.mjs';
+import {measureComposition,compositionReviewHtml} from '../lib/composition-review.mjs';
 import {extractReviewFrames} from '../lib/review-evidence.mjs';
 import {TECHNIQUES,technique,techniqueCoverage} from '../lib/techniques.mjs';
 import fs from 'node:fs';
@@ -41,10 +43,12 @@ async function doctor(){const checks={node:process.version,baseline:{gpu:false,j
  for(const n of ['ffmpeg','ffprobe']){try{checks[n]=(await run(tool(n),['-version'])).out.split('\n')[0];}catch(e){checks[n]={error:e.message};}}
  try{const b=await browser();checks.browser=b.version();await b.close();}catch(e){checks.browser={error:e.message};}
  const cfg=settings();checks.skia={optional:true,available:false};try{const s=await run(cfg.python||'python',['-c','import skia; print(skia.__version__)'],{env:{...process.env,...(cfg.skiaPath?{PYTHONPATH:cfg.skiaPath}:{})}});checks.skia={optional:true,available:true,version:s.out.trim(),gpu:false};}catch(e){checks.skia.reason='Optional Python Skia environment not configured';}
+ checks.mediaContainer={optional:true,available:false};try{const s=await run(cfg.python||'python',['-c','import PIL; print(PIL.__version__)']);checks.mediaContainer={optional:true,available:true,pillow:s.out.trim(),gpu:false};}catch(e){checks.mediaContainer.reason='Animated video containers require Python and requirements-media.txt; ordinary video layers remain available';}
  checks.ok=typeof checks.ffmpeg==='string'&&typeof checks.ffprobe==='string'&&typeof checks.browser==='string';return checks;}
 async function main(){
  switch(command){
  case 'source-search':{const r=sourceSearchPlan(read(positional[0]));if(flags.out)write(path.resolve(flags.out),r);return r;}
+ case 'source-search-audit':return sourceSearchEvidenceAudit(read(positional[0]));
  case 'source-review':{const r=sourceCandidateAudit(read(positional[0]),{use:flags.use||'web-video'});if(flags.out)write(path.resolve(flags.out),r);return r;}
  case 'concept-audit':return conceptAudit(read(positional[0]));
  case 'subject-audit':{const p=read(positional[0]);return subjectModelAudit(p.subject_model,p);}
@@ -69,10 +73,11 @@ async function main(){
  case 'remix':if(!flags.from||!flags.out)throw Error('remix requires --from verified-run-folder --out new-folder');return remix(project(),flags.from,out());
  case 'status':return status(project(),out());
  case 'resume':{const p=project(),s=status(p,out());if(!s.ok||!p.approval)return {...s,next:'plan / styleframe / user direction confirmation'};const r=await render(p,out(),{draft:!!flags.draft,portrait:!!flags.portrait});record(p,out(),'render',r);return r;}
- case 'catalog':if(flags.site)return catalogSite(out());return search(positional.join(' '),Number(flags.limit||25),Object.fromEntries(['media','engine','family','status','provider'].filter(k=>flags[k]).map(k=>[k,flags[k]])));
+ case 'catalog':if(flags.site)return catalogSite(out());return search(positional.join(' '),Number(flags.limit||25),Object.fromEntries(['media','engine','family','status','provider','kind'].filter(k=>flags[k]).map(k=>[k,flags[k]])));
  case 'techniques':return positional[0]?techniqueCoverage(project()):TECHNIQUES;
  case 'validate':return validate(project());
- case 'direction-review':{const p=project(),r=editorialInventory(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'));write(path.join(out(),'editorial-review.json'),r);return {...r,ok:r.contract.ok};}
+ case 'director-review':{const p=project(),preview=directorReview(p),evidence=flags.movie?await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:preview.requests.flatMap(q=>q.evidence.map(e=>e.frame))}):undefined;const r=directorReview(p,flags.observations?read(path.resolve(flags.observations)):undefined,evidence);write(path.join(out(),'director-review.json'),r);write(path.join(out(),'index.html'),directorReviewPage(r));return r;}
+ case 'direction-review':{const p=project(),r=editorialInventory(p);if(flags['composition-frames']){r.geometry=await measureComposition(p,path.join(out(),'composition'));r.findings.push(...r.geometry.findings);}if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'));write(path.join(out(),'editorial-review.json'),r);write(path.join(out(),'composition-review.html'),compositionReviewHtml(r));return {...r,ok:r.contract.ok};}
  case 'plan':return plan(project(),path.join(out(),'direction.html'));
  case 'approve':return approve(path.resolve(positional[0]),flags.by,flags.note,flags['expected-hash']);
  case 'audio':return audio(project(),out());

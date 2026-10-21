@@ -14,3 +14,11 @@ glyphs.py는 글꼴 윤곽을 만들고, profile.rasterizer=skia는 skia_frames.
 
 Codex는 제공된 내장 이미지 생성 도구가 있을 때 원화를 만들 수 있다. Claude Code는 공통 제작과 제공 자산을 사용한다. 별도 유료 이미지 API나 로컬 생성 모델은 필수로 설치하지 않는다.
 
+# Skia 시간 계약 보강
+
+Skia의 이동·회전·투명도·드로잉 키프레임은 Chromium과 같은
+`smooth`, `linear`, `hold`, `out` 계산을 사용한다. 기본값은 기존 `smooth`다.
+`timeline_semantics: segments-v1`을 지정한 프로젝트만 속성이 없는 중간
+키프레임을 해당 속성의 유지 구간 경계로 취급한다. 기본 프로젝트의 기존
+속성별 보간은 유지된다. 순서를 바꾼 시점 계산과 hold 경계는
+`tests/skia-timeline.py`에서 검증한다. 이 검사는 렌더된 프레임의 미감 판정이 아니다.

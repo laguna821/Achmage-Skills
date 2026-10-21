@@ -3,6 +3,8 @@ import path from 'node:path';
 import {ROOT,read,write,run,settings,hash} from './io.mjs';
 
 export const STRUCTURE_VERSION='musical-structure-v1';
+// Optional roles preserve authored musical intent; legacy maps remain phrases.
+export const STRUCTURE_ROLES=['pulse','onset','accent','phrase','release'];
 export function musicIdentity(p){
  const index=p.audio.clips.findIndex(c=>c.bus==='music'),c=p.audio.clips[index],a=p.assets.find(a=>a.asset_id===c?.asset_id);
  if(!c||!a)throw Error('Registered music required');
@@ -16,6 +18,7 @@ export function checkStructure(p,m){
  if(!Array.isArray(m?.boundaries)||!Array.isArray(m?.groups)||!Array.isArray(m?.sections))return {ok:false,errors:[...errors,'Structure arrays required']};
  const c=musicIdentity(p),end=c.source_in+c.duration*c.speed,ids=new Set();let last=-Infinity;
  for(const b of m.boundaries){check(typeof b.id==='string'&&!ids.has(b.id),'Boundary IDs must be unique');ids.add(b.id);check(Number.isFinite(b.source_seconds)&&b.source_seconds>=c.source_in&&b.source_seconds<=end&&b.source_seconds>last,'Boundary order/range invalid');last=b.source_seconds;check(['candidate','listening-corrected','authored'].includes(b.method)&&typeof b.evidence==='string'&&b.evidence.trim(),'Boundary evidence required');}
+ for(const b of m.boundaries)check(b.role===undefined||STRUCTURE_ROLES.includes(b.role),'Musical boundary role invalid');
  const byId=new Map(m.boundaries.map(b=>[b.id,b]));
  for(const list of [m.groups,m.sections]){const names=new Set();for(const g of list){check(typeof g.id==='string'&&!names.has(g.id),'Group/section ID duplicated');names.add(g.id);const a=byId.get(g.start),b=byId.get(g.end);check(a&&b&&a.source_seconds<b.source_seconds,'Group endpoints invalid');check(typeof g.reason==='string'&&g.reason.trim(),'Group interpretation requires reason');}}
  const calibrated=m.boundaries.length>=2&&m.groups.length>=1&&m.review?.status==='reviewed'&&typeof m.review?.note==='string'&&m.review.note.trim().length>0&&m.review.structure_digest===structureDigest(m);
@@ -36,7 +39,7 @@ export function compileStructure(p,m,edit,{draft=false}={}){
  const end=m.identity.source_in+m.identity.duration*m.identity.speed;
  if(events.some(b=>b.source_seconds>=end))throw Error('Music end cannot start a new bound scene');
  q.musical_structure=structuredClone(m);
- q.rhythm_score={version:'music-impact-v1',music:{asset_id:m.identity.asset_id,sha256:m.identity.sha256,clip_index:m.identity.clip_index},tolerance_frames:allowance,events:events.map(b=>({id:b.id,source_seconds:b.source_seconds,role:'phrase',method:check.calibrated&&b.method==='listening-corrected'?'listening-corrected':'authored',confidence:check.calibrated?1:.3,evidence:b.evidence})),bindings:edit.bindings.map(({boundary_id,...b})=>({...b,event_id:boundary_id})),holds:edit.holds||[]};
+ q.rhythm_score={version:'music-impact-v1',music:{asset_id:m.identity.asset_id,sha256:m.identity.sha256,clip_index:m.identity.clip_index},tolerance_frames:allowance,events:events.map(b=>({id:b.id,source_seconds:b.source_seconds,role:b.role??'phrase',method:check.calibrated&&b.method==='listening-corrected'?'listening-corrected':'authored',confidence:check.calibrated?1:.3,evidence:b.evidence})),bindings:edit.bindings.map(({boundary_id,...b})=>({...b,event_id:boundary_id})),holds:edit.holds||[]};
  delete q.approval;return q;
 }
 export async function analyzeStructure(p,analysisFolder){

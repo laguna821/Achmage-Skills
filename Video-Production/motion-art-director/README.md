@@ -1,6 +1,10 @@
-# Motion Art Director · 4.1.0-rc.1 개발 후보
+# Motion Art Director · 4.1.0
 
-Showreel 선택 확장을 구현하는 개발 브랜치입니다. 기존 공개 4.0 작품과 설치는 유지됩니다. 원본 도감 637개에 별도 공급원의 실행 어댑터 16개를 연결하고, 외부 22개 항목은 신규 구현·재사용·참고 전용으로 구분합니다. [확장 입력·지원 범위](references/showreel-integration.md)와 [출시 조건](references/release-4.1.md)을 참고하세요. 새 통합 작품·전이 작품의 미감 및 전체 청취가 완료되기 전에는 출시 완료로 표시하지 않습니다.
+4.1.0은 **장면의 전달력과 실제 출력 대조**를 보강합니다. 관객이 이해해야 할 변화에서 구도와 매체를 고르고, 최종 MP4의 전·접촉·후 프레임을 기획 의도와 비교합니다. 글자 정렬·변형 중심, 반복 구도와 설명뿐인 공정 표현을 검토 대상으로 드러내며, 수정 전 검토 기록을 새 결과의 검증으로 재사용하지 않습니다. [디렉팅 제작 흐름](references/director-production.md)을 따릅니다. 자동 검사는 미감이나 실제 청취를 대신하지 않습니다.
+
+Showreel 선택 확장을 포함한 정식판입니다. 기존 공개 작품과 프로젝트의 엔진 고정은 유지합니다. 원본 도감 637개에 별도 공급원의 실행 어댑터 16개를 연결하고, 외부 22개 항목은 신규 구현·재사용·참고 전용으로 구분합니다. [확장 입력·지원 범위](references/showreel-integration.md)와 [변경과 검증 범위](references/release-4.1.md)을 참고하세요. 정식 배포는 공통 런타임의 검증과 사용자가 승인한 배포 범위를 뜻합니다. 각 작품의 실제 청취·미감과 물리 장비 실측은 별도이며 자동 승인하지 않습니다.
+
+awesome-opus5-5-videos의 703개 참조 사례와 자체 기획 레시피 16개를 별도 검색 대상으로 제공합니다. 재생 시간이 이어지는 실사 창, 컷·카메라와 독립된 문장 합성, 반복 음악 구간의 사건 시계, 기존 녹음만 사용하는 음악 정책을 구현합니다. 사례 수를 구현 효과 수로 계산하지 않습니다. [흡수 범위와 실제 실행 계약](references/opus-integration.md)을 확인하세요.
 
 기획 앞단에서 실제 음악과 전체 콘티를 먼저 보고, 실사·정밀 그래픽·완전한 문장·음악 묶음을 연결해 제작하는 통합 워크플로우입니다. [180초 요리 작품](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/film/?v=35) · [180초 레이싱](https://motion-art-director-review-oct05.achmage2.chatgpt.site/racing/film/?v=30) · [4.0 변경과 제한](references/release-4.md).
 
@@ -10,7 +14,7 @@ Showreel 선택 확장을 구현하는 개발 브랜치입니다. 기존 공개 
 
 4.0.0에는 [제작 전 기획 시청](references/preproduction.md)을 추가했습니다. 여러 제공처에서 음악·영상·효과음을 조사하고, 실제 음악 후보와 전체 이야기 지도를 먼저 비교한 뒤 대표 컷을 제작합니다. `source-search`는 검색 계획을 만들며 실제 검색·청취를 수행했다고 표시하지 않습니다. 빠른 컷 위에 완결된 문장을 유지하는 선택적 `message-track-v1`도 제공합니다. [새 기획 비교본](https://motion-art-director-review-oct05.achmage2.chatgpt.site/meal/concept/?v=31)은 음악과 주제를 고르는 단계이며 본편 완성·미감 승인 기록이 아닙니다.
 
-[공개 영상 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [정지·무음·로고 엔딩](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) · [다운로드와 설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)
+[공개 영상 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [자동차 150초](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html) · [정지·무음·로고 엔딩](https://motion-art-director-review-oct05.achmage2.chatgpt.site/car.html#ending) · [다운로드와 설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.1.0)
 
 ## 무엇이 들어 있나요?
 
@@ -30,9 +34,13 @@ Showreel 선택 확장을 구현하는 개발 브랜치입니다. 기존 공개 
 
 awesome-ai-motion은 표현을 찾는 도감입니다. 이 패키지는 그 도감을 내용·대상·행동에 연결하고, 결과를 제작·수정하는 워크플로우와 런타임을 더합니다. 효과를 많이 사용하는 것보다 장면의 전달력을 우선합니다.
 
+## Achmage MCP에서 사용
+
+Achmage OS 사용자는 MCP로 이 스킬의 OS 진입점과 선택된 번들 원문을 읽고 공통 런타임을 사용합니다. 별도의 Codex·Claude CLI 실행은 이 경로의 필수 조건이 아닙니다. 기존 프로젝트는 기록된 버전·엔진 경로를 유지합니다. 독립 설치가 필요한 사용자는 아래 절차를 따릅니다.
+
 ## 설치
 
-Node.js 20 이상, FFmpeg와 ffprobe가 필요합니다. [설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)을 풀거나 저장소의 이 폴더 전체를 받습니다. SKILL.md만 복사하면 실행되지 않습니다.
+Node.js 20 이상, FFmpeg와 ffprobe가 필요합니다. [설치 ZIP](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.1.0)을 풀거나 저장소의 이 폴더 전체를 받습니다. SKILL.md만 복사하면 실행되지 않습니다.
 
 ```sh
 # 압축을 푼 motion-art-director 폴더에서, 사용할 클라이언트 하나를 선택
@@ -94,6 +102,7 @@ node scripts/motion.mjs styleframe examples/object-flight.project.json --time 5 
 ## 선택 의존성
 
 - Skia: 별도 Python 환경에 requirements-skia.txt를 설치하고 setup.mjs --python <python>으로 연결합니다. profile.rasterizer=skia는 SVG/text용이며 이미지·일부 변형은 지원하지 않습니다.
+- 재생 중인 영상 창의 이동: 선택적으로 `requirements-media.txt`의 Pillow를 설정한 Python 환경에 설치합니다. 일반 영상 합성에는 추가 Pillow 의존성이 없습니다.
 - 덱/PDF: 같은 저장소의 [achmage-presentation 1.0.0](../../Presentation/achmage-presentation)을 scripts/connect-presentation.mjs로 연결합니다. 엔진 해시를 확인하며 Python 및 PDF 변환기가 추가로 필요합니다.
 - Claude Code 기본 경로는 이미지 생성 서비스를 요구하지 않습니다. Codex 이미지 생성은 해당 도구 사용이 가능한 환경에서만 제공합니다.
 

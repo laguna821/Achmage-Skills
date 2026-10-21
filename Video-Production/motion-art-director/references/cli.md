@@ -80,4 +80,21 @@ node scripts/motion.mjs message-compile project.json --track message-track.json 
 
 source-search는 실제 검색 결과 대신 제공처별 검색 요청을 만든다. 에이전트가 공식 사이트를 탐색하고 증거를 채운다. concept-audition은 카드와 실제 음악을 합친 960px/5fps 압축 MP4, 전체 구성 HTML, 소요·용량 영수증을 만든다. 원본과 출력 폴더는 분리하며 이전 시청본은 덮어쓰지 않는다. message-compile의 출력은 원본 프로젝트 옆 새 파일이어야 하며 기존 미감 승인을 승계하지 않는다. 상세 계약과 한계는 references/preproduction.md를 따른다.
 
+### 4.1 후보: 사례와 실제 탐색 근거
+
+```sh
+node scripts/motion.mjs catalog --kind case --limit 5
+node scripts/motion.mjs catalog --kind recipe --family media-container
+node scripts/motion.mjs source-search-audit observed-sources.json
+```
+
+`observed-sources.json`은 `source-search-evidence-v1`이며 `kind`, `searches`를 갖는다. 각 조사에 `provider`, 실제 `query`, `checked_at`, `status: searched|unavailable`을 기록한다. searched에는 제공처 도메인의 실제 결과 URL과 제목, `disposition: candidate|rejected|deferred|held`, 이유가 필요하다. unavailable에는 접근 불가 이유를 남긴다. 음악 3곳, 영상·효과음 2곳의 조사 범위를 확인하며, 파일 다운로드·이용 조건·청취·실제 동작 검토를 대신하지 않는다.
+
+영상 창 이동과 문장 후합성, 반복 음악 시계의 프로젝트 필드는 [opus-integration.md](opus-integration.md)를 따른다. `doctor`의 선택 Pillow 검사는 일반 영상 합성의 필수 조건이 아니다.
+
 주제 검토: `node scripts/motion.mjs subject-audit concept.json`. 선택적 subject-model-v1은 포함/제외한 면, 관찰→선택→결과, 선택 음악과의 관계를 기록한다. 구조·근거 연결 검사이며 기획의 의미와 미감을 자동 판정하지 않는다.
+
+## 디렉팅 대조
+`node scripts/motion.mjs director-review project.json --out review-new`
+`--movie final.mp4`를 추가하면 실제 영상의 전·접촉·후 프레임을 추출해 표시한다. 기존 증거 폴더는 보존하며, 관찰 파일은 movie_sha256으로 해당 인코딩본에 연결한다.
+선택 `--observations observations.json`으로 실제 관찰 기록과 프로젝트 fingerprint를 대조한다. 기존 렌더 경로는 유지한다. references/director-production.md 참조.

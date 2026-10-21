@@ -1,3 +1,5 @@
+import {compositeMessages} from './message-composite.mjs';
+import {renderMediaContainer} from './media-container.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {guardedSpawn as spawn,ownedMove,ownedCopy,ownedReserve,ownedComplete} from './storage.mjs';
@@ -20,7 +22,7 @@ export function outputVideoRect(rect,sx,sy,ox,oy,W,H){
 }
 // The completed-run shortcut must observe every audio dependency too. Otherwise
 // an engine/tires synthesis change can reuse a stale final before audioKey runs.
-export function hybridRuntimeHash(readDependency=f=>fs.readFileSync(path.join(ROOT,f))){return hash(['assets/extensions.js','lib/extensions.mjs','assets/gsap.min.js','vendor/awesome-ai-motion/lib/fonts/BodoniModa.ttf','assets/fonts/PretendardVariable.ttf','lib/io.mjs','lib/storage.mjs','lib/audio31.mjs','lib/pcm-duck.mjs','scripts/skia_frames.py','assets/spatial.js','assets/spatial-v2.js','lib/spatial.mjs','lib/ending31.mjs','lib/hybrid.mjs','lib/camera31.mjs','lib/media.mjs','lib/contract.mjs','lib/message-track.mjs','lib/scene.mjs','lib/browser.mjs','lib/audio.mjs','lib/foley.mjs','lib/automotive-audio.mjs','lib/sync-score.mjs','lib/rhythm-score.mjs','lib/audio-edit.mjs','assets/vector.js','assets/stage.js','assets/fonts/PretendardVariable.woff2'].map(f=>hash(readDependency(f)))).slice(0,16);}
+export function hybridRuntimeHash(readDependency=f=>fs.readFileSync(path.join(ROOT,f))){return hash(['assets/extensions.js','lib/extensions.mjs','assets/gsap.min.js','vendor/awesome-ai-motion/lib/fonts/BodoniModa.ttf','assets/fonts/PretendardVariable.ttf','lib/io.mjs','lib/storage.mjs','lib/audio31.mjs','lib/pcm-duck.mjs','scripts/skia_frames.py','assets/spatial.js','assets/spatial-v2.js','lib/spatial.mjs','lib/ending31.mjs','lib/hybrid.mjs','lib/continuity.mjs','lib/media-container.mjs','scripts/media_container.py','lib/camera31.mjs','lib/media.mjs','lib/contract.mjs','lib/message-track.mjs','lib/message-composite.mjs','lib/scene.mjs','lib/browser.mjs','lib/audio.mjs','lib/foley.mjs','lib/automotive-audio.mjs','lib/sync-score.mjs','lib/rhythm-score.mjs','lib/audio-edit.mjs','assets/vector.js','assets/stage.js','assets/fonts/PretendardVariable.woff2'].map(f=>hash(readDependency(f)))).slice(0,16);}
 export function mediaLayerKey(a,l,frames,profile,geometry={width:1920,height:1080}){return hash({version:hybridRuntimeHash(),source:a.sha256,metadata:[a.rotation,a.color_space,a.color_transfer,a.sample_aspect_ratio],layer:l,geometry,frames,profile});}
 export function graphicsKey(p,s,layers,frames,profile){const c=profile.portrait?(s.portrait_composition||s.composition):s.composition;return hash({version:hybridRuntimeHash(),seed:p.seed,semantics:p.timeline_semantics,rasterizer:s.rasterizer||p.profile?.rasterizer||'chromium',scene:{...s,composition:{...c,layers},portrait_composition:undefined,transition_in:undefined},content:p.content_units.filter(c=>layers.some(l=>l.content_id===c.content_id)),frames,profile});}
 async function cached(file,key){try{const r=read(file+'.json');return r.key===key&&r.sha256===await fileHash(file);}catch{return false;}}
@@ -62,6 +64,7 @@ async function maskImage(l,file,b,W,H,sx,sy,ox=0,oy=0){
  const {page,context}=await pageFor(b,temp,W,H);try{ownedReserve(file,{kind:'temporary',maxBytes:W*H*4+65536});await page.locator('#stage').screenshot({path:file});ownedComplete(file);}finally{await context.close();}
 }
 async function videoTrack(p,s,l,frames,file,b,profile,startFrame=0){
+ if(l.media_handoff){const temp=partial(file);await renderMediaContainer(p,s,l,frames,temp,profile,startFrame,assetPath(p,p.assets.find(a=>a.asset_id===l.asset_id)));ownedMove(temp,file);return;}
  const a=p.assets.find(a=>a.asset_id===l.asset_id),c=profile.portrait?(s.portrait_composition||s.composition):s.composition;
  const W=profile.width,H=profile.height,sx=Math.min(W/(c.width||1920),H/(c.height||1080)),sy=sx,ox=(W-(c.width||1920)*sx)/2,oy=(H-(c.height||1080)*sx)/2;
  const [x,y,w,h]=outputVideoRect(l.rect,sx,sy,ox,oy,W,H);
@@ -121,6 +124,10 @@ export async function hybridSnapshot(p,file,{time=2,portrait=false,width=1920,he
    const filter='[0:v]settb=1/15360,setpts=N/(30*TB)[a];[1:v]settb=1/15360,setpts=N/(30*TB)[b];[a][b]xfade=transition='+(map[s.transition_in.kind]||s.transition_in.kind)+':duration='+T/30+':offset=0,select=eq(n\\,'+local+')[v]';
    await run(tool('ffmpeg'),['-y','-v','error','-stream_loop','-1','-i',prior,'-stream_loop','-1','-i',current,'-filter_complex_threads','1','-filter_complex',filter,'-map','[v]','-frames:v','1',file]);
   }else await run(tool('ffmpeg'),['-y','-v','error','-i',current,'-frames:v','1',file]);
+  if(p.message_track?.render_mode==='post-composite'){
+   const titled=await compositeMessages(file,p,path.join(folder,'snapshot-titles.mp4'),profile,{startFrame:frame,frames:1});
+   if(titled!==file)await run(tool('ffmpeg'),['-nostdin','-y','-v','error','-i',titled,'-frames:v','1',file]);
+  }
   return file;
  }finally{await b.close();}
 }
@@ -146,7 +153,7 @@ export async function renderHybrid(p,base,options,legacyRender,audio,probe){
   const groups=[];for(const l of c.layers){if(l.kind==='video')groups.push({kind:'video',layer:l});else if(groups.at(-1)?.kind==='graphics')groups.at(-1).layers.push(l);else groups.push({kind:'graphics',layers:[l]});}
   const tracks=[];for(const g of groups){
    const a=g.kind==='video'?p.assets.find(a=>a.asset_id===g.layer.asset_id):null;
-   const k=g.kind==='video'?mediaLayerKey(a,g.layer,frames,profile,{width:c.width||1920,height:c.height||1080}):graphicsKey(p,s,g.layers,frames,profile),f=path.join(cache,k+'.mkv'),reused=await cached(f,k);
+   const k=g.kind==='video'?mediaLayerKey(a,g.layer,frames,profile,{width:c.width||1920,height:c.height||1080,...(g.layer.media_handoff?{clock_origin:s.start}:{})}):graphicsKey(p,s,g.layers,frames,profile),f=path.join(cache,k+'.mkv'),reused=await cached(f,k);
    if(!reused){if(done>=stopAfterFrames)throw Error('Test interruption requested');if(g.kind==='video')await videoTrack(p,s,g.layer,frames,f,b,profile);else await alphaTrack(p,s,g.layers,frames,f,b,profile,stopAfterFrames-done);await receipt(f,k,{kind:g.kind,frames});}
    tracks.push(f);log.tracks.push({scene:s.id,kind:g.kind,key:k,reused});
   }
@@ -158,6 +165,14 @@ export async function renderHybrid(p,base,options,legacyRender,audio,probe){
  if(hybridRuntimeHash()!==runtime)throw Error('Runtime changed before assembly');
  const assemblyKey=hash({version:runtime,clips:log.clips.map(c=>c.key),transitions:p.scenes.map(s=>({start:s.start,end:s.end,transition:s.transition_in})),profile}),picture=path.join(cache,'assembly-'+assemblyKey+'.mp4');
  const reusedAssembly=await cached(picture,assemblyKey);if(!reusedAssembly){const made=await assembleHybridClips(log.clips,p,out,profile);ownedCopy(made,picture);await receipt(picture,assemblyKey);}log.assembly={key:assemblyKey,reused:reusedAssembly};
+ const titleKey=hash({assemblyKey,track:p.message_track,profile,runtime}),titled=path.join(cache,'titles-'+titleKey+'.mp4');
+ let deliveryPicture=picture;
+ if(p.message_track?.render_mode==='post-composite'){
+  const reused=await cached(titled,titleKey);
+  deliveryPicture=reused?titled:await compositeMessages(picture,p,titled,profile);
+  if(!reused&&deliveryPicture===titled)await receipt(titled,titleKey);
+  log.messages={key:titleKey,reused,mode:'post-composite'};
+ }
  const sourceClips=sourceAudioClips(p,{portrait}),audioIds=new Set([...(p.audio.clips||[]),...sourceClips].map(c=>c.asset_id));
  const audioKey=hash({engine:['lib/audio.mjs','lib/foley.mjs','lib/audio31.mjs','lib/pcm-duck.mjs','lib/audio-edit.mjs','lib/ending31.mjs','lib/automotive-audio.mjs','lib/io.mjs','lib/storage.mjs'].map(f=>hash(fs.readFileSync(path.join(ROOT,f)))),seed:p.seed,audio:p.audio,duration:p.output.total_frames,clips:sourceClips,assets:p.assets.filter(a=>audioIds.has(a.asset_id)),driving:p.scenes.filter(s=>s.driving).map(s=>({start:s.start,end:s.end,driving:s.driving}))});
  const audioFolder=path.join(cache,'audio-'+audioKey);let sound,reusedAudio=false;
@@ -166,10 +181,10 @@ export async function renderHybrid(p,base,options,legacyRender,audio,probe){
  for(const name of ['music','sfx','ambience','voice','mix'])if(!fs.existsSync(path.join(audioFolder,name+'.wav')))throw Error('Required audio stem missing: '+name);
  for(const name of ['music.wav','sfx.wav','ambience.wav','voice.wav','mix.wav','score.json','audio-report.json','edit-decision-list.json'])if(fs.existsSync(path.join(audioFolder,name)))ownedCopy(path.join(audioFolder,name),path.join(out,name),{kind:'final'});
  log.audio={key:audioKey,reused:reusedAudio};const final=path.join(out,'final.mp4');
- await run(tool('ffmpeg'),['-y','-v','error','-i',picture,'-i',sound.files[2],'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-ar','48000','-t',String(p.output.total_frames/30),'-movflags','+faststart',final]);
+ await run(tool('ffmpeg'),['-y','-v','error','-i',deliveryPicture,'-i',sound.files[2],'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-ar','48000','-t',String(p.output.total_frames/30),'-movflags','+faststart',final]);
  if(hybridRuntimeHash()!==runtime)throw Error('Runtime changed before finalization');
  log.deliverables=Object.fromEntries(await Promise.all(['music','sfx','ambience','voice','mix'].map(async n=>[n,await fileHash(path.join(out,n+'.wav'))])));log.state='final_rendered';log.finished=new Date().toISOString();log.sha256=await fileHash(final);log.media=await probe(final);log.review={visual:'pending',listening:'pending',notebookHardware:'not_measured'};write(state,log);write(path.join(out,'project.json'),p);
- write(path.join(out,'player.html'),'<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>'+escape(p.title)+'</title><style>body{margin:0;background:#080d12;color:white;font:16px system-ui}video{width:100%;max-height:90vh}p{padding:1rem}</style><video controls playsinline preload="metadata" src="final.mp4"></video><p>'+escape(p.title)+' · 편집 가능한 프로젝트는 project.json</p></html>');
+ write(path.join(out,'player.html'),'<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>'+escape(p.title)+'</title><style>body{margin:0;background:#080d12;color:white;font:16px system-ui}video{width:100%;max-height:90vh}p{padding:1rem}</style><video muted controls playsinline preload="metadata" src="final.mp4"></video><p>'+escape(p.title)+' · 편집 가능한 프로젝트는 project.json</p></html>');
  return {out,final,log};
  }catch(e){log.state='interrupted';log.error=e.message;write(state,log);throw e;}finally{await b?.close();}
 }

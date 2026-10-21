@@ -11,14 +11,20 @@ ROOT=Path(__file__).resolve().parents[1]
 DEFAULTS=dict(x=0,y=0,scale=1,rotation=0,opacity=1,draw=1)
 def smooth(x):
     x=max(0,min(1,x));return x*x*(3-2*x)
-def state(layer,t):
+def state(layer,t,semantics=None):
     result={}
     for key,default in DEFAULTS.items():
         value=layer.get(key,default);at=0
         for point in layer.get('keyframes',[]):
-            if key not in point:continue
+            if key not in point:
+                if semantics=='segments-v1':
+                    if t<point['at']:break
+                    at=point['at']
+                continue
             if t<point['at']:
-                u=smooth((t-at)/(point['at']-at)) if point['at']!=at else 1
+                u=max(0,min(1,(t-at)/(point['at']-at))) if point['at']!=at else 1
+                ease=point.get('ease','smooth')
+                u=u if ease=='linear' else 0 if ease=='hold' else 1-(1-u)**3 if ease=='out' else smooth(u)
                 value+=u*(point[key]-value);break
             value=point[key];at=point['at']
         result[key]=value
@@ -74,7 +80,7 @@ def render(project,frame,width,height,portrait=False,alpha=False):
     fit=min(width/bw,height/bh);canvas.translate((width-bw*fit)/2,(height-bh*fit)/2);canvas.scale(fit,fit)
     units={c['content_id']:c['display_text'] for c in project['content_units']}
     for layer in composition['layers']:
-        v=state(layer,t)
+        v=state(layer,t,project.get('timeline_semantics'))
         if v['opacity']<=0 or v['draw']<=0:continue
         canvas.save();canvas.saveLayerAlpha(None,round(max(0,min(1,v['opacity']))*255))
         px,py=layer.get('pivot',[bw/2,bh/2]);canvas.translate(v['x'],v['y']);canvas.translate(px,py);canvas.rotate(v['rotation']);canvas.scale(v['scale'],v['scale']);canvas.translate(-px,-py)

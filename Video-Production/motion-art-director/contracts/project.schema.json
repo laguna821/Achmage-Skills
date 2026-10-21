@@ -726,12 +726,68 @@
     "audio": {
       "type": "object",
       "required": [
-        "bpm",
-        "motif",
-        "sections",
         "cues"
       ],
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "music_source_policy"
+            ],
+            "properties": {
+              "music_source_policy": {
+                "const": "existing-recordings-only"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "clips"
+            ],
+            "not": {
+              "required": [
+                "notes"
+              ]
+            },
+            "properties": {
+              "sections": {
+                "maxItems": 0
+              },
+              "clips": {
+                "contains": {
+                  "required": [
+                    "bus"
+                  ],
+                  "properties": {
+                    "bus": {
+                      "const": "music"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "required": [
+              "bpm",
+              "motif",
+              "sections"
+            ],
+            "properties": {
+              "sections": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
       "properties": {
+        "music_source_policy": {
+          "enum": [
+            "existing-recordings-only"
+          ],
+          "description": "Use registered existing recordings only; no procedural music fallback. Music assets declare origin: existing-recording."
+        },
         "bpm": {
           "type": "number",
           "minimum": 30,
@@ -748,7 +804,7 @@
         },
         "sections": {
           "type": "array",
-          "minItems": 1
+          "minItems": 0
         },
         "cues": {
           "type": "array",
@@ -1223,6 +1279,35 @@
               }
             }
           }
+        }
+      }
+    },
+    "director_brief": {
+      "type": "object",
+      "required": [
+        "version",
+        "question",
+        "audience_change",
+        "resolution"
+      ],
+      "properties": {
+        "version": {
+          "const": "director-brief-v1"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "audience_change": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "resolution": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
         }
       }
     }
@@ -1909,6 +1994,43 @@
               "repetition_reason": {
                 "type": "string",
                 "minLength": 1
+              },
+              "direction": {
+                "type": "object",
+                "required": [
+                  "composition_reason",
+                  "medium_reason",
+                  "attention_from",
+                  "attention_to",
+                  "omission_cost"
+                ],
+                "properties": {
+                  "composition_reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "medium_reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "attention_from": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "attention_to": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "omission_cost": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
               }
             },
             "additionalProperties": false

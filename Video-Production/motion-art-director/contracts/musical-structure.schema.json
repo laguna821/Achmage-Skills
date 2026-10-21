@@ -50,6 +50,9 @@
               "listening-corrected"
             ]
           },
+          "role": {
+            "enum": ["pulse", "onset", "accent", "phrase", "release"]
+          },
           "evidence": {
             "type": "string",
             "minLength": 1

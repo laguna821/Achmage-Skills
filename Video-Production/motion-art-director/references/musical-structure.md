@@ -18,6 +18,8 @@ No mandatory paid model, generated voice, GPU or new audio API. User calibration
 
 ## Perceived impact versus measured onset
 
+A boundary may declare `role: pulse|onset|accent|phrase|release`. Omission preserves the legacy `phrase` behavior. An instrument's entry can use `onset` with the instrument and evidence in its description; a sustained decay can use `release`. The compiler preserves these roles and source times. A changed role invalidates an earlier listening attestation. Roles do not assert automatic instrument recognition or listening.
+
 Separate the measured source attack, interpreted motif boundary, intended visual impact and actual decoded frame. A listener can prefer an offset to an initially measured candidate; it is not automatically playback error or an incorrect preference. Record the device path and clip identity. A single-device preference supports that audition, not a universal correction for other songs or every section.
 
 An edit plan may explicitly set `tolerance_frames: 4` and binding `impact_offset_frames: 4` (or a negative value) to place an intended picture event after (or before) the source anchor. Default is zero; the allowed magnitude is currently 0..4 frames, inherited from music-impact-v1. Despite the legacy field name, this allows an authored offset, not imprecise output: the compiled event must still execute at its exact revised frame. The measured source timestamp and musical-structure review remain unchanged. Listening preference for a whole preview does not automatically attest every boundary or group.

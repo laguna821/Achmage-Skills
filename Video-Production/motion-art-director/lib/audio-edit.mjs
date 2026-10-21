@@ -17,7 +17,13 @@ export async function editAudio(p,out,paths){const errs=editErrors(p);if(errs.le
  for(const bus of ['music','sfx']){const clips=(p.audio.clips||[]).filter(c=>c.bus===bus);if(!clips.length)continue;const target=path.join(out,bus+'.wav'),original=path.join(out,'synth-'+bus+'.wav');ownedCopy(target,original,{kind:'temporary'});
   const args=['-y','-hide_banner','-v','error','-i',original],filters=['[0:a]aformat=sample_rates=48000:channel_layouts=stereo[b0]'];let i=1;
   for(const c of clips){const a=p.assets.find(a=>a.asset_id===c.asset_id),file=audioAssetPath(p,a);const probe=await run(tool('ffprobe'),['-v','error','-show_entries','format=duration','-of','json',file]);if(c.source_in+c.duration>Number(JSON.parse(probe.out).format.duration)+.02)throw Error('Audio source range exceeds duration: '+a.asset_id);
-   args.push('-i',file);filters.push('['+i+':a]atrim=start='+c.source_in+':duration='+c.duration+',asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,volume='+(c.gain_db??0)+'dB,afade=t=in:d='+(c.fade_in??0)+',afade=t=out:st='+(c.duration-(c.fade_out??0))+':d='+(c.fade_out??0)+',adelay='+Math.round(c.start*48000)+'S:all=1[b'+i+']');edits.push({...c,sha256:a.sha256,source:a.rights.source_url,attribution:a.rights.attribution});i++;
+   args.push('-i',file);
+   let chain='['+i+':a]atrim=start='+c.source_in+':duration='+c.duration+',asetpts=PTS-STARTPTS,aresample=48000,aformat=channel_layouts=stereo,volume='+(c.gain_db??0)+'dB';
+   // afade d=0 falls back to its sample-count default rather than disabling
+   // the filter. Omitted/zero fades must preserve the recorded attack.
+   if(c.fade_in>0)chain+=',afade=t=in:d='+c.fade_in;
+   if(c.fade_out>0)chain+=',afade=t=out:st='+(c.duration-c.fade_out)+':d='+c.fade_out;
+   filters.push(chain+',adelay='+Math.round(c.start*48000)+'S:all=1[b'+i+']');edits.push({...c,sha256:a.sha256,source:a.rights.source_url,attribution:a.rights.attribution});i++;
   }
   filters.push(Array.from({length:i},(_,j)=>'[b'+j+']').join('')+'amix=inputs='+i+':normalize=0:duration=longest,apad,atrim=duration='+duration+'[out]');args.push('-filter_complex',filters.join(';'),'-map','[out]','-ar','48000','-ac','2','-c:a','pcm_s16le',target);await run(tool('ffmpeg'),args);
  }

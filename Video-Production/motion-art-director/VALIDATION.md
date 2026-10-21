@@ -1,5 +1,20 @@
 # Motion Art Director 검증 기록
 
+## 4.1.0 정식 배포 · 2026-10-21
+
+4.1.0은 아래 rc.3 제작·회귀·설치 증거를 바탕으로 배포합니다. 이번 승격은 버전·문서·배포 메타데이터 변경이며 렌더 코드의 추가 변경이 아닙니다. MCP→OS 스킬 읽기→공통 런타임이 실제 운영 경로입니다. 독립 CLI 시험의 권한·설정 오류는 별도 호환성 항목이며 MCP 경로의 출시 차단 조건이 아닙니다. 전역 클라이언트 설정은 변경하지 않습니다.
+
+정식판의 패키지 무결성·재설치·MCP 경로 확인은 Release 첨부 검증 보고서에 기록합니다. 전체 실제 청취·사용자 미감 승인·물리 모바일 및 16GB 노트북 측정은 수행하지 않은 항목으로 유지합니다. 이전 실패·제한은 아래 이력에서 삭제하지 않습니다.
+
+## 4.1.0-rc.3 디렉팅 보강 · 2026-10-21
+
+- 새 공개 패키지를 한글·공백 경로에 설치하고 설치 폴더 밖에서 전체 `scripts/test.mjs`를 통과했다. 첫 설치 시험에서 발견한 독립/내장 editorial 스키마 불일치를 수정한 후 새 패키지로 재검증했다.
+- director-review는 실제 최종 MP4에서 장면의 전·접촉·후 프레임을 추출한다. 프로젝트 지문 또는 영상 해시가 다른 관찰, 증거가 빠진 관찰을 완료로 집계하지 않는 반례가 통과했다. 명시하지 않은 글자 정렬·변형 중심과 변형만으로 표현한 공정은 검토 후보이며 미감 자동 판정이 아니다.
+- 「한 벌의 판단」 27컷과 「빛이 기억이 되는 순간」 23컷을 각각 180초·1080p30·5400프레임으로 출력했다. 첫 작품은 Hazy After Hours 편집을 유지하며, 새 작품은 기존 녹음 Deep Urban을 사용한다. 음악을 새로 합성하지 않았다.
+- 실제 부분 수정은 각각 24/27컷, 21/23컷을 재사용했고 이전 결과를 보존했다. 설치본 CLI로 두 최종 영상의 실제 프레임 추출도 통과했다.
+- 첫 작품의 최종본은 브라우저에서 음소거 상태로 끝까지 재생됐다. 표본 화면 관찰과 재생 종료 확인은 전체 연출의 미감 승인이나 실제 청취를 뜻하지 않는다. 새 작품의 수정 후 전체 감상, 전체 청취, 실제 일반 노트북 실측 및 클라이언트 UI 인식은 별도 미완료 항목이다.
+- [두 작품 비교 페이지](https://one-garment-motion.achmage2.chatgpt.site/director/)는 검토용 출력이다. 정식 Release 또는 OS 활성화 완료를 의미하지 않는다.
+
 ## 4.1.0-rc.1 개발 후보 · 2026-10-13
 
 - `node scripts/test.mjs`: 기존 전체 회귀와 새 확장 시험 통과.
@@ -136,3 +151,27 @@ The early hybrid reuse key omitted automotive synthesis while the later audio ke
 - The text trial exposed a cache defect: a default 120-file cap evicted much of the working film below the byte budget. Cold-track regeneration is reported separately from semantic invalidation. The renderer now estimates a working-film file allowance while retaining explicit overrides, byte budgets, free-space guards and ownership protections.
 - StorageSession integration retains 534 simulated working entries below budget and still trims under explicit file/byte limits. Existing 22 storage checks and cache-cleanup checks pass. Perception and a physical 16GB notebook are not inferred from these tests.
 - Editorial review corrected an adjacent repeated recipe illustration and a decreasing heat dial under copy describing an increase. Directional variants must follow the scene's meaning, not a scene-index alternation.
+
+## 4.1.0-rc.2 — case-led continuity candidate
+
+- A freshly generated public package passed the complete `scripts/test.mjs` list on Windows with Node 24.19.0, Chromium 151 and FFmpeg 9.0.2. This includes the existing SVG, optional Skia, image flow, spatial, automotive/ending, rhythm, storage and output tests. It is not a fresh-device benchmark or a human aesthetic assessment.
+- 703 upstream reference records, 684 exact unique prompt texts and 16 authored planning recipes remain distinct from executable effects. The original 637 effect cards, 128 clips and 11 recipes are retained. Reviewing 11 selected prompt texts does not mean viewing 703 videos.
+- CPU media-container tests encode 60 frames, compare five shuffled RGBA snapshots with the film, inspect rounded-mask pixels and reject nine invalid geometry/clock/mask inputs. A separate layer mask is rejected instead of silently losing its radius.
+- Repeated-source music events use their selected clip occurrence. Tests cover secondary trim/start/speed/source changes, final-frame rounding, review roundtrip and unchanged picture timing for gain-only edits.
+- Existing-recording policy tests cover 3.0 and 3.1 PCM identity, rejected generated music plans, explicit fades and legacy synthesis compatibility. Music listening and suitability remain separate.
+- Actual FFmpeg title encoding tests include Korean text, literal percent/colon/quotes, first/last visibility frames, snapshot identity and a long output filename. Two production-only failures were corrected: FFmpeg 9's removed filter-script option, and Windows child-process failure when a generated title working directory reached 269 characters. Short hashed working folders preserve editable text files.
+- Source-search coverage now includes Videezy. Provider results, unavailable access, invalid dates/queries, false listening claims and hostile result domains are checked. Provider counts do not establish track-level permission, listening or visual quality.
+
+Whole-film output, Unicode-path installation/revision and public playback are recorded with the new film's delivery report. Hybrid temporal blur remains unsupported; the existing pure-vector blur path remains separately tested. Client UI recognition, whole human listening, user aesthetic approval and physical notebook performance are not inferred from automated tests.
+
+## Orchestra production — 4.1.0-rc.3 development validation
+
+- A new 36-shot, 180-second orchestra essay rendered through the common CPU Skia/hybrid route: 1920×1080, 5400 frames, one render worker. Full decoding and encoded frame samples passed; the final AAC measured −16.0 LUFS and −1.7 dBFS true peak. This is technical production evidence, not whole-film listening or aesthetic approval.
+- Existing licensed Mozart/Musopen recording was used continuously, preserving its dynamics and ending. Four footage sources depict preparation and discussion; unrelated playing footage was excluded instead of claiming synchronization with the recording.
+- Musical structure compilation now retains optional pulse/onset/accent/phrase/release roles without changing event times. Legacy inputs still default to phrase. Fifteen contract tests include invalid-role and stale-review counterexamples.
+- Skia now respects authored linear, hold, out and smooth easing. Optional segments-v1 interpolation agrees with the segment contract; the default per-property interpolation remains unchanged. Four pure-function tests cover easing boundaries, shuffled time queries, segment opt-in and legacy compatibility.
+- A separate six-second valve project passed actual copy-only, music-gain and recording-range revisions. Copy edits re-rendered only the affected graphics; audio changes reused picture tracks and assembly. Deliberate interruption/resume and shuffled-frame identity also passed. Earlier results were preserved.
+- The complete scripts/test.mjs regression list passed after these changes. Preview playback is muted; actual full listening, physical mobile/notebook testing and final user aesthetic acceptance remain separate pending gates. This candidate is not promoted by the test count.
+
+- The 180-second film → 30-second portrait → film revision trial exposed another cache-policy gap: a short derivative reduced the automatic file allowance and evicted valid long-film caches below the byte budget. Automatic file headroom now includes the existing owned working set. Explicit file limits, byte budgets, minimum free space and ownership guards remain enforced. A sequential 534-entry film → 40-entry derivative → revision test retains all 576 entries, then still trims to an explicit 12-file cap and a five-file byte budget. The existing 22 storage checks, cache-cleanup counterexamples and runtime dependency checks pass.
+- Encoded-frame review found two shots with dark text partly outside the light object behind it. The authored layout was corrected, and full-word contrast at moving-background extrema was added to the common review procedure. The cache eviction caused extra regeneration in that production revision; it is not reported as 43 cached cuts.
