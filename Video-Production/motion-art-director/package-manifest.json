@@ -1,10 +1,10 @@
 {
-  "version": "4.1.0-rc.3",
+  "version": "4.1.0",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
-      "bytes": 397,
-      "sha256": "e1521b6e7f4d65a638deac099eed791477a4d1319fdcab64f589de0919f54c23"
+      "bytes": 392,
+      "sha256": "584958a11f7708d316b5205c2084591f5ac4f0c5178826fdc82ff1d75a2c75de"
     },
     {
       "path": "agents/openai.yaml",
@@ -143,8 +143,8 @@
     },
     {
       "path": "contracts/musical-structure.schema.json",
-      "bytes": 2192,
-      "sha256": "79e38ff5efffc4a8584ea18be2fe9c6592234c759707fc60f0baac11d2714fd7"
+      "bytes": 2295,
+      "sha256": "a567881305465a41efb1399701d1a4bb3badc54989cfc0d717d61df4b288b1dd"
     },
     {
       "path": "contracts/project-3.1.schema.json",
@@ -378,8 +378,8 @@
     },
     {
       "path": "lib/music-structure.mjs",
-      "bytes": 5858,
-      "sha256": "b451eafccd607dc5f5eda2ed142d990ac486221bb7bf7b22a1280694ef999e87"
+      "bytes": 6144,
+      "sha256": "4588a8f1a0552777ab6dc98c1fda8c9212a6945b974fadf64fa8b841f408d8ca"
     },
     {
       "path": "lib/output-review.mjs",
@@ -518,18 +518,18 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 1772,
-      "sha256": "49ac7b0837c6e9e9b0b2698acc20f3a36f9e34ce7f25c0967882f623439441a9"
+      "bytes": 1762,
+      "sha256": "1ed76c5d1075116e4fa48e7b061c19abee55993adc4a641a614ab7ef7227d214"
     },
     {
       "path": "package.json",
-      "bytes": 317,
-      "sha256": "f29aaed371284f34185f1074d83640584a76d234874f440f20f68bf0a65d3cc2"
+      "bytes": 312,
+      "sha256": "debf52f1c8cb78890051eb6f99e3da6940b0d2e890bb82eb1dc6416cde8345c7"
     },
     {
       "path": "README.md",
-      "bytes": 13490,
-      "sha256": "9a9d8cfd8abeef8d59b4741863baa1d57bba8856433c0413827d519296be94b8"
+      "bytes": 13954,
+      "sha256": "c671cc5ee8f6141e13baabb7b134a2a157b37d4614dbdd89a5f3998f625f9a54"
     },
     {
       "path": "references/activation.md",
@@ -578,8 +578,8 @@
     },
     {
       "path": "references/engine-selection.md",
-      "bytes": 1716,
-      "sha256": "c8569262880f510c652851ab188d3e64e4e34c3e3bebfc9b54a7e9c0955e2c2f"
+      "bytes": 2297,
+      "sha256": "dfcd05ab4a1804809c7cac57e98ffc23a6558b670fbad1b705ebf57a429dcd98"
     },
     {
       "path": "references/event-ending.md",
@@ -613,13 +613,13 @@
     },
     {
       "path": "references/musical-structure.md",
-      "bytes": 5540,
-      "sha256": "92c896b96b8bc1d42f99fdc2deaeea6cbea837595b10c55c99b32a2acf242d51"
+      "bytes": 5965,
+      "sha256": "ec0f2cb8a28ec3de9de22219881209f9846b557f1389754b60673454baed992e"
     },
     {
       "path": "references/opus-integration.md",
-      "bytes": 4781,
-      "sha256": "bdcd51df0759173f4a72ea0edaca24008e2269fa1d8db092f18d483cd87cbe82"
+      "bytes": 4762,
+      "sha256": "37171d4b08e93a7dec79ef3a352d42f1d57f650104da6d9a82d497985268483e"
     },
     {
       "path": "references/performance-direction.md",
@@ -648,8 +648,8 @@
     },
     {
       "path": "references/release-4.1.md",
-      "bytes": 1903,
-      "sha256": "152de564f059239f69a1bd11801b442d499ead5a609d0e0f84cc3e50a2ee43ae"
+      "bytes": 3753,
+      "sha256": "ec26c8fc2b543743da9c5c9d1035b7e2d541cb12fd798b35a8633ddc738f5855"
     },
     {
       "path": "references/release-4.md",
@@ -773,18 +773,18 @@
     },
     {
       "path": "scripts/skia_frames.py",
-      "bytes": 7944,
-      "sha256": "eb6a26343765e7869f1d4404fc029f1843d180ce3412eeb4865a7a45a75d9cec"
+      "bytes": 8289,
+      "sha256": "c5fa6e52b8127fde4216b5876ff86b28190645ac406bc5140f3db7e0cf17bd79"
     },
     {
       "path": "scripts/test.mjs",
-      "bytes": 1596,
-      "sha256": "9c92ce19464821acc9697fbbcea7903aa54880e1824156783dfb1f63ffe42031"
+      "bytes": 1698,
+      "sha256": "0e77bc2666c1bc38e90c28559d8351161a1d28f5a6dab6db6191bacc1b3aebc6"
     },
     {
       "path": "SKILL.md",
-      "bytes": 21141,
-      "sha256": "86890ec811bc295b3a2969043022132f49bb8ed0e0aac9b94ed91d547ffee2fa"
+      "bytes": 21205,
+      "sha256": "a4efc71ce52afdcf598cbf5b74d4e37f6974d31ab49b2111c21eb0b41fa96ac3"
     },
     {
       "path": "tests/audio-clock.mjs",
@@ -933,8 +933,8 @@
     },
     {
       "path": "tests/music-structure.mjs",
-      "bytes": 4751,
-      "sha256": "c707d99005abd97c5a5d0593e133c5c15e85c5df20d7e88a6c00e9caaeffa518"
+      "bytes": 5691,
+      "sha256": "c248dd741900eea2a3575b1676c2f9cfcd4009e88f7b4948071304784cb10aaa"
     },
     {
       "path": "tests/pacing.mjs",
@@ -943,8 +943,8 @@
     },
     {
       "path": "tests/package-version.mjs",
-      "bytes": 891,
-      "sha256": "d8f1cacea4c492171d4f444a0739c86d1839dc1f9e466054ccd08a612bbf2682"
+      "bytes": 886,
+      "sha256": "77d9a4b20ded6984bfddbc30aaacffbd76b0ee70cc64492769696f1e68e0c81c"
     },
     {
       "path": "tests/preproduction.mjs",
@@ -1012,6 +1012,16 @@
       "sha256": "c389bb747d8875f3a20cdbd180347eedaad4629232961d00ac6451f3f573ac77"
     },
     {
+      "path": "tests/skia-timeline.mjs",
+      "bytes": 219,
+      "sha256": "b0f646fcbcbe9a9b70104324a56e7ee68f038fed5f1a5098520626358c296178"
+    },
+    {
+      "path": "tests/skia-timeline.py",
+      "bytes": 1496,
+      "sha256": "37a8079251a6a888bda3b7800dbdde8d8875ad6a76585513dc032ed40d60001e"
+    },
+    {
       "path": "tests/soundbed.mjs",
       "bytes": 726,
       "sha256": "59deebbb4ced97b095e7504e838cdc9a188d6f3018f67224d76e73e869152259"
@@ -1058,8 +1068,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 23087,
-      "sha256": "5ad793c1ce57d107f701ece8ef9b99b1beeeb14195c7633abb70a813cb3c83bd"
+      "bytes": 25714,
+      "sha256": "21bb2119fa56183d609d402d2377e3dab2aaaf8e85ee8697577fc019fb2e7b34"
     },
     {
       "path": "vendor/awesome-ai-motion/ATTRIBUTIONS.md",

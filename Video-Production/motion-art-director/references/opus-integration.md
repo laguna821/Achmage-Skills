@@ -1,4 +1,4 @@
-# Case-led continuity extension — implementation candidate
+# Case-led continuity extension — 4.1.0
 
 Upstream: https://github.com/yihui-dev/awesome-opus5-5-videos/tree/92aee2f586ac0715cb3cbcb6384834f98a33383d
 

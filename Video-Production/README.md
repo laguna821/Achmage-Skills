@@ -1,12 +1,14 @@
 # Video-Production
 
-## Motion Art Director · 4.0.0
+## Motion Art Director · 4.1.0
 
-개발 후보 **4.1.0-rc.2**의 새 작품: [한 벌의 판단 — 본편·연결 비교·세로판](https://one-garment-motion.achmage2.chatgpt.site/) · [흡수 기능과 검증 범위](case-led-continuity.md). 정식 4.0 배포와 구분한 후보 시험입니다.
+**4.1.0 정식판:** 장면 중심 디렉팅, 음악 사건 시계, 컷을 잇는 문장, 선택 실행 어댑터와 캐시 보존을 보강했습니다. [변경·검증 범위](motion-art-director/references/release-4.1.md). Achmage OS에서는 MCP로 선택한 번들을 읽어 사용하며 별도 클라이언트 CLI 설치가 필수는 아닙니다.
+
+새 180초 작품: [한 벌의 판단](https://achmage-slides.vercel.app/motion/tailoring-director/) · [빛이 기억이 되는 순간](https://achmage-slides.vercel.app/motion/light-memory/) · [첫 음이 울리기까지 — MP4](https://pub-acf6ad93f2ec4a5e8fa12e94d0c9b151.r2.dev/1792571590691-526be0ed-2358-4d97-91a7-52771066fab1.mp4). 기술 검증과 미감·전체 청취는 구분합니다.
 
 기획 질문 → 연출안·스타일프레임·사운드 계획 → 검토 → 대표 컷 → 전체 제작 → 수정·검수까지 연결하는 Codex·Claude Code 공통 스킬입니다. 기본 SVG CPU 제작과 선택 Skia·공간 카메라·이미지 흐름을 지원합니다.
 
-[스킬·설치 안내](motion-art-director) · [공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [영상 파일과 출처](examples/motion-art-director) · [Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.0.0)
+[스킬·설치 안내](motion-art-director) · [공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) · [영상 파일과 출처](examples/motion-art-director) · [Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.1.0)
 
 | 작품 | 보기 |
 |---|---|
