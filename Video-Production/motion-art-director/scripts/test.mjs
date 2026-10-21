@@ -1,6 +1,7 @@
 import fs from 'node:fs';import path from 'node:path';import {ROOT,run} from '../lib/io.mjs';
 process.stdout.write((await run(process.execPath,[path.join(ROOT,fs.existsSync(path.join(ROOT,'tests-public'))?'tests-public':'tests','remix.mjs')])).out);
 const folder=fs.existsSync(path.join(ROOT,'tests-public'))?'tests-public':'tests';
+process.stdout.write((await run(process.execPath,[path.join(ROOT,folder,'skia-timeline.mjs')])).out);
 process.stdout.write((await run(process.execPath,[path.join(ROOT,folder,'composition-review.mjs')])).out);
 process.stdout.write((await run(process.execPath,[path.join(ROOT,folder,'process-io.mjs')])).out);
 process.stdout.write((await run(process.execPath,[path.join(ROOT,folder,'message-encode.mjs')])).out);

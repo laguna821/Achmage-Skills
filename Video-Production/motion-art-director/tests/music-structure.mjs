@@ -14,6 +14,24 @@ test('source trim/hash/speed invalidate identity',()=>{for(const mutate of [x=>x
 test('gain-only change does not imply tempo change',()=>{const q=structuredClone(p);q.audio.clips[0].gain_db=-20;assert.equal(checkStructure(q,reviewed).ok,true);});
 test('unordered, duplicate and orphan group endpoints rejected',()=>{for(const mutate of [x=>x.boundaries.reverse(),x=>x.boundaries[1].id='a',x=>x.groups[0].end='missing']){const q=structuredClone(m);mutate(q);assert.equal(checkStructure(p,q).ok,false);}});
 test('nonuniform and syncopated times retained without grid snapping',()=>{const q=structuredClone(m);q.boundaries[1].source_seconds=108.027;const r=compileStructure(p,q,edit,{draft:true});assert.equal(r.rhythm_score.events[0].source_seconds,108.027);});
+test('musical event roles survive compilation without moving clocks',()=>{
+ for(const role of ['pulse','onset','accent','phrase','release']){
+  const q=structuredClone(m);q.boundaries[1].role=role;
+  const event=compileStructure(p,q,edit,{draft:true}).rhythm_score.events[0];
+  assert.equal(event.role,role);assert.equal(event.source_seconds,107.61);
+ }
+ assert.equal(compileStructure(p,m,edit,{draft:true}).rhythm_score.events[0].role,'phrase');
+});
+test('invalid role rejected even on an unused boundary',()=>{
+ const q=structuredClone(m);q.boundaries[0].role='invented-instrument';
+ assert.equal(checkStructure(p,q).ok,false);
+ assert.throws(()=>compileStructure(p,q,edit,{draft:true}),/role invalid/);
+});
+test('changing musical role invalidates prior review',()=>{
+ const q=structuredClone(reviewed);q.boundaries[1].role='release';
+ assert.equal(checkStructure(p,q).ok,false);
+ assert.equal(reviewed.boundaries[1].role,undefined);
+});
 test('unknown edit boundary rejected',()=>{const e=structuredClone(edit);e.bindings[0].boundary_id='missing';assert.throws(()=>compileStructure(p,m,e,{draft:true}),/missing/);});
 test('unattested listening claim rejected',()=>{const q=structuredClone(m);q.boundaries[0].method='listening-corrected';assert.equal(checkStructure(p,q).ok,false);});
 test('explicit picture offset keeps measured source clock and exact execution',()=>{
