@@ -1,12 +1,15 @@
 import {escape,hash} from './io.mjs';
+import {extensionRegistry,extensionTechnique} from './extensions.mjs';
 const specs=[
  ['overlapping-action','principles','subject'],['symmetric-panel-open','entrance','subject'],['pulse','emphasis','subject'],['split-flap','type','text'],['crossfade','transitions','transition'],['pan','camera','subject'],['bar-grow','data','values'],['cursor-click','ui','point'],['progressive-disclosure','explainer','subject'],['piece-assembly','shape','subject'],['crt-scanlines','texture','field'],['particle-burst','generative','field'],['deep-parallax','depth','subject'],['breathing-loop','loop','subject'],['lower-third-reveal','caption','text']
 ];
 export const TECHNIQUES=Object.fromEntries(specs.map(([id,family,input])=>[id,{id,card_id:id,family,input,engines:['chromium'],renderers:['vector-composite','hybrid-composite'],outputs:['time','scroll','still'],parameters:{duration:{min:.25,max:30},amount:{min:0,max:2000},color:'CSS hex',seed:'integer'},implementation:'executable',automated_review:'pending',aesthetic_review:'pending'}]));
 TECHNIQUES.crossfade.engines=['ffmpeg'];TECHNIQUES.crossfade.renderers=['hybrid-composite'];
+Object.assign(TECHNIQUES,extensionRegistry);
 const copy=x=>structuredClone(x);
 function random(seed){let n=seed|0;return()=>{n=Math.imul(1664525,n)+1013904223|0;return(n>>>0)/4294967296;};}
 export function technique({id,instance,inputs={},parameters={}}){
+ if(extensionRegistry[id])return extensionTechnique({id,instance,inputs,parameters});
  const spec=TECHNIQUES[id];if(!spec)throw Error('Unknown technique adapter '+id);if(!/^[a-z0-9-]+$/.test(instance||''))throw Error('Technique instance identity required');
  const {duration=1,amount=120,color='#b4efff',seed=1}=parameters;
  if(!Number.isFinite(duration)||duration<.25||duration>30||!Number.isFinite(amount)||amount<0||amount>2000||!/^#[a-f0-9]{6}$/i.test(color)||!Number.isInteger(seed))throw Error('Invalid adapter parameters');
