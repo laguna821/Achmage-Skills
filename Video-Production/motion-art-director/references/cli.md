@@ -93,3 +93,8 @@ node scripts/motion.mjs source-search-audit observed-sources.json
 영상 창 이동과 문장 후합성, 반복 음악 시계의 프로젝트 필드는 [opus-integration.md](opus-integration.md)를 따른다. `doctor`의 선택 Pillow 검사는 일반 영상 합성의 필수 조건이 아니다.
 
 주제 검토: `node scripts/motion.mjs subject-audit concept.json`. 선택적 subject-model-v1은 포함/제외한 면, 관찰→선택→결과, 선택 음악과의 관계를 기록한다. 구조·근거 연결 검사이며 기획의 의미와 미감을 자동 판정하지 않는다.
+
+## 디렉팅 대조
+`node scripts/motion.mjs director-review project.json --out review-new`
+`--movie final.mp4`를 추가하면 실제 영상의 전·접촉·후 프레임을 추출해 표시한다. 기존 증거 폴더는 보존하며, 관찰 파일은 movie_sha256으로 해당 인코딩본에 연결한다.
+선택 `--observations observations.json`으로 실제 관찰 기록과 프로젝트 fingerprint를 대조한다. 기존 렌더 경로는 유지한다. references/director-production.md 참조.

@@ -1727,6 +1727,35 @@
           "showreel-v1"
         ]
       }
+    },
+    "director_brief": {
+      "type": "object",
+      "required": [
+        "version",
+        "question",
+        "audience_change",
+        "resolution"
+      ],
+      "properties": {
+        "version": {
+          "const": "director-brief-v1"
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "audience_change": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        },
+        "resolution": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      }
     }
   },
   "additionalProperties": true,
@@ -2669,6 +2698,43 @@
               "repetition_reason": {
                 "type": "string",
                 "minLength": 1
+              },
+              "direction": {
+                "type": "object",
+                "required": [
+                  "composition_reason",
+                  "medium_reason",
+                  "attention_from",
+                  "attention_to",
+                  "omission_cost"
+                ],
+                "properties": {
+                  "composition_reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "medium_reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "attention_from": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "attention_to": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  },
+                  "omission_cost": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S"
+                  }
+                }
               }
             },
             "additionalProperties": false

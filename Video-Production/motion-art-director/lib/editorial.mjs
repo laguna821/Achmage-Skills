@@ -1,4 +1,6 @@
 import {sequenceCheck} from './sequences.mjs';
+import {compositionInventory} from './composition-review.mjs';
+import {directorReview} from './director-review.mjs';
 // Evidence about intent and bindings is not perceptual or aesthetic approval.
 import {hash} from './io.mjs';
 const arr=x=>Array.isArray(x)?x:[];
@@ -110,5 +112,7 @@ export function editorialInventory(p){
   if(i&&s.composition?.camera&&scenes[i-1].composition?.camera)findings.push({code:'CAMERA_RUN',scene:s.id,severity:'review',time:s.start/fps,message:'Consecutive camera moves: confirm a motivated endpoint and steady contrast.'});
  }
  const check=editorialCheck(p);
- return {version:'editorial-review-v1',project:p.project_id,shots:scenes.length,authoredIntent:!!p.editorial_plan,contract:check,findings,counts:Object.fromEntries([...new Set(findings.map(f=>f.code))].map(k=>[k,findings.filter(f=>f.code===k).length])),qualityDecision:'not determined by this report',listening:'pending unless separately observed and recorded'};
+ const composition=compositionInventory(p);findings.push(...composition.findings);
+ const directing=directorReview(p);findings.push(...directing.findings);
+ return {version:'editorial-review-v1',project:p.project_id,shots:scenes.length,authoredIntent:!!p.editorial_plan,contract:check,composition,directing,findings,counts:Object.fromEntries([...new Set(findings.map(f=>f.code))].map(k=>[k,findings.filter(f=>f.code===k).length])),qualityDecision:'not determined by this report',listening:'pending unless separately observed and recorded'};
 }

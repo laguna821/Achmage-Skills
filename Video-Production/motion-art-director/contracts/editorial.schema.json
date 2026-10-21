@@ -437,6 +437,43 @@
           "repetition_reason": {
             "type": "string",
             "minLength": 1
+          },
+          "direction": {
+            "type": "object",
+            "required": [
+              "composition_reason",
+              "medium_reason",
+              "attention_from",
+              "attention_to",
+              "omission_cost"
+            ],
+            "properties": {
+              "composition_reason": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "medium_reason": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "attention_from": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "attention_to": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "omission_cost": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              }
+            }
           }
         },
         "additionalProperties": false

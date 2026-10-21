@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {directorReview,directorReviewPage} from '../lib/director-review.mjs';
 import {reviewMovie,contrastReview,messageContinuityReview} from '../lib/output-review.mjs';
 import {cachePlan,cachePrune} from '../lib/cache-cleanup.mjs';
 import {sourceActionAudit} from '../lib/source-action.mjs';
@@ -19,6 +20,7 @@ import {compileSyncScore,syncScoreCheck,syncReviewFrames} from '../lib/sync-scor
 import {inspectMedia,importMedia,selectRange} from '../lib/media.mjs';
 import {soundbed} from '../lib/soundbed.mjs';
 import {editorialInventory} from '../lib/editorial.mjs';
+import {measureComposition,compositionReviewHtml} from '../lib/composition-review.mjs';
 import {extractReviewFrames} from '../lib/review-evidence.mjs';
 import {TECHNIQUES,technique,techniqueCoverage} from '../lib/techniques.mjs';
 import fs from 'node:fs';
@@ -74,7 +76,8 @@ async function main(){
  case 'catalog':if(flags.site)return catalogSite(out());return search(positional.join(' '),Number(flags.limit||25),Object.fromEntries(['media','engine','family','status','provider','kind'].filter(k=>flags[k]).map(k=>[k,flags[k]])));
  case 'techniques':return positional[0]?techniqueCoverage(project()):TECHNIQUES;
  case 'validate':return validate(project());
- case 'direction-review':{const p=project(),r=editorialInventory(p);if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'));write(path.join(out(),'editorial-review.json'),r);return {...r,ok:r.contract.ok};}
+ case 'director-review':{const p=project(),preview=directorReview(p),evidence=flags.movie?await extractReviewFrames(p,flags.movie,path.join(out(),'frames'),{frames:preview.requests.flatMap(q=>q.evidence.map(e=>e.frame))}):undefined;const r=directorReview(p,flags.observations?read(path.resolve(flags.observations)):undefined,evidence);write(path.join(out(),'director-review.json'),r);write(path.join(out(),'index.html'),directorReviewPage(r));return r;}
+ case 'direction-review':{const p=project(),r=editorialInventory(p);if(flags['composition-frames']){r.geometry=await measureComposition(p,path.join(out(),'composition'));r.findings.push(...r.geometry.findings);}if(flags.movie)r.evidence=await extractReviewFrames(p,flags.movie,path.join(out(),'frames'));write(path.join(out(),'editorial-review.json'),r);write(path.join(out(),'composition-review.html'),compositionReviewHtml(r));return {...r,ok:r.contract.ok};}
  case 'plan':return plan(project(),path.join(out(),'direction.html'));
  case 'approve':return approve(path.resolve(positional[0]),flags.by,flags.note,flags['expected-hash']);
  case 'audio':return audio(project(),out());

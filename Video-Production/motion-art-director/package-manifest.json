@@ -1,10 +1,10 @@
 {
-  "version": "4.1.0-rc.2",
+  "version": "4.1.0-rc.3",
   "files": [
     {
       "path": ".claude-plugin/plugin.json",
       "bytes": 397,
-      "sha256": "0aacd994524d10d7402e4a05d6b72bc1173c2f5da36490e2b1ef3c9b3f51f702"
+      "sha256": "e1521b6e7f4d65a638deac099eed791477a4d1319fdcab64f589de0919f54c23"
     },
     {
       "path": "agents/openai.yaml",
@@ -133,8 +133,8 @@
     },
     {
       "path": "contracts/editorial.schema.json",
-      "bytes": 13066,
-      "sha256": "3ead778968afa67559e7aa6a0bad7250cf4bafa4bb7f5fb571145d3df0672003"
+      "bytes": 14125,
+      "sha256": "d3264d81908164bcadb1891219744cb38dbbc760fea123c5232a75381b8c4ce6"
     },
     {
       "path": "contracts/message-track.schema.json",
@@ -148,13 +148,13 @@
     },
     {
       "path": "contracts/project-3.1.schema.json",
-      "bytes": 87960,
-      "sha256": "d497bd837b65a37aa0d482f80eeb9252d3b1e6a0d084a3c465a251fc3afd9f28"
+      "bytes": 89789,
+      "sha256": "c042837cd999635bfc28f327854f1fbe8afa7e56659430d604dfaed7f7795d01"
     },
     {
       "path": "contracts/project.schema.json",
-      "bytes": 55382,
-      "sha256": "49225f6e69aafc07b464d62442d30bc45117e080d65706bad9fa35fef0df1e7c"
+      "bytes": 57769,
+      "sha256": "be52135a65099f105af4482df08f76e1e02ca23e0ad3767dd190dc534648dbab"
     },
     {
       "path": "contracts/rhythm-score.schema.json",
@@ -287,9 +287,14 @@
       "sha256": "6925f9e78f819f6edc4d42e06f4788b8710456bd63cc5de0293d0e6b6d4e933a"
     },
     {
+      "path": "lib/composition-review.mjs",
+      "bytes": 9555,
+      "sha256": "62730844dfb559af5539b2a9ba7135f9379f2dc548830b965ca74848b38eeb5e"
+    },
+    {
       "path": "lib/concept-audition.mjs",
-      "bytes": 17693,
-      "sha256": "f854c7431141f24f76796be9aa867809b14f0724bd1f1e45227f231a08b62330"
+      "bytes": 18944,
+      "sha256": "ef5604a65486c5b4f1ebf2a2649dfa52fedb770592dd75628f82abb44017b65b"
     },
     {
       "path": "lib/continuity.mjs",
@@ -298,8 +303,8 @@
     },
     {
       "path": "lib/contract.mjs",
-      "bytes": 17111,
-      "sha256": "67a55029759457ade4a23a6e2de10be461347aa39f77ea80ebd0af2cebbaddc5"
+      "bytes": 17228,
+      "sha256": "3021e62c57bab726418a428b11aa16fc7295055f4ad89dfaa031a2faa6b192ba"
     },
     {
       "path": "lib/direction.mjs",
@@ -307,9 +312,14 @@
       "sha256": "d4e9c2c36a2273c34dda6af83623aed765d998bf311592911b91707675890883"
     },
     {
+      "path": "lib/director-review.mjs",
+      "bytes": 6366,
+      "sha256": "94dd1ff60734a30f95c7da16a31de857eccfddaf0b0a4b82bd52a77399203fc1"
+    },
+    {
       "path": "lib/editorial.mjs",
-      "bytes": 10061,
-      "sha256": "cc3bf6d0986e71712543e222fb9c30fec47b18ff0f0656257d5b96f690650bb9"
+      "bytes": 10356,
+      "sha256": "06debddcc254db98a26f454bc40b485ea7b3f08ca18b3e1e5d1133e6bf80c92b"
     },
     {
       "path": "lib/ending31.mjs",
@@ -388,8 +398,8 @@
     },
     {
       "path": "lib/plan.mjs",
-      "bytes": 6477,
-      "sha256": "a68bdc04f6ff6ca20bac1c90473bbd2729b1c4fbf1b0de91a8b7f125a0a416ad"
+      "bytes": 7160,
+      "sha256": "f0eef791ce926c75080030930dff19d666375f6e213d4775b04bd6158a327f16"
     },
     {
       "path": "lib/precision.mjs",
@@ -509,17 +519,17 @@
     {
       "path": "package-lock.json",
       "bytes": 1772,
-      "sha256": "7001fe808cf20cd6159255771c330486049935c6c29d3da118283df9e9369e39"
+      "sha256": "49ac7b0837c6e9e9b0b2698acc20f3a36f9e34ce7f25c0967882f623439441a9"
     },
     {
       "path": "package.json",
       "bytes": 317,
-      "sha256": "53cc4bae44011b434239b36ea86ca24b454d3229eb9f9bdde50445cc86252ae5"
+      "sha256": "f29aaed371284f34185f1074d83640584a76d234874f440f20f68bf0a65d3cc2"
     },
     {
       "path": "README.md",
-      "bytes": 12916,
-      "sha256": "0084e8d2d31107bfe6b5e603e645b9662cc4c40d0855e4caf19513ca4ca56338"
+      "bytes": 13490,
+      "sha256": "9a9d8cfd8abeef8d59b4741863baa1d57bba8856433c0413827d519296be94b8"
     },
     {
       "path": "references/activation.md",
@@ -543,8 +553,8 @@
     },
     {
       "path": "references/cli.md",
-      "bytes": 9779,
-      "sha256": "1ffb823970cbb1e0629c8a3d55a04db1ed8427bda7ad10935891f005efd4740d"
+      "bytes": 10284,
+      "sha256": "cfd9f56e5be73de32dec3da6ed0b6339dd0787d9a92cd44d393ff9f70a474fad"
     },
     {
       "path": "references/contract.md",
@@ -557,9 +567,14 @@
       "sha256": "ef8fc1cf08f5b7cd0a281eae39c68eb4b97605612883c6a86e82bdf85be0e094"
     },
     {
+      "path": "references/director-production.md",
+      "bytes": 4858,
+      "sha256": "76cdcf44743c2ab2ad90174555f8c8194218119c82477eeba1be8d5c25c9f1d6"
+    },
+    {
       "path": "references/editorial-review.md",
-      "bytes": 7842,
-      "sha256": "56d727f38f411c4aadd8cc423fa6d950273d660999652621dcc0e10a199be4ba"
+      "bytes": 11384,
+      "sha256": "cc1688357d9a08713e907ad74321bddb5292739566023bb40bf1836172134a12"
     },
     {
       "path": "references/engine-selection.md",
@@ -633,8 +648,8 @@
     },
     {
       "path": "references/release-4.1.md",
-      "bytes": 793,
-      "sha256": "ad44a8bc7f4203ffaf2ba951b5d9cf0791ac7f59bb90fa6222932f326122d29c"
+      "bytes": 1903,
+      "sha256": "152de564f059239f69a1bd11801b442d499ead5a609d0e0f84cc3e50a2ee43ae"
     },
     {
       "path": "references/release-4.md",
@@ -723,8 +738,8 @@
     },
     {
       "path": "scripts/motion.mjs",
-      "bytes": 13436,
-      "sha256": "1b5bc729277b39355b0e2ec658f9594136395a565a3bbec586e5540e37a03037"
+      "bytes": 14274,
+      "sha256": "c0432869c5e7489989ea97a81b4d5f6687308da3644fd77449d70a73f001412f"
     },
     {
       "path": "scripts/music-audit.mjs",
@@ -738,8 +753,8 @@
     },
     {
       "path": "scripts/pack.mjs",
-      "bytes": 3485,
-      "sha256": "8bf89d44c1d9f73d7646c552dd36634a9515a01979d6dcc5fcafcbcf13bf98ca"
+      "bytes": 3510,
+      "sha256": "3b3dfc16a22448f73f636711686d9869a46ad84dfa4fd1322a9973effe17c6fd"
     },
     {
       "path": "scripts/rhythm_features.py",
@@ -763,13 +778,13 @@
     },
     {
       "path": "scripts/test.mjs",
-      "bytes": 1471,
-      "sha256": "b371a329c7a01a97d905ef229a6a725c892c274414e0b7d41fed5bde65341559"
+      "bytes": 1596,
+      "sha256": "9c92ce19464821acc9697fbbcea7903aa54880e1824156783dfb1f63ffe42031"
     },
     {
       "path": "SKILL.md",
-      "bytes": 19976,
-      "sha256": "18042f98178a6f17158e6615acff43b8398be43ad4848c35c1e1fbe77f6e2f78"
+      "bytes": 21141,
+      "sha256": "86890ec811bc295b3a2969043022132f49bb8ed0e0aac9b94ed91d547ffee2fa"
     },
     {
       "path": "tests/audio-clock.mjs",
@@ -807,6 +822,11 @@
       "sha256": "6124ce36aea9ceb803a72ec35d8303ca2d603d16cff2bad7fe675d9ce9860b51"
     },
     {
+      "path": "tests/composition-review.mjs",
+      "bytes": 3825,
+      "sha256": "809e9979d3599995cd637a387bfbbe20004c2c53bc2de53e88458220ac4bd3df"
+    },
+    {
       "path": "tests/continuity.mjs",
       "bytes": 1506,
       "sha256": "5ab0905650cdccd62f26b74917bfd3a1499e7ea63a2cdfb61de79fff12f717d9"
@@ -815,6 +835,11 @@
       "path": "tests/direction.mjs",
       "bytes": 5000,
       "sha256": "daed866d3c603b8010ec050abe88f1796e531c39862ca119a9d55e4c657ce2dd"
+    },
+    {
+      "path": "tests/director-review.mjs",
+      "bytes": 5202,
+      "sha256": "a680f9b788e8a83a516232fe9d1c9844e3660e9bf44c0cf8b4291ee7fd781175"
     },
     {
       "path": "tests/editorial.mjs",
@@ -919,7 +944,7 @@
     {
       "path": "tests/package-version.mjs",
       "bytes": 891,
-      "sha256": "9cc01b3b7618ae0804c5b7776f8cd7eb2bd2cb992c1d112db3b2d415f2918b82"
+      "sha256": "d8f1cacea4c492171d4f444a0739c86d1839dc1f9e466054ccd08a612bbf2682"
     },
     {
       "path": "tests/preproduction.mjs",
@@ -1033,8 +1058,8 @@
     },
     {
       "path": "VALIDATION.md",
-      "bytes": 21373,
-      "sha256": "995a37341afbe6bb695650c71ff9ec8ffab45dee49f5af4cb818929a6cb122bb"
+      "bytes": 23087,
+      "sha256": "5ad793c1ce57d107f701ece8ef9b99b1beeeb14195c7633abb70a813cb3c83bd"
     },
     {
       "path": "vendor/awesome-ai-motion/ATTRIBUTIONS.md",

@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import {hash,read,write,ROOT} from './io.mjs';
 import {directionCheck} from './direction.mjs';
 import {editorialCheck} from './editorial.mjs';
+import {directorReview} from './director-review.mjs';
 import {audioErrors} from './audio.mjs';
 import {musicDirectionAudit} from './music-direction.mjs';
 import {compiledMessageAudit} from './message-track.mjs';
@@ -118,6 +119,7 @@ export function validate(p){
  if((p.sources||[]).some(s=>s.retrieval_state==='web_excerpt'))warn.push('원 웹 본문 스냅샷 없음: 제공된 발췌만 근거로 사용');
  const direction=directionCheck(p);errors.push(...direction.errors);warn.push(...direction.warnings);
  const editorial=editorialCheck(p);errors.push(...editorial.errors);warn.push(...editorial.warnings);
+ if(p.director_brief)errors.push(...directorReview(p).errors);
  return {ok:!errors.length,errors,warnings:warn,direction,editorial};
 }
 export function requireValid(p,approved=false){const v=validate(p);if(!v.ok)throw new Error(v.errors.join('\n'));if(approved&&!p.approval)throw new Error('연출안 사용자 확인이 필요합니다. approve --by --note --expected-hash 사용');return v;}
