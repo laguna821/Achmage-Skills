@@ -1,0 +1,374 @@
+{
+  "schemaVersion": 1,
+  "sample": true,
+  "title": {
+    "ko": "기억을 찾는 작은 전시 아카이브",
+    "en": "A small archive for finding exhibition memories"
+  },
+  "shortName": "ACHMAGE / ARCHIVE STUDY",
+  "tagline": {
+    "ko": "흩어진 전시 기록을,\n다음 사람도 찾도록.",
+    "en": "Keep exhibition records\nready for the next reader."
+  },
+  "intro": {
+    "ko": "전시가 끝나면 사진과 인터뷰가 여러 폴더에 흩어집니다. 이 학습용 예시는 자료마다 무엇이 담겼는지 설명하고, 작품에서 제작 기록까지 따라 읽을 수 있는 작은 아카이브를 보여줍니다.",
+    "en": "After an exhibition, photographs and interviews can end up in different folders. This demonstration shows a small archive that explains each item and helps readers move from a work to the records of its creation."
+  },
+  "revision": "demo-1.0",
+  "updatedAt": "2026-10-25",
+  "catalogLabel": {
+    "ko": "작품과 기록 모음",
+    "en": "Works and records"
+  },
+  "hero": {
+    "request": {
+      "ko": "“그 작품이 왜 만들어졌는지 다시 읽고 싶어요.”",
+      "en": "“I want to read why that work was made.”"
+    },
+    "steps": [
+      {
+        "title": {
+          "ko": "작품을 고릅니다",
+          "en": "Choose a work"
+        },
+        "body": {
+          "ko": "제목과 짧은 설명으로 원하는 작품을 찾습니다.",
+          "en": "Find a work by its title and description."
+        },
+        "chapterId": "why"
+      },
+      {
+        "title": {
+          "ko": "상황을 읽습니다",
+          "en": "Read the situation"
+        },
+        "body": {
+          "ko": "작가가 어떤 문제에서 시작했는지 살펴봅니다.",
+          "en": "Learn which question started the work."
+        },
+        "chapterId": "organize"
+      },
+      {
+        "title": {
+          "ko": "기록을 확인합니다",
+          "en": "Check the record"
+        },
+        "body": {
+          "ko": "기획안 원문에서 실제로 적힌 내용을 봅니다.",
+          "en": "Read what the original plan actually says."
+        },
+        "chapterId": "read"
+      },
+      {
+        "title": {
+          "ko": "다음 작업에 씁니다",
+          "en": "Use it in new work"
+        },
+        "body": {
+          "ko": "같은 질문을 자신의 자료 정리에 적용합니다.",
+          "en": "Apply the same question to your own records."
+        },
+        "chapterId": "read"
+      }
+    ],
+    "outcome": {
+      "ko": "작품만 보는 데서 끝나지 않고, 왜 만들었고 어떻게 기록했는지 알 수 있습니다.",
+      "en": "Readers can understand why a work exists and how it was documented."
+    }
+  },
+  "groups": [
+    {
+      "id": "beginning",
+      "title": {
+        "ko": "시작과 질문",
+        "en": "Origins and questions"
+      },
+      "description": {
+        "ko": "자료가 흩어져 생긴 불편에서 시작합니다.",
+        "en": "Start with the difficulty of scattered records."
+      }
+    },
+    {
+      "id": "practice",
+      "title": {
+        "ko": "정리와 활용",
+        "en": "Organization and use"
+      },
+      "description": {
+        "ko": "다른 사람이 찾아 읽는 순서로 자료를 정리합니다.",
+        "en": "Organize records in the order another person will read them."
+      }
+    }
+  ],
+  "readingPaths": [
+    {
+      "title": {
+        "ko": "왜 시작했나",
+        "en": "Why it began"
+      },
+      "description": {
+        "ko": "일상적인 문제부터",
+        "en": "Start with the problem"
+      },
+      "path": "/guide/why"
+    },
+    {
+      "title": {
+        "ko": "어떻게 정리하나",
+        "en": "How it is organized"
+      },
+      "description": {
+        "ko": "파일과 설명의 관계",
+        "en": "Files and explanations"
+      },
+      "path": "/guide/organize"
+    },
+    {
+      "title": {
+        "ko": "전체 설명 읽기",
+        "en": "Read everything"
+      },
+      "description": {
+        "ko": "한 페이지로 전달하기",
+        "en": "Share one complete page"
+      },
+      "path": "/all"
+    },
+    {
+      "title": {
+        "ko": "원문 확인",
+        "en": "Check the original"
+      },
+      "description": {
+        "ko": "기획안 전체 읽기",
+        "en": "Read the full sample plan"
+      },
+      "path": "/sources"
+    }
+  ],
+  "chapters": [
+    {
+      "id": "why",
+      "group": "beginning",
+      "title": {
+        "ko": "왜 이 아카이브를 만들었나",
+        "en": "Why make this archive"
+      },
+      "subtitle": {
+        "ko": "사진만 남겨 두면 나중에 제작 이유를 다시 찾기 어렵습니다.",
+        "en": "Keeping a photograph alone can leave the reason for making it unclear."
+      },
+      "sourceIds": [
+        "sample-plan"
+      ],
+      "sections": [
+        {
+          "id": "lost-record",
+          "title": {
+            "ko": "폴더에는 사진이 있는데 설명이 없습니다",
+            "en": "A photo without an explanation"
+          },
+          "body": {
+            "ko": "전시를 마친 뒤 누군가 “창가에 있던 작품은 왜 만들었나요?”라고 묻습니다. 사진 파일은 찾았지만 그 이유를 적은 메모는 다른 폴더에 있습니다. 사진을 보는 사람은 작품의 모양은 알 수 있어도 만든 사람이 고민한 질문까지는 알기 어렵습니다.\n\n이 예시에서는 사진 옆에 두 가지를 적습니다. 어떤 상황에서 작품을 만들었는지, 그리고 무엇을 보여주려고 했는지입니다. 이 두 문장을 읽은 사람은 기획안 원문까지 찾아갈 이유를 알게 됩니다.",
+            "en": "After an exhibition, someone asks why the work beside the window was made. You find its photograph, but the note explaining the reason is in another folder. The photograph shows its appearance without explaining the question behind it.\n\nIn this example, we place two explanations beside the photograph: the situation that prompted the work and what it was intended to show. Readers can then decide whether to open the original plan."
+          }
+        },
+        {
+          "id": "small-start",
+          "title": {
+            "ko": "처음에는 세 가지 자료만 고릅니다",
+            "en": "Begin with three kinds of record"
+          },
+          "body": {
+            "ko": "처음부터 모든 파일을 정리할 필요는 없습니다. 작품 사진 한 장, 제작 이유를 설명한 글 한 편, 기획안 원문 하나를 고릅니다. 세 자료가 같은 작품에 관한 것인지 먼저 확인합니다.\n\n사진의 제목과 기획안의 제목이 다르면 임의로 같은 작품이라고 결론 내리지 않습니다. 확인이 필요한 자료라고 표시한 뒤 다른 자료부터 정리합니다. 누락된 설명을 그럴듯한 문장으로 채우지 않는 것이 중요합니다.",
+            "en": "You do not need to organize every file at once. Choose one photograph, one explanation of the reason for the work, and one original plan. First check that all three refer to the same work.\n\nIf the titles differ, do not assume they describe the same work. Mark the connection as unconfirmed and continue with records you can identify. A plausible sentence cannot replace missing evidence."
+          }
+        }
+      ]
+    },
+    {
+      "id": "organize",
+      "group": "practice",
+      "title": {
+        "ko": "파일과 설명을 어떻게 묶었나",
+        "en": "How files and explanations fit together"
+      },
+      "subtitle": {
+        "ko": "방문자가 먼저 묻는 질문에 따라 자료를 배치합니다.",
+        "en": "Place records in the order visitors ask their questions."
+      },
+      "sourceIds": [
+        "sample-plan"
+      ],
+      "sections": [
+        {
+          "id": "one-record",
+          "title": {
+            "ko": "하나의 항목에 무엇을 적나요",
+            "en": "What belongs in one entry"
+          },
+          "body": {
+            "ko": "목록의 각 항목에는 제목과 설명을 적습니다. 예를 들어 “창가의 시간”이라는 제목만 있으면 무엇을 볼 수 있는지 모릅니다. 그래서 “하루 동안 달라지는 창가의 빛을 같은 위치에서 기록한 사진 묶음”이라고 설명합니다.\n\n그 아래에는 자세한 제작 설명으로 가는 링크를 둡니다. 제목은 작품을 구분하고, 설명은 내용을 알려주며, 링크는 더 읽을 곳을 안내합니다. 세 요소가 서로 다른 일을 맡기 때문에 방문자는 덜 헤맵니다.",
+            "en": "Each entry has a title and explanation. A title such as “Time by the Window” does not tell visitors what they will find. We add: “A group of photographs recording changes in daylight from the same position.”\n\nBelow it, a link opens the detailed making record. The title identifies the work, the explanation describes its contents, and the link provides the next step. Each element has a clear job."
+          }
+        },
+        {
+          "id": "missing-file",
+          "title": {
+            "ko": "원본 파일이 없으면 어떻게 하나요",
+            "en": "What if an original file is missing"
+          },
+          "body": {
+            "ko": "설명에 사진 파일이 있다고 적혀 있는데 실제 파일이 없다면 링크를 그대로 공개하지 않습니다. 먼저 파일 이름이 바뀌었는지 확인합니다. 다른 파일을 같은 자료라고 추측해서 연결하지 않습니다.\n\n찾지 못했다면 현재 제공할 수 없다고 설명합니다. 자료가 없는 상태와 아직 확인하지 않은 상태도 구분합니다. 이 사이트 템플릿은 깨진 링크와 잘못된 자료 참조를 검사하지만, 자료의 내용까지 사실인지 자동으로 판단하지는 못합니다.",
+            "en": "If the explanation promises a photograph but its file is missing, do not publish the broken link. Check whether the filename changed. Do not substitute a different file based on a guess.\n\nIf it cannot be found, explain that it is currently unavailable. Distinguish a missing record from one that has not yet been checked. This template checks references and links, but cannot automatically decide whether a source is factually correct."
+          }
+        }
+      ]
+    },
+    {
+      "id": "read",
+      "group": "practice",
+      "title": {
+        "ko": "다른 사람이 읽고 응용하게 하려면",
+        "en": "Help another reader apply the approach"
+      },
+      "subtitle": {
+        "ko": "쉬운 설명과 원문을 함께 제공하되 둘의 역할을 구분합니다.",
+        "en": "Provide a clear explanation and the original, with different roles for each."
+      },
+      "sourceIds": [
+        "sample-plan"
+      ],
+      "sections": [
+        {
+          "id": "read-original",
+          "title": {
+            "ko": "설명 뒤에서 원문을 확인합니다",
+            "en": "Check the original after the explanation"
+          },
+          "body": {
+            "ko": "처음 방문한 사람은 전체 기획안을 바로 읽기 어렵습니다. 앞의 설명에서는 왜 자료를 골랐는지부터 알려줍니다. 더 자세히 확인하고 싶은 사람은 자료실에서 기획안 전체를 읽거나 Markdown 파일을 내려받습니다.\n\n원문은 쉽게 고쳐 쓴 설명과 같지 않습니다. 원문에 어색한 표현이 있어도 조용히 바꾸지 않습니다. 수정이 필요하다면 설명에서 보충하고, 원문 자체를 바꿨다면 어떤 부분을 왜 바꿨는지 공개합니다.",
+            "en": "A first-time visitor may find the complete plan difficult to start with. The explanation first shows why the records were selected. Readers who need more detail can open the full plan or download its Markdown file.\n\nThe original is different from the rewritten explanation. Do not quietly improve its wording. Add clarification to the explanation, and disclose any changes made to the public original."
+          }
+        },
+        {
+          "id": "your-records",
+          "title": {
+            "ko": "자신의 자료에 적용해 봅니다",
+            "en": "Try it with your own records"
+          },
+          "body": {
+            "ko": "자신이 만든 작품이나 보고서 하나를 고릅니다. 그 결과물을 처음 보는 사람이 무엇을 물을지 적습니다. “왜 만들었나요?”, “어떻게 만들었나요?”, “어떤 자료를 확인할 수 있나요?”처럼 구체적인 질문이면 좋습니다.\n\n각 질문에 답하는 파일과 설명을 하나씩 연결합니다. 설명을 읽은 사람이 원본을 찾고 다음 자료로 이동할 수 있다면 작은 아카이브의 기본 흐름이 완성됩니다. 이 학습 예시는 실제 전시의 사용 성과를 주장하지 않습니다.",
+            "en": "Choose one work or report of your own. Write down questions someone seeing it for the first time would ask: why it was made, how it was made, and which records can be inspected.\n\nConnect each question to an explanation and a source. If a reader can find the original and continue to the next record, the basic archive flow works. This demonstration makes no claims about the results of a real exhibition."
+          }
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "window",
+      "category": "beginning",
+      "title": {
+        "ko": "창가의 시간",
+        "en": "Time by the Window"
+      },
+      "description": {
+        "ko": "하루 동안 달라지는 창가의 빛을 같은 위치에서 기록하는 가상의 사진 작업입니다. 이 항목은 작품의 제목과 설명을 어떻게 나누는지 보여줍니다.",
+        "en": "A fictional photographic work observing changing daylight from one position. This entry demonstrates the roles of a title and an explanation."
+      },
+      "label": {
+        "ko": "사진 작업 예시",
+        "en": "Example photo work"
+      },
+      "chapterId": "organize"
+    },
+    {
+      "id": "interview",
+      "category": "beginning",
+      "title": {
+        "ko": "만들기 전의 질문",
+        "en": "Questions before making"
+      },
+      "description": {
+        "ko": "작품을 시작한 이유를 묻는 가상의 인터뷰 항목입니다. 실제 인터뷰를 진행했다는 뜻은 아니며 자료 분류를 설명하기 위한 예시입니다.",
+        "en": "A fictional interview entry about the reason for starting a work. It demonstrates a category, not an interview that was actually conducted."
+      },
+      "chapterId": "why"
+    },
+    {
+      "id": "selection",
+      "category": "practice",
+      "title": {
+        "ko": "세 자료 고르기",
+        "en": "Choose three records"
+      },
+      "description": {
+        "ko": "사진, 제작 이유, 원문 기획안이 같은 작품을 가리키는지 확인하는 작업입니다. 제목이 다르면 확인이 필요한 상태로 남깁니다.",
+        "en": "Check that the photograph, explanation and original plan refer to the same work. Leave differing titles marked as unconfirmed."
+      },
+      "details": {
+        "ko": "입력은 세 개의 자료이며, 결과는 확인된 연결 또는 확인이 필요한 메모입니다. 자동으로 같은 작품이라고 추정하지 않습니다.",
+        "en": "The input is three records. The result is a confirmed connection or a note requiring review. Identity is not inferred automatically."
+      },
+      "chapterId": "organize"
+    },
+    {
+      "id": "original",
+      "category": "practice",
+      "title": {
+        "ko": "기획안 전체 읽기",
+        "en": "Read the complete plan"
+      },
+      "description": {
+        "ko": "이 예시에 사용한 기획안 전문을 읽고 내려받습니다. 설명문에 맞추기 위해 원문을 요약하거나 일부를 숨기지 않습니다.",
+        "en": "Read and download the full sample plan. It is not shortened to fit the explanation."
+      },
+      "chapterId": "read"
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-10-25",
+      "title": {
+        "ko": "학습용 예시 구성",
+        "en": "Demonstration assembled"
+      },
+      "body": {
+        "ko": "기획안, 상세 설명, 모음집이 같은 질문으로 이어지도록 예시를 구성했습니다. 실제 전시의 연혁이 아니라 템플릿을 시험하기 위한 기록입니다.",
+        "en": "This demonstration connects a plan, explanations and a catalog through the same reader questions. It is a template test, not the history of a real exhibition."
+      },
+      "sourceIds": [
+        "sample-plan"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "sample-plan",
+      "title": {
+        "ko": "학습용 아카이브 기획안",
+        "en": "Sample archive plan"
+      },
+      "date": "2026-10-25",
+      "note": {
+        "ko": "이 스킬 패키지의 작동과 정보 구조를 보여주려고 작성한 가상 자료입니다. 실제 작품·인터뷰·사용 성과의 근거가 아닙니다.",
+        "en": "A fictional source written to demonstrate this skill package. It is not evidence of real works, interviews or adoption."
+      }
+    }
+  ],
+  "originals": [
+    {
+      "id": "sample-plan",
+      "title": {
+        "ko": "학습용 기획안 전체",
+        "en": "Complete sample plan"
+      },
+      "note": {
+        "ko": "아래는 이 템플릿을 위한 예시 원문 전체입니다.",
+        "en": "The complete original sample written for this template."
+      },
+      "text": "# 학습용 아카이브 기획안\n\n이 문서는 실제 전시 기록이 아닌 템플릿 시험 자료입니다.\n\n## 목적\n작품과 제작 이유, 원문 기획안을 함께 읽게 합니다.\n\n## 처음 고를 자료\n- 작품 사진 한 장\n- 제작 이유를 적은 글\n- 기획안 원문\n\n## 확인할 것\n세 자료가 같은 작품에 관한 것인지 확인합니다. 제목이 다르면 미확인 상태를 남깁니다.\n\n## 공개 방법\n쉬운 설명을 먼저 제공하고 이 원문 전체를 별도 화면과 파일로 제공합니다.\n\nEND OF SAMPLE PLAN\n"
+    }
+  ]
+}

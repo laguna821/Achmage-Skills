@@ -1,0 +1,13 @@
+{
+  "name": "achmage-portfolio-site",
+  "version": "1.0.0",
+  "description": "Plan, build, and review bilingual portfolio and learning websites with the Achmage Field Guide template and Google DESIGN.md.",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Web-Portfolio",
+  "license": "Apache-2.0",
+  "skills": [
+    "./achmage-portfolio-site"
+  ]
+}

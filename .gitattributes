@@ -4,3 +4,6 @@
 
 # Preserve poster package manifests and archive bytes.
 /Poster-Design/** -text
+
+# Preserve the exact portfolio skill and downloadable ZIP manifest bytes.
+/Web-Portfolio/** -text

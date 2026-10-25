@@ -1,0 +1,9 @@
+{
+  "name": "achmage-portfolio-site",
+  "version": "1.0.0",
+  "file": "achmage-portfolio-site-1.0.0.zip",
+  "sha256": "a42b836a1c9c7b320994e432f0256fe4e679d2560cfb151f6db9eee2866cad38",
+  "bytes": 2208789,
+  "format": "ZIP with achmage-portfolio-site root directory",
+  "runtime": "Python 3.11+, Node.js 22.13+; npm dependencies installed separately"
+}

@@ -4,6 +4,11 @@
 
 ## 📦 수록 스킬
 
+### [Web-Portfolio/achmage-portfolio-site](Web-Portfolio) — 포트폴리오·학습 사이트 기획부터 구현·검수까지 (1.0.0)
+
+Achmage Field Guide의 정보 배치와 브랜드를 재사용해, 첫 화면의 전체 개요부터 상세 설명·제작 과정·원문까지 연결합니다. **Google DESIGN.md, SameTone 웹폰트, 네이비·블루·틸·화이트**, 한국어·영어, 반응형 목차·검색·모음집과 전체 Markdown을 포함한 정적 React/TypeScript 템플릿입니다. 설명은 구체적인 상황과 예시로 풀어 쓰며 도식·그림을 고르는 기준도 제공합니다. 기본 제작에는 Achmage OS/MCP가 필요하지 않습니다.
+→ [설치·사용 안내](Web-Portfolio/README.md) · [설치 ZIP](Web-Portfolio/downloads/achmage-portfolio-site-1.0.0.zip) · [기준 사이트](https://achmage-fieldguide.achmage2.chatgpt.site) · [검증 범위](Web-Portfolio/VALIDATION.md)
+
 ### [Poster-Design/hallym-poster-system](Poster-Design) — 모바일 HTML · A2 인쇄 포스터 (1.2.0-rc.5)
 
 각 장이 완결된 **4초 순환·라이트/다크 교차 HTML**과 **별도로 편집하는 A2 한 장 PDF**를 만듭니다. 장 사이 폭·여백 고정, 작은 ⋯ 도구, 카카오 공유 이미지·공개 파일 검사를 포함합니다. OS/MCP 없이 설치하는 전체 ZIP입니다.
@@ -72,6 +77,7 @@ npx skills add laguna821/Achmage-Skills
 # 방법 B — 플러그인 마켓플레이스 (공식 배포 경로)
 /plugin marketplace add laguna821/Achmage-Skills
 /plugin install hallym-poster-system@achmage-skills
+/plugin install achmage-portfolio-site@achmage-skills
 /plugin install raw-5-html@achmage-skills
 /plugin install component-consulting-v3@achmage-skills
 /plugin install render-audit@achmage-skills

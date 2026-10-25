@@ -1,0 +1,6 @@
+interface:
+  display_name: "Achmage Portfolio Site"
+  short_description: "Field Guide 스타일의 정보 설계부터 웹사이트 구현·검수까지"
+  default_prompt: "$achmage-portfolio-site를 사용해 제공한 자료를 Achmage 포트폴리오 표준 템플릿으로 설계하고 구현·검수해 주세요."
+policy:
+  allow_implicit_invocation: true

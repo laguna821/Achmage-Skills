@@ -1,0 +1,29 @@
+{
+  "name": "achmage-portfolio-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/serve.mjs",
+    "check": "tsc --noEmit && node scripts/check.mjs",
+    "design:lint": "designmd lint DESIGN.md"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "lucide-react": "1.31.0"
+  },
+  "devDependencies": {
+    "@google/design.md": "0.4.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3",
+    "yaml": "2.8.1",
+    "@types/node": "22.19.19"
+  }
+}
