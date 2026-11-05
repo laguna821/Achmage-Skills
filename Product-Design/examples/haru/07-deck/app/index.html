@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하루 데모 (휴대폰)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<div id="stage"></div>
+<script>
+/* 하루 launch deck, phone (compact layout). Keys: → / Space next, ← previous, L live, R reset step, F full screen, P pick, ? help. */
+const CHK = t => `#pane-list .hk-complete[aria-label="‘${t}’ 완료"]`;
+const LINK = t => `#pane-list .hh-row:has(.hk-complete[aria-label="‘${t}’ 완료"]) .hh-row__main`;
+const SEED = '디자인 시안 검토하기';
+const NEWT = '우체국 가기';
+const ADD = '#pane-list [data-act="add"]';
+window.DECK = {
+  title: '하루 데모 (휴대폰)',
+  theme: 'dark',
+  product: {
+    device: 'phone',
+    src: '../../04-build/?sample=1',
+    resetStorage: true,
+  },
+  steps: [
+    { kind: 'title', title: '떠오른 일을 바로 적어 두세요', body: '하루는 오늘 할 일에 집중하게 해 주는 앱이에요.' },
+    { target: '#tabbar', eyebrow: '1 · 탭 바', title: '열면 오늘, 네 곳은 아래에서 오가요', body: '오늘, 프로젝트, 검색, 설정을 엄지로 눌러요.', placement: 'top' },
+    { target: ADD, eyebrow: '2 · 빠른 추가', title: '새 할 일은 여기서 시작해요', body: '모든 화면에서 같은 자리에 있어요.', hint: '눌러 보세요', placement: 'bottom', zoom: 2.2 },
+    { do: [{ click: ADD }, { type: ['#qa-sheet #qa-title', NEWT] }], target: '#qa-sheet', eyebrow: '2 · 빠른 추가', title: '제목만 적으면 돼요', body: '마감일은 오늘로 정해져 있어요.', placement: 'top' },
+    { do: [{ click: '#qa-add-c' }], target: CHK(NEWT), eyebrow: '3 · 완료', title: '동그라미를 눌러 끝내요', body: '새 할 일이 목록 맨 아래에 들어왔어요.', hint: '눌러 보세요', placement: 'bottom', pad: 8, zoom: 2.2 },
+    { do: [{ click: CHK(NEWT) }], target: '#pane-list .hh-done', eyebrow: '3 · 완료', title: '끝낸 일은 아래로 내려가요', body: '‘오늘 끝낸 일’에서 다시 볼 수 있어요.', placement: 'top' },
+    { do: [{ click: LINK(SEED) }, { click: '[data-screen="S04"] [data-act="delete-task"]' }, { wait: 300 }, { scroll: '#pane-list .hh-title' }], target: '#toasthost .hk-toast', eyebrow: '4 · 실행 취소', title: '삭제해도 되돌릴 수 있어요', body: '묻지 않고 바로 지운 뒤 ‘실행 취소’를 보여 줘요.', placement: 'top' },
+    { kind: 'title', title: '지금 써 보세요', body: '오늘 할 일부터 적어 보세요.' },
+  ],
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>
+

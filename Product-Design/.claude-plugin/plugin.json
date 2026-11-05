@@ -1,0 +1,13 @@
+{
+  "name": "apple-hig-design",
+  "version": "1.0.0",
+  "description": "Plan, design, build and review app and web product UI with Apple's Human Interface Guidelines as the only source of design judgment: rule-cited decisions, the HIG Kit web components, automatic checks, and launch material including live product demo decks.",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Product-Design",
+  "license": "Apache-2.0",
+  "skills": [
+    "./apple-hig-design"
+  ]
+}

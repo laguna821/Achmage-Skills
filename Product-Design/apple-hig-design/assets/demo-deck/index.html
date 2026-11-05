@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Demo deck</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<div id="stage"></div>
+<script>
+/* Demo deck: a presentation that is also a live product demo.
+   1. Copy deck.css, deck.js and this file into a folder served from the same origin as the product
+      (node scripts/preview.mjs <common parent folder>), then open this page in a browser.
+   2. Write one step per thing you want people to notice. Rules: references/media/demo-deck.md.
+   3. Press P on a step to pick a target in the live product; its selector is copied to the clipboard.
+   Keys: → or Space next, ← previous, L live (the product is yours to click), R reset this step,
+   F full screen, ? help. Clickers that send PageDown and PageUp work too.
+   Clicking the spotlighted control moves to the next step when that step scripts the same click
+   (its first do action); give every step with a hint such a next step.
+
+   Step fields
+     kind      'title' (card over the dimmed product), 'focus' (default when target is set), 'live'
+     target    CSS selector inside the product page, or [x, y, width, height] in product pixels (for images)
+     eyebrow   short label above the title, for example '2 · 검색'
+     title     the point of the step, a few words
+     body      one or two short sentences: what it does and how to use it
+     hint      optional call to action next to a pointer icon, for example '눌러 보세요'
+     zoom      1 to 2.5: move the camera toward the target so small interface reads from the back row
+     do        actions run in the product before the step: { click: sel } { type: [sel, text] } { scroll: sel } { focus: sel } { wait: ms }
+     settle    ms to wait after actions for the product's own animations (default 420)
+     placement preferred side for the callout: 'right', 'left', 'bottom', 'top' (falls back automatically)
+     pad, radius, dim   spotlight padding, corner radius, and title-card dimming (0 to 1) */
+window.DECK = {
+  title: '제품 이름 데모',
+  theme: 'dark',                    // 'dark' for dim rooms, 'light' for bright rooms
+  product: {
+    device: 'desktop',              // 'desktop' (browser window) or 'phone' (iPhone-size frame with status bar)
+    src: '../product/index.html',   // same-origin page; or image: 'screen.png' (then target uses [x, y, w, h])
+    width: 1440, height: 900,       // product viewport in CSS px; phone default is 402 x 874 including the bars
+    url: 'example.com',             // text shown in the desktop address field
+    resetStorage: false,            // true clears localStorage before each reload so replays start clean
+  },
+  steps: [
+    { kind: 'title', eyebrow: '제품 소개', title: '한 문장으로 말하는 제품 가치', body: '누구를 위해 무엇을 해 주는지 한 줄로.' },
+    { target: '#search', eyebrow: '1 · 찾기', title: '바로 찾기', body: '이름을 입력하면 목록이 바로 줄어듭니다.', zoom: 1.6 },
+    { target: 'button.primary', eyebrow: '2 · 추가', title: '한 번에 추가', body: '자주 쓰는 동작은 늘 같은 자리에 있습니다.', hint: '눌러 보세요' },
+    { do: [{ click: 'button.primary' }], target: '#sheet', eyebrow: '2 · 추가', title: '필요한 것만 묻기', body: '입력 칸은 네 개뿐입니다.' },
+    { kind: 'live', title: '직접 써 보세요' },
+    { kind: 'title', title: '감사합니다', body: '질문 받겠습니다' },
+  ],
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>

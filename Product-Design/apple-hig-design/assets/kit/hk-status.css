@@ -1,0 +1,229 @@
+/* HIG Kit · status group: progress bar, activity indicator, progress ring, toast with undo,
+   empty state, tips, badge, skeleton placeholders, bar chart. Tokens come from hk-base.css only.
+   Rule IDs: see README-status.md. Local custom properties (--hk-*) are component hooks, not new tokens. */
+
+/* ---------- 1. Progress bar (determinate) ---------- */
+.hk-progress { display: grid; gap: var(--s-2); width: 100%; }
+.hk-progress__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); font: var(--t-subhead); }
+.hk-progress__label { color: var(--label); }
+.hk-progress__value { color: var(--label-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hk-progress__note { font: var(--t-footnote); color: var(--label-2); }
+.hk-progress__bar {
+  -webkit-appearance: none; appearance: none; display: block; width: 100%; height: calc(var(--s-1) * 1.5);
+  border: 0; border-radius: var(--r-full); background: var(--fill); overflow: hidden; color: var(--accent);
+}
+.hk-progress__bar::-webkit-progress-bar { background: var(--fill); border-radius: var(--r-full); }
+.hk-progress__bar::-webkit-progress-value { background: var(--accent); border-radius: var(--r-full); transition: width var(--dur-3) var(--ease); }
+.hk-progress__bar::-moz-progress-bar { background: var(--accent); border-radius: var(--r-full); }
+.hk-progress[data-state="error"] .hk-progress__bar::-webkit-progress-value { background: var(--destructive); }
+.hk-progress[data-state="error"] .hk-progress__bar::-moz-progress-bar { background: var(--destructive); }
+.hk-progress[data-state="error"] .hk-progress__value,
+.hk-progress[data-state="error"] .hk-progress__note { color: var(--destructive-text); }
+.hk-progress[data-state="done"] .hk-progress__bar::-webkit-progress-value { background: var(--success); }
+.hk-progress[data-state="done"] .hk-progress__bar::-moz-progress-bar { background: var(--success); }
+
+/* ---------- 2. Activity indicator (indeterminate) ---------- */
+.hk-activity { display: inline-flex; align-items: center; gap: var(--s-3); font: var(--t-subhead); color: var(--label-2); }
+.hk-spinner {
+  flex: none; display: inline-block; width: var(--s-6); height: var(--s-6); border-radius: 50%;
+  border: 2px solid var(--fill); border-top-color: var(--label-2); border-right-color: var(--label-2);
+  animation: hk-spin 900ms linear infinite;
+}
+.hk-spinner--sm { width: var(--s-4); height: var(--s-4); border-width: 2px; }
+.hk-spinner--lg { width: var(--s-8); height: var(--s-8); border-width: 3px; }
+@keyframes hk-spin { to { transform: rotate(360deg); } }
+/* Reduce Motion: no rotation. A static partial ring plus the visible label says "working". */
+@media (prefers-reduced-motion: reduce) {
+  .hk-spinner { animation: none !important; }
+}
+
+/* ---------- 3. Progress ring (determinate, small) ---------- */
+.hk-ring-row { display: inline-flex; align-items: center; gap: var(--s-3); font: var(--t-subhead); }
+.hk-ring-row__text { display: grid; }
+.hk-ring-row__value { color: var(--label-2); font: var(--t-footnote); font-variant-numeric: tabular-nums; }
+.hk-ring { --value: 0; position: relative; flex: none; display: inline-grid; place-items: center; width: var(--s-8); height: var(--s-8); }
+.hk-ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+.hk-ring circle { fill: none; stroke-width: 3; }
+.hk-ring__track { stroke: var(--fill); }
+.hk-ring__fill { stroke: var(--accent); stroke-linecap: butt; stroke-dasharray: var(--value) 100; transition: stroke-dasharray var(--dur-3) var(--ease); }
+.hk-ring__check { position: relative; width: var(--s-4); height: var(--s-4); color: var(--success); display: none; }
+.hk-ring[data-complete] .hk-ring__fill { stroke: var(--success); }
+.hk-ring[data-complete] .hk-ring__check { display: block; }
+
+/* ---------- 4. Toast with undo ---------- */
+.hk-toast-region {
+  --hk-toast-bottom: var(--s-6);
+  position: fixed; z-index: 90; inset-inline: 0; bottom: var(--hk-toast-bottom);
+  display: flex; justify-content: center; padding-inline: var(--s-4); pointer-events: none;
+}
+.hk-toast-region[data-contained] { position: absolute; }
+/* compact: sits above the tab bar. Set --hk-tabbar-h on :root (or the container) to your tab bar height. */
+@media (max-width: 743px) {
+  .hk-toast-region { --hk-toast-bottom: calc(var(--hk-tabbar-h, 0px) + env(safe-area-inset-bottom, 0px) + var(--s-3)); }
+}
+.hk-toast {
+  pointer-events: auto; display: flex; align-items: center; gap: var(--s-1);
+  width: 100%; max-width: calc(var(--s-12) * 10); min-height: var(--target);
+  padding: var(--s-1) var(--s-1) var(--s-1) var(--s-4);
+  background: var(--bg-elevated); color: var(--label); border: 1px solid var(--separator);
+  border-radius: var(--r-lg); box-shadow: var(--shadow-float);
+  animation: hk-toast-in var(--dur-2) var(--ease);
+}
+.hk-toast[hidden] { display: none; }
+.hk-toast--static { animation: none; }
+@keyframes hk-toast-in { from { opacity: 0; transform: translateY(var(--s-2)); } }
+.hk-toast__msg { flex: 1; min-width: 0; padding-block: var(--s-2); font: var(--t-subhead); }
+.hk-toast__undo, .hk-toast__close {
+  flex: none; min-height: var(--target); min-width: var(--target); display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: var(--r-md); background: transparent; cursor: pointer;
+}
+.hk-toast__undo { padding-inline: var(--s-3); color: var(--accent-text); font: var(--t-subhead); font-weight: 600; }
+.hk-toast__close { color: var(--label-2); }
+.hk-toast__undo:hover, .hk-toast__close:hover { background: var(--fill); }
+.hk-toast__undo:active, .hk-toast__close:active { background: var(--gray-4); }
+.hk-toast__undo:disabled, .hk-toast__close:disabled { opacity: .4; cursor: default; background: transparent; }
+
+/* ---------- 5. Empty state ---------- */
+.hk-empty {
+  display: grid; justify-items: center; gap: var(--s-2); text-align: center;
+  max-width: calc(var(--s-12) * 8); margin-inline: auto; padding: var(--s-12) var(--s-6);
+}
+.hk-empty__icon { color: var(--label-3); margin-bottom: var(--s-2); }
+.hk-empty__icon .hk-icon { width: var(--s-12); height: var(--s-12); vertical-align: top; }
+.hk-empty__title { font: var(--t-title-3); font-weight: 600; }
+.hk-empty__text { font: var(--t-callout); color: var(--label-2); }
+.hk-empty__action {
+  margin-top: var(--s-3); min-height: var(--target); padding-inline: var(--s-6); border: 0; border-radius: var(--r-full);
+  background: var(--accent-fill); color: var(--on-accent); font: var(--t-callout); font-weight: 700; cursor: pointer;
+}
+.hk-empty__action:hover { filter: brightness(.94); }
+.hk-empty__action:active { filter: brightness(.86); }
+.hk-empty__action:disabled { opacity: .4; cursor: default; filter: none; }
+
+/* ---------- 6. Tips: inline and popover ---------- */
+.hk-tip {
+  position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; column-gap: var(--s-3); align-items: start;
+  padding: var(--s-3) var(--s-2) var(--s-3) var(--s-4);
+  background: var(--bg-elevated); color: var(--label); border: 1px solid var(--separator); border-radius: var(--r-lg);
+}
+.hk-tip[hidden] { display: none; }
+.hk-tip__icon { color: var(--accent); padding-top: var(--s-1); }
+.hk-tip__icon .hk-icon { width: var(--s-6); height: var(--s-6); vertical-align: top; }
+.hk-tip__body { display: grid; gap: var(--s-1); padding-block: var(--s-2); }
+.hk-tip__title { font: var(--t-headline); }
+.hk-tip__text { font: var(--t-subhead); color: var(--label-2); }
+.hk-tip__action {
+  justify-self: start; min-height: var(--target); margin-top: var(--s-1); margin-inline-start: calc(var(--s-3) * -1); padding-inline: var(--s-3);
+  border: 0; border-radius: var(--r-md); background: transparent; color: var(--accent-text); font: var(--t-subhead); font-weight: 600; cursor: pointer;
+}
+.hk-tip__action:hover, .hk-tip__close:hover { background: var(--fill); }
+.hk-tip__action:active, .hk-tip__close:active { background: var(--gray-4); }
+.hk-tip__close {
+  min-width: var(--target); min-height: var(--target); display: inline-flex; align-items: center; justify-content: center;
+  border: 0; border-radius: var(--r-md); background: transparent; color: var(--label-2); cursor: pointer;
+}
+/* popover tip: anchored to an element, with an arrow; one at a time (JS) */
+.hk-tip--popover {
+  position: fixed; z-index: 80; width: min(calc(var(--s-12) * 7), calc(100vw - var(--s-4) * 2)); margin: 0;
+  box-shadow: var(--shadow-float);
+  animation: hk-tip-in var(--dur-2) var(--ease);
+}
+@keyframes hk-tip-in { from { opacity: 0; } }
+.hk-tip__arrow {
+  position: absolute; left: var(--hk-arrow-x, 50%); width: var(--s-3); height: var(--s-3); margin-left: calc(var(--s-3) / -2);
+  background: var(--bg-elevated); border: 1px solid var(--separator); transform: rotate(45deg);
+}
+.hk-tip--popover[data-placement="bottom"] .hk-tip__arrow { top: calc(var(--s-1) * -1.5 - 1px); border-right: 0; border-bottom: 0; }
+.hk-tip--popover[data-placement="top"] .hk-tip__arrow { bottom: calc(var(--s-1) * -1.5 - 1px); border-left: 0; border-top: 0; }
+
+/* ---------- 7. Badge ---------- */
+.hk-badge-host { position: relative; display: inline-flex; }
+.hk-badge {
+  display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box;
+  min-width: var(--s-5); height: var(--s-5); padding-inline: calc(var(--s-1) * 1.5); border-radius: var(--r-full);
+  background: var(--destructive-fill); color: var(--on-accent);
+  font: var(--t-caption-1); font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums;
+}
+.hk-badge[hidden] { display: none; }
+.hk-badge--corner { position: absolute; top: calc(var(--s-2) * -1); inset-inline-start: 55%; box-shadow: 0 0 0 2px var(--bg); }
+.hk-badge--quiet { background: var(--fill); color: var(--label-2); }
+
+/* ---------- 8. Placeholder skeletons ---------- */
+.hk-skeleton-list, .hk-skeleton-card { display: grid; }
+.hk-skeleton-row { display: flex; align-items: center; gap: var(--s-3); padding-block: var(--s-3); }
+.hk-skeleton-row + .hk-skeleton-row { border-top: 1px solid var(--separator); }
+.hk-skeleton-card { gap: var(--s-3); padding: var(--s-3); border: 1px solid var(--separator); border-radius: var(--r-lg); background: var(--bg-cell); }
+.hk-skeleton-text { display: grid; gap: var(--s-2); flex: 1; min-width: 0; }
+.hk-skeleton__avatar, .hk-skeleton__thumb, .hk-skeleton__line {
+  display: block; background-color: var(--fill);
+  background-image: linear-gradient(90deg, transparent 0, color-mix(in srgb, var(--bg) 55%, transparent) 50%, transparent 100%);
+  background-size: 200% 100%; background-repeat: no-repeat; background-position: 150% 0;
+  animation: hk-shimmer 1.4s ease-in-out infinite;
+}
+.hk-skeleton__avatar { flex: none; width: var(--s-12); height: var(--s-12); border-radius: 50%; }
+.hk-skeleton__thumb { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--r-md); }
+.hk-skeleton__line { height: var(--s-3); border-radius: var(--r-sm); }
+.hk-skeleton__line--short { width: 60%; }
+.hk-skeleton__line--tiny { width: 35%; }
+@keyframes hk-shimmer { to { background-position: -50% 0; } }
+/* Reduce Motion: static blocks, no shimmer */
+@media (prefers-reduced-motion: reduce) {
+  .hk-skeleton__avatar, .hk-skeleton__thumb, .hk-skeleton__line { animation: none !important; background-image: none; }
+}
+[data-hk~="skeleton"] [hidden] { display: none; }
+
+/* ---------- 9. Bar chart (SVG) ---------- */
+.hk-chart { display: grid; gap: var(--s-3); margin: 0; width: 100%; }
+.hk-chart__title { font: var(--t-headline); }
+.hk-chart__summary { font: var(--t-subhead); color: var(--label-2); }
+.hk-chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.hk-chart svg text { font: var(--t-caption-1); fill: var(--label-2); }
+.hk-chart__bar { fill: var(--accent); }
+.hk-chart__grid { stroke: var(--separator); stroke-width: 1; }
+.hk-chart__axis { stroke: var(--label-3); stroke-width: 1; }
+.hk-chart svg text.hk-chart__value { font-weight: 600; fill: var(--label); }
+.hk-chart svg text.hk-chart__axis-title { fill: var(--label-2); }
+
+/* ---------- 10. Gauge (a level within a range) ---------- */
+.hk-gauge { --_h: var(--s-2); --_fill: var(--label-2); display: grid; gap: var(--s-1); }
+.hk-gauge--slim { --_h: var(--s-1); }
+.hk-gauge--accent { --_fill: var(--accent-fill); }
+.hk-gauge[data-level="warn"] { --_fill: var(--warning); }
+.hk-gauge[data-level="critical"] { --_fill: var(--destructive-text); }
+.hk-gauge__head { display: flex; align-items: baseline; justify-content: space-between; gap: var(--s-3); font: var(--t-subhead); }
+.hk-gauge__label { font-weight: 600; }
+.hk-gauge__value { color: var(--label-2); font-variant-numeric: tabular-nums; text-align: end; }
+.hk-gauge__track { position: relative; height: var(--_h); border-radius: var(--r-full); background: var(--track); overflow: hidden; }
+.hk-gauge__track[hidden] { display: none; }
+.hk-gauge__fill { display: block; width: calc(var(--value, 0) * 1%); height: 100%; border-radius: inherit; background: var(--_fill); transition: width var(--dur-3) var(--ease); }
+.hk-gauge__ends { display: flex; justify-content: space-between; font: var(--t-caption-1); color: var(--label-2); }
+@media (prefers-contrast: more) {
+  .hk-gauge { --_fill: var(--label); }
+  .hk-gauge__track { box-shadow: inset 0 0 0 1px var(--label); }
+}
+@media (forced-colors: active) { .hk-gauge__fill { background: Highlight; } .hk-gauge__track { border: 1px solid CanvasText; } }
+
+/* ---------- 11. Banner (persistent inline message) ---------- */
+.hk-banner {
+  --_icon: var(--accent); --_tint: var(--accent);
+  display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: var(--s-3); row-gap: var(--s-3); align-items: start;
+  padding: var(--s-3) var(--s-4); color: var(--label);
+  background: color-mix(in srgb, var(--_tint) 10%, var(--bg-elevated)); border: 1px solid color-mix(in srgb, var(--_tint) 40%, var(--separator)); border-radius: var(--r-md);
+}
+.hk-banner--warning { --_icon: var(--warning); --_tint: var(--orange); }
+.hk-banner--error { --_icon: var(--destructive-text); --_tint: var(--red); }
+.hk-banner__icon { margin-top: 2px; color: var(--_icon); }
+.hk-banner__body { display: grid; gap: var(--s-1); min-width: 0; }
+.hk-banner__title { margin: 0; font: var(--t-headline); }
+.hk-banner__text { margin: 0; font: var(--t-subhead); color: var(--label); }
+.hk-banner__actions { grid-column: 2; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.hk-banner__action {
+  display: inline-flex; align-items: center; justify-content: center; min-height: var(--target); padding: 0 var(--s-4); margin: 0;
+  border: 0; border-radius: var(--r-full); background: var(--accent-soft); color: color-mix(in srgb, var(--accent-text) 75%, var(--label)); font: var(--t-subhead); font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.hk-banner__action:hover { background: color-mix(in srgb, var(--accent) 24%, transparent); }
+.hk-banner__action:active { background: color-mix(in srgb, var(--accent) 34%, transparent); }
+.hk-banner__action--plain { background: transparent; }
+.hk-banner__action--plain:hover { background: var(--fill); }
+.hk-banner__action--plain:active { background: var(--gray-4); }
+@media (prefers-contrast: more) { .hk-banner { border-color: var(--label); } }

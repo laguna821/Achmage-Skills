@@ -1,0 +1,111 @@
+/* 하루 (Haru) theme. Load after the kit:
+     <link rel="stylesheet" href="kit.css"> <link rel="stylesheet" href="theme.css">
+   Only token overrides and product-level tokens. No component rules, except one number utility.
+   Every value traces to visual-system-note.md. Raw hex values appear nowhere: colors come from the kit's system-color tokens.
+   Desktop density: the build puts the class "hk-mac" on <html> when
+   matchMedia("(min-width: 744px) and (pointer: fine)") matches (see visual-system-note.md, Type). */
+
+/* ---------- 1. Accent: indigo (HIG system color). Kit roles, light ---------- */
+:root {
+  --accent: var(--indigo);          /* tint: icons, selection, focus ring, large or bold text. 5.08:1 on white */
+  --accent-text: var(--indigo-ic);  /* accent as small text. 6.12:1 on white, 5.48:1 on gray-6 */
+  --accent-fill: var(--indigo-ic);  /* fill behind a white Bold label (house 10). 6.12:1 */
+  --success: var(--green-ic);       /* icon only, never text on gray surfaces (4.06:1 on gray-6) */
+  --warning: var(--orange-ic);      /* icon only, 4.55:1 on white */
+}
+/* Dark: the kit sets --accent-fill to blue in these same selectors, so repeat them here (same specificity, loaded later).
+   --accent and --accent-text follow --indigo and --indigo-ic, which the kit already switches for dark. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --accent-fill: var(--indigo); } /* #6D7CFF; white Bold label 3.51:1 (needs 3:1, Bold only) */
+}
+:root[data-theme="dark"] { --accent-fill: var(--indigo); }
+/* Increased contrast: the kit swaps the tint to the text value; our --accent above would otherwise cancel that. */
+@media (prefers-contrast: more) {
+  :root { --accent: var(--accent-text); }
+}
+
+/* ---------- 2. Product tokens ---------- */
+:root {
+  /* spacing roles (house 11, 4 px scale) */
+  --gutter: var(--s-4);                 /* page inset, compact */
+  --row-pad-y: var(--s-3);              /* 12 px above and below row text: smaller inside a group than between groups */
+  --row-gap: var(--s-1);                /* 4 px between title line and meta line */
+  --section-gap: var(--s-6);            /* 24 px above a section header */
+  --section-head-gap: var(--s-2);       /* 8 px between header and its first row */
+  --block-gap: var(--s-8);              /* 32 px between blocks inside S04, S09 */
+  --control-gap: var(--s-3);            /* 12 px around bezeled controls */
+  --control-gap-plain: var(--s-6);      /* 24 px around unbezeled controls that sit apart (복원 / 영구 삭제) */
+
+  /* widths (house 11 plus product choices) */
+  --w-sidebar: 240px;
+  --w-list: 360px;
+  --w-detail-min: 360px;                /* sidebar + list + detail minimum = 960 px: the sidebar hides below this width */
+  --w-sheet: 480px;                     /* S06 on regular */
+  --w-popover: 360px;                   /* S05 on regular */
+  --w-form: var(--read-max);            /* S04 and S09 content column: 720 px at most */
+  --sidebar-autohide: 960px;            /* documentation only: custom properties cannot be used inside media queries, write 960px there */
+
+  /* text roles (named by job; sizes from the iOS scale here, macOS scale under .hk-mac below). Floors: compact 13 px, regular 12 px */
+  --t-screen-title: 700 2.125rem/2.5625rem var(--font);   /* Large Title, Bold */
+  --t-task-title: 700 1.375rem/1.75rem var(--font);       /* Title 2, Bold: the task title in S04 */
+  --t-section: 600 1.0625rem/1.375rem var(--font);        /* Headline */
+  --t-row-title: 500 1.0625rem/1.375rem var(--font);      /* Body, Medium */
+  --t-row-meta: 400 0.9375rem/1.25rem var(--font);        /* Subhead */
+  --t-hint: 400 0.8125rem/1.125rem var(--font);           /* Footnote: hints, errors, banner body */
+  --t-tab: 500 0.6875rem/0.8125rem var(--font);           /* Caption 2, Medium: tab labels only */
+
+  /* completion button (D09), custom component */
+  --check-size: 24px;                   /* visible circle; the hit area is --target (44 px) */
+  --check-ring: 2px;
+  --check-off: var(--label-3);          /* ring: 3.26:1 on white, 4.27:1 on #2C2C2E, 6.44:1 on black */
+  --check-on-fill: var(--accent-fill);
+  --check-on-fg: var(--on-accent);
+  --row-done-text: var(--label-2);      /* done titles: struck through AND secondary, never color alone */
+
+  /* gauge (D05), custom component, quiet on purpose */
+  --gauge-h: 4px;
+  --gauge-track: var(--track);
+  --gauge-fill: var(--label-2);         /* 4.16:1 on the light track, 4.12:1 on the dark track (graphics need 3:1) */
+
+  /* banner (D15) and inline messages */
+  --banner-bg: var(--bg-elevated);
+  --banner-line: var(--separator);
+  --banner-icon: var(--warning);        /* text stays --label: warning text on gray-6 would be 4.08:1 */
+  --msg-success-icon: var(--success);
+
+  /* rows */
+  --row-hover: var(--fill-2);
+  --row-selected: var(--accent-soft);   /* selection in the regular list pane; the row also has aria-current */
+  --r-group: var(--r-md);               /* grouped lists, banner, fields: 12 px */
+  --r-row-hl: var(--r-sm);              /* highlight inside a group: 12 - 4 inset = 8 px (concentric) */
+
+  /* icon stroke by adjacent text weight (icons.md rule 2); apply as stroke-width on the inline SVG */
+  --icon-stroke-400: 1.75;
+  --icon-stroke-500: 2;
+  --icon-stroke-600: 2.25;
+  --icon-stroke-700: 2.5;
+
+  /* motion roles (kit durations); all collapse to ~0 under Reduce Motion in the kit */
+  --motion-press: var(--dur-1);         /* 120 ms: press, check toggle */
+  --motion-reveal: var(--dur-2);        /* 220 ms: disclosure, gauge change, toast, alert */
+  --motion-modal: var(--dur-3);         /* 320 ms: sheet and action sheet rise */
+}
+
+/* regular width: more air at the page edge */
+@media (min-width: 744px) {
+  :root { --gutter: var(--s-6); }
+}
+
+/* ---------- 3. Desktop density (class set by the build, see header) ---------- */
+.hk-mac {
+  --t-screen-title: 700 1.625rem/2rem var(--font);        /* Large Title 26/32, Bold */
+  --t-task-title: 700 1.375rem/1.625rem var(--font);      /* Title 1 22/26, Bold: same 22 px as compact */
+  --t-section: 700 0.8125rem/1rem var(--font);            /* Headline 13/16, Bold */
+  --t-row-title: 500 0.8125rem/1rem var(--font);          /* Body 13/16, Medium */
+  --t-row-meta: 400 0.75rem/0.9375rem var(--font);        /* Callout 12/15 */
+  --t-hint: 400 0.75rem/0.9375rem var(--font);            /* Callout 12/15: Footnote (10 px) is not used for anything people must read */
+  --check-size: 20px;                                      /* hit area --target (28 px) */
+}
+
+/* ---------- 4. Number utility ---------- */
+.hh-num { font-variant-numeric: tabular-nums; }           /* dates, counts, "8개 중 3개 완료" */

@@ -5,8 +5,8 @@
     "email": "laguna821@gmail.com"
   },
   "metadata": {
-    "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등. Motion Art Director 모션그래픽 제작 포함. Achmage Field Guide 스타일의 포트폴리오·학습 사이트 제작 포함.",
-    "version": "1.7.0"
+    "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등. Motion Art Director 모션그래픽 제작 포함. Achmage Field Guide 스타일의 포트폴리오·학습 사이트 제작 포함. Apple HIG 기준 앱·웹 제품 UI 기획·구현·검토(apple-hig-design) 포함.",
+    "version": "1.8.0"
   },
   "plugins": [
     {
@@ -190,6 +190,30 @@
         "korean",
         "codex",
         "claude-code"
+      ]
+    },
+    {
+      "name": "apple-hig-design",
+      "version": "1.0.0",
+      "description": "Plan, design, build and review app and web product UI with Apple's Human Interface Guidelines as the only source of design judgment: rule-cited decisions, HIG Kit web components, automatic checks, DESIGN.md in and out, and launch material including live product demo decks.",
+      "author": {
+        "name": "laguna821"
+      },
+      "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Product-Design",
+      "license": "Apache-2.0",
+      "source": "./Product-Design",
+      "category": "productivity",
+      "tags": [
+        "skill",
+        "apple-hig",
+        "human-interface-guidelines",
+        "product-design",
+        "ui-review",
+        "accessibility",
+        "design-md",
+        "korean",
+        "claude-code",
+        "codex"
       ]
     }
   ]

@@ -4,6 +4,11 @@
 
 ## 📦 수록 스킬
 
+### [Product-Design/apple-hig-design](Product-Design): Apple HIG 기준 제품 UI, 기획부터 구현·검토·출시 자료까지 (1.0.0)
+
+Apple Human Interface Guidelines만을 디자인 판단의 근거로 삼아 앱·웹 제품 UI를 만듭니다. 기능이 왜 필요한지부터 컴포넌트 선택, 화면 구성, 색·글꼴·아이콘·재질, 실제로 동작하는 프론트엔드, HIG 검토, 출시 자료(랜딩, 카드뉴스, 실제 제품을 띄우는 데모 덱)까지 한 흐름입니다. HIG 규칙 2,341개를 자체 요약과 규칙 ID로 정리했고(Apple 원문 미포함), 판단마다 규칙 ID를 인용하고 검사 스크립트로 확인합니다. HIG Kit 웹 부품 34종, Lucide 아이콘 102종, DESIGN.md 읽기·쓰기를 포함합니다.
+→ [설치·사용 안내](Product-Design/README.md) · [설치 ZIP](Product-Design/downloads/apple-hig-design-1.0.0.zip) · [쇼케이스 '하루'](Product-Design/examples/haru) · [검증 범위](Product-Design/VALIDATION.md)
+
 ### [Web-Portfolio/achmage-portfolio-site](Web-Portfolio) — 포트폴리오·학습 사이트 기획부터 구현·검수까지 (1.0.0)
 
 Achmage Field Guide의 정보 배치와 브랜드를 재사용해, 첫 화면의 전체 개요부터 상세 설명·제작 과정·원문까지 연결합니다. **Google DESIGN.md, SameTone 웹폰트, 네이비·블루·틸·화이트**, 한국어·영어, 반응형 목차·검색·모음집과 전체 Markdown을 포함한 정적 React/TypeScript 템플릿입니다. 설명은 구체적인 상황과 예시로 풀어 쓰며 도식·그림을 고르는 기준도 제공합니다. 기본 제작에는 Achmage OS/MCP가 필요하지 않습니다.
@@ -78,6 +83,7 @@ npx skills add laguna821/Achmage-Skills
 /plugin marketplace add laguna821/Achmage-Skills
 /plugin install hallym-poster-system@achmage-skills
 /plugin install achmage-portfolio-site@achmage-skills
+/plugin install apple-hig-design@achmage-skills
 /plugin install raw-5-html@achmage-skills
 /plugin install component-consulting-v3@achmage-skills
 /plugin install render-audit@achmage-skills
@@ -100,6 +106,8 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 - **Motion Art Director 4.1.0** — [정식 Release](https://github.com/laguna821/Achmage-Skills/releases/tag/motion-art-director-v4.1.0) · [제작·설치·검증 안내](Video-Production/motion-art-director).
 - [Motion Art Director 공개 갤러리](https://laguna821.github.io/Achmage-Skills/Video-Production/examples/motion-art-director/) — 요리·레이싱·페달·도시·커피·자동차·책·항공·물, 10작품과 제작 과정. [저장소 영상 파일](Video-Production/examples/motion-art-director).
 
+- [`Product-Design/examples/haru/`](Product-Design/examples/haru): Apple HIG Design 통합 시험 '하루'(할 일·프로젝트 웹앱): [웹앱](https://laguna821.github.io/Achmage-Skills/Product-Design/examples/haru/04-build/?sample=1) · [랜딩](https://laguna821.github.io/Achmage-Skills/Product-Design/examples/haru/06-media/landing/) · [카드뉴스](https://laguna821.github.io/Achmage-Skills/Product-Design/examples/haru/06-media/cards/cards.html) · [데모 덱 PC](https://laguna821.github.io/Achmage-Skills/Product-Design/examples/haru/07-deck/web/) · [데모 덱 휴대폰](https://laguna821.github.io/Achmage-Skills/Product-Design/examples/haru/07-deck/app/) · [HIG Kit 부품 갤러리](https://laguna821.github.io/Achmage-Skills/Product-Design/apple-hig-design/assets/kit/)
+
 - [`Image-HTML/examples/`](Image-HTML/examples) — 정전 샘플 덱(V7 / V8 / University AX / Street) + 원본 GPTs Raw5 프롬프트 팩 + 검증용 “민주주의” · “행동경제학” 덱
 - [`Design-Consulting/examples/`](Design-Consulting/examples) — **v3 풀 파이프라인 쇼케이스 2종**: [잔광 殘光 — 가상 전시 full exhibition](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/janggwang-exhibition/) (방 8개 × 상이한 감상 장치 + 3D 복도) · [Educational Harness Engineering](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/educational-harness-engineering/) (Mode A 논증형 + 프릭션 로그) — 각각 도록/처방문/DESIGN.md/RAW-PROMPTS 전 과정 동봉. v1 계보: [골목 베이커리](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/golmok-bakery-deck/) · [SURGE EV](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/surge-ev/) · [Skill Landing](https://laguna821.github.io/Achmage-Skills/Design-Consulting/examples/skill-landing-ach/)
 
@@ -110,5 +118,7 @@ cp -r Achmage-Skills/Image-HTML/raw-5-html ~/.claude/skills/raw5-deck
 ## License
 
 기본 라이선스는 Apache-2.0 — [LICENSE](LICENSE). 개별 스킬과 포함된 외부 코드에는 해당 폴더의 라이선스·고지가 우선합니다. kordoc-workbench는 MIT와 포함된 의존성 라이선스를 따릅니다.
+
+Apple HIG Design은 Apache-2.0이며 Lucide 아이콘(ISC), Pretendard(OFL, CDN 링크), Apple 상표 고지는 [Product-Design/ASSET-NOTICE.md](Product-Design/ASSET-NOTICE.md)를 따릅니다. Apple Inc.와 관계없는 프로젝트입니다.
 
 Motion Art Director 신규 코드는 MIT이며, 도감·폰트·음악·상표는 [개별 고지](Video-Production/motion-art-director/THIRD_PARTY_NOTICES.md)를 따릅니다.

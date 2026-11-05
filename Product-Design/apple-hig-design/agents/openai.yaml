@@ -1,0 +1,6 @@
+interface:
+  display_name: "Apple HIG Design"
+  short_description: "Apple HIG 기준으로 앱·웹 화면을 기획부터 구현·검토·출시 자료까지"
+  default_prompt: "$apple-hig-design을 사용해 이 제품의 화면을 Apple HIG 기준으로 기획하고, 구현과 검토까지 해 주세요."
+policy:
+  allow_implicit_invocation: true

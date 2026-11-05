@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIG Kit · nav</title>
+<link rel="stylesheet" href="hk-base.css">
+<link rel="stylesheet" href="hk-nav.css">
+<link rel="stylesheet" href="hk-status.css">
+<style>
+  /* gallery layout only; the components themselves live in hk-nav.css */
+  .g-wrap { max-width: var(--app-max); margin: 0 auto; padding: var(--s-4); }
+  .g-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-6); }
+  .g-top h1 { font: var(--t-title-1); font-weight: 700; }
+  .g-theme { display: inline-flex; gap: var(--s-1); padding: var(--s-1); border-radius: var(--r-full); background: var(--fill); }
+  .g-theme button { min-height: var(--target); padding: 0 var(--s-4); border: 0; border-radius: var(--r-full); background: transparent; font: var(--t-callout); cursor: pointer; }
+  .g-theme button[aria-pressed="true"] { background: var(--bg-elevated); font-weight: 700; box-shadow: var(--shadow-float); }
+  .g-sec { margin-bottom: var(--s-12); }
+  .g-sec > h2 { font: var(--t-title-2); font-weight: 700; margin-bottom: var(--s-1); }
+  .g-note { color: var(--label-2); font: var(--t-callout); max-width: var(--read-max); margin-bottom: var(--s-4); }
+  .g-grid { display: grid; gap: var(--s-4); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); align-items: start; }
+  .g-stage { background: var(--bg-grouped); border: 1px solid var(--separator); border-radius: var(--r-lg); padding: var(--s-4) 0; }
+  .g-stage--pad { padding: var(--s-4); }
+  .g-stage--photo { background: linear-gradient(135deg, var(--indigo), var(--pink) 60%, var(--orange)); padding: var(--s-12) var(--s-4) var(--s-4); }
+  .g-cap { font: var(--t-footnote); color: var(--label-2); margin: var(--s-2) 0 0; }
+  .g-row { display: flex; flex-wrap: wrap; gap: var(--s-3); align-items: center; }
+  .g-btn { min-height: var(--target); padding: 0 var(--s-5); border: 0; border-radius: var(--r-full); background: var(--accent-fill); color: var(--on-accent); font: var(--t-body); font-weight: 700; cursor: pointer; }
+  .g-btn--plain { background: var(--fill); color: var(--hk-link); font-weight: 400; }
+  .g-opt[aria-pressed="false"] { background: var(--fill); color: var(--hk-link); font-weight: 400; }
+  .g-btn:hover { filter: brightness(.94); }
+  .g-box { height: 22rem; overflow-y: auto; background: var(--bg-grouped); border: 1px solid var(--separator); border-radius: var(--r-lg); }
+  .g-sidebar-box { max-width: 17rem; border: 1px solid var(--separator); border-radius: var(--r-lg); overflow: hidden; }
+  .g-sidebar-box .hk-sidebar { max-height: 28rem; border: 0; }
+  .g-frame { border: 1px solid var(--separator); border-radius: var(--r-xl); overflow: hidden; --hk-app-h: 30rem; }
+  .g-out { font: var(--t-footnote); color: var(--label-2); margin-top: var(--s-2); min-height: 1.125rem; }
+  .g-photo-fill { height: 7rem; }
+</style>
+</head>
+<body>
+<div class="g-wrap">
+  <div class="g-top">
+    <div>
+      <h1>HIG Kit · nav</h1>
+      <p class="g-note" style="margin:0">내비게이션과 컨테이너: 앱 셸, 탭 바, 사이드바, 내비게이션 바, 목록, 표, 시트, 알림, 액션 시트, 팝오버, 풀다운 메뉴, 디스클로저.</p>
+    </div>
+    <div class="g-theme" role="group" aria-label="Appearance">
+      <button type="button" data-theme-set="light" aria-pressed="false">Light</button>
+      <button type="button" data-theme-set="dark" aria-pressed="false">Dark</button>
+      <button type="button" data-theme-set="" aria-pressed="true">System</button>
+    </div>
+  </div>
+
+  <!-- 1 App shell -->
+  <section class="g-sec" aria-labelledby="s-app">
+    <h2 id="s-app">1 · App shell</h2>
+    <p class="g-note">Below 744 px: content plus a floating tab bar. From 744 px: sidebar plus content (up to 1200 px). Same five destinations in both; the selection stays in sync. Resize the window to compare. The sidebar can be hidden (not hidden by default).</p>
+    <div class="g-frame">
+      <div class="hk-app" id="demo-app" data-hk="app">
+        <nav class="hk-sidebar" data-hk="sidebar" aria-label="Main">
+          <div class="hk-sidebar__section">
+            <h2 class="hk-sidebar__header">Browse</h2>
+            <ul>
+              <li><a class="hk-sidebar__item" href="#today" data-dest="today" aria-current="page"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span class="hk-sidebar__label">Today</span></a></li>
+              <li><a class="hk-sidebar__item" href="#library" data-dest="library"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v16" /> <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" /></svg><span class="hk-sidebar__label">Library</span><span class="hk-sidebar__count">24</span></a></li>
+            </ul>
+          </div>
+          <div class="hk-sidebar__section">
+            <h2 class="hk-sidebar__header">Activity</h2>
+            <ul>
+              <li><a class="hk-sidebar__item" href="#inbox" data-dest="inbox"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg><span class="hk-sidebar__label">Inbox</span><span class="hk-sidebar__count">3</span></a></li>
+              <li><a class="hk-sidebar__item" href="#search" data-dest="search"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></svg><span class="hk-sidebar__label">Search</span></a></li>
+            </ul>
+          </div>
+          <div class="hk-sidebar__section">
+            <h2 class="hk-sidebar__header">Account</h2>
+            <ul>
+              <li><a class="hk-sidebar__item" href="#settings" data-dest="settings"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" /> <circle cx="12" cy="12" r="3" /></svg><span class="hk-sidebar__label">Settings</span></a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="hk-app__main">
+          <div class="hk-app__page">
+            <section class="hk-app__view" data-view="today">
+              <header class="hk-navbar" data-hk="navbar">
+                <div class="hk-navbar__row">
+                  <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn hk-regular-only" data-hk-sidebar-toggle aria-expanded="true" aria-label="Sidebar"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M9 3v18" /></svg></button></div>
+                  <span class="hk-navbar__title" aria-hidden="true">Today</span>
+                  <div class="hk-navbar__trail"><button type="button" class="hk-bar-btn" aria-label="Add"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14" /> <path d="M12 5v14" /></svg></button></div>
+                </div>
+              </header>
+              <h1 class="hk-navbar__large">Today</h1>
+              <section class="hk-list" aria-labelledby="l-today">
+                <h2 class="hk-list__header" id="l-today">Up next</h2>
+                <ul class="hk-list__group">
+                  <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> <path d="M8 13h.01" /> <path d="M12 13h.01" /> <path d="M16 13h.01" /> <path d="M8 17h.01" /> <path d="M12 17h.01" /> <path d="M16 17h.01" /></svg><span class="hk-row__text"><span class="hk-row__title">Design review</span><span class="hk-row__sub">10:30, Room 4</span></span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                  <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <path d="M16 3.128a4 4 0 0 1 0 7.744" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <circle cx="9" cy="7" r="4" /></svg><span class="hk-row__text"><span class="hk-row__title">Team lunch</span><span class="hk-row__sub">12:00</span></span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                  <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" /></svg><span class="hk-row__text"><span class="hk-row__title">Call with Min-ji</span><span class="hk-row__sub">15:00</span></span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                </ul>
+                <p class="hk-list__footer">Tap a row to open it.</p>
+              </section>
+              <section class="hk-list" aria-labelledby="l-today2">
+                <h2 class="hk-list__header" id="l-today2">Later</h2>
+                <ul class="hk-list__group">
+                  <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Write the weekly summary</span></span><span class="hk-row__value">Fri</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                  <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Book flights</span></span><span class="hk-row__value">Sat</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                  <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Water the plants</span></span><span class="hk-row__value">Sun</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                </ul>
+              </section>
+            </section>
+
+            <section class="hk-app__view" data-view="library" hidden>
+              <header class="hk-navbar" data-hk="navbar">
+                <div class="hk-navbar__row">
+                  <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn hk-regular-only" data-hk-sidebar-toggle aria-expanded="true" aria-label="Sidebar"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M9 3v18" /></svg></button></div>
+                  <span class="hk-navbar__title" aria-hidden="true">Library</span>
+                  <div class="hk-navbar__trail"></div>
+                </div>
+              </header>
+              <h1 class="hk-navbar__large">Library</h1>
+              <section class="hk-list" aria-label="Collections">
+                <ul class="hk-list__group">
+                  <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><span class="hk-row__text"><span class="hk-row__title">Favorites</span></span><span class="hk-row__value">8</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                  <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /></svg><span class="hk-row__text"><span class="hk-row__title">Recent</span></span><span class="hk-row__value">16</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                </ul>
+              </section>
+            </section>
+
+            <section class="hk-app__view" data-view="inbox" hidden>
+              <header class="hk-navbar" data-hk="navbar">
+                <div class="hk-navbar__row">
+                  <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn hk-regular-only" data-hk-sidebar-toggle aria-expanded="true" aria-label="Sidebar"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M9 3v18" /></svg></button></div>
+                  <span class="hk-navbar__title" aria-hidden="true">Inbox</span>
+                  <div class="hk-navbar__trail"></div>
+                </div>
+              </header>
+              <h1 class="hk-navbar__large">Inbox</h1>
+              <section class="hk-list" aria-label="Messages">
+                <ul class="hk-list__group">
+                  <li class="hk-row" data-hk="swipe"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Soo-ah Kim</span><span class="hk-row__sub">Lunch tomorrow?</span></span></a><div class="hk-row__actions"><button type="button" class="hk-row__action">Flag</button><button type="button" class="hk-row__action hk-row__action--destructive" data-action="delete">Delete</button></div></li>
+                  <li class="hk-row" data-hk="swipe"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Studio</span><span class="hk-row__sub">New files are ready</span></span></a><div class="hk-row__actions"><button type="button" class="hk-row__action">Flag</button><button type="button" class="hk-row__action hk-row__action--destructive" data-action="delete">Delete</button></div></li>
+                </ul>
+                <p class="hk-list__footer">On touch, swipe a row. With a pointer, hover it or focus it.</p>
+              </section>
+            </section>
+
+            <section class="hk-app__view" data-view="search" hidden>
+              <header class="hk-navbar" data-hk="navbar">
+                <div class="hk-navbar__row">
+                  <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn hk-regular-only" data-hk-sidebar-toggle aria-expanded="true" aria-label="Sidebar"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M9 3v18" /></svg></button></div>
+                  <span class="hk-navbar__title" aria-hidden="true">Search</span>
+                  <div class="hk-navbar__trail"></div>
+                </div>
+              </header>
+              <h1 class="hk-navbar__large">Search</h1>
+              <p class="g-note" style="margin-inline:var(--s-4)">Search belongs to the controls group; this view only shows that a destination can hold anything.</p>
+            </section>
+
+            <section class="hk-app__view" data-view="settings" hidden>
+              <header class="hk-navbar" data-hk="navbar">
+                <div class="hk-navbar__row">
+                  <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn hk-regular-only" data-hk-sidebar-toggle aria-expanded="true" aria-label="Sidebar"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="18" height="18" x="3" y="3" rx="2" /> <path d="M9 3v18" /></svg></button></div>
+                  <span class="hk-navbar__title" aria-hidden="true">Settings</span>
+                  <div class="hk-navbar__trail"></div>
+                </div>
+              </header>
+              <h1 class="hk-navbar__large">Settings</h1>
+              <section class="hk-list" aria-label="General">
+                <ul class="hk-list__group">
+                  <li class="hk-row"><div class="hk-row__main"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.268 21a2 2 0 0 0 3.464 0" /> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg><span class="hk-row__text"><span class="hk-row__title" id="app-sw1">Notifications</span></span><button type="button" role="switch" aria-checked="true" aria-labelledby="app-sw1" class="hk-row__switch" data-hk="switchrow"></button></div></li>
+                  <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></svg><span class="hk-row__text"><span class="hk-row__title">Language</span></span><span class="hk-row__value">한국어</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+                </ul>
+              </section>
+            </section>
+          </div>
+        </div>
+
+        <nav class="hk-tabbar hk-glass" aria-label="Main tabs">
+          <ul>
+            <li><a class="hk-tab" href="#today" data-dest="today" aria-current="page"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span class="hk-tab__label">Today</span></a></li>
+            <li><a class="hk-tab" href="#library" data-dest="library"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 5v16" /> <path d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z" /></svg><span class="hk-tab__label">Library</span></a></li>
+            <li><a class="hk-tab" href="#inbox" data-dest="inbox"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /> <rect x="2" y="4" width="20" height="16" rx="2" /></svg><span class="hk-tab__label">Inbox</span><span class="hk-badge">3<span class="hk-visually-hidden"> new</span></span></a></li>
+            <li><a class="hk-tab" href="#search" data-dest="search"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></svg><span class="hk-tab__label">Search</span></a></li>
+            <li><a class="hk-tab" href="#settings" data-dest="settings"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" /> <circle cx="12" cy="12" r="3" /></svg><span class="hk-tab__label">Settings</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 Tab bar -->
+  <section class="g-sec" aria-labelledby="s-tab">
+    <h2 id="s-tab">2 · Tab bar</h2>
+    <p class="g-note">Up to five destinations, icon plus label, selected state through aria-current, optional badge. A floating glass bar over content; never actions.</p>
+    <div class="g-stage g-stage--photo" data-hk="app">
+      <div class="g-photo-fill"></div>
+      <nav class="hk-tabbar hk-glass" aria-label="Tab bar example">
+        <ul>
+          <li><a class="hk-tab" href="#a" data-dest="a" aria-current="page"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span class="hk-tab__label">Home</span></a></li>
+          <li><a class="hk-tab" href="#b" data-dest="b"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></svg><span class="hk-tab__label">Files</span></a></li>
+          <li><a class="hk-tab" href="#c" data-dest="c"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.268 21a2 2 0 0 0 3.464 0" /> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg><span class="hk-tab__label">Alerts</span><span class="hk-badge">12<span class="hk-visually-hidden"> new</span></span></a></li>
+          <li><a class="hk-tab" href="#d" data-dest="d"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /> <circle cx="12" cy="7" r="4" /></svg><span class="hk-tab__label">Profile</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="g-cap">Hover and keyboard focus are live: Tab to a destination and press Enter.</p>
+  </section>
+
+  <!-- 3 Sidebar -->
+  <section class="g-sec" aria-labelledby="s-side">
+    <h2 id="s-side">3 · Sidebar</h2>
+    <p class="g-note">Section headers, icon, label and count, selected highlight, a group that folds (two levels at most). One tab stop; Up, Down, Home and End move; Right and Left open and close a group.</p>
+    <div class="g-sidebar-box" data-hk="app">
+      <nav class="hk-sidebar" data-hk="sidebar" aria-label="Sidebar example">
+        <div class="hk-sidebar__section">
+          <h2 class="hk-sidebar__header">Library</h2>
+          <ul>
+            <li><a class="hk-sidebar__item" href="#s1" data-dest="s1" aria-current="page"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span class="hk-sidebar__label">All Items</span><span class="hk-sidebar__count">128</span></a></li>
+            <li><a class="hk-sidebar__item" href="#s2" data-dest="s2"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg><span class="hk-sidebar__label">Favorites</span><span class="hk-sidebar__count">9</span></a></li>
+            <li>
+              <details open>
+                <summary class="hk-sidebar__item"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></svg><span class="hk-sidebar__label">Projects</span><span class="hk-sidebar__twisty" aria-hidden="true"></span></summary>
+                <ul>
+                  <li><a class="hk-sidebar__item" href="#s3" data-dest="s3"><span class="hk-sidebar__label">Branding</span><span class="hk-sidebar__count">14</span></a></li>
+                  <li><a class="hk-sidebar__item" href="#s4" data-dest="s4"><span class="hk-sidebar__label">Website</span><span class="hk-sidebar__count">31</span></a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+        <div class="hk-sidebar__section">
+          <h2 class="hk-sidebar__header">Other</h2>
+          <ul>
+            <li><a class="hk-sidebar__item" href="#s5" data-dest="s5"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 11v6" /> <path d="M14 11v6" /> <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" /> <path d="M3 6h18" /> <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg><span class="hk-sidebar__label">Recently Deleted</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 4 Navigation bar and toolbar -->
+  <section class="g-sec" aria-labelledby="s-bar">
+    <h2 id="s-bar">4 · Navigation bar and toolbar</h2>
+    <p class="g-note">Scroll the boxes. The large title (compact) becomes the inline title once it scrolls away, and the bar turns to glass only while content moves beneath it. Icon actions carry accessible names; the back button is the standard chevron.</p>
+    <div class="g-row" style="margin-bottom:var(--s-3)"><span class="g-cap" id="ls-l">Large title (data-show)</span><div class="g-row" role="group" aria-labelledby="ls-l" id="seg-large"><button type="button" class="g-btn g-opt" aria-pressed="true" data-value="compact">compact</button><button type="button" class="g-btn g-opt" aria-pressed="false" data-value="always">always</button><button type="button" class="g-btn g-opt" aria-pressed="false" data-value="never">never</button></div></div>
+
+    <div class="g-grid">
+      <div>
+        <div class="g-box" data-hk-scroll tabindex="0" role="region" aria-label="Navigation bar example, scrollable">
+          <header class="hk-navbar" data-hk="navbar">
+            <div class="hk-navbar__row">
+              <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6" /></svg>Back</button></div>
+              <span class="hk-navbar__title" aria-hidden="true">Notes</span>
+              <div class="hk-navbar__trail"><button type="button" class="hk-bar-btn" aria-label="Share"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2v13" /> <path d="m16 6-4-4-4 4" /> <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /></svg></button><button type="button" class="hk-bar-btn" aria-label="Compose"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /> <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" /></svg></button></div>
+            </div>
+          </header>
+          <h1 class="hk-navbar__large" id="large-demo">Notes</h1>
+          <section class="hk-list" aria-label="Notes list">
+            <ul class="hk-list__group">
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Grocery list</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Trip ideas</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Meeting notes</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Reading list</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Birthday plans</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Recipes</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Packing</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Budget</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Wish list</span></a></li>
+            </ul>
+          </section>
+        </div>
+        <p class="g-cap">Large title variant</p>
+      </div>
+      <div>
+        <div class="g-box" data-hk-scroll tabindex="0" role="region" aria-label="Toolbar example, scrollable">
+          <header class="hk-toolbar" data-hk="navbar">
+            <div class="hk-navbar__row">
+              <div class="hk-navbar__lead"><button type="button" class="hk-bar-btn" aria-label="Close"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18" /> <path d="m6 6 12 12" /></svg></button></div>
+              <h1 class="hk-navbar__title">Photos</h1>
+              <div class="hk-navbar__trail">
+                <button type="button" class="hk-bar-btn" aria-label="Search"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /></svg></button>
+                <div class="hk-menu" data-hk="menu">
+                  <button type="button" class="hk-bar-btn" aria-haspopup="menu" aria-label="More"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="1" /> <circle cx="19" cy="12" r="1" /> <circle cx="5" cy="12" r="1" /></svg></button>
+                  <div class="hk-menu__list" popover role="menu" aria-label="More">
+                    <button type="button" role="menuitem" class="hk-menu__item">Select</button>
+                    <button type="button" role="menuitem" class="hk-menu__item">Slideshow</button>
+                    <button type="button" role="menuitem" class="hk-menu__item">Duplicate</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+          <section class="hk-list" aria-label="Albums">
+            <ul class="hk-list__group">
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Recents</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Favorites</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Screenshots</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Trips</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">People</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Places</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Videos</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Documents</span></a></li>
+              <li class="hk-row"><a class="hk-row__main" href="#"><span class="hk-row__title">Imports</span></a></li>
+            </ul>
+          </section>
+        </div>
+        <p class="g-cap">Toolbar variant: inline title, Close, search and a More menu</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 List -->
+  <section class="g-sec" aria-labelledby="s-list">
+    <h2 id="s-list">5 · List</h2>
+    <p class="g-note">Inset grouped sections with header and footer. Row accessories: value, chevron, switch, checkmark. Swipe actions: swipe on touch; hover or focus a row with a pointer. Destructive is last and red.</p>
+    <div class="g-grid">
+      <div class="g-stage">
+        <section class="hk-list" aria-labelledby="l1">
+          <h2 class="hk-list__header" id="l1">Network</h2>
+          <ul class="hk-list__group">
+            <li class="hk-row"><div class="hk-row__main"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z" /></svg><span class="hk-row__text"><span class="hk-row__title" id="l1a">Low power mode</span><span class="hk-row__sub">Saves battery</span></span><button type="button" role="switch" aria-checked="false" aria-labelledby="l1a" class="hk-row__switch" data-hk="switchrow"></button></div></li>
+            <li class="hk-row"><a class="hk-row__main" href="#"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></svg><span class="hk-row__text"><span class="hk-row__title">Region</span></span><span class="hk-row__value">Korea</span><span class="hk-row__chevron" aria-hidden="true"></span></a></li>
+            <li class="hk-row"><div class="hk-row__main" aria-disabled="true"><svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg><span class="hk-row__text"><span class="hk-row__title">Private relay</span><span class="hk-row__sub">Unavailable on this plan</span></span></div></li>
+          </ul>
+          <p class="hk-list__footer">Rows are at least 44 px tall.</p>
+        </section>
+        <section class="hk-list" aria-labelledby="l2">
+          <h2 class="hk-list__header" id="l2">Sort by</h2>
+          <ul class="hk-list__group" role="radiogroup" aria-labelledby="l2" data-hk="choicelist">
+            <li role="none"><button type="button" role="radio" aria-checked="true" class="hk-row__main"><span class="hk-row__text"><span class="hk-row__title">Name</span></span><span class="hk-row__check" aria-hidden="true"></span></button></li>
+            <li role="none"><button type="button" role="radio" aria-checked="false" class="hk-row__main"><span class="hk-row__text"><span class="hk-row__title">Date</span></span><span class="hk-row__check" aria-hidden="true"></span></button></li>
+            <li role="none"><button type="button" role="radio" aria-checked="false" class="hk-row__main"><span class="hk-row__text"><span class="hk-row__title">Size</span></span><span class="hk-row__check" aria-hidden="true"></span></button></li>
+          </ul>
+          <p class="hk-list__footer">Option list: arrow keys move the checkmark.</p>
+        </section>
+      </div>
+      <div class="g-stage">
+        <section class="hk-list" aria-labelledby="l3">
+          <h2 class="hk-list__header" id="l3">Messages with swipe actions</h2>
+          <ul class="hk-list__group" id="swipe-list">
+            <li class="hk-row" data-hk="swipe"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Ha-eun Park</span><span class="hk-row__sub">Photos from the weekend</span></span><span class="hk-row__value">09:12</span></a><div class="hk-row__actions"><button type="button" class="hk-row__action hk-row__action--secondary">Mute</button><button type="button" class="hk-row__action" data-action="flag">Flag</button><button type="button" class="hk-row__action hk-row__action--destructive" data-action="delete">Delete</button></div></li>
+            <li class="hk-row" data-hk="swipe"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Jun-seo Lee</span><span class="hk-row__sub">Updated the schedule</span></span><span class="hk-row__value">Yesterday</span></a><div class="hk-row__actions"><button type="button" class="hk-row__action" data-action="flag">Flag</button><button type="button" class="hk-row__action hk-row__action--destructive" data-action="delete">Delete</button></div></li>
+            <li class="hk-row" data-hk="swipe"><a class="hk-row__main" href="#"><span class="hk-row__text"><span class="hk-row__title">Billing</span><span class="hk-row__sub">Your receipt is ready</span></span><span class="hk-row__value">Mon</span></a><div class="hk-row__actions"><button type="button" class="hk-row__action" data-action="flag">Flag</button><button type="button" class="hk-row__action hk-row__action--destructive" data-action="delete">Delete</button></div></li>
+          </ul>
+          <p class="hk-list__footer">Deleting is undoable in a real app, so no alert is shown here.</p>
+        </section>
+        <p class="g-out" id="swipe-out" role="status"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Table -->
+  <section class="g-sec" aria-labelledby="s-table">
+    <h2 id="s-table">6 · Table</h2>
+    <p class="g-note">For regular widths: noun headings, click a heading to sort (aria-sort), click it again to reverse; hover and selected rows. Below 744 px prefer a list; the table scrolls sideways.</p>
+    <p class="g-note hk-compact-only">Tables are for regular widths. On compact, use the list (section 5).</p>
+    <div class="g-stage g-stage--pad hk-regular-only"><div class="hk-table-wrap" role="region" aria-label="Files table" tabindex="0">
+      <table class="hk-table" data-hk="table">
+        <caption class="hk-visually-hidden">Files</caption>
+        <thead><tr>
+          <th scope="col" data-select><input type="checkbox" aria-label="Select all files"></th>
+          <th scope="col" aria-sort="ascending"><button type="button" class="hk-table__sort">Name</button></th>
+          <th scope="col"><button type="button" class="hk-table__sort">Kind</button></th>
+          <th scope="col" data-num><button type="button" class="hk-table__sort">Size</button></th>
+          <th scope="col"><button type="button" class="hk-table__sort">Date Modified</button></th>
+        </tr></thead>
+        <tbody>
+          <tr><td data-select><input type="checkbox" aria-label="Select Brand guide"></td><td>Brand guide</td><td>PDF</td><td data-num data-sort="4200000">4.2 MB</td><td data-sort="20261102">Nov 2</td></tr>
+          <tr><td data-select><input type="checkbox" aria-label="Select Cover"></td><td>Cover</td><td>Image</td><td data-num data-sort="820000">820 KB</td><td data-sort="20261030">Oct 30</td></tr>
+          <tr aria-selected="true"><td data-select><input type="checkbox" aria-label="Select Interview" checked></td><td>Interview</td><td>Audio</td><td data-num data-sort="18400000">18.4 MB</td><td data-sort="20261101">Nov 1</td></tr>
+          <tr><td data-select><input type="checkbox" aria-label="Select Notes"></td><td>Notes</td><td>Document</td><td data-num data-sort="32000">32 KB</td><td data-sort="20261104">Nov 4</td></tr>
+          <tr><td data-select><input type="checkbox" aria-label="Select Storyboard"></td><td>Storyboard</td><td>Image</td><td data-num data-sort="2100000">2.1 MB</td><td data-sort="20261028">Oct 28</td></tr>
+        </tbody>
+      </table>
+    </div></div>
+  </section>
+
+  <!-- 7 to 8 Sheets and alerts -->
+  <section class="g-sec" aria-labelledby="s-sheet">
+    <h2 id="s-sheet">7 · Sheet</h2>
+    <p class="g-note">Native dialog. Bottom sheet with a grabber on compact (drag it down to dismiss), centered form sheet on regular. Cancel leads, the confirming action is Bold and trails. Escape closes; focus returns to the opener. Type something, then press Escape: unsaved changes ask first in an action sheet.</p>
+    <div class="g-row"><button type="button" class="g-btn" data-hk-open="#sheet-new">New reminder</button><span class="g-cap" id="da-l">Ask before discarding (data-discard-ask)</span><div class="g-row" role="group" aria-labelledby="da-l" id="seg-ask"><button type="button" class="g-btn g-opt" aria-pressed="true" data-value="cancel">cancel</button><button type="button" class="g-btn g-opt" aria-pressed="false" data-value="swipe">swipe</button><button type="button" class="g-btn g-opt" aria-pressed="false" data-value="never">never</button></div></div>
+    <p class="g-out" id="sheet-out" role="status"></p>
+
+    <dialog class="hk-sheet" id="sheet-new" data-hk="sheet" aria-labelledby="sheet-new-t" data-discard="#as-discard" data-discard-ask="cancel">
+      <form method="dialog" class="hk-sheet__form">
+        <div class="hk-sheet__grab" aria-hidden="true"></div>
+        <div class="hk-sheet__bar">
+          <button type="submit" value="cancel" formnovalidate class="hk-bar-btn">Cancel</button>
+          <h2 class="hk-sheet__title" id="sheet-new-t">New Reminder</h2>
+          <button type="submit" value="add" class="hk-bar-btn hk-bar-btn--prominent">Add</button>
+        </div>
+        <div class="hk-sheet__body">
+          <div class="hk-sheet__field"><label for="sh-title">Title</label><input id="sh-title" name="title" required placeholder="Buy milk"></div>
+          <div class="hk-sheet__field"><label for="sh-notes">Notes</label><input id="sh-notes" name="notes"></div>
+          <p class="hk-sheet__hint">A short task tied to what you are doing. For long flows, use a full page.</p>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="hk-actionsheet" id="as-discard" data-hk="actionsheet" aria-labelledby="as-discard-t">
+      <form method="dialog" class="hk-actionsheet__form">
+        <div class="hk-actionsheet__group">
+          <div class="hk-actionsheet__head"><h2 class="hk-actionsheet__title" id="as-discard-t">Discard this reminder?</h2></div>
+          <button type="submit" value="discard" class="hk-actionsheet__btn hk-actionsheet__btn--destructive">Discard Changes</button>
+          <button type="submit" value="keep" class="hk-actionsheet__btn">Keep Editing</button>
+        </div>
+        <div class="hk-actionsheet__cancel"><button type="submit" value="cancel" class="hk-actionsheet__btn hk-actionsheet__btn--cancel">Cancel</button></div>
+      </form>
+    </dialog>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-alert">
+    <h2 id="s-alert">8 · Alert</h2>
+    <p class="g-note">Native dialog with role alertdialog. A specific title, a short message, one to three buttons. The destructive style is used only for the rare, irreversible action; with it there is a Cancel and no default button. Escape cancels; the backdrop does not.</p>
+    <div class="g-row">
+      <button type="button" class="g-btn g-btn--plain" data-hk-open="#alert-info">Information</button>
+      <button type="button" class="g-btn g-btn--plain" data-hk-open="#alert-destroy">Destructive</button>
+      <button type="button" class="g-btn g-btn--plain" data-hk-open="#alert-three">Three buttons</button>
+    </div>
+    <p class="g-out" id="alert-out" role="status"></p>
+
+    <dialog class="hk-alert" id="alert-info" data-hk="alert" aria-labelledby="ai-t" aria-describedby="ai-m">
+      <form method="dialog">
+        <div class="hk-alert__content"><h2 class="hk-alert__title" id="ai-t">Storage Almost Full</h2><p class="hk-alert__message" id="ai-m">Only 2 GB is left on this device.</p></div>
+        <div class="hk-alert__actions"><button type="submit" value="ok" class="hk-alert__btn hk-alert__btn--default" autofocus>OK</button></div>
+      </form>
+    </dialog>
+    <dialog class="hk-alert" id="alert-destroy" data-hk="alert" data-destructive aria-labelledby="ad-t" aria-describedby="ad-m">
+      <form method="dialog">
+        <div class="hk-alert__content"><h2 class="hk-alert__title" id="ad-t">Delete Account?</h2><p class="hk-alert__message" id="ad-m">This removes your data from every device. It cannot be undone.</p></div>
+        <div class="hk-alert__actions"><button type="submit" value="cancel" class="hk-alert__btn">Cancel</button><button type="submit" value="delete" class="hk-alert__btn hk-alert__btn--destructive">Delete Account</button></div>
+      </form>
+    </dialog>
+    <dialog class="hk-alert" id="alert-three" data-hk="alert" aria-labelledby="a3-t" aria-describedby="a3-m">
+      <form method="dialog">
+        <div class="hk-alert__content"><h2 class="hk-alert__title" id="a3-t">Update Available</h2><p class="hk-alert__message" id="a3-m">Version 4.2 adds offline mode.</p></div>
+        <div class="hk-alert__actions"><button type="submit" value="update" class="hk-alert__btn hk-alert__btn--default">Update</button><button type="submit" value="later" class="hk-alert__btn">Remind Me Tomorrow</button><button type="submit" value="cancel" class="hk-alert__btn">Cancel</button></div>
+      </form>
+    </dialog>
+  </section>
+
+  <!-- 9 Action sheet, 10 Popover, 11 Menu -->
+  <section class="g-sec" aria-labelledby="s-as">
+    <h2 id="s-as">9 · Action sheet</h2>
+    <p class="g-note">Choices for an action the person just started. Compact: a bottom group plus a separate Cancel, destructive first and red. Regular: a popover from its source. Escape or an outside tap cancels.</p>
+    <div class="g-row"><button type="button" class="g-btn g-btn--plain" data-hk-open="#as-draft">Close draft</button></div>
+    <p class="g-out" id="as-out" role="status"></p>
+    <dialog class="hk-actionsheet" id="as-draft" data-hk="actionsheet" aria-labelledby="as-draft-t">
+      <form method="dialog" class="hk-actionsheet__form">
+        <div class="hk-actionsheet__group">
+          <div class="hk-actionsheet__head"><h2 class="hk-actionsheet__title" id="as-draft-t">What would you like to do with this draft?</h2></div>
+          <button type="submit" value="delete" class="hk-actionsheet__btn hk-actionsheet__btn--destructive">Delete Draft</button>
+          <button type="submit" value="save" class="hk-actionsheet__btn">Save Draft</button>
+        </div>
+        <div class="hk-actionsheet__cancel"><button type="submit" value="cancel" class="hk-actionsheet__btn hk-actionsheet__btn--cancel">Cancel</button></div>
+      </form>
+    </dialog>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-pop">
+    <h2 id="s-pop">10 · Popover</h2>
+    <p class="g-note">Regular: anchored to its source with an arrow, one at a time, closes on an outside click and on Escape. Compact: becomes a sheet.</p>
+    <div class="g-row"><button type="button" class="g-btn g-btn--plain" data-hk-open="#pop-cal">Calendar</button><button type="button" class="g-btn g-btn--plain" data-hk-open="#pop-info">Details</button></div>
+    <div id="pop-cal" class="hk-popover" popover data-hk="popover" aria-labelledby="pop-cal-t" role="dialog">
+      <div class="hk-popover__bar"><span></span><h2 class="hk-popover__title" id="pop-cal-t">Calendar</h2><button type="button" class="hk-bar-btn hk-bar-btn--prominent" data-hk-close>Done</button></div>
+      <section class="hk-list" style="margin:var(--s-2)" aria-label="Calendar choices">
+        <ul class="hk-list__group" role="radiogroup" aria-label="Calendar" data-hk="choicelist">
+          <li role="none"><button type="button" role="radio" aria-checked="true" class="hk-row__main"><span class="hk-row__text"><span class="hk-row__title">Personal</span></span><span class="hk-row__check" aria-hidden="true"></span></button></li>
+          <li role="none"><button type="button" role="radio" aria-checked="false" class="hk-row__main"><span class="hk-row__text"><span class="hk-row__title">Work</span></span><span class="hk-row__check" aria-hidden="true"></span></button></li>
+          <li role="none"><button type="button" role="radio" aria-checked="false" class="hk-row__main"><span class="hk-row__text"><span class="hk-row__title">Family</span></span><span class="hk-row__check" aria-hidden="true"></span></button></li>
+        </ul>
+      </section>
+    </div>
+    <div id="pop-info" class="hk-popover" popover data-hk="popover" aria-labelledby="pop-info-t" role="dialog">
+      <div class="hk-popover__bar"><span></span><h2 class="hk-popover__title" id="pop-info-t">Details</h2><button type="button" class="hk-bar-btn hk-bar-btn--prominent" data-hk-close>Done</button></div>
+      <div class="hk-popover__body"><p class="hk-callout">Opening this one closes the Calendar popover first, so only one is open.</p></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-menu">
+    <h2 id="s-menu">11 · Pull-down menu</h2>
+    <p class="g-note">A button that opens role="menu". Arrow keys, Home, End and type-ahead move; Enter or Space chooses; Escape closes and returns focus to the button. Checkmarks show state, a destructive item comes last.</p>
+    <div class="g-row">
+      <div class="hk-menu" data-hk="menu" id="menu-sort">
+        <button type="button" class="hk-menu__trigger" aria-haspopup="menu">Sort<svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6" /></svg></button>
+        <div class="hk-menu__list" popover role="menu" aria-label="Sort">
+          <button type="button" role="menuitemradio" aria-checked="true" class="hk-menu__item">Name</button>
+          <button type="button" role="menuitemradio" aria-checked="false" class="hk-menu__item">Date Added</button>
+          <button type="button" role="menuitemradio" aria-checked="false" class="hk-menu__item">Size</button>
+          <hr class="hk-menu__sep" role="separator">
+          <button type="button" role="menuitemcheckbox" aria-checked="false" class="hk-menu__item">Show Hidden Files</button>
+          <button type="button" role="menuitem" aria-disabled="true" class="hk-menu__item">Select All</button>
+          <hr class="hk-menu__sep" role="separator">
+          <button type="button" role="menuitem" class="hk-menu__item hk-menu__item--destructive">Delete All<svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10 11v6" /> <path d="M14 11v6" /> <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" /> <path d="M3 6h18" /> <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button>
+        </div>
+      </div>
+      <div class="hk-menu" data-hk="menu">
+        <button type="button" class="hk-menu__trigger" aria-haspopup="menu" disabled>Disabled</button>
+        <div class="hk-menu__list" popover role="menu" aria-label="Disabled"><button type="button" role="menuitem" class="hk-menu__item">None</button></div>
+      </div>
+    </div>
+    <p class="g-out" id="menu-out" role="status"></p>
+  </section>
+
+  <!-- 12 Disclosure -->
+  <section class="g-sec" aria-labelledby="s-disc">
+    <h2 id="s-disc">12 · Disclosure</h2>
+    <p class="g-note">Styled details and summary: keyboard and screen reader support come from the elements. Label what is hidden; keep the most used controls visible above.</p>
+    <div class="g-stage g-stage--pad">
+      <details class="hk-disclosure"><summary>Advanced Options</summary><div class="hk-disclosure__body">Export in the original format, keep the metadata and rename on save.</div></details>
+      <details class="hk-disclosure" open><summary>Details</summary><div class="hk-disclosure__body">Open by default because most people need it right away.</div></details>
+      <details class="hk-disclosure" aria-disabled="true"><summary>Unavailable Section</summary><div class="hk-disclosure__body">Hidden.</div></details>
+    </div>
+  </section>
+</div>
+
+<script src="hk-base.js"></script>
+<script src="hk-nav.js"></script>
+<script>
+  (() => {
+    // theme switch
+    const set = v => {
+      HK.setTheme(v);
+      document.querySelectorAll('[data-theme-set]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.themeSet === v)));
+    };
+    document.querySelectorAll('[data-theme-set]').forEach(b => b.addEventListener('click', () => set(b.dataset.themeSet)));
+    const q = new URLSearchParams(location.search).get('theme'); if (q) set(q);
+    // results
+    const out = (id, fn) => document.getElementById(id).addEventListener('close', e => { document.getElementById(fn.out).textContent = fn.msg(e.target.returnValue); });
+    const log = (dlgId, outId, label) => document.getElementById(dlgId).addEventListener('close', e => { document.getElementById(outId).textContent = label + ': ' + (e.target.returnValue || 'cancel'); });
+    log('sheet-new', 'sheet-out', 'Sheet closed with');
+    ['alert-info', 'alert-destroy', 'alert-three'].forEach(id => log(id, 'alert-out', id.replace('alert-', 'Alert ') + ' closed with'));
+    log('as-draft', 'as-out', 'Action sheet closed with');
+    document.getElementById('menu-sort').addEventListener('hk:menu-select', e => { document.getElementById('menu-out').textContent = 'Chose: ' + e.detail.label; });
+    // swipe actions
+    document.addEventListener('hk:row-action', e => {
+      const row = e.target.closest('.hk-row'); const t = row.querySelector('.hk-row__title').textContent;
+      if (e.detail.action === 'delete') { row.remove(); HK.announce('Deleted ' + t); }
+      const o = document.getElementById('swipe-out'); if (o) o.textContent = e.detail.action + ': ' + t;
+    });
+  })();
+</script>
+<script>
+  function optGroup(id, apply) {
+    var g = document.getElementById(id);
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('.g-opt'); if (!b) return;
+      g.querySelectorAll('.g-opt').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      apply(b.dataset.value);
+    });
+  }
+  optGroup('seg-large', function (v) { document.getElementById('large-demo').dataset.show = v; });
+  optGroup('seg-ask', function (v) { document.getElementById('sheet-new').dataset.discardAsk = v; });
+</script>
+</body>
+</html>
+
+
+
+

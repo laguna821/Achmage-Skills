@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIG Kit · controls</title>
+<link rel="stylesheet" href="hk-base.css">
+<link rel="stylesheet" href="hk-controls.css">
+<style>
+  /* gallery layout only; the components come from hk-controls.css */
+  body { background: var(--bg-grouped); }
+  .g-wrap { max-width: var(--app-max); margin: 0 auto; padding: var(--s-4) var(--s-4) var(--s-12); }
+  .g-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-4); padding: var(--s-4) 0 var(--s-6); }
+  .g-head h1 { font: var(--t-title-1); font-weight: 700; }
+  .g-head p { font: var(--t-subhead); color: var(--label-2); }
+  .g-theme { min-width: 240px; }
+  .g-sec { background: var(--bg-cell); border-radius: var(--r-lg); padding: var(--s-5); margin-bottom: var(--s-4); }
+  .g-sec > h2 { font: var(--t-title-3); font-weight: 700; margin-bottom: var(--s-1); }
+  .g-sec > .hk-secondary { font: var(--t-footnote); margin-bottom: var(--s-4); }
+  .g-grid { display: grid; gap: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
+  .g-grid > * { min-width: 0; }
+  .g-cell > h3 { font: var(--t-footnote); font-weight: 600; color: var(--label-2); margin-bottom: var(--s-2); }
+  .g-stack { display: grid; gap: var(--s-3); }
+  .g-out { min-height: 1.5rem; font: var(--t-subhead); color: var(--label-2); }
+  .g-mac { padding: var(--s-4); background: var(--bg-grouped); border-radius: var(--r-md); }
+  /* forced states, for the gallery only: mirror the :hover, :active and :focus-visible rules */
+  .g-hover { background-image: linear-gradient(color-mix(in srgb, currentColor 12%, transparent), color-mix(in srgb, currentColor 12%, transparent)); }
+  .g-press { transform: scale(.97); background-image: linear-gradient(color-mix(in srgb, currentColor 22%, transparent), color-mix(in srgb, currentColor 22%, transparent)); }
+  .g-focus { outline: 3px solid color-mix(in srgb, var(--accent) 70%, transparent); outline-offset: 2px; }
+  .g-crow { display: flex; align-items: center; gap: var(--s-1); min-height: var(--target); }
+  .g-crow--states { gap: var(--s-2); flex-wrap: wrap; }
+  .g-ccover[data-g="hover"]::before { border-color: var(--label-2); }
+  .g-ccover[data-g="press"]::before { transform: scale(.92); border-color: var(--label-2); }
+  .g-photo { padding: var(--s-5); border-radius: var(--r-md); background: linear-gradient(135deg, var(--indigo), var(--teal)); }
+</style>
+</head>
+<body>
+<div class="g-wrap">
+  <header class="g-head">
+    <div><h1>HIG Kit · controls</h1><p>버튼, 세그먼트, 토글, 스테퍼, 슬라이더, 입력, 검색, 팝업, 날짜·시간</p></div>
+    <div class="g-theme hk-seg" data-hk="segmented" role="radiogroup" aria-label="화면 모드">
+      <button type="button" role="radio" aria-checked="true" data-value="auto">자동</button>
+      <button type="button" role="radio" aria-checked="false" data-value="light">라이트</button>
+      <button type="button" role="radio" aria-checked="false" data-value="dark">다크</button>
+    </div>
+  </header>
+
+  <section class="g-sec" aria-labelledby="s-btn">
+    <h2 id="s-btn">1. 버튼 Button</h2>
+    <p class="hk-secondary">채움은 액센트 채움과 흰색 Bold 라벨. 한 화면에 눈에 띄는 버튼은 하나나 둘.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>스타일</h3><div class="hk-btn-row">
+        <button class="hk-btn hk-btn--filled">채움</button>
+        <button class="hk-btn hk-btn--tinted">틴트</button>
+        <button class="hk-btn hk-btn--bordered">테두리</button>
+        <button class="hk-btn hk-btn--plain">플레인</button>
+      </div></div>
+      <div class="g-cell"><h3>파괴적 (채움, 틴트, 플레인)</h3><div class="hk-btn-row">
+        <button class="hk-btn hk-btn--filled hk-btn--destructive"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 11v6" /> <path d="M14 11v6" /> <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" /> <path d="M3 6h18" /> <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /> </svg>삭제</button>
+        <button class="hk-btn hk-btn--tinted hk-btn--destructive">삭제</button>
+        <button class="hk-btn hk-btn--plain hk-btn--destructive">삭제</button>
+      </div></div>
+      <div class="g-cell"><h3>크기 (작게, 보통, 크게)</h3><div class="hk-btn-row">
+        <button class="hk-btn hk-btn--filled hk-btn--sm">작게</button>
+        <button class="hk-btn hk-btn--filled">보통</button>
+        <button class="hk-btn hk-btn--filled hk-btn--lg">크게</button>
+      </div></div>
+      <div class="g-cell"><h3>아이콘</h3><div class="hk-btn-row">
+        <button class="hk-btn hk-btn--filled"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /> </svg>보내기</button>
+        <button class="hk-btn hk-btn--filled hk-btn--icon" aria-label="추가"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14" /> <path d="M12 5v14" /> </svg></button>
+        <button class="hk-btn hk-btn--tinted hk-btn--icon" aria-label="검색"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /> </svg></button>
+        <button class="hk-btn hk-btn--plain hk-btn--icon hk-btn--destructive" aria-label="삭제"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M10 11v6" /> <path d="M14 11v6" /> <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" /> <path d="M3 6h18" /> <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /> </svg></button>
+      </div></div>
+      <div class="g-cell"><h3>상태: 기본, 호버, 눌림, 포커스, 비활성</h3><div class="hk-btn-row">
+        <button class="hk-btn hk-btn--filled">기본</button>
+        <button class="hk-btn hk-btn--filled g-hover">호버</button>
+        <button class="hk-btn hk-btn--filled g-press">눌림</button>
+        <button class="hk-btn hk-btn--filled g-focus">포커스</button>
+        <button class="hk-btn hk-btn--filled" disabled>비활성</button>
+        <button class="hk-btn hk-btn--tinted" disabled>비활성</button>
+      </div></div>
+      <div class="g-cell"><h3>로딩 (아래 버튼을 눌러 보기)</h3><div class="g-stack">
+        <button class="hk-btn hk-btn--filled" data-hk="button" aria-busy="true">저장 중…</button>
+        <button class="hk-btn hk-btn--tinted" data-hk="button" id="demo-load">눌러서 저장</button>
+      </div></div>
+      <div class="g-cell"><h3>전체 너비</h3><div class="g-stack">
+        <button class="hk-btn hk-btn--filled hk-btn--lg hk-btn--block">계속</button>
+        <button class="hk-btn hk-btn--plain hk-btn--block">나중에</button>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-seg">
+    <h2 id="s-seg">2. 세그먼트 Segmented control</h2>
+    <p class="hk-secondary">같은 종류의 상호 배타적 선택. ←→ 로 이동하며 선택, Home/End.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>세 개</h3>
+        <div class="hk-seg" data-hk="segmented" role="radiogroup" aria-label="보기 방식" id="seg-view">
+          <button type="button" role="radio" aria-checked="true" data-value="day">일</button>
+          <button type="button" role="radio" aria-checked="false" data-value="week">주</button>
+          <button type="button" role="radio" aria-checked="false" data-value="month">월</button>
+        </div>
+        <p class="g-out" id="seg-out" aria-live="polite">선택: day</p></div>
+      <div class="g-cell"><h3>네 개, 긴 이름 포함</h3>
+        <div class="hk-seg" data-hk="segmented" role="radiogroup" aria-label="정렬">
+          <button type="button" role="radio" aria-checked="false">최신순</button>
+          <button type="button" role="radio" aria-checked="true">인기순</button>
+          <button type="button" role="radio" aria-checked="false">가격 낮은 순</button>
+          <button type="button" role="radio" aria-checked="false">거리</button>
+        </div></div>
+      <div class="g-cell"><h3>비활성 항목 포함</h3>
+        <div class="hk-seg" data-hk="segmented" role="radiogroup" aria-label="요금제">
+          <button type="button" role="radio" aria-checked="true">무료</button>
+          <button type="button" role="radio" aria-checked="false">개인</button>
+          <button type="button" role="radio" aria-checked="false" disabled>팀</button>
+        </div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-tog">
+    <h2 id="s-tog">3. 토글 Toggle</h2>
+    <p class="hk-secondary">켜짐은 색, 손잡이 위치, 막대 표시, 꺼짐은 회색, 반대편 손잡이, 빈 원으로 구분합니다. Space로 전환.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>스위치</h3>
+        <label class="hk-toggle"><span class="hk-toggle__text"><span class="hk-toggle__label">Wi-Fi</span><span class="hk-toggle__hint">알려진 네트워크에 자동 연결</span></span><button type="button" class="hk-switch" data-hk="switch" aria-checked="true"></button></label>
+        <label class="hk-toggle"><span class="hk-toggle__label">저전력 모드</span><button type="button" class="hk-switch" data-hk="switch" aria-checked="false"></button></label>
+        <label class="hk-toggle"><span class="hk-toggle__label">비활성 (켜짐)</span><button type="button" class="hk-switch" data-hk="switch" aria-checked="true" disabled></button></label>
+        <label class="hk-toggle"><span class="hk-toggle__label">비활성 (꺼짐)</span><button type="button" class="hk-switch" data-hk="switch" aria-checked="false" disabled></button></label>
+      </div>
+      <div class="g-cell"><h3>체크박스 (데스크톱 밀도 .hk-mac)</h3>
+        <div class="g-mac hk-mac"><fieldset class="hk-check-group"><legend>알림 받기</legend>
+          <label class="hk-check"><input class="hk-check__box" type="checkbox" checked> 메일</label>
+          <label class="hk-check"><input class="hk-check__box" type="checkbox"> 메시지</label>
+          <label class="hk-check"><input class="hk-check__box" type="checkbox" id="cb-ind"> 모두 선택(일부)</label>
+          <label class="hk-check"><input class="hk-check__box" type="checkbox" disabled> 비활성</label>
+        </fieldset></div></div>
+      <div class="g-cell"><h3>체크박스 (터치 크기)</h3>
+        <fieldset class="hk-check-group"><legend>약관</legend>
+          <label class="hk-check"><input class="hk-check__box" type="checkbox" checked> 이용약관에 동의</label>
+          <label class="hk-check"><input class="hk-check__box" type="checkbox"> 마케팅 수신 동의 (선택)</label>
+        </fieldset></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-step">
+    <h2 id="s-step">4. 스테퍼 Stepper</h2>
+    <p class="hk-secondary">값은 옆에 보이도록. 최솟값과 최댓값에서 해당 버튼이 꺼집니다. ↑↓, PageUp/PageDown, Home/End.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>수량 1에서 10</h3>
+        <div class="hk-stepper-row"><span id="st-l1">수량</span>
+          <div class="hk-stepper" data-hk="stepper" data-min="1" data-max="10" data-value="2" data-unit="개" aria-labelledby="st-l1">
+            <button type="button" class="hk-stepper__btn" data-step="-1" aria-label="수량 줄이기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14" /> </svg></button>
+            <output class="hk-stepper__value"></output>
+            <button type="button" class="hk-stepper__btn" data-step="1" aria-label="수량 늘리기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14" /> <path d="M12 5v14" /> </svg></button>
+          </div></div></div>
+      <div class="g-cell"><h3>최댓값에 도달</h3>
+        <div class="hk-stepper-row"><span id="st-l2">게스트</span>
+          <div class="hk-stepper" data-hk="stepper" data-min="0" data-max="4" data-value="4" data-unit="명" aria-labelledby="st-l2">
+            <button type="button" class="hk-stepper__btn" data-step="-1" aria-label="게스트 줄이기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14" /> </svg></button>
+            <output class="hk-stepper__value"></output>
+            <button type="button" class="hk-stepper__btn" data-step="1" aria-label="게스트 늘리기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M5 12h14" /> <path d="M12 5v14" /> </svg></button>
+          </div></div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-sld">
+    <h2 id="s-sld">5. 슬라이더 Slider</h2>
+    <p class="hk-secondary">네이티브 range. ←→ 한 단계, PageUp/PageDown, Home/End.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>현재 값 표시</h3>
+        <label class="hk-field__label" for="sl-1">밝기</label>
+        <div class="hk-slider-row"><input class="hk-slider" id="sl-1" type="range" min="0" max="100" value="40" data-hk="slider" data-output="sl-1-o" data-unit="%"><output class="hk-slider__value" id="sl-1-o" for="sl-1"></output></div></div>
+      <div class="g-cell"><h3>아이콘 곁들이기</h3>
+        <label class="hk-field__label" for="sl-2">볼륨</label>
+        <div class="hk-slider-row"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /> <path d="M16 9a5 5 0 0 1 0 6" /> <path d="M19.364 18.364a9 9 0 0 0 0-12.728" /> </svg><input class="hk-slider" id="sl-2" type="range" min="0" max="10" step="1" value="7" data-hk="slider"></div></div>
+      <div class="g-cell"><h3>비활성</h3>
+        <label class="hk-field__label" for="sl-3">알림 음량</label>
+        <div class="hk-slider-row"><input class="hk-slider" id="sl-3" type="range" min="0" max="100" value="60" data-hk="slider" disabled></div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-fld">
+    <h2 id="s-fld">6. 텍스트 필드 Text field</h2>
+    <p class="hk-secondary">라벨은 항상 보이고, 힌트와 오류는 aria-describedby로 연결됩니다. 오류는 색 외에 아이콘과 문장으로 알립니다. 필드를 벗어날 때 검증.</p>
+    <div class="g-grid">
+      <div class="g-cell hk-form">
+        <div class="hk-field" data-hk="field"><label class="hk-field__label" for="f-name">이름</label>
+          <div class="hk-field__control"><input class="hk-field__input" id="f-name" type="text" placeholder="홍길동" autocomplete="name"></div>
+          <div class="hk-field__foot"><p class="hk-field__hint">신분증에 적힌 이름</p></div></div>
+        <div class="hk-field" data-hk="field" data-error="이메일 형식을 확인해 주세요. 예: name@example.com"><label class="hk-field__label" for="f-mail">이메일 (잘못 입력하고 나가 보기)</label>
+          <div class="hk-field__control"><input class="hk-field__input" id="f-mail" type="email" required placeholder="name@example.com" autocomplete="email" inputmode="email"></div>
+          <div class="hk-field__foot"><p class="hk-field__hint">영수증을 보내 드립니다</p></div></div>
+      </div>
+      <div class="g-cell hk-form">
+        <div class="hk-field" data-hk="field" data-count><label class="hk-field__label" for="f-nick">닉네임</label>
+          <div class="hk-field__control"><input class="hk-field__input" id="f-nick" type="text" maxlength="12" value="길동이"></div>
+          <div class="hk-field__foot"><p class="hk-field__hint">12자까지</p></div></div>
+        <div class="hk-field" data-hk="field" data-error="이미 사용 중인 아이디입니다."><label class="hk-field__label" for="f-id">아이디 (오류 상태)</label>
+          <div class="hk-field__control"><input class="hk-field__input" id="f-id" type="text" value="gildong" aria-invalid="true"></div>
+          <div class="hk-field__foot"><p class="hk-field__hint">영문과 숫자</p></div></div>
+      </div>
+      <div class="g-cell hk-form">
+        <div class="hk-field" data-hk="field"><label class="hk-field__label" for="f-pw">비밀번호</label>
+          <div class="hk-field__control"><input class="hk-field__input" id="f-pw" type="password" autocomplete="new-password" value="secret1234"></div></div>
+        <div class="hk-field" data-hk="field"><label class="hk-field__label" for="f-dis">비활성</label>
+          <div class="hk-field__control"><input class="hk-field__input" id="f-dis" type="text" value="수정할 수 없음" disabled></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-tv">
+    <h2 id="s-tv">7. 텍스트 뷰 Text view</h2>
+    <p class="hk-secondary">긴 글을 위한 여러 줄 입력. 내용에 따라 늘어나고 8줄에서 스크롤.</p>
+    <div class="g-grid">
+      <div class="hk-field g-cell" data-hk="field textview" data-count data-max-rows="8"><label class="hk-field__label" for="tv-1">메모</label>
+        <div class="hk-field__control"><textarea class="hk-field__input" id="tv-1" rows="3" maxlength="300" placeholder="여러 줄을 입력해 보세요"></textarea></div>
+        <div class="hk-field__foot"><p class="hk-field__hint">줄바꿈하면 높이가 늘어납니다</p></div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-srch">
+    <h2 id="s-srch">8. 검색 필드 Search field</h2>
+    <p class="hk-secondary">Enter로 검색, Esc로 지우기. 취소 버튼은 좁은 화면(743px 이하)에서 입력 중일 때만 보입니다.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>기본</h3>
+        <form class="hk-search" data-hk="search" id="srch-1"><div class="hk-search__bar"><div class="hk-search__field"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /> </svg><input class="hk-search__input" type="search" aria-label="검색" placeholder="검색" enterkeyhint="search" autocomplete="off"></div><button type="button" class="hk-btn hk-btn--plain hk-search__cancel">취소</button></div></form>
+        <p class="g-out" id="srch-1-o" aria-live="polite"></p></div>
+      <div class="g-cell"><h3>범위 막대 포함</h3>
+        <form class="hk-search" data-hk="search" id="srch-2"><div class="hk-search__bar"><div class="hk-search__field"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="m21 21-4.34-4.34" /> <circle cx="11" cy="11" r="8" /> </svg><input class="hk-search__input" type="search" aria-label="사진 검색" placeholder="사진, 앨범 검색" enterkeyhint="search" autocomplete="off"></div><button type="button" class="hk-btn hk-btn--plain hk-search__cancel">취소</button></div>
+          <div class="hk-search__scopes hk-seg" data-hk="segmented" role="radiogroup" aria-label="검색 범위">
+            <button type="button" role="radio" aria-checked="true" data-value="all">전체</button>
+            <button type="button" role="radio" aria-checked="false" data-value="photos">사진</button>
+            <button type="button" role="radio" aria-checked="false" data-value="albums">앨범</button>
+          </div></form>
+        <p class="g-out" id="srch-2-o" aria-live="polite"></p></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-pop">
+    <h2 id="s-pop">9. 팝업 버튼 Pop-up button</h2>
+    <p class="hk-secondary">네이티브 select에 화살표. 기본 선택을 두고, 값 목록은 예측 가능한 순서로.</p>
+    <div class="g-grid">
+      <div class="hk-field g-cell"><label class="hk-field__label" for="p-1">언어</label>
+        <div class="hk-select"><select class="hk-select__input" id="p-1"><option>한국어</option><option selected>English</option><option>日本語</option></select><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="m6 9 6 6 6-6" /> </svg></div></div>
+      <div class="hk-field g-cell"><label class="hk-field__label" for="p-2">정렬 (인라인 스타일)</label>
+        <div><div class="hk-select hk-select--inline"><select class="hk-select__input" id="p-2"><option>이름</option><option>날짜</option><option>크기</option></select><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="m6 9 6 6 6-6" /> </svg></div></div></div>
+      <div class="hk-field g-cell"><label class="hk-field__label" for="p-3">비활성</label>
+        <div class="hk-select"><select class="hk-select__input" id="p-3" disabled><option>변경 불가</option></select><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="m6 9 6 6 6-6" /> </svg></div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-dt">
+    <h2 id="s-dt">10. 날짜와 시간 Date and time</h2>
+    <p class="hk-secondary">네이티브 date와 time 입력. 필드와 같은 모양, 구간은 키보드로 입력하고 Alt+↓로 선택기를 엽니다.</p>
+    <div class="g-grid">
+      <div class="hk-field g-cell" data-hk="field"><label class="hk-field__label" for="d-1">날짜</label>
+        <div class="hk-field__control"><input class="hk-field__input" id="d-1" type="date" value="2026-11-04"><svg class="hk-icon hk-field__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> </svg></div></div>
+      <div class="hk-field g-cell" data-hk="field"><label class="hk-field__label" for="d-2">시간</label>
+        <div class="hk-field__control"><input class="hk-field__input" id="d-2" type="time" value="09:30"><svg class="hk-icon hk-field__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="10" /> <path d="M12 6v6l4 2" /> </svg></div></div>
+      <div class="hk-field g-cell" data-hk="field"><label class="hk-field__label" for="d-3">비활성 날짜</label>
+        <div class="hk-field__control"><input class="hk-field__input" id="d-3" type="date" value="2026-12-25" disabled><svg class="hk-icon hk-field__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M8 2v3" /> <path d="M16 2v3" /> <rect x="3" y="3" width="18" height="18" rx="2" /> <path d="M3 9h18" /> </svg></div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-cc">
+    <h2 id="s-cc">11. 완료 체크 Completion check</h2>
+    <p class="hk-secondary">토글처럼 동작하는 동그란 버튼(checkbox 의미). 켜짐은 색뿐 아니라 채운 원과 체크 표시, 줄 긋기로도 구분합니다. 터치 영역 44 px.</p>
+    <div class="g-grid">
+      <div class="g-cell"><h3>할 일 행 (눌러 보세요)</h3><div class="g-stack">
+        <div class="g-crow"><button type="button" class="hk-complete" data-hk="complete" role="checkbox" aria-checked="false" aria-label="‘우유 사기’ 완료" data-strike="#cc-t1"></button><span class="hk-strike" id="cc-t1">우유 사기</span></div>
+        <div class="g-crow"><button type="button" class="hk-complete" data-hk="complete" role="checkbox" aria-checked="true" aria-label="‘세금 신고서 제출’ 완료" data-strike="#cc-t2"></button><span class="hk-strike" id="cc-t2">세금 신고서 제출</span></div>
+        <div class="g-crow"><button type="button" class="hk-complete" data-hk="complete" aria-pressed="false" aria-label="‘치과 예약’ 완료 (aria-pressed 버튼)" data-strike="#cc-t3"></button><span class="hk-strike" id="cc-t3">치과 예약 (aria-pressed)</span></div>
+        <p class="g-out" id="cc-out" role="status"></p>
+      </div></div>
+      <div class="g-cell"><h3>상태: 기본, 호버, 눌림, 포커스, 켜짐, 비활성</h3><div class="g-crow g-crow--states">
+        <button type="button" class="hk-complete" role="checkbox" aria-checked="false" aria-label="기본"></button>
+        <button type="button" class="hk-complete g-ccover" data-g="hover" role="checkbox" aria-checked="false" aria-label="호버"></button>
+        <button type="button" class="hk-complete g-ccover" data-g="press" role="checkbox" aria-checked="false" aria-label="눌림"></button>
+        <button type="button" class="hk-complete g-focus" role="checkbox" aria-checked="false" aria-label="포커스"></button>
+        <button type="button" class="hk-complete" role="checkbox" aria-checked="true" aria-label="켜짐"></button>
+        <button type="button" class="hk-complete" role="checkbox" aria-checked="false" aria-label="비활성" disabled></button>
+        <button type="button" class="hk-complete" role="checkbox" aria-checked="true" aria-label="비활성 켜짐" disabled></button>
+      </div></div>
+      <div class="g-cell"><h3>데스크톱 밀도 (.hk-mac, 28 px)</h3><div class="g-mac hk-mac"><div class="g-crow"><button type="button" class="hk-complete" data-hk="complete" role="checkbox" aria-checked="false" aria-label="‘보고서 쓰기’ 완료" data-strike="#cc-t4"></button><span class="hk-strike" id="cc-t4">보고서 쓰기</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s-glass">
+    <h2 id="s-glass">사진 위 컨트롤</h2>
+    <p class="hk-secondary">콘텐츠 위에 떠 있는 컨트롤만 글라스를 씁니다. 여기서는 .hk-glass를 아이콘 버튼에 붙인 예.</p>
+    <div class="g-photo"><div class="hk-btn-row">
+      <button class="hk-btn hk-btn--icon hk-glass" aria-label="공유"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M12 2v13" /> <path d="m16 6-4-4-4 4" /> <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /> </svg></button>
+      <button class="hk-btn hk-btn--icon hk-glass" aria-label="좋아요"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"> <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" /> </svg></button>
+    </div></div>
+  </section>
+</div>
+<script src="hk-base.js"></script>
+<script src="hk-controls.js"></script>
+<script>
+  // gallery wiring only
+  document.querySelector('.g-theme').addEventListener('hk:change', e => HK.setTheme(e.detail.value === 'auto' ? null : e.detail.value));
+  document.getElementById('seg-view').addEventListener('hk:change', e => { document.getElementById('seg-out').textContent = '선택: ' + e.detail.value; });
+  document.getElementById('cb-ind').indeterminate = true;
+  document.querySelectorAll('[data-hk="complete"]').forEach(b => b.addEventListener('hk:change', e => { document.getElementById('cc-out').textContent = (b.getAttribute('aria-label') || '') + ' → ' + (e.detail.checked ? '완료' : '미완료'); }));
+  document.getElementById('demo-load').addEventListener('click', e => {
+    const b = e.currentTarget; b.setAttribute('aria-busy', 'true'); b.lastChild.textContent = '저장 중…';
+    setTimeout(() => { b.removeAttribute('aria-busy'); b.lastChild.textContent = '눌러서 저장'; HK.announce('저장했습니다'); }, 1800);
+  });
+  for (const id of ['srch-1', 'srch-2']) document.getElementById(id).addEventListener('hk:search', e => {
+    document.getElementById(id + '-o').textContent = '검색: "' + e.detail.query + '"' + (e.detail.scope ? ' (' + e.detail.scope + ')' : '');
+  });
+</script>
+</body>
+</html>

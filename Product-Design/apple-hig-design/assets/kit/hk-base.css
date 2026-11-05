@@ -1,0 +1,162 @@
+/* HIG Kit base: tokens and base styles for web front ends built with the apple-hig-design skill.
+   Sources: system colors and type scales from references/tokens.md (HIG tables); neutral colors,
+   filled buttons, spacing and widths from house-style decisions 9 to 11; the glass look from
+   house-style decision 3. Radii, motion and shadow values are [House] and tuned by eye.
+   Theme: follows prefers-color-scheme; force with <html data-theme="light|dark">. */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+:root {
+  color-scheme: light;
+  --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+
+  /* system colors, light (tokens.md) */
+  --red: #ff383c; --orange: #ff8d28; --yellow: #ffcc00; --green: #34c759; --mint: #00c8b3; --teal: #00c3d0;
+  --cyan: #00c0e8; --blue: #0088ff; --indigo: #6155f5; --purple: #cb30e0; --pink: #ff2d55; --brown: #ac7f5e;
+  /* increased-contrast values: use for small text and for fills behind white text (all reach 4.5:1 on white) */
+  --red-ic: #e9152d; --orange-ic: #c55300; --yellow-ic: #a16a00; --green-ic: #008932; --mint-ic: #008575; --teal-ic: #008198;
+  --cyan-ic: #007eae; --blue-ic: #1e6ef4; --indigo-ic: #564ade; --purple-ic: #b02fc2; --pink-ic: #e7124d; --brown-ic: #956d51;
+  --gray: #8e8e93; --gray-2: #aeaeb2; --gray-3: #c7c7cc; --gray-4: #d1d1d6; --gray-5: #e5e5ea; --gray-6: #f2f2f7;
+
+  /* neutrals (house 9) */
+  --label: #000000; --label-2: #6c6c70; --label-3: #8e8e93; --on-accent: #ffffff;
+  --separator: var(--gray-4); --fill: var(--gray-5); --fill-2: var(--gray-6);
+  --bg: #ffffff; --bg-grouped: var(--gray-6); --bg-cell: #ffffff; --bg-elevated: #ffffff;
+  --switch-on: var(--green);       /* toggles: system green by default (toggles/platform-considerations/ios-ipados/change-the-default-color-of-a) */
+  --track: var(--gray-5);           /* switch and slider tracks: must stay visible on cells */
+  --raised: #ffffff;                /* raised parts inside a fill, such as a segmented control's selection */
+  --label-disabled: color-mix(in srgb, var(--label) 30%, transparent);
+
+  /* layers and fixed bars */
+  --tabbar-h: 68px; --toolbar-h: 52px;
+  --z-sticky: 20; --z-tabbar: 50; --z-popover: 80; --z-toast: 90; --z-modal: 100;
+
+  /* roles: change --accent* to rebrand (check with scripts/contrast.mjs) */
+  --accent: var(--blue);            /* tint: icons, selection, focus, large or bold text */
+  --accent-text: var(--blue-ic);    /* accent as small text */
+  --accent-fill: var(--blue-ic);    /* fill behind a white Bold label (house 10) */
+  --accent-soft: color-mix(in srgb, var(--accent) 14%, transparent);
+  --destructive: var(--red); --destructive-text: var(--red-ic); --destructive-fill: var(--red-ic);
+  --success: var(--green-ic); --warning: var(--orange-ic);
+
+  /* glass (house 3): floating controls and navigation only */
+  --glass-bg: color-mix(in srgb, white 18%, transparent);
+  --glass-line: color-mix(in srgb, white 35%, transparent);
+  --glass-hi: inset 0 1px 0 color-mix(in srgb, white 45%, transparent);
+  --glass-filter: blur(16px) saturate(160%);
+  --scrim: rgb(0 0 0 / .35);
+
+  /* spacing and widths (house 11) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px; --s-6: 24px; --s-8: 32px; --s-12: 48px;
+  --read-max: 720px; --app-max: 1200px;
+
+  /* targets (tokens.md): touch default and minimum; .hk-mac switches to pointer sizes */
+  --target: 44px; --target-min: 28px;
+
+  /* radii, motion, elevation [House] */
+  --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-xl: 26px; --r-full: 999px;
+  --dur-1: 120ms; --dur-2: 220ms; --dur-3: 320ms; --ease: cubic-bezier(.2, .8, .2, 1);
+  --shadow-float: 0 8px 28px rgb(0 0 0 / .12), 0 1px 3px rgb(0 0 0 / .08);
+  --shadow-modal: 0 24px 64px rgb(0 0 0 / .22);
+
+  /* type: iOS Large (default) scale in rem so browser text-size settings apply (tokens.md) */
+  --t-large-title: 400 2.125rem/2.5625rem var(--font);
+  --t-title-1: 400 1.75rem/2.125rem var(--font);
+  --t-title-2: 400 1.375rem/1.75rem var(--font);
+  --t-title-3: 400 1.25rem/1.5625rem var(--font);
+  --t-headline: 600 1.0625rem/1.375rem var(--font);
+  --t-body: 400 1.0625rem/1.375rem var(--font);
+  --t-callout: 400 1rem/1.3125rem var(--font);
+  --t-subhead: 400 0.9375rem/1.25rem var(--font);
+  --t-footnote: 400 0.8125rem/1.125rem var(--font);
+  --t-caption-1: 400 0.75rem/1rem var(--font);
+  --t-caption-2: 400 0.6875rem/0.8125rem var(--font);
+}
+
+/* dark appearance (tokens.md dark and increased-contrast dark values) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --red: #ff4245; --orange: #ff9230; --yellow: #ffd600; --green: #30d158; --mint: #00dac3; --teal: #00d2e0;
+    --cyan: #3cd3fe; --blue: #0091ff; --indigo: #6d7cff; --purple: #db34f2; --pink: #ff375f; --brown: #b78a66;
+    --red-ic: #ff6165; --orange-ic: #ffa056; --yellow-ic: #fedf43; --green-ic: #4ad968; --mint-ic: #54dfcb; --teal-ic: #3bddec;
+    --cyan-ic: #6dd9ff; --blue-ic: #5cb8ff; --indigo-ic: #a7aaff; --purple-ic: #ea8dff; --pink-ic: #ff8ac4; --brown-ic: #dba679;
+    --gray: #8e8e93; --gray-2: #636366; --gray-3: #48484a; --gray-4: #3a3a3c; --gray-5: #2c2c2e; --gray-6: #1c1c1e;
+    --label: #ffffff; --label-2: #aeaeb2; --label-3: #8e8e93;
+    --separator: #3a3a3c; --fill: #2c2c2e; --fill-2: #1c1c1e;
+    --bg: #000000; --bg-grouped: #1c1c1e; --bg-cell: #2c2c2e; --bg-elevated: #2c2c2e;
+    --track: var(--gray-3); --raised: var(--gray-2);
+    --accent-fill: var(--blue); --destructive-fill: var(--red);
+    --glass-bg: color-mix(in srgb, black 28%, transparent); --glass-line: color-mix(in srgb, white 18%, transparent);
+    --glass-hi: inset 0 1px 0 color-mix(in srgb, white 14%, transparent);
+    --shadow-float: 0 8px 28px rgb(0 0 0 / .5), 0 1px 3px rgb(0 0 0 / .4);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --red: #ff4245; --orange: #ff9230; --yellow: #ffd600; --green: #30d158; --mint: #00dac3; --teal: #00d2e0;
+  --cyan: #3cd3fe; --blue: #0091ff; --indigo: #6d7cff; --purple: #db34f2; --pink: #ff375f; --brown: #b78a66;
+  --red-ic: #ff6165; --orange-ic: #ffa056; --yellow-ic: #fedf43; --green-ic: #4ad968; --mint-ic: #54dfcb; --teal-ic: #3bddec;
+  --cyan-ic: #6dd9ff; --blue-ic: #5cb8ff; --indigo-ic: #a7aaff; --purple-ic: #ea8dff; --pink-ic: #ff8ac4; --brown-ic: #dba679;
+  --gray: #8e8e93; --gray-2: #636366; --gray-3: #48484a; --gray-4: #3a3a3c; --gray-5: #2c2c2e; --gray-6: #1c1c1e;
+  --label: #ffffff; --label-2: #aeaeb2; --label-3: #8e8e93;
+  --separator: #3a3a3c; --fill: #2c2c2e; --fill-2: #1c1c1e;
+  --bg: #000000; --bg-grouped: #1c1c1e; --bg-cell: #2c2c2e; --bg-elevated: #2c2c2e;
+  --track: var(--gray-3); --raised: var(--gray-2);
+  --accent-fill: var(--blue); --destructive-fill: var(--red);
+  --glass-bg: color-mix(in srgb, black 28%, transparent); --glass-line: color-mix(in srgb, white 18%, transparent);
+  --glass-hi: inset 0 1px 0 color-mix(in srgb, white 14%, transparent);
+  --shadow-float: 0 8px 28px rgb(0 0 0 / .5), 0 1px 3px rgb(0 0 0 / .4);
+}
+
+/* increased contrast and reduced transparency */
+@media (prefers-contrast: more) {
+  :root { --accent: var(--accent-text); --separator: var(--gray); --label-3: var(--label-2); --glass-bg: var(--bg-elevated); --glass-line: var(--label); --glass-filter: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --glass-bg: var(--bg-elevated); --glass-filter: none; }
+}
+
+/* desktop pointer density: macOS type scale and pointer targets (tokens.md) */
+.hk-mac {
+  --target: 28px; --target-min: 20px;
+  --t-large-title: 400 1.625rem/2rem var(--font);
+  --t-title-1: 400 1.375rem/1.625rem var(--font);
+  --t-title-2: 400 1.0625rem/1.375rem var(--font);
+  --t-title-3: 400 0.9375rem/1.25rem var(--font);
+  --t-headline: 700 0.8125rem/1rem var(--font);
+  --t-body: 400 0.8125rem/1rem var(--font);
+  --t-callout: 400 0.75rem/0.9375rem var(--font);
+  --t-subhead: 400 0.6875rem/0.875rem var(--font);
+  --t-footnote: 400 0.625rem/0.8125rem var(--font);
+  --t-caption-1: 400 0.625rem/0.8125rem var(--font);
+  --t-caption-2: 500 0.625rem/0.8125rem var(--font);
+}
+
+/* base */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; font: var(--t-body); color: var(--label); background: var(--bg); word-break: keep-all; overflow-wrap: break-word; -webkit-font-smoothing: antialiased; }
+:where(h1, h2, h3, h4, p, ul, ol, figure) { margin: 0; }
+:where(button, input, select, textarea) { font: inherit; color: inherit; }
+:where(a) { color: var(--accent-text); }
+:focus-visible { outline: 3px solid color-mix(in srgb, var(--accent) 70%, transparent); outline-offset: 2px; }
+.hk-visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.hk-icon { width: 1.25em; height: 1.25em; flex: none; vertical-align: -0.25em; }
+.hk-glass { background: var(--glass-bg); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); border: 1px solid var(--glass-line); box-shadow: var(--glass-hi), var(--shadow-float); }
+
+/* text styles as classes */
+.hk-large-title { font: var(--t-large-title); font-weight: 700; letter-spacing: -0.01em; }
+.hk-title-1 { font: var(--t-title-1); font-weight: 700; }
+.hk-title-2 { font: var(--t-title-2); font-weight: 700; }
+.hk-title-3 { font: var(--t-title-3); font-weight: 600; }
+.hk-headline { font: var(--t-headline); }
+.hk-body { font: var(--t-body); }
+.hk-callout { font: var(--t-callout); }
+.hk-subhead { font: var(--t-subhead); }
+.hk-footnote { font: var(--t-footnote); }
+.hk-caption { font: var(--t-caption-1); }
+.hk-secondary { color: var(--label-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
+}

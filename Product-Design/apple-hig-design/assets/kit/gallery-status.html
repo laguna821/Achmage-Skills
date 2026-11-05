@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HIG Kit · status</title>
+<link rel="stylesheet" href="hk-base.css">
+<link rel="stylesheet" href="hk-status.css">
+<style>
+  /* gallery layout only: tokens, no new colors */
+  .g-head { position: sticky; top: 0; z-index: 40; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--s-3); padding: var(--s-3) var(--s-4); background: var(--bg); border-bottom: 1px solid var(--separator); }
+  .g-head h1 { font: var(--t-title-3); font-weight: 700; }
+  .g-seg { display: inline-flex; border: 1px solid var(--separator); border-radius: var(--r-full); overflow: hidden; }
+  .g-seg button { min-height: var(--target); min-width: var(--target); padding-inline: var(--s-4); border: 0; background: transparent; font: var(--t-subhead); cursor: pointer; }
+  .g-seg button[aria-pressed="true"] { background: var(--accent-fill); color: var(--on-accent); font-weight: 700; }
+  main { max-width: var(--app-max); margin-inline: auto; padding: var(--s-4) var(--s-4) var(--s-12); display: grid; gap: var(--s-12); }
+  .g-sec { display: grid; gap: var(--s-4); }
+  .g-sec > h2 { font: var(--t-title-2); font-weight: 700; padding-top: var(--s-4); border-top: 1px solid var(--separator); }
+  .g-box > h3 { font: var(--t-footnote); font-weight: 600; color: var(--label-2); text-transform: none; }
+  .g-note { font: var(--t-footnote); color: var(--label-2); max-width: var(--read-max); }
+  .g-grid { display: grid; gap: var(--s-6); grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); align-items: start; }
+  .g-box { display: grid; gap: var(--s-3); align-content: start; }
+  .g-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4); }
+  .g-btn { min-height: var(--target); padding-inline: var(--s-4); border: 1px solid var(--separator); border-radius: var(--r-full); background: var(--bg-cell); font: var(--t-subhead); cursor: pointer; }
+  .g-btn:hover { background: var(--fill); }
+  .g-btn:active { background: var(--gray-4); }
+  .g-btn:disabled { opacity: .4; cursor: default; }
+  .g-frame { position: relative; height: 296px; overflow: hidden; border: 1px solid var(--separator); border-radius: var(--r-lg); background: var(--bg-grouped); --hk-tabbar-h: 0px; }
+  .g-frame__list { margin: 0; padding: var(--s-2) var(--s-4); list-style: none; }
+  .g-frame__list li { display: flex; align-items: center; justify-content: space-between; gap: var(--s-3); min-height: var(--target); padding-block: var(--s-1); border-bottom: 1px solid var(--separator); font: var(--t-body); }
+  .g-frame__list li[hidden] { display: none; }
+  .g-tabbar { display: none; }
+  @media (max-width: 743px) {
+    .g-frame { --hk-tabbar-h: 56px; }
+    .g-frame .g-tabbar { position: absolute; inset: auto 0 0 0; height: 56px; }
+  }
+  .g-tabs, .g-tabbar { justify-content: space-around; background: var(--bg-elevated); border-top: 1px solid var(--separator); }
+  .g-tabs { display: flex; justify-content: space-around; background: var(--bg-elevated); border-top: 1px solid var(--separator); }
+  @media (max-width: 743px) { .g-tabbar { display: flex; } }
+  .g-tab { display: grid; justify-items: center; align-content: center; gap: 2px; min-width: var(--target); min-height: var(--target); padding: var(--s-1) var(--s-3); border: 0; background: transparent; font: var(--t-caption-2); color: var(--label-2); cursor: pointer; }
+  .g-tab .hk-icon { width: var(--s-6); height: var(--s-6); }
+  .g-tabs { border: 1px solid var(--separator); border-radius: var(--r-lg); padding: var(--s-1); }
+  .g-side { list-style: none; margin: 0; padding: var(--s-2); border: 1px solid var(--separator); border-radius: var(--r-lg); display: grid; gap: var(--s-1); background: var(--bg-grouped); }
+  .g-side button { display: flex; align-items: center; gap: var(--s-3); width: 100%; min-height: var(--target); padding-inline: var(--s-3); border: 0; border-radius: var(--r-md); background: transparent; font: var(--t-body); text-align: start; cursor: pointer; }
+  .g-side button:hover { background: var(--fill); }
+  .g-side .hk-badge { margin-inline-start: auto; }
+  .g-anchor { min-height: var(--target); padding-inline: var(--s-4); border: 1px solid var(--separator); border-radius: var(--r-full); background: var(--bg-cell); font: var(--t-subhead); cursor: pointer; }
+  .g-tipstage { display: grid; gap: var(--s-4); min-height: 240px; align-content: start; justify-items: start; }
+  .g-card-text { display: grid; gap: var(--s-1); padding: var(--s-1); }
+  .g-card-text h4 { margin: 0; font: var(--t-headline); }
+  .g-card-text p { font: var(--t-subhead); color: var(--label-2); }
+  .g-art { aspect-ratio: 16 / 9; border-radius: var(--r-md); background: var(--accent-soft); display: grid; place-items: center; color: var(--accent-text); }
+  .g-art .hk-icon { width: var(--s-8); height: var(--s-8); }
+  .g-person { display: flex; align-items: center; gap: var(--s-3); padding-block: var(--s-3); border-top: 1px solid var(--separator); }
+  .g-person .av { width: var(--s-12); height: var(--s-12); border-radius: 50%; background: var(--accent-soft); display: grid; place-items: center; color: var(--accent-text); font-weight: 700; }
+  .g-person p { font: var(--t-subhead); color: var(--label-2); }
+  .g-person b { display: block; font: var(--t-headline); color: var(--label); }
+</style>
+</head>
+<body>
+<header class="g-head">
+  <h1>HIG Kit · status</h1>
+  <div class="g-seg" role="group" aria-label="화면 모드">
+    <button type="button" data-theme-set="" aria-pressed="true">자동</button>
+    <button type="button" data-theme-set="light" aria-pressed="false">라이트</button>
+    <button type="button" data-theme-set="dark" aria-pressed="false">다크</button>
+  </div>
+</header>
+
+<main>
+  <!-- 1 -->
+  <section class="g-sec" aria-labelledby="s1">
+    <h2 id="s1">1. 진행 막대 (Progress bar)</h2>
+    <p class="g-note">길이를 알 수 있는 작업은 결정형 막대로 보여 줍니다. 라벨은 구체적으로, 값은 글자로도 적습니다.</p>
+    <div class="g-grid">
+      <div class="g-box">
+        <h3>진행 중 (동기화 시뮬레이션)</h3>
+        <div class="hk-progress" data-hk="progress" data-value-text="{value} / {max} MB">
+          <div class="hk-progress__head"><span class="hk-progress__label" id="p1l">사진 업로드 중</span><span class="hk-progress__value"></span></div>
+          <progress class="hk-progress__bar" aria-labelledby="p1l" value="42" max="120"></progress>
+        </div>
+        <div class="g-row"><button type="button" class="g-btn" id="p-step">진행 +10 MB</button><button type="button" class="g-btn" id="p-reset">처음부터</button></div>
+      </div>
+      <div class="g-box">
+        <h3>시작 전 (0%)</h3>
+        <div class="hk-progress" data-hk="progress">
+          <div class="hk-progress__head"><span class="hk-progress__label" id="p2l">백업 준비</span><span class="hk-progress__value"></span></div>
+          <progress class="hk-progress__bar" aria-labelledby="p2l" value="0" max="100"></progress>
+        </div>
+        <h3>완료 (100%)</h3>
+        <div class="hk-progress" data-hk="progress">
+          <div class="hk-progress__head"><span class="hk-progress__label" id="p3l">내보내기 완료</span><span class="hk-progress__value"></span></div>
+          <progress class="hk-progress__bar" aria-labelledby="p3l" value="100" max="100"></progress>
+        </div>
+      </div>
+      <div class="g-box">
+        <h3>오류 (멈췄을 때 이유와 다음 행동)</h3>
+        <div class="hk-progress" data-hk="progress" data-state="error">
+          <div class="hk-progress__head"><span class="hk-progress__label" id="p4l">영상 업로드 중단</span><span class="hk-progress__value"></span></div>
+          <progress class="hk-progress__bar" aria-labelledby="p4l" aria-describedby="p4n" value="68" max="100"></progress>
+          <p class="hk-progress__note" id="p4n">네트워크 연결이 끊겼어요. 연결되면 이어서 올립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="g-sec" aria-labelledby="s2">
+    <h2 id="s2">2. 활동 표시기 (Activity indicator)</h2>
+    <p class="g-note">길이를 알 수 없을 때만 씁니다. 손쉬운 사용에서 동작 줄이기(Reduce Motion)를 켜면 회전하지 않고 정지한 호와 글자 라벨로 보여 줍니다.</p>
+    <div class="g-row">
+      <span class="hk-activity"><span class="hk-spinner hk-spinner--sm" role="progressbar" aria-label="검색 결과 불러오는 중"></span></span>
+      <span class="hk-activity"><span class="hk-spinner" role="progressbar" aria-labelledby="a2l"></span><span id="a2l">검색 결과 불러오는 중</span></span>
+      <span class="hk-activity"><span class="hk-spinner hk-spinner--lg" role="progressbar" aria-labelledby="a3l"></span><span id="a3l">친구 목록 새로 고치는 중</span></span>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="g-sec" aria-labelledby="s3">
+    <h2 id="s3">3. 진행 링 (Progress ring)</h2>
+    <p class="g-note">프로젝트 완성도처럼 작은 자리에 쓰는 결정형 링입니다. 100%가 되면 체크로 바뀝니다.</p>
+    <div class="g-row">
+      <div class="hk-ring-row">
+        <div class="hk-ring" data-hk="ring" role="progressbar" aria-label="웹사이트 리뉴얼 완성도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="ring1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="hk-ring__track" cx="12" cy="12" r="10" pathLength="100"/><circle class="hk-ring__fill" cx="12" cy="12" r="10" pathLength="100"/></svg><span class="hk-ring__check"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5" /></svg></span></div>
+        <span class="hk-ring-row__text"><span>웹사이트 리뉴얼</span><span class="hk-ring-row__value"></span></span>
+      </div>
+      <div class="hk-ring-row">
+        <div class="hk-ring" data-hk="ring" role="progressbar" aria-label="앱 출시 준비 완성도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="hk-ring__track" cx="12" cy="12" r="10" pathLength="100"/><circle class="hk-ring__fill" cx="12" cy="12" r="10" pathLength="100"/></svg><span class="hk-ring__check"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5" /></svg></span></div>
+        <span class="hk-ring-row__text"><span>앱 출시 준비</span><span class="hk-ring-row__value"></span></span>
+      </div>
+      <div class="hk-ring-row">
+        <div class="hk-ring" data-hk="ring" role="progressbar" aria-label="연말 정산 완성도" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="hk-ring__track" cx="12" cy="12" r="10" pathLength="100"/><circle class="hk-ring__fill" cx="12" cy="12" r="10" pathLength="100"/></svg><span class="hk-ring__check"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 6 9 17l-5-5" /></svg></span></div>
+        <span class="hk-ring-row__text"><span>연말 정산</span><span class="hk-ring-row__value"></span></span>
+      </div>
+      <button type="button" class="g-btn" id="ring-step">첫 링 +25%</button>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="g-sec" aria-labelledby="s4">
+    <h2 id="s4">4. 실행 취소 토스트 (Toast with undo)</h2>
+    <p class="g-note">화면 폭이 좁으면(compact) 탭 막대 위, 넓으면(regular) 아래 가운데에 뜹니다. 닫기 전이나 교체 전까지 남고, 자동으로 사라질 때는 6초 이상 보여 주며 마우스를 올리거나 초점이 있으면 멈춥니다. 키보드: Tab으로 &lsquo;실행 취소&rsquo;에 이동, Esc로 닫기, Ctrl/Cmd+Z로도 실행 취소(옵션: <code>shortcut: false</code>로 끄거나, 앱이 자체 실행 취소를 가지면 페이지에 <code>data-hk-own-undo</code>를 두면 기본으로 꺼짐).</p>
+    <div class="g-grid">
+      <div class="g-box">
+        <h3>삭제하고 실행 취소 (6초 이상 후 자동 숨김)</h3>
+        <div class="g-frame" id="frame1">
+          <ul class="g-frame__list" id="todo-list">
+            <li data-id="a"><span>주간 보고서</span><button type="button" class="g-btn" data-del aria-label="주간 보고서 삭제">삭제</button></li>
+            <li data-id="b"><span>회의 메모</span><button type="button" class="g-btn" data-del aria-label="회의 메모 삭제">삭제</button></li>
+            <li data-id="c"><span>디자인 시안</span><button type="button" class="g-btn" data-del aria-label="디자인 시안 삭제">삭제</button></li>
+          </ul>
+          <nav class="g-tabbar" aria-label="예시 탭 막대">
+            <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span>홈</span></button>
+            <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg><span>검색</span></button>
+            <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg><span>나</span></button>
+          </nav>
+        </div>
+      </div>
+      <div class="g-box">
+        <h3>계속 남는 토스트 (닫거나 교체할 때까지)</h3>
+        <div class="g-frame" id="frame2">
+          <div class="g-row" style="padding: var(--s-4)"><button type="button" class="g-btn" id="toast-keep">보관함으로 이동</button><button type="button" class="g-btn" id="toast-replace">다른 토스트로 교체</button><button type="button" class="g-btn" id="toast-nokey">Ctrl+Z 끄기</button></div>
+          <nav class="g-tabbar" aria-label="예시 탭 막대 2">
+            <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span>홈</span></button>
+            <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg><span>검색</span></button>
+            <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg><span>나</span></button>
+          </nav>
+        </div>
+      </div>
+      <div class="g-box">
+        <h3>정적 표본: 기본 / 실행 취소 사용 불가</h3>
+        <div class="hk-toast hk-toast--static" data-hk="toast-item" data-shortcut="false">
+          <p class="hk-toast__msg" role="status">사진 3장을 보관했어요</p>
+          <button type="button" class="hk-toast__undo" data-toast-undo>실행 취소</button>
+          <button type="button" class="hk-toast__close" data-toast-close aria-label="닫기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
+        </div>
+        <div class="hk-toast hk-toast--static" data-hk="toast-item" data-shortcut="false">
+          <p class="hk-toast__msg" role="status">‘회의 메모’를 삭제했어요</p>
+          <button type="button" class="hk-toast__undo" data-toast-undo disabled>실행 취소</button>
+          <button type="button" class="hk-toast__close" data-toast-close aria-label="닫기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="g-sec" aria-labelledby="s5">
+    <h2 id="s5">5. 빈 상태 (Empty state)</h2>
+    <p class="g-note">아이콘, 제목, 한 문장 설명, 행동 하나. 빈 화면은 무엇을 할 수 있는지 안내합니다. 검색 결과가 없으면 왜 비었는지 말하고 다음 행동을 줍니다.</p>
+    <div class="g-grid">
+      <div class="hk-empty" data-hk="empty">
+        <div class="hk-empty__icon" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></svg></div>
+        <h3 class="hk-empty__title">아직 프로젝트가 없어요</h3>
+        <p class="hk-empty__text">프로젝트를 만들면 할 일과 진행 상황을 한곳에서 볼 수 있어요.</p>
+        <button type="button" class="hk-empty__action">프로젝트 만들기</button>
+      </div>
+      <div class="hk-empty">
+        <div class="hk-empty__icon" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="m21 21-4.34-4.34" /><circle cx="11" cy="11" r="8" /></svg></div>
+        <h3 class="hk-empty__title">&lsquo;푸른고래&rsquo; 검색 결과가 없어요</h3>
+        <p class="hk-empty__text">철자를 확인하거나 다른 키워드로 찾아보세요.</p>
+        <button type="button" class="hk-empty__action">검색어 지우기</button>
+      </div>
+      <div class="hk-empty">
+        <div class="hk-empty__icon" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg></div>
+        <h3 class="hk-empty__title">보관함이 비어 있어요</h3>
+        <p class="hk-empty__text">오프라인이라 새 항목을 가져오지 못했어요.</p>
+        <button type="button" class="hk-empty__action" disabled>다시 시도</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="g-sec" aria-labelledby="s6">
+    <h2 id="s6">6. 팁 (Tips)</h2>
+    <p class="g-note">간단한 기능 하나를 한두 문장으로 알립니다. 팝오버 팁은 한 번에 하나만 보이고, 대상 요소를 화살표로 가리킵니다. 키보드: 버튼으로 열면 초점이 팁의 닫기로 가고, Esc로 닫으면 열었던 버튼으로 돌아옵니다.</p>
+    <div class="g-grid">
+      <div class="g-box">
+        <h3>인라인 팁</h3>
+        <div class="hk-tip" data-hk="tip" role="group" aria-labelledby="t1h">
+          <div class="hk-tip__icon" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg></div>
+          <div class="hk-tip__body">
+            <h4 class="hk-tip__title" id="t1h" style="margin:0">길게 눌러 빠르게 정렬</h4>
+            <p class="hk-tip__text">목록 제목을 길게 누르면 이름순이나 날짜순으로 바로 바꿀 수 있어요.</p>
+            <button type="button" class="hk-tip__action">정렬 설정 열기</button>
+          </div>
+          <button type="button" class="hk-tip__close" data-tip-close aria-label="팁 닫기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
+        </div>
+      </div>
+      <div class="g-box">
+        <h3>팝오버 팁 (대상: 공유 버튼)</h3>
+        <div class="g-tipstage">
+          <div class="g-row">
+            <button type="button" class="g-anchor" id="tip-anchor">공유</button>
+            <button type="button" class="g-btn" data-hk="tip-open" data-target="#tip-pop">팁 보기</button>
+            <button type="button" class="g-btn" data-hk="tip-open" data-target="#tip-pop2">다른 팁 보기</button>
+          </div>
+        </div>
+        <div class="hk-tip hk-tip--popover" id="tip-pop" data-hk="tip" data-anchor="#tip-anchor" aria-labelledby="t2h" hidden>
+          <span class="hk-tip__arrow" aria-hidden="true"></span>
+          <div class="hk-tip__icon" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5" /><path d="M9 18h6" /><path d="M10 22h4" /></svg></div>
+          <div class="hk-tip__body">
+            <h4 class="hk-tip__title" id="t2h" style="margin:0">링크로 바로 공유</h4>
+            <p class="hk-tip__text">공유를 누르면 문서 링크가 복사돼요.</p>
+          </div>
+          <button type="button" class="hk-tip__close" data-tip-close aria-label="팁 닫기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
+        </div>
+        <div class="hk-tip hk-tip--popover" id="tip-pop2" data-hk="tip" data-anchor="#tip-anchor" aria-labelledby="t3h" hidden>
+          <span class="hk-tip__arrow" aria-hidden="true"></span>
+          <div class="hk-tip__icon" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><path d="M16 3.128a4 4 0 0 1 0 7.744" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><circle cx="9" cy="7" r="4" /></svg></div>
+          <div class="hk-tip__body">
+            <h4 class="hk-tip__title" id="t3h" style="margin:0">함께 편집하기</h4>
+            <p class="hk-tip__text">초대한 사람은 같은 문서를 동시에 고칠 수 있어요.</p>
+          </div>
+          <button type="button" class="hk-tip__close" data-tip-close aria-label="팁 닫기"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="g-sec" aria-labelledby="s7">
+    <h2 id="s7">7. 배지 (Badge)</h2>
+    <p class="g-note">읽지 않은 항목 수에만 씁니다. 숫자는 소리 내어 읽히도록 숨은 글자도 함께 넣습니다. 0이면 사라지고 99를 넘으면 &lsquo;99+&rsquo;로 보입니다.</p>
+    <div class="g-grid">
+      <div class="g-box">
+        <h3>탭 막대 항목</h3>
+        <div class="g-tabs" role="group" aria-label="예시 탭">
+          <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></svg><span>홈</span></button>
+          <button type="button" class="g-tab"><span class="hk-badge-host"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" /></svg><span class="hk-badge hk-badge--corner" data-hk="badge" data-count="3" data-label="읽지 않은 메시지 {n}개"></span></span><span>메시지</span></button>
+          <button type="button" class="g-tab"><span class="hk-badge-host"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M10.268 21a2 2 0 0 0 3.464 0" /><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326" /></svg><span class="hk-badge hk-badge--corner" data-hk="badge" data-count="128" data-label="읽지 않은 알림 {n}개"></span></span><span>알림</span></button>
+          <button type="button" class="g-tab"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg><span>나</span></button>
+        </div>
+        <div class="g-row"><button type="button" class="g-btn" id="badge-add">메시지 +1</button><button type="button" class="g-btn" id="badge-clear">모두 읽음</button></div>
+      </div>
+      <div class="g-box">
+        <h3>사이드바 항목</h3>
+        <ul class="g-side" aria-label="예시 사이드바">
+          <li><button type="button"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>받은 편지함<span class="hk-badge" data-hk="badge" data-count="12" data-label="읽지 않은 메일 {n}통"></span></button></li>
+          <li><button type="button"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></svg>중요<span class="hk-badge hk-badge--quiet" data-hk="badge" data-count="2" data-label="새 중요 항목 {n}개"></span></button></li>
+          <li><button type="button"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect width="20" height="5" x="2" y="3" rx="1" /><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8" /><path d="M10 12h4" /></svg>보관함<span class="hk-badge" data-hk="badge" data-count="0" data-label="읽지 않은 항목 {n}개"></span></button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="g-sec" aria-labelledby="s8">
+    <h2 id="s8">8. 자리 표시 스켈레톤 (Skeleton)</h2>
+    <p class="g-note">불러오는 동안 곧바로 목록과 카드의 모양을 보여 주고, 내용이 오면 바꿉니다. 동작 줄이기를 켜면 반짝임 없이 정지한 블록입니다.</p>
+    <div class="g-row"><button type="button" class="g-btn" data-hk="skeleton-toggle" data-target="#sk" data-label-loading="내용 불러오기" data-label-loaded="스켈레톤 다시 보기" data-announce="목록을 불러왔어요">내용 불러오기</button></div>
+    <div class="g-grid" id="sk" data-hk="skeleton" aria-busy="true">
+      <div class="hk-skeleton-list" data-skeleton-placeholder>
+        <span class="hk-visually-hidden" role="status">목록을 불러오는 중</span>
+        <div class="hk-skeleton-row" aria-hidden="true"><span class="hk-skeleton__avatar"></span><span class="hk-skeleton-text"><span class="hk-skeleton__line"></span><span class="hk-skeleton__line hk-skeleton__line--short"></span></span></div>
+        <div class="hk-skeleton-row" aria-hidden="true"><span class="hk-skeleton__avatar"></span><span class="hk-skeleton-text"><span class="hk-skeleton__line"></span><span class="hk-skeleton__line hk-skeleton__line--short"></span></span></div>
+        <div class="hk-skeleton-row" aria-hidden="true"><span class="hk-skeleton__avatar"></span><span class="hk-skeleton-text"><span class="hk-skeleton__line"></span><span class="hk-skeleton__line hk-skeleton__line--tiny"></span></span></div>
+      </div>
+      <div class="hk-skeleton-card" data-skeleton-placeholder aria-hidden="true">
+        <span class="hk-skeleton__thumb"></span>
+        <span class="hk-skeleton-text"><span class="hk-skeleton__line"></span><span class="hk-skeleton__line hk-skeleton__line--short"></span></span>
+      </div>
+      <div data-skeleton-content hidden>
+        <div class="g-person"><span class="av" aria-hidden="true">지</span><p><b>지민</b>오늘 저녁에 볼까요?</p></div>
+        <div class="g-person"><span class="av" aria-hidden="true">서</span><p><b>서준</b>시안 확인했어요.</p></div>
+        <div class="g-person"><span class="av" aria-hidden="true">하</span><p><b>하은</b>회의 메모 공유합니다.</p></div>
+      </div>
+      <div data-skeleton-content hidden>
+        <div class="hk-skeleton-card"><div class="g-art" aria-hidden="true"><svg class="hk-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" ><rect width="18" height="18" x="3" y="3" rx="2" ry="2" /><circle cx="9" cy="9" r="2" /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg></div><div class="g-card-text"><h4>가을 전시 안내</h4><p>11월 한 달 동안 열려요.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="g-sec" aria-labelledby="s9">
+    <h2 id="s9">9. 막대 차트 (Bar chart)</h2>
+    <p class="g-note">값은 막대 위에 바로 적고, 축에는 익숙한 눈금(0, 50, 100…)을 씁니다. 화면에는 보이지 않는 표가 같은 데이터를 보조 기술에 전달합니다.</p>
+    <div class="g-grid">
+      <figure class="hk-chart" data-hk="bar-chart" data-unit="명" data-x-label="요일" data-y-label="방문자">
+        <figcaption><strong class="hk-chart__title">토요일 방문자가 가장 많아요</strong><br><span class="hk-chart__summary">이번 주 방문자는 토요일에 212명으로 정점을 찍고 일요일부터 줄었어요.</span></figcaption>
+        <table>
+          <caption>이번 주 요일별 방문자 수</caption>
+          <thead><tr><th scope="col">요일</th><th scope="col">방문자(명)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">월</th><td>120</td></tr>
+            <tr><th scope="row">화</th><td>98</td></tr>
+            <tr><th scope="row">수</th><td>135</td></tr>
+            <tr><th scope="row">목</th><td>110</td></tr>
+            <tr><th scope="row">금</th><td>160</td></tr>
+            <tr><th scope="row">토</th><td>212</td></tr>
+            <tr><th scope="row">일</th><td>145</td></tr>
+          </tbody>
+        </table>
+      </figure>
+      <figure class="hk-chart" data-hk="bar-chart" data-unit="점" data-x-label="분기" data-y-label="만족도">
+        <figcaption><strong class="hk-chart__title">만족도가 한 해 내내 올랐어요</strong><br><span class="hk-chart__summary">1분기 62점에서 4분기 81점으로 올랐어요.</span></figcaption>
+        <table>
+          <caption>분기별 고객 만족도</caption>
+          <thead><tr><th scope="col">분기</th><th scope="col">만족도(점)</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">1분기</th><td>62</td></tr>
+            <tr><th scope="row">2분기</th><td>70</td></tr>
+            <tr><th scope="row">3분기</th><td>76</td></tr>
+            <tr><th scope="row">4분기</th><td>81</td></tr>
+          </tbody>
+        </table>
+      </figure>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s10">
+    <h2 id="s10">10. 게이지 (Gauge)</h2>
+    <p class="g-note">범위 안의 수준을 보여 줍니다. 값은 항상 글자로도 나오고, 접근성에는 <code>role="meter"</code>와 <code>aria-valuetext</code>가 전달됩니다. 진행 중인 작업은 진행 막대를 쓰세요.</p>
+    <div class="g-grid">
+      <div class="g-box"><h3>슬림, 목록 행처럼 (8개 중 3개)</h3>
+        <div class="hk-gauge hk-gauge--slim" data-hk="gauge" data-value-text="{max}개 중 {value}개 완료" data-empty-text="할 일이 아직 없어요" data-full-text="모두 끝냈어요" id="gauge1">
+          <div class="hk-gauge__head"><span class="hk-gauge__label" id="gl1">웹사이트 리뉴얼</span><span class="hk-gauge__value"></span></div>
+          <div class="hk-gauge__track" role="meter" aria-labelledby="gl1" aria-valuemin="0" aria-valuemax="8" aria-valuenow="3"><span class="hk-gauge__fill"></span></div>
+        </div>
+        <div class="g-row"><button type="button" class="g-btn" id="gauge-step">1개 더 완료</button><button type="button" class="g-btn" id="gauge-zero">할 일 없음</button><button type="button" class="g-btn" id="gauge-reset">3개로</button></div>
+      </div>
+      <div class="g-box"><h3>기본 두께와 양 끝 이름</h3>
+        <div class="hk-gauge hk-gauge--accent" data-hk="gauge" data-value-text="{value}GB 사용 · {max}GB 중">
+          <div class="hk-gauge__head"><span class="hk-gauge__label" id="gl2">저장 공간</span><span class="hk-gauge__value"></span></div>
+          <div class="hk-gauge__track" role="meter" aria-labelledby="gl2" aria-valuemin="0" aria-valuemax="128" aria-valuenow="46"><span class="hk-gauge__fill"></span></div>
+          <div class="hk-gauge__ends"><span>비어 있음</span><span>가득</span></div>
+        </div>
+      </div>
+      <div class="g-box"><h3>수준에 따른 색 (경고 80%, 위험 95%). 글자가 수준을 말합니다</h3>
+        <div class="hk-gauge" data-hk="gauge" data-warn="0.8" data-critical="0.95" data-value-text="{percent}% 사용, 거의 가득 참">
+          <div class="hk-gauge__head"><span class="hk-gauge__label" id="gl3">배터리 사용량 (경고)</span><span class="hk-gauge__value"></span></div>
+          <div class="hk-gauge__track" role="meter" aria-labelledby="gl3" aria-valuemin="0" aria-valuemax="100" aria-valuenow="84"><span class="hk-gauge__fill"></span></div>
+        </div>
+        <div class="hk-gauge" data-hk="gauge" data-warn="0.8" data-critical="0.95" data-value-text="{percent}% 사용, 곧 가득 참">
+          <div class="hk-gauge__head"><span class="hk-gauge__label" id="gl4">디스크 (위험)</span><span class="hk-gauge__value"></span></div>
+          <div class="hk-gauge__track" role="meter" aria-labelledby="gl4" aria-valuemin="0" aria-valuemax="100" aria-valuenow="97"><span class="hk-gauge__fill"></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="g-sec" aria-labelledby="s11">
+    <h2 id="s11">11. 배너 (Banner)</h2>
+    <p class="g-note">화면에 계속 남는 인라인 메시지. 아이콘 모양이 변형마다 다르고(원 i, 삼각형, 원 느낌표), 글자는 항상 기본 라벨색입니다. 동작은 최대 두 개. 스스로 사라지지 않습니다.</p>
+    <div class="g-grid">
+      <div class="g-box"><h3>정보 (동작 1개)</h3>
+        <section class="hk-banner hk-banner--info" data-hk="banner"><svg class="hk-icon hk-banner__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 16v-4" /><path d="M12 8h.01" /></svg><div class="hk-banner__body"><h3 class="hk-banner__title">비공개 모드에서 열었어요</h3><p class="hk-banner__text">이 브라우저에는 저장되지 않아요. 창을 닫으면 내용이 사라져요.</p></div><div class="hk-banner__actions"><button type="button" class="hk-banner__action">파일로 내보내기</button></div></section></div>
+      <div class="g-box"><h3>경고 (동작 2개)</h3>
+        <section class="hk-banner hk-banner--warning" data-hk="banner"><svg class="hk-icon hk-banner__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /><path d="M12 9v4" /><path d="M12 17h.01" /></svg><div class="hk-banner__body"><h3 class="hk-banner__title">저장 공간이 가득 찼어요</h3><p class="hk-banner__text">새 내용은 저장되지 않아요. 이미 저장한 내용은 그대로예요.</p></div><div class="hk-banner__actions"><button type="button" class="hk-banner__action">백업 파일 받기</button><button type="button" class="hk-banner__action hk-banner__action--plain">자세히</button></div></section></div>
+      <div class="g-box"><h3>오류 (동작 없음 / 1개)</h3>
+        <section class="hk-banner hk-banner--error" data-hk="banner"><svg class="hk-icon hk-banner__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></svg><div class="hk-banner__body"><h3 class="hk-banner__title">가져오기에 실패했어요</h3><p class="hk-banner__text">파일 형식을 읽을 수 없어요. 기존 데이터는 그대로예요. JSON 파일인지 확인한 뒤 다시 선택해 주세요.</p></div><div class="hk-banner__actions"><button type="button" class="hk-banner__action">다시 선택</button></div></section>
+        <section class="hk-banner hk-banner--error" data-hk="banner"><svg class="hk-icon hk-banner__icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" x2="12" y1="8" y2="12" /><line x1="12" x2="12.01" y1="16" y2="16" /></svg><div class="hk-banner__body"><h3 class="hk-banner__title">데이터를 불러오지 못했어요</h3><p class="hk-banner__text">저장된 내용이 지워졌거나 접근할 수 없어요.</p></div></section></div>
+    </div>
+  </section>
+</main>
+
+<script src="hk-base.js"></script>
+<script src="hk-status.js"></script>
+<script>
+  // gallery wiring only
+  document.querySelectorAll('[data-theme-set]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      HK.setTheme(b.dataset.themeSet);
+      document.querySelectorAll('[data-theme-set]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+    });
+  });
+  var bar = document.querySelector('#p-step').closest('.g-box').querySelector('progress');
+  document.getElementById('p-step').addEventListener('click', function () { bar.value = Math.min(bar.max, bar.value + 10); });
+  document.getElementById('p-reset').addEventListener('click', function () { bar.value = 0; });
+  var ring1 = document.getElementById('ring1');
+  document.getElementById('ring-step').addEventListener('click', function () {
+    var v = +ring1.getAttribute('aria-valuenow') + 25; ring1.setAttribute('aria-valuenow', v > 100 ? 0 : v);
+  });
+  // undo demo
+  document.getElementById('todo-list').addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-del]'); if (!btn) return;
+    var li = btn.closest('li'), name = li.querySelector('span').textContent;
+    li.hidden = true;
+    HK.toast({
+      container: document.getElementById('frame1'), message: '‘' + name + '’을(를) 삭제했어요', undoLabel: '실행 취소',
+      undoneMessage: '‘' + name + '’ 삭제를 취소했어요', duration: 8000,
+      onUndo: function () { li.hidden = false; }
+    });
+  });
+  var f2 = document.getElementById('frame2');
+  document.getElementById('toast-keep').addEventListener('click', function () {
+    HK.toast({ container: f2, message: '항목 1개를 보관함으로 옮겼어요', undoLabel: '실행 취소', undoneMessage: '이동을 취소했어요', duration: 0 });
+  });
+  document.getElementById('toast-replace').addEventListener('click', function () {
+    HK.toast({ container: f2, message: '링크를 복사했어요', duration: 0 });
+  });
+  document.getElementById('toast-nokey').addEventListener('click', function () {
+    HK.toast({ container: f2, message: '이 토스트는 Ctrl+Z를 쓰지 않아요', undoLabel: '실행 취소', undoneMessage: '취소했어요', duration: 0, shortcut: false });
+  });
+  // gauge demo
+  var g1 = document.querySelector('#gauge1 [role=meter]');
+  document.getElementById('gauge-step').addEventListener('click', function () { g1.setAttribute('aria-valuemax', 8); g1.setAttribute('aria-valuenow', Math.min(8, +g1.getAttribute('aria-valuenow') + 1)); });
+  document.getElementById('gauge-zero').addEventListener('click', function () { g1.setAttribute('aria-valuemax', 0); g1.setAttribute('aria-valuenow', 0); });
+  document.getElementById('gauge-reset').addEventListener('click', function () { g1.setAttribute('aria-valuemax', 8); g1.setAttribute('aria-valuenow', 3); });
+  // badge demo
+  var msgBadge = document.querySelector('.g-tabs .hk-badge');
+  document.getElementById('badge-add').addEventListener('click', function () { msgBadge.dataset.count = (+msgBadge.dataset.count || 0) + 1; });
+  document.getElementById('badge-clear').addEventListener('click', function () { document.querySelectorAll('.g-tabs .hk-badge').forEach(function (b) { b.dataset.count = 0; }); });
+</script>
+</body>
+</html>

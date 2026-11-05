@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>하루 데모 (데스크톱)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+<div id="stage"></div>
+<script>
+/* 하루 launch deck, desktop. Keys: → / Space next, ← previous, L live, R reset step, F full screen, P pick, ? help. */
+const CHK = t => `#pane-list .hk-complete[aria-label="‘${t}’ 완료"]`;
+const LINK = t => `#pane-list .hh-row:has(.hk-complete[aria-label="‘${t}’ 완료"]) .hh-row__main`;
+const SEED = '디자인 시안 검토하기';
+const NEWT = '우체국 가기';
+const ADD = '#pane-list [data-act="add"]';
+window.DECK = {
+  title: '하루 데모 (데스크톱)',
+  theme: 'dark',
+  product: {
+    device: 'desktop',
+    src: '../../04-build/?sample=1',
+    width: 1440, height: 900,
+    url: 'haru.app',
+    resetStorage: true,
+  },
+  steps: [
+    { kind: 'title', title: '오늘 할 일만 보이고, 실수는 되돌려요', body: '하루는 오늘 끝낼 일에 집중하고 프로젝트를 차근차근 끝내게 돕는 할 일 앱이에요.' },
+    { target: '#pane-list [data-screen="S01"]', eyebrow: '1 · 오늘', title: '열면 오늘 할 일이에요', body: '오늘 마감인 일과 지난 일이 한 목록에 모여 있어요.', placement: 'right', zoom: 1.2, pad: 0 },
+    { target: ADD, eyebrow: '2 · 빠른 추가', title: '어디서든 한 번에 추가해요', body: '이 버튼은 모든 화면에서 같은 자리에 있어요. 키보드로는 N을 눌러요.', hint: '눌러 보세요', zoom: 1.7, placement: 'left' },
+    { do: [{ click: ADD }, { type: ['#qa-pop #qa-title', NEWT] }], target: '#qa-pop', eyebrow: '2 · 빠른 추가', title: '제목만 적으면 돼요', body: '마감일은 오늘로 정해져 있어서 바로 추가할 수 있어요.', placement: 'left', zoom: 1.4 },
+    { do: [{ click: '#qa-add-r' }], target: CHK(NEWT), eyebrow: '3 · 완료', title: '새 할 일이 목록에 들어왔어요', body: '동그라미를 누르면 그 자리에서 끝낼 수 있어요.', hint: '눌러 보세요', zoom: 2, placement: 'right', pad: 8 },
+    { do: [{ click: CHK(NEWT) }], target: '#pane-list .hh-done', eyebrow: '3 · 완료', title: '끝낸 일은 아래로 내려가요', body: '‘오늘 끝낸 일’에서 다시 볼 수 있어요.', zoom: 1.6, placement: 'right' },
+    { do: [{ click: LINK(SEED) }], target: '#pane-detail', eyebrow: '4 · 상세', title: '할 일을 열면 오른쪽에 보여요', body: '마감일, 프로젝트, 담당자를 여기서 바꿔요.', placement: 'left' },
+    { do: [{ click: '#pane-detail [data-act="delete-task"]' }], target: '#toasthost .hk-toast', eyebrow: '5 · 삭제', title: '삭제해도 묻지 않아요', body: '바로 지우고 ‘실행 취소’를 보여 줘요. 누르면 되돌려요.', zoom: 1.8, placement: 'right' },
+    { do: [{ click: '#sidebar a[href="#/trash"]' }], target: '#pane-list .hh-trashrow:first-child', eyebrow: '5 · 휴지통', title: '지운 일은 휴지통에 있어요', body: '복원을 누르면 원래 자리로 돌아가요.', zoom: 1.7, placement: 'right' },
+    { do: [{ click: '#sidebar a[href="#/projects"]' }], target: '#pane-list [data-decision="D10"]', eyebrow: '6 · 프로젝트', title: '프로젝트는 진행도가 보여요', body: '끝낸 할 일 수가 막대로 바로 나타나요.', zoom: 1.5, placement: 'right' },
+    { do: [{ click: '#sidebar a[href="#/search"]' }, { type: ['#q', '회의'] }], target: '#pane-list [data-screen="S07"]', eyebrow: '7 · 검색', title: '이름만 적으면 찾아요', body: '할 일과 프로젝트가 한 번에 나와요.', zoom: 1.3, placement: 'right', pad: 0 },
+    { kind: 'live', do: [{ click: '#sidebar a[href="#/today"]' }], title: '직접 써 보세요' },
+    { kind: 'title', title: '하루를 시작해 보세요', body: '오늘 할 일부터, 실수는 되돌리면서.' },
+  ],
+};
+</script>
+<script src="deck.js"></script>
+</body>
+</html>
+
+

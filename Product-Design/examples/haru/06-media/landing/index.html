@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="하루는 혼자 쓰거나 작은 팀이 함께 쓰는 할 일과 프로젝트 웹 앱이에요. 오늘 끝낼 일이 한눈에 보여요.">
+<title>하루 · 오늘 할 일을 또렷하게</title>
+<link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="theme.css">
+<style>
+/* Landing page for 하루. Tokens come from kit.css and theme.css; only layout and display type live here.
+   Reading page, so the iOS type scale is used (media/web.md "Choosing a type scale", stated in build-rationale-note.md). */
+:root {
+  --lp-pad: var(--s-5);               /* 20 px page inset on phones */
+  --lp-gap: var(--s-12);              /* 48 px between sections on phones */
+  --lp-body: 400 1.0625rem/1.5625rem var(--font);      /* Body 17/22 -> reading leading 25 */
+  --lp-lead: 400 1.25rem/1.75rem var(--font);           /* Title 3 20 */
+  --lp-h3: 700 1.375rem/1.75rem var(--font);            /* Title 2 22/28 */
+  --lp-h2: 700 1.75rem/2.125rem var(--font);            /* Title 1 28/34 */
+  --lp-display: 700 2.5rem/2.75rem var(--font);         /* display headline, phones: 40 px */
+}
+@media (min-width: 744px) {
+  :root { --lp-pad: var(--s-8); --lp-gap: 96px; --lp-h2: 700 2.125rem/2.5625rem var(--font); --lp-display: 700 3.5rem/3.75rem var(--font); }
+}
+@media (min-width: 1024px) {
+  :root { --lp-display: 700 4.25rem/4.5rem var(--font); }   /* 68 px = 2 x Large Title 34 (house 12) */
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body { margin: 0; background: var(--bg); color: var(--label); font: var(--lp-body); word-break: keep-all; overflow-wrap: break-word; -webkit-text-size-adjust: 100%; }
+h1, h2, h3, p { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: var(--lp-pad); }
+.skip { position: absolute; left: var(--s-4); top: -64px; z-index: 10; }
+.skip:focus { top: var(--s-3); }
+
+/* header: product name only. Brand stays behind content. */
+.top { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+.top__name { font: 700 1.375rem/1.75rem var(--font); }
+
+/* hero */
+.hero { padding-block: var(--s-8) 0; }
+.hero__text { max-width: 720px; }
+.hero h1 { font: var(--lp-display); }
+.hero__sub { margin-top: var(--s-5); font: var(--lp-lead); color: var(--label-2); max-width: 36ch; }
+.hero__cta { margin-top: var(--s-8); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-3) var(--s-4); }
+.hero__note { font: 400 0.9375rem/1.25rem var(--font); color: var(--label-2); }
+
+/* product images */
+.shot { display: block; }
+.shot img { width: 100%; }
+.win { border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 0 0 1px var(--separator), 0 24px 48px -16px rgb(0 0 0 / .22); background: var(--bg); }
+.win img { aspect-ratio: 1920 / 1060; object-fit: cover; object-position: top left; }
+.win--crop { max-width: 520px; justify-self: center; } .win--crop img { aspect-ratio: 960 / 1200; }
+.phone { border-radius: 40px; overflow: hidden; background: #1c1c1e; padding: 7px; box-shadow: 0 0 0 1px rgb(255 255 255 / .16), 0 24px 48px -16px rgb(0 0 0 / .3); }
+.phone img { border-radius: 33px; aspect-ratio: 585 / 1266; object-fit: cover; }
+
+/* hero variants (compared in build-rationale-note.md). Chosen: a. */
+body[data-hero="a"] .hero { text-align: center; }
+body[data-hero="a"] .hero__text { margin-inline: auto; }
+body[data-hero="a"] .hero__sub { margin-inline: auto; }
+body[data-hero="a"] .hero__cta { justify-content: center; }
+body[data-hero="a"] .stage { position: relative; margin: var(--s-12) auto 0; max-width: 1040px; padding-bottom: var(--s-8); }
+body[data-hero="a"] .stage .win { box-shadow: 0 0 0 1px var(--separator), 0 32px 64px -24px rgb(0 0 0 / .28); }
+body[data-hero="a"] .stage .phone { position: absolute; left: -3%; bottom: 0; width: 24%; min-width: 108px; }
+
+body[data-hero="b"] .hero__grid { display: grid; gap: var(--s-12); }
+body[data-hero="b"] .stage { position: relative; padding-bottom: var(--s-8); }
+body[data-hero="b"] .stage .phone { position: absolute; left: -6%; bottom: 0; width: 30%; min-width: 108px; }
+@media (min-width: 960px) {
+  body[data-hero="b"] .hero__grid { grid-template-columns: 5fr 6fr; align-items: center; gap: var(--s-8); }
+  body[data-hero="b"] .hero { padding-block: var(--s-12); }
+}
+
+body[data-hero="c"] .hero { background: var(--accent-fill); color: var(--on-accent); padding-block: var(--s-12) 0; margin-top: var(--s-4); }
+body[data-hero="c"] .hero__sub, body[data-hero="c"] .hero__note { color: var(--on-accent); }
+body[data-hero="c"] .hero .hk-btn--filled { background: var(--on-accent); color: var(--accent-text); }
+body[data-hero="c"] .hero__text { text-align: left; }
+body[data-hero="c"] .stage { position: relative; margin-top: var(--s-12); max-width: 1040px; margin-inline: auto; }
+body[data-hero="c"] .stage .win { border-radius: var(--r-lg) var(--r-lg) 0 0; }
+body[data-hero="c"] .stage .phone { position: absolute; right: -4%; bottom: -1px; width: 24%; min-width: 108px; border-radius: 40px 40px 0 0; }
+
+/* compact: the phone is the product on a phone; the desktop window would be too small to read */
+@media (max-width: 743px) {
+  .stage .win { display: none; }
+  body[data-hero] .stage { margin-top: var(--s-8); padding-bottom: 0; }
+  body[data-hero] .stage .phone { position: static; width: min(260px, 72%); margin-inline: auto; }
+}
+/* sections */
+.sec { padding-block: var(--lp-gap) 0; }
+.sec__head { max-width: 720px; }
+.sec h2 { font: var(--lp-h2); }
+.feature { display: grid; gap: var(--s-8); align-items: center; padding-block: var(--lp-gap) 0; }
+.feature__text { max-width: 440px; }
+.feature h2 { font: var(--lp-h3); }
+.feature p { margin-top: var(--s-3); color: var(--label-2); }
+.feature__shot { justify-self: center; width: 100%; }
+.feature__shot .phone { width: min(260px, 72%); margin-inline: auto; }
+@media (min-width: 744px) {
+  .feature { grid-template-columns: 1fr 1fr; gap: var(--s-12); }
+  .feature--flip .feature__text { order: 2; }
+  .feature--wide { grid-template-columns: 1fr 1fr; }
+    }
+.feature--flip .feature__text, .feature--wide .feature__text { justify-self: start; }
+
+/* small things: four plain statements, one icon each, no boxes */
+.small { display: grid; gap: var(--s-8); margin-top: var(--s-8); padding: 0; list-style: none; }
+@media (min-width: 744px) { .small { grid-template-columns: 1fr 1fr; gap: var(--s-8) var(--s-12); } }
+.small li { display: grid; grid-template-columns: 28px 1fr; gap: 0 var(--s-4); }
+.small .hk-icon { width: 28px; height: 28px; color: var(--accent-text); stroke-width: 2; }
+.small h3 { font: 600 1.0625rem/1.375rem var(--font); }
+.small p { margin-top: var(--s-1); color: var(--label-2); grid-column: 2; }
+
+/* honest note: first release facts */
+.facts { margin-top: var(--s-8); padding: 0; list-style: none; max-width: 720px; border-top: 1px solid var(--separator); }
+.facts li { display: grid; grid-template-columns: 28px 1fr; gap: var(--s-4); padding-block: var(--s-4); border-bottom: 1px solid var(--separator); }
+.facts .hk-icon { width: 24px; height: 24px; color: var(--label-2); margin-top: 1px; }
+
+/* closing call */
+.end { padding-block: var(--lp-gap); text-align: center; }
+.end h2 { font: var(--lp-h2); }
+.end p { margin-top: var(--s-3); color: var(--label-2); }
+.end .hk-btn { margin-top: var(--s-8); }
+.foot { border-top: 1px solid var(--separator); padding-block: var(--s-6); color: var(--label-2); font: 400 0.9375rem/1.25rem var(--font); }
+</style>
+</head>
+<body data-hero="a">
+<a class="hk-btn hk-btn--plain skip" href="#main">본문으로 건너뛰기</a>
+<header class="wrap top">
+  <span class="top__name">하루</span>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="wrap hero__grid">
+      <div class="hero__text">
+        <h1 id="h-hero">오늘 할 일만, 또렷하게.</h1>
+        <p class="hero__sub">하루는 혼자 쓰거나 작은 팀이 함께 쓰는 할 일과 프로젝트 웹 앱이에요.</p>
+        <div class="hero__cta">
+          <a class="hk-btn hk-btn--filled hk-btn--lg" href="../../04-build/">하루 시작하기</a>
+          <span class="hero__note">가입 없이 바로 써요.</span>
+        </div>
+      </div>
+      <div class="stage">
+        <picture class="shot win">
+          <source media="(prefers-color-scheme: dark)" srcset="img/desktop-today-dark.png">
+          <img src="img/desktop-today-light.png" width="1920" height="1060" alt="하루의 오늘 화면. 왼쪽에 메뉴, 가운데에 오늘 마감인 할 일 다섯 개와 지난 할 일 두 개, 오른쪽에 ‘디자인 시안 검토하기’의 마감일, 프로젝트, 담당자, 메모가 보여요.">
+        </picture>
+        <picture class="shot phone">
+          <source media="(prefers-color-scheme: dark)" srcset="img/phone-today-dark.png">
+          <img src="img/phone-today-light.png" width="585" height="1266" alt="휴대폰에서 본 오늘 화면. 큰 제목 ‘오늘’ 아래에 할 일 목록이 있고, 아래쪽에 오늘, 프로젝트, 검색, 설정 탭이 있어요.">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap feature feature--flip" aria-labelledby="h-add">
+    <div class="feature__text">
+      <h2 id="h-add">할 일은 한 번에 적어요</h2>
+      <p>새 할 일을 누르면 제목 칸이 바로 열려요. 마감일은 오늘, 담당자는 나로 미리 채워져 있어서 제목만 적으면 돼요.</p>
+    </div>
+    <div class="feature__shot">
+      <picture class="shot phone">
+        <source media="(prefers-color-scheme: dark)" srcset="img/phone-quickadd-dark.png">
+        <img src="img/phone-quickadd-light.png" width="585" height="1266" loading="lazy" alt="새 할 일 시트. 제목 칸에 ‘팀 회고 일정 잡기’가 적혀 있고, 아래에 마감일 오늘, 프로젝트 없음, 담당자 나가 선택돼 있어요. 위쪽에 취소와 추가 버튼이 있어요.">
+      </picture>
+    </div>
+  </section>
+
+  <section class="wrap feature feature--wide" aria-labelledby="h-today">
+    <div class="feature__text">
+      <h2 id="h-today">오늘 끝낼 일이 한 목록에 모여요</h2>
+      <p>오늘이 마감인 일과 지난 할 일이 한곳에 있어요. 동그라미를 누르면 그 자리에서 완료돼요.</p>
+    </div>
+    <div class="feature__shot">
+      <picture class="shot win win--crop">
+        <source media="(prefers-color-scheme: dark)" srcset="img/desktop-done-dark.png">
+        <img src="img/desktop-done-light.png" width="960" height="1200" loading="lazy" alt="데스크톱의 오늘 화면 목록. ‘오늘’ 구역에 할 일 다섯 개, ‘지난 할 일’ 구역에 마감이 지난 두 개가 있고, 펼친 ‘오늘 끝낸 일’ 구역에 완료한 두 개가 채워진 동그라미와 취소선으로 보여요.">
+      </picture>
+    </div>
+  </section>
+
+  <section class="wrap feature feature--flip" aria-labelledby="h-proj">
+    <div class="feature__text">
+      <h2 id="h-proj">프로젝트는 얼마나 왔는지 보여요</h2>
+      <p>할 일을 프로젝트로 묶으면 ‘6개 중 1개 완료’처럼 진행 상황이 막대와 글로 보여요. 담당자별로 골라 볼 수도 있어요.</p>
+    </div>
+    <div class="feature__shot">
+      <picture class="shot phone">
+        <source media="(prefers-color-scheme: dark)" srcset="img/phone-project-dark.png">
+        <img src="img/phone-project-light.png" width="585" height="1266" loading="lazy" alt="휴대폰에서 본 ‘웹사이트 개편’ 프로젝트 화면. 제목 아래에 진행 막대와 ‘6개 중 1개 완료’, 구성원 나, 민지, 준호가 있고, 담당자 필터와 할 일 다섯 개가 보여요.">
+      </picture>
+    </div>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="h-small">
+    <div class="sec__head"><h2 id="h-small">필요한 것만 작게 담았어요</h2></div>
+    <ul class="small">
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+        <h3>마감일과 담당자</h3>
+        <p>할 일마다 마감일과 담당자를 한 명 정해요. 작은 팀에 필요한 만큼만 있어요.</p>
+      </li>
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        <h3>검색</h3>
+        <p>할 일과 프로젝트를 한 번에 찾아요.</p>
+      </li>
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        <h3>삭제해도 되돌려요</h3>
+        <p>지우면 바로 ‘실행 취소’가 나와요. 휴지통에서도 복원할 수 있어요.</p>
+      </li>
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v13"/><path d="m16 6-4-4-4 4"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/></svg>
+        <h3>내보내기와 가져오기</h3>
+        <p>설정에서 내 데이터를 파일로 내보내고, 다시 가져와요.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap sec" aria-labelledby="h-facts">
+    <div class="sec__head"><h2 id="h-facts">지금 알아 두면 좋은 점</h2></div>
+    <ul class="facts">
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <p>데이터는 쓰고 있는 이 브라우저에만 저장돼요.</p>
+      </li>
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <p>계정과 기기 사이 동기화, 알림은 아직 없어요.</p>
+      </li>
+      <li>
+        <svg class="hk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <p>구성원은 이 브라우저 안의 이름 목록이에요. 실시간 공유는 아직 없어요.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap end" aria-labelledby="h-end">
+    <h2 id="h-end">오늘 할 일부터 적어 보세요</h2>
+    <p>가입 없이 바로 시작해요.</p>
+    <a class="hk-btn hk-btn--filled hk-btn--lg" href="../../04-build/">하루 시작하기</a>
+  </section>
+</main>
+
+<footer class="wrap foot">하루 · 할 일과 프로젝트를 위한 웹 앱</footer>
+<script src="kit.js"></script>
+</body>
+</html>
+
+
+

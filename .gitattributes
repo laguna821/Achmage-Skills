@@ -7,3 +7,6 @@
 
 # Preserve the exact portfolio skill and downloadable ZIP manifest bytes.
 /Web-Portfolio/** -text
+
+# Preserve the exact Apple HIG Design skill and ZIP manifest bytes.
+/Product-Design/** -text

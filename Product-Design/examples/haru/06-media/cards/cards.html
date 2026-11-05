@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1120">
+<meta name="color-scheme" content="light">
+<title>하루 런칭 카드 5장 (1080 x 1350)</title>
+<link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="theme.css">
+<style>
+/* Instagram card series for 하루. Canvas 1080 x 1350 px (4:5). Fixed light look: a card cannot follow the reader's appearance.
+   Text sizes are the iOS "Large (default)" scale converted to canvas px (pt x 1080/375 = 2.88), see cards.md:
+   Title 3 58/72, Headline/Body 49/64. Headlines are display type (house 12, at most 2 x Large Title 98 = 196 px). */
+:root {
+  --u: 1px;
+  --m: 96px;                       /* outer margin: also keeps text inside the 3:4 profile-grid crop (34 px each side) */
+  --t-wordmark: 700 49px/64px var(--font);   /* Headline */
+  --t-sub: 500 58px/72px var(--font);        /* Title 3, Medium */
+  --t-body: 500 49px/64px var(--font);       /* Body, Medium */
+  --t-display: 700 128px/136px var(--font);  /* display headline, cards 2 to 5 (1.3 x Large Title) */
+  --t-display-cover: 700 160px/168px var(--font); /* cover (1.6 x Large Title, under the 2 x limit) */
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #d1d1d6; }
+body { padding: 0; display: grid; gap: 48px; justify-content: start; font-family: var(--font); word-break: keep-all; overflow-wrap: break-word; }
+h1, h2, p { margin: 0; }
+
+.card { position: relative; width: 1080px; height: 1350px; overflow: hidden; background: var(--bg-grouped); color: var(--label); }
+.card__top { position: absolute; left: var(--m); right: var(--m); top: 96px; display: flex; justify-content: space-between; align-items: center; font: var(--t-wordmark); }
+.card__copy { position: absolute; left: var(--m); right: var(--m); top: 232px; }
+.card h2, .card h1 { font: var(--t-display); }
+.card__sub { margin-top: 40px; font: var(--t-sub); color: var(--label-2); }
+
+/* product images, anchored to the bottom edge and bleeding off it */
+.phone { position: absolute; left: 50%; transform: translateX(-50%); width: 588px; padding: 14px; background: #1c1c1e; border-radius: 96px; box-shadow: 0 0 0 2px rgb(255 255 255 / .18), 0 40px 80px -24px rgb(0 0 0 / .35); }
+.phone img { display: block; width: 100%; border-radius: 82px; }
+.bleed { position: absolute; left: 0; right: 0; bottom: 0; overflow: hidden; }
+.bleed .phone { top: 0; }
+.sheet { position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; background: var(--bg); border-radius: 40px 40px 0 0; overflow: hidden; box-shadow: 0 0 0 2px var(--separator), 0 -24px 64px -24px rgb(0 0 0 / .25); }
+.sheet { height: var(--h); } .sheet img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos, bottom); }
+
+/* page indicator: simple dots (shape differs, not color alone), top right in the wordmark row. The product images bleed off the bottom edge, so the bottom is not free. */
+.dots { position: absolute; right: var(--m); top: 96px; height: 64px; display: flex; align-items: center; gap: 16px; }
+.dots i { width: 20px; height: 20px; border-radius: 50%; border: 3px solid currentColor; }
+.dots i.on { background: currentColor; }
+
+/* card 1: cover. Variants compared in build-rationale-note.md; chosen: b */
+.card--cover .card__copy h1 { font: var(--t-display-cover); }
+.card--cover[data-v="a"] { background: var(--bg); }
+.card--cover[data-v="a"] .card__copy { top: 232px; }
+.card--cover[data-v="a"] .card__sub { position: absolute; left: 0; top: 760px; }
+.card--cover[data-v="a"] .phone { display: none; }
+.card--cover .bleed { top: 760px; }
+.card--cover[data-v="c"] { background: var(--accent-fill); color: var(--on-accent); }
+.card--cover[data-v="c"] .card__sub { color: var(--on-accent); }
+
+.card--cover[data-v="c"] .dots { }
+
+/* card 2: quick add (the sheet rises from the bottom edge) */
+.card--add .sheet { width: 700px; }
+/* card 3: today list */
+.card--today .sheet { width: 888px; }
+/* card 4: project */
+.card--project .bleed { top: 760px; }
+/* card 5: closing card, accent field, carries the call to action */
+.card--end { background: var(--accent-fill); color: var(--on-accent); }
+.card--end .card__sub { color: var(--on-accent); }
+.card--end .sheet { width: 700px; }
+.cta { display: inline-flex; text-decoration: none; align-items: center; margin-top: 48px; padding: 24px 48px; border-radius: 999px; background: var(--on-accent); color: var(--accent-text); font: 700 49px/64px var(--font); }
+</style>
+</head>
+<body>
+
+<article class="card card--cover" data-v="b" data-card="1" aria-label="카드 1 표지">
+  <div class="card__top"><span>하루</span></div>
+  <div class="card__copy">
+    <h1>오늘 할 일만,<br>또렷하게.</h1>
+    <p class="card__sub">할 일과 프로젝트를 위한 웹 앱</p>
+  </div>
+  <div class="bleed"><div class="phone"><img src="img/phone-today-light.png" alt="" width="585" height="1266"></div></div>
+  <div class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+</article>
+
+<article class="card card--add" data-card="2" aria-label="카드 2 빠른 추가">
+  <div class="card__top"><span>하루</span></div>
+  <div class="card__copy">
+    <h2>할 일은<br>한 번에 적어요</h2>
+    <p class="card__sub">제목만 적으면 마감일은 오늘, 담당자는 나로 채워져요.</p>
+  </div>
+  <div class="sheet" style="--h:629px"><img src="img/phone-quickadd-light.png" alt="" width="585" height="1266"></div>
+  <div class="dots" aria-hidden="true"><i></i><i class="on"></i><i></i><i></i><i></i></div>
+</article>
+
+<article class="card card--today" data-card="3" aria-label="카드 3 오늘">
+  <div class="card__top"><span>하루</span></div>
+  <div class="card__copy">
+    <h2>오늘 끝낼 일이<br>한 목록에</h2>
+    <p class="card__sub">오늘 마감과 지난 할 일이 한곳에 있어요.</p>
+  </div>
+  <div class="sheet" style="--h:580px"><img src="img/desktop-done-light.png" alt="" width="960" height="1200" style="object-position:top"></div>
+  <div class="dots" aria-hidden="true"><i></i><i></i><i class="on"></i><i></i><i></i></div>
+</article>
+
+<article class="card card--project" data-card="4" aria-label="카드 4 프로젝트">
+  <div class="card__top"><span>하루</span></div>
+  <div class="card__copy">
+    <h2>프로젝트는<br>얼마나 왔는지</h2>
+    <p class="card__sub">‘6개 중 1개 완료’처럼 진행이 보여요.</p>
+  </div>
+  <div class="bleed"><div class="phone"><img src="img/phone-project-light.png" alt="" width="585" height="1266"></div></div>
+  <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i class="on"></i><i></i></div>
+</article>
+
+<article class="card card--end" data-card="5" aria-label="카드 5 마무리">
+  <div class="card__top"><span>하루</span></div>
+  <div class="card__copy">
+    <h2>지워도<br>바로 되돌려요</h2>
+    <p class="cta">프로필 링크에서 하루 시작하기</p>
+  </div>
+  <div class="sheet" style="--h:606px"><img src="img/phone-undo-light.png" alt="" width="585" height="1266"></div>
+  <div class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i class="on"></i></div>
+</article>
+
+</body>
+</html>

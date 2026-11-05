@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>하루</title>
+<link rel="stylesheet" href="kit.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="hh-shell" id="shell" data-sidebar="hidden" data-screen="S00">
+  <nav class="hk-sidebar hh-sidebar" id="sidebar" data-hk="sidebar" aria-label="주 메뉴"></nav>
+  <div class="hh-scrim" id="scrim" data-act="sidebar-close"></div>
+  <main class="hh-main" id="main" data-view="list" data-panes="2">
+    <div class="hh-listcol">
+      <section class="hh-pane hh-pane--list" id="pane-list" data-hk-scroll aria-label="목록"></section>
+      <div class="hh-toasthost" id="toasthost" data-decision="D02"></div>
+    </div>
+    <section class="hh-pane hh-pane--detail" id="pane-detail" data-hk-scroll aria-label="상세"></section>
+  </main>
+  <nav class="hk-tabbar hk-glass" id="tabbar" aria-label="주 메뉴 탭"><ul></ul></nav>
+</div>
+
+<!-- S05 빠른 추가: bottom sheet on compact (D06) -->
+<dialog class="hk-sheet" id="qa-sheet" data-hk="sheet" data-screen="S05" data-decision="D06" aria-labelledby="qa-sheet-t" data-discard="#as-discard" data-discard-ask="swipe">
+  <form method="dialog" class="hk-sheet__form" id="qa-form-c" novalidate>
+    <div class="hk-sheet__grab" aria-hidden="true"></div>
+    <div class="hk-sheet__bar">
+      <button type="button" value="cancel" class="hk-bar-btn">취소</button>
+      <h2 class="hk-sheet__title" id="qa-sheet-t">새 할 일</h2>
+      <button type="submit" value="add" class="hk-bar-btn hk-bar-btn--prominent" id="qa-add-c" disabled>추가</button>
+    </div>
+    <div class="hk-sheet__body qa-body"></div>
+  </form>
+</dialog>
+
+<!-- S05 빠른 추가: popover on regular (D06) -->
+<div class="hk-popover" id="qa-pop" popover data-hk="popover" role="dialog" data-screen="S05" data-decision="D06" aria-labelledby="qa-pop-t">
+  <form class="hk-popover__body" id="qa-form-r" novalidate>
+    <div class="hh-popover-head"><h2 id="qa-pop-t">새 할 일</h2></div>
+    <div class="qa-body"></div>
+    <div class="hh-popover-foot">
+      <button type="button" class="hk-btn hk-btn--plain" data-act="qa-cancel">취소</button>
+      <button type="submit" class="hk-btn hk-btn--filled" id="qa-add-r" disabled>추가</button>
+    </div>
+  </form>
+</div>
+
+<!-- S06 프로젝트 만들기·편집: sheet at both widths -->
+<dialog class="hk-sheet" id="pj-sheet" data-hk="sheet" data-screen="S06" data-decision="D08" aria-labelledby="pj-sheet-t" data-discard="#as-discard" data-discard-ask="swipe">
+  <form method="dialog" class="hk-sheet__form" id="pj-form" novalidate>
+    <div class="hk-sheet__grab" aria-hidden="true"></div>
+    <div class="hk-sheet__bar">
+      <button type="button" value="cancel" class="hk-bar-btn">취소</button>
+      <h2 class="hk-sheet__title" id="pj-sheet-t">새 프로젝트</h2>
+      <button type="submit" value="save" class="hk-bar-btn hk-bar-btn--prominent" id="pj-save" disabled>만들기</button>
+    </div>
+    <div class="hk-sheet__body" id="pj-body"></div>
+  </form>
+</dialog>
+
+<!-- Confirmations (D01): action sheet on compact, alert on regular. Content is filled when opened. -->
+<dialog class="hk-actionsheet" id="as-confirm" data-hk="actionsheet" data-decision="D01" aria-labelledby="as-confirm-t"><form method="dialog" class="hk-actionsheet__form"></form></dialog>
+<dialog class="hk-alert" id="alert-confirm" data-hk="alert" data-decision="D01" aria-labelledby="alert-confirm-t" aria-describedby="alert-confirm-m"><form method="dialog"></form></dialog>
+<!-- Swipe-down on a sheet with unsaved input (S05, S06) -->
+<dialog class="hk-actionsheet" id="as-discard" data-hk="actionsheet" aria-labelledby="as-discard-t"><form method="dialog" class="hk-actionsheet__form">
+  <div class="hk-actionsheet__group"><div class="hk-actionsheet__head"><h2 class="hk-actionsheet__title" id="as-discard-t">작성 중인 내용이 있어요</h2></div>
+    <button value="discard" class="hk-actionsheet__btn hk-actionsheet__btn--destructive" id="as-discard-yes">초안 지우기</button></div>
+  <div class="hk-actionsheet__cancel"><button value="cancel" class="hk-actionsheet__btn hk-actionsheet__btn--cancel" id="as-discard-no">계속 쓰기</button></div>
+</form></dialog>
+
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+<script src="kit.js"></script>
+<script src="icons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
