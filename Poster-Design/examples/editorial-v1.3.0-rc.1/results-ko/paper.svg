@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1201.8897637795276 1695.1181102362207" role="img" aria-label="추정치 하나보다, 조건과 불확실성을 함께 읽다"><title>추정치 하나보다, 조건과 불확실성을 함께 읽다</title><rect width="100%" height="100%" fill="white"/><text x="79.37007874015748" y="94.49007874015749" font-family="P700" font-size="18" fill="#087F7B">ACHMAGE / EDITORIAL EVIDENCE</text><line x1="79.37007874015748" y1="119.33007874015749" x2="1122.51968503937" y2="119.33007874015749" stroke="#16334A" stroke-width=".8"/><text x="79.37007874015748" y="179.8100787401575" font-family="P800" font-size="52" fill="#16334A">추정치 하나보다, 조건과 불확실성을 함께 읽다</text><text x="79.37007874015748" y="227.5820787401575" font-family="P700" font-size="22.05" fill="#087F7B">TV 뉴스 이용 · 다변량 회귀 결과의 편집 사례</text><text x="79.37007874015748" y="267.0410787401575" font-family="P400" font-size="18" fill="#526573">Design study · 2026-10-20  ·  Not an institutional announcement</text><text x="79.37007874015748" y="311.9210787401575" font-family="P400" font-size="21" fill="#16334A">ANES96, N=944. 미표준화 회귀계수와 95% 신뢰구간을 함께 표시한다. 모형의 설명력은 R²=0.170이며, 자료에서 관찰된</text><text x="79.37007874015748" y="341.7410787401575" font-family="P400" font-size="21" fill="#16334A">조건부 연관성을 보여준다.</text><svg width="1043.1496062992126" height="312.9448818897638" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1050.0 315.0" version="1.0" fill-rule="evenodd" x="79.37007874015748" y="370.7210787401575">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="figure-0-clip">
+		<rect x="0" y="0" width="1050.0" height="315.0" />
+	</clipPath>
+	<g id="figure-0-group" transform="scale(1,-1) translate(0,-315)" style="clip-path: url(#figure-0-clip)">
+		<g transform="">
+			<g transform=" matrix(0.75,0,0,-0.75,0,315)">
+				<rect x="0.0" y="0.0" width="1400.0" height="420.0" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: nonzero;" />
+				<path d="M 675.393265,20 L 675.393265,360 Z" style="stroke: rgb(60%,67%,71%); stroke-linecap: butt; stroke-width: 1; stroke-dasharray: 6.0, 6.0;" />
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="0.0" y="-62.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-124) scale(1,-1)">Independent vs Dem.</text>
+				</g>
+				<path d="M 403.543193,52 L 789.634669,52 Z" style="stroke: rgb(13%,38%,62%); stroke-linecap: butt; stroke-width: 5.0;" />
+				<circle cx="596.5889309158247" cy="52.0" r="8.0" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,48%); fill-rule: nonzero;" />
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="920.0" y="-62.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-124) scale(1,-1)">-0.335 [-1.155, 0.485]</text>
+				</g>
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="0.0" y="-132.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-264) scale(1,-1)">Republican vs Dem.</text>
+				</g>
+				<path d="M 534.609581,122 L 687.447984,122 Z" style="stroke: rgb(13%,38%,62%); stroke-linecap: butt; stroke-width: 5.0;" />
+				<circle cx="611.0287824155619" cy="122.0" r="8.0" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,48%); fill-rule: nonzero;" />
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="920.0" y="-132.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-264) scale(1,-1)">-0.273 [-0.598, 0.051]</text>
+				</g>
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="0.0" y="-202.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-404) scale(1,-1)">Age (+10 years)</text>
+				</g>
+				<path d="M 810.994406,192 L 856.456807,192 Z" style="stroke: rgb(13%,38%,62%); stroke-linecap: butt; stroke-width: 5.0;" />
+				<circle cx="833.7256066293713" cy="192.0" r="8.0" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,48%); fill-rule: nonzero;" />
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="920.0" y="-202.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-404) scale(1,-1)">+0.673 [0.576, 0.769]</text>
+				</g>
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="0.0" y="-272.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-544) scale(1,-1)">Education code</text>
+				</g>
+				<path d="M 656.175162,262 L 702.992539,262 Z" style="stroke: rgb(13%,38%,62%); stroke-linecap: butt; stroke-width: 5.0;" />
+				<circle cx="679.5838506491273" cy="262.0" r="8.0" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,48%); fill-rule: nonzero;" />
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="920.0" y="-272.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-544) scale(1,-1)">+0.018 [-0.082, 0.117]</text>
+				</g>
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="0.0" y="-342.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-684) scale(1,-1)">Urban log(pop)</text>
+				</g>
+				<path d="M 663.769108,332 L 687.134555,332 Z" style="stroke: rgb(13%,38%,62%); stroke-linecap: butt; stroke-width: 5.0;" />
+				<circle cx="675.4518314365303" cy="332.0" r="8.0" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(3%,49%,48%); fill-rule: nonzero;" />
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="920.0" y="-342.0" style="font-family: P400; font-size: 30.0px;fill: rgb(8%,20%,29%); stroke:none;" transform="translate(0,-684) scale(1,-1)">+0.000 [-0.049, 0.050]</text>
+				</g>
+				<g transform=" matrix(1,0,0,-1,0,0)">
+					<text x="380.0" y="-410.0" style="font-family: P400; font-size: 30.0px;fill: rgb(32%,39%,45%); stroke:none;" transform="translate(0,-820) scale(1,-1)">Unstandardized B · pointwise 95% CI</text>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg><text x="79.37007874015748" y="707.7859606299213" font-family="P400" font-size="18" fill="#526573">별도 SVG 통계 도표. Pele가 회귀를 계산하거나 이 신뢰구간을 생성한 것은 아니다.</text><line x1="79.37007874015748" y1="732.4759606299212" x2="1122.51968503937" y2="732.4759606299212" stroke="#BFCED3" stroke-width=".8"/><text x="79.37007874015748" y="765.8827606299213" font-family="P700" font-size="23.520000000000003" fill="#087F7B">01 / 읽는 순서</text><text x="79.37007874015748" y="805.5643606299213" font-family="P400" font-size="21" fill="#16334A">점은 계수, 선은 95% 신뢰구간이다. 0 기준선을 먼저</text><text x="79.37007874015748" y="835.3843606299214" font-family="P400" font-size="21" fill="#16334A">확인하고 단위와 비교 기준을 읽는다. 구간이 0을 포함한다는</text><text x="79.37007874015748" y="865.2043606299213" font-family="P400" font-size="21" fill="#16334A">사실을 효과가 없다는 확정으로 바꾸지 않는다.</text><text x="613.7007874015749" y="765.8827606299213" font-family="P700" font-size="23.520000000000003" fill="#087F7B">02 / 비교 기준</text><line x1="613.7007874015749" y1="787.9243606299214" x2="1122.5196850393702" y2="787.9243606299214" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="813.0443606299214" font-family="P700" font-size="18" fill="#16334A">변수</text><text x="793.3070866141733" y="813.0443606299214" font-family="P700" font-size="18" fill="#16334A">단위·기준</text><line x1="613.7007874015749" y1="833.1243606299214" x2="1122.5196850393702" y2="833.1243606299214" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="858.2443606299214" font-family="P400" font-size="18" fill="#16334A">Age</text><text x="793.3070866141733" y="858.2443606299214" font-family="P400" font-size="18" fill="#16334A">10 years</text><line x1="613.7007874015749" y1="878.3243606299214" x2="1122.5196850393702" y2="878.3243606299214" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="903.4443606299214" font-family="P400" font-size="18" fill="#16334A">Education</text><text x="793.3070866141733" y="903.4443606299214" font-family="P400" font-size="18" fill="#16334A">1–7 code</text><line x1="613.7007874015749" y1="923.5243606299215" x2="1122.5196850393702" y2="923.5243606299215" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="948.6443606299215" font-family="P400" font-size="18" fill="#16334A">Urban</text><text x="793.3070866141733" y="948.6443606299215" font-family="P400" font-size="18" fill="#16334A">log(population/1000 + .1)</text><line x1="613.7007874015749" y1="968.7243606299215" x2="1122.5196850393702" y2="968.7243606299215" stroke="#BFCED3" stroke-width=".8"/><text x="623.7007874015749" y="993.8443606299215" font-family="P400" font-size="18" fill="#16334A">Party</text><text x="793.3070866141733" y="993.8443606299215" font-family="P400" font-size="18" fill="#16334A">Democrat reference</text><line x1="613.7007874015749" y1="1013.9243606299216" x2="1122.5196850393702" y2="1013.9243606299216" stroke="#BFCED3" stroke-width=".8"/><line x1="79.37007874015748" y1="1047.2243606299214" x2="1122.51968503937" y2="1047.2243606299214" stroke="#BFCED3" stroke-width=".8"/><text x="79.37007874015748" y="1080.6311606299216" font-family="P700" font-size="23.520000000000003" fill="#087F7B">03 / 해석의 경계</text><text x="79.37007874015748" y="1120.3127606299217" font-family="P400" font-size="21" fill="#16334A">교육 코드는 등간척도라고 보장되지 않는다. 표본 선택과</text><text x="79.37007874015748" y="1150.1327606299217" font-family="P400" font-size="21" fill="#16334A">비가중 분석의 한계를 남기고, 이 결과를 모집단의 인과효과로</text><text x="79.37007874015748" y="1179.9527606299218" font-family="P400" font-size="21" fill="#16334A">일반화하지 않는다.</text><text x="613.7007874015749" y="1080.6311606299216" font-family="P700" font-size="23.520000000000003" fill="#087F7B">04 / 재현 근거</text><text x="613.7007874015749" y="1120.3127606299217" font-family="P400" font-size="21" fill="#16334A">공개 원자료와 0.7 분석 캐시에서 수치·신뢰구간을 그대로</text><text x="613.7007874015749" y="1150.1327606299217" font-family="P400" font-size="21" fill="#16334A">옮겼다. 이번 조판은 신규 통계 계산 검증이 아니며 기존 수치</text><text x="613.7007874015749" y="1179.9527606299218" font-family="P400" font-size="21" fill="#16334A">검사의 범위를 확대하지 않는다.</text><line x1="79.37007874015748" y1="1534.7480314960633" x2="1122.51968503937" y2="1534.7480314960633" stroke="#16334A" stroke-width=".8"/><text x="79.37007874015748" y="1562.468031496063" font-family="P400" font-size="18" fill="#526573">Data: statsmodels ANES96 · https://www.statsmodels.org/stable/datasets/generated/anes96.html</text><text x="79.37007874015748" y="1589.468031496063" font-family="P400" font-size="18" fill="#526573">Pele 1.6.0 · https://pele.run/ · data and rendering contributions are distinguished.</text></svg>

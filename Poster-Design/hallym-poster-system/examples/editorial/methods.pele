@@ -1,0 +1,5 @@
+flowchart LR
+ Q[Question + estimand] --> S[Sample + measurement]
+ S --> M[Registered model]
+ M --> U[Estimate + uncertainty]
+ U --> L[Interpretation limits]

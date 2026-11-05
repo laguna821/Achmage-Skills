@@ -1,0 +1,91 @@
+{
+  "poster": {
+    "editorial": {
+      "title": "Read estimates with their conditions and uncertainty",
+      "subtitle": "TV-news frequency · an editorial regression-results example",
+      "abstract": "ANES96, N=944. Unstandardized coefficients are shown with 95% confidence intervals. Model R²=0.170. Results describe conditional associations in the observed sample.",
+      "figure": {
+        "asset": "regression.svg",
+        "caption": "Authored statistical SVG. Pele did not compute the regression or generate these confidence intervals.",
+        "heightMm": 145
+      },
+      "sections": [
+        {
+          "id": "read",
+          "title": "01 / Reading order",
+          "body": [
+            "Points represent coefficients; lines represent 95% CIs. Check the zero reference, units and reference group first. An interval containing zero is not proof of no effect."
+          ]
+        },
+        {
+          "id": "units",
+          "title": "02 / Comparison basis",
+          "table": {
+            "headers": [
+              "Variable",
+              "Unit or reference"
+            ],
+            "rows": [
+              [
+                "Age",
+                "10 years"
+              ],
+              [
+                "Education",
+                "1–7 code"
+              ],
+              [
+                "Urban",
+                "log(population/1000 + .1)"
+              ],
+              [
+                "Party",
+                "Democrat reference"
+              ]
+            ],
+            "widths": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "title": "03 / Interpretation boundary",
+          "body": [
+            "Education codes are not guaranteed to have equal intervals. Retain the sampling and unweighted-analysis limitations; do not generalize these associations as population causal effects."
+          ]
+        },
+        {
+          "id": "reproduce",
+          "title": "04 / Reproduction record",
+          "body": [
+            "Estimates and intervals are copied unchanged from the public-data 0.7 analysis cache. This typesetting exercise is not a new statistical recomputation and does not extend the earlier numeric validation."
+          ]
+        }
+      ],
+      "rows": [
+        [
+          "read",
+          "units"
+        ],
+        [
+          "limits",
+          "reproduce"
+        ]
+      ],
+      "size": "A2",
+      "language": "en",
+      "eyebrow": "ACHMAGE / EDITORIAL EVIDENCE",
+      "metadata": [
+        "Design study · 2026-10-20",
+        "Not an institutional announcement"
+      ],
+      "bodySizePt": 21,
+      "references": [
+        "Data: statsmodels ANES96 · https://www.statsmodels.org/stable/datasets/generated/anes96.html",
+        "Pele 1.6.0 · https://pele.run/ · data and rendering contributions are distinguished."
+      ]
+    }
+  }
+}

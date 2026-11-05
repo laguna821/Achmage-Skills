@@ -152,7 +152,7 @@
     {
       "name": "hallym-poster-system",
       "source": "./Poster-Design",
-      "version": "1.2.0-rc.5",
+      "version": "1.3.0-rc.1",
       "description": "모바일 HTML 완결 포스터와 별도 A2 한 장 편집, 4초 순환·교차 테마·카카오 공유.",
       "author": {
         "name": "laguna821"

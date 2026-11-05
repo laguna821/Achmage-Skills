@@ -22,11 +22,10 @@ def verify(root=ROOT):
     extra = sorted(actual.keys() - expected.keys())
     if changed or missing or extra:
         raise ValueError(json.dumps(dict(changed=changed, missing=missing, extra=extra), ensure_ascii=False))
-    return {'status':'verified','files':len(actual),'version':'1.2.0-rc.5'}
+    return {'status':'verified','files':len(actual),'version':json.loads((root/'PACKAGE-MANIFEST.json').read_text(encoding='utf-8'))['version']}
 
 if __name__ == '__main__':
     try:
         print(json.dumps(verify(),ensure_ascii=False))
     except (ValueError, OSError) as exc:
         print(str(exc), file=sys.stderr);sys.exit(1)
-

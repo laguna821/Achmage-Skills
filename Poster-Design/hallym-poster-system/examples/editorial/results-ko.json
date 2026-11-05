@@ -1,0 +1,91 @@
+{
+  "poster": {
+    "editorial": {
+      "title": "추정치 하나보다, 조건과 불확실성을 함께 읽다",
+      "subtitle": "TV 뉴스 이용 · 다변량 회귀 결과의 편집 사례",
+      "abstract": "ANES96, N=944. 미표준화 회귀계수와 95% 신뢰구간을 함께 표시한다. 모형의 설명력은 R²=0.170이며, 자료에서 관찰된 조건부 연관성을 보여준다.",
+      "figure": {
+        "asset": "regression.svg",
+        "caption": "별도 SVG 통계 도표. Pele가 회귀를 계산하거나 이 신뢰구간을 생성한 것은 아니다.",
+        "heightMm": 145
+      },
+      "sections": [
+        {
+          "id": "read",
+          "title": "01 / 읽는 순서",
+          "body": [
+            "점은 계수, 선은 95% 신뢰구간이다. 0 기준선을 먼저 확인하고 단위와 비교 기준을 읽는다. 구간이 0을 포함한다는 사실을 효과가 없다는 확정으로 바꾸지 않는다."
+          ]
+        },
+        {
+          "id": "units",
+          "title": "02 / 비교 기준",
+          "table": {
+            "headers": [
+              "변수",
+              "단위·기준"
+            ],
+            "rows": [
+              [
+                "Age",
+                "10 years"
+              ],
+              [
+                "Education",
+                "1–7 code"
+              ],
+              [
+                "Urban",
+                "log(population/1000 + .1)"
+              ],
+              [
+                "Party",
+                "Democrat reference"
+              ]
+            ],
+            "widths": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "id": "limits",
+          "title": "03 / 해석의 경계",
+          "body": [
+            "교육 코드는 등간척도라고 보장되지 않는다. 표본 선택과 비가중 분석의 한계를 남기고, 이 결과를 모집단의 인과효과로 일반화하지 않는다."
+          ]
+        },
+        {
+          "id": "reproduce",
+          "title": "04 / 재현 근거",
+          "body": [
+            "공개 원자료와 0.7 분석 캐시에서 수치·신뢰구간을 그대로 옮겼다. 이번 조판은 신규 통계 계산 검증이 아니며 기존 수치 검사의 범위를 확대하지 않는다."
+          ]
+        }
+      ],
+      "rows": [
+        [
+          "read",
+          "units"
+        ],
+        [
+          "limits",
+          "reproduce"
+        ]
+      ],
+      "size": "A2",
+      "language": "ko",
+      "eyebrow": "ACHMAGE / EDITORIAL EVIDENCE",
+      "metadata": [
+        "Design study · 2026-10-20",
+        "Not an institutional announcement"
+      ],
+      "bodySizePt": 21,
+      "references": [
+        "Data: statsmodels ANES96 · https://www.statsmodels.org/stable/datasets/generated/anes96.html",
+        "Pele 1.6.0 · https://pele.run/ · data and rendering contributions are distinguished."
+      ]
+    }
+  }
+}

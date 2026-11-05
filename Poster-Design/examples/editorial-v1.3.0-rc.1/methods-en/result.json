@@ -1,0 +1,41 @@
+{
+  "version": "1.3.0-rc.1",
+  "status": "generated-awaiting-visual-review",
+  "pages": 1,
+  "trimMm": [
+    420,
+    594
+  ],
+  "bodySizePt": 21,
+  "captionFloorPt": 18,
+  "textFields": 33,
+  "pdfTextPreserved": true,
+  "figures": [
+    {
+      "figureSha256": "5208346aadaff38cef973181ea41883e618d240d3aa6666a7561f5d90d711fa9",
+      "widthPt": 1043.1496062992126,
+      "heightPt": 114.34186241053763,
+      "textRuns": 10,
+      "scale": 1.1727370503644885,
+      "minimumLabelPt": 26.386583633200992,
+      "sharedNormalizedGeometry": true
+    }
+  ],
+  "preflight": {
+    "embeddedFonts": [
+      "/AAAAAA+Pretendard-Bold",
+      "/AAAAAA+Pretendard-ExtraBold",
+      "/AAAAAA+Pretendard-Regular"
+    ],
+    "rgbOperators": 62,
+    "cmykOperators": 0
+  },
+  "printStatus": "needs-print-profile",
+  "outputs": {
+    "poster.pdf": "346171e87c9e60227211ac45fa5319fee24df6a87d836915366daad405e3912d",
+    "paper.svg": "ba1beb3906081e43a6a1ca1a43f2a323759d9ccf380a43173200ed0157a147b0",
+    "poster.html": "6e27990742f148d07c19595144436cb4fe3e60b1d57a8191c2a78f9ec352e580"
+  },
+  "htmlVariant": "v9-long-reference-wrap",
+  "preservedFrom": "poster-final-v8/methods-en"
+}

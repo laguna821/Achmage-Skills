@@ -1,8 +1,10 @@
-# Hallym Poster System · 1.2.0-rc.5
+# Hallym Poster System · 1.3.0-rc.1
 한국어 행사·모집·학술 포스터를 **모바일 HTML과 별도로 편집한 인쇄 PDF**로 만듭니다.
 Achmage OS, MCP, EJ 설치 없이 실행할 수 있는 전체 스킬 패키지입니다.
 
 ## 이번 버전
+- 선택적 editorial-one-sheet: 글·표·정적 Pele/별도 SVG를 함께 편집한 A2 근거 포스터. [계약·실행](references/EDITORIAL.md)과 examples/editorial의 한영 원고4개를 제공합니다. 기존 legacy/series와 별도 경로이며 자동 변환하지 않습니다.
+- A4 비율 포트폴리오는 웹 읽기·세로 HTML입니다. 포스터 PDF와 혼동하거나 포트폴리오에 새 포스터를 업로드하지 않습니다.
 - 여러 장의 HTML도 각 장이 제목·일시·장소·참여 조건을 갖춘 완결 포스터입니다.
 - 기본 4초 순환, 라이트·다크 교차, 상하단·로고 동시 전환.
 - 장마다 좌우 여백이 흔들리지 않는 공통 폭·배율. 모바일 세로 본문 폭 90% 이상을 검수합니다.
