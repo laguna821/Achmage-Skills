@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "안창현 (Achmage) 의 Claude 스킬 모음 - image-embedded HTML 덱, 카드뉴스, 화이트보드 영상, corpus 기반 component consulting v3 + render-audit QA 등. Motion Art Director 모션그래픽 제작 포함. Achmage Field Guide 스타일의 포트폴리오·학습 사이트 제작 포함. Apple HIG 기준 앱·웹 제품 UI 기획·구현·검토(apple-hig-design) 포함. 내레이션 없는 화면 문장 영상 대본·가편집 시트(achmage-video-script) 포함.",
-    "version": "1.9.0"
+    "version": "1.9.1"
   },
   "plugins": [
     {
@@ -219,8 +219,8 @@
     {
       "name": "achmage-video-script",
       "source": "./Video-Script",
-      "description": "On-screen-text video scripts (화면 문장 대본) that tell one complete story with captions and scenes and no narrator, in the manner of EBS 지식채널e: eight script families with beat sheets, card-by-card writing, matching scene suggestions, production hand-off fields for motion-art-director, 61 automatic checks and an offline rough-cut sheet. Korean and English. Examples: Norman door 90 s and Espresso 150 s, scripted with this skill and rendered with Motion Art Director.",
-      "version": "1.0.0",
+      "description": "On-screen-text video scripts (화면 문장 대본) that tell one complete story with captions and scenes and no narrator, in the manner of EBS 지식채널e: eight script families with beat sheets, card-by-card writing, matching scene suggestions, production hand-off fields for motion-art-director, 61 automatic checks, an offline rough-cut sheet, and a casebook of the research behind the rules (27 channel analyses, 159 per-video structure notes). Korean and English. Examples: Norman door 90 s and Espresso 150 s, scripted with this skill and rendered with Motion Art Director.",
+      "version": "1.1.0",
       "author": {
         "name": "laguna821"
       },

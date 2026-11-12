@@ -1,4 +1,4 @@
-# Video-Script: Achmage Video Script (1.0.0)
+# Video-Script: Achmage Video Script (1.1.0)
 
 내레이터 없이 **화면 문장과 장면만으로** 한 편을 완결하는 영상의 대본을 쓰는 스킬입니다. EBS 지식채널e처럼 문장이 화면에 한 장씩 뜨며 이야기를 끌고 가는 영상, 모션그래픽, 유튜브 설명 영상을 위한 것입니다. 산출물의 중심은 대본이고, 카드마다 그 문장에 맞는 장면 제안과 제작 인계 칸이 붙습니다. 렌더는 하지 않습니다. 영상 제작은 [Motion Art Director](../Video-Production/motion-art-director) 같은 제작 스킬에 넘깁니다.
 
@@ -13,7 +13,7 @@
 3. 장면에 보이는 것을 문장이 다시 말한다.
 4. 마지막 카드가 요약이나 당부다.
 
-규칙의 근거는 27개 채널 159편의 화면 문장 분석입니다(지식채널e, 역사채널e, 뉴스타파 5 Minutes, AJ+, NowThis, Brut, ESOcast Light 등). 규칙마다 어디서 나왔는지 `references/`에 적혀 있습니다.
+규칙의 근거는 27개 채널 159편의 화면 문장 분석입니다(지식채널e, 역사채널e, 뉴스타파 5 Minutes, AJ+, NowThis, Brut, ESOcast Light 등). 규칙마다 어디서 나왔는지 `references/`에 적혀 있습니다. 1.1.0부터는 그 분석 자체가 사례집(`references/casebook/`)으로 함께 들어 있습니다. 채널 분석 27편과 영상별 구조 159편입니다.
 
 ## 무엇이 들어 있나
 
@@ -24,6 +24,7 @@
 | 카드 규격 | 분량, 한 문장을 여러 카드에 나누는 법, 줄바꿈, 종결, 목소리, 접속어, 수치, 강조, 인용, 화면 문장의 자리와 모양, 제작 읽기 하한. 한국어 규격과 영어 대본의 규칙(카드의 끝, 분량표, 표기 관습) |
 | 장면 제안 | 장면 유형 7가지, 문장 없는 구간, 화면 속 실물 글자, 소리와 음악 기준, 찾아 쓰는 영상(실사와 대역, 검색어, 못 찾을 때의 대안), 제작 인계 칸 |
 | 사실 다루기 | 출처끼리 어긋날 때, 계산한 수치, 주소가 열리지 않을 때, 인용의 꼴 |
+| 사례집 | 규칙의 근거가 된 조사 자료. 채널 분석 27편(뼈대, 훅, 전환, 결말, 문장 작법, 화면과 문장의 분업), 영상별 구조 159편(로그라인, 비트 구성과 시각, 전환점, 결말, 수량, 카드별 뼈대 표), 채널을 가로지르는 발견. 갈래를 고른 뒤 그 갈래의 실제 영상을 1~2편 읽고 씁니다. 방송 원문 전체는 싣지 않았고 인용은 영상마다 15% 이내로 줄였습니다 |
 | 검수와 시트 | `scripts/build_sheet.py`: 자동 검수 61항목, 카드 읽기 리허설(`--print-cards`), 가편집 시트 HTML(실제 시간대로 재생, 장면 제안과 검수 결과를 한 화면에). Python 3 표준 라이브러리만 씁니다 |
 
 ## 설치
@@ -45,7 +46,7 @@ git clone https://github.com/laguna821/Achmage-Skills
 cp -r Achmage-Skills/Video-Script/achmage-video-script ~/.claude/skills/achmage-video-script
 ```
 
-D: 설치 ZIP: [downloads/achmage-video-script-1.0.0.zip](downloads/achmage-video-script-1.0.0.zip) (SHA-256: [downloads/SHA256SUMS](downloads/SHA256SUMS)). 압축을 풀면 `achmage-video-script/` 폴더 하나가 나옵니다.
+D: 설치 ZIP: [downloads/achmage-video-script-1.1.0.zip](downloads/achmage-video-script-1.1.0.zip) (SHA-256: [downloads/SHA256SUMS](downloads/SHA256SUMS)). 압축을 풀면 `achmage-video-script/` 폴더 하나가 나옵니다.
 
 ## 이렇게 요청하세요
 
@@ -81,7 +82,7 @@ D: 설치 ZIP: [downloads/achmage-video-script-1.0.0.zip](downloads/achmage-vide
 
 | 경로 | 내용 |
 | --- | --- |
-| [`achmage-video-script/`](achmage-video-script) | 스킬 본체: `SKILL.md`, `references/`(7개), `scripts/build_sheet.py`, `assets/sheet-template.html`, `agents/openai.yaml` |
+| [`achmage-video-script/`](achmage-video-script) | 스킬 본체: `SKILL.md`, `references/`(규칙 7개와 사례집 `casebook/` 189개 파일), `scripts/build_sheet.py`, `assets/sheet-template.html`, `agents/openai.yaml` |
 | [`examples/`](examples) | 영상 두 편과 대본, 가편집 시트, 제작 기록, 출처. 영어 대본 세 편의 시트 |
 | [`downloads/`](downloads) | 설치 ZIP과 SHA-256 |
 | [`PACKAGE-MANIFEST.json`](PACKAGE-MANIFEST.json) | 스킬 파일별 SHA-256 |
@@ -91,8 +92,9 @@ D: 설치 ZIP: [downloads/achmage-video-script-1.0.0.zip](downloads/achmage-vide
 
 ## 판 기록
 
+- 1.1.0 (2026-11-12): 사례집을 더했습니다. 1.0.0에는 조사에서 뽑은 규칙만 들어 있었고, 규칙의 근거가 된 27개 채널 159편의 분석은 패키지 밖에 있었습니다. 이제 채널 분석과 영상별 구조가 스킬 안에 있어, 다른 컴퓨터에서도 같은 자료를 보고 씁니다. 작업 순서 3단계에 사례집을 읽는 절차를 넣었습니다. 규칙과 검수 스크립트는 1.0.0과 같습니다.
 - 1.0.0 (2026-11-12): 첫 공개판. 내부 시험판 0.3~0.6.1의 내용을 그대로 담았습니다. 시험 세 차례(블라인드 작성자), 영어 대본 시험, 실제 제작 두 편에서 나온 규칙과 검수를 반영했습니다.
 
 ## 라이선스
 
-스킬의 글과 코드는 MIT입니다. 예제 영상 속 자료는 각자의 조건을 따릅니다. 채널 이름은 분석의 출처를 밝히기 위한 것이며, 해당 채널은 이 프로젝트와 관계가 없습니다. 자세한 내용은 [ASSET-NOTICE.md](ASSET-NOTICE.md)를 보세요.
+스킬의 글과 코드는 MIT입니다. 사례집에 인용된 방송 문장의 저작권은 각 방송사와 제작사에 있고, 인용의 범위와 기준은 [NOTICE.md](achmage-video-script/NOTICE.md)에 적었습니다. 예제 영상 속 자료는 각자의 조건을 따릅니다. 채널 이름은 분석의 출처를 밝히기 위한 것이며, 해당 채널은 이 프로젝트와 관계가 없습니다. 자세한 내용은 [ASSET-NOTICE.md](ASSET-NOTICE.md)를 보세요.
