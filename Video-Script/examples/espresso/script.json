@@ -1,0 +1,987 @@
+{
+  "meta": {
+    "title": "Espresso Is Older Than Its Crema | How the espresso machine was invented, 1884 to 1961",
+    "lang": "en",
+    "family": "C",
+    "family_reason": "It follows one object, the espresso machine, in strict time order from its first patent (1884) to the standard it works at today. At 150 seconds the belief-reversal families (A1, A3: 4 to 6 minutes, withheld subject) do not fit; C covers 1 to 6 minutes and opens with the result.",
+    "target_seconds": 150,
+    "hook_mode": "리드",
+    "lead": "The machine is older than the crema by more than fifty years",
+    "logline": "The espresso machine was patented to make coffee instantly; the crema we now read as the mark of espresso arrived more than fifty years later, when a piston replaced steam, and it was first sold under a name other than espresso.",
+    "audience_belief": "Espresso, crema and all, is an old Italian tradition that has always been made this way.",
+    "axis_fact": "The pressure gauge: the first machines pushed water at about 1.5 bar and never passed 2, so they made no crema. Crema appears only after Achille Gaggia's piston (patent of Sept. 5, 1938; lever patent 1947), more than fifty years after the first patent of 1884, and it was sold as 'crema caffè' to set it apart from espresso. Today's standard is 9 bar.",
+    "ending": {
+      "type": "사실",
+      "callback": "fifty years",
+      "callback_kind": "낱말"
+    },
+    "materials": "Open-license live-action stock (Pexels, Pixabay, Mixkit, Coverr): espresso extraction, cups, hands, lever machine. Vector graphics: pressure gauge, piston cutaway, timeline, typography. Public-domain patent drawings: Moriondo 1884 (Wikimedia Commons), Bezzera U.S. Patent 726,793 (1903). No commissioned shooting, no generated images.",
+    "sources": [
+      {
+        "id": "S1",
+        "label": "Jimmy Stamp, 'The Long History of the Espresso Machine', Smithsonian Magazine, 2012",
+        "url": "https://www.smithsonianmag.com/arts-culture/the-long-history-of-the-espresso-machine-126012814/",
+        "checked": "Moriondo granted a patent in 1884 for 'new steam machinery for the economic and instantaneous confection of coffee beverage'; boiler heated to 1.5 bar; 'purely a bulk brewer'. Early steam machines 'at best, two bars', 1.5 to 2 bar without burning the coffee; burnt or bitter taste. Gaggia a 'Milanese café owner'; lever raises pressure to 8 to 10 bar; crema comes with the lever machine. Faema E61 (1961): motorized pump, nine bar. Also says early machines made 'up to 1,000 cups of coffee per hour' (NOT used: S6 says 150) and that Pavoni bought the patents in 1903 (year not used: S6 gives a deed of 1 Sept. 1902).",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S2",
+        "label": "Jonathan Morris, 'Making Italian Espresso, Making Espresso Italian', Food and History 8(2), 2010, pp. 155-183 (author's pre-print, University of Hertfordshire)",
+        "url": "https://uhra.herts.ac.uk/id/eprint/2694/1/jm2.pdf",
+        "checked": "pp. 8, 12-18 of the pre-print. The claim that espresso is an unchanging tradition 'does not stand up in historical terms'. Bezzera registered his patent in 1901; Pavoni's Ideale of 1905 was the first espresso machine in commercial production; both exhibited at the 1906 fair in Milan. Pre-war espresso was black, tasted bitter and burnt because of the steam, and 'lacked any of the mousse or crema topping' at around 1.5 bar. Gaggia, 'a Milanese bar owner', patented a rotating-handle piston in 1938, not manufactured; by 1941 Italy 'ceased to import coffee altogether'. 1947 lever patent with a spring: pressure 'from three to twelve atmospheres'; oils and colloids form the crema; the drink was renamed 'crema caffè' to distinguish it from espresso. Machine slogans 'Crema caffè naturale' and 'It works without steam'. 1961 Faema E61: electric pump, 'a relatively constant 9 bars'. INEI standard: 9 bar.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S3",
+        "label": "Luigi Bezzera, 'Coffee-Making Machine', U.S. Patent 726,793, patented April 28, 1903 (filed June 10, 1902)",
+        "url": "https://patents.google.com/patent/US726793A/en",
+        "checked": "Patent number, dates, title; heading 'LUIGI BEZZERA, OF MILAN, ITALY, ASSIGNOR TO DESIDERIO PAVONI, OF MILAN, ITALY'; drawing sheet headers; the quoted sentence 'By means of my appliance, on the other hand, the quantity of coffee necessary for a single cup is prepared separately, so that fresh coffee is always served.' Read in the Google Patents text and in the patent PDF (patentimages.storage.googleapis.com/dd/70/81/35aa2b0604438b/US726793.pdf). U.S. patent text and drawings of 1903 are in the public domain.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S4",
+        "label": "Gaggia Milano, 'Our History' (manufacturer's history page)",
+        "url": "https://www.gaggia.com/our-history",
+        "checked": "Patent no. 365726 filed Sept. 5, 1938 for 'Lampo': hot water pressure instead of steam, 'a soft layer of crema naturale'. Second patent (1947): lever and spring. 1948: first machine, Tipo Classica. Slogan on the machines: 'Crema caffè naturale - Funziona senza vapore'. DISAGREES with S2 on when crema first appears (1938 here, 1947 lever in S2): the script says 'more than fifty years', true for both (54 and 63).",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S5",
+        "label": "Gaggia Professional (Evoca Group), 'About Gaggia'",
+        "url": "https://gaggiaprofessional.evocagroup.com/en/about-gaggia",
+        "checked": "1938 patent no. 365726 'for a steam-free coffee machine'; the 1947 lever reached '8-9 atmospheres'; machines bear the words 'Crema caffè naturale funziona senza vapore'. Lever pressure differs across S1 (8-10 bar), S2 (3-12 atm, rising and falling) and here (8-9 atm): no lever pressure figure is used on screen.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S6",
+        "label": "Elena Locatelli, 'La Pavoni. Dal 1905 macchine per il caffè' (company monograph, 2005), pp. 5-19",
+        "url": "https://www.lapavoni.com/pdf/la_pavoni_monografia.pdf",
+        "checked": "Official gazette of 13 Jan. 1904: Bezzera's patent 'Innovation in equipment designed to instantly prepare and serve coffee as a drink' (certificate of 5 June 1902) transferred to Desiderio Pavoni by deed of 1 Sept. 1902. Bezzera's machine worked at 1.5 atm. Ideale, 1905. Sign at the 1906 Milan fair: 'Bezzera L. Caffè Espresso'. Says the machines made 'up to 150 cups of coffee per hour' (disagrees with S1's 1,000: no cups-per-hour figure is used). Gives 19 November 1901 for Bezzera's filing where other secondary sources give 19 December: only the year 1901 is used.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S7",
+        "label": "Angelo Moriondo, patent drawing, Bollettino delle Privative Industriali, 1884 (Wikimedia Commons file page)",
+        "url": "https://commons.wikimedia.org/wiki/File:Espresso-machine-first-patent-angelo-moriondo.jpg",
+        "checked": "Image viewed: the sheet is headed 'Bollettino delle Privative Industriali - Anno 1884' and carries the printed title 'MORIONDO ANGELO. Nuovi apparecchi a vapore per la confezione economica ed istantanea del caffè in bevanda sistema A. Moriondo'. File description: patent vol. 33 no. 256, dated May 16, 1884. Marked public domain. The date May 16, 1884 rests on this file description and matching secondary pages; S1 confirms the year and the title.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S8",
+        "label": "Bezzera, 'Company History' (manufacturer's page)",
+        "url": "https://www.bezzera.it/en/bezzera",
+        "checked": "'1901 Luigi Bezzera patented espresso coffee machine'; first machine shown at the Milan International Fair in 1906. The page dates U.S. Patent 726,793 to 'May 28, 1902', which is the day Bezzera signed the specification; the patent record (S3) gives filing June 10, 1902 and grant April 28, 1903, and the script follows the record.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S9",
+        "label": "Italian Espresso National Institute (INEI), 'The Certified Italian Espresso and Cappuccino' (brochure, 2006)",
+        "url": "https://olaszpresszo.hu/wp-content/uploads/2014/04/istituzionale_inei_hq_en.pdf",
+        "checked": "PDF opened (pp. 1-3 read: the Institute, founded 1998, certificate Csqa n. 214 of 24 Sept. 1999). The parameter table 'Entry water pressure 9 bar ± 1' was confirmed from the search excerpt of this PDF and from S2, which reports the same INEI figure.",
+        "status": "직접 확인 (수치 표는 검색 발췌와 S2로 확인)"
+      },
+      {
+        "id": "S10",
+        "label": "Jonathan Morris, 'The Faema E61 Espresso Machine', Perspectives on History (American Historical Association), Dec. 23, 2020",
+        "url": "https://www.historians.org/perspectives-article/the-faema-e61-espresso-machine-january-2021",
+        "checked": "Search excerpt: the E61's electric volumetric pump passed water through the coffee 'under a constant nine bars of pressure, now the standard parameter for Italian espresso'. Used only as the most recent support (2020) for the present-tense card c27.",
+        "status": "주소가 열리지 않음(403), 발췌로 확인"
+      }
+    ],
+    "cast": [
+      {
+        "id": "cup",
+        "look": "Small white espresso cup on a dark counter, dark background, shot close from slightly above rim height so the surface of the coffee is visible. One continuous stock clip of an extraction, at least 12 seconds long.",
+        "fixed": "The same clip is used in c01-c03 and again in c28-c29. The tan foam on the surface must be visible in every one of these cards; the cup sits in the lower third so the center stays dark for the text."
+      },
+      {
+        "id": "gauge",
+        "look": "Flat vector pressure gauge: round dial, scale 0 to 12 bar, tick marks every 1 bar, heavier marks at 2 and 9. Amber needle. Dark ground.",
+        "fixed": "Always in the right third, same size, in c08, c16, c20, c26, c27. The mark at 9 stays unlabeled until c26. In c20 the needle shows no fixed value."
+      },
+      {
+        "id": "patent sheets",
+        "look": "Public-domain patent drawings inverted to pale lines on a dark ground: Moriondo 1884 (c05-c07), Bezzera U.S. 726,793 (c09-c13).",
+        "fixed": "Never redrawn or cleaned up beyond inversion and dimming. The part a sentence is about is marked with an amber outline or underline only."
+      }
+    ],
+    "visual_code": [
+      {
+        "sign": "amber needle, amber fill, amber arc",
+        "means": "water pressure, in bar"
+      },
+      {
+        "sign": "pale gray wisps",
+        "means": "steam"
+      },
+      {
+        "sign": "amber outline or underline on a patent sheet",
+        "means": "the part or the words this card's sentence is about"
+      },
+      {
+        "sign": "white timeline dot, filled",
+        "means": "a patent or machine that was built"
+      },
+      {
+        "sign": "white timeline dot, hollow, and dashed gray line",
+        "means": "patented but not built; years without production"
+      }
+    ],
+    "type_style": {
+      "pos": "가운데",
+      "face": "thin white sans-serif for editorial lines; serif for quotes (c11, c12, c21); corner labels in the same sans, small",
+      "size": "about 5% of frame height (52-56 px at 1080p), centered, two lines; three-line cards keep the same size; name cards (c04, c15, c25) larger at the same position",
+      "em": "one weight step heavier, no color change",
+      "ground": "dark; stock footage and patent sheets graded down so the white type is the brightest thing on screen; the center of every picture is kept empty"
+    },
+    "music_brief": {
+      "mood": "hopeful, quietly sentimental; steady and flowing from start to end",
+      "instruments": "solo piano",
+      "tempo": "moderate and even, about 70-90 bpm, a continuous flowing pattern",
+      "avoid": "drums and any percussion, vocals, added strings or pads, big crescendos, sudden stops",
+      "in": "c01",
+      "pause": "c22 앞 1.5초 (optional; if the chosen track has no natural rest there, lower the music by about 6 dB under c22 instead)",
+      "out": "c30",
+      "end": "Let the track reach its own ending on the last line (c29). The start is set in production once the track length is known."
+    },
+    "review_notes": [
+      "Manual check, scene and sentence: c23 'rose as foam' partly repeats what the glass shows; kept because the sentence's work is the cause (pressure, the coffee's own oils) and the foam is the grammatical end of that cause. c07 shows the Italian title while the sentence gives its English sense; kept as a translation of text in the picture.",
+      "Manual check, English periods: the card spec says editorial lines take no period, but the linter can only see a closed English card by its period. Closed cards therefore end with a period, open cards with a comma or nothing, noun-stop cards (c08, c10, c20, c27) carry end: '명사'.",
+      "Manual check, reading time: the production reading floor is not checked for English. Every text card was checked by hand against words/3 + 2 s (quote cards with attribution + 1.5 s); the shortest margin is c02 (7 words, 4.5 s against 4.3 s).",
+      "Editor pass after skill 0.6.0: footage cards retyped. Footage of espresso itself is 실사 even though it is sourced, not shot; only c17 (plain black coffee standing in for the pre-war drink) is 스톡. Search terms moved from note to visual.footage.",
+      "Editor pass: c10 and c11 lengthened to meet the English reading floor (words/3 + 2 s); the time came from c12, c27 and c29. c16 \"three more decades\" became \"decades more\" so the card carries one figure. c27 sets two figures side by side on purpose (compare: true).",
+      "Positions given in visual.desc for sourced footage (\"cup in the lower third\") are wishes, not conditions. Production crops, shifts and darkens the clip to clear the text zone (04, section 8).",
+      "c04 (name card) was kept as the film's title card although the object is familiar; the writer noted it reads as surplus. It gives the lead a beat to land before the patent sheet.",
+      "After production (2026-11-12, see examples/espresso/production-notes.md): c20 was produced as a diagram, not live action. No clip of a lever being pulled was found on Pexels, Pixabay or Mixkit, so the fallback now written on c20 was used.",
+      "After production: c30 (sources, 16 words in 5 s) is too short to read; the new source-card-time check flags it. It is left as produced. In a revision, give it 7.5 s or split it in two.",
+      "After production: the music could not start on the first frame. The chosen track is 131 s and the film 150 s, so the film opens on the sound of the machine alone and the music enters at 15.5 s; its ending lands on the last line."
+    ],
+    "assumptions": [
+      "Length: 150 seconds, taken from the brief ('about 150 seconds').",
+      "Audience belief: the brief's suggestion was kept after research; Morris (S2) describes exactly this belief and says it does not stand up historically.",
+      "Language of the file: on-screen text (lines, label, attribution) is English. Scene descriptions, carries, motion, notes and the design fields in meta are also written in English so that an English-language production and stock search can use them; fields whose values the skill defines as fixed Korean terms (kind, visual.type, hook_mode, ending.type, callback_kind, frame, quote_form, status, pos) keep the Korean values. Beat names keep the Korean names of the C beat sheet with an English gloss.",
+      "Open-license live-action stock is typed as visual.type '스톡'; public-domain patent drawings as '기록'; vector graphics as '도해' or '타이포'.",
+      "English reading time: the production floor in the card spec is defined for Korean only (characters/7 + 2 s). For English this script uses words/3 + 2 s as its own floor, plus 1.5 s on the card that carries an attribution.",
+      "Music tempo (70-90 bpm) is the script's reading of 'steady, flowing'; the user gave mood, instrument and 'no drums' only.",
+      "Arduino, Cremonese, Illy's Illetta and Cimbali are left out; no sentence in the script claims a count of inventors or that Gaggia worked alone."
+    ]
+  },
+  "beats": [
+    {
+      "id": "b1",
+      "name": "리드 (Lead)",
+      "job": "State the result at once: the machine came first, the crema more than fifty years later.",
+      "scene": "What crema is and where it sits: espresso running into a cup and the tan foam forming on top.",
+      "text": "The order in time and the size of the gap (more than fifty years)."
+    },
+    {
+      "id": "b2",
+      "name": "이름 (Name)",
+      "job": "Give the protagonist's name right after the lead.",
+      "scene": "Nothing but the name.",
+      "text": "The name."
+    },
+    {
+      "id": "b3",
+      "name": "시간순 전개 (In time order)",
+      "job": "Go back to 1884 and walk forward: Moriondo's steam patent, Bezzera's single cup, Pavoni's production, the 1906 fair where the name appears.",
+      "scene": "What the first machines looked like (the patent drawings themselves), which part made the single cup, the record's own words, how low 1.5 bar is on a dial.",
+      "text": "Who, in which year, for what purpose (economical and instant; fresh for a single cup), and the pressure figure."
+    },
+    {
+      "id": "b4",
+      "name": "심기 (Planting)",
+      "job": "Plant the repeated fact that the climax will break: for three more decades the needle never passes 2 bar, and the coffee is burned.",
+      "scene": "The needle trembling under the 2 mark while years pass; a cup of flat black coffee with nothing on top.",
+      "text": "How long it lasted, the ceiling (2 bar), the cause (steam) and the taste (bitter)."
+    },
+    {
+      "id": "b5",
+      "name": "꺾임 (Turn)",
+      "job": "1938: a bar owner replaces steam with a piston. War stops it; in 1947 the lever and spring arrive. The crema appears, and it is not sold as espresso.",
+      "scene": "How a piston pushes water through coffee; the nine-year gap on a timeline; a hand pulling a lever; the crema itself forming in a glass.",
+      "text": "The years, the patent, why nothing was built (war, no coffee imports), the cause of the foam (pressure, the coffee's oils), and the name it was sold under."
+    },
+    {
+      "id": "b6",
+      "name": "현재 (Now)",
+      "job": "Close the technical story: the 1961 pump holds the pressure steady; 9 bar is today's standard, six times the first machine.",
+      "scene": "The needle settling on 9 and the distance from 1.5 drawn as six steps.",
+      "text": "The year, what replaced the arm, the standard figure and the ratio."
+    },
+    {
+      "id": "b7",
+      "name": "결말 (Ending)",
+      "job": "Pause, show the first cup again, and set the patent's own word 'instant' against the fifty years.",
+      "scene": "The opening cup and its crema, unchanged.",
+      "text": "One fact: built to be instant, over fifty years to make this."
+    },
+    {
+      "id": "b8",
+      "name": "참고 자료 (Sources)",
+      "job": "Name the sources on one label card. The one disagreement that touches the lead (first crema in 1938 or 1947) is shown earlier, in the corner label of c03.",
+      "scene": "Small type on a dark frame.",
+      "text": "Source names."
+    }
+  ],
+  "cards": [
+    {
+      "id": "c01",
+      "beat": "b1",
+      "d": 2.5,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "실사",
+        "desc": "Close-up against a dark background: two thin streams of espresso run from a portafilter spout into a small white cup on a dark counter; a tan layer of foam builds on the surface. The cup sits in the lower third of the frame.",
+        "carries": "What crema is and where it sits; the viewer sees it before any word names it.",
+        "motion": "Camera: locked-off close-up / Subject: streams run, foam rises / Cut: none, the shot continues under c02",
+        "frame": "근접",
+        "events": 1,
+        "callback": true,
+        "footage": {
+          "search": [
+            "espresso pouring cup close up dark",
+            "espresso extraction portafilter",
+            "espresso shot crema macro"
+          ],
+          "min_len": 12,
+          "must": "dark background, no readable text or logo, crema visibly forming",
+          "fallback": "Any dark-background close-up of espresso leaving the spouts; the cup itself may be out of frame."
+        }
+      },
+      "sound": "Music in on the first frame: solo piano, steady flowing pattern (see meta.music_brief). No sound effects.",
+      "note": "One continuous clip of at least 12 s is needed for c01-c03; the same clip returns in c28-c29.",
+      "t": 0
+    },
+    {
+      "id": "c02",
+      "beat": "b1",
+      "d": 4.5,
+      "kind": "편집",
+      "lines": [
+        "The machine is older",
+        "than the crema"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "(앞 장면 계속) Same shot: the streams thin out and the foam settles on the surface.",
+        "carries": "Which machine and which crema: the picture shows both, the sentence only puts them in order.",
+        "frame": "근접",
+        "events": 1
+      },
+      "t": 2.5
+    },
+    {
+      "id": "c03",
+      "beat": "b1",
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "by more than",
+        "fifty years."
+      ],
+      "em": "fifty years",
+      "label": "1884 patent · crema 1938 or 1947",
+      "src": [
+        "S1",
+        "S4",
+        "S2"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "(앞 장면 계속) Same shot: the last drops fall and the full cup stands with its foam intact.",
+        "carries": "The finished cup: the thing the fifty years were for.",
+        "frame": "근접",
+        "events": 1
+      },
+      "note": "Calculation: 1938 - 1884 = 54 (S4: Gaggia dates the first 'crema naturale' to the 1938 patent); 1947 - 1884 = 63 (S2: crema comes with the 1947 lever). 'More than fifty' is true under both, and the corner label shows both years.",
+      "t": 7
+    },
+    {
+      "id": "c04",
+      "beat": "b2",
+      "d": 3.5,
+      "kind": "이름",
+      "lines": [
+        "The Espresso Machine"
+      ],
+      "visual": {
+        "type": "타이포",
+        "desc": "Dark frame. The name alone at the center, larger than the sentence cards.",
+        "motion": "Camera: none / Subject: the name fades in and holds / Cut: cut to the patent sheet"
+      },
+      "t": 12
+    },
+    {
+      "id": "c05",
+      "beat": "b3",
+      "d": 3,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "기록",
+        "desc": "Angelo Moriondo's 1884 patent sheet (public domain; Wikimedia Commons, File:Espresso-machine-first-patent-angelo-moriondo.jpg), inverted to pale lines on a dark ground. The whole sheet is in view; the tall boiler of Fig. 1 stands in the left third.",
+        "carries": "The first machine's shape and age: a tall boiler with pipes and taps, hand-drawn in the 19th century.",
+        "motion": "Camera: very slow drift toward the right / Subject: none / Cut: none, continues under c06",
+        "text_in_picture": [
+          "Bollettino delle Privative Industriali - Anno 1884",
+          "MORIONDO ANGELO",
+          "Nuovi apparecchi a vapore per la confezione economica ed istantanea del caffè in bevanda sistema A. Moriondo"
+        ],
+        "frame": "전경",
+        "events": 1
+      },
+      "sound": "Music continues unchanged.",
+      "t": 15.5
+    },
+    {
+      "id": "c06",
+      "beat": "b3",
+      "d": 6,
+      "kind": "편집",
+      "lines": [
+        "In 1884, Angelo Moriondo",
+        "patented a coffee machine",
+        "driven by steam,"
+      ],
+      "label": "Turin · patent of May 16",
+      "src": [
+        "S1",
+        "S7"
+      ],
+      "visual": {
+        "type": "기록",
+        "desc": "(앞 장면 계속) The same sheet in full view; the outline of the boiler in Fig. 1 brightens.",
+        "carries": "How large the machine is: one big boiler, no cup-sized parts.",
+        "frame": "전경",
+        "events": 1
+      },
+      "t": 18.5
+    },
+    {
+      "id": "c07",
+      "beat": "b3",
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "built to make coffee",
+        "economical and instant."
+      ],
+      "em": "instant",
+      "src": [
+        "S1",
+        "S7"
+      ],
+      "visual": {
+        "type": "기록",
+        "desc": "(앞 장면 계속) The camera has moved in on the title printed on the sheet, now in the upper third; the words 'economica ed istantanea' are underlined in amber.",
+        "carries": "The patent's own Italian wording: 'instant' is the inventor's word, not the editor's.",
+        "motion": "Camera: slow push in to the printed title, finished before the second line appears / Subject: amber underline draws once / Cut: cut to the gauge",
+        "text_in_picture": [
+          "Nuovi apparecchi a vapore per la confezione economica ed istantanea del caffè in bevanda sistema A. Moriondo"
+        ],
+        "frame": "근접",
+        "events": 2
+      },
+      "note": "Indirect quotation of the patent title; S1 translates it as 'economic and instantaneous confection of coffee beverage'.",
+      "t": 24.5
+    },
+    {
+      "id": "c08",
+      "beat": "b3",
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "A bulk brewer,",
+        "working at about 1.5 bar"
+      ],
+      "em": "1.5 bar",
+      "end": "명사",
+      "label": "1 bar ≈ the air at sea level",
+      "src": "S1",
+      "visual": {
+        "type": "도해",
+        "desc": "Vector pressure gauge in the right third on a dark ground (see meta.cast 'gauge'): the amber needle rises from 0 and stops at 1.5. Nothing else in the frame.",
+        "carries": "How low 1.5 sits on a dial that runs to 12, with a heavy unlabeled mark far up the scale.",
+        "motion": "Camera: none / Subject: needle rises once and rests / Cut: cut to the second patent sheet",
+        "frame": "중간",
+        "events": 1
+      },
+      "note": "S1: 'a large boiler, heated to 1.5 bars of pressure'; 'purely a bulk brewer'. An earlier draft drew an urn with cups beside the gauge; removed because it only illustrated the word 'bulk'.",
+      "t": 29.5
+    },
+    {
+      "id": "c09",
+      "beat": "b3",
+      "d": 2.5,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "기록",
+        "desc": "A drawing sheet of U.S. Patent 726,793 (public domain; PDF linked from Google Patents), inverted to pale lines on dark. Whole sheet in view, the boiler in the left third.",
+        "carries": "A second, later machine: still a boiler, but with a small fitting on its side.",
+        "motion": "Camera: none / Subject: none / Cut: none, continues under c10",
+        "text_in_picture": [
+          "No. 726,793. PATENTED APR. 28, 1903.",
+          "L. BEZZERA.",
+          "COFFEE MAKING MACHINE.",
+          "APPLICATION FILED JUNE 10, 1902."
+        ],
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "Use the sheet that carries Fig. 2 (the delivery cock with the detachable cup). Check which of the two sheets it is before layout.",
+      "t": 35
+    },
+    {
+      "id": "c10",
+      "beat": "b3",
+      "d": 6,
+      "kind": "편집",
+      "lines": [
+        "Seventeen years later:",
+        "Luigi Bezzera's machine,",
+        "one cup at a time"
+      ],
+      "em": "one cup",
+      "end": "명사",
+      "label": "Milan · patent filed 1901",
+      "src": [
+        "S2",
+        "S8",
+        "S3"
+      ],
+      "visual": {
+        "type": "기록",
+        "desc": "(앞 장면 계속) The camera has moved in on Fig. 2: the delivery cock with a small detachable cup hanging under it. The cup is outlined in amber and sits in the right third.",
+        "carries": "How small the brewing part has become: one cup-sized holder with handles, the ancestor of the portafilter.",
+        "motion": "Camera: push in to Fig. 2, finished before the text appears / Subject: amber outline draws once / Cut: none, continues under c11",
+        "frame": "근접",
+        "events": 2
+      },
+      "note": "Calculation: 1901 - 1884 = 17. Sources differ on the day of the 1901 filing (19 November in S6, 19 December elsewhere), so only the year is used.",
+      "t": 37.5
+    },
+    {
+      "id": "c11",
+      "beat": "b3",
+      "d": 7,
+      "kind": "인용",
+      "voice": "인용",
+      "lines": [
+        "“the quantity of coffee",
+        "necessary for a single cup",
+        "is prepared separately,"
+      ],
+      "src": "S3",
+      "quote_form": "줄임",
+      "original": "By means of my appliance, on the other hand, the quantity of coffee necessary for a single cup is prepared separately, so that fresh coffee is always served.",
+      "visual": {
+        "type": "기록",
+        "desc": "(앞 장면 계속) Fig. 2 held and dimmed; the amber outline stays on the cup.",
+        "carries": "Which part of the machine the sentence is describing.",
+        "frame": "근접",
+        "events": 0
+      },
+      "note": "The quote runs over c11 and c12: quotation marks open here and close in c12; attribution on c12. Only the opening clause of the sentence is cut ('By means of my appliance, on the other hand,'), so no ellipsis inside.",
+      "t": 43.5
+    },
+    {
+      "id": "c12",
+      "beat": "b3",
+      "d": 6,
+      "kind": "인용",
+      "voice": "인용",
+      "lines": [
+        "so that fresh coffee",
+        "is always served.”"
+      ],
+      "src": "S3",
+      "attribution": "Luigi Bezzera, U.S. Patent 726,793 (1903)",
+      "quote_form": "줄임",
+      "original": "By means of my appliance, on the other hand, the quantity of coffee necessary for a single cup is prepared separately, so that fresh coffee is always served.",
+      "visual": {
+        "type": "기록",
+        "desc": "(앞 장면 계속) The amber outline of the cup slides down a little way off the fitting, as the patent says the vessel is removed and replaced after each cup.",
+        "carries": "'Separately' made visible: the holder comes off after every cup.",
+        "motion": "Camera: none / Subject: the outlined cup detaches once / Cut: cut to the printed specification",
+        "frame": "근접",
+        "events": 1
+      },
+      "t": 50.5
+    },
+    {
+      "id": "c13",
+      "beat": "b3",
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "Desiderio Pavoni",
+        "put the machine",
+        "into production,"
+      ],
+      "em": "into production",
+      "label": "Ideale · Milan, 1905",
+      "src": [
+        "S2",
+        "S6",
+        "S3"
+      ],
+      "visual": {
+        "type": "기록",
+        "desc": "First page of the same patent's printed specification, inverted; the heading line is in the upper third and the words 'ASSIGNOR TO DESIDERIO PAVONI' are underlined in amber.",
+        "carries": "The transfer of the patent, in the record's own words; the sentence adds only what Pavoni did with it.",
+        "motion": "Camera: none / Subject: amber underline draws once / Cut: cut to dark",
+        "text_in_picture": [
+          "LUIGI BEZZERA, OF MILAN, ITALY, ASSIGNOR TO DESIDERIO PAVONI, OF MILAN, ITALY."
+        ],
+        "frame": "근접",
+        "events": 1
+      },
+      "note": "S2: Pavoni's Ideale of 1905 is 'generally recognised as the first espresso machine to enter into commercial production'. The year of the purchase is left out: S1 says 1903, S6 quotes a deed of 1 Sept. 1902 registered in 1903.",
+      "t": 56.5
+    },
+    {
+      "id": "c14",
+      "beat": "b3",
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "and at Milan's 1906 fair",
+        "the sign read"
+      ],
+      "src": [
+        "S6",
+        "S2",
+        "S8"
+      ],
+      "end": "넘김",
+      "visual": {
+        "type": "도해",
+        "desc": "Dark frame. A thin white rectangle, shaped like a signboard, draws itself across the upper third and stays empty.",
+        "carries": "That the next words are lettering on a sign, not the editor's sentence.",
+        "motion": "Camera: none / Subject: the outline draws once / Cut: none, the outline stays under c15",
+        "frame": "중간",
+        "events": 1
+      },
+      "t": 61.5
+    },
+    {
+      "id": "c15",
+      "beat": "b3",
+      "d": 3.5,
+      "kind": "이름",
+      "lines": [
+        "Caffè Espresso"
+      ],
+      "label": "Stand sign, Milan, 1906",
+      "src": "S6",
+      "visual": {
+        "type": "타이포",
+        "desc": "(앞 장면 계속) The two words appear at the center, larger than sentence cards; the signboard outline above fades out.",
+        "motion": "Camera: none / Subject: words fade in and hold / Cut: cut to the gauge"
+      },
+      "note": "S6: at the Milan fair of 1906 'the sign still provides for the words \"Bezzera L. Caffè Espresso\"'. No archive photograph is assumed; the words are set as type.",
+      "t": 66.5
+    },
+    {
+      "id": "c16",
+      "beat": "b4",
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "For decades more,",
+        "steam alone never",
+        "passed 2 bar,"
+      ],
+      "em": "2 bar",
+      "src": [
+        "S1",
+        "S2"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "The gauge again, right third (meta.cast 'gauge'): the needle trembles just under the 2 mark and never crosses it, while small year numbers under the dial run from 1906 to 1938.",
+        "carries": "The ceiling as a daily fact: how close to 2, how far from the unlabeled heavy mark at 9, and the years going by.",
+        "motion": "Camera: none / Subject: needle trembles, years count up / Cut: cut to the cup",
+        "frame": "중간",
+        "events": 1
+      },
+      "sound": "Music continues; no change at this beat.",
+      "note": "Calculation: 1938 - 1906 = 32, 'decades more'. S1: the early machines 'could only conjure up, at best, two bars'; no machine brewed 'with more than 1.5-2 bars of pressure without burning the coffee'. S2: 'around 1.5 bar'. The subject is 'steam alone' because S2 also records attempts that did not rely on steam before 1938 (Illy's compressed-air Illetta, 1935); the sentence makes no claim about those.",
+      "t": 70
+    },
+    {
+      "id": "c17",
+      "beat": "b4",
+      "d": 6.5,
+      "kind": "편집",
+      "lines": [
+        "and the same steam",
+        "burned the coffee",
+        "and left it bitter."
+      ],
+      "em": "bitter",
+      "src": [
+        "S2",
+        "S1"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "Top-down shot of plain black coffee in a white cup on a dark table: a flat black surface with no foam, a little steam rising. The cup sits in the lower right third.",
+        "carries": "What was missing: a black surface with nothing on top.",
+        "motion": "Camera: locked-off / Subject: steam drifts / Cut: cut to black, then the turn",
+        "frame": "근접",
+        "events": 1,
+        "footage": {
+          "search": [
+            "black coffee cup top view dark",
+            "black coffee steam dark background",
+            "americano cup overhead"
+          ],
+          "stand_in": true,
+          "must": "no foam on the surface, no readable text"
+        }
+      },
+      "note": "S2: the pre-war drink 'was black, rather than brown, and tasted bitter and burnt - a consequence of the steam'; it 'lacked any of the mousse or crema topping'. S1: steam 'had the unfortunate side effect of imbuing the coffee with a burnt or bitter taste'.",
+      "t": 75.5
+    },
+    {
+      "id": "c18",
+      "beat": "b5",
+      "d": 6,
+      "kind": "편집",
+      "turn": true,
+      "lines": [
+        "But in 1938,",
+        "a Milan bar owner",
+        "patented a piston."
+      ],
+      "em": "a piston",
+      "label": "Achille Gaggia · No. 365726",
+      "src": [
+        "S4",
+        "S2",
+        "S5"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Vector cutaway on a dark ground, right third: a vertical cylinder in which a piston, turned down by a hand screw, presses a column of water (amber) through a puck of ground coffee. Pale gray steam wisps stay on the boiler side, outside the cylinder.",
+        "carries": "The mechanism: a piston, not steam, does the pushing, and only water meets the coffee.",
+        "motion": "Camera: none / Subject: the piston descends once / Cut: cut to the timeline",
+        "frame": "중간",
+        "events": 2
+      },
+      "sound": "Music continues. Optional: if the track has a change of register or a new phrase, let it start here.",
+      "note": "S4: patent no. 365726 filed Sept. 5, 1938, 'hot water pressure instead of steam'. S2: 'a rotating handle piston'. The cutaway is a schematic of the principle, not a copy of the patent drawing.",
+      "t": 82
+    },
+    {
+      "id": "c19",
+      "beat": "b5",
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "Then war came,",
+        "and Italy's coffee imports",
+        "stopped altogether."
+      ],
+      "em": "stopped",
+      "label": "by 1941",
+      "src": "S2",
+      "visual": {
+        "type": "도해",
+        "desc": "A thin white timeline across the lower third: filled dots at 1884, 1901 and 1906, a hollow dot at 1938. From 1938 the line continues as a dashed gray stretch up to 1947.",
+        "carries": "The gap: nine years in which the patent existed and no machine did.",
+        "motion": "Camera: none / Subject: the dashed stretch draws from 1938 to 1947 / Cut: cut to the lever",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "S2: 'By 1941 ... the country ceased to import coffee altogether'; the 1938 design was not manufactured commercially. Calculation for the scene: 1947 - 1938 = 9.",
+      "t": 88
+    },
+    {
+      "id": "c20",
+      "beat": "b5",
+      "d": 6,
+      "kind": "편집",
+      "lines": [
+        "In 1947: a lever",
+        "and a spring",
+        "to do the pushing"
+      ],
+      "em": "a lever",
+      "end": "명사",
+      "src": [
+        "S2",
+        "S4"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "Side view of a hand pulling down the long lever of a chrome lever espresso machine; the machine stands in the left third, the background is dark and out of focus. The vector gauge is overlaid in the right third: its needle swings far past the 2 mark into the upper half of the dial.",
+        "carries": "What a lever machine looks like in use, and that the pressure leaves the old ceiling far behind.",
+        "motion": "Camera: locked-off / Subject: the lever comes down once; the needle swings up once / Cut: cut to dark",
+        "frame": "중간",
+        "events": 2,
+        "footage": {
+          "search": [
+            "lever espresso machine pull",
+            "barista pulling lever espresso",
+            "manual lever coffee machine close up"
+          ],
+          "must": "a hand pulling a real lever; any modern lever machine; no brand name in focus",
+          "fallback": "If no clip of a hand pulling a lever is found, do not substitute another machine. Continue the cutaway of c18 and add a lever and a spring to the same cylinder."
+        }
+      },
+      "note": "The needle must not settle on a number: sources give 8-10 bar (S1), 8-9 atmospheres (S5) and 3 to 12 atmospheres rising and falling (S2). Any modern lever machine will do; the picture stands for the mechanism, not for the 1948 model.",
+      "t": 93.5
+    },
+    {
+      "id": "c21",
+      "beat": "b5",
+      "d": 5,
+      "kind": "인용",
+      "voice": "인용",
+      "lines": [
+        "“It works without steam”"
+      ],
+      "src": [
+        "S2",
+        "S4"
+      ],
+      "attribution": "Slogan on Gaggia's lever machines",
+      "quote_form": "번역",
+      "original": "Funziona senza vapore",
+      "visual": {
+        "type": "타이포",
+        "desc": "Dark frame. The slogan alone at the center, in the serif used for quotes.",
+        "motion": "Camera: none / Subject: the line fades in and holds / Cut: cut to the glass"
+      },
+      "note": "English wording as given in S2 ('It works without steam'); Italian original from S4 and S5 ('Crema caffè naturale - Funziona senza vapore').",
+      "t": 99.5
+    },
+    {
+      "id": "c22",
+      "beat": "b5",
+      "d": 4,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "실사",
+        "desc": "Close side view of a small glass espresso cup against a dark background: dark coffee rises in the glass and a tan layer of foam forms on top of it. The glass sits in the lower third.",
+        "carries": "The crema itself, arriving: its color and its thickness, seen through the glass.",
+        "motion": "Camera: locked-off close-up / Subject: the glass fills / Cut: none, continues under c23",
+        "frame": "근접",
+        "events": 1,
+        "footage": {
+          "search": [
+            "espresso glass cup side view crema",
+            "espresso shot glass pouring close up",
+            "espresso layers glass dark background"
+          ],
+          "min_len": 14,
+          "must": "glass cup seen from the side so the two layers show; dark background",
+          "fallback": "Two clips are acceptable: one of a glass filling, one of a full glass with the crema layer standing still."
+        }
+      },
+      "sound": "Optional: a rest of about 1.5 s in the music at the cut into this card. If the chosen track has no natural rest here, lower the music by about 6 dB under this card instead.",
+      "note": "The picture leads here; the sentence follows in c23.",
+      "t": 104.5
+    },
+    {
+      "id": "c23",
+      "beat": "b5",
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "Under that pressure,",
+        "the coffee's own oils",
+        "rose as foam,"
+      ],
+      "em": "oils",
+      "src": "S2",
+      "visual": {
+        "type": "실사",
+        "desc": "(앞 장면 계속) The glass is nearly full; the tan layer thickens on top of the dark liquid.",
+        "carries": "The result the sentence explains: a second, lighter layer on top.",
+        "frame": "근접",
+        "events": 1
+      },
+      "note": "S2: higher pressure 'resulted in essential oils and colloids from the coffee creating a mousse or crema on top'. 'Oils' is a simplification of 'essential oils and colloids'.",
+      "t": 108.5
+    },
+    {
+      "id": "c24",
+      "beat": "b5",
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "and the drink",
+        "was not sold",
+        "as espresso."
+      ],
+      "em": "not sold",
+      "src": "S2",
+      "visual": {
+        "type": "실사",
+        "desc": "(앞 장면 계속) The full glass stands still: dark below, tan above.",
+        "carries": "The two layers side by side; the tan one is what needed a new name.",
+        "frame": "근접",
+        "events": 0
+      },
+      "t": 114
+    },
+    {
+      "id": "c25",
+      "beat": "b5",
+      "d": 4,
+      "kind": "이름",
+      "lines": [
+        "crema caffè"
+      ],
+      "label": "“cream coffee”",
+      "src": [
+        "S2",
+        "S4"
+      ],
+      "visual": {
+        "type": "타이포",
+        "desc": "Dark frame. The two words alone at the center, larger than sentence cards.",
+        "motion": "Camera: none / Subject: words fade in and hold / Cut: cut to the gauge"
+      },
+      "note": "S2: 'the new beverage was renamed crema caffè, cream coffee, in order to distinguish it from the extractions produced by the pre-existing espresso machines'.",
+      "t": 119
+    },
+    {
+      "id": "c26",
+      "beat": "b6",
+      "d": 6,
+      "kind": "편집",
+      "lines": [
+        "In 1961 an electric pump",
+        "replaced the arm",
+        "and steadied the pressure."
+      ],
+      "em": "electric pump",
+      "label": "Faema E61",
+      "src": [
+        "S2",
+        "S1"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "The gauge, right third (meta.cast 'gauge'): the needle sweeps up and settles exactly on the heavy mark, which now receives its label '9'. In the left third, a line icon of a small pump with a switch that flips on.",
+        "carries": "The figure the sentence leaves out: the needle rests without trembling on the long-unlabeled mark, which turns out to be 9. The picture gives the number first; c27 says it.",
+        "motion": "Camera: none / Subject: switch flips, needle settles / Cut: none, continues under c27",
+        "text_in_picture": [
+          "9"
+        ],
+        "frame": "중간",
+        "events": 2
+      },
+      "sound": "Music continues toward its last phrase.",
+      "note": "S2: the E61's electric pump meant espresso was produced 'under a relatively constant 9 bars'. S1: 'a motorized pump to provide the nine atmospheric bars'.",
+      "t": 123
+    },
+    {
+      "id": "c27",
+      "beat": "b6",
+      "d": 6,
+      "kind": "편집",
+      "lines": [
+        "9 bar: today's standard,",
+        "six times the pressure",
+        "of the first machine"
+      ],
+      "em": "six times",
+      "end": "명사",
+      "label": "Italian Espresso Institute",
+      "src": [
+        "S9",
+        "S2",
+        "S10",
+        "S1"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "(앞 장면 계속) Same gauge: a faint second needle appears at 1.5, and an amber arc between 1.5 and 9 is divided into six equal steps.",
+        "carries": "The ratio made countable: six steps of 1.5 between the first machine and today's standard.",
+        "motion": "Camera: none / Subject: the arc fills step by step / Cut: cut to the cup",
+        "frame": "중간",
+        "events": 1
+      },
+      "note": "Calculation: 9 ÷ 1.5 = 6 (9 bar: INEI standard, S9 and S2; 1.5 bar: Moriondo's boiler, S1). The Institute's parameter is 9 bar ± 1. Most recent support for 'today': S10 (2020), 'now the standard parameter for Italian espresso'. The Institute's current web page (iei.coffee, opened) describes the sensory profile only and does not list the pressure figure.",
+      "compare": true,
+      "t": 129
+    },
+    {
+      "id": "c28",
+      "beat": "b7",
+      "d": 3.5,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "실사",
+        "desc": "The opening clip again (c01): espresso streams into the small white cup on the dark counter and the tan foam builds. Cup in the lower third.",
+        "carries": "The first picture, now seen knowing what it took.",
+        "motion": "Camera: locked-off close-up / Subject: streams run, foam rises / Cut: none, continues under c29",
+        "frame": "근접",
+        "events": 1,
+        "callback": true,
+        "footage": {
+          "reuse": "c01"
+        }
+      },
+      "sound": "No text for 3.5 s. Music keeps flowing; nothing is added.",
+      "t": 135
+    },
+    {
+      "id": "c29",
+      "beat": "b7",
+      "d": 6.5,
+      "kind": "편집",
+      "lines": [
+        "Built to be instant,",
+        "it took over fifty years",
+        "to make this."
+      ],
+      "em": "fifty years",
+      "src": [
+        "S7",
+        "S4",
+        "S2"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "(앞 장면 계속) The last drops fall; the full cup stands with its crema.",
+        "carries": "What 'this' is: the layer on top of the cup.",
+        "motion": "Camera: none / Subject: last drops, then stillness / Cut: the picture holds 1 s after the text leaves, then fades to dark",
+        "frame": "근접",
+        "events": 1,
+        "callback": true
+      },
+      "sound": "Music reaches its final phrase under this card. If the track cannot be made to end here, fade it under c30.",
+      "note": "No new fact: 'instant' is the word in the 1884 patent title (c07), 'fifty years' is the lead (c03). Same calculation as c03.",
+      "t": 138.5
+    },
+    {
+      "id": "c30",
+      "beat": "b8",
+      "d": 5,
+      "kind": "표기",
+      "lines": [
+        "Smithsonian (2012) · Morris, Food and History (2010)",
+        "U.S. Patent 726,793 · Gaggia · La Pavoni"
+      ],
+      "visual": {
+        "type": "타이포",
+        "desc": "Dark frame, small type at the center.",
+        "motion": "Camera: none / Subject: lines appear together / Cut: fade out"
+      },
+      "sound": "Music out by the end of this card.",
+      "note": "Kept to 16 words, the linter's limit for an English label card. The disagreement on the first crema (1938 in Gaggia's account, 1947 in Morris) is shown where the claim is made, in the corner label of c03.",
+      "t": 145
+    }
+  ]
+}

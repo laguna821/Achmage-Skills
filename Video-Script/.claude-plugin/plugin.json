@@ -1,0 +1,13 @@
+{
+  "name": "achmage-video-script",
+  "version": "1.0.0",
+  "description": "Write on-screen-text video scripts (화면 문장 대본) that tell one complete story with captions and scenes and no narrator, in the manner of EBS 지식채널e: beat sheets, card-by-card writing, matching scene suggestions, production hand-off fields, automatic checks and a rough-cut sheet. Korean and English.",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Video-Script",
+  "license": "MIT",
+  "skills": [
+    "./achmage-video-script"
+  ]
+}

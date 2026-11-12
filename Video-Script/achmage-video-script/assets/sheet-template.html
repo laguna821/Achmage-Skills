@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__SHEET_TITLE__</title>
+<style>
+:root{
+  --paper:#f4f1ea; --panel:#fffdf8; --ink:#1d1b18; --muted:#6d675e; --line:#dcd6ca; --soft:#ebe6dc;
+  --accent:#a8431f; --ok:#2c6a4d; --warn:#946200; --fail:#b3261e;
+  --stage:#0f1113; --stage-ink:#f4f1ea; --stage-em:#ffd166;
+  --sans:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",system-ui,sans-serif;
+  --serif:"Noto Serif KR","Nanum Myeongjo","AppleMyungjo","Batang",serif;
+  --hand:"Nanum Pen Script","Gaegu","Nanum Brush Script","Malgun Gothic",cursive;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px 80px}
+.top{position:sticky;top:0;z-index:20;background:rgba(244,241,234,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1360px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.brand{font-weight:700;letter-spacing:-.01em}
+.brand small{font-weight:400;color:var(--muted);margin-left:8px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.tab{border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:7px 14px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.tab .fam{font-size:11px;padding:1px 6px;border-radius:4px;background:var(--soft);color:var(--muted)}
+.tab[aria-selected="true"] .fam{background:#3a3733;color:#ddd}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot.ok{background:var(--ok)} .dot.warn{background:var(--warn)} .dot.fail{background:var(--fail)}
+
+.case-head{padding:26px 0 4px}
+.eyebrow{color:var(--muted);font-size:13px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.eyebrow b{color:var(--ink)}
+h1{font-size:30px;line-height:1.25;margin:6px 0 4px;letter-spacing:-.02em}
+.case-head .row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;justify-content:space-between}
+.pub-title{color:var(--muted);margin:0 0 14px}
+.sumrow{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:4px 12px;font-size:13px}
+.pill.fail{border-color:#e3b3ae;background:#fbeeed;color:var(--fail)}
+.pill.warn{border-color:#e4d3a6;background:#fbf5e3;color:var(--warn)}
+.pill.ok{border-color:#b9d6c7;background:#edf6f1;color:var(--ok)}
+
+h2{font-size:20px;margin:36px 0 14px;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px}
+h2 .n{font-size:13px;color:var(--muted);font-weight:500}
+h2 small{font-size:13px;font-weight:400;color:var(--muted)}
+
+.decisions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.dcard{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.dcard.wide{grid-column:span 2}
+.dcard.full{grid-column:1/-1}
+.dcard h3{margin:0 0 4px;font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.dcard p{margin:0;font-size:15px}
+.dcard .big{font-size:18px;font-weight:600;line-height:1.45}
+.dcard ul{margin:0;padding-left:18px}
+.tagline{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.tag{font-size:12px;background:var(--soft);border-radius:4px;padding:2px 8px;color:#4a453e}
+
+.bench{display:grid;grid-template-columns:minmax(0,46fr) minmax(0,54fr);gap:20px;align-items:start}
+.player{position:sticky;top:66px}
+.stage{position:relative;aspect-ratio:16/9;background:var(--stage);color:var(--stage-ink);border-radius:10px;overflow:hidden;container-type:inline-size;user-select:none}
+.stage::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(255,255,255,.022) 0 2px,transparent 2px 14px);pointer-events:none}
+.stage.v-live{background:linear-gradient(135deg,#27363b,#12181b)}
+.stage.v-archive{background:linear-gradient(135deg,#3d3325,#1a1611)}
+.stage.v-reenact{background:linear-gradient(135deg,#2c303d,#13141a)}
+.stage.v-illust{background:linear-gradient(135deg,#3b2b33,#191216)}
+.stage.v-diagram{background-color:#101a2c;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:6.25% 11.11%}
+.stage.v-typo{background:#090909}
+.stage.v-stock{background:linear-gradient(135deg,#343434,#171717)}
+.scene{position:absolute;left:3.2cqw;top:3cqw;max-width:52cqw;z-index:2}
+.scene .vt{display:inline-block;font-size:1.5cqw;font-weight:700;letter-spacing:.04em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:.6cqw;padding:.25cqw .9cqw;margin-bottom:.8cqw}
+.scene .vd{font-size:1.75cqw;line-height:1.5;color:rgba(244,241,234,.78)}
+.scene .vc{font-size:1.45cqw;line-height:1.45;color:rgba(244,241,234,.5);margin-top:.5cqw}
+.tc{position:absolute;right:3cqw;top:3cqw;font-size:1.5cqw;color:rgba(244,241,234,.6);font-variant-numeric:tabular-nums;z-index:2;text-align:right}
+.snd{position:absolute;left:3.2cqw;bottom:2.6cqw;font-size:1.4cqw;color:rgba(244,241,234,.5);max-width:60cqw;z-index:2}
+.txt{position:absolute;z-index:3;left:8cqw;right:8cqw;top:50%;transform:translateY(-42%);text-align:center;font-size:4.2cqw;font-weight:600;line-height:1.5;letter-spacing:-.01em;text-shadow:0 .15cqw .8cqw rgba(0,0,0,.6)}
+.txt.pos-low{top:auto;bottom:11cqw;transform:none}
+.txt.pos-left{right:44cqw;text-align:left}
+.txt.pos-right{left:44cqw;text-align:right}
+.txt .ln{display:block;opacity:0;transform:translateY(.6cqw);transition:opacity .35s ease,transform .35s ease}
+.txt .ln.on{opacity:1;transform:none}
+.txt em{font-style:normal;color:var(--stage-em)}
+.txt.k-title{font-size:6.4cqw;font-weight:800;letter-spacing:-.03em}
+.txt.k-name{font-size:5.6cqw;font-weight:800;letter-spacing:-.02em}
+.txt.k-quote{font-family:var(--serif);font-weight:500;font-size:3.7cqw}
+.corner{position:absolute;right:3cqw;bottom:6cqw;max-width:46cqw;text-align:right;font-size:1.7cqw;line-height:1.45;color:rgba(244,241,234,.82);z-index:3;opacity:0;transition:opacity .4s ease}
+.corner.on{opacity:1}
+.txt.k-label{font-size:2.1cqw;font-weight:500;color:rgba(244,241,234,.85);top:auto;bottom:6cqw;left:auto;right:4cqw;transform:none;text-align:right}
+.txt.v-mono{font-family:var(--hand);font-size:4.6cqw;font-weight:400;color:#ffe9c9}
+.txt .att{display:block;margin-top:1.4cqw;font-family:var(--sans);font-size:1.8cqw;font-weight:400;color:rgba(244,241,234,.7)}
+.silent{position:absolute;left:0;right:0;bottom:11cqw;text-align:center;font-size:1.5cqw;letter-spacing:.2em;color:rgba(244,241,234,.35);z-index:2}
+.turnmark{position:absolute;right:3cqw;bottom:2.6cqw;font-size:1.4cqw;color:var(--stage-em);z-index:2;letter-spacing:.08em}
+
+.ctrl{display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer;color:var(--ink)}
+.btn:hover{border-color:#bdb5a6}
+.btn.play{background:var(--ink);color:#fff;border-color:var(--ink);min-width:74px}
+.time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);margin-left:auto}
+select.btn{padding-right:8px}
+.track{position:relative;margin-top:10px;cursor:pointer}
+.beats{display:flex;height:26px;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.beat{position:relative;background:var(--panel);border-right:1px solid var(--line);font-size:11px;line-height:24px;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#4a453e;min-width:0}
+.beat:nth-child(even){background:var(--soft)}
+.beat:last-child{border-right:0}
+.ticks{display:flex;height:9px;margin-top:3px;border-radius:3px;overflow:hidden}
+.tick{min-width:0;border-right:1px solid var(--paper)}
+.tick.k-edit{background:#8d867a} .tick.k-quote{background:var(--accent)} .tick.k-title{background:var(--ink)} .tick.k-name{background:#4b4740} .tick.k-label{background:#c9c2b4} .tick.k-silent{background:#e3ddd0}
+.tick.turn{box-shadow:inset 0 -3px 0 var(--stage-em)}
+.head{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--accent);pointer-events:none}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.hint{font-size:12px;color:var(--muted);margin-top:8px}
+
+.sheet{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:auto;max-height:calc(100vh - 90px)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;table-layout:fixed}
+col.w-time{width:62px} col.w-text{width:29%} col.w-kind{width:64px} col.w-vis{width:auto} col.w-note{width:17%} col.w-flag{width:11%}
+td{overflow-wrap:anywhere}
+thead th{position:sticky;top:0;background:#efeadf;text-align:left;font-size:12px;color:var(--muted);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);z-index:1}
+td{padding:9px 10px;border-bottom:1px solid var(--soft);vertical-align:top}
+tr.card{cursor:pointer}
+tr.card:hover td{background:#faf6ee}
+tr.card.cur td{background:#fbf0d9}
+tr.beatrow td{background:#efeadf;font-size:12.5px;color:#4a453e;padding:6px 10px;border-bottom:1px solid var(--line)}
+tr.beatrow b{color:var(--ink);margin-right:8px}
+.c-time{white-space:nowrap;color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px}
+.c-time b{display:block;color:var(--ink);font-weight:600}
+.c-text{min-width:0}
+.c-text .l{display:block;font-size:15px;font-weight:600;line-height:1.5}
+.c-text em{font-style:normal;color:var(--accent);background:linear-gradient(transparent 62%,#f6dcc9 62%)}
+.c-text.q .l{font-family:var(--serif);font-weight:500}
+.c-text.lab .l{font-size:13px;font-weight:500;color:#4a453e}
+.c-text.ttl .l{font-size:18px;font-weight:800}
+.c-text .att{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.c-text .none{color:#a9a294;font-size:13px}
+.kind{display:inline-block;font-size:11.5px;border-radius:4px;padding:1px 7px;border:1px solid var(--line);white-space:nowrap;color:#4a453e}
+.kind.k-quote{border-color:#e2bfae;color:var(--accent)}
+.kind.k-title{background:var(--ink);color:#fff;border-color:var(--ink)}
+.kind.k-name{background:#4b4740;color:#fff;border-color:#4b4740}
+.c-text.nm .l{font-size:17px;font-weight:800}
+.c-text .lab{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.c-text .lab::before{content:"구석 표기  ";color:#a39b8c}
+.c-text .orig{display:block;font-size:11.5px;color:#a39b8c;margin-top:3px;font-style:italic}
+tr.beatrow .div{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+tr.beatrow .div i{font-style:normal;color:#a39b8c;margin-right:4px}
+.kind.k-silent{color:#a9a294}
+.meta-s{display:block;font-size:11.5px;color:var(--muted);margin-top:3px}
+.turn{display:inline-block;font-size:11px;color:#7a5a00;background:#fbefc8;border-radius:4px;padding:0 6px;margin-top:3px}
+.vtype{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;color:#3d3933;margin-bottom:2px}
+.vtype i{width:9px;height:9px;border-radius:2px;display:inline-block}
+.sw-live{background:#3b545c}.sw-archive{background:#7a633f}.sw-reenact{background:#4a5170}.sw-illust{background:#7b4f63}.sw-diagram{background:#24406f}.sw-typo{background:#111}.sw-stock{background:#777}
+.c-vis .carr{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.c-vis .carr::before{content:"장면이 맡는 것  ";color:#a39b8c}
+.c-note{font-size:12.5px;color:#4a453e}
+.c-note .s{display:block;color:var(--muted)}
+.c-note .memo{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;margin-top:3px;color:#6d675e}
+.c-note .memo:hover{-webkit-line-clamp:unset}
+.c-note .src{display:inline-block;font-size:11px;border:1px solid var(--line);border-radius:4px;padding:0 5px;margin-right:4px;color:var(--muted)}
+.flag{display:inline-block;font-size:11px;border-radius:4px;padding:0 6px;margin:0 3px 3px 0;white-space:nowrap}
+.flag.warn{background:#fbf2d6;color:var(--warn)} .flag.fail{background:#fbe5e3;color:var(--fail)}
+.c-flag{min-width:0}
+.flag{white-space:normal}
+
+.metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:16px}
+.metric{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.metric b{display:block;font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.metric span{font-size:12px;color:var(--muted)}
+.metric small{display:block;font-size:11.5px;color:#a39b8c;margin-top:2px}
+.lintgrid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:16px;align-items:start}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 0}
+.box h3{font-size:13px;margin:8px 16px 6px;color:var(--muted);font-weight:600}
+.rule{display:grid;grid-template-columns:52px 124px 1fr;gap:10px;padding:8px 16px;border-top:1px solid var(--soft);font-size:13.5px;align-items:baseline}
+.rule:first-of-type{border-top:0}
+.lv{font-size:12px;font-weight:700}
+.lv.ok{color:var(--ok)} .lv.warn{color:var(--warn)} .lv.fail{color:var(--fail)}
+.rule .nm{color:#3d3933;font-weight:600}
+.rule .cards a{font-size:12px;margin-right:6px;text-decoration:none;border-bottom:1px dotted var(--accent);cursor:pointer}
+details.passed summary{cursor:pointer;padding:8px 16px;font-size:13px;color:var(--muted);border-top:1px solid var(--soft)}
+.manual{list-style:none;margin:0;padding:0 16px 10px}
+.manual li{padding:6px 0;border-top:1px solid var(--soft);font-size:13.5px;display:flex;gap:8px}
+.manual li:first-child{border-top:0}
+.manual input{margin-top:4px;accent-color:var(--accent)}
+.chain{padding:4px 16px 12px;font-size:14px;line-height:1.9}
+.chain span{background:linear-gradient(transparent 62%,#f6dcc9 62%);margin-right:4px}
+.chain i{color:#b8b0a1;font-style:normal;margin-right:4px}
+.notes{padding:0 16px 10px;margin:0 0 0 18px;font-size:13.5px}
+.sources{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 18px}
+.source{padding:10px 0;border-top:1px solid var(--soft);font-size:13.5px;display:grid;grid-template-columns:40px 1fr;gap:10px}
+.source:first-child{border-top:0}
+.source .id{font-weight:700;color:var(--muted)}
+.source .ck{color:var(--muted);display:block}
+footer{margin-top:50px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
+@media (max-width:1080px){.bench{grid-template-columns:1fr}.player{position:static}.sheet{max-height:none}.decisions{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:repeat(3,1fr)}.lintgrid{grid-template-columns:1fr}}
+@media (max-width:640px){.wrap{padding:0 14px 60px}.decisions{grid-template-columns:1fr}.dcard.wide{grid-column:auto}h1{font-size:26px}.metrics{grid-template-columns:repeat(2,1fr)}.rule{grid-template-columns:44px 1fr}.rule .nm{grid-column:2}.rule .ms{grid-column:1/-1}}
+@media print{.top,.ctrl,.track,.hint,.legend{display:none}.player{position:static}.sheet{max-height:none;overflow:visible}.bench{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><div class="top-in">
+  <div class="brand"><span id="sheetTitle"></span><small id="built"></small></div>
+  <div class="tabs" id="tabs" role="tablist"></div>
+</div></div>
+<div class="wrap" id="app"></div>
+
+<script>const DATA = /*__DATA__*/null;</script>
+<script>
+(function(){
+  if(!DATA){ document.getElementById('app').innerHTML='<p style="padding:40px 0">대본 데이터가 없다. build_sheet.py로 만든 파일을 연다.</p>'; return; }
+  var VT={ '실사':'live','기록':'archive','재연':'reenact','일러스트':'illust','도해':'diagram','타이포':'typo','스톡':'stock' };
+  var KT={ '편집':'edit','인용':'quote','제목':'title','이름':'name','표기':'label','무문장':'silent' };
+  var LV={ '통과':'ok','주의':'warn','실패':'fail' };
+  var POS={ '아래':'pos-low','왼쪽':'pos-left','오른쪽':'pos-right' };
+  var HOOK={ '감춤':'주제어를 감추고 시작','리드':'결과를 먼저 말하고 시작','사실':'차가운 사실로 시작','정점':'가장 센 장면으로 시작','그림':'그림과 질문으로 시작' };
+  var MANUAL=[
+    '장면에 보이는 것을 문장이 다시 말하는 카드가 없는가',
+    '장면이 맡은 은유를 문장이 풀어 쓰지 않았는가',
+    '강조한 구절만 차례로 읽어도 줄거리가 서는가',
+    '개념과 이름이 사례와 근거 뒤에 나오는가. 정의가 이름보다 먼저인가',
+    '둘째 꺾임이 방금 낸 결론의 전제를 흔드는가',
+    '축이 되는 사실이 대본의 한가운데에 있고 대상을 더 무겁게 만드는가',
+    '마지막 한 줄이 정리 카드보다 한 걸음 더 나가는가. 새 정보를 주지 않는가',
+    '편집 문장에 평가가 숨어 있지 않은가. 감정은 인용이 맡았는가',
+    '인용 카드의 문장이 출처에 실제로 있는가. 줄이면서 뜻이 바뀌지 않았는가',
+    '현재형 수치가 가장 최근 자료와 맞는가. 연구가 잰 것보다 넓게 말하지 않았는가. 중대한 사실을 뺀 채 밝게 맺지 않았는가',
+    '가편집 재생으로 끝까지 한 번 읽었는가. 숨이 찬 자리가 없는가',
+    '음악 없이도 구간의 경계가 보이는가'
+  ];
+  var cur=0, P={t:0,playing:false,speed:1,last:0,raf:0,idx:-1,lines:-1};
+  var app=document.getElementById('app');
+
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function fmt(t){ t=Math.max(0,t); var m=Math.floor(t/60), s=Math.floor(t%60); return m+':'+(s<10?'0':'')+s; }
+  function lineHtml(line, em){
+    var h=esc(line);
+    if(em){ var e=esc(em); var i=h.indexOf(e); if(i>=0) h=h.slice(0,i)+'<em>'+e+'</em>'+h.slice(i+e.length); }
+    return h;
+  }
+  function cardsOf(c){ return c.script.cards||[]; }
+  function total(c){ var cs=cardsOf(c); if(!cs.length) return 0; var l=cs[cs.length-1]; return (+l.t||0)+(+l.d||0); }
+  function worst(c){ var s=c.lint.summary; return s['실패']?'fail':s['주의']?'warn':'ok'; }
+
+  function buildTabs(){
+    document.getElementById('sheetTitle').textContent=DATA.title||'가편집 시트';
+    document.getElementById('built').textContent='만든 때 '+(DATA.built||'');
+    var h='';
+    DATA.cases.forEach(function(c,i){
+      var m=c.script.meta||{};
+      var lab=String(m.screen_title||m.title||c.file).split(/\s*[|｜│]\s*/)[0]; if(lab.length>20) lab=lab.slice(0,19)+'…';
+      h+='<button class="tab" role="tab" aria-selected="'+(i===cur)+'" data-i="'+i+'" title="'+esc(m.title||'')+'"><span class="dot '+worst(c)+'"></span>'+esc(lab)+'<span class="fam">'+esc(m.family||'')+' '+fmt(total(c))+'</span></button>';
+    });
+    var tabs=document.getElementById('tabs'); tabs.innerHTML=h;
+    Array.prototype.forEach.call(tabs.querySelectorAll('.tab'),function(b){ b.onclick=function(){ stop(); cur=+b.dataset.i; P.t=0; P.idx=-1; render(); window.scrollTo(0,0); }; });
+  }
+
+  function decisions(c){
+    var m=c.script.meta||{}, e=m.ending||{}, fam=(DATA.families||{})[m.family]||'';
+    var h='<div class="decisions">';
+    h+='<div class="dcard full"><h3>이 영상이 하는 말</h3><p class="big">'+esc(m.logline)+'</p></div>';
+    h+='<div class="dcard"><h3>갈래</h3><p><b>'+esc(m.family)+' '+esc(fam)+'</b></p><p>'+esc(m.family_reason)+'</p></div>';
+    h+='<div class="dcard"><h3>시청자가 이미 믿는 것</h3><p>'+esc(m.audience_belief)+'</p></div>';
+    h+='<div class="dcard"><h3>축이 되는 사실 하나</h3><p>'+esc(m.axis_fact)+'</p></div>';
+    h+='<div class="dcard"><h3>시작하는 방식</h3><p>'+esc(HOOK[m.hook_mode]||m.hook_mode)+'</p>'+(m.lead?'<p style="color:var(--muted);font-size:13.5px;margin-top:4px">첫 문장에 말할 결과: '+esc(m.lead)+'</p>':'');
+    if(m.withhold&&m.withhold.length){ h+='<div class="tagline">'+m.withhold.map(function(w){return '<span class="tag">제목 전 금지: '+esc(w)+'</span>';}).join('')+'</div>'; }
+    h+='</div>';
+    var lastText=null, cs=cardsOf(c); for(var i=cs.length-1;i>=0;i--){ if(cs[i].kind==='편집'||cs[i].kind==='인용'){ lastText=cs[i]; break; } }
+    h+='<div class="dcard"><h3>마지막 한 줄</h3><p class="big">'+(lastText?esc((lastText.lines||[]).join(' / ')):'')+'</p><div class="tagline"><span class="tag">유형: '+esc(e.type)+'</span><span class="tag">되받는 것: '+esc(e.callback||'없음')+(e.callback_kind?' ('+esc(e.callback_kind)+')':'')+'</span></div></div>';
+    h+='<div class="dcard"><h3>화면 재료</h3><p>'+esc(m.materials)+'</p></div>';
+    if(m.cast&&m.cast.length){ h+='<div class="dcard full"><h3>되풀이되는 대상</h3><ul>'+m.cast.map(function(a){return '<li><b>'+esc(a.id||'')+'</b> '+esc(a.look||'')+(a.fixed?'<span class="meta-s">고정 조건: '+esc(a.fixed)+'</span>':'')+'</li>';}).join('')+'</ul></div>'; }
+    if(m.visual_code&&m.visual_code.length){ h+='<div class="dcard full"><h3>색과 기호의 뜻</h3><ul>'+m.visual_code.map(function(a){return '<li><b>'+esc(a.sign||'')+'</b> '+esc(a.means||'')+'</li>';}).join('')+'</ul></div>'; }
+    if(m.type_style){ h+='<div class="dcard"><h3>화면 문장의 자리와 모양</h3><p>'+Object.keys(m.type_style).map(function(k){return esc(String(m.type_style[k]));}).join(' / ')+'</p></div>'; }
+    if(m.music_brief){ h+='<div class="dcard"><h3>음악 기준</h3><p>'+Object.keys(m.music_brief).map(function(k){return esc(String(m.music_brief[k]));}).join(' / ')+'</p></div>'; }
+    if(m.assumptions&&m.assumptions.length){ h+='<div class="dcard full"><h3>브리프에 없어 스스로 정한 것</h3><ul>'+m.assumptions.map(function(a){return '<li>'+esc(a)+'</li>';}).join('')+'</ul></div>'; }
+    return h+'</div>';
+  }
+
+  function beatsRange(c){
+    var cs=cardsOf(c), out=[], map={};
+    (c.script.beats||[]).forEach(function(b){ map[b.id]={id:b.id,name:b.name,job:b.job,start:null,end:null}; });
+    cs.forEach(function(k){ var b=map[k.beat]; if(!b){ b=map[k.beat]={id:k.beat,name:k.beat||'?',job:'',start:null,end:null}; } if(b.start===null){ b.start=+k.t||0; out.push(b); } b.end=(+k.t||0)+(+k.d||0); });
+    return out;
+  }
+
+  function player(c){
+    var T=total(c)||1, bs=beatsRange(c), cs=cardsOf(c);
+    var h='<div class="player"><div class="stage" id="stage"><div class="scene" id="scene"></div><div class="tc" id="tc"></div><div class="txt" id="txt"></div><div class="silent" id="silent"></div><div class="corner" id="corner"></div><div class="snd" id="snd"></div><div class="turnmark" id="turnmark"></div></div>';
+    h+='<div class="ctrl"><button class="btn" id="bFirst" title="처음으로">처음</button><button class="btn" id="bPrev" title="앞 카드">앞 카드</button><button class="btn play" id="bPlay">재생</button><button class="btn" id="bNext" title="다음 카드">다음 카드</button>';
+    h+='<select class="btn" id="speed" title="재생 속도"><option value="1">1배</option><option value="1.5">1.5배</option><option value="2">2배</option><option value="4">4배</option></select><span class="time" id="time"></span></div>';
+    h+='<div class="track" id="track"><div class="beats">'+bs.map(function(b){ return '<div class="beat" style="flex:'+Math.max(0.01,(b.end-b.start))+' 1 0" title="'+esc(b.name+': '+(b.job||''))+'">'+esc(b.name)+'</div>'; }).join('')+'</div>';
+    h+='<div class="ticks">'+cs.map(function(k){ return '<div class="tick k-'+(KT[k.kind]||'edit')+(k.turn?' turn':'')+'" style="flex:'+Math.max(0.01,+k.d||0)+' 1 0" title="'+esc(k.id+' '+k.kind)+'"></div>'; }).join('')+'</div><div class="head" id="head"></div></div>';
+    h+='<div class="legend"><span><i style="background:#8d867a"></i>편집 문장</span><span><i style="background:var(--accent)"></i>인용</span><span><i style="background:var(--ink)"></i>제목과 이름</span><span><i style="background:#c9c2b4"></i>표기</span><span><i style="background:#e3ddd0;border:1px solid #cfc8b9"></i>문장 없음</span><span><i style="background:var(--stage-em)"></i>꺾임</span></div>';
+    h+='<p class="hint">화면의 배경은 실제 영상이 아니라 장면 제안의 자리다. 왼쪽 위에 제안한 장면이, 가운데에 화면 문장이 실제 시간대로 뜬다. 스페이스로 재생과 멈춤, 좌우 화살표로 카드 이동.</p></div>';
+    return h;
+  }
+
+  function sheet(c){
+    var cs=cardsOf(c), flags=c.lint.flags||{}, bmap={};
+    (c.script.beats||[]).forEach(function(b){ bmap[b.id]=b; });
+    var h='<div class="sheet" id="sheet"><table><colgroup><col class="w-time"><col class="w-text"><col class="w-kind"><col class="w-vis"><col class="w-note"><col class="w-flag"></colgroup><thead><tr><th>시각</th><th>화면 문장</th><th>구분</th><th>장면 제안</th><th>소리, 출처, 메모</th><th>검수</th></tr></thead><tbody>';
+    var lastBeat=null;
+    cs.forEach(function(k,i){
+      if(k.beat!==lastBeat){ var b=bmap[k.beat]||{name:k.beat,job:''}; h+='<tr class="beatrow"><td colspan="6"><b>'+esc(b.name)+'</b>'+esc(b.job||'')+((b.scene||b.text)?'<span class="div"><i>장면이 말할 것</i>'+esc(b.scene||'')+'　<i>문장이 말할 것</i>'+esc(b.text||'')+'</span>':'')+'</td></tr>'; lastBeat=k.beat; }
+      var kt=KT[k.kind]||'edit', v=k.visual||{}, vt=VT[v.type]||'stock';
+      var cls=k.kind==='인용'?' q':k.kind==='표기'?' lab':k.kind==='제목'?' ttl':k.kind==='이름'?' nm':'';
+      var text=(k.lines&&k.lines.length)?k.lines.map(function(l){return '<span class="l">'+lineHtml(l,k.em)+'</span>';}).join(''):'<span class="none">(문장 없이 장면만)</span>';
+      if(k.attribution) text+='<span class="att">'+esc(k.attribution)+(k.quote_form&&k.quote_form!=='원문'?' ('+esc(k.quote_form)+')':'')+'</span>';
+      if(k.original) text+='<span class="orig">'+esc(k.original)+'</span>';
+      if(k.label) text+='<span class="lab">'+esc(k.label)+'</span>';
+      var note='';
+      if(k.sound) note+='<span class="s">소리: '+esc(k.sound)+'</span>';
+      if(k.src) note+=[].concat(k.src).map(function(s){return '<span class="src">'+esc(s)+'</span>';}).join('');
+      if(k.note) note+='<span class="memo" title="'+esc(k.note)+'">'+esc(k.note)+'</span>';
+      var fl=(flags[k.id]||[]).map(function(f){return '<span class="flag '+LV[f.level]+'" title="'+esc(f.code)+'">'+esc(f.title)+'</span>';}).join('');
+      h+='<tr class="card" id="row-'+esc(k.id)+'" data-i="'+i+'"><td class="c-time"><b>'+fmt(+k.t||0)+'</b>'+(+k.d||0)+'초<span class="meta-s">'+esc(k.id)+'</span></td>';
+      h+='<td class="c-text'+cls+'">'+text+'</td>';
+      h+='<td><span class="kind k-'+kt+'">'+esc(k.kind)+'</span>'+(k.voice&&k.voice!=='서사'?'<span class="meta-s">'+esc(k.voice)+'</span>':'')+(k.turn?'<br><span class="turn">꺾임</span>':'')+'</td>';
+      h+='<td class="c-vis"><span class="vtype"><i class="sw-'+vt+'"></i>'+esc(v.type||'')+'</span><br>'+esc(v.desc||'')+(v.motion?'<span class="meta-s">움직임: '+esc(v.motion)+'</span>':'')+(v.frame?'<span class="meta-s">화면 범위: '+esc(v.frame)+'</span>':'')+(v.events!==undefined?'<span class="meta-s">사건 수: '+esc(String(v.events))+'</span>':'')+(v.text_in_picture&&v.text_in_picture.length?'<span class="meta-s">화면 속 글자: '+esc(v.text_in_picture.join(', '))+(v.legible===false?' (아직 읽히지 않게)':'')+'</span>':'')+(v.footage?'<span class="meta-s">찾을 영상: '+esc((v.footage.search||[]).join(', '))+(v.footage.reuse?' (다시 씀: '+esc(v.footage.reuse)+')':'')+(v.footage.stand_in?' · 대역':'')+(v.footage.min_len?' · '+esc(String(v.footage.min_len))+'초 이상':'')+(v.footage.must?' · 꼭: '+esc(v.footage.must):'')+(v.footage.fallback?' · 없으면: '+esc(v.footage.fallback):'')+(v.footage.source?' · 찾음: '+esc(v.footage.source):'')+'</span>':'')+(v.overlay?'<span class="meta-s">위에 겹칠 그림: '+esc(v.overlay)+'</span>':'')+(v.carries?'<span class="carr">'+esc(v.carries)+'</span>':'')+'</td>';
+      h+='<td class="c-note">'+note+'</td><td class="c-flag">'+fl+'</td></tr>';
+    });
+    return h+'</tbody></table></div>';
+  }
+
+  function lintView(c){
+    var m=c.lint.metrics, u=m.unit, res=c.lint.results, meta=c.script.meta||{};
+    var h='<div class="metrics">';
+    function met(v,label,sub){ return '<div class="metric"><b>'+v+'</b><span>'+label+'</span>'+(sub?'<small>'+sub+'</small>':'')+'</div>'; }
+    h+=met(fmt(m.total_seconds),'전체 길이','목표 '+fmt(m.target_seconds||0));
+    h+=met(m.cards_edit+'장','편집 문장 카드','인용 '+m.cards_quote+'장');
+    h+=met(m.edit_size+u,'편집 문장 총량','초당 '+m.density+u);
+    h+=met(m.avg_card_size+u,'카드 한 장 평균','평균 '+m.avg_card_seconds+'초 노출');
+    h+=met((m.handoff_ratio!=null?m.handoff_ratio:m.open_ratio)+'%','다음 카드로 넘기는 카드','명사로 멈춤 '+(m.noun_ratio!=null?m.noun_ratio:'?')+'%, 끝맺음 '+(m.closed_ratio!=null?m.closed_ratio:'?')+'%');
+    h+=met(m.cards_silent+'곳','문장 없는 구간','합계 '+m.silent_seconds+'초');
+    h+='</div><div class="lintgrid"><div>';
+    var bad=res.filter(function(r){return r.level!=='통과';}), good=res.filter(function(r){return r.level==='통과';});
+    function rule(r){ return '<div class="rule"><span class="lv '+LV[r.level]+'">'+r.level+'</span><span class="nm">'+esc(r.title)+'</span><span class="ms">'+esc(r.msg)+(r.cards&&r.cards.length?' <span class="cards">'+r.cards.map(function(id){return '<a data-card="'+esc(id)+'">'+esc(id)+'</a>';}).join('')+'</span>':'')+'</span></div>'; }
+    h+='<div class="box"><h3>자동 검수: 고치거나 판단할 것 '+bad.length+'건</h3>'+(bad.length?bad.map(rule).join(''):'<div class="rule"><span class="lv ok">통과</span><span class="nm">모두 통과</span><span class="ms">실패와 주의가 없다</span></div>');
+    h+='<details class="passed"><summary>통과한 항목 '+good.length+'건 보기</summary>'+good.map(rule).join('')+'</details></div>';
+    if(meta.review_notes&&meta.review_notes.length){ h+='<div class="box" style="margin-top:14px"><h3>주의를 그대로 둔 까닭</h3><ul class="notes">'+meta.review_notes.map(function(n){return '<li>'+esc(n)+'</li>';}).join('')+'</ul></div>'; }
+    h+='</div><div>';
+    h+='<div class="box"><h3>강조한 말만 차례로 읽기</h3><div class="chain">'+(m.emphasis_chain&&m.emphasis_chain.length?m.emphasis_chain.map(function(e){return '<span>'+esc(e)+'</span>';}).join('<i>/</i>'):'강조한 구절이 없다')+'</div></div>';
+    h+='<div class="box" style="margin-top:14px"><h3>사람이 확인할 것 (자동 검수가 못 보는 것)</h3><ul class="manual">'+MANUAL.map(function(t){return '<li><input type="checkbox"><span>'+esc(t)+'</span></li>';}).join('')+'</ul></div>';
+    return h+'</div></div>';
+  }
+
+  function sources(c){
+    var s=(c.script.meta||{}).sources||[];
+    if(!s.length) return '<div class="sources"><div class="source"><span class="id"></span><span>출처가 적혀 있지 않다</span></div></div>';
+    return '<div class="sources">'+s.map(function(x){ return '<div class="source"><span class="id">'+esc(x.id)+'</span><span>'+esc(x.label)+(x.url?' <a href="'+esc(x.url)+'" target="_blank" rel="noopener">열기</a>':'')+(x.checked?'<span class="ck">확인한 내용: '+esc(x.checked)+'</span>':'')+(x.status?'<span class="ck">확인 방식: '+esc(x.status)+'</span>':'')+'</span></div>'; }).join('')+'</div>';
+  }
+
+  function render(){
+    buildTabs();
+    var c=DATA.cases[cur], m=c.script.meta||{}, s=c.lint.summary, fam=(DATA.families||{})[m.family]||'';
+    var h='<section class="case-head"><div class="eyebrow"><b>'+esc(m.family)+' '+esc(fam)+'</b><span>'+fmt(total(c))+'</span><span>'+esc(c.file)+'</span></div>';
+    h+='<div class="row"><div><h1>'+esc(String(m.screen_title||m.title).split(/\s*[|｜│]\s*/)[0])+'</h1><p class="pub-title">게시용 제목: '+esc(m.title)+'</p></div>';
+    h+='<div class="sumrow" style="margin-bottom:14px"><span class="pill '+(s['실패']?'fail':'ok')+'">실패 '+s['실패']+'</span><span class="pill '+(s['주의']?'warn':'ok')+'">주의 '+s['주의']+'</span><span class="pill ok">통과 '+s['통과']+'</span></div></div></section>';
+    h+='<h2><span class="n">1</span>가편집과 풀 시트 <small>왼쪽은 시간대로 재생, 오른쪽은 카드 전체. 행을 누르면 그 카드로 간다</small></h2><div class="bench">'+player(c)+sheet(c)+'</div>';
+    h+='<h2><span class="n">2</span>설계 결정 <small>카드를 쓰기 전에 정한 것</small></h2>'+decisions(c);
+    h+='<h2><span class="n">3</span>검수</h2>'+lintView(c);
+    h+='<h2><span class="n">4</span>출처</h2>'+sources(c);
+    h+='<footer>achmage-video-script 가편집 시트. 화면 문장은 실제 시간대로 뜨지만 장면은 글로 적은 제안이다.</footer>';
+    app.innerHTML=h;
+    bind(c); P.idx=-1; P.lines=-1; draw(c);
+  }
+
+  function findIdx(c,t){ var cs=cardsOf(c); for(var i=0;i<cs.length;i++){ var a=+cs[i].t||0, b=a+(+cs[i].d||0); if(t>=a&&t<b) return i; } return cs.length-1; }
+
+  function draw(c){
+    var cs=cardsOf(c); if(!cs.length) return;
+    var T=total(c), t=Math.min(P.t,T), i=findIdx(c,t), k=cs[i], v=k.visual||{};
+    var stage=document.getElementById('stage'), txt=document.getElementById('txt');
+    if(i!==P.idx){
+      P.idx=i; P.lines=-1;
+      stage.className='stage v-'+(VT[v.type]||'stock');
+      document.getElementById('scene').innerHTML='<span class="vt">'+esc(v.type||'')+'</span><div class="vd">'+esc(v.desc||'')+'</div>'+(v.motion?'<div class="vc">움직임: '+esc(v.motion)+'</div>':'');
+      document.getElementById('snd').textContent=k.sound?('소리: '+k.sound):'';
+      document.getElementById('turnmark').textContent=k.turn?'꺾임':'';
+      document.getElementById('silent').textContent=(k.kind==='무문장')?'문장 없이 장면만':'';
+      var cn=document.getElementById('corner'); cn.textContent=k.label||''; cn.classList.remove('on'); if(k.label){ setTimeout(function(){ cn.classList.add('on'); },60); }
+      var cls='txt k-'+(KT[k.kind]||'edit')+' '+(POS[k.pos]||'');
+      if(k.voice==='독백') cls+=' v-mono';
+      txt.className=cls;
+      var inner=(k.lines||[]).map(function(l){return '<span class="ln">'+lineHtml(l,k.em)+'</span>';}).join('');
+      if(k.attribution&&k.kind==='인용') inner+='<span class="ln att">'+esc(k.attribution)+'</span>';
+      txt.innerHTML=inner;
+      Array.prototype.forEach.call(document.querySelectorAll('tr.card.cur'),function(r){r.classList.remove('cur');});
+      var row=document.getElementById('row-'+k.id);
+      if(row){ row.classList.add('cur'); var box=document.getElementById('sheet'); if(box&&box.scrollHeight>box.clientHeight){ var top=row.offsetTop-box.clientHeight*0.35; box.scrollTo({top:Math.max(0,top),behavior:P.playing?'smooth':'auto'}); } }
+    }
+    var lns=txt.querySelectorAll('.ln'), n=lns.length, el=t-(+k.t||0), d=+k.d||0.001;
+    var step=n>1?Math.min(1.4,d/(n+1.2)):0, on=0;
+    for(var j=0;j<n;j++){ if(el>=j*step-0.001) on=j+1; }
+    if(on!==P.lines){ P.lines=on; for(var q=0;q<n;q++){ lns[q].classList.toggle('on',q<on); } }
+    document.getElementById('tc').innerHTML=esc(k.id)+'<br>'+fmt(t);
+    document.getElementById('time').textContent=fmt(t)+' / '+fmt(T);
+    var tr=document.getElementById('track'); document.getElementById('head').style.left=(T?(t/T)*tr.clientWidth:0)+'px';
+  }
+
+  function tick(now){
+    var c=DATA.cases[cur], T=total(c);
+    if(!P.playing) return;
+    var dt=(now-P.last)/1000; P.last=now; P.t+=dt*P.speed;
+    if(P.t>=T){ P.t=T-0.001; draw(c); stop(); return; }
+    draw(c); P.raf=requestAnimationFrame(tick);
+  }
+  function play(){ var c=DATA.cases[cur]; if(P.t>=total(c)-0.05) P.t=0; P.playing=true; P.last=performance.now(); document.getElementById('bPlay').textContent='멈춤'; P.raf=requestAnimationFrame(tick); }
+  function stop(){ P.playing=false; cancelAnimationFrame(P.raf); var b=document.getElementById('bPlay'); if(b) b.textContent='재생'; }
+  function seek(t){ var c=DATA.cases[cur]; P.t=Math.max(0,Math.min(t,total(c)-0.001)); draw(c); }
+  function stepCard(dir){ var c=DATA.cases[cur], cs=cardsOf(c), i=findIdx(c,P.t)+dir; i=Math.max(0,Math.min(cs.length-1,i)); stop(); seek((+cs[i].t||0)+(+cs[i].d||0)-0.01); }
+
+  function bind(c){
+    document.getElementById('bPlay').onclick=function(){ P.playing?stop():play(); };
+    document.getElementById('bFirst').onclick=function(){ stop(); seek(0); };
+    document.getElementById('bPrev').onclick=function(){ stepCard(-1); };
+    document.getElementById('bNext').onclick=function(){ stepCard(1); };
+    var sp=document.getElementById('speed'); sp.value=String(P.speed); sp.onchange=function(){ P.speed=+sp.value; };
+    var tr=document.getElementById('track');
+    tr.onclick=function(e){ var r=tr.getBoundingClientRect(); seek(((e.clientX-r.left)/r.width)*total(c)); };
+    Array.prototype.forEach.call(document.querySelectorAll('tr.card'),function(row){ row.onclick=function(){ var k=cardsOf(c)[+row.dataset.i]; stop(); seek((+k.t||0)+(+k.d||0)-0.01); }; });
+    Array.prototype.forEach.call(document.querySelectorAll('a[data-card]'),function(a){ a.onclick=function(){ var id=a.dataset.card, cs=cardsOf(c); for(var i=0;i<cs.length;i++){ if(cs[i].id===id){ stop(); seek((+cs[i].t||0)+(+cs[i].d||0)-0.01); var row=document.getElementById('row-'+id); if(row){ document.getElementById('stage').scrollIntoView({block:'center'}); } break; } } }; });
+  }
+  document.addEventListener('keydown',function(e){
+    var tag=(e.target.tagName||'').toLowerCase(); if(tag==='input'||tag==='select'||tag==='textarea') return;
+    if(e.code==='Space'){ e.preventDefault(); P.playing?stop():play(); }
+    else if(e.code==='ArrowRight'){ e.preventDefault(); stepCard(1); }
+    else if(e.code==='ArrowLeft'){ e.preventDefault(); stepCard(-1); }
+  });
+  window.addEventListener('resize',function(){ draw(DATA.cases[cur]); });
+  window.__sheet={ seek:seek, play:play, stop:stop, state:P };
+  render();
+})();
+</script>
+</body>
+</html>

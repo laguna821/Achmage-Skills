@@ -4,6 +4,13 @@
 
 ## 📦 수록 스킬
 
+### [Video-Script/achmage-video-script](Video-Script): 내레이션 없는 화면 문장 영상 대본과 가편집 시트 (1.0.0)
+
+EBS 지식채널e처럼 화면 문장과 장면만으로 한 편을 완결하는 영상의 대본을 씁니다. 갈래 8개의 비트 시트, 한 문장을 여러 카드에 나누는 카드 규격, 카드마다 맞춘 장면 제안과 제작 인계 칸, 자동 검수 61항목, 실제 시간대로 재생되는 오프라인 가편집 시트를 포함합니다. 한국어와 영어 대본을 씁니다. 렌더는 하지 않고 [Motion Art Director](Video-Production/motion-art-director)에 넘깁니다. Python 표준 라이브러리만 씁니다.
+→ [설치·사용 안내](Video-Script/README.md) · [설치 ZIP](Video-Script/downloads/achmage-video-script-1.0.0.zip) · [예제 영상 두 편](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/) · [검증 범위](Video-Script/VALIDATION.md)
+
+[<img src="Video-Script/examples/norman-door/poster.jpg" width="49%" alt="노먼 도어 90초">](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/#norman-door) [<img src="Video-Script/examples/espresso/poster.jpg" width="49%" alt="Espresso 150초">](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/#espresso)
+
 ### [Product-Design/apple-hig-design](Product-Design): Apple HIG 기준 제품 UI, 기획부터 구현·검토·출시 자료까지 (1.0.0)
 
 Apple Human Interface Guidelines만을 디자인 판단의 근거로 삼아 앱·웹 제품 UI를 만듭니다. 기능이 왜 필요한지부터 컴포넌트 선택, 화면 구성, 색·글꼴·아이콘·재질, 실제로 동작하는 프론트엔드, HIG 검토, 출시 자료(랜딩, 카드뉴스, 실제 제품을 띄우는 데모 덱)까지 한 흐름입니다. HIG 규칙 2,341개를 자체 요약과 규칙 ID로 정리했고(Apple 원문 미포함), 판단마다 규칙 ID를 인용하고 검사 스크립트로 확인합니다. HIG Kit 웹 부품 34종, Lucide 아이콘 102종, DESIGN.md 읽기·쓰기를 포함합니다.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Achmage Video Script"
+  short_description: "내레이션 없이 화면 문장과 장면으로 한 편을 완결하는 영상 대본과 가편집 시트"
+  default_prompt: "$achmage-video-script를 사용해 이 주제로 내레이션 없는 화면 문장 영상 대본을 쓰고, 장면 제안과 가편집 시트까지 만들어 주세요."
+policy:
+  allow_implicit_invocation: true

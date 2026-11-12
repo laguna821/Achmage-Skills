@@ -10,3 +10,6 @@
 
 # Preserve the exact Apple HIG Design skill and ZIP manifest bytes.
 /Product-Design/** -text
+
+# Preserve the exact video script skill and ZIP manifest bytes.
+/Video-Script/** -text

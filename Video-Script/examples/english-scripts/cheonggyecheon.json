@@ -1,0 +1,755 @@
+{
+  "meta": {
+    "title": "Seoul Tore Down a Downtown Highway | What Happened to the Traffic, and to the Stream Underneath",
+    "lang": "en",
+    "family": "B",
+    "family_reason": "The script answers 'what happened': one event (a city demolishes its own elevated highway), then a rewind, then the aftermath. B's beat order (peak first, rewind, same scene again, aftermath, closing declaration, a 'not yet' fact) fits. Caveat: B's selection rule assumes original on-site footage that is itself the spectacle; this brief allows no news archive, so the peak is carried by a cross-section diagram plus generic stock that is never labeled as the real event.",
+    "target_seconds": 89,
+    "hook_mode": "정점",
+    "logline": "Seoul removed a highway that carried over 100,000 vehicles a day to uncover a buried stream; the feared traffic disaster was milder than expected, the stream brought measurable gains, and it still has to be pumped full every day.",
+    "audience_belief": "Remove a highway from the middle of a city and the traffic gets worse.",
+    "axis_fact": "Twelve lanes of road (4 elevated + 8 at street level) were cut to four, on a corridor used by about 168,000 vehicles a day (Seoul Metropolitan Government, June 2003).",
+    "ending": {
+      "type": "사실",
+      "callback": "every day",
+      "callback_kind": "낱말"
+    },
+    "materials": "Open-license live-action stock (Pexels, Pixabay, Mixkit, Coverr): Cheonggyecheon today, Seoul streets and traffic, generic elevated highway and demolition, people by water at night. Vector graphics: simple map, before/after cross-section, numbers, typography. No commissioned shooting, no generated images, no news archive footage.",
+    "sources": [
+      {
+        "id": "S1",
+        "label": "Seoul Metropolitan Government, 'Cheonggyecheon' (official English page), viewed 2026-11",
+        "url": "https://english.seoul.go.kr/service/amusement/stream/1-cheonggyecheon",
+        "checked": "Restoration period July 2003 to September 2005 (two years, three months); restored length 5.84 km; cost KRW 386.739 billion (as of 2005); covering project began after the 1950s.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S2",
+        "label": "Landscape Performance Series (Landscape Architecture Foundation), 'Cheonggyecheon Stream Restoration Project' case study brief",
+        "url": "https://www.landscapeperformance.org/case-study-briefs/cheonggyecheon-stream-restoration-project",
+        "checked": "3.6 miles (5.84 km); temperatures along the stream 3.3 to 5.9 C cooler than on a parallel road 4-7 blocks away; fish species 4 to 25 between 2003 and end of 2008; 'contributed to' a 15.1% increase in bus ridership and 3.3% in subway ridership in Seoul between 2003 and end of 2008; average 64,000 visitors daily; budget about $380 million. Note: the brief's '639%' is the ratio of all counted species after/before (626/98), not a rise 'from 62 to 864'; 62 to 308 is plants only.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S3",
+        "label": "Seoul Metropolitan Government newsroom (내 손안에 서울), '청계천 주변교통 걱정되시죠?', 2003-06-26",
+        "url": "https://mediahub.seoul.go.kr/archives/138445",
+        "checked": "Daily traffic 168,000 vehicles = Cheonggye elevated highway 102,000 (4 lanes, both directions) + Cheonggyecheon-ro 66,000 (8 lanes); works start July 1, 2003; the elevated highway is removed and only 4 of the 8 street lanes remain; the press was warning of '교통대란' (traffic chaos/disaster); the city's worst-case simulation had downtown speed falling from 21.0 to 18.3 km/h.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S4",
+        "label": "Seoul Solution (Seoul Metropolitan Government policy archive), 'Removal of Overpasses in Seoul to Improve the Cityscape & Transportation Environment', 2015",
+        "url": "https://seoulsolution.kr/en/content/removal-overpasses-seoul-improve-cityscape-transportation-environment",
+        "checked": "'The removal of this first overpass resulted in a better cityscape and traffic congestion was not as severe as had been expected'; 'some worried about severe congestion ... but the current condition near the stream is not severe'; Table 1 lists 13 overpasses removed after the Cheonggye Overpass, through July 2014. The same page lists the overpass as built in 1969 and calls it a '5 km stretch' (differs from other sources, see S8).",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S5",
+        "label": "The Guardian, 'Everyone thought it would cause gridlock: the highway that Seoul turned into a stream', 2025-01-17",
+        "url": "https://www.theguardian.com/world/2025/jan/17/seoul-cheonggyecheon-motorway-turned-into-a-stream",
+        "checked": "Quote of local resident Park Byung-chul: 'Initially, everyone thought it would cause gridlock. But people adapted. Now we can't imagine the highway ever being here.'; start ceremony July 1, 2003; Lee Myung-bak won the 2002 mayoral election campaigning to restore the stream; completed in 27 months at 386bn won; needs more than 48,000 tonnes of water pumped daily (40,000 treated Han River water + 8,300 groundwater), costing 2.9bn won a year; original stream was seasonal; Seoul has since removed 16 other elevated highways; Seoul Institute: 3.6 C cooler than nearby streets; 666 species in a 2022 survey; more than 12 million visitors a year. The article says the elevated highway carried '168,000 cars daily'; S3 shows that figure includes the street beneath. The reporter's byline was not captured when the page was read; confirm it before crediting on screen.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S6",
+        "label": "Hong Kal, 'Flowing Back to the Future: The Cheonggye Stream Restoration and the Remaking of Seoul', The Asia-Pacific Journal: Japan Focus, 2011",
+        "url": "https://apjjf.org/2011/9/27/hong-kal/3556/article",
+        "checked": "Via search-result excerpt only: 'In spite of fierce resistance especially from sidewalk vendors, the city government successfully cleared the area by force'; opposition came from 'poor residents, merchants, and especially \"illegal\" sidewalk vendors in the area, who were to be evicted to clear space'; 5.8-kilometer-long expressway overpass; water pumped from the Han River.",
+        "status": "주소가 열리지 않음, 발췌로 확인 (bot check page; search excerpt read 2026-11)"
+      },
+      {
+        "id": "S7",
+        "label": "Sustainability 8(11):1178 (MDPI), 'How Do Mega Projects Alter the City to Be More Sustainable? Spatial Changes Following the Seoul Cheonggyecheon Restoration Project in South Korea', 2016",
+        "url": "https://www.mdpi.com/2071-1050/8/11/1178",
+        "checked": "Via search-result excerpt only: 60,000 shops, 220,000 merchants and over 3,000 street vendors along the corridor; 1,045 merchants relocated to the Garden Five mall (opened 2010), of whom about 100 remained; the relocation 'turned out to be a failure'. Meeting counts differ between sources (42,000 here, about 4,200 elsewhere) and are not used.",
+        "status": "주소가 열리지 않음, 발췌로 확인 (HTTP 403; search excerpt read 2026-11)"
+      },
+      {
+        "id": "S8",
+        "label": "Disagreements not resolved on screen (New York Times 2009-07-16; ITDP 2003-05-01; USACE/Seoul slides; KSCE Journal of Civil Engineering 2015)",
+        "url": "https://www.nytimes.com/2009/07/17/world/asia/17daylight.html",
+        "checked": "Via search-result excerpts only. Korea Herald (2015-10-01) and Seoul slides hosted by USACE: opened Oct. 1, 2005. NYT: nearly all the water on a typical day is pumped from the Han River through seven miles of pipe; fish species 4 to 25. ITDP: 120,000 cars used the corridor daily. Seoul slides: highway built 1968-1976, stream covered 1958-1978, 170,000 vehicles/day. KSCE 2015 cost-benefit paper: congestion costs had been underestimated before the project and the benefit-cost ratio at completion was 0.75. These are the reason the script says 'over 100,000', 'decades earlier', 'milder than feared' and 'over 40,000 tons'.",
+        "status": "주소가 열리지 않음, 발췌로 확인 (NYT HTTP 403; others read as search excerpts only)"
+      }
+    ],
+    "cast": [
+      {
+        "id": "cross-section",
+        "look": "Flat vector cross-section looking along the road: gray elevated deck on a row of concrete piers, a street-level road beneath it, and under that street a dark box culvert. Buildings as plain dark blocks left and right. After state: no deck, an open channel with a thin band of water in the middle, two lanes on each bank.",
+        "fixed": "The drawing sits in the lower third and the outer thirds of the frame; the middle band stays empty and dark for the text. Lane marks are countable: 4 on the deck, 8 on the street before; 2 + 2 after. Never drawn with a place name on it."
+      },
+      {
+        "id": "map",
+        "look": "Simple dark vector map of Seoul: the Han River as one wide curve, one short east-west line north of it in the old center.",
+        "fixed": "Only one geographic label, 'Han River'. The line is amber while it is a road and turns blue once it is the stream."
+      },
+      {
+        "id": "stream today",
+        "look": "Live-action stock of the real Cheonggyecheon: shallow water between stone walls about one story below street level, stepping stones, office towers above.",
+        "fixed": "Must be the real location. Darken and keep the brightest part of the picture out of the center band."
+      }
+    ],
+    "visual_code": [
+      {
+        "sign": "amber",
+        "means": "roads and vehicles"
+      },
+      {
+        "sign": "blue",
+        "means": "water, including pumped water"
+      },
+      {
+        "sign": "gray",
+        "means": "concrete structure that gets removed"
+      },
+      {
+        "sign": "white",
+        "means": "on-screen text only; nothing in the picture is white"
+      }
+    ],
+    "type_style": {
+      "pos": "가운데",
+      "face": "thin white sans-serif for editorial text; serif with curly quotation marks for the quote",
+      "size": "about 5% of frame height (52-56 px at 1080p), up to three short lines, centered",
+      "em": "one step heavier weight, no color change",
+      "ground": "dark picture; the center band of every shot and diagram is left empty"
+    },
+    "music_brief": {
+      "mood": "hopeful, slightly sentimental; steady and flowing",
+      "instruments": "solo piano",
+      "tempo": "moderate and even (about 80-100 bpm), continuous motion, no rubato stops",
+      "avoid": "drums, percussion, vocals, big cinematic swells, synthesized stand-in for a real piano",
+      "in": "c05",
+      "pause": "none required; lower the music under the water sound at c19",
+      "out": "c21"
+    },
+    "review_notes": [
+      "Manual check, overlap: c02 names the action the picture shows ('tearing down'). Kept because family B's hook is defined as the action written in the present tense; the text adds what the picture cannot ('a city', 'its own').",
+      "Manual check, last line: c19 gives a new figure, which the general ending rule (no new information) forbids but family B's last card ('a fact that is not yet solved') requires. The callback 'every day' appears only in c03 and c19.",
+      "Manual check, axis fact: the lane count sits at 0:21-0:26 (about 27%), earlier than 'the middle', because in family B the context comes in the rewind and everything after it is aftermath.",
+      "Manual check, naming: family B asks for anonymous, then category, then real name. The category step is skipped ('a city' goes straight to 'Seoul, South Korea' on the date card) to stay inside 90 seconds.",
+      "Manual check, scope: the script closes on two unsolved points (vendors cleared out, pumped water) and does not sum the project up as a success. Left out for length: project cost, the Garden Five merchant relocation, the 2015 cost-benefit paper's 0.75 ratio, visitor counts.",
+      "Stand-in footage: c01, c02, c08, c10, c12 and c16 are generic stock and carry no place or date label. Every shot that is presented as the stream (c09, c14, c17, c18, c19) must be the real location.",
+      "Editor pass after skill 0.6.0: c02 no longer shows the demolition with generic excavator footage. A stand-in clip must not show the event itself (04, section 8), so the peak is carried by the cross-section from the first text card.",
+      "Editor pass: c08 \"the press warned of a traffic disaster\" was changed to \"many feared severe congestion\", which is what the sources support (S4: \"some worried about severe congestion\"; S5: \"everyone thought it would cause gridlock\").",
+      "Editor pass: eight cards were lengthened to meet the English reading floor (words/3 + 2 s). Family B runs fast by design, but the floor is a production limit, not a style choice. Total is now 90 s.",
+      "Editor pass: c12 became a diagram so that the 2003-2008 label does not sit on stand-in bus footage. c10 and c16 keep source labels without a year.",
+      "Still open before production: c16 (vendors cleared out) rests on two sources that were read only as search excerpts. A person should open Kal (2011) before this card is used."
+    ],
+    "assumptions": [
+      "Length set to 85 seconds inside the 75-90 second brief.",
+      "Text is in US English; on-screen distance is in miles with kilometers in the corner label; temperature stays in Celsius as in the sources, with a Fahrenheit equivalent in the corner label.",
+      "No title card (family B does not require one).",
+      "Actual-location stock footage of the stream is typed 실사; generic stand-in footage is typed 스톡 and must not carry a place or date label.",
+      "Project cost (KRW 386.7 billion official; dollar conversions range from $281 million to about $380 million) is left off screen because one more number did not fit the length."
+    ]
+  },
+  "beats": [
+    {
+      "id": "b1",
+      "name": "정점 먼저",
+      "job": "Show the act itself in the present tense with an unnamed subject: a city is demolishing a working highway.",
+      "scene": "What an elevated highway through a downtown looks like, what demolition of concrete looks like, and that there are two levels of road with something dark under them.",
+      "text": "That the city is doing this to itself, and how many vehicles the highway carries every day."
+    },
+    {
+      "id": "b2",
+      "name": "되감기",
+      "job": "Rewind: date, place, and what was put under the road decades earlier.",
+      "scene": "Where in the city the line runs (map) and where the water sits relative to the road (cross-section).",
+      "text": "Date, city name, who buried it and when."
+    },
+    {
+      "id": "b3",
+      "name": "같은 장면 다시",
+      "job": "Look at the same cross-section again knowing what is underneath: the plan and the warning.",
+      "scene": "Where the twelve lanes are and what replaces them; what a jammed street looks like.",
+      "text": "The purpose (to uncover it), the lane count, who warned and of what."
+    },
+    {
+      "id": "b4",
+      "name": "후속",
+      "job": "Aftermath in the past tense, in one block: opening, the jam that was milder than feared, a resident's words, bus ridership, temperature, fish.",
+      "scene": "The stream as it looks now, moving traffic and buses, where the temperature was compared, life in the water.",
+      "text": "Elapsed time, the comparison with the fear, the quote, percentages and counts with their years."
+    },
+    {
+      "id": "b5",
+      "name": "종결 선언",
+      "job": "How the event ended for the city: it kept removing overpasses.",
+      "scene": "A row of overpass icons disappearing one by one.",
+      "text": "The count and who did it."
+    },
+    {
+      "id": "b6",
+      "name": "마지막 카드",
+      "job": "What is still not solved, stated as fact: the vendors who were cleared out, and water that has to be pumped every day.",
+      "scene": "A street market, water coming out of a built wall, people walking beside the stream at night.",
+      "text": "Who was cleared out, that the water does not arrive by itself, the daily tonnage."
+    }
+  ],
+  "cards": [
+    {
+      "id": "c01",
+      "beat": "b1",
+      "t": 0,
+      "d": 2,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "스톡",
+        "desc": "Daytime shot from a high angle of an elevated highway running between downtown office buildings, cars moving in both directions on the deck.",
+        "carries": "What kind of road this is and that it is in use.",
+        "motion": "화면: locked off or very slow push in / 대상: traffic flows / 넘김: straight cut",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "elevated highway city aerial",
+            "overpass traffic downtown",
+            "urban expressway buildings"
+          ],
+          "stand_in": true
+        }
+      },
+      "sound": "City traffic hum only. No music yet.",
+      "note": "Generic stand-in, not the Cheonggye Expressway: no place or date label on this shot."
+    },
+    {
+      "id": "c02",
+      "beat": "b1",
+      "t": 2,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "A city is tearing down",
+        "its own highway,"
+      ],
+      "em": "its own highway",
+      "end": "넘김",
+      "visual": {
+        "type": "도해",
+        "desc": "Cross-section (cast: cross-section), before state, drawn in thin lines on a dark ground: an elevated deck on piers, a street under it, and under the street a dark closed box. Amber vehicle marks start to run along the deck.",
+        "carries": "What is being torn down: the deck is the only bright thing in the drawing",
+        "motion": "Camera: fixed, full width / Subject: the deck draws in, then the vehicle marks start / Cut: none",
+        "frame": "전경",
+        "events": 2
+      }
+    },
+    {
+      "id": "c03",
+      "beat": "b1",
+      "t": 7,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "the one that carries",
+        "over 100,000 vehicles",
+        "every day"
+      ],
+      "em": "every day",
+      "end": "끝맺음",
+      "label": "highway only, 2003",
+      "src": [
+        "S3",
+        "S8"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "(continues) Same cross-section: amber vehicle marks keep running along the gray deck and along the street under it; the dark box under the street stays closed.",
+        "carries": "That there are two levels of road, and that something closed lies under the lower one.",
+        "motion": "화면: static / 대상: amber marks drift along both levels / 넘김: hold into c04",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "Seoul's June 2003 figures: 102,000 on the elevated highway + 66,000 on the street below = 168,000. ITDP (2003) gives 120,000 for the corridor. 'Over 100,000' for the highway is true under both. The diagram does not draw a number of vehicles to scale."
+    },
+    {
+      "id": "c04",
+      "beat": "b1",
+      "t": 12,
+      "d": 2,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "도해",
+        "desc": "(same cross-section) The gray deck and its piers lift out of the drawing and fade. The street and the dark box stay.",
+        "carries": "The act itself: the upper level is gone.",
+        "motion": "화면: static / 대상: deck lifts away / 넘김: cross-dissolve to the map",
+        "frame": "전경",
+        "events": 1
+      }
+    },
+    {
+      "id": "c05",
+      "beat": "b2",
+      "t": 14,
+      "d": 3,
+      "kind": "표기",
+      "lines": [
+        "July 1, 2003",
+        "Seoul, South Korea"
+      ],
+      "src": [
+        "S3",
+        "S5"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Map (cast: map): the Han River curve and one short amber line across the old center, north of the river.",
+        "carries": "Where in the city the road runs and how short it is against the river.",
+        "motion": "화면: static / 대상: the amber line draws in from west to east / 넘김: cross-dissolve",
+        "frame": "전경",
+        "events": 1,
+        "text_in_picture": [
+          "Han River"
+        ]
+      },
+      "sound": "Piano enters: steady, flowing."
+    },
+    {
+      "id": "c06",
+      "beat": "b2",
+      "t": 17,
+      "d": 4.5,
+      "kind": "편집",
+      "lines": [
+        "A stream,",
+        "buried by Seoul",
+        "decades earlier"
+      ],
+      "em": "decades earlier",
+      "end": "명사",
+      "label": "Cheonggyecheon · from 1958",
+      "src": [
+        "S1",
+        "S8"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Cross-section, deck already gone: the dark box under the street becomes see-through and a thin blue band of water shows inside it.",
+        "carries": "Where the stream is: sealed in a box directly under the street the highway stood on.",
+        "motion": "화면: slow push toward the box / 대상: blue appears inside the box / 넘김: hold into c07",
+        "frame": "중간",
+        "events": 1
+      },
+      "note": "Dates differ: covering 1958-1978 (Seoul slides), 'in the 1960s' (Guardian), overpass built 1969 (Seoul Solution) or 1968-1976 (Seoul slides). 'Decades earlier' and 'from 1958' (start of covering) are true under all of them."
+    },
+    {
+      "id": "c07",
+      "beat": "b3",
+      "t": 21.5,
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "To uncover it,",
+        "the plan cut",
+        "twelve lanes to four,"
+      ],
+      "em": "four",
+      "end": "넘김",
+      "label": "Mayor Lee Myung-bak",
+      "src": [
+        "S3",
+        "S5"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Cross-section pulls back to full width. Twelve amber lane marks are counted across the deck outline and the street; eight fade, the street splits, and two lanes remain on each side of an open blue channel.",
+        "carries": "Where the twelve lanes were, where the four that remain go, and what takes the place of the rest.",
+        "motion": "화면: pull back to full width, then static / 대상: lanes fade, channel opens / 넘김: straight cut",
+        "frame": "전경",
+        "events": 2
+      },
+      "note": "Calculated: 4 lanes on the elevated highway + 8 on Cheonggyecheon-ro = 12; 4 of the 8 street lanes remained (S3, the city's plan as of June 2003). Numbers are spelled out, so the automatic number check will not see this card.",
+      "compare": true
+    },
+    {
+      "id": "c08",
+      "beat": "b3",
+      "t": 27,
+      "d": 4,
+      "kind": "편집",
+      "lines": [
+        "and many feared",
+        "severe congestion."
+      ],
+      "em": "severe congestion",
+      "end": "끝맺음",
+      "src": [
+        "S4",
+        "S5"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "Evening street packed with stopped cars seen from behind, rows of red brake lights, shot from a footbridge or sidewalk. Darkened, lights kept to the lower third.",
+        "carries": "What the feared outcome looks like.",
+        "motion": "화면: locked off / 대상: cars creep / 넘김: straight cut",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Seoul traffic jam night",
+            "brake lights traffic jam",
+            "rush hour traffic city"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "Generic; not footage of 2003."
+    },
+    {
+      "id": "c09",
+      "beat": "b4",
+      "t": 31,
+      "d": 4.5,
+      "kind": "편집",
+      "lines": [
+        "The stream opened",
+        "27 months later"
+      ],
+      "em": "27 months",
+      "end": "끝맺음",
+      "label": "Oct. 1, 2005 · 3.6 miles",
+      "src": [
+        "S1",
+        "S2",
+        "S5",
+        "S8"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "Daytime, the real Cheonggyecheon: shallow water running between stone walls below street level, people crossing on stepping stones, office towers above. Darkened; water in the lower third.",
+        "carries": "What replaced the road, and its scale against the buildings.",
+        "motion": "화면: slow lateral move along the water / 대상: people cross / 넘김: straight cut",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Cheonggyecheon stream Seoul",
+            "Cheonggyecheon stepping stones",
+            "Seoul stream downtown"
+          ]
+        }
+      },
+      "sound": "Running water comes up under the piano.",
+      "note": "Must be the real location. Calculated: July 1, 2003 to Oct. 1, 2005 = 27 months (S1 gives 'two years, three months')."
+    },
+    {
+      "id": "c10",
+      "beat": "b4",
+      "t": 35.5,
+      "d": 4.5,
+      "kind": "편집",
+      "turn": true,
+      "lines": [
+        "But what followed",
+        "was milder than feared:"
+      ],
+      "em": "milder than feared",
+      "end": "넘김",
+      "label": "Source: Seoul Solution",
+      "src": [
+        "S4",
+        "S8"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "Daytime Seoul avenue with cars and buses moving steadily through a green light, shot from the sidewalk. Darkened; vehicles in the lower half.",
+        "carries": "That traffic is moving.",
+        "motion": "화면: locked off / 대상: traffic passes / 넘김: dim to near black for the quote",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Seoul street traffic day",
+            "Seoul avenue cars buses",
+            "city traffic moving"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "S4: 'traffic congestion was not as severe as had been expected'. A 2015 cost-benefit paper (S8) says congestion costs had been underestimated beforehand, so the card says 'milder than feared', not 'no jam'. The colon hands the card over to the resident's quote, which explains it."
+    },
+    {
+      "id": "c11",
+      "beat": "b4",
+      "t": 40,
+      "d": 7.5,
+      "kind": "인용",
+      "voice": "인용",
+      "lines": [
+        "“Initially, everyone thought",
+        "it would cause gridlock.",
+        "But people adapted.”"
+      ],
+      "attribution": "Park Byung-chul, local resident · The Guardian, 2025",
+      "src": "S5",
+      "quote_form": "줄임",
+      "original": "“Initially, everyone thought it would cause gridlock,” said Park Byung-chul, a local resident. “But people adapted. Now we can’t imagine the highway ever being here.”",
+      "visual": {
+        "type": "타이포",
+        "desc": "The previous street shot dimmed almost to black; quote in serif, same center position.",
+        "motion": "화면: static / 대상: none / 넘김: straight cut",
+        "events": 0
+      },
+      "note": "Shortened at the end only (the third sentence is dropped), nothing removed from the middle. The Guardian published the quote in English; the interview language is not stated, so it may be the reporter's translation."
+    },
+    {
+      "id": "c12",
+      "beat": "b4",
+      "t": 47.5,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "Citywide, bus ridership",
+        "rose about 15%"
+      ],
+      "em": "15%",
+      "end": "끝맺음",
+      "label": "2003–2008",
+      "src": "S2",
+      "visual": {
+        "type": "도해",
+        "desc": "Dark ground. A single thin line rises gently from left to right across the lower third, marked 2003 at its start and 2008 at its end. No scale, no second line.",
+        "carries": "That this is a change over five years, not a single day",
+        "motion": "Camera: fixed / Subject: the line draws from left to right / Cut: none",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "S2 says the project 'contributed to' a 15.1% rise in Seoul bus ridership; Seoul also reorganized its bus system in these years, so the card states the rise and does not credit it to the demolition alone. Rounded: 15.1% to 'about 15%'."
+    },
+    {
+      "id": "c13",
+      "beat": "b4",
+      "t": 52.5,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "The air along the water",
+        "is over 3°C cooler,"
+      ],
+      "em": "3°C cooler",
+      "end": "넘김",
+      "label": "5°F+ · vs. nearby streets",
+      "src": [
+        "S2",
+        "S5"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Map (cast: map) zoomed to the center: the line, now blue, and a parallel amber street a few blocks away. A cool tint spreads along the blue line only.",
+        "carries": "What it is compared with: a parallel street a few blocks off, not the whole city.",
+        "motion": "화면: static / 대상: tint spreads along the blue line / 넘김: straight cut",
+        "frame": "중간",
+        "events": 1
+      },
+      "note": "S2 (2008 data): 3.3 to 5.9 C cooler than a parallel road 4-7 blocks away. S5 (Seoul Institute, reported 2025): 3.6 C cooler than nearby streets. 'Over 3 C' is true under both. Calculated: 3.3 C x 1.8 = 5.9 F, so '5 F+'. Tint width is illustrative; do not draw it as a measured area."
+    },
+    {
+      "id": "c14",
+      "beat": "b4",
+      "t": 57.5,
+      "d": 5,
+      "kind": "편집",
+      "compare": true,
+      "lines": [
+        "and fish species went",
+        "from 4 to 25"
+      ],
+      "em": "25",
+      "end": "끝맺음",
+      "label": "2003 vs. 2008",
+      "src": [
+        "S2",
+        "S8"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "Close shot down into clear shallow running water over stones, small fish holding against the current. Darkened; fish in the lower third.",
+        "carries": "That the water is clear enough and alive.",
+        "motion": "화면: locked off / 대상: fish hold and dart / 넘김: straight cut",
+        "frame": "근접",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Cheonggyecheon fish",
+            "fish shallow stream clear water",
+            "carp stream city"
+          ]
+        }
+      },
+      "note": "Prefer a clip shot at Cheonggyecheon; if generic, keep it close enough that no other location is recognizable."
+    },
+    {
+      "id": "c15",
+      "beat": "b5",
+      "t": 62.5,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "Seoul then removed",
+        "over a dozen more",
+        "elevated roads"
+      ],
+      "em": "over a dozen more",
+      "end": "끝맺음",
+      "label": "16 by 2025",
+      "src": [
+        "S4",
+        "S5"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "A row of small gray overpass icons in the lower third; they fade out one after another from left to right until the row is empty.",
+        "carries": "The count as a row of things no longer there, and their shape: short overpasses, not full highways.",
+        "motion": "화면: static / 대상: icons fade in sequence as one continuous move / 넘김: straight cut",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "S4's table lists 13 overpasses removed after Cheonggye through July 2014; S5 says 16 other elevated highways by 2025. Draw 13 icons, not map positions (locations were not checked). 'A dozen' is spelled out, so the automatic number check will not see this card."
+    },
+    {
+      "id": "c16",
+      "beat": "b6",
+      "t": 67.5,
+      "d": 5.5,
+      "kind": "편집",
+      "turn": true,
+      "lines": [
+        "But the street vendors",
+        "who worked there",
+        "were cleared out,"
+      ],
+      "em": "cleared out",
+      "end": "넘김",
+      "label": "Source: Hong Kal",
+      "src": [
+        "S6",
+        "S7"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "A narrow Korean street market: stalls and hand carts under awnings, hands arranging goods, people seen from behind. No faces in close-up. Darkened.",
+        "carries": "What kind of work lined the old road.",
+        "motion": "화면: slow move down the row of stalls / 대상: hands and backs only / 넘김: straight cut",
+        "frame": "중간",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Seoul street market stall",
+            "Korean market vendor hands",
+            "street vendor cart Korea"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "Generic; these are not the displaced vendors. S6 and S7 could not be opened (bot check, HTTP 403); wording follows the search excerpts: vendors 'evicted', area 'cleared ... by force'. The merchant relocation to Garden Five (S7) is left out for length."
+    },
+    {
+      "id": "c17",
+      "beat": "b6",
+      "t": 73,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "and the water",
+        "does not arrive on its own"
+      ],
+      "em": "on its own",
+      "end": "끝맺음",
+      "src": [
+        "S5",
+        "S8"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "The head of Cheonggyecheon: water pours over a built stone wall into the channel below street level. Darkened; the fall on the right third.",
+        "carries": "That the water enters from a built outlet, not from a hillside.",
+        "motion": "화면: locked off / 대상: water falls / 넘김: straight cut",
+        "frame": "중간",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Cheonggyecheon waterfall",
+            "Cheonggye Plaza fountain",
+            "Cheonggyecheon start"
+          ]
+        }
+      },
+      "note": "Must be the real location."
+    },
+    {
+      "id": "c18",
+      "beat": "b6",
+      "t": 78,
+      "d": 2.5,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "실사",
+        "desc": "Night at Cheonggyecheon: people walk the path beside the water under the bridge lights, reflections on the surface. Walkers small, on the left and right thirds.",
+        "carries": "The stream in use now.",
+        "motion": "화면: locked off / 대상: people walk / 넘김: hold into c19",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "Cheonggyecheon night",
+            "people walking stream night Seoul",
+            "Seoul stream lights"
+          ]
+        }
+      },
+      "sound": "Required: running water audible. Nice to have: the piano thins here. With a library track, simply lower the music by about 6 dB.",
+      "note": "Must be the real location."
+    },
+    {
+      "id": "c19",
+      "beat": "b6",
+      "t": 80.5,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "Over 40,000 tons",
+        "are pumped in",
+        "every day"
+      ],
+      "em": "every day",
+      "end": "끝맺음",
+      "label": "The Guardian, 2025",
+      "src": [
+        "S5",
+        "S8"
+      ],
+      "visual": {
+        "type": "실사",
+        "desc": "(same night shot continues) People keep walking beside the water.",
+        "carries": "The contrast the text does not state: nothing in the picture shows the pumping.",
+        "motion": "화면: locked off / 대상: people walk / 넘김: slow fade toward black",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "S5 (Jan. 2025): more than 48,000 tonnes pumped daily (40,000 treated Han River water + 8,300 groundwater). Older accounts give larger daily volumes, and the NYT (2009) says nearly all the water is pumped from the Han River. 'Over 40,000 tons' is true under all of them. Present-tense figure: re-check before publishing."
+    },
+    {
+      "id": "c20",
+      "beat": "b6",
+      "t": 85.5,
+      "d": 3.5,
+      "kind": "표기",
+      "lines": [
+        "Seoul Metropolitan Government",
+        "Landscape Performance Series · The Guardian"
+      ],
+      "visual": {
+        "type": "타이포",
+        "desc": "Near-black screen, small white text in the same center position.",
+        "motion": "화면: static / 대상: none / 넘김: fade out",
+        "events": 0
+      },
+      "sound": "Piano fades out; the water sound is the last thing heard. Closing action: the reflections go dark."
+    }
+  ]
+}

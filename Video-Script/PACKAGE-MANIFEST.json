@@ -1,0 +1,21 @@
+{
+  "name": "achmage-video-script",
+  "version": "1.0.0",
+  "created": "2026-11-12",
+  "license": "MIT",
+  "files": {
+    "agents/openai.yaml": "59cfd862997c0a700eefcfb82c3b60793e052a389d1e858555b589540f6959d1",
+    "assets/sheet-template.html": "80629cbc6ee02e3460cefba2cedc4842caa29e49699bf3286b629c17881e2b26",
+    "LICENSE": "9d18a1d35dcbd72979252521407e85a24a1cf2a5b63b6cdede08eff1ce31e381",
+    "NOTICE.md": "713279e3bb4375ea9326e03d573c8aef1d454204b90e2f623b808d651c13d603",
+    "references/01-갈래와-비트시트.md": "618b3a9d888fe8307bb7e38144de4c8998311a0a27aa68ac95fbc45d2a3c6338",
+    "references/02-카드-규격.md": "f185f6f6598eca8da50c31d3505946261a78909644dd7743f958cfb4ec3ad075",
+    "references/03-훅-전환-결말.md": "fa16b31eb0f9ea88e276c4f705807b450dbe84159e8cc92d36ce1acbe6f0ef22",
+    "references/04-장면-제안.md": "adf402b21b5ad9ae64ce829b362b1ce39400dc88aad390d8c42e4fd20fd80645",
+    "references/05-검수.md": "991ef31854013ca671d763242488ed9482877c6e8582c638df63ba0188319155",
+    "references/06-대본-데이터-규격.md": "b53dc4092dcc836c9859241ea8518fb8689acac7cd76001f4df887da151b8a83",
+    "references/07-사실-다루기.md": "eb5fc4b3e65f79f46cf846ac1c6d5ae1aa1be77cb25d303736eb3316f244535d",
+    "scripts/build_sheet.py": "58b1e04f2296609e0f7af5082fd1abea8de5c998e5276d2e6c5ff3679479186d",
+    "SKILL.md": "56ccf060333b893605ab616f1f6801db8674598b656601c4768f083b38a04355"
+  }
+}

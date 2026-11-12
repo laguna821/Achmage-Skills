@@ -1,0 +1,682 @@
+{
+  "meta": {
+    "title": "The Paths No One Planned | What 5,680 worn trails say to the people who draw the map",
+    "lang": "en",
+    "family": "D1",
+    "family_reason": "One research finding (the first citywide count of desire lines, Foster & Newell 2019) delivered in 90 seconds with the result stated first. D2 was the other candidate, but the film reports who found what and what it changes, not how to recognize a concept. A1/A3 fit a belief-reversal better but are 4 to 6 minute forms.",
+    "target_seconds": 90,
+    "hook_mode": "리드",
+    "lead": "In Detroit, two researchers mapped the footpaths that no one planned.",
+    "logline": "Trails worn by walking are not damage to a plan: counted from the air, they are a record of where people need to go, and some planners pave them.",
+    "audience_belief": "People who cut across the grass are breaking the design.",
+    "axis_fact": "Virginia Tech said the dirt paths on its Drillfield 'were never a planned feature', and in the summer of 2014 it paved three of them.",
+    "ending": {
+      "type": "선언",
+      "callback": "no one planned",
+      "callback_kind": "낱말"
+    },
+    "materials": "(1) Open-license live-action stock footage (Pexels, Pixabay, Mixkit, Coverr): lawns, footpaths, people walking, snow on a square, aerial views. (2) Vector graphics drawn over or beside the footage: paved line vs walked line, schematic maps, typography. No commissioned shooting, no generated images.",
+    "sources": [
+      {
+        "id": "S1",
+        "label": "Foster, A. & Newell, J. P., Detroit's lines of desire: Footpaths and vacant land in the Motor City, Landscape and Urban Planning 189, 260-273, 2019",
+        "url": "https://css.umich.edu/publications/research-publications/detroits-lines-desire-footpaths-and-vacant-land-motor-city",
+        "checked": "Abstract (on the authors' institute page, DOI 10.1016/j.landurbplan.2019.04.009): 'more than 5680 of these footpaths, totaling more than 150 miles (>240 km)'; method 'remote sensing and spatial analysis with physical audits and interviews'; desire lines 'visible from space'. Journal highlights (ScienceDirect, seen as a search excerpt) say 'citywide census found 5680 desire lines ... over 150 linear miles'. Discrepancy: 'more than 5680' (abstract) vs '5680' (highlights, press release). The script says 'at least 5,680' and 'more than 150 miles', true under both readings.",
+        "status": "직접 확인 (초록과 서지. 논문 본문은 유료라 읽지 못함)"
+      },
+      {
+        "id": "S2",
+        "label": "University of Michigan News (Michigan News), Visible from outer space, Detroit's unofficial pathways could play important role in land redevelopment, 24 Sep 2019",
+        "url": "https://news.umich.edu/visible-from-outer-space-detroits-unofficial-pathways-could-play-important-role-in-land-redevelopment",
+        "checked": "'mapped 5,680 unofficial footpaths in the city of Detroit, that's 157 linear miles of trails'; authors Joshua Newell (U-M) and Alec Foster (Illinois State); a marked-up aerial image was used as a guide and students documented sites on the ground in 2013; footpaths are 'residents' way of dealing with this reality, creating shortcuts to school, bus lines and other places they need to go'; the Newell quote on cards c10-c11, word for word.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S3",
+        "label": "Joel Kurth, In a changing Detroit, footpaths are vanishing across vast, empty lands, Bridge Michigan, 4 Oct 2019",
+        "url": "https://bridgemi.com/urban-affairs/changing-detroit-footpaths-are-vanishing-across-vast-empty-lands",
+        "checked": "The count is for 2010 ('5,680 footpaths ... totaling 157 miles in 2010'; satellite images of 2010 compared with 2016; footpaths declined 13 percent overall by 2016). 'The informal trails are known by urban planners as desire paths'. Paths run 'across vacant land'. Dissent recorded here: Donna Givens (Eastside Community Network) called the study 'patronizing' and 'a nostalgic, poverty porn exercise'.",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S4",
+        "label": "Virginia Tech News, Dirt paths on Drillfield to be paved, 5 Aug 2014",
+        "url": "https://news.vt.edu/articles/2014/08/080514-vpa-drillfieldpaths.html",
+        "checked": "'three of the dirt pathways crossing the grass area are paved with asphalt' (announced, work to finish before the fall semester); 'The dirt paths were never a planned feature of the Drillfield. They evolved organically as students crossed the area over time'; the new paths 'will join five existing paved paths', five feet wide against twelve; 'a temporary fix'; reason given: mud tracked into buildings.",
+        "status": "직접 확인 (vtx.vt.edu의 같은 글로 열람)"
+      },
+      {
+        "id": "S5",
+        "label": "Virginia Tech News, Students join the team seeking to find a better path across the Drillfield, 8 Dec 2014",
+        "url": "https://news.vt.edu/articles/2014/12/120814-vpa-drillfieldcommittee.html",
+        "checked": "Confirms the paving happened: 'Several smaller paths were paved this past summer as a temporary remedy until a more permanent solution could be identified.' Gives 'several', not 'three'. Also 'The larger paths were first paved in the late 1970s' (Virginia Tech Magazine says the first two asphalt walks were poured in 1971; that date is not used).",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S6",
+        "label": "University of Wisconsin-Madison News, Desire paths: the unofficial footpaths that frustrate, captivate campus planners, 24 Apr 2019",
+        "url": "https://news.wisc.edu/desire-paths-the-unofficial-footpaths-that-frustrate-captivate-campus-planners",
+        "checked": "Planners 'can either create an official path along it ..., insert an impediment to the alignment, or modify the topography'. Desire paths 'in the winter, are footsteps pressed into snow' (basis for the snow scene on c10-c11; no claim about planners reading snow is made).",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S7",
+        "label": "The State News (Michigan State University student newspaper), Desire paths: how the art of deviant pedestrianism shapes MSU campus, Oct 2023",
+        "url": "https://statenews.com/article/2023/10/desire-paths-how-the-art-of-deviant-pedestrianism-shapes-msu-campus",
+        "checked": "Campus planner Steve Troost's team has 'two choices when they see a desire path forming: fight or submit': flower beds or post and chain to deter, or a sidewalk laid in its place (Adams Field; Berkey Hall, where the chain came out and a walkway went in).",
+        "status": "직접 확인"
+      },
+      {
+        "id": "S8",
+        "label": "Ohio State University Libraries, University Archives blog, The Oval's Long Walk has paved the way for students for a century, 25 Nov 2014",
+        "url": "https://library.osu.edu/site/archives/2014/11/25/the-ovals-long-walk-has-paved-the-way-for-students-for-a-century/",
+        "checked": "Not used on screen. Says only that students' walking paths 'partly led to the current design of sidewalks'; the popular version (Ohio State waited and paved whatever students wore) is stronger than this source, so it was left out.",
+        "status": "직접 확인 (화면에는 쓰지 않음)"
+      }
+    ],
+    "cast": [
+      {
+        "id": "sign shot (clip A)",
+        "look": "One stock clip or still: a small KEEP OFF THE GRASS sign staked in a mown lawn, daylight, sign in the left third of the frame, grass filling the rest.",
+        "fixed": "The same clip, same framing, is used on c01 and again on c16-c17. The center of the frame stays empty grass so the type has a clear, darkened place."
+      },
+      {
+        "id": "amber line",
+        "look": "A thin amber vector line, hand-steady, slightly irregular.",
+        "fixed": "Always and only a path worn by walking. It is drawn progressively, never appears all at once, and it is the only warm color on screen."
+      },
+      {
+        "id": "white line",
+        "look": "A clean white vector line, straight or evenly curved, heavier than the amber line.",
+        "fixed": "Always a paved path. It never means 'planned': the source does not say the older paved paths were planned."
+      }
+    ],
+    "visual_code": [
+      {
+        "sign": "amber line",
+        "means": "a path worn by walking, unpaved"
+      },
+      {
+        "sign": "white line",
+        "means": "a paved path"
+      },
+      {
+        "sign": "amber line turning white",
+        "means": "a walked path that has been paved"
+      },
+      {
+        "sign": "short white bar across an amber line",
+        "means": "a walked path that has been blocked"
+      }
+    ],
+    "type_style": {
+      "pos": "가운데",
+      "face": "thin white sans-serif for editorial cards; a serif for the quote cards c10-c11",
+      "size": "about 5% of frame height (52-56 px at 1080p); two lines, three at most",
+      "em": "one weight step heavier, no color change (color is reserved for the amber and white lines)",
+      "ground": "stock footage graded down and the center of the frame darkened, so the white type is the brightest thing on screen; diagrams on a dark ground"
+    },
+    "music_brief": {
+      "mood": "hopeful, gently sentimental, steady and flowing",
+      "instruments": "solo piano",
+      "tempo": "moderate and even (about 70-90 bpm), a continuous flowing pattern rather than isolated chords",
+      "avoid": "drums and any percussion, vocals, big swells, synthesized stand-ins for a piano",
+      "in": "c01",
+      "pause": "none required; if the chosen track has a natural breath, set it under c16",
+      "out": "c18"
+    },
+    "review_notes": [
+      "stock-heavy (스톡 56%): the brief makes open-license stock footage the main material and allows no shooting. Each stock scene is given a specific job in carries, and the Detroit count, the method, the two choices and the Virginia Tech case are carried by diagrams (7 cards) instead of footage.",
+      "Numbers (manual): D1 asks for one or two numbers per film. The script has two figures (5,680 and 150 miles) and one spelled-out count ('three'), kept because 'three' is the axis fact and is what the diagram on c14-c15 shows.",
+      "c14 'paved three': three is the number announced by the university on 5 Aug 2014 (S4); its 8 Dec 2014 release (S5) confirms that 'several smaller paths were paved this past summer' without repeating the number. No motive is claimed on screen: the stated reason was mud, and the paving was called temporary.",
+      "c10-c11: the quote is the researcher's interpretation, not a measured result, and is shown as a quote for that reason. Bridge Michigan (S3) records a local critic who called the study patronizing; the script therefore says 'across vacant lots' on c08 and does not present the trails as a good in themselves.",
+      "Finland snowfall claim (planners visit parks after the first snow): every instance found traces back to a 2011 Royal Borough of Kensington and Chelsea document quoted second-hand; no Finnish source was found, so it is not used. The snow scene on c10-c11 shows footprints only.",
+      "English periods: sentence-final cards carry a period so that the linter can tell closed cards from hand-off cards (see test-log).",
+      "Manual check, overlap kept on c13: the diagram shows the same two choices the sentence names. It is kept because it teaches the sign (amber turning white) that c15 relies on; no unsourced extra claim was added to make the picture say more.",
+      "Manual check, overlap kept on c07: the picture is a view from above and the sentence says 'overhead images'. The sentence is kept because the picture alone does not say that this was the method, and it carries the two methods that cannot be filmed.",
+      "Manual check, axis fact: it sits at 66-76 s (the D1 'meaning' row), not in the middle of the film; the first 57 s belong to the finding. The D1 beat sheet has no earlier slot for it.",
+      "Manual check, wording changed after the first lint run: sources call the imagery 'aerial' (press release), 'satellite' (Bridge) and 'remote sensing' (abstract), so the screen says 'overhead images' and the label says '2010 imagery'; 'vacant lots' became 'vacant land' to match the sources.",
+      "Manual check, c10-c11: snow is brighter than white type. The clip must be overcast or dusk and graded down, or the quote will not read.",
+      "Editor pass after skill 0.6.0: every live-action card here is a stand-in (스톡): the study's own imagery and the Drillfield are not available as open footage. The stock-heavy warning (56%) is therefore accurate and is kept. If this script goes to production, the first fix is to license or redraw the study's map so that the finding is shown, not suggested.",
+      "Editor pass: the source label was moved from c02 (stand-in footage of walking feet) to c04 (the map diagram), so no stand-in shot carries a year."
+    ],
+    "assumptions": [
+      "16:9, 1080p, general English-speaking audience, American spelling.",
+      "No title card: family D1 states the result on the first text card.",
+      "All non-screen fields (visual.desc, carries, notes) are written in English because the production crew and the stock search work in English; enum values stay in Korean as the data spec requires.",
+      "The KEEP OFF THE GRASS sign stands for the audience belief; it is shown, never quoted in a sentence."
+    ]
+  },
+  "beats": [
+    {
+      "id": "b1",
+      "name": "발견",
+      "job": "State the finding first: who mapped what, where, and the one condition that makes it odd (no one planned them).",
+      "scene": "The rule (a sign on a lawn), then feet crossing grass. The worn trail itself is not shown yet.",
+      "text": "Who, where, and that the paths were unplanned."
+    },
+    {
+      "id": "b2",
+      "name": "규모",
+      "job": "Give the size of the finding: how many and how long.",
+      "scene": "How scattered and how dense: lines filling a schematic city map.",
+      "text": "The two figures, one per card."
+    },
+    {
+      "id": "b3",
+      "name": "근거",
+      "job": "Say how the count was made.",
+      "scene": "What a worn trail looks like from above, next to a paved one. First full view of the object.",
+      "text": "The three methods; only the aerial one can be shown."
+    },
+    {
+      "id": "b4",
+      "name": "기제",
+      "job": "Say why the trails exist: who wore them and to get where.",
+      "scene": "Ordinary people on foot on a bare-earth trail; then the same kind of line written in snow in a day.",
+      "text": "The cause (shortcuts), the ground (vacant lots), the destinations, and the researcher's reading in his own words."
+    },
+    {
+      "id": "b5",
+      "name": "의미",
+      "job": "Say what changes: the trails have a name, planners have a choice, and one university paved three.",
+      "scene": "The choice as two states of one line (blocked, paved); then three walked lines becoming paved lines on one field.",
+      "text": "The name, the choice, and who paved how many, where and when."
+    },
+    {
+      "id": "b6",
+      "name": "마지막",
+      "job": "Turn the subject to 'we' and the tense to the future, and take back 'no one planned' from the lead.",
+      "scene": "The sign from the first shot again, now read with the film behind it.",
+      "text": "One line with 'we' and 'will'. No new fact."
+    },
+    {
+      "id": "b7",
+      "name": "참고 자료",
+      "job": "Name the study and the two official releases the film rests on.",
+      "scene": "Type on a dark ground.",
+      "text": "Authors, journal, year, and the two news offices."
+    }
+  ],
+  "cards": [
+    {
+      "id": "c01",
+      "beat": "b1",
+      "t": 0,
+      "d": 3,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "스톡",
+        "desc": "Close shot of a small KEEP OFF THE GRASS sign staked in a mown lawn, daylight; the sign sits in the left third and grass fills the rest. Text in picture: KEEP OFF THE GRASS.",
+        "carries": "The audience belief, as a rule already standing on the lawn. No sentence states it.",
+        "motion": "Camera: locked, or a very slow drift if the source is a still / Subject: none / Cut: straight cut to c02",
+        "frame": "근접",
+        "text_in_picture": [
+          "KEEP OFF THE GRASS"
+        ],
+        "legible": true,
+        "events": 1,
+        "callback": true,
+        "footage": {
+          "search": [
+            "keep off the grass sign",
+            "lawn sign close up"
+          ],
+          "stand_in": true
+        }
+      },
+      "sound": "Music in from the first frame (see meta.music_brief). Required: nothing else.",
+      "note": "A still photo with a slow drift is acceptable. Fallback if no usable sign is found: an empty mown lawn beside a paved walkway, and the same fallback on c16-c17."
+    },
+    {
+      "id": "c02",
+      "beat": "b1",
+      "t": 3,
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "In Detroit, two researchers",
+        "mapped the footpaths"
+      ],
+      "src": [
+        "S1",
+        "S2"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "Low-angle close shot of shoes and lower legs walking across short grass, seen from the side, shallow focus, no faces.",
+        "carries": "That these footpaths are made by walking, on ground with no pavement.",
+        "motion": "Camera: locked or slow follow / Subject: one or two walkers cross the frame / Cut: straight cut to c03",
+        "frame": "근접",
+        "events": 1,
+        "footage": {
+          "search": [
+            "feet walking on grass",
+            "walking across lawn low angle"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "Generic footage: nothing in frame may identify a place, since the sentence is about Detroit."
+    },
+    {
+      "id": "c03",
+      "beat": "b1",
+      "t": 8.5,
+      "d": 4,
+      "kind": "편집",
+      "lines": [
+        "that no one planned."
+      ],
+      "em": "no one planned",
+      "visual": {
+        "type": "스톡",
+        "desc": "Elevated wide shot of a park or campus lawn with paved walkways meeting at right angles; a few people leave the walkway and cross the grass on a diagonal.",
+        "carries": "The paved route and the route actually taken, in one frame.",
+        "motion": "Camera: locked / Subject: walkers cross the grass / Cut: dip to dark, into the diagram of c04",
+        "frame": "전경",
+        "legible": false,
+        "events": 1,
+        "footage": {
+          "search": [
+            "people walking across campus lawn",
+            "park lawn walkway high angle",
+            "crossing grass shortcut"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "No recognizable landmark; any sign or building name in the clip must stay unreadable (legible: false), since the sentence is about Detroit and the footage is not."
+    },
+    {
+      "id": "c04",
+      "beat": "b2",
+      "t": 12.5,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "They counted",
+        "at least 5,680,"
+      ],
+      "em": "5,680",
+      "label": "Detroit · 2010 imagery · Foster & Newell, 2019",
+      "src": [
+        "S1",
+        "S2",
+        "S3"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Dark schematic street-grid map of a city, no labels and no counter. Thin amber lines appear one after another in the gaps of the grid.",
+        "carries": "How scattered the trails are: the lines turn up all over the map, not in one district. The sentence gives only the number.",
+        "motion": "Camera: locked / Subject: the grid fades up, then amber lines draw in one by one / Cut: none, continues into c05",
+        "frame": "전경",
+        "events": 2
+      },
+      "note": "Illustrative only, not data: do not trace a real map of Detroit and do not let the number of amber lines read as a count. Wording: the abstract says 'more than 5680', the highlights and the press release say '5,680'; 'at least' is true under both. The count is for 2010 (S3); the label says 'imagery' because sources differ on aerial vs satellite."
+    },
+    {
+      "id": "c05",
+      "beat": "b2",
+      "t": 17.5,
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "end to end,",
+        "more than 150 miles."
+      ],
+      "em": "150 miles",
+      "src": [
+        "S1",
+        "S2"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "(continues) The amber lines keep accumulating until the grid is laced with them; then the street grid dims and only the amber lines remain.",
+        "carries": "The trails as one body of line, which the sentence measures.",
+        "motion": "Camera: locked / Subject: lines accumulate, then the grid dims / Cut: straight cut to the aerial footage of c06",
+        "frame": "전경",
+        "events": 2
+      },
+      "note": "Abstract: 'more than 150 miles (>240 km)'; press release: '157 linear miles'. 'More than 150 miles' is true under both. Illustrative diagram, not data."
+    },
+    {
+      "id": "c06",
+      "beat": "b3",
+      "t": 23,
+      "d": 3,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "스톡",
+        "desc": "Top-down drone shot of a park or campus lawn: pale paved walkways and, cutting between them, a narrow bare-dirt trail worn through the grass.",
+        "carries": "The first full view of a worn trail, as it looks from above.",
+        "motion": "Camera: slow straight-down drift / Subject: none / Cut: none, continues into c07",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "aerial park footpath",
+            "drone lawn dirt path",
+            "top down park walkway"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "The dirt trail should sit off-center so the middle of the frame stays plain grass for the type on c07. The clip stands for 'seen from above' in general; it is not the study's imagery and must not be captioned as such."
+    },
+    {
+      "id": "c07",
+      "beat": "b3",
+      "t": 26,
+      "d": 6.5,
+      "kind": "편집",
+      "lines": [
+        "The count came",
+        "from overhead images,",
+        "site visits and interviews."
+      ],
+      "src": [
+        "S1",
+        "S2"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "(continues) On the same top-down shot, a white vector line traces the paved walkways; then an amber line traces the dirt trail.",
+        "carries": "How a walked trail is told apart from a paved path from above; it also teaches the two line colors.",
+        "motion": "Camera: the drift slows to a hold / Subject: white line draws first, amber line second, both finished before the second text line appears / Cut: straight cut to c08",
+        "frame": "전경",
+        "events": 2
+      },
+      "note": "Base footage is the stock clip of c06 (same search). Source wording: 'remote sensing and spatial analysis with physical audits and interviews'."
+    },
+    {
+      "id": "c08",
+      "beat": "b4",
+      "t": 32.5,
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "Residents had worn them",
+        "across vacant land, as shortcuts"
+      ],
+      "em": "shortcuts",
+      "src": [
+        "S2",
+        "S3"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "Medium shot from behind: one or two people carrying bags walk along a narrow dirt trail through an unmown grassy lot, a street or houses in the distance.",
+        "carries": "Who walks such a trail (people on everyday errands) and the bare earth under them.",
+        "motion": "Camera: locked or slow follow / Subject: walkers move away along the trail / Cut: none, continues into c09",
+        "frame": "중간",
+        "legible": false,
+        "events": 1,
+        "footage": {
+          "search": [
+            "people walking dirt path grass",
+            "footpath through field from behind",
+            "walking trail vacant lot"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "No faces. Generic footage, not Detroit: no place name may be readable in frame (legible: false). Sources: 'shortcuts across vacant land' (S3), 'creating shortcuts to school, bus lines and other places they need to go' (S2)."
+    },
+    {
+      "id": "c09",
+      "beat": "b4",
+      "t": 38,
+      "d": 6.5,
+      "kind": "편집",
+      "lines": [
+        "to school, to bus lines,",
+        "to the places",
+        "they needed to go."
+      ],
+      "src": [
+        "S2"
+      ],
+      "visual": {
+        "type": "스톡",
+        "desc": "(continues) The walkers grow smaller along the trail, which runs on toward the street.",
+        "carries": "That the trail leads somewhere: it ends at a street, not in the grass.",
+        "motion": "Camera: locked / Subject: walkers recede / Cut: slow dissolve to the snow of c10",
+        "frame": "중간",
+        "events": 1
+      }
+    },
+    {
+      "id": "c10",
+      "beat": "b4",
+      "t": 44.5,
+      "d": 5,
+      "kind": "인용",
+      "voice": "인용",
+      "lines": [
+        "“These paths are",
+        "the neighborhoods",
+        "expressing their desire"
+      ],
+      "src": [
+        "S2"
+      ],
+      "quote_form": "원문",
+      "visual": {
+        "type": "스톡",
+        "desc": "High-angle wide shot of a square or park under fresh snow, in overcast or dusk light so the snow reads gray-blue; lines of trodden footprints cross it on diagonals, and a few people walk along them.",
+        "carries": "The same lines written in a single day: in snow, where feet go shows at once.",
+        "motion": "Camera: locked or very slow drift / Subject: a few walkers follow the trodden lines / Cut: none, continues into c11",
+        "frame": "전경",
+        "events": 1,
+        "footage": {
+          "search": [
+            "footprints in snow park aerial",
+            "snow covered square people walking",
+            "tracks in snow drone"
+          ],
+          "stand_in": true
+        }
+      },
+      "note": "Quote runs over c10-c11: opening mark here, closing mark and attribution on c11. Do not add any text about planners reading snow. Snow is brighter than the type: choose a dusk or overcast clip and grade it down, with the center darkest."
+    },
+    {
+      "id": "c11",
+      "beat": "b4",
+      "t": 49.5,
+      "d": 7.5,
+      "kind": "인용",
+      "voice": "인용",
+      "lines": [
+        "for how the land",
+        "should be used",
+        "by walking across it.”"
+      ],
+      "src": [
+        "S2"
+      ],
+      "quote_form": "원문",
+      "attribution": "Joshua Newell, University of Michigan, co-author of the study",
+      "visual": {
+        "type": "스톡",
+        "desc": "(continues) The same snow shot holds; the walkers reach the far edge.",
+        "carries": "Nothing new: the picture rests while the quote and its attribution are read.",
+        "motion": "Camera: hold / Subject: walkers leave the frame / Cut: dip to dark, into the diagram of c12",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "Full sentence as published: 'These paths are the neighborhoods expressing their desire for how the land should be used by walking across it.' This is the researcher's interpretation. A critic quoted in S3 called the study patronizing."
+    },
+    {
+      "id": "c12",
+      "beat": "b5",
+      "t": 57,
+      "d": 4.5,
+      "kind": "편집",
+      "lines": [
+        "Planners call these",
+        "desire paths,"
+      ],
+      "em": "desire paths",
+      "src": [
+        "S3",
+        "S6"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Schematic top view on a dark ground: a rectangular lawn with a white paved path running along two of its sides in an L. An amber line draws the diagonal across the lawn.",
+        "carries": "What the name points at: the amber diagonal against the white L.",
+        "motion": "Camera: locked / Subject: the amber diagonal draws corner to corner / Cut: none, continues into c13",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "The lawn outline sits in the lower half so the type keeps the center."
+    },
+    {
+      "id": "c13",
+      "beat": "b5",
+      "t": 61.5,
+      "d": 5,
+      "kind": "편집",
+      "lines": [
+        "and they can block one",
+        "or pave it."
+      ],
+      "em": "pave it",
+      "src": [
+        "S6",
+        "S7"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "(continues) A short white bar closes across the amber diagonal. The bar lifts and the amber line turns white.",
+        "carries": "The two choices as two states of the same line. Sets the sign 'amber turning white' that c15 uses.",
+        "motion": "Camera: locked / Subject: bar closes on the first text line; bar lifts and the line turns white on the second / Cut: dip to dark, into c14",
+        "frame": "전경",
+        "events": 2
+      }
+    },
+    {
+      "id": "c14",
+      "beat": "b5",
+      "t": 66.5,
+      "d": 4.5,
+      "kind": "편집",
+      "lines": [
+        "Virginia Tech",
+        "paved three"
+      ],
+      "em": "paved three",
+      "label": "Blacksburg, Virginia · 2014",
+      "src": [
+        "S4",
+        "S5"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "Schematic top view of an oval field on a dark ground, crossed by five white lines. Three thinner amber lines draw in between them.",
+        "carries": "That the field already had paved paths and that people wore more beside them; how many, and how thin.",
+        "motion": "Camera: locked / Subject: the three amber lines draw in together / Cut: none, continues into c15",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "Schematic, not the real layout of the Drillfield: positions are illustrative. Source: the new paths 'will join five existing paved paths', five feet wide against twelve, so amber is drawn thinner. 'Three' is the announced number (S4); S5 confirms 'several smaller paths were paved this past summer'."
+    },
+    {
+      "id": "c15",
+      "beat": "b5",
+      "t": 71,
+      "d": 5.5,
+      "kind": "편집",
+      "lines": [
+        "that students had worn",
+        "across the center",
+        "of its campus."
+      ],
+      "src": [
+        "S4"
+      ],
+      "visual": {
+        "type": "도해",
+        "desc": "(continues) The three amber lines turn white together and stay thinner than the other five.",
+        "carries": "The walked lines becoming part of the paved set.",
+        "motion": "Camera: locked / Subject: amber turns white once, after the first text line / Cut: slow dissolve to the sign shot of c16",
+        "frame": "전경",
+        "events": 1
+      },
+      "note": "Source: 'They evolved organically as students crossed the area over time.' 'Center of its campus' rests on the same release (S4), which calls the Drillfield 'the iconic centerpiece of campus'."
+    },
+    {
+      "id": "c16",
+      "beat": "b6",
+      "t": 76.5,
+      "d": 3,
+      "kind": "무문장",
+      "lines": [],
+      "visual": {
+        "type": "스톡",
+        "desc": "The KEEP OFF THE GRASS sign shot of c01 again, same clip and same framing. Text in picture: KEEP OFF THE GRASS.",
+        "carries": "The rule from the first shot, seen now by a viewer who knows what the trails are.",
+        "motion": "Camera: locked / Subject: none / Cut: none, continues into c17",
+        "frame": "근접",
+        "text_in_picture": [
+          "KEEP OFF THE GRASS"
+        ],
+        "legible": true,
+        "events": 1,
+        "callback": true,
+        "footage": {
+          "search": [
+            "same clip as c01 (keep off the grass sign)"
+          ],
+          "stand_in": true
+        }
+      },
+      "sound": "Required: music keeps running. Nice to have: the natural breath of the track falls here. With a library track, do not cut the music to force it."
+    },
+    {
+      "id": "c17",
+      "beat": "b6",
+      "t": 79.5,
+      "d": 6,
+      "kind": "편집",
+      "lines": [
+        "Tomorrow, we will walk again",
+        "where no one planned."
+      ],
+      "em": "we will walk",
+      "visual": {
+        "type": "스톡",
+        "desc": "(continues) The sign shot holds.",
+        "carries": "The sign and the sentence disagree; the picture leaves that unsaid.",
+        "motion": "Camera: hold / Subject: none / Cut: fade to dark, into c18",
+        "frame": "근접",
+        "text_in_picture": [
+          "KEEP OFF THE GRASS"
+        ],
+        "legible": true,
+        "events": 1,
+        "callback": true
+      }
+    },
+    {
+      "id": "c18",
+      "beat": "b7",
+      "t": 85.5,
+      "d": 4.5,
+      "kind": "표기",
+      "lines": [
+        "Foster & Newell, Landscape and Urban Planning, 2019",
+        "Michigan News · Virginia Tech News"
+      ],
+      "visual": {
+        "type": "타이포",
+        "desc": "Small white type on a dark ground, centered.",
+        "motion": "Camera: none / Subject: type fades up, holds, fades out / Cut: end"
+      },
+      "sound": "Music: last phrase rings and fades out by the final frame. Closing action: the screen goes dark under the credits."
+    }
+  ]
+}
