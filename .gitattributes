@@ -13,3 +13,6 @@
 
 # Preserve the exact video script skill and ZIP manifest bytes.
 /Video-Script/** -text
+
+# Preserve the exact story research skill and ZIP manifest bytes.
+/Story-Research/** -text

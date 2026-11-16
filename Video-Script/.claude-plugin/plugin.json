@@ -1,7 +1,7 @@
 {
   "name": "achmage-video-script",
-  "version": "1.2.0",
-  "description": "Write on-screen-text video scripts (화면 문장 대본) that tell one complete story with captions and scenes and no narrator, in the manner of EBS 지식채널e: beat sheets, card-by-card writing, matching scene suggestions, production hand-off fields, automatic checks and a rough-cut sheet. Korean and English.",
+  "version": "1.3.0",
+  "description": "Write on-screen-text video scripts (화면 문장 대본) that tell one complete story with captions and scenes and no narrator, in the manner of EBS 지식채널e: beat sheets, card-by-card writing, matching scene suggestions, production hand-off fields, automatic checks and a rough-cut sheet. From 1.3.0 it also finds the story by its own research and revises a draft against a fact-backing table from achmage-story-research. Korean and English.",
   "author": {
     "name": "laguna821"
   },

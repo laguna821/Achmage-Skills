@@ -1,0 +1,13 @@
+{
+  "name": "achmage-story-research",
+  "version": "0.5.0",
+  "description": "Back a finished video-script draft with sources (받침 취재): trace every card to its original record, judge it (supported, overstated, unsupported, wrong), offer the lightest fix that keeps the writer's sentence, check the turns and the last line against contrary accounts, verify quotations, and collect screen materials with captures. Works after achmage-video-script writes the draft.",
+  "author": {
+    "name": "laguna821"
+  },
+  "homepage": "https://github.com/laguna821/Achmage-Skills/tree/main/Story-Research",
+  "license": "MIT",
+  "skills": [
+    "./achmage-story-research"
+  ]
+}

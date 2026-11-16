@@ -1,9 +1,9 @@
 ---
 name: achmage-video-script
-description: "Write on-screen-text video scripts (화면 문장 대본) for motion graphics and YouTube videos that tell one complete story with captions and scenes, without a narrator, in the manner of EBS 지식채널e. The script is the main deliverable; each card also gets a matching scene suggestion. Use when the user asks for 영상 대본, 자막 대본, 화면 문장, 모션그래픽 대본, 지식채널e 스타일, 무내레이션 영상 구성, or wants a rough-cut sheet (가편집 시트) before production. Not for narration scripts read aloud, and not for rendering."
+description: "Write on-screen-text video scripts (화면 문장 대본) for motion graphics and YouTube videos that tell one complete story with captions and scenes, without a narrator, in the manner of EBS 지식채널e. The script is the main deliverable; each card also gets a matching scene suggestion. The skill also finds the story inside a topic by its own research, and revises a finished draft against a fact-backing table from achmage-story-research. Use when the user asks for 영상 대본, 자막 대본, 화면 문장, 모션그래픽 대본, 지식채널e 스타일, 무내레이션 영상 구성, or wants a rough-cut sheet (가편집 시트) before production. Not for narration scripts read aloud, and not for rendering."
 license: MIT
 metadata:
-  version: "1.2.0"
+  version: "1.3.0"
   short-description: "내레이션 없이 화면 문장과 장면만으로 한 편을 완결하는 영상 대본, 장면 제안, 가편집 시트"
 ---
 
@@ -12,6 +12,8 @@ metadata:
 내레이터 없이 **화면 문장과 장면만으로** 한 편을 완결하는 영상의 대본을 쓴다. 이 스킬의 산출물은 대본이다. 장면은 대본에 맞춰 제안만 하고, 실제 제작은 `motion-art-director` 같은 제작 스킬에 넘긴다.
 
 근거는 27개 채널 159편의 화면 문장 분석이다(지식채널e, 역사채널e, 뉴스타파 5 Minutes, AJ+, NowThis, Brut, ESOcast Light 등). 규칙마다 어디서 나왔는지는 `references/`에 적혀 있다. 조사 자료가 모두 함께 들어 있다: `references/casebook/`에 채널 분석 27편과 영상별 구조 159편, `corpus/`에 영상 159편의 화면 문장 원문 로그와 자막 전사 103건이 있다.
+
+이야깃거리를 찾는 법은 따로 조사한 것에서 왔다: 기자가 자기 글의 취재 과정을 설명한 주석 해설, 서사 논픽션과 사물의 내력, 영상 제작사의 리서치 문서, 한국어권의 제작 증언과 취재 후기, 검증 편람까지 117건. 그 조사도 `references/reporting-casebook/`에 통째로 들어 있다.
 
 ## 이 스킬이 푸는 문제
 
@@ -26,7 +28,7 @@ metadata:
 
 ## 작업 순서
 
-아래 8단계를 차례로 한다. 단계를 건너뛰지 않는다. 특히 3단계(설계 결정)를 적지 않은 채 카드를 쓰기 시작하지 않는다.
+아래 9단계를 차례로 한다. 단계를 건너뛰지 않는다. 특히 3단계(설계 결정)를 적지 않은 채 카드를 쓰기 시작하지 않는다.
 
 ### 1. 브리프 확인
 
@@ -40,7 +42,9 @@ metadata:
 | 화면 재료 | 실사, 기록 영상, 일러스트, 도해, 스톡, 생성 이미지 가운데 쓸 수 있는 것 |
 | 빌려 쓸 말 | 인용, 사료, 인터뷰, 통계 가운데 확보된 것 |
 
-### 2. 자료 묶음 확보
+### 2. 이야깃거리와 자료 묶음 확보
+
+**이야기는 쓰는 사람이 찾는다.** 조사를 시작하기 전에 `references/08-이야깃거리-찾기.md`를 읽는다. 질문 모음이고 채울 칸은 없다. 읽다가 멈춘 곳을 적고, 사람과 물건과 그날의 사정을 묻고, 요약 기사가 기대는 원 기록까지 올라간다. 가장 좋은 세부는 거기에 있다.
 
 대본에 들어갈 **수치, 날짜, 인용, 고유명사**는 출처가 있는 것만 쓴다.
 
@@ -105,11 +109,22 @@ python scripts/build_sheet.py --scripts 대본.json --lint-only --verbose
 - HTML을 열어 **가편집 재생으로 끝까지 한 번 읽는다.** 읽다가 숨이 차거나 기다려지지 않는 자리를 고친다. HTML을 열 수 없는 환경이면 `--print-cards`로 카드를 시각 순서대로 뽑아 읽는다(`--out` 없이 써도 된다). Windows PowerShell에서 한글이 깨지면 먼저 `$env:PYTHONIOENCODING = "utf-8"`을 준다. 영어 대본은 `references/02` 11절을 먼저 읽는다.
 - **자동 검수가 깨끗하다고 끝난 것이 아니다.** 시험에서 자동 검수를 한 번에 통과한 대본도 수동 검수에서 장면과 문장의 겹침, 낡은 수치, 뺀 사실이 나왔다.
 
+### 9. 받침을 받아 고쳐 쓴다
+
+여기까지가 초고다. 초고는 잘 읽히지만 사실이 근거에 묶인 정도는 절반쯤이다. 두 주제의 시험에서 이 스킬만으로 쓴 대본은 틀린 카드는 없었어도 카드의 44~48%만 취재 자료로 받쳐졌다. 그래서 제작에 넘기기 전에 받침을 받는다.
+
+1. 초고(`대본.json`)를 `achmage-story-research`에 넘긴다. 그 스킬이 카드마다 원자료를 추적해 판정표(`받침.json`)를 돌려준다: 카드마다 받쳐진다, 세다, 없다, 틀리다. 걸린 카드에는 그 자리에 쓸 수 있는 확인된 사실, 꼭 들어가야 하는 조건, 구석에 달 출처 이름이 붙어 온다. 꺾임과 마지막 한 줄이 버티는지, 인용의 원문, 덤 재료, 화면 자료도 함께 온다.
+2. `references/09-받침을-받아-고쳐-쓰기.md`대로 **걸린 카드만, 가볍게** 고친다. 받쳐진 카드는 건드리지 않는다. 장면을 지우지 않는다. 문장을 바꾸는 것은 틀렸을 때뿐이고, 나머지는 구석 표기와 낱말 하나로 받친다.
+3. 다시 검수하고 가편집으로 끝까지 읽는다. 고친 자리만 딱딱해지지 않았는지 본다.
+
+받침을 받을 수 없으면 그 사실을 보고에 적는다: 어느 카드가 요약 기사나 재인용에 기대는지, 무엇을 열면 확인되는지.
+
 ## 산출물
 
 1. `대본.json`: 설계 결정, 비트, 카드(문장, 구분, 시간, 장면 제안, 소리, 출처)
 2. `가편집시트.html`: 설계 결정, 가편집 재생, 풀 시트, 검수 결과, 출처를 한 파일에
-3. 사용자에게 보내는 짧은 보고: 고른 갈래와 까닭, 축이 되는 사실, 마지막 한 줄, 검수에서 남긴 주의와 그 까닭, 확인하지 못한 사실
+3. 받침을 받았으면 고친 `대본.json`과 `가편집시트.html`, 그리고 고친 카드의 앞뒤를 적은 기록
+4. 사용자에게 보내는 짧은 보고: 고른 갈래와 까닭, 축이 되는 사실, 마지막 한 줄, 검수에서 남긴 주의와 그 까닭, 확인하지 못한 사실, 받침을 받았는지와 고친 카드의 수
 
 ## 하지 않는 것
 
@@ -129,5 +144,8 @@ python scripts/build_sheet.py --scripts 대본.json --lint-only --verbose
 | `references/05-검수.md` | 8단계. 자동 검수 항목의 뜻과 수동 검수 |
 | `references/06-대본-데이터-규격.md` | 8단계. JSON 필드 |
 | `references/07-사실-다루기.md` | 2단계. 출처, 어긋나는 자료, 계산한 수치, 인용 |
+| `references/08-이야깃거리-찾기.md` | 2단계에서 조사를 시작하기 전에. 어디서 멈추고, 무엇을 묻고, 어디까지 내려가나. 질문 모음이다 |
+| `references/09-받침을-받아-고쳐-쓰기.md` | 9단계. 판정표를 받아 걸린 카드만 가볍게 고치는 법 |
 | `references/casebook/README.md` | 3단계에서 갈래를 고른 뒤, 그리고 훅·결말·장면 분업이 서지 않을 때. 갈래별로 읽을 채널 분석과 영상별 구조를 안내한다. 전부 읽지 않는다 |
+| `references/reporting-casebook/README.md` | 이야깃거리를 찾다가 막힐 때. 취재와 서사 논픽션 조사: 묶음 분석 9편, 이야기로 다시 읽기(`clusters/S0.md`), 자료별 노트 117건. `S0.md`부터 연다. 전부 읽지 않는다 |
 | `corpus/README.md` | 6단계에서 카드를 쓰기 전에. 조사 원자료: 영상 159편의 화면 문장 원문 로그, 자막 전사 103건, 줄이지 않은 채널 분석과 보고서. 한 번에 로그 1~2편만 연다 |

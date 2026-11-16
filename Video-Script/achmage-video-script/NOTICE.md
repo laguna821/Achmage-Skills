@@ -13,6 +13,14 @@ The casebook is that analysis: 27 channel analyses and 159 per-video structure n
 - The per-video timing tables record position, type, line count, length and scene description only, not the on-screen text.
 - The analysis quotes short passages to show how a hook, a turn or an ending works. Within the casebook the quoted share of any one video is limited to 15% of that video's on-screen text and speech (with a floor of 80 Korean characters or 160 English characters for very short videos). Longer quotations end in `…`.
 
+## Reporting casebook (`references/reporting-casebook/`)
+
+From version 1.3.0 the skill also ships the survey that the story-finding guidance in `references/08` comes from: nine cluster analyses, one re-reading (`clusters/S0.md`) and 117 per-document notes on annotated stories and author interviews (The Open Notebook, Nieman Storyboard), narrative and object-history writing (The Atavist Magazine, Smithsonian Magazine, Atlas Obscura, JSTOR Daily, 99% Invisible, Quanta Magazine, Aeon, The Pudding, Our World in Data), research practice of video producers (Kurzgesagt, Vox, TED-Ed), verification handbooks (KSJ, Verification Handbook, GIJN, Quote Investigator, Wikipedia) and Korean-language production interviews and reporting notes. The same survey ships with achmage-story-research.
+
+- The notes summarize in the surveyor's own words. Direct quotation is limited to 150 words (300 Korean characters) per document and two sentences at a time. No article is reproduced.
+- Every note names the author, the outlet and the address. Copyright in the quoted text remains with the respective authors and outlets. The outlets did not take part in this project and do not endorse it.
+- Some pages were read from archived copies; each such note says so. Not every document was read in full; each note states the range that was read.
+
 ## Research records (`corpus/`)
 
 From version 1.2.0 the skill also ships the research records the analysis was made from, so that the skill works the same on any computer.

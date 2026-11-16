@@ -1,4 +1,4 @@
-# Video-Script: Achmage Video Script (1.2.0)
+# Video-Script: Achmage Video Script (1.3.0)
 
 내레이터 없이 **화면 문장과 장면만으로** 한 편을 완결하는 영상의 대본을 쓰는 스킬입니다. EBS 지식채널e처럼 문장이 화면에 한 장씩 뜨며 이야기를 끌고 가는 영상, 모션그래픽, 유튜브 설명 영상을 위한 것입니다. 산출물의 중심은 대본이고, 카드마다 그 문장에 맞는 장면 제안과 제작 인계 칸이 붙습니다. 렌더는 하지 않습니다. 영상 제작은 [Motion Art Director](../Video-Production/motion-art-director) 같은 제작 스킬에 넘깁니다.
 
@@ -15,16 +15,21 @@
 
 규칙의 근거는 27개 채널 159편의 화면 문장 분석입니다(지식채널e, 역사채널e, 뉴스타파 5 Minutes, AJ+, NowThis, Brut, ESOcast Light 등). 규칙마다 어디서 나왔는지 `references/`에 적혀 있습니다. 그 조사 자료가 스킬 안에 모두 들어 있습니다. 분석을 정리한 사례집(`references/casebook/`, 채널 분석 27편과 영상별 구조 159편)과 조사 원자료(`corpus/`, 영상 159편의 화면 문장 원문 로그와 자막 전사 103건)입니다. 어느 컴퓨터에 설치해도 같은 자료를 보고 씁니다.
 
+1.3.0부터는 **이야깃거리를 찾는 일**도 이 스킬이 합니다. 조사할 때 어디서 멈추고, 무엇을 묻고, 어디까지 내려갈지를 돕는 질문 모음과, 그 근거가 된 취재·서사 논픽션 조사 117건(`references/reporting-casebook/`)이 들어 있습니다. 초고를 쓴 뒤에는 [`achmage-story-research`](../Story-Research)가 카드마다 원자료를 추적한 판정표를 돌려주고, 이 스킬이 걸린 카드만 가볍게 고칩니다.
+
 ## 무엇이 들어 있나
 
 | 항목 | 내용 |
 | --- | --- |
-| 작업 순서 | 브리프 확인 → 자료 묶음 → 설계 결정 다섯 가지(갈래, 축이 되는 사실, 훅, 마지막 한 줄, 길이) → 비트 시트 → 분업(장면이 말할 것과 문장이 말할 것) → 카드 쓰기 → 장면 제안 → 검수와 가편집 시트 |
+| 작업 순서 | 브리프 확인 → 이야깃거리와 자료 묶음 → 설계 결정 다섯 가지(갈래, 축이 되는 사실, 훅, 마지막 한 줄, 길이) → 비트 시트 → 분업(장면이 말할 것과 문장이 말할 것) → 카드 쓰기 → 장면 제안 → 검수와 가편집 시트 → 받침을 받아 고쳐 쓰기 |
+| 이야깃거리 찾기 | `references/08`: 읽다가 멈춘 곳 적기, 사냥개처럼 묻는 여덟 가지, 요약 기사에서 멈추지 않고 원 기록까지 올라가기, 이야기를 고를 때 스스로 묻는 것, 장면에는 기록에 있는 것만. 질문 모음이고 검수 항목이 아닙니다. 어떤 이야기를 할지는 쓰는 쪽이 고릅니다 |
+| 받침을 받아 고쳐 쓰기 | `references/09`: `achmage-story-research`의 판정표(`받침.json`)로 걸린 카드만 고칩니다. 구석 표기, 낱말 하나, 조건, 확인된 사실로 갈아 끼우기, 빼기의 차례이고 받쳐진 카드와 장면은 건드리지 않습니다 |
 | 갈래 8개 | A1 에세이형, A2 사건에서 개념으로, A3 다시 보기, B 사건 중계형, C 인물·사물 서사형, D1 발견 전달형, D2 개념 설명형, L 구획형(7분 이상). 갈래마다 비트 시트와 길이, 훅의 방식 |
 | 카드 규격 | 분량, 한 문장을 여러 카드에 나누는 법, 줄바꿈, 종결, 목소리, 접속어, 수치, 강조, 인용, 화면 문장의 자리와 모양, 제작 읽기 하한. 한국어 규격과 영어 대본의 규칙(카드의 끝, 분량표, 표기 관습) |
 | 장면 제안 | 장면 유형 7가지, 문장 없는 구간, 화면 속 실물 글자, 소리와 음악 기준, 찾아 쓰는 영상(실사와 대역, 검색어, 못 찾을 때의 대안), 제작 인계 칸 |
 | 사실 다루기 | 출처끼리 어긋날 때, 계산한 수치, 주소가 열리지 않을 때, 인용의 꼴 |
 | 사례집 | 규칙의 근거가 된 조사 자료. 채널 분석 27편(뼈대, 훅, 전환, 결말, 문장 작법, 화면과 문장의 분업), 영상별 구조 159편(로그라인, 비트 구성과 시각, 전환점, 결말, 수량, 카드별 뼈대 표), 채널을 가로지르는 발견. 갈래를 고른 뒤 그 갈래의 실제 영상을 1~2편 읽고 씁니다. 방송 원문 전체는 싣지 않았고 인용은 영상마다 15% 이내로 줄였습니다 |
+| 취재 사례집 | `references/reporting-casebook/`: 이야깃거리를 찾는 법의 근거가 된 조사. 묶음 분석 9편, 이야기로 다시 읽기 1편, 자료별 노트 117건(The Open Notebook, Nieman Storyboard, 서사 논픽션과 사물의 내력, 영상 제작사의 리서치 문서, 한국어권 제작 증언과 취재 후기, 검증 편람). 노트는 요약이며 인용은 자료마다 150단어 이내입니다 |
 | 조사 원자료 | `corpus/`: 영상 159편의 화면 문장 원문 로그(시각, 원문, 장면, 구분)와 구조 메모, 자막 전사 103건, 줄이지 않은 채널 분석 30편과 보고서, 지식채널e 전편 목록. 카드를 쓰기 전에 본보기 영상의 로그를 1~2편 열어 문장이 카드에 어떻게 나뉘는지 봅니다. 방송 원문이므로 MIT가 적용되지 않으며, 대본에 문장을 옮겨 쓰지 않습니다 |
 | 검수와 시트 | `scripts/build_sheet.py`: 자동 검수 61항목, 카드 읽기 리허설(`--print-cards`), 가편집 시트 HTML(실제 시간대로 재생, 장면 제안과 검수 결과를 한 화면에). Python 3 표준 라이브러리만 씁니다 |
 
@@ -47,7 +52,7 @@ git clone https://github.com/laguna821/Achmage-Skills
 cp -r Achmage-Skills/Video-Script/achmage-video-script ~/.claude/skills/achmage-video-script
 ```
 
-D: 설치 ZIP: [downloads/achmage-video-script-1.2.0.zip](downloads/achmage-video-script-1.2.0.zip) (SHA-256: [downloads/SHA256SUMS](downloads/SHA256SUMS)). 압축을 풀면 `achmage-video-script/` 폴더 하나가 나옵니다.
+D: 설치 ZIP: [downloads/achmage-video-script-1.3.0.zip](downloads/achmage-video-script-1.3.0.zip) (SHA-256: [downloads/SHA256SUMS](downloads/SHA256SUMS)). 압축을 풀면 `achmage-video-script/` 폴더 하나가 나옵니다.
 
 ## 이렇게 요청하세요
 
@@ -56,6 +61,7 @@ D: 설치 ZIP: [downloads/achmage-video-script-1.2.0.zip](downloads/achmage-vide
 - "멜리타 벤츠 이야기로 화면 문장 대본 쓰고 가편집 시트까지"
 - "Write a 150-second on-screen-text script about the history of the espresso machine"
 - "이 대본 검수해줘", "카드 읽기 리허설 보여줘"
+- "이 판정표(받침.json)대로 대본 고쳐줘"
 
 결과물은 대본 JSON, 가편집 시트 HTML, 검수 결과입니다. 시트는 외부 자원 없이 브라우저에서 바로 열립니다.
 
@@ -75,6 +81,7 @@ D: 설치 ZIP: [downloads/achmage-video-script-1.2.0.zip](downloads/achmage-vide
 
 | 상황 | 이끄는 스킬 | 이 스킬이 하는 것 |
 | --- | --- | --- |
+| 사실을 받쳐 달라는 요청, 제작에 넘기기 전 | 초고는 이 스킬, 받침은 [`achmage-story-research`](../Story-Research) | 초고를 넘기고, 돌아온 판정표로 걸린 카드만 고칩니다(9단계). 받침 없이도 대본은 끝까지 쓰지만, 시험에서 받침을 거친 대본만 사실 대조자의 제작 판정을 받았습니다 |
 | 영상을 끝까지 만들어 달라는 요청 | 대본은 이 스킬, 렌더는 [`motion-art-director`](../Video-Production/motion-art-director) | 대본, 장면 제안, 제작 인계 칸(`meta.cast`, `visual_code`, `type_style`, `music_brief`, `visual.footage`)을 먼저 끝내 넘깁니다 |
 | 화이트보드 강의 영상, 내레이션이 있는 영상 | [`achmage-whiteboard-video`](../Video-Production/achmage-whiteboard-video) 등 | 하지 않습니다. 이 스킬은 소리 내어 읽는 원고를 쓰지 않습니다 |
 | 발표 슬라이드, 카드뉴스 | [`achmage-presentation`](../Presentation/achmage-presentation), [`insta-cardnews`](../Card-News/insta-cardnews) | 하지 않습니다 |
@@ -83,7 +90,7 @@ D: 설치 ZIP: [downloads/achmage-video-script-1.2.0.zip](downloads/achmage-vide
 
 | 경로 | 내용 |
 | --- | --- |
-| [`achmage-video-script/`](achmage-video-script) | 스킬 본체: `SKILL.md`, `references/`(규칙 7개와 사례집 `casebook/` 189개 파일), `corpus/`(조사 원자료 298개 파일), `scripts/build_sheet.py`, `assets/sheet-template.html`, `agents/openai.yaml` |
+| [`achmage-video-script/`](achmage-video-script) | 스킬 본체: `SKILL.md`, `references/`(규칙 9개, 사례집 `casebook/` 189개 파일, 취재 사례집 `reporting-casebook/` 129개 파일), `corpus/`(조사 원자료 298개 파일), `scripts/build_sheet.py`, `assets/sheet-template.html`, `agents/openai.yaml` |
 | [`examples/`](examples) | 영상 두 편과 대본, 가편집 시트, 제작 기록, 출처. 영어 대본 세 편의 시트 |
 | [`downloads/`](downloads) | 설치 ZIP과 SHA-256 |
 | [`PACKAGE-MANIFEST.json`](PACKAGE-MANIFEST.json) | 스킬 파일별 SHA-256 |
@@ -93,10 +100,11 @@ D: 설치 ZIP: [downloads/achmage-video-script-1.2.0.zip](downloads/achmage-vide
 
 ## 판 기록
 
+- 1.3.0 (2026-11-16): 이야깃거리를 찾는 일과 받침을 받아 고쳐 쓰는 일을 더했습니다. 작업 순서가 9단계가 됐습니다. 2단계에 이야깃거리 찾기 질문 모음(`references/08`)을, 9단계에 판정표로 걸린 카드만 고치는 절차(`references/09`)를 넣었고, 그 근거인 취재 사례집(`references/reporting-casebook/`)을 실었습니다. 카드 규격, 갈래, 검수 스크립트는 1.2.0과 같습니다. 세 주제의 시험 결과와 알려진 한계는 [VALIDATION.md](VALIDATION.md)에 있습니다.
 - 1.2.0 (2026-11-16): 조사 원자료를 더했습니다. 영상 159편의 화면 문장 원문 로그, 자막 전사 103건, 줄이지 않은 채널 분석과 보고서가 `corpus/`에 들어 있습니다. 작업 순서에 카드를 쓰기 전 원문 로그를 여는 절차를 넣었습니다. 화면 캡처 묶음은 넣지 않았습니다. 규칙과 검수 스크립트는 1.1.0과 같습니다.
 - 1.1.0 (2026-11-12): 사례집을 더했습니다. 1.0.0에는 조사에서 뽑은 규칙만 들어 있었고, 규칙의 근거가 된 27개 채널 159편의 분석은 패키지 밖에 있었습니다. 이제 채널 분석과 영상별 구조가 스킬 안에 있어, 다른 컴퓨터에서도 같은 자료를 보고 씁니다. 작업 순서 3단계에 사례집을 읽는 절차를 넣었습니다. 규칙과 검수 스크립트는 1.0.0과 같습니다.
 - 1.0.0 (2026-11-12): 첫 공개판. 내부 시험판 0.3~0.6.1의 내용을 그대로 담았습니다. 시험 세 차례(블라인드 작성자), 영어 대본 시험, 실제 제작 두 편에서 나온 규칙과 검수를 반영했습니다.
 
 ## 라이선스
 
-스킬의 글과 코드는 MIT입니다. 사례집의 인용과 `corpus/`의 방송 원문 기록에는 MIT가 적용되지 않습니다. 그 문장의 저작권은 각 방송사와 제작사에 있으며, 연구와 비평을 위한 기록으로 실었습니다. 범위와 삭제 요청 방법은 [NOTICE.md](achmage-video-script/NOTICE.md)에 적었습니다. 예제 영상 속 자료는 각자의 조건을 따릅니다. 채널 이름은 분석의 출처를 밝히기 위한 것이며, 해당 채널은 이 프로젝트와 관계가 없습니다. 자세한 내용은 [ASSET-NOTICE.md](ASSET-NOTICE.md)를 보세요.
+스킬의 글과 코드는 MIT입니다. 사례집과 취재 사례집의 인용, `corpus/`의 방송 원문 기록에는 MIT가 적용되지 않습니다. 그 문장의 저작권은 각 방송사와 제작사에 있으며, 연구와 비평을 위한 기록으로 실었습니다. 범위와 삭제 요청 방법은 [NOTICE.md](achmage-video-script/NOTICE.md)에 적었습니다. 예제 영상 속 자료는 각자의 조건을 따릅니다. 채널 이름은 분석의 출처를 밝히기 위한 것이며, 해당 채널은 이 프로젝트와 관계가 없습니다. 자세한 내용은 [ASSET-NOTICE.md](ASSET-NOTICE.md)를 보세요.

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Achmage Story Research"
+  short_description: "영상 대본의 초고를 카드마다 원자료로 받치는 받침 취재: 판정표, 가볍게 고칠 길, 화면 자료"
+  default_prompt: "$achmage-story-research를 사용해 이 영상 대본 초고의 카드마다 원자료를 추적하고, 판정표와 고칠 길, 화면 자료를 돌려주세요."
+policy:
+  allow_implicit_invocation: true

@@ -4,12 +4,17 @@
 
 ## 📦 수록 스킬
 
-### [Video-Script/achmage-video-script](Video-Script): 내레이션 없는 화면 문장 영상 대본과 가편집 시트 (1.2.0)
+### [Video-Script/achmage-video-script](Video-Script): 내레이션 없는 화면 문장 영상 대본과 가편집 시트 (1.3.0)
 
-EBS 지식채널e처럼 화면 문장과 장면만으로 한 편을 완결하는 영상의 대본을 씁니다. 갈래 8개의 비트 시트, 한 문장을 여러 카드에 나누는 카드 규격, 카드마다 맞춘 장면 제안과 제작 인계 칸, 자동 검수 61항목, 실제 시간대로 재생되는 오프라인 가편집 시트, 규칙의 근거가 된 27개 채널 159편의 사례집과 조사 원자료(화면 문장 원문 로그, 자막 전사)를 포함합니다. 한국어와 영어 대본을 씁니다. 렌더는 하지 않고 [Motion Art Director](Video-Production/motion-art-director)에 넘깁니다. Python 표준 라이브러리만 씁니다.
-→ [설치·사용 안내](Video-Script/README.md) · [설치 ZIP](Video-Script/downloads/achmage-video-script-1.2.0.zip) · [예제 영상 두 편](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/) · [검증 범위](Video-Script/VALIDATION.md)
+EBS 지식채널e처럼 화면 문장과 장면만으로 한 편을 완결하는 영상의 대본을 씁니다. 갈래 8개의 비트 시트, 한 문장을 여러 카드에 나누는 카드 규격, 카드마다 맞춘 장면 제안과 제작 인계 칸, 자동 검수 61항목, 실제 시간대로 재생되는 오프라인 가편집 시트, 규칙의 근거가 된 27개 채널 159편의 사례집과 조사 원자료(화면 문장 원문 로그, 자막 전사)를 포함합니다. 1.3.0부터 이야깃거리를 찾는 질문 모음과 그 근거인 취재 사례집 117건, 받침 판정표로 걸린 카드만 고치는 절차가 들어 있습니다. 한국어와 영어 대본을 씁니다. 렌더는 하지 않고 [Motion Art Director](Video-Production/motion-art-director)에 넘깁니다. Python 표준 라이브러리만 씁니다.
+→ [설치·사용 안내](Video-Script/README.md) · [설치 ZIP](Video-Script/downloads/achmage-video-script-1.3.0.zip) · [예제 영상 두 편](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/) · [검증 범위](Video-Script/VALIDATION.md)
 
 [<img src="Video-Script/examples/norman-door/poster.jpg" width="49%" alt="노먼 도어 90초">](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/#norman-door) [<img src="Video-Script/examples/espresso/poster.jpg" width="49%" alt="Espresso 150초">](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/#espresso)
+
+### [Story-Research/achmage-story-research](Story-Research): 영상 대본의 초고를 카드마다 원자료로 받치는 받침 취재 (0.5.0)
+
+`achmage-video-script`가 쓴 초고를 받아 카드 한 장 한 장을 원자료까지 추적합니다. 카드마다 받쳐진다, 세다, 없다, 틀리다로 판정하고, 문장과 장면을 가장 덜 건드리는 고칠 길을 하나씩 짚고, 꺾임과 마지막 한 줄을 반대 서술로 뒤집어 보고, 인용을 원문과 맞추고, 화면 자료를 갈무리합니다. 대본을 고쳐 쓰지는 않습니다. 세 주제의 비교 시험에서 나온 설계이며 규칙의 근거가 된 취재 사례집 117건을 포함합니다.
+→ [설치·사용 안내](Story-Research/README.md) · [설치 ZIP](Story-Research/downloads/achmage-story-research-0.5.0.zip) · [검증 범위](Story-Research/VALIDATION.md)
 
 ### [Product-Design/apple-hig-design](Product-Design): Apple HIG 기준 제품 UI, 기획부터 구현·검토·출시 자료까지 (1.0.0)
 
