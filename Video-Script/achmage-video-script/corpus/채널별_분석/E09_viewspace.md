@@ -1,0 +1,107 @@
+## ViewSpace (Space Telescope Science Institute)
+
+### 1. 표본과 형식 판정
+
+- 배정 자료 3건 가운데 2건만 읽었다.
+	- 읽음: "What in the Universe: Galaxies" 페이지의 전사 (웹 아카이브 2022-06-07 사본)
+	- 읽음: 형식 안내 "support/guide" (웹 아카이브 2024-12-24 사본)
+	- 처음에는 가져오지 못함: "Theme: Colliding Galaxies" (828번). 원 사이트가 인증서 만료 오류로 열리지 않았다. 이후 브라우저로 공식 페이지의 전사를 직접 확보했고, 그 결과는 이 절 끝의 "보완" 항목에 있다. 아래 1~10번은 Galaxies 편과 안내 문서만으로 쓴 것이다.
+	- 보조: 검색 결과에 딸려 나온 같은 주제 태그의 다른 영상 발췌 조각. 불완전하므로 근거로 쓸 때마다 "검색 발췌"라고 밝힌다.
+- 음성 유형: 무내레이션(음악만). Galaxies 전사의 음성 칸은 "[DOWNBEAT MUSIC]"뿐이고 화면 글자는 설명 칸에 "Text, ..."로 적혀 있다. 안내 문서는 영상을 "captions to help guide the narrative"를 갖춘 것으로 소개하고, "Every ViewSpace video is produced with background music"이라고 하면서도 자동 재생 기본값은 소리 없음이며 반복 재생 묶음에는 소리가 아예 없다고 적는다.
+- 형식 판정: "화면 문장이 이야기를 끄는 형식"에 가장 순수하게 해당한다. 박물관, 과학관, 도서관의 전시 화면에서 소리 없이 계속 도는 것을 전제로 만들기 때문에 문장만으로 뜻이 통해야 한다.
+- 한계: 온전히 읽은 영상이 1편이다. 그것도 화면이 아니라 접근성용 전사여서 시각, 카드 경계, 줄바꿈, 강조, 길이를 모른다.
+
+### 2. 대본의 뼈대
+
+Galaxies 편(퀴즈형)의 순서는 다음과 같다. 시간 배분은 알 수 없다.
+
+- 시리즈 타이틀 ("what in the universe")
+- 사진만 제시 (글자 없음)
+- 질문 + 사지선다 보기
+- 정답 공개 (보기 C에 회색 표시)
+- 사진 라벨 (Hubble Ultra Deep Field 2014, Fornax constellation)
+- 정의 (은하란)
+- 식별 근거 (어떻게 아는가)
+- 하위 유형 2개 (나선, 타원)
+- 규모 수치 한 문장
+
+과제 (a)에 대한 답: 이 편은 발견이 아니라 개념 하나(은하)를 전한다. 설명 문장 7개, 약 96단어이고 질문과 보기를 합쳐도 약 110단어다. 순서는 "물음 → 답 → 정의 → 근거 → 분류 → 규모"로, ESO와 Hubble의 "발견 → 규모 → 의미"와 달리 규모가 맨 끝에 온다.
+
+검색 발췌로 본 같은 주제 묶음의 조각들은 40초~1분 35초 길이이고 꼴 이름이 붙어 있다(Insight Into, Myth vs Reality, At a Glance, Above and Beyond, Celestial Tour). 즉 한 주제를 꼴이 다른 짧은 조각 여러 개로 나누는 편성으로 보인다. 다만 각 꼴의 뼈대는 확인하지 못했다.
+
+### 3. 도입부(훅)
+
+- 사진 + 질문 + 보기: "what are these multicolored objects?" 뒤에 "A., stars, B., planets, C., galaxies, D., black holes." (Galaxies). 글자보다 사진이 먼저 나오고, 시청자가 고를 시간을 준다. 지나가던 관람객을 멈춰 세우는 장치다.
+- (검색 발췌) 고요한 장면 묘사로 시작: "A galaxy, containing billions of stars, floats serenely in space." (Insight Into: Galaxy Collisions)
+- (검색 발췌) 소개문이 질문인 경우: "What happens when two galaxies collide?" (At a Glance: Galactic Collisions 페이지 소개문. 영상 첫 화면인지는 미확인)
+
+### 4. 정보 공개 순서와 전환 장치
+
+- 미루는 것은 답 하나다. 답을 준 뒤에는 정의, 근거, 분류, 규모를 미루지 않고 차례로 준다.
+- 전환 장치
+	- 새 문장 없이 보기의 색만 바꿔 정답을 공개한다(Galaxies). 가장 값싼 전환이다.
+	- "어떻게 아는가"에 답하기: "Researchers can easily identify these objects as galaxies based on their shapes and the number of stars in them." 답을 믿게 만드는 근거 문장.
+	- 같은 틀의 짝 문장: "Spiral galaxies stand out because..." / "Elliptical galaxies have oblong or round shapes, and..."
+	- (검색 발췌) 통념 깨기 꼴: Myth vs Reality 조각은 소개문에서 "addresses the misconception that..."이라고 밝힌다.
+	- (검색 발췌) 시야 넓히기: "A wider view shows that it is not alone." 뒤에 "Collisions are inevitable." 이것은 화면 글자가 아니라 장면 설명문일 수 있어 구분이 확실하지 않다.
+- 과제 (d)에 대한 답: Galaxies 편은 궁금증 선행형의 가장 단순한 꼴이다. 물음에 답이 하나이고 보기로 범위를 좁혀 주므로, 궁금증이 5~10초짜리로 짧고 부담이 없다. 결론 선행형인 ESO와 견주면, ESO는 처음 10초만 봐도 소식을 가져가지만 끝까지 볼 이유는 약하다. 퀴즈형은 답이 나올 때까지는 붙잡아 두지만 답 이후의 문장들(정의, 분류)은 다시 평범한 설명이 된다. 전시장처럼 아무 때나 들어오는 관람객에게는 어느 지점에서 보기 시작해도 화면에 질문이나 완결된 정의문이 떠 있는 편이 유리하고, 이 편의 문장들은 모두 앞 문장 없이도 뜻이 통한다.
+
+### 5. 결말 처리
+
+- 수치 한 문장: "There are 200 billion to two trillion galaxies in the observable universe." (Galaxies). 사진 한 장의 점들에서 우주 전체로 범위를 넓힌 뒤 멈춘다. 의의, 행동 촉구, 다음 편 예고가 없다.
+- (검색 발췌) 단정 한 줄: "Collisions are inevitable." (Insight Into 조각의 발췌 끝. 영상의 실제 마지막 카드인지는 미확인)
+- 과제 (c)에 대한 답: 인물도 사건도 없이 완결감을 만드는 방법은 "물음을 세우고 닫는 것"과 "범위를 한 번 넓히고 멈추는 것"이다. 첫 화면의 물음이 답을 얻으면 최소한의 완결이 생기고, 마지막에 가장 큰 숫자를 두어 끝을 표시한다. 정의 → 근거 → 분류 → 규모라는 교과서식 순서 자체가 "다 설명했다"는 느낌을 준다.
+
+### 6. 문장 작법
+
+- 분량: 설명 문단당 12~33단어. 정의 문단만 두 문장(33단어)이고 나머지는 한 문장이다.
+- 전부 현재형이다. 발견 소식이 아니라 변하지 않는 사실을 말하기 때문이다: "A galaxy is a collection of...", "Elliptical galaxies have...".
+- 의문문은 첫 질문 하나. 보기는 명사 네 개.
+- 주어는 대상 자체다. 사람은 "Researchers" 한 번.
+- 문장마다 앞 문장에 기대지 않는다. 지시어가 "these objects" 한 번뿐이고, 매 문장이 주어 명사로 다시 시작한다(A galaxy, Researchers, Spiral galaxies, Elliptical galaxies, There are). 중간부터 보는 사람을 위한 작법으로 읽힌다.
+- 수치는 마지막 문장에 몰아 둔다(billions는 정의에 한 번).
+- 불확실성 표시: "Most are thought to have...", "typically contain".
+- 전사에는 대소문자와 강조가 반영되어 있지 않아 화면상의 강조 방식은 알 수 없다.
+
+### 7. 화면과 문장의 분업
+
+- 사진이 문제이고 문장이 답이다. 사진이 먼저 글자 없이 나온다.
+- 사진의 신원은 라벨 한 줄(망원경, 연도, 별자리)로 따로 준다. 서술 문장과 표기를 섞지 않는다.
+- 음악은 분위기일 뿐 정보를 싣지 않는다. 안내 문서에 따르면 소리 없이 틀어도 되도록 만들어졌다. 따라서 박자와 강조를 음악에 기댈 수 없고 글자와 화면 변화가 그 일을 맡아야 한다.
+- 과제 (b)에 대한 답: ViewSpace에서는 대본 문서를 얻지 못했다. 공식 페이지의 전사는 접근성용 설명으로, 음성 칸(SPEECH)과 화면 설명 칸(DESCRIPTION)을 나누고 화면 글자를 "Text,"로 표시한다. 음악은 "[DOWNBEAT MUSIC]"처럼 분위기 한 단어로만 적힌다(검색 발췌에는 ATONAL, ELECTRONIC도 보인다). 문장별 음악 지시는 없다.
+- 제작 표기에 글쓴이(Written by)와 디자이너(Designed by)가 따로 있고 "Editorial and design input" 항목이 있다. 문장과 화면을 각각 맡은 사람이 있다는 뜻이다.
+
+### 8. 영상별 구조 요약
+
+| 영상 | 길이 | 훅 유형 | 전개 구조 | 전환 장치 | 결말 유형 |
+|---|---|---|---|---|---|
+| What in the Universe: Galaxies | 미확인 | 사진 + 질문 + 사지선다 | 질문 → 정답 → 라벨 → 정의 → 근거 → 유형 2 → 규모 | 보기 색 바꿔 정답 공개, "어떻게 아는가" | 수치 |
+| Theme: Colliding Galaxies (828) | 가져오지 못함 | 가져오지 못함 | 가져오지 못함 | 가져오지 못함 | 가져오지 못함 |
+
+### 9. 대본 스킬로 가져갈 규칙
+
+1. 개념을 설명하는 영상은 그림을 먼저 보여 주고 "이것은 무엇인가"를 보기와 함께 물어라. 답은 새 문장이 아니라 보기 하나의 강조로 공개하라. (Galaxies)
+2. 답을 준 직후에 "어떻게 그렇게 아는가"를 한 문장으로 답하라. (Galaxies)
+3. 설명 순서는 정의 → 식별 근거 → 하위 유형 → 규모로 잡고, 가장 큰 숫자를 마지막 문장에 두어라. (Galaxies)
+4. 소리 없이 재생되어도 통하게 써라. 박자와 강조를 음악에 맡기지 말고 문장과 화면 변화에 배정하라. (안내 문서, Galaxies 전사)
+5. 문장마다 주어 명사로 다시 시작하라. "이것", "그래서"에 기대지 않으면 중간부터 보는 사람도 따라온다. (Galaxies)
+6. 서술 문장과 표기(출처, 연도, 장소)를 다른 요소로 분리하라. (Galaxies)
+7. 나란한 항목은 같은 문장 틀로 써라. (Galaxies의 나선, 타원 문장)
+
+### 10. 한계와 주의
+
+- "Theme: Colliding Galaxies"는 가져오지 못했다. 이 그룹의 분석은 사실상 영상 1편과 안내 문서 1건에 근거한다. 9번의 규칙은 근거가 얇다.
+- Galaxies도 화면을 본 것이 아니라 전사를 읽었다. 길이, 카드 경계, 노출 시간, 강조, 장면 전환은 모른다. 로그에서 문단 하나를 카드 하나로 본 것은 가정이다.
+- 읽은 사본은 2022년과 2024년에 수집된 것이라 현재 페이지와 다를 수 있다.
+- 검색 발췌는 중간이 잘린 조각이고 화면 글자와 장면 설명문의 경계가 흐리다. 뼈대 판단에는 쓰지 않았다.
+- 원 사이트가 다시 열리면 828번 페이지의 전사와 "Video Segments" 목록부터 확인할 필요가 있다.
+
+### 보완: Theme: Colliding Galaxies (상위 작업에서 브라우저로 직접 확보)
+
+처음 분석 때는 viewspace.org 인증서 오류로 이 편을 가져오지 못했다. 이후 브라우저로 공식 페이지의 Transcript 항목을 직접 열어 화면 문장 전사를 확보했다(영상별 로그 `theme_collidinggalaxies.md`). 위 분석에 더할 내용은 다음과 같다.
+
+- 6분 58초짜리 Theme 편은 한 줄기 서사가 아니라 **틀이 다른 독립 구획 7개의 묶음**이다. 도입 시각화(5문장으로 주제 요약), 관측 사진 읽기 3회, MYTH versus REALITY 2회, at a Glance 1회.
+- 구획마다 고정 틀이 있다. 사진 읽기는 "증거를 하나씩 가리킨 뒤 All this visual evidence adds up to one conclusion."으로 결론을 뒤에 두고, MYTH versus REALITY는 통념 한 문장에 정정 2~3문장을 맞세우며, at a Glance는 Minor merger와 Major merger를 소제목으로 대비시킨다.
+- 편집 문장 약 33개, 약 520단어로 분당 약 75단어다. Galaxies 편과 마찬가지로 문장마다 주어 명사로 다시 시작해 어느 구획에서 보기 시작해도 뜻이 통한다.
+- 후반 3분의 1에서 주어가 "galaxies"에서 "our solar system", "our galaxy"로 바뀐다. 긴 설명 묶음에서 완결감을 만드는 장치는 반전이 아니라 **대상을 우리 쪽으로 옮기는 것**과 "In the end"로 최종 상태를 말하는 것이다.
+- 대본 스킬에 주는 시사점: 5분이 넘는 설명 영상을 화면 문장만으로 끌 때는 한 호흡으로 쓰지 말고, 2분 이내의 구획으로 나누고 구획마다 다른 문형 틀(관찰, 통념과 정정, 한눈에 보기)을 주어라.

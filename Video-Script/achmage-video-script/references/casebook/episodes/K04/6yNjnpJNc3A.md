@@ -1,6 +1,6 @@
 # 전통부채를 만드는 장인, 선자장(Seonjajang, Artisan Who Makes Traditional Handheld Fans)(ENG SUB) | KOREA
 
-- 채널/시리즈: 국가유산채널(K-Herita… Channel)
+- 채널/시리즈: 국가유산채널(K-Heritage Channel)
 - URL: https://www.youtube.com/watch?v=6yNjnpJNc3A
 - 길이: 6분 34초
 - 게시일 / 조회수: 2015-12-21 / 1,699,323

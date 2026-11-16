@@ -1,0 +1,13 @@
+# ESOcast 137 Light: Temperate Planet Orbiting Quiet Red Dwarf (4K UHD)
+# https://www.youtube.com/watch?v=U0sqmraXRsc
+# duration 87s | caption track: en (manual) | tracks: de/manual, ro/manual, vi/manual, en/manual, pt/manual, pt-BR/manual, pl/manual
+
+[00:08] Temperate Planet Orbiting Quiet Red Dwarf
+[00:14] ESO's exoplanet hunter, HARPS, has discovered a temperate planet just 11 light-years from Earth.
+[00:23] This new world is named Ross 128 b. It's the second-closest temperate planet known, after Proxima b.
+[00:34] It is also the closest planet to be discovered orbiting an inactive red dwarf.
+[00:41] The star Ross 128 is quieter than Proxima Centauri, which is prone to flares of X-rays and ultraviolet light.
+[00:50] The inactive nature of Ross 128 could increase the likelihood this planet could potentially sustain life.
+[00:58] Estimates suggest that the Ross 128 b planet may have a temperature close to that of the Earth.
+[01:06] It will be a prime target for ESO's Extremely Large Telescope, which may be able to search for biomarkers, including oxygen.
+[01:19] Transcribed by ESO, translated by —

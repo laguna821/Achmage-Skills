@@ -1,0 +1,67 @@
+# Aid Worker Saves Nigerian Boy Accused Of Being A Witch
+
+- 채널/시리즈: AJ+ (화면 문장형의 성숙기 형태. 편집 문장 + 현장 발언 번역 자막 + 출처 표기)
+- URL: https://www.youtube.com/watch?v=hit-5AftoT0
+- 길이: 1분 23초 (본편 약 1분 16초, 이후 로고와 "SHARE THIS VIDEO")
+- 게시일 / 조회수: 2016-02-17 / 9,121,055
+- 음성 유형: 무내레이션 + 현장음·발언. 근거: 자막 트랙은 덴마크어 자동 생성(asr, 62단어)뿐인데, 인식된 말이 화면 하단의 작은 번역 자막과 시각·내용이 일치한다(00:04 "no one is feeding the Child", 00:34 덴마크어로 "너는 나와 함께 간다, 더는 여기 있지 않아도 된다", 00:45 덴마크어로 "누가 마녀로 몰았는지 모른다, 부모에게 버려졌다는 것만 안다"). 즉 음성은 구호 활동가의 현장 발언과 인터뷰뿐이고, 편집 문장은 음성으로 읽히지 않는다. 나머지는 음악.
+- 자료: 콘택트시트 4장 (표본 간격 2초), 자막 트랙 있음(da/asr)
+
+## 화면 문장 로그
+
+| 시각 | 화면 문장 (원문) | 장면 | 구분 |
+|---|---|---|---|
+| 00:00-00:02 | This boy was accused / of **being a witch**. | 어른들 다리 사이에 선 앙상한 아이. 좌상단 출처 "Sand TV / Anne Isbak (photo), Jeppe Sig (edit)" | 편집 |
+| 00:00-01:00 | Sand TV / Anne Isbak (photo), Jeppe Sig (edit) (좌상단 상시 표기) | - | 표기 |
+| 00:04 | No one is feeding the child? | 아이를 둘러싼 마을 사람들 | 인용 |
+| 00:06 | - Yeah, no mother, no father. | 같은 장면 | 인용 |
+| 00:08-00:10 | **Anja Ringgren Lovén**, a Danish aid / worker, **saved the starving boy** | 쪼그려 앉아 아이에게 물병으로 물을 먹이는 여성 | 편집 |
+| 00:12-00:14 | who was **an outcast** in / his Nigerian community. | 담요에 싸여 안긴 아이, 차에 타는 장면 | 편집 |
+| 00:16-00:18 | She said the disoriented 2-year-old / **survived on food scraps** | 비틀거리며 걷는 아이 | 편집 |
+| 00:20 | and had **worms**. | 아이 머리 위 클로즈업 | 편집 |
+| 00:22 | (문장 없음) | 물을 먹이는 장면 | - |
+| 00:24-00:28 | Lovén **founded a charity** for / children accused of witchcraft. | 물을 먹이는 장면 | 편집 |
+| 00:30-00:32 | She **took in the boy** / and named him Hope. | 같은 장면, 물병을 든 손 | 편집 |
+| 00:34 | Yes, you are coming with me. | 과자 상자 앞의 아이 얼굴 | 인용 |
+| 00:36-00:38 | Now you don't have to be here anymore. | 아이 얼굴, 과자를 꺼내는 여성 | 인용 |
+| 00:40-00:44 | (문장 없음: 장면만 약 6초) | 아이의 얼굴과 앙상한 몸, 과자를 쥔 손, 걷는 다리 | - |
+| 00:46 | We don't know why he was accused / of being a witch, | 담요로 아이를 감싸는 손 | 인용 |
+| 00:48-00:50 | we just know that he was | 인터뷰하는 여성. 이름표 "ANJA RINGGREN LOVÉN / African Children's Aid Education and Development Foundation" | 인용 + 표기 |
+| 00:52-00:54 | abandoned by his parents. | 담요 위에 누운 아이 | 인용 |
+| 00:56-00:58 | **He is recovering well**, though / he has yet to start speaking. | 옷을 입고 침대에 앉은 아이. 좌상단 출처 "(페이스북 아이콘) Anja Ringgren Lovén" | 편집 |
+| 01:00-01:02 | **Belief in witchcraft** is / held **across the world**. | 흐리게 처리된 아이들 장면 위에 큰 글씨 | 편집 |
+| 01:04 | (문장 없음) | 바닥에 엎드려 책을 보는 아이들 | - |
+| 01:06-01:08 | In Nigeria, children are labeled / witches often to **explain their / family's misfortune**. / Source: Safe Child Africa (좌상단) | 어둡게 처리된 아이 장면 | 편집 + 표기 |
+| 01:10-01:14 | Many face abuse and / **roughly 80%** will run / away or be abandoned. / Source: Safe Child Africa (좌상단) | 아이들 무리 | 편집 + 표기 |
+| 01:16 | (문장 퇴장) | 카메라를 보며 웃는 아이들 | - |
+| 01:18-01:20 | (AJ+ 로고) / SHARE THIS VIDEO | 흰 바탕 엔드카드 | 제목 |
+
+강조 표시: 굵게 표시한 부분은 화면에서 노란색 굵은 글씨, 나머지는 흰색. 편집 문장은 큰 글씨(가운데 정렬), 현장 발언 번역 자막은 그 절반쯤 되는 작은 흰 글씨.
+
+## 구조 메모
+
+- 로그라인(이 영상이 하는 말 한 문장): 마녀로 몰려 버려진 두 살 아이를 덴마크 구호 활동가가 구해 "Hope"라는 이름을 주었고, 이런 낙인은 나이지리아에서 흔한 구조적 문제다.
+- 훅(첫 15~30초가 하는 일): 로고 없이 0초부터 문장이 뜬다. "This boy was accused of being a witch." 화면 속 아이를 "This boy"로 가리키고, 가장 이해하기 어려운 사실(아이가 마녀로 몰렸다)을 첫 문장에 둔다. 곧바로 현장 대화 두 줄("No one is feeding the child?" / "Yeah, no mother, no father.")이 상황을 증명하고, 8초에 구원자의 이름과 행동이 나온다. 14초 안에 누가, 누구를, 어디서, 왜 구했는지가 끝난다.
+- 비트 구성:
+	- 00:00-00:02 낯선 사실 선언 (아이 + 낙인)
+	- 00:04-00:06 현장 대화 (방치 확인)
+	- 00:08-00:20 구조자 소개와 아이의 상태 (한 문장을 2카드로 나눠 2번: 구했다 / 버림받은 아이였다, 음식 찌꺼기로 연명 / 기생충)
+	- 00:24-00:32 구조자의 배경과 결정 (자선단체 설립 / 데려가 Hope라 이름 지음)
+	- 00:34-00:38 현장 발언 (아이에게 건네는 말)
+	- 00:40-00:44 문장 없는 장면 (아이의 몸)
+	- 00:46-00:54 인터뷰 발언 (아는 것과 모르는 것)
+	- 00:56-00:58 현재 상태 (회복 중, 아직 말은 못 함)
+	- 01:00-01:14 일반화 3카드 (세계적 믿음 → 나이지리아의 이유 → 80% 수치). 출처 표기
+	- 01:18-01:20 로고, 공유 요청
+- 전환점(시청자의 해석이 바뀌는 지점과 그것을 일으킨 장치): 01:00 "Belief in witchcraft is held across the world." 글씨가 커지고 배경이 흐려지면서 한 아이의 구조담이 구조적 문제로 넘어간다. 장치는 (1) 일반화 문장, (2) 글자 크기와 배경 처리의 변화, (3) 출처가 붙은 수치(roughly 80%). 감정의 전환점은 그보다 앞선 00:30 "named him Hope"(명명)이다.
+- 결말(마지막 2~3개 카드와 그 기능): "In Nigeria, children are labeled witches often to explain their family's misfortune." → "Many face abuse and roughly 80% will run away or be abandoned." 개인의 해피엔딩("recovering well")에서 멈추지 않고, 남은 아이들의 수치로 끝낸다. 마지막 장면은 카메라를 보는 다른 아이들. 그 뒤 "SHARE THIS VIDEO"로 행동(공유)을 직접 요청한다.
+- 문장 작법:
+	- 카드당 2~3줄, 3~14단어, 평균 약 9단어.
+	- 긴 문장은 관계절이나 and에서 잘라 두 카드에 나눈다("...saved the starving boy" / "who was an outcast in his Nigerian community.", "...survived on food scraps" / "and had worms."). 뒤 카드가 짧을수록 충격이 크다.
+	- 과거형으로 사건, 현재형으로 현재 상태와 일반론. 전달 동사 "She said"로 정보의 출처가 당사자임을 표시.
+	- 강조: 카드당 노란색 1덩어리(2~4단어). 행위(saved the starving boy, founded a charity, took in the boy), 상태(an outcast, worms, recovering well), 쟁점어(being a witch, Belief in witchcraft), 수치(roughly 80%). 강조어만 이어 읽으면 요약이 된다.
+	- 인물 지칭: 아이는 "This boy" → "the starving boy" → "the disoriented 2-year-old" → "Hope" → "He". 구조자는 풀네임 + 직함 → "Lovén" → "She".
+	- 인용: 현장 발언은 따옴표 없이 작은 자막. 대화 상대의 말은 줄표("- Yeah")로 구분. 인터뷰 한 문장을 3개 자막으로 끊어 말의 속도에 맞춘다.
+	- 수치는 끝에 하나(80%), "roughly"로 정밀도를 한정하고 출처를 붙인다.
+- 화면과 문장의 분업: 장면이 맡는 것은 아이의 몸 상태와 물을 먹이는 행위(설명 없이도 전달되는 것). 문장이 맡는 것은 낙인의 이유, 인물의 신원, 이름, 이후 경과, 통계. 편집 문장과 현장 발언이 같은 시간에 겹치지 않도록 번갈아 배치된다(편집 문장이 떠 있을 때는 말이 없고, 말이 나올 때는 편집 문장이 빠진다). 문장 없는 구간은 00:40-00:44(가장 참혹한 클로즈업)와 01:04.
+- 수량(대략): 편집 문장 카드 11장(문장으로는 8개), 총 약 100단어, 카드당 평균 약 9단어, 카드 평균 노출 약 4초. 인용 자막 7개(현장 4, 인터뷰 3). 표기 4종(영상 출처, 이름표, 사진 출처, 통계 출처).

@@ -1,0 +1,16 @@
+# ESO telescopes help solve pulsar puzzle | ESOcast Light
+# https://www.youtube.com/watch?v=YScuIfa-MmQ
+# duration 88s | caption track: en (manual) | tracks: en/manual
+
+[00:07] ESO telescopes help solve pulsar puzzle
+[00:14] With the help of ESO telescopes,
+[00:18] astronomers have explained the strange behaviour of a pulsar,
+[00:22] a super-fast-spinning dead star.
+[00:26] The pulsar has been observed switching
+[00:31] between two brightness modes that last
+[00:35] from a few tens of seconds to minutes,
+[00:38] but no one knew why… until now.
+[00:43] Astronomers found that
+[00:47] sudden ejections of matter from the pulsar
+[00:51] are responsible for the peculiar switches.
+[01:02] “We have witnessed extraordinary cosmic events where enormous amounts of matter (...) are launched into space within a very brief time span.”  Maria Cristina Baglio, NYU Abu Dhabi and INAF

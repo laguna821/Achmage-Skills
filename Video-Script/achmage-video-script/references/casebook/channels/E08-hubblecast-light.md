@@ -46,7 +46,7 @@
 
 ## 5. 결말 처리
 
-- 다음 관측 예고: "Scientists using t… upcoming NASA/ESA/CSA James Webb Space Telescope plan to get addition… data on HD106906 b to better understand the planet's system." (132). 화면이 상상도에서 실제 망원경 실사로 바뀐다.
+- 다음 관측 예고: "Scientists using the upcoming NASA/ESA/CSA James Webb Space Telescope plan to get addition… data on HD106906 b to better understand the planet's system." (132). 화면이 상상도에서 실제 망원경 실사로 바뀐다.
 - 미해결 선언: "The reason for this is still unknown so Hubble will contin… to observe Jupiter in t… hope that scientists will solve this stormy riddle." (123). 그런데 그 뒤에 작은 폭풍들에 대한 사실 한 줄이 더 붙어 맺음이 흐려진다.
 - 출처 보증: "This stunning visualisation was created using real scientific imagery and data from Hubble." (106)
 - 우리 태양계에 빗대기: "...like the cometary bodies that exist in the Kuiper belt on the out… fringe of our solar…." (127 대본)

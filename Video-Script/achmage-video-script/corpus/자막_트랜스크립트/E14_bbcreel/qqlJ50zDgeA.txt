@@ -1,0 +1,90 @@
+# Antikythera Mechanism: The ancient 'computer' that simply shouldn't exist - BBC REEL
+# https://www.youtube.com/watch?v=qqlJ50zDgeA
+# duration 414s | caption track: en-GB (manual) | tracks: en-GB/manual
+
+[00:00] When we first looked at the results, it was astonishing.
+[00:06] We've had to rethink the history of technology completely as a result of this single object.
+[00:12] It's such a clever, extraordinarily sophisticated machine, completely. Completely shocking for
+[00:20] ancient Greece.
+[00:23] 120 years ago, sponge divers discovered a shipwreck off the tiny island of Antikythera
+[00:36] in Greece, and what they found changed our understanding of human history forever.
+[00:45] Among the treasure trove were marble statues, elegant vases,
+[00:50] glistening jewelry and ancient coins and what looked to be a hunk of corroded metal that
+[00:56] no one knew quite what to do with.
+[00:58] It was not recognised at all as being anything interesting when it was discovered, it was
+[01:02] just a corroded lump about the size of a large dictionary.
+[01:06] But when in 1902, it was discovered that there were gear wheels inside it, everyone suddenly
+[01:13] got rather excited.
+[01:16] This is the first shock because anything from ancient Greece simply shouldn't have gear
+[01:21] wheels.
+[01:22] These were precision gears with teeth about a millimetre long.
+[01:26] And this was just completely, completely shocking.
+[01:31] And the Antikythera mechanism has captured the imagination of archaeologists, mathematicians
+[01:37] and scientists ever since.
+[01:40] It's a dedicated, calculating machine and it uses bronze gear wheels to calculate the
+[01:47] cycles of the cosmos - the cosmos being the sun, the moon, the planets against the stars
+[01:54] and wind it forward 10 years and you can know where the sun and the moon is going to be,
+[01:59] where the planets are.
+[02:00] But the question of why the ancient Greeks created such a device has plagued experts
+[02:06] since its discovery.
+[02:08] I think it was conceived as a calculating machine that would calculate the theories
+[02:13] they had.
+[02:14] They had astronomical theories but could calculate those at the turn of a
+[02:19] handle.
+[02:20] So it would it would demonstrate how you could look ahead, say: 'What's the position of the
+[02:26] moon going to be in five years time?'.
+[02:29] You would turn the handle, it would tell you almost immediately. This is a massive step
+[02:34] forward in the history of science and technology.
+[02:36] Something we take for granted now, but in those
+[02:38] days that the idea that your scientific theories could be mechanised, the predictions could
+[02:44] be mechanised was absolutely astonishing.
+[02:47] Now kept in a museum in Greece, the 2000-year-old device is split into 82 fragments and much
+[02:55] of it is missing.
+[02:57] But in the years since this discovery, modern technology has vastly advanced what we know
+[03:02] about the mechanism.
+[03:04] In the 1970s, a team x-rayed the device and the first secrets were revealed, dozens of
+[03:11] cogs hidden within it.
+[03:13] But it wasn't until 3D X-ray technology came along that they could separate these guys
+[03:19] out.
+[03:20] We took an eight ton x-ray machine to Athens, installed it in the museum, and we took x-ray
+[03:26] data of all the 82 surviving fragments of the mechanism.
+[03:30] And when we first looked at the results, it was astonishing because it showed us not only
+[03:38] all the gear wheels in three dimensions so we could separate them, but it showed us all
+[03:43] these new inscrip tions in the fragments as well.
+[03:46] A new world of secrets was revealed, a user guide hidden within the folds of corroded
+[03:53] bronze.
+[03:54] This was a wonderful revelation. Out of that data has come nearly all the breakthroughs
+[04:01] in recent decades, came the discovery that it predicted eclipses, that it followed the
+[04:07] variable notion of the moon.
+[04:09] Previous experts had been able to model the back of the mechanism up until this point.
+[04:14] But these inscriptions helped Tony and his colleagues with their latest model, which
+[04:19] focuses on the front of the device.
+[04:21] There's thousands of text characters in ancient Greek which tell us how it works.
+[04:26] It displayed the ancient Greek cosmos - the sun, moon and planets - in a sort of ring
+[04:32] system. It brought back the history of technology to a much earlier time.
+[04:38] It is completely astonishing that the ancient Greeks firstly had the conception of making
+[04:44] this technology and secondly the ability to actually physically make it.
+[04:48] We've had to rethink the history of technology completely as
+[04:52] a result of this single object.
+[04:55] The great Arthur C. Clarke said if the ancient Greeks had understood the capabilities of
+[05:01] the technology they created, then they would have reached the moon within 300
+[05:05] years, and we'd now been exploring the nearest stars.
+[05:11] Now Tony and his team will take their theoretical model and use ancient Greek techniques to
+[05:16] build a physical model of the mechanism.
+[05:20] And modern technology may reveal more secrets of the ancient world still.
+[05:24] There were certainly, in the ancient world, more devices like the Antikythera Mechanism.
+[05:31] It wasn't unique.
+[05:34] I think the only real hope of finding another machine
+[05:39] like the Antikythera Mechanism is from a shipwreck.
+[05:41] The hopeful thing is there are thousands of shipwrecks down there under the Mediterranean.
+[05:46] Some of them at very deep levels. But the diving technology is advancing so much that
+[05:52] it's becoming possible to explore quite deep wrecks.
+[05:57] To understand the technological world we live in today, we need to understand its history,
+[06:03] what the Antikythera Mechanism tells us is that that history is different than what we
+[06:09] thought, that it started earlier, that it developed in this incredible flourishing of
+[06:14] this sophisticated technology, and then it seemed to go backwards.
+[06:19] We kind of take it for granted, I think, in the modern world that technology will just
+[06:25] keep on advancing.
+[06:26] But throughout history, this hasn't always been the case.
+[06:30] The history of technological development doesn't go in a straight line.
+[06:34] It develops in fits and starts and sometimes gets lost and forgotten.

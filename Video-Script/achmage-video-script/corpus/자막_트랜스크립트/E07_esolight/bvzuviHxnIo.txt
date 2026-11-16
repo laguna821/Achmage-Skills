@@ -1,0 +1,12 @@
+# ESOcast Light 223: 거대한 자성을 띤 반점에 의해 고통받는 뜨거운 항성
+# https://www.youtube.com/watch?v=bvzuviHxnIo
+# duration 92s | caption track: en (manual) | tracks: el/manual, de/manual, ru/manual, ro/manual, vi/manual, bg/manual, es/manual, sk/manual, sl/manual, ar/manual, en/manual, it/manual, id/manual, zh/manual, zh-Hans/manual, cs/manual, tr/manual, pt/manual, pt-PT/manual, fr/manual, ko/manual
+
+[00:07] Hot Stars are Plagued by Giant Magnetic Spots
+[00:12] Using ESO telescopes, astronomers have discovered giant spots on the surfaces of extremely hot stars hidden in stellar clusters.
+[00:23] Not only are these stars plagued by spots, some also experience superflares…
+[00:31] …explosions of energy several million times more energetic than similar eruptions in the Sun.
+[00:44] The spots on these stars are large and bright, unlike the smaller and dark spots on our Sun, but both are caused by magnetic fields.
+[00:58] As the hot stars rotate, the spots on the surface come and go, causing visible changes in brightness.
+[01:09] The findings help scientists better understand these puzzling stars and open doors to resolving other mysteries of stellar astronomy.
+[01:27] Transcribed by ESO; Translated by -

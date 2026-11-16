@@ -1,0 +1,40 @@
+# Hubblecast 127 Light: The Mysteries of Fomalhaut b (공식 대본 PDF)
+
+- 채널/시리즈: ESA/Hubble / Hubblecast Light
+- URL: https://esahubble.org/media/archives/videos/script/heic2006a_en.pdf
+- 길이: 1분 36초 (대본 끝의 "Ends 01:36" 표기)
+- 게시일 / 조회수: 대본에 표기 없음
+- 음성 유형: 무내레이션으로 판단. 근거: 대본에 화자나 내레이션 표기가 없고 화면 문장 단락만 있다. 영상 자체는 보지 못했다.
+- 자료: 공식 대본 PDF 2쪽 (텍스트 추출로 읽음). 콘택트시트와 자막 트랙 없음. 머리글에 "Visual notes" 칸 이름이 있으나 추출된 텍스트에는 그 칸의 내용이 한 글자도 없다. 파일 크기가 2쪽에 약 865KB로 ESO 대본(약 175KB)의 다섯 배여서 그 칸에 장면 그림이 들어 있을 가능성이 있으나, 파일 내부가 압축되어 있어 확인하지 못했다. 그림 유무와 내용은 미확인이다.
+
+## 화면 문장 로그 (대본 기준)
+
+| 시각 | 화면 문장 (원문) | 장면 (Visual notes) | 구분 |
+|---|---|---|---|
+| 00:00-00:00 | Intro | (추출된 내용 없음) | 제목 |
+| 표기 없음 | Data from the NASA/ESA Hubble Space Telescope has revealed an expanding cloud of dust that was likely produced in a massive and rare collision. | (추출된 내용 없음) | 편집 |
+| 표기 없음 | This is the first time such a catastrophic event has been observed around a star. | (추출된 내용 없음) | 편집 |
+| 표기 없음 | Hubble images from 2014 showed that the planet Fomalhaut b had vanished, to the disbelief of the astronomers. Adding to the mystery, earlier images showed the object to continuously fade over time. | (추출된 내용 없음) | 편집 |
+| 표기 없음 | The resulting interpretation is that Fomalhaut b is not a planet, but a slowly expanding cloud blasted into space as a result of a collision between two large bodies. | (추출된 내용 없음) | 편집 |
+| 표기 없음 | The collision is believed to have occured between two large bodies orbiting the bright nearby star Fomalhaut, which lies 25 light-years from Earth | (추출된 내용 없음) | 편집 |
+| 표기 없음 | Because Fomalhaut b is presently inside a vast ring of icy debris encircling the star, the colliding bodies were likely a mixture of ice and dust, like the cometary bodies that exist in the Kuiper belt on the outer fringe of our solar system. | (추출된 내용 없음) | 편집 |
+| 01:36 | Ends 01:36 | | 표기 |
+
+("occured"는 원문 철자 그대로다. 다섯째 단락 끝에 마침표가 없는 것도 원문 그대로다.)
+
+## 구조 메모
+
+- 로그라인: 행성으로 알려졌던 포말하우트 b는 행성이 아니라 두 천체가 충돌해 생긴, 퍼져 나가는 먼지 구름이었다.
+- 훅: 첫 문장이 결론(충돌로 생긴 먼지 구름을 밝혀냈다)이다. 그런데 이 문장에는 "Fomalhaut b"라는 이름도 "행성이 아니었다"는 반전도 아직 없다. 제목의 Mysteries는 세 번째 단락에서야 풀리기 시작한다.
+- 비트 구성 (시각은 대본에 없음)
+	- 1 발견 (충돌로 생긴 먼지 구름)
+	- 2 지위 (별 주변에서 처음 관측)
+	- 3 수수께끼 회상 (2014년 사진에서 행성이 사라졌다, 그 전부터 흐려지고 있었다)
+	- 4 해석 (행성이 아니라 구름이다)
+	- 5 무대와 거리 (포말하우트, 25광년)
+	- 6 추가 추론 (충돌체는 얼음과 먼지, 카이퍼 벨트 혜성 같은 것)
+- 전환점: 3번 단락 "had vanished, to the disbelief of the astronomers"와 "Adding to the mystery". 결론을 먼저 말해 놓고 시간을 거슬러 올라가 수수께끼를 다시 세운다. 이어 4번 "is not a planet, but"의 부정 뒤 긍정 구문으로 해소한다. 즉 결론 선행형 안에 "수수께끼 → 해답" 고리를 하나 끼워 넣은 혼합 구성이다.
+- 결말: 6번은 충돌체의 성분을 우리 태양계의 카이퍼 벨트에 빗대는 문장이다. 의의 선언이나 다음 단계 없이, 마지막 구 "our solar system"으로 시청자 쪽 세계에 닿으면서 끝난다. 44단어짜리 종속절 문장이어서 화면 카드로는 무겁다.
+- 문장 작법: 6단락(문장으로는 7개), 단락당 15~44단어(평균 약 28), 전체 약 167단어. 96초 영상에 실으면 분당 약 105단어다. 수동과 추정 표현이 많다(was likely produced, is believed to have occured, were likely). 수치는 2014, 25 light-years 둘. 감정어가 과학자 쪽에 붙는다(to the disbelief of the astronomers).
+- 장면, 음악 지시와 문장의 대응: 이 대본에서는 확인할 수 없다. "Visual notes" 칸이 있다는 것, 타임코드 칸이 "00:00-00:00"과 "Ends 01:36"처럼 처음과 끝만 채워져 있다는 것까지만 확인했다. ESO 대본(esocast176)과 달리 음악 지시어는 추출 텍스트에 한 단어도 없다.
+- 수량(대략): 편집 단락 6개, 평균 약 28단어, 전체 약 167단어. 단락별 노출 시간은 알 수 없다. 전체 96초에서 인트로와 아웃트로를 20초쯤으로 가정하면 단락당 12초 안팎이지만 이는 가정이다.

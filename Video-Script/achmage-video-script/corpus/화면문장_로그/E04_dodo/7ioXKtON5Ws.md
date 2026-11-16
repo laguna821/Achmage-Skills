@@ -1,0 +1,67 @@
+# Freezing Bird Trapped on Car Roof Rescued by Perfect Guy | The Dodo
+
+- 채널/시리즈: The Dodo (초기 화면 문장형, 가로 영상)
+- URL: https://www.youtube.com/watch?v=7ioXKtON5Ws
+- 길이: 1분 45초
+- 게시일 / 조회수: 2017-07-14 / 36,166,972
+- 음성 유형: 무내레이션 + 현장음·발언. 유튜브 자막 트랙이 전혀 없다(captionTracks 빈 배열). 내레이터는 없고, 촬영자 본인이 새에게 하는 혼잣말이 이탤릭 자막으로 7번 화면에 옮겨져 있다.
+- 자료: 콘택트시트 5장 (표본 간격 2초), 자막 트랙 없음
+
+## 화면 문장 로그
+
+| 시각 | 화면 문장 (원문) | 장면 | 구분 |
+|---|---|---|---|
+| 00:00-00:02 | (문장 없음) | 젖은 자동차 지붕, 루프 바 밑에 끼어 있는 작은 새 | - |
+| 00:04 | *Poor bird.* | 루프 바 밑을 비추는 카메라 | 인용 |
+| 00:06 | There's a bird / **wedged** under here | 루프 바 아래 틈을 가리키는 주황 화살표 | 편집 |
+| 00:08 | Norway | 왼쪽 위 흰 세로선과 지명 | 표기 |
+| 00:08 | *Okay, bird rescue.* | 골판지를 틈에 밀어 넣는다 | 인용 |
+| 00:10 | *Little bird!* | 같은 장면 | 인용 |
+| 00:12 | *Cardboard box,* | 골판지 조각 | 인용 |
+| 00:14 | *gonna try and sneak him outta here.* | 새가 있는 위치에 밝은 원 강조 | 인용 |
+| 00:16 | *Poor thing, I hope he's okay.* | 손이 골판지를 민다 | 인용 |
+| 00:20 | This little bird had been / stuck for **over 30 miles** | 바 밑에서 새가 보인다 | 편집 |
+| 00:22 | when this man **heard / some scratches** on his roof | 골판지에 밀려 나온 새, 깃털이 젖고 헝클어져 있다 | 편집 |
+| 00:28 | He was terrified and / **shaky from the cold** | 지붕 위에 엎드린 새, 손이 다가간다 | 편집 |
+| 00:32 | (it's only **34° F**) | 손바닥이 새를 덮는다. 문장은 화면 중간 오른쪽에 괄호째 | 편집 |
+| 00:36 | *Poor thing.* | 새를 감싼 손 | 인용 |
+| 00:38 | He needed to **get warmed up** | 손바닥 위에 앉은 새 | 편집 |
+| 00:40-00:48 | (문장 없음: 장면만 약 10초) | 차 안 좌석. 땅콩 봉지 옆에 놓인 새, 손가락으로 쓰다듬는다 | - |
+| 00:50 | The man **wrapped / him up** in a sweatshirt | 회색 스웨트셔츠에 싸인 새 | 편집 |
+| 00:54 | and let him know **he was safe** | 옷 속에서 눈을 감은 새 | 편집 |
+| 01:00 | It only took **10 minutes** | 옷 속에서 고개를 든 새 | 편집 |
+| 01:04 | for him to **feel like himself** again | 카메라 렌즈 옆에 똑바로 앉은 새, 엄지로 쓰다듬는다 | 편집 |
+| 01:06 | and so his rescuer knew it / was **time to let him go** | 차창 턱에 앉은 새, 창밖으로 호수와 눈 남은 산 | 편집 |
+| 01:10-01:14 | (문장 없음: 장면만 약 6초) | 창턱의 새와 바깥 풍경 | - |
+| 01:16 | But he decided to **stick around** | 새가 창턱에 그대로 있다 | 편집 |
+| 01:18 | for a **little while longer** | 손이 다가가자 날갯짓, 그래도 창턱에 머문다 | 편집 |
+| 01:26 | before he was finally ready / to **say goodbye** to his **new friend** | 새가 날아간 뒤 빈 창과 풍경 | 편집 |
+| 01:32-01:34 | (문장 없음) | 빈 차 안, 운전대 | - |
+| 01:36 | Subscribe / CLICK HERE IF YOU LOVE ANIMALS! / MORE ANIMAL VIDS! / THE DODO DAILY / WHAT DID YOU THINK OF THIS STORY? TELL US IN THE COMMENTS BELOW! | 파란 띠의 엔드 카드 | 제목 |
+
+(강조는 주황색. 편집 문장은 왼쪽 아래 1~2줄 큰 글씨, 인용은 가운데 아래 작은 이탤릭.)
+
+## 구조 메모
+
+- 로그라인(이 영상이 하는 말 한 문장): 차 지붕에 끼인 채 30마일을 달려온 얼어붙은 새를 한 남자가 꺼내 덥혀 주었고, 새는 떠나기 전에 잠시 그 곁에 머물렀다.
+- 훅(첫 15~30초가 하는 일): 촬영자의 혼잣말(인용)로 시작한다. "Poor bird."가 첫 화면 문장이고, 편집 문장은 그 뒤에 "There's a bird wedged under here" 한 장으로 상황만 짚는다. 처음 18초는 당사자의 말이 구조 과정을 실시간으로 끌고, 편집 문장은 20초에 가서야 배경 사실(30마일, 긁는 소리)을 소급해 준다.
+- 비트 구성:
+	- 00:00-00:18 현장 음성 주도의 구조 장면(끼어 있다 → 골판지로 빼낸다). 편집 문장 1장 + 장소 표기
+	- 00:20-00:26 배경 소급: 얼마나 오래(over 30 miles), 어떻게 알았나(scratches)
+	- 00:28-00:38 상태 진단과 필요: terrified, shaky / 34° F / needed to get warmed up
+	- 00:40-00:56 조치: 차 안으로, 스웨트셔츠로 감싼다, 안전하다고 알려 준다
+	- 01:00-01:04 회복: 10분 만에 제 모습
+	- 01:06-01:14 놓아줄 시간
+	- 01:16-01:30 반전과 작별: 새가 떠나지 않고 머문다 → 마침내 작별
+	- 01:36-01:45 엔드 카드
+- 전환점(시청자의 해석이 바뀌는 지점과 그것을 일으킨 장치): (1) 00:20 수치 "over 30 miles". 단순한 끼임 사고가 긴 고통으로 바뀐다. (2) 01:00 수치 "10 minutes". 30마일의 고통과 10분의 회복이 대비된다. (3) 01:16 접속사 But. 구조가 끝났는데 새가 떠나지 않는다는 뜻밖의 행동을 "decided to stick around"라고 의지로 해석해 준다. 이 영상의 정서적 정점은 구조가 아니라 이 머뭇거림이다.
+- 결말(마지막 2~3개 카드와 그 기능): "But he decided to stick around" → "for a little while longer" → "before he was finally ready / to say goodbye to his new friend". 마지막 카드는 빈 창 장면 위에 뜬다. 새가 날아가는 순간은 문장이 설명하고 화면은 부재를 보여 준다. 마지막 단어 new friend가 구조자와 새의 관계를 이름 붙여 닫는다.
+- 문장 작법:
+	- 카드당 1~2줄, 4~12단어. 편집 카드 14장이 문장 약 7개. 이 영상은 과거 시제 서술(had been stuck, heard, was, needed, wrapped, took, knew, decided)이다. 첫 카드만 현재(There's a bird).
+	- 수치 3개(30 miles, 34° F, 10 minutes)가 모두 주황 강조다. 기온은 본문 흐름에서 빼 괄호 카드로 따로 띄웠다(보충 정보의 층 분리).
+	- 한 문장을 2~3장으로 나누고 접속사(when / and / for / and so / But / before)로 잇는다. 마지막 세 장은 한 문장이다.
+	- 동물에게 he를 쓰고 감정·의지 동사를 준다(terrified, feel like himself, decided, ready to say goodbye).
+	- 사람은 this man → the man → his rescuer → his new friend로 호칭이 바뀐다. 호칭 변화가 관계 변화다. 이름은 없다.
+	- 인용(혼잣말)은 구어 그대로(gonna, outta), 마침표 유지, 이탤릭.
+- 화면과 문장의 분업: 구조 동작은 장면과 현장 음성이 맡는다. 편집 문장은 화면에 없는 것, 곧 이전 사정(30마일, 긁는 소리), 보이지 않는 조건(기온), 내면(무서움, 안전함, 떠날 준비), 경과 시간(10분)을 맡는다. "The man wrapped him up in a sweatshirt"만 화면과 겹치는 묘사인데, 감싸는 동작 자체는 표본에 보이지 않고 감싼 결과만 보이므로 생략된 동작을 문장이 메운 것으로 보인다.
+- 수량(대략): 편집 카드 14장, 인용 7장, 표기 1장, 엔드 카드 1장. 편집 문장 전체 약 104단어, 카드당 평균 약 7.4단어(약 35자). 카드 노출 2~4초(마지막 카드 약 5초).

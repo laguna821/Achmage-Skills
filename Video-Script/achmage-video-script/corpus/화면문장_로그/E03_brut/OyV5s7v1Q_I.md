@@ -1,0 +1,83 @@
+# The Story of a Child Marriage Survivor
+
+- 채널/시리즈: Brut America / "Brut. ORIGINAL" 표기가 붙은 자체 취재 인터뷰 영상 ("The Story of ..." 계열)
+- URL: https://www.youtube.com/watch?v=OyV5s7v1Q_I
+- 길이: 4분 3초
+- 게시일 / 조회수: 2021-09-16 / 3,112,123
+- 음성 유형: 인터뷰 중심(무내레이션). 자막 트랙(asr, 461단어)은 전부 당사자 Naila Amin의 말이고, 화면의 편집 문장("Naila Amin was once a child forced to marry." 등)은 음성에 없다. 편집 문장 구간의 자막 트랙은 `[Music]`이다.
+- 자료: 콘택트시트 9장 (표본 간격 2.5초), 자막 트랙 있음(asr/en). 화면은 세로형 원본 좌우를 흐림 처리로 채운 구성.
+
+## 화면 문장 로그
+
+인용 자막은 표본 간격 때문에 일부만 잡혔다. 잡힌 것만 적고, 음성 전체는 자막 트랙으로 확인했다.
+
+| 시각 | 화면 문장 (원문) | 장면 | 구분 |
+|---|---|---|---|
+| 00:00 | I was 8, on this / trip I was engaged. | 방 안에서 사진을 꺼내는 여성(얼굴 일부만) | 인용 |
+| 00:05 | – Fifteen, because we had / to, uh, basically, / sleep with each other. (앞의 질문 "how old were you there"는 음성에만 있음) | 결혼식 사진을 집는 손, 옆얼굴 | 인용 |
+| 00:15 | **Naila Amin** / was once a **child** / forced to marry. | 붉은 혼례복을 입은 소녀 사진 | 편집 |
+| 00:20 | Today, / this **survivor** is fighting | 주택가 길을 걷는 현재의 Amin | 편집 |
+| 00:23 | to **ban child marriage** / in the **United States**. | 같은 장면 | 편집 |
+| 00:28 | and I'm just sitting there / and I'm, like, just smiling, (뒤의 "but I don't know what's going on"은 음성에만 확인) | 혼례복 소녀 사진 (Footage: Naila Amin) | 인용 |
+| 00:35 | Amin grew up / in **Long Island, NY**. | 분홍 옷을 입은 어린 시절 사진 | 편집 |
+| 00:38 | At **8 years old**, | 손에 든 아이 사진 | 편집 |
+| 00:40 | she learned that / she was **engaged** / to her cousin, / **13 years** her senior. | 들판에 선 어린 Amin 사진 | 편집 |
+| 00:45 | I hear these older / girls, giggling / ... / my dad's brother's son. / So he was there and / I was in their house / and they were, like, / you know, this is about / to become her house. / And I didn't get it. / And I thought it was, / like, cool, / because I was getting, / like, gifts and stuff. | 뒤뜰에서 카메라를 보고 말하는 Amin | 인용 |
+| 01:05 | But I came back to America. / I started the fourth grade / and I met this boy, / ... / But I said to myself, / there's no hope because / you're already engaged. / Imagine at 8 years old / saying that to yourself. | 어린 시절 흑백 사진, 다시 인터뷰 | 인용 |
+| 01:18 | (문장 없음) | 그네에 앉은 소녀와 얼굴이 가려진 남성 사진 | - |
+| 01:20 | **Amin** travelled / to **Pakistan** | 같은 사진 | 편집 |
+| 01:25 | where she was married / against her will, | 붉은 베일의 신부 옆모습 | 편집 |
+| 01:28 | in a **Nikah** ceremony, / a traditional / Islamic marriage. | 같은 사진 | 편집 |
+| 01:33 | She then **came back** / to the U.S. while her / **new husband** / remained in Pakistan. | 신부 사진 (Footage: @nailaaminfoundation) | 편집 |
+| 01:35 | My parents brought / me back here, / because up until 2017, / the age to get married / with parental permission / was 14 in New York. / ... / and started college in Baldwin / High School down the block, / they noticed I was talking / to boys and, you know, / becoming westernized. / They applied for / my husband to come here. / And then my parents / found out about a boy / and I was beaten. / I spent some time / in foster care. / I ran away from the / foster care system, / ... / and was kind of lured into / the child marriage trap. | 뒤뜰 인터뷰(클로즈업) | 인용 |
+| 02:10 | At **15**, | 노란 옷의 여성들 사진(얼굴 흐림 처리) | 편집 |
+| 02:15 | Amin was sent back / to **Pakistan** | 같은 사진 | 편집 |
+| 02:18 | where she says / she was repeatedly / **beaten** and **raped**. | 베일을 쓴 신부 정면 사진 | 편집 |
+| 02:23 | Amin was able to **flee**. | 같은 사진 | 편집 |
+| 02:25 | She has been / pushing ever since | 팔짱 낀 현재의 Amin 초상 | 편집 |
+| 02:30 | to **end child marriage** / in the **U.S.** | 같은 초상 | 편집 |
+| 02:33 | After she helped **New** / **Jersey** change its child / marriage laws in **2018**, | 웨딩드레스 차림으로 "I AM AN AMERICAN CHILDMARRIAGE SURVIVOR" 피켓을 든 Amin | 편집 |
+| 02:38 | in **August 2021**, / New York raised the age / of legal consent to **18** | 서명된 뉴욕주 문서 | 편집 |
+| 02:40 | with **Naila's law**, / named after her. | 문서를 든 Amin, 문서를 가리키는 노란 화살표 | 편집 |
+| 02:45 | I don't know how many / senators there were, / but I emailed / every one of them. / ... / after he got the / bill on his desk, / Naila's law, after / it was unanimously passed, / it was sitting on his desk / for about four weeks. / He finally signed it. | 뒤뜰 인터뷰 | 인용 |
+| 03:00 | **44 states** in the U.S. / still **allow** some form / of child marriage. | 반지 낀 손 클로즈업 | 편집 |
+| 03:03 | A dozen states / have **no minimum age**. | "STOP CHILD MARRIAGE IN THE US!" 표지를 단 웨딩드레스 | 편집 |
+| 03:08 | Nearly **[?]0,000** / **children** were married / in the U.S. between / **2000** and **2018**. (수치 앞자리는 표지에 가려 판독 불가) | 웨딩드레스를 입고 구호를 외치는 시위대 | 편집 |
+| 03:08 | Source: Unchained at last | 우상단 출처 | 표기 |
+| 03:13 | not just the Jewish women. / It's every woman in America. / This is an / American problem. (앞의 "It's not just the Muslim women"은 음성에만 확인) | 인터뷰, 서류를 넘기는 손 | 인용 |
+| 03:20 | Amin is also working / to raise the **spousal** / **sponsorship** age to **18**. | 그녀가 표지에 실린 신문 | 편집 |
+| 03:23 | We're also working / on a federal bill / to raise / the sponsorship age / for spouses to 18, / because in order / to sponsor a parent, / you have to be 21. / But to get a spouse, / they go by the state. / So if you are in West Virginia, / who has no age / limit, you can be 8 / and he can be 60. | 신문 표지에서 인터뷰로 | 인용 |
+| 03:45 | and I'm starting / to pick them up slowly, / and I have to cut / my heart open / for every little girl out there. / ... / that if I can do / it, you can do it. (앞의 "I'm in pieces", 뒤의 "so we have to stay strong"은 음성에만 확인) | 눈물을 글썽이는 클로즈업, 얼굴을 감싸는 손 | 인용 |
+| 04:00 | Journalist Rebecca Suner / Video Editor Esteban Aburto / www.brut.media | 창가의 Amin 초상 위 크레딧 | 제목 |
+
+## 구조 메모
+
+- 로그라인(이 영상이 하는 말 한 문장): 여덟 살에 약혼당하고 열다섯에 강제로 결혼한 여성이, 자기 이름이 붙은 법으로 미국의 아동 결혼을 막고 있다.
+- 훅(첫 15~30초가 하는 일): 설명 없이 당사자의 가장 충격적인 두 마디("I was 8, on this trip I was engaged." / "Fifteen, because we had to ... sleep with each other.")를 사진을 뒤적이는 손과 함께 먼저 던진다. 누구인지 모른 채 13초를 본 뒤에야 편집 문장 3장이 이름, 과거("was once a child forced to marry"), 현재("Today, this survivor is fighting")를 한 문장씩 정리한다. 과거와 현재를 훅에서 미리 묶어 "피해자 이야기"가 아니라 "싸우는 사람 이야기"로 틀을 잡는다.
+- 비트 구성
+	- 00:00-00:13 콜드 오픈: 당사자 발언 두 토막
+	- 00:13-00:27 편집 문장으로 인물 규정(과거, 현재, 목표)
+	- 00:27-01:18 8세 약혼: 편집 문장이 사실(나이, 상대, 나이 차)을 주고, 발언이 그때의 무지와 체념을 말한다
+	- 01:18-02:10 파키스탄에서의 결혼, 귀국, 부모의 압박: 편집 문장 4장 후 긴 발언(약 35초)
+	- 02:10-02:25 15세 재송환, 폭력, 탈출: 편집 문장만으로 빠르게 처리
+	- 02:25-03:00 활동과 성과: 뉴저지 2018, 뉴욕 2021 "Naila's law", 발언으로 과정의 세부
+	- 03:00-03:20 문제의 규모: 수치 3장(44개 주, 12개 주, 아동 수)과 "American problem" 발언
+	- 03:20-03:45 다음 과제: 연방 법안, 발언이 논리를 설명("you can be 8 and he can be 60")
+	- 03:45-04:03 감정의 마무리 발언, 크레딧
+- 전환점(시청자의 해석이 바뀌는 지점과 그것을 일으킨 장치)
+	- 02:23-02:30 "Amin was able to flee. / She has been pushing ever since / to end child marriage in the U.S.": 피해 서사가 행동 서사로 바뀐다. 가장 짧은 문장 카드(5단어)와 과거 사진에서 현재 초상으로 넘어가는 컷이 함께 일한다.
+	- 03:00 "44 states in the U.S. still allow some form of child marriage.": 한 사람의 이야기가 제도의 문제로 넓어진다. 수치 카드 3장이 연달아 나오고, 그 뒤 발언 "This is an American problem"이 받는다.
+- 결말(마지막 2~3개 카드와 그 기능): 편집 문장의 마지막 카드는 03:20의 "Amin is also working to raise the spousal sponsorship age to 18."(남은 과제)이고, 그 뒤 40초는 편집 문장 없이 당사자 발언으로만 간다. 영상의 마지막 말은 당사자의 호소("if I can do it, you can do it")다. 결말의 정서는 인용에 넘기고 편집자는 물러난다.
+- 문장 작법
+	- 편집 문장: 카드당 1~4줄, 3인칭 과거 평서문. 첫 등장만 풀네임, 이후 "Amin"과 "she". 나이 표지를 독립 카드로 세운다("At 8 years old," / "At 15,").
+	- 가장 무거운 사실은 편집 문장이 3인칭으로 건조하게 말하고, 검증할 수 없는 부분에는 출처 표지를 붙인다("where she says she was repeatedly beaten and raped").
+	- 낯선 용어는 동격으로 바로 푼다("in a Nikah ceremony, a traditional Islamic marriage").
+	- 수치: 8, 13 years, 15, 2018, August 2021, 18, 44 states, a dozen, 2000-2018. 통계에는 출처 표기.
+	- 인용 자막: 하단 중앙 작은 흰 글씨 2줄. 말버릇(uh, like, you know)을 지우지 않고 그대로 적는다. 질문자의 말에는 대시(–)로 화자가 바뀜을 표시한다.
+	- 강조: 편집 문장의 단어 색(빨강은 폭력·금지, 노랑은 고유명사, 민트는 목표).
+- 화면과 문장의 분업
+	- 편집 문장이 맡는 것: 뼈대(언제, 몇 살에, 어디서, 무슨 일이, 그래서 지금 무엇을). 발언이 맡는 것: 그때의 속마음, 과정의 세부, 주장.
+	- 편집 문장은 대부분 사진 위에 얹히고, 발언은 인터뷰 얼굴 위에 얹힌다. 화면만 봐도 지금이 "설명"인지 "증언"인지 구분된다.
+	- 사진이 증거 역할을 한다: 혼례복을 입은 굳은 표정의 소녀 사진이 훅, 약혼, 재송환 구간에 반복해서 돌아온다.
+	- 장면만 흐르는 구간은 거의 없다(01:18의 사진 한 컷 정도). 발언이 빈틈없이 이어진다.
+- 수량(대략): 편집 문장 카드 약 23장(문장으로는 14개), 카드당 평균 영문 30자 안팎, 카드 평균 노출 약 3초, 편집 문장 전체 약 150단어. 편집 문장이 화면에 있는 시간은 합쳐서 약 70초(전체의 약 30%), 나머지는 발언 자막이다. 발언은 약 460단어.

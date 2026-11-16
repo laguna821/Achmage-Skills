@@ -1,0 +1,263 @@
+{
+ "K04_koreanheritage": {
+  "n": 65,
+  "none": 22,
+  "asrOnly": 18,
+  "manual": 25,
+  "miss": 0,
+  "lowSpeech": 22,
+  "pctNone": 34
+ },
+ "K05_krihs": {
+  "n": 62,
+  "none": 7,
+  "asrOnly": 52,
+  "manual": 3,
+  "miss": 0,
+  "lowSpeech": 3,
+  "pctNone": 11
+ },
+ "K06_videomug": {
+  "n": 65,
+  "none": 13,
+  "asrOnly": 47,
+  "manual": 5,
+  "miss": 0,
+  "lowSpeech": 0,
+  "pctNone": 20
+ },
+ "K07_mbig": {
+  "n": 65,
+  "none": 22,
+  "asrOnly": 41,
+  "manual": 2,
+  "miss": 0,
+  "lowSpeech": 4,
+  "pctNone": 34
+ },
+ "K08_subusu": {
+  "n": 65,
+  "none": 12,
+  "asrOnly": 36,
+  "manual": 17,
+  "miss": 0,
+  "lowSpeech": 3,
+  "pctNone": 18
+ },
+ "K10_14F": {
+  "n": 65,
+  "none": 4,
+  "asrOnly": 60,
+  "manual": 1,
+  "miss": 0,
+  "lowSpeech": 4,
+  "pctNone": 6
+ },
+ "E01_ajplus": {
+  "n": 65,
+  "none": 7,
+  "asrOnly": 40,
+  "manual": 18,
+  "miss": 0,
+  "lowSpeech": 3,
+  "pctNone": 11
+ },
+ "E02_nowthis": {
+  "n": 65,
+  "none": 6,
+  "asrOnly": 59,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 5,
+  "pctNone": 9
+ },
+ "E03_brut": {
+  "n": 63,
+  "none": 2,
+  "asrOnly": 61,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 1,
+  "pctNone": 3
+ },
+ "E04_dodo": {
+  "n": 65,
+  "none": 15,
+  "asrOnly": 49,
+  "manual": 1,
+  "miss": 0,
+  "lowSpeech": 15,
+  "pctNone": 23
+ },
+ "E05_quicktake": {
+  "n": 65,
+  "none": 12,
+  "asrOnly": 53,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 5,
+  "pctNone": 18
+ },
+ "E06_quartz": {
+  "n": 64,
+  "none": 11,
+  "asrOnly": 48,
+  "manual": 5,
+  "miss": 0,
+  "lowSpeech": 4,
+  "pctNone": 17
+ },
+ "E12_techinsider": {
+  "n": 65,
+  "none": 12,
+  "asrOnly": 36,
+  "manual": 17,
+  "miss": 0,
+  "lowSpeech": 14,
+  "pctNone": 18
+ },
+ "E13_bbcideas": {
+  "n": 65,
+  "none": 2,
+  "asrOnly": 1,
+  "manual": 62,
+  "miss": 0,
+  "lowSpeech": 0,
+  "pctNone": 3
+ },
+ "E15_gbs": {
+  "n": 64,
+  "none": 2,
+  "asrOnly": 17,
+  "manual": 45,
+  "miss": 0,
+  "lowSpeech": 4,
+  "pctNone": 3
+ },
+ "E16_vox": {
+  "n": 65,
+  "none": 0,
+  "asrOnly": 19,
+  "manual": 46,
+  "miss": 0,
+  "lowSpeech": 6,
+  "pctNone": 0
+ },
+ "K09_creal": {
+  "n": 25,
+  "none": 1,
+  "asrOnly": 23,
+  "manual": 1,
+  "miss": 0,
+  "lowSpeech": 0,
+  "pctNone": 4
+ },
+ "E10_wef": {
+  "n": 65,
+  "none": 8,
+  "asrOnly": 55,
+  "manual": 2,
+  "miss": 0,
+  "lowSpeech": 1,
+  "pctNone": 12
+ },
+ "E11_scmp": {
+  "n": 65,
+  "none": 16,
+  "asrOnly": 49,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 7,
+  "pctNone": 25
+ },
+ "E14_bbcreel": {
+  "n": 65,
+  "none": 2,
+  "asrOnly": 40,
+  "manual": 23,
+  "miss": 0,
+  "lowSpeech": 6,
+  "pctNone": 3
+ },
+ "E17_nocomment": {
+  "n": 57,
+  "none": 43,
+  "asrOnly": 14,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 7,
+  "pctNone": 75
+ },
+ "K02_history": {
+  "n": 40,
+  "none": 27,
+  "asrOnly": 13,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 10,
+  "pctNone": 68
+ },
+ "K01_classic": {
+  "n": 40,
+  "none": 22,
+  "asrOnly": 18,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 6,
+  "pctNone": 55
+ },
+ "K03_5min": {
+  "n": 45,
+  "none": 45,
+  "asrOnly": 0,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 0,
+  "pctNone": 100
+ },
+ "K04_image": {
+  "n": 40,
+  "none": 24,
+  "asrOnly": 11,
+  "manual": 5,
+  "miss": 0,
+  "lowSpeech": 4,
+  "pctNone": 60
+ },
+ "K05_kukto": {
+  "n": 36,
+  "none": 10,
+  "asrOnly": 26,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 5,
+  "pctNone": 28
+ },
+ "E07_light": {
+  "n": 38,
+  "none": 0,
+  "asrOnly": 0,
+  "manual": 38,
+  "miss": 0,
+  "lowSpeech": 0,
+  "pctNone": 0
+ },
+ "E08_light": {
+  "n": 11,
+  "none": 0,
+  "asrOnly": 0,
+  "manual": 11,
+  "miss": 0,
+  "lowSpeech": 2,
+  "pctNone": 0
+ },
+ "K01_jisike": {
+  "n": 48,
+  "none": 19,
+  "asrOnly": 29,
+  "manual": 0,
+  "miss": 0,
+  "lowSpeech": 11,
+  "pctNone": 40
+ }
+}

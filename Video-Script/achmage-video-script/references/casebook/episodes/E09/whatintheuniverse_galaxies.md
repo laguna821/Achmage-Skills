@@ -1,23 +1,23 @@
 # What in the Universe: Galaxies
 
-- 채널/시리즈: ViewSpace (Space Telescope Science Institute, Office of Public Outreach) / What in the…
+- 채널/시리즈: ViewSpace (Space Telescope Science Institute, Office of Public Outreach) / What in the Universe
 - URL: https://viewspace.org/video_library/videos/1151-545522962?tags=5
 - 길이: 가져온 페이지 사본에 표기 없음 (확인하지 못함)
 - 게시일 / 조회수: 가져온 페이지 사본에 표기 없음 / 조회수 표기 없음
 - 음성 유형: 무내레이션(음악만). 근거: 공식 페이지 전사의 (SPEECH) 칸에 "[DOWNBEAT MUSIC]"만 있고, 화면 글자는 전부 (DESCRIPTION) 칸에 "Text, ..."로 적혀 있다.
 - 자료: 콘택트시트와 자막 트랙 없음. 공식 페이지의 접근성용 전사(Transcript)만 사용. 원 사이트는 인증서 만료 오류로 열리지 않아 웹 아카이브 사본(2022-06-07 수집)으로 읽었다. 전사는 화면 설명문이라 시각, 줄바꿈, 대소문자, 강조 방식은 알 수 없다.
 - 제작 표기(페이지 Credits): Written by Claire Blome / Designed by Dani Player / Editorial and design input from Margaret W. Carruthers, Dr. Quyen Hart, Leah Ramsay, and Timothy Rhue II / Music courtesy of Music for Non-Profits. 사진: Hubble Ultra…)
-- 페이지 소개문: "What are the… in this space telescope image?"
+- 페이지 소개문: "What are the multicolored objects in this space telescope image?"
 
 ## 화면 문장의 뼈대
 
-원문은 싣지 않았다. 카드마다 자리, 구분, 줄 수, 분량, 끝맺음만 남겼다. `끝`의 `열림`은 문장이 그 카드에서 끝나지 않고 다음 카드로 넘어간다는 뜻이고, 표의 수치는 기록에서 자동으로 센 것이다. 원문은 위 주소의 영상에서 확인한다.
+이 표에는 원문이 없다. 카드마다 자리, 구분, 줄 수, 분량, 끝맺음만 남겼다. `끝`의 `열림`은 문장이 그 카드에서 끝나지 않고 다음 카드로 넘어간다는 뜻이고, 표의 수치는 기록에서 자동으로 센 것이다. 같은 표의 원문은 `corpus/화면문장_로그/E09_viewspace/whatintheuniverse_galaxies.md`에 있다.
 
 문장이 있는 카드 9장(편집 7, 제목 1, 표기 1), 무문장 구간 2곳. 편집 문장은 카드당 평균 15단어, 열린 채 끝나는 카드 0%.
 
 | 순서 | 구분 | 줄 | 단어 | 끝 | 수치 | 장면 |
 |---|---|---|---|---|---|---|
-| 1 | 제목 | 1 | 4 | 열림 |  | Red square against starry sky. Icons, star, galaxy, constellation, asteroid, solar system. |
+| 1 | 제목 | 1 | 4 | 열림 |  | Red square…. |
 | 2 | 무문장 | | | | | Image, space with countless colorful disks and points. |
 | 3 | 편집 | 1 | 5 | 종결 |  | 같은 사진 |
 | 4 | 편집 | 1 | 9 | 종결 |  | 사지선다 보기 |

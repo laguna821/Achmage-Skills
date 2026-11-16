@@ -19,7 +19,7 @@
 	- 00:31 반전: "... but conceals M77's turbulent nature." (6단어)
 	- 00:37 분류: "M77 is one of the closest active galaxies." (8단어)
 	- 00:44 개념 설명: "Active galaxies are some of the most energetic and spectacular objects in the Universe." (제목 회수)
-	- 00:52 원인: "They are powered by a… that radiates energy as it feeds on surrounding materi…."
+	- 00:52 원인: "They are powered by a supermassive black hole that radiates energy as it feeds on surrounding materi…."
 	- 01:01 맺음: "So there is far more to M77 than meets the eye..."
 	- 01:01 이후 약 20초는 자막이 없다(사진 감상 또는 엔딩 구간으로 추정, 미확인). 01:21 전사 표기.
 - 전환점: 00:31 "but conceals". 말줄임표로 문장을 끊어 앞 카드(reveals)와 뒤 카드(conceals)를 맞세운다. 장치는 대조 동사 한 쌍이다.

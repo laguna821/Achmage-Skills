@@ -1,0 +1,36 @@
+# Meet The Man Who Beat 'Pac-Man'
+
+- 채널/시리즈: Great Big Story
+- URL: https://www.youtube.com/watch?v=IoVvgSwPDYk
+- 길이: 2분 35초
+- 게시일 / 조회수: 2016-07-21 / 39,031,062
+- 음성 유형: 인터뷰 중심(당사자 1인칭 음성이 내레이션을 대신함). 제작자 자막(manual, en) 405단어 전부가 한 사람(Billy Mitchell)의 말이다. 자막 첫머리에 "[Voiceover]" 표시가 있어 본인 음성을 화면 밖 소리로 깔았음을 알 수 있다. 제3의 내레이터는 없다.
+- 자료: 자막 트랙만 있음(manual/en, 405단어). 콘택트시트 없음. 화면 구성과 화면 문장은 확인하지 못했다.
+
+## 대본 구조 메모
+
+- 로그라인(이 영상이 하는 말 한 문장): 팩맨에서 세계 최초로 만점을 낸 남자가, 만점이란 무엇이고 그 끝에 무엇이 있었는지를 직접 설명한다.
+- 훅(첫 15~30초가 하는 일): 소리로 연다. 동전 떨어지는 소리와 게임 음악(00:00-00:07) 뒤에 세 문장이 연달아 나온다. "I'm Billy Mitchell, video game player of the century. / I did the world's first perfect score on Pac-Man. / 3,333,360."(00:08-00:16). 이름, 칭호, 업적, 수치가 9초 안에 끝나고, "Ooh, it's exhausting to just say it."라는 농담이 뒤따른다. 영상의 결론을 처음에 다 말한다.
+- 비트 구성:
+	- 00:00-00:07 소리 콜드 오픈(동전, 게임 음악)
+	- 00:08-00:19 정체, 업적, 점수
+	- 00:20-00:43 경로와 호언: 핀볼 → Donkey Kong → Pac-Man / 1999년 보도 자료 / "'Cause I'm Billy Mitchell."
+	- 00:46-01:24 만점의 조건(2인칭 설명): 21판에서 최고 난도 → 255판까지 → 하나도 놓치면 안 됨 → 4~5시간 → 60분의 1초 단위의 코너링 → 29,000번 이상
+	- 01:25-01:40 256판의 비밀: 메모리가 왼쪽 절반치만 남는다 → "That's what a perfect score is."
+	- 01:42-01:54 달성의 순간과 허무: "Wow, I achieved perfection." → "There's nothing to do but die." → 축하도 끝 화면도 없음 → "Nothin'."
+	- 01:55-02:09 설계자도 끝을 몰랐다
+	- 02:10-02:20 공인: Masaya Nakamura가 "Video Game Player of the Century"로 임명 → "It doesn't get any higher than that."
+	- 02:23-02:35 음악
+- 전환점(시청자의 해석이 바뀌는 지점과 그것을 일으킨 장치): 01:48-01:54. 완벽에 도달한 순간의 보상이 "죽는 것밖에 할 일이 없다"로 뒤집힌다. 장치는 부정문의 반복과 축소다("There was nothing saying 'Congratulations.' / There was nothing saying 'The End, Game Over.' / Nothin'."). 문장이 점점 짧아져 한 단어로 끝난다. 이어 01:55에 설계자조차 끝이 어디인지 몰랐다는 사실이 붙어, 업적의 뜻이 "높은 점수"에서 "만든 사람도 못 본 곳에 간 것"으로 바뀐다.
+- 결말(마지막 2~3개 문장과 그 기능): "Masaya Nakamura, who's the Godfather of video games, he crowned me 'Video Game Player of the Century' for that and all the previous achievements." → "It doesn't get any higher than that." 처음 자기소개에 쓴 칭호(00:09)가 어디서 왔는지를 끝에서 밝히는 수미상관이다. 처음에는 자칭처럼 들리던 말이 끝에서 타인의 인정으로 바뀐다. 마지막 문장은 최상급 단정이다.
+- 당사자 발화가 내레이션을 대신하는 방식:
+	- 자기소개가 곧 주제문이다: 이름 + 칭호 + 업적 + 수치.
+	- 규칙 설명을 you로 한다: "You start off on the first board", "You can't miss a dot, a prize, a blue man. / You can't die once. / You can't lose focus." 해설자가 3인칭으로 설명할 내용을 당사자가 2인칭 명령형에 가깝게 말해 시청자를 게임기 앞에 앉힌다.
+	- 수치를 당사자가 줄줄이 말한다: 3,333,360 / ten billion games / board 21 / board 255 / four-to-five hours / 60분의 1초 / over 29,000 times / 256. 숫자의 나열 자체가 난도의 증거이자 인물의 성격(집요함)을 드러낸다.
+	- 남의 말을 따옴표로 옮겨 맞세운다: They said, "There's been ten billion games played, How are you gonna do it?" / I said, "'Cause I'm Billy Mitchell."
+	- 지시어로 화면을 가리킨다: "And keep your eye right here. / Right here." 음성이 화면의 특정 지점을 짚는다(화면 미확인).
+	- 감정은 한 번만, 인용 형태로: I thought, "Wow, I achieved perfection."
+- 문장 작법: 문장 평균 약 11단어. 짧은 단정문의 연타가 특징이다. 반복 구문(You can't ... 3회, There was nothing saying ... 2회, He didn't know ... 2회). 호언(cocky)과 자기 농담이 섞인 말투가 다듬어지지 않고 남아 있다.
+- 화면과 말의 분업: 화면은 확인하지 못했다. 자막의 효과음 표기(동전, 게임 효과음 2회, 음악 2회)가 말 사이의 틈에 놓여 있다.
+- 수량(대략): 405단어 / 약 135초(앞뒤 음악 제외), 분당 약 180단어.
+- 주의: 자막의 "down to 160th of a second"는 "60분의 1초(1/60th)"를 적은 것으로 읽었으나 확실하지 않다.

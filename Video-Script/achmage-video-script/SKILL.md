@@ -3,7 +3,7 @@ name: achmage-video-script
 description: "Write on-screen-text video scripts (화면 문장 대본) for motion graphics and YouTube videos that tell one complete story with captions and scenes, without a narrator, in the manner of EBS 지식채널e. The script is the main deliverable; each card also gets a matching scene suggestion. Use when the user asks for 영상 대본, 자막 대본, 화면 문장, 모션그래픽 대본, 지식채널e 스타일, 무내레이션 영상 구성, or wants a rough-cut sheet (가편집 시트) before production. Not for narration scripts read aloud, and not for rendering."
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "1.2.0"
   short-description: "내레이션 없이 화면 문장과 장면만으로 한 편을 완결하는 영상 대본, 장면 제안, 가편집 시트"
 ---
 
@@ -11,7 +11,7 @@ metadata:
 
 내레이터 없이 **화면 문장과 장면만으로** 한 편을 완결하는 영상의 대본을 쓴다. 이 스킬의 산출물은 대본이다. 장면은 대본에 맞춰 제안만 하고, 실제 제작은 `motion-art-director` 같은 제작 스킬에 넘긴다.
 
-근거는 27개 채널 159편의 화면 문장 분석이다(지식채널e, 역사채널e, 뉴스타파 5 Minutes, AJ+, NowThis, Brut, ESOcast Light 등). 규칙마다 어디서 나왔는지는 `references/`에 적혀 있다. 분석 자체도 함께 들어 있다: `references/casebook/`에 채널 분석 27편과 영상별 구조 159편이 있다.
+근거는 27개 채널 159편의 화면 문장 분석이다(지식채널e, 역사채널e, 뉴스타파 5 Minutes, AJ+, NowThis, Brut, ESOcast Light 등). 규칙마다 어디서 나왔는지는 `references/`에 적혀 있다. 조사 자료가 모두 함께 들어 있다: `references/casebook/`에 채널 분석 27편과 영상별 구조 159편, `corpus/`에 영상 159편의 화면 문장 원문 로그와 자막 전사 103건이 있다.
 
 ## 이 스킬이 푸는 문제
 
@@ -59,7 +59,7 @@ metadata:
 4. **되받을 것**: 마지막 한 줄이 되받을 낱말, 비유, 장면. 이것을 훅에 심는다.
 5. **감출 낱말**: 주제어, 개념어, 주인공 이름 가운데 제목 전까지 쓰지 않을 것(감춤형 훅일 때). 리드형 훅이면 첫 문장에 말할 결과(`meta.lead`). 그림 훅이면 이름 카드 전까지 쓰지 않을 개념의 이름.
 
-갈래를 고르면 `references/casebook/README.md`의 표에서 그 갈래의 채널 분석 1편을 읽는다. 처음 써 보는 갈래면 같은 채널의 영상별 구조도 1~2편 읽고, 비트의 시각과 카드의 호흡을 실제 영상에서 확인한다. 사례집에서는 구조와 호흡만 가져오고 문장은 가져오지 않는다.
+갈래를 고르면 `references/casebook/README.md`의 표에서 그 갈래의 채널 분석 1편을 읽는다. 처음 써 보는 갈래면 같은 채널의 영상별 구조도 1~2편 읽고, 비트의 시각과 카드의 호흡을 실제 영상에서 확인한다. 카드를 쓰기 전(6단계)에는 그 영상의 원문 로그(`corpus/화면문장_로그/<채널>/<영상ID>.md`)를 1~2편 열어, 한 문장이 카드 몇 장에 어떻게 나뉘고 앞 카드가 어디서 끊기는지를 실제 문장에서 본다. 사례집과 원자료에서는 구조와 호흡만 가져오고 문장은 가져오지 않는다.
 
 ### 4. 비트 시트
 
@@ -116,7 +116,7 @@ python scripts/build_sheet.py --scripts 대본.json --lint-only --verbose
 - 내레이션 원고를 쓰지 않는다. 읽어 줄 목소리가 있는 영상이면 이 스킬의 규격(카드당 35자)이 맞지 않는다고 알리고, 화면 문장 판으로 다시 짤지 묻지 말고 화면 문장 판을 제안한다.
 - 렌더링, 음악 제작, 이미지 생성을 하지 않는다. 장면은 글로만 제안한다.
 - 출처 없는 수치와 인용을 쓰지 않는다.
-- 실존 방송의 문장을 그대로 가져다 쓰지 않는다. 참조 문서의 예문과 사례집의 인용은 구조를 보여 주기 위한 것이다.
+- 실존 방송의 문장을 그대로 가져다 쓰지 않는다. 참조 문서의 예문, 사례집의 인용, 원자료의 로그는 구조를 보여 주기 위한 것이다.
 
 ## 참조 문서
 
@@ -130,4 +130,4 @@ python scripts/build_sheet.py --scripts 대본.json --lint-only --verbose
 | `references/06-대본-데이터-규격.md` | 8단계. JSON 필드 |
 | `references/07-사실-다루기.md` | 2단계. 출처, 어긋나는 자료, 계산한 수치, 인용 |
 | `references/casebook/README.md` | 3단계에서 갈래를 고른 뒤, 그리고 훅·결말·장면 분업이 서지 않을 때. 갈래별로 읽을 채널 분석과 영상별 구조를 안내한다. 전부 읽지 않는다 |
-| `corpus/README.md` (있을 때만) | 방송 원문 로그, 자막 전사, 화면 캡처를 담은 연구용 원자료. 저작권 때문에 공개 패키지에는 없다. 이 폴더가 있으면 사례집의 줄인 인용 대신 원문과 화면을 볼 수 있다 |
+| `corpus/README.md` | 6단계에서 카드를 쓰기 전에. 조사 원자료: 영상 159편의 화면 문장 원문 로그, 자막 전사 103건, 줄이지 않은 채널 분석과 보고서. 한 번에 로그 1~2편만 연다 |

@@ -1,6 +1,6 @@
 # The fence of Outer Mt. Seorak | KOREA
 
-- 채널/시리즈: 국가유산채널(K-Herita… Channel)
+- 채널/시리즈: 국가유산채널(K-Heritage Channel)
 - URL: https://www.youtube.com/watch?v=yPnpHbexBVI
 - 길이: 3분 51초
 - 게시일 / 조회수: 2014-08-03 / 1,598,255

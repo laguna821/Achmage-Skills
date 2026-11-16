@@ -4,10 +4,10 @@
 
 ## 📦 수록 스킬
 
-### [Video-Script/achmage-video-script](Video-Script): 내레이션 없는 화면 문장 영상 대본과 가편집 시트 (1.1.0)
+### [Video-Script/achmage-video-script](Video-Script): 내레이션 없는 화면 문장 영상 대본과 가편집 시트 (1.2.0)
 
-EBS 지식채널e처럼 화면 문장과 장면만으로 한 편을 완결하는 영상의 대본을 씁니다. 갈래 8개의 비트 시트, 한 문장을 여러 카드에 나누는 카드 규격, 카드마다 맞춘 장면 제안과 제작 인계 칸, 자동 검수 61항목, 실제 시간대로 재생되는 오프라인 가편집 시트, 규칙의 근거가 된 27개 채널 159편의 사례집을 포함합니다. 한국어와 영어 대본을 씁니다. 렌더는 하지 않고 [Motion Art Director](Video-Production/motion-art-director)에 넘깁니다. Python 표준 라이브러리만 씁니다.
-→ [설치·사용 안내](Video-Script/README.md) · [설치 ZIP](Video-Script/downloads/achmage-video-script-1.1.0.zip) · [예제 영상 두 편](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/) · [검증 범위](Video-Script/VALIDATION.md)
+EBS 지식채널e처럼 화면 문장과 장면만으로 한 편을 완결하는 영상의 대본을 씁니다. 갈래 8개의 비트 시트, 한 문장을 여러 카드에 나누는 카드 규격, 카드마다 맞춘 장면 제안과 제작 인계 칸, 자동 검수 61항목, 실제 시간대로 재생되는 오프라인 가편집 시트, 규칙의 근거가 된 27개 채널 159편의 사례집과 조사 원자료(화면 문장 원문 로그, 자막 전사)를 포함합니다. 한국어와 영어 대본을 씁니다. 렌더는 하지 않고 [Motion Art Director](Video-Production/motion-art-director)에 넘깁니다. Python 표준 라이브러리만 씁니다.
+→ [설치·사용 안내](Video-Script/README.md) · [설치 ZIP](Video-Script/downloads/achmage-video-script-1.2.0.zip) · [예제 영상 두 편](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/) · [검증 범위](Video-Script/VALIDATION.md)
 
 [<img src="Video-Script/examples/norman-door/poster.jpg" width="49%" alt="노먼 도어 90초">](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/#norman-door) [<img src="Video-Script/examples/espresso/poster.jpg" width="49%" alt="Espresso 150초">](https://laguna821.github.io/Achmage-Skills/Video-Script/examples/#espresso)
 

@@ -1,0 +1,15 @@
+# ESOcast 212 Light: First Giant Planet around White Dwarf Found
+# https://www.youtube.com/watch?v=5hEbWWdZayY
+# duration 82s | caption track: en (manual) | tracks: de/manual, ru/manual, ro/manual, vi/manual, bg/manual, es/manual, sk/manual, sl/manual, ar/manual, en/manual, it/manual, id/manual, zh/manual, zh-CN/manual, zh-Hant/manual, cs/manual, tr/manual, pt/manual, pl/manual
+
+[00:08] First Giant Planet around White Dwarf Found
+[00:13] ESO’s Very Large Telescope has found evidence of a giant planet around a white dwarf star.
+[00:21] Astronomers had surveyed around 7000 white dwarfs and found one unlike any other, with chemical elements in amounts never before seen at a white dwarf.
+[00:32] Detailed observations with the X-shooter instrument on the VLT confirmed the presence of hydrogen, oxygen and sulphur...
+[00:40] ...and found that these elements were in a disc of gas swirling into the white dwarf.
+[00:46] These clues point to the existence of a Neptune-like exoplanet orbiting the white dwarf.
+[00:53] The radiation from the hot white dwarf evaporates the planet’s atmosphere, forming the disc of gas.
+[01:02] This unique system hints at what our own Solar System might look like in the distant future.
+[01:10] bite-sized astronomy
+[01:11] Reaching new heights in Astronomy. Produced by ESO, the European Southern Observatory.
+[01:17] Transcription by ESO; translation by —

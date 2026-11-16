@@ -1,6 +1,6 @@
 # 땅이 건네는 위로, 물이 품어준 염원 - 수륙재 (SUB)
 
-- 채널/시리즈: 국가유산채널(K-Herita… Channel) / "국가유산순례…"
+- 채널/시리즈: 국가유산채널(K-Heritage Channel) / "국가유산순례…"
 - URL: https://www.youtube.com/watch?v=wQLcAv7JdTE
 - 길이: 4분 38초
 - 게시일 / 조회수: 2025-06-15 / 1,675,285

@@ -1,0 +1,63 @@
+# Danica Roem Is Making History
+
+- 채널/시리즈: Bloomberg Quicktake의 전신 "@tictoc by Bloomberg" (현 채널명 Bloomberg News) / "Profile" 인물 소개 코너
+- URL: https://www.youtube.com/watch?v=2fLsVK4na8A
+- 길이: 1분 54초
+- 게시일 / 조회수: 2018-03-08 / 172
+- 음성 유형: 무내레이션 + 발언으로 추정. 근거: 유튜브 자막 트랙이 없다(`captionTracks` 빈 배열). 도입과 결말에만 인물의 발언 자막이 있고, 나머지는 편집 문장 자막이 장면 위에 계속 깔린다. 편집 문장을 읽는 목소리가 있는지는 소리를 직접 확인하지 못했다.
+- 자료: 콘택트시트 5장 (표본 간격 2초), 자막 트랙 없음
+
+## 화면 문장 로그
+
+| 시각 | 화면 문장 (원문) | 장면 | 구분 |
+|---|---|---|---|
+| 00:00 | I am a transgender woman. / We won because I am a transgender woman. | 지지자들 사이에서 말하는 Roem(야간 현장) | 인용 |
+| 00:04 | Profile / Danica Roem / Member of the Virginia House / of Delegates | 민트색 바탕, 흑백 인물 컷아웃 | 제목 |
+| 00:08 | (문장 없음) | 선거 사무실에서 말하는 Roem | - |
+| 00:10 | **ONLY** openly / transgender person / in the U.S. / State Legislature | 같은 장면을 어둡게 깔고 화면 가득 큰 글씨 | 편집 |
+| 00:16 | Roem made history by becoming the / first openly transgender person in U.S. State / Legislature | 주 의회 본회의장, 취임 선서하는 의원들 | 편집 |
+| 00:24 | She previously worked as a local journalist, / and went on to win several awards | 선거 사무실, 무지개 두건을 쓴 Roem | 편집 |
+| 00:32 | from the Virginia Press Association | 집 앞에서 유세 자료를 든 Roem | 편집 |
+| 00:36 | She won the Virginia general / election on November 7, 2017 | 옷깃에 배지를 다는 손, 의석에 앉은 Roem | 편집 |
+| 00:44 | defeating an / incumbent Virginia lawmaker | 인터뷰하는 노년 남성(상대 후보로 보임) | 편집 |
+| 00:50 | who would have restricted / which bathroom she could use | 화장실 표지판 | 편집 |
+| 00:56 | Since her election, Roem has / introduced several pieces of legislation | 전화 통화하는 Roem | 편집 |
+| 01:02 | she added sexual orientation and gender / identity to nondiscrimination policy in schools | 투표소의 유권자들 | 편집 |
+| 01:08 | Women like Roem have set the pace / for November's midterm elections in the U.S. | 통화하는 Roem 클로즈업, 사무실 전경 | 편집 |
+| 01:14 | Women are running for / office in record numbers | 당선 축하 현장의 인파와 카메라 조명 | 편집 |
+| 01:20 | Nearly 500 women are / likely to run for congress | 포옹하는 사람들 | 편집 |
+| 01:26 | 200 more may put in / bids for statewide office | 주 의회 본회의장 | 편집 |
+| 01:32 | Like many before, / and more to come, | 박수 치는 의원들 | 편집 |
+| 01:36 | Roem has inspired women / to keep looking for solutions | Roem 얼굴 클로즈업, 축하받는 모습 | 편집 |
+| 01:44 | And in the words of St. Francis de Sales, / be who you are, and be that well, | 의회에서 포옹하는 Roem | 인용 |
+| 01:48 | and be you better / than anyone else ever could. | 도입부와 같은 야간 현장의 Roem | 인용 |
+| 01:52 | @tictoc | 검은 배경 엔딩 카드 | 제목 |
+
+## 구조 메모
+
+- 로그라인(이 영상이 하는 말 한 문장): 미국 주 의회의 첫 공개 트랜스젠더 의원 Danica Roem은, 기록적으로 많은 여성이 출마하는 흐름의 앞자리에 있다.
+- 훅(첫 15~30초가 하는 일): 당사자의 단언 두 문장("I am a transgender woman. / We won because I am a transgender woman.")으로 4초 만에 연다. 곧바로 코너 타이틀 카드(Profile, 이름, 직함)가 "누구인가"를 답하고, 화면을 가득 채운 큰 글씨 카드가 "왜 지금 이 사람인가"를 한 단어로 답한다(**ONLY**).
+- 비트 구성
+	- 00:00-00:04 콜드 오픈 인용
+	- 00:04-00:08 코너 타이틀 카드(이름, 직함)
+	- 00:08-00:16 핵심 사실을 큰 글씨로(ONLY)
+	- 00:16-00:24 같은 사실을 문장으로 다시(made history, first)
+	- 00:24-00:36 이력(기자, 수상)
+	- 00:36-00:56 당선: 날짜, 상대, 상대의 입장(화장실 법안)
+	- 00:56-01:08 당선 후 한 일(입법)
+	- 01:08-01:32 넓히기: 여성 출마 흐름과 수치(500, 200)
+	- 01:32-01:44 의미 정리
+	- 01:44-01:54 인용으로 마무리, 엔딩 카드
+- 전환점(시청자의 해석이 바뀌는 지점과 그것을 일으킨 장치): 01:08 "Women like Roem have set the pace for November's midterm elections in the U.S." 한 사람의 프로필이 선거 흐름 기사로 넓어진다. 주어가 Roem/She에서 "Women like Roem", "Women"으로 바뀌고 바로 수치 두 개가 따른다.
+- 결말(마지막 2~3개 카드와 그 기능): "Like many before, and more to come, / Roem has inspired women to keep looking for solutions" 뒤에 본인 발언 인용("be who you are, and be that well, / and be you better than anyone else ever could.")으로 닫는다. 첫 장면과 같은 야간 현장으로 돌아가는 수미상관이며, 영상의 처음과 끝을 당사자의 목소리가 맡는다.
+- 문장 작법
+	- 편집 문장은 화면 하단 중앙 2줄 자막 형태, 굵은 기울임체. 한 카드에 한 절(7~12단어). 카드 하나가 6~8초씩 머문다. 마침표를 찍지 않는다.
+	- 한 문장을 2~3카드에 걸쳐 분사구와 관계절로 잇는다("She won ... / defeating an incumbent ... / who would have restricted ...").
+	- 수치와 날짜: November 7, 2017 / Nearly 500 women / 200 more / record numbers. 수치를 어림수로 쓰고 "nearly", "likely", "may"로 확실성의 정도를 문장 안에 표시한다.
+	- 가장 중요한 한 단어는 자막이 아니라 화면 전체 타이포로 따로 뺀다(ONLY). 색 강조는 이 카드와 타이틀에만 있다.
+	- 인용 자막은 같은 위치지만 곧은 일반 서체, 마침표와 쉼표가 있다. 서체로 편집과 인용을 구분한다.
+- 화면과 문장의 분업
+	- 문장이 맡는 것: 이력, 날짜, 상대의 입장, 수치, 일반화. 장면이 맡는 것: 선서, 배지, 축하 인파 같은 "역사적 순간"의 증거.
+	- 문장과 장면을 일대일로 맞춘다: "bathroom" 문장에 화장실 표지판, "defeating an incumbent"에 상대 후보 얼굴, "statewide office"에 의회 전경.
+	- 문장 없는 구간은 00:08의 2초뿐이다. 자막이 끊기지 않고 이어진다.
+- 수량(대략): 편집 문장 카드 14장(문장으로는 약 8개), 카드당 평균 영문 55자 안팎(9~10단어), 카드 평균 노출 약 6초, 편집 문장 전체 약 130단어. 인용 2회(약 8초와 약 8초).

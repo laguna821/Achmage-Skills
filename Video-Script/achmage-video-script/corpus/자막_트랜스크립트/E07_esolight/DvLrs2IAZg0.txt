@@ -1,0 +1,13 @@
+# ESOcast 191 Light : 찰나의 시간
+# https://www.youtube.com/watch?v=DvLrs2IAZg0
+# duration 87s | caption track: en (manual) | tracks: de/manual, ru/manual, ro/manual, mk/manual, vi/manual, ar/manual, en/manual, it/manual, cs/manual, pt/manual, pt-BR/manual, pl/manual, ko/manual
+
+[00:07] A Fleeting Moment in Time
+[00:12] ESO's Very Large Telescope has captured the last breath of a dying star.
+[00:22] The ghostly shell of the planetary nebula ESO 577-24 surrounds the simmering remains of a red giant star...
+[00:31] ...living out its twilight years as a small but dense dwarf star
+[00:39] Once it began to exhaust its hydrogen reserves, the vast red giant contracted...
+[00:47] ...causing its core to reignite under the immense pressure and eject its outer layers into the void.
+[00:56] Intense radiation from the core ionised these ejected layers, making them glow.
+[01:05] As this evanescent shell expands, it will grow dimmer, slowly becoming invisible.
+[01:22] Transcribed by ESO; Translated by —

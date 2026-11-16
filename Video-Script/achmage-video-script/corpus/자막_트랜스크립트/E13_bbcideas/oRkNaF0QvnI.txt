@@ -1,0 +1,54 @@
+# Why algorithms are called algorithms | BBC Ideas
+# https://www.youtube.com/watch?v=oRkNaF0QvnI
+# duration 188s | caption track: en-GB (manual) | tracks: en-GB/manual
+
+[00:01] We think of an algorithm as something new,
+[00:03] but the term actually dates back about 900 years.
+[00:13] The word algorithm comes from the name
+[00:15] of a Persian mathematical genius, Muhammad ibn Musa al-Khwarizmi.
+[00:20] He was born around 780 AD in the region now known as Uzbekistan.
+[00:26] His name suggests he came from Khwarizm.
+[00:31] Known as al-Khwarizmi, he was director in the House of Wisdom,
+[00:36] an intellectual centre for scholars in 9th Century Baghdad.
+[00:40] He made innovative contributions to mathematics, astronomy,
+[00:43] geography and cartography,
+[00:45] and wrote an influential book called
+[00:48] Concerning the Hindu Art of Reckoning.
+[00:51] 300 years later, the book was rediscovered
+[00:54] and translated into Latin.
+[00:56] It introduced Hindu-Arabic numerals to the West,
+[00:59] which eventually replaced the unwieldy Roman ones.
+[01:02] The Hindu-Arabic number system, along with the decimal point,
+[01:06] both described by al-Khwarizmi in his book, are the basis of the numbers
+[01:10] we use throughout the world today.
+[01:13] Al-Khwarizmi's name, when Latinised in the title of the book,
+[01:17] became algoritmi.
+[01:19] And this is the origin of the word algorithm.
+[01:23] We also have al-Khwarizmi to thank for the word algebra,
+[01:28] which comes from another of his works.
+[01:30] His books revolutionised mathematics in the West,
+[01:34] showing how complex problems
+[01:36] could be broken down into simpler parts and solved.
+[01:40] In medieval Latin, algorismus simply meant the decimal number system.
+[01:46] By the 13th Century, it had become an English word and was used,
+[01:50] for example, by Chaucer.
+[01:54] But it wasn't until the late 19th Century
+[01:56] that algorithm came to mean a set of step-by-step rules
+[01:59] for solving a problem.
+[02:02] In the early part of the 20th Century, Alan Turing,
+[02:06] the British mathematician and computer scientist, worked out how,
+[02:10] in theory, a machine could follow algorithmic instructions
+[02:14] and solve complex mathematics.
+[02:18] This was the birth of the computer age.
+[02:22] During World War Two, he built a machine called the Bombe,
+[02:25] which used algorithms to crack the Enigma code.
+[02:29] Today algorithm is a fairly common term,
+[02:32] even if sometimes you're not exactly sure what an algorithm does.
+[02:36] Algorithms are everywhere now, helping us to get from A to B,
+[02:40] driving internet searches, making recommendations of things
+[02:43] for us to buy, watch or share.
+[02:46] And predicting how we vote or who we fall in love with.
+[02:50] This little word that originated in medieval Persia
+[02:55] is gradually transforming our lives.
+[03:01] Thanks for watching! :)
+[03:02] Don’t forget to subscribe and click the bell to receive notifications for new videos. See you again soon!

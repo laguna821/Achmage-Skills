@@ -1,0 +1,14 @@
+# ESOcast 147 Light: First Light for Planet Hunter ExTrA at La Silla (4K UHD)
+# https://www.youtube.com/watch?v=bwKj6kzFeDI
+# duration 89s | caption track: en (manual) | tracks: de/manual, ro/manual, vi/manual, en/manual, pl/manual
+
+[00:07] First Light for Planet Hunter ExTrA
+[00:12] Planet-hunting astronomers have a new and powerful tool to search for potentially habitable worlds.
+[00:21] ExTrA, just installed at ESO’s La Silla Observatory, uses three 0.6-m telescopes to look for tiny dips in the brightness​ of nearby red dwarf stars...
+[00:30] ... caused by ​Earth-sized planets passing in front of their host stars.
+[00:36] ​ExTrA focuses on red dwarfs because a transiting planet blocks out a relatively large proportion of light from such a small star.
+[00:46] Red dwarfs are common in the Milky Way and are expected to host many Earth-sized planets.
+[00:54] The novel design of ExTrA, together with the excellent conditions at La Silla, make it more sensitive than previous surveys.
+[01:02] The atmospheres of planets found by ExTrA will be studied with the ELT — and may reveal the first signs of life beyond Earth!
+[01:14] Produced by ESO, the European Southern Observatory. Reaching new heights in Astronomy.
+[01:20] Transcribed by ESO, translated by —

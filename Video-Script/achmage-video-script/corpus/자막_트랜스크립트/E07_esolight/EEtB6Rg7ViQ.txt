@@ -1,0 +1,13 @@
+# ESOcast 187 Light: First Light for SPECULOOS
+# https://www.youtube.com/watch?v=EEtB6Rg7ViQ
+# duration 93s | caption track: en (manual) | tracks: de/manual, ru/manual, ro/manual, mk/manual, vi/manual, ar/manual, af/manual, en/manual, it/manual, id/manual, cs/manual, tr/manual, pt/manual, pt-BR/manual, pl/manual, fr/manual, nl/asr
+
+[00:07] First Light for SPECULOOS
+[00:13] A new quartet of planet-hunting telescopes is ready to begin operations at ESO's Paranal Observatory.
+[00:23] The SPECULOOS project has made its first observations at a site in northern Chile...
+[00:32] ...also home to ESO's Very Large Telescope.
+[00:40] SPECULOOS, named after the delicious spiced biscuit, is the Search for habitable Planets EClipsing ULtra-cOOl Stars.
+[00:50] The project's four telescopes will search for Earth-like planets in the habitable zone of nearby brown dwarfs and ultra-cool stars.
+[01:01] With one thousand stars to study, astronomers expect to find a host of new planetary neighbours...
+[01:11] ...and to learn more about these fascinating alien worlds.
+[01:20] Transcribed by ESO; Translated by —

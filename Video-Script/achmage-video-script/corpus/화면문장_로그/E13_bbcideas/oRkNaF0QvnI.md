@@ -1,0 +1,38 @@
+# Why algorithms are called algorithms | BBC Ideas
+
+- 채널/시리즈: BBC Ideas
+- URL: https://www.youtube.com/watch?v=oRkNaF0QvnI
+- 길이: 3분 8초
+- 게시일 / 조회수: 2019-07-11 / 3,351,844
+- 음성 유형: 내레이션 있음(3인칭 해설). 제작자 자막(manual, en-GB) 404단어가 한 목소리의 해설문이다. 인터뷰 발언으로 보이는 구어 문장은 없다.
+- 자료: 자막 트랙만 있음(manual/en-GB, 404단어). 콘택트시트 없음. 화면 구성과 화면 문장은 확인하지 못했다.
+
+## 대본 구조 메모
+
+- 로그라인(이 영상이 하는 말 한 문장): 최첨단처럼 들리는 "알고리즘"은 9세기 페르시아 수학자의 이름이 라틴어로 옮겨지며 생긴 900년 된 말이다.
+- 이 영상이 끌고 가는 질문: 제목 그대로 "알고리즘은 왜 알고리즘이라 불리는가". 답(이름의 라틴어화)은 01:13-01:22에 나오고, 그 뒤 절반은 "그 말이 어떻게 지금의 뜻이 되었나"라는 두 번째 질문으로 넘어간다.
+- 훅(첫 15~30초가 하는 일): 통념을 한 문장으로 세우고 수치로 뒤집는다. "We think of an algorithm as something new, / but the term actually dates back about 900 years."(00:01-00:05). 그 뒤 약 8초는 말이 없다(제목 구간으로 추정, 미확인). 13초부터 곧바로 사람 이름을 댄다.
+- 비트 구성(논리 순서, 연대순):
+	- 00:01-00:05 통념과 반전 수치(새것 같지만 900년)
+	- 00:13-00:30 인물 소개: 이름, 출생(780년경), 출신지와 이름의 뜻
+	- 00:31-00:50 업적: 바그다드 지혜의 집 책임자, 분야 4개, 책 한 권
+	- 00:51-01:12 책의 여정: 300년 뒤 라틴어 번역 → 힌두-아라비아 숫자가 로마 숫자를 대체 → 오늘 우리가 쓰는 숫자
+	- 01:13-01:22 답: 이름이 라틴어로 algoritmi가 됨 → "And this is the origin of the word algorithm."
+	- 01:23-01:39 덤: algebra도 그의 책에서 → 그의 책이 서양 수학을 바꿈(문제를 단순한 부분으로 쪼갠다)
+	- 01:40-02:01 뜻의 변화: 중세 라틴어 algorismus = 십진법 → 13세기 영어(Chaucer) → 19세기 말에야 "단계별 규칙"
+	- 02:02-02:28 기계와의 결합: Turing, 컴퓨터 시대의 탄생, Bombe와 Enigma
+	- 02:29-02:49 오늘: 흔한 말이 됐다, 하는 일 나열
+	- 02:50-03:00 맺음: 작은 낱말 하나가 삶을 바꾸고 있다
+	- 03:01- 채널 고정 인사
+- 논리의 형태: 통념 반전 → 사람 → 책 → 번역 → 이름의 변형(답) → 뜻의 변형 → 기계 → 현재. 하나의 낱말을 주인공으로 삼은 전기(傳記) 구조다. 시간 표지가 거의 모든 단락의 첫머리에 온다: "300 years later", "In medieval Latin", "By the 13th Century", "But it wasn't until the late 19th Century", "In the early part of the 20th Century", "During World War Two", "Today".
+- 전환점(시청자의 해석이 바뀌는 지점과 그것을 일으킨 장치): (1) 00:03 수치 "about 900 years". (2) 01:19 "And this is the origin of the word algorithm." 답을 지시어 this로 못 박는 문장. 앞의 1분이 모두 이 한 줄을 위한 준비였음이 드러난다. (3) 01:54 "But it wasn't until the late 19th Century". 말은 오래됐지만 지금의 뜻은 새것이라는 두 번째 반전. 첫 문장의 통념(새것)이 절반은 맞았다는 것을 뒤늦게 인정하는 구조다.
+- 결말(마지막 2~3개 문장과 그 기능): "Algorithms are everywhere now, helping us to get from A to B ..." → "And predicting how we vote or who we fall in love with." → "This little word that originated in medieval Persia / is gradually transforming our lives." 현재의 쓰임을 사소한 것에서 중대한 것 순으로 나열한 뒤(길 찾기 → 투표, 사랑), 처음(중세 페르시아)과 지금(우리 삶)을 한 문장에 묶는 수미상관으로 닫는다. 마지막 문장은 "little word"와 "transforming our lives"의 크기 대비다.
+- 내레이션 문장 작법:
+	- 문장 평균 약 15단어, 사실 진술 위주의 평서문. 질문문이 한 번도 없다. 질문은 제목이 맡는다.
+	- 고유명사와 연도가 촘촘하다(al-Khwarizmi, Khwarizm, House of Wisdom, Baghdad, Chaucer, Turing, Bombe, Enigma / 780 AD, 9세기, 300년 뒤, 13세기, 19세기 말, 20세기 초, 2차 대전). 대신 낯선 고유명사에는 동격 풀이를 붙인다: "the House of Wisdom, an intellectual centre for scholars in 9th Century Baghdad", "Alan Turing, the British mathematician and computer scientist".
+	- 낱말의 형태 변화를 그대로 들려준다: al-Khwarizmi → algoritmi → algorismus → algorithm. 화면 글자가 있었을 가능성이 높지만 확인하지 못했다.
+	- 1인칭 복수 we로 시청자를 묶는다("We think of", "the numbers we use", "We also have al-Khwarizmi to thank").
+	- 단락을 닫는 짧은 선언문: "And this is the origin of the word algorithm.", "This was the birth of the computer age."
+	- 모른다는 것을 인정하는 한 줄로 시청자 눈높이에 선다: "even if sometimes you're not exactly sure what an algorithm does."
+- 화면과 말의 분업: 화면은 확인하지 못했다. 말이 없는 구간은 00:05-00:13(약 8초)과 문단 사이의 2~4초 틈뿐이다. 음성만으로 완결되는 대본이다.
+- 수량(대략): 404단어 / 약 180초, 분당 약 135단어. 문장 약 26개.
